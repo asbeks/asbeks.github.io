@@ -11,6 +11,7 @@ on:
 
 permissions:
   contents: write
+  id-token: write
 
 concurrency:
   group: autonomous-ai-public-state
@@ -19,7 +20,7 @@ concurrency:
 jobs:
   cycle:
     runs-on: ubuntu-latest
-    timeout-minutes: 7
+    timeout-minutes: 8
     steps:
       - name: Checkout public state branch
         uses: actions/checkout@v4
@@ -41,7 +42,10 @@ jobs:
       - name: Run one job-and-economy grounded AI cycle
         run: node autonomous-ai/cycle.mjs
 
-      - name: Persist economic, job, and reasoning state
+      - name: Synchronize operational state to Supabase
+        run: node autonomous-ai/sync-supabase.mjs
+
+      - name: Persist Git history backup
         run: |
           git config user.name "autonomous-ai[bot]"
           git config user.email "autonomous-ai[bot]@users.noreply.github.com"
@@ -53,4 +57,4 @@ jobs:
           git commit -m "autonomous-ai: operating cycle $(date -u +%Y-%m-%dT%H:%M:%SZ)"
           git push origin HEAD:autonomous-ai-state
 
-# runner revision: autonomous-job-selector-v1
+# runner revision: supabase-operating-state-v1
