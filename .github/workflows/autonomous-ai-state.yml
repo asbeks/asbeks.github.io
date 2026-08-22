@@ -45,4 +45,4 @@ jobs:
           git commit -m "autonomous-ai: economy cycle $(date -u +%Y-%m-%dT%H:%M:%SZ)"
           git push origin HEAD:autonomous-ai-state
 
-# runner revision: economy-grounded-v1
+# runner revision: economy-grounded-v2-repair
