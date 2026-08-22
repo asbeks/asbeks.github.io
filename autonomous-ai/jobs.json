@@ -1,42 +1,9 @@
 {
   "version": 3,
-  "updatedAt": "2026-08-22T12:25:32.005Z",
+  "updatedAt": "2026-08-22T12:42:54.316Z",
   "status": "selected",
   "source": "github-public-issues",
   "opportunities": [
-    {
-      "id": "github:4148310577",
-      "source": "github",
-      "title": "[BOUNTY $100] HOOK: Pre-tool-use hook that blocks destructive bash commands",
-      "url": "https://github.com/claude-builders-bounty/claude-builders-bounty/issues/3",
-      "repositoryApiUrl": "https://api.github.com/repos/claude-builders-bounty/claude-builders-bounty",
-      "rewardUsd": 100,
-      "score": 74,
-      "labels": [
-        "bounty",
-        "hook",
-        "security"
-      ],
-      "updatedAt": "2026-08-22T11:53:54Z",
-      "summary": "## 💰 Bounty: $100 — powered by [Opire](https://opire.dev) ## Description Create a Claude Code `pre-tool-use` hook in Python or bash that intercepts dangerous bash commands before they are executed. ## Acceptance Criteria - [ ] Hook follows Claude Code hooks format (`~/.claude/hooks/`) - [ ] Blocks these patterns: `rm -rf`, `DROP TABLE`, `git push --force`, `TRUNCATE`, `DELETE FROM` without a WHERE clause - [ ] Logs every blocked attempt to `~/.claude/hooks/blocked.log` with: timestamp, attempted command, project p",
-      "state": "candidate"
-    },
-    {
-      "id": "github:4148310390",
-      "source": "github",
-      "title": "[BOUNTY $75] TEMPLATE: CLAUDE.md for a Next.js + SQLite SaaS project",
-      "url": "https://github.com/claude-builders-bounty/claude-builders-bounty/issues/2",
-      "repositoryApiUrl": "https://api.github.com/repos/claude-builders-bounty/claude-builders-bounty",
-      "rewardUsd": 75,
-      "score": 74,
-      "labels": [
-        "bounty",
-        "template"
-      ],
-      "updatedAt": "2026-08-22T11:53:47Z",
-      "summary": "## 💰 Bounty: $75 — powered by [Opire](https://opire.dev) ## Description Create an opinionated, production-ready `CLAUDE.md` for a typical SaaS project built with Next.js 15 App Router and SQLite (better-sqlite3 or Turso). ## Acceptance Criteria - [ ] Covers: project structure, naming conventions, DB migration rules - [ ] Includes: dev commands, patterns to follow, anti-patterns to avoid - [ ] Opinionated — not generic. Every rule has a reason. - [ ] Usable without modification on a greenfield Next.js + SQLite proj",
-      "state": "candidate"
-    },
     {
       "id": "github:4148310244",
       "source": "github",
@@ -73,23 +40,40 @@
       "updatedAt": "2026-08-22T03:03:18Z",
       "summary": "If you haven’t already, check out our [contributing guidelines](https://github.com/Expensify/ReactNativeChat/blob/main/contributingGuides/CONTRIBUTING.md) for onboarding. To join our Slack channel, fill out [this form](https://forms.gle/Q7hnhUJPnQCK7Fe56). ___ **Version Number:** **Reproducible in staging?:** Needs Reproduction (unable to check customer's account) **Reproducible in production?:** Needs Reproduction (unable to check customer's account) **If this was caught during regression testing, add the test nam",
       "state": "candidate"
+    },
+    {
+      "id": "github:5221928005",
+      "source": "github",
+      "title": "[Idea] AVO Verified Research Exchange for On-Chain Science and Data Bounties",
+      "url": "https://github.com/MosslandOpenDevs/agentic-orchestrator/issues/3865",
+      "repositoryApiUrl": "https://api.github.com/repos/MosslandOpenDevs/agentic-orchestrator",
+      "rewardUsd": 5000,
+      "score": 48,
+      "labels": [
+        "type:idea",
+        "status:backlog",
+        "generated:by-orchestrator"
+      ],
+      "updatedAt": "2026-08-22T12:36:31Z",
+      "summary": "## Idea Summary - **Idea Title**: AVO Verified Research Exchange for On-Chain Science and Data Bounties - **Core Analysis**: The AVO demonstration matters because it suggests agents can solve unfamiliar multi-step problems with less hand-holding than current tools. Most Web3 agent ideas are still centered on trading, auditing, or task delegation, but a more durable opportunity is research workflow automation: finding data, validating sources, testing hypotheses, and producing reproducible outputs. This is timely be",
+      "state": "candidate"
     }
   ],
   "selected": {
-    "id": "github:4148310577",
+    "id": "github:4148310244",
     "source": "github",
-    "title": "[BOUNTY $100] HOOK: Pre-tool-use hook that blocks destructive bash commands",
-    "url": "https://github.com/claude-builders-bounty/claude-builders-bounty/issues/3",
+    "title": "[BOUNTY $50] SKILL: Generate a structured CHANGELOG from git history",
+    "url": "https://github.com/claude-builders-bounty/claude-builders-bounty/issues/1",
     "repositoryApiUrl": "https://api.github.com/repos/claude-builders-bounty/claude-builders-bounty",
-    "rewardUsd": 100,
-    "score": 74,
+    "rewardUsd": 50,
+    "score": 66,
     "labels": [
       "bounty",
-      "hook",
-      "security"
+      "skill",
+      "good first issue"
     ],
-    "updatedAt": "2026-08-22T11:53:54Z",
-    "summary": "## 💰 Bounty: $100 — powered by [Opire](https://opire.dev) ## Description Create a Claude Code `pre-tool-use` hook in Python or bash that intercepts dangerous bash commands before they are executed. ## Acceptance Criteria - [ ] Hook follows Claude Code hooks format (`~/.claude/hooks/`) - [ ] Blocks these patterns: `rm -rf`, `DROP TABLE`, `git push --force`, `TRUNCATE`, `DELETE FROM` without a WHERE clause - [ ] Logs every blocked attempt to `~/.claude/hooks/blocked.log` with: timestamp, attempted command, project p",
+    "updatedAt": "2026-08-22T12:24:30Z",
+    "summary": "## 💰 Bounty: $50 — powered by [Opire](https://opire.dev) ## Description Create a Claude Code skill (`SKILL.md`) or a bash script that automatically generates a structured `CHANGELOG.md` from a project's git history. ## Acceptance Criteria - [ ] Works via `/generate-changelog` command or `bash changelog.sh` - [ ] Fetches commits since the last git tag - [ ] Auto-categorizes into: `Added` / `Fixed` / `Changed` / `Removed` - [ ] Outputs a properly formatted `CHANGELOG.md` - [ ] Tested on a real GitHub repo (include a",
     "state": "selected"
   },
   "active": null,
@@ -97,10 +81,16 @@
   "lastError": null,
   "selection": {
     "status": "selected",
-    "confidence": 0.9,
-    "rationale": "Bounded coding task with clear criteria; highest payout among feasible, safe options; within worker capability.",
-    "expectedHours": 6,
+    "confidence": 0.85,
+    "rationale": "Bounded coding bounty with clear acceptance criteria; fits worker's JS/TS/bash skills; moderate payout and low complexity.",
+    "expectedHours": 3,
     "expectedCostUsd": 0,
-    "estimatedProfitUsd": 100
-  }
+    "estimatedProfitUsd": 50,
+    "provider": {
+      "mode": "OpenCode Free",
+      "model": "mimo-v2.5-free",
+      "attempts": 1
+    }
+  },
+  "retryAfterAt": null
 }
