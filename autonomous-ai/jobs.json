@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-08-22T19:39:17.813Z",
+  "updatedAt": "2026-08-22T19:57:55.538Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -110,6 +110,45 @@
       "requiresPreclaimOrIdentity": false
     },
     {
+      "id": "github:5204165375",
+      "source": "github",
+      "title": "[S29.02.04] Define coverage thresholds that reward valuable tests",
+      "url": "https://github.com/NikoMix/fitness/issues/641",
+      "repositoryApiUrl": "https://api.github.com/repos/NikoMix/fitness",
+      "rewardUsd": 29.02,
+      "score": 48,
+      "labels": [
+        "type:story",
+        "domain:quality",
+        "platform:android",
+        "platform:ios",
+        "wave:1",
+        "status:partial"
+      ],
+      "commentCount": 0,
+      "updatedAt": "2026-08-22T19:52:25Z",
+      "summary": "<!-- forge:key=S29.02.04 type=story --> > **Story S29.02.04** | Feature: F29.02 | Epic: E29 | Domain: `quality` | Wave 1 | Size `s` | Platforms: android, ios ## User story **As** technical lead reviewing quality signals **I want** coverage gates that focus on logic instead of generated UI **So that** the team improves risk coverage rather than chasing vanity percentages ## Requirements 1. Forge.Domain line coverage is at least 90 percent and branch coverage is at least 85 percent. 2. Forge.Core line coverage is at least 80 percent for use cases and validators. 3. Forge.App XAML and generated code are excluded from global coverage calculations. 4. Each automated check has deterministic seed data, a clear owner and a failure message that names the violated product or architecture rule. ## Acceptance criteria - [ ] **AC1** - **Given** a pull request adds untested domain validation branches - **When** coverage is calculated - **Then** the domain branch coverage gate fails below 85 percent - [ ] **AC2** - **Given** a pull request only changes XAML layout - **When** coverage is calculated - **Then** the build does not fail solely because XAML has no line coverage - [ ] **AC3** - **Given*",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 100,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 29.02,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
       "id": "github:4563956966",
       "source": "github",
       "title": "parse_duration drops the days (d) unit",
@@ -177,6 +216,40 @@
       "realMoneyEligible": true,
       "economicValueUsd": 1500,
       "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5223629185",
+      "source": "github",
+      "title": "[Bounty $750] ttnn.addcdiv: forms in1 * value before dividing, overflowing to +/-inf for finite results",
+      "url": "https://github.com/tenstorrent/tt-metal/issues/54055",
+      "repositoryApiUrl": "https://api.github.com/repos/tenstorrent/tt-metal",
+      "rewardUsd": 750,
+      "score": 46,
+      "labels": [
+        "community"
+      ],
+      "commentCount": 1,
+      "updatedAt": "2026-08-22T19:44:51Z",
+      "summary": "## Summary `ttnn.addcdiv` computes `out = input + value * (tensor1 / tensor2)`. The SFPU kernel evaluates it in the wrong order: ```cpp sfpi::vFloat result = in0 + (in1 * value_float * sfpu_reciprocal_iter<2>(in2)); ``` C++ left-associativity makes this `in0 + ((in1 * value_float) * recip(in2))` — the scaled numerator `in1 * value` is formed **before** the division is applied. When `|in1 * value| > FLT_MAX` but the mathematically exact result `in0 + value*(in1/in2)` is an ordinary finite number, the intermediate overflows to `+/-inf` and poisons the entire lane. `torch.addcdiv` (the golden reference) divides first: `input + value * (tensor1 / tensor2)`, so the intermediate quotient `tensor1/tensor2` is modest and the result is finite. The two orders agree for almost all inputs and diverge exactly on the overflow set — a finite-vs-inf mismatch, not a ULP nit. ## Measured (source-faithful fp32 model of the kernel vs torch/numpy addcdiv golden) Reproduction script attached (`verify_addcdiv.py`, `proof.txt`). | in0 | in1 | in2 | value | kernel | golden `in0+value*(in1/in2)` | | |------|---------|-----|-------|--------|------------------------------|-----| | 0 | 3.0e38 | 8 | 4 | `inf` |",
+      "state": "candidate",
+      "payoutConfidence": 0.15,
+      "autonomyFit": 0.45,
+      "requiresHumanGate": true,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 8,
+      "complexity": 4,
+      "fundedBountySignal": false,
+      "fastCashScore": 53,
+      "survivalEligible": false,
+      "eligibilityReason": "Too slow for bootstrap mode: first real cash currently requires a <=4 hour task.",
+      "competition": {
+        "comments": 1,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 750,
+      "requiresPreclaimOrIdentity": false
     }
   ],
   "selected": null,
@@ -189,7 +262,7 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:2940525692\",\"rewardUsd\":10,\"fastCashScore\":60,\"updatedAt\":\"2026-08-18T21:51:22Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-18T21:51:29Z\",\"competition\":{\"comments\":29,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":125,\"updatedAt\":\"2026-08-22T16:37:56Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5183229703\",\"rewardUsd\":120,\"fastCashScore\":108,\"updatedAt\":\"2026-08-22T14:54:31Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5223597392\",\"rewardUsd\":1500,\"fastCashScore\":53,\"updatedAt\":\"2026-08-22T19:36:28Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:2940525692\",\"rewardUsd\":10,\"fastCashScore\":60,\"updatedAt\":\"2026-08-18T21:51:22Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-18T21:51:29Z\",\"competition\":{\"comments\":29,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":125,\"updatedAt\":\"2026-08-22T16:37:56Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5183229703\",\"rewardUsd\":120,\"fastCashScore\":108,\"updatedAt\":\"2026-08-22T14:54:31Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5204165375\",\"rewardUsd\":29.02,\"fastCashScore\":100,\"updatedAt\":\"2026-08-22T19:52:25Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5223597392\",\"rewardUsd\":1500,\"fastCashScore\":53,\"updatedAt\":\"2026-08-22T19:36:28Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5223629185\",\"rewardUsd\":750,\"fastCashScore\":53,\"updatedAt\":\"2026-08-22T19:44:51Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
@@ -213,7 +286,7 @@
       "reasons": [
         "already_rewarded_or_paid"
       ],
-      "rejectedAt": "2026-08-22T19:39:17.762Z"
+      "rejectedAt": "2026-08-22T19:57:55.345Z"
     },
     {
       "id": "github:2940525692",
@@ -222,7 +295,7 @@
       "reasons": [
         "already_rewarded_or_paid"
       ],
-      "rejectedAt": "2026-08-22T19:39:17.763Z"
+      "rejectedAt": "2026-08-22T19:57:55.346Z"
     },
     {
       "id": "github:5222232071",

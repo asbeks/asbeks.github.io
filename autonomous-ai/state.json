@@ -1,24 +1,24 @@
 {
   "version": 5,
-  "cycle": 25,
+  "cycle": 26,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-22T19:39:36.353Z",
+  "updatedAt": "2026-08-22T19:58:21.363Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "online",
-  "currentAgent": "PLANNER",
+  "currentAgent": "CRITIC",
   "provider": {
     "mode": "OpenCode Free",
-    "model": "hy3-free",
-    "attempts": 2
+    "model": "mimo-v2.5-free",
+    "attempts": 1
   },
   "latest": {
-    "cycle": 25,
-    "agent": "PLANNER",
-    "timestamp": "2026-08-22T19:39:36.353Z",
-    "observation": "Snapshot confirms github:4234681451 ($250) as top paid work but omits full claim steps and payout channel details.",
-    "objection": "Critique correctly notes concrete claim process and payout method remain unverified from the issue page.",
-    "decision": "Fetch the github:4234681451 issue page to extract claim procedure, payout mechanism, and required reviewer approvals.",
-    "next": "CRITIC should review the extracted claim process and payout verification for issue 4234681451 after page fetch."
+    "cycle": 26,
+    "agent": "CRITIC",
+    "timestamp": "2026-08-22T19:58:21.363Z",
+    "observation": "State snapshot does not show extracted claim steps or payout details for issue 4234681451.",
+    "objection": "Without verified payout method and claim procedure, the job's legitimacy is incomplete.",
+    "decision": "Do not proceed with preparation until claim process is confirmed from authoritative source.",
+    "next": "PLANNER must verify issue page fetch and extract full claim instructions and payout mechanism."
   },
   "lastError": null,
   "history": [
@@ -246,6 +246,15 @@
       "objection": "Critique correctly notes concrete claim process and payout method remain unverified from the issue page.",
       "decision": "Fetch the github:4234681451 issue page to extract claim procedure, payout mechanism, and required reviewer approvals.",
       "next": "CRITIC should review the extracted claim process and payout verification for issue 4234681451 after page fetch."
+    },
+    {
+      "cycle": 26,
+      "agent": "CRITIC",
+      "timestamp": "2026-08-22T19:58:21.363Z",
+      "observation": "State snapshot does not show extracted claim steps or payout details for issue 4234681451.",
+      "objection": "Without verified payout method and claim procedure, the job's legitimacy is incomplete.",
+      "decision": "Do not proceed with preparation until claim process is confirmed from authoritative source.",
+      "next": "PLANNER must verify issue page fetch and extract full claim instructions and payout mechanism."
     }
   ],
   "economy": {
@@ -297,20 +306,20 @@
         "summary": "## Background The Banking Ledger must distinguish internal fiat-denominated balances from external tokens used for blockchain settlement. An intermediate redesign removed the `Currency` aggregate and introduced a statically injected `SettlementAssetRegistry`. That model has important limitations: - supported currencies and token bindings are queried directly from runtime configuration instead of being reconstructed as Read Models from domain events; - one Currency effectively resolves to only one deposit token and one withdrawal token; - chain identity is hidden behind Solana infrastructure types; and - completed Deposit and Withdrawal aggregates do not retain the blockchain transaction that produced the settlement. Replace the static registry with event-sourced Ledger domain state. Restore `Currency` as a bank-managed aggregate, model multiple token bindings as entities owned by that aggregate, make the supported blockchain explicit in domain values, and project the resulting events into normal Read Models. This does **not** restore the former currency-issuance platform. The bank binds existing external tokens and does not create tokens, publish token metadata, or manage token sup"
       },
       {
+        "id": "github:5204165375",
+        "title": "[S29.02.04] Define coverage thresholds that reward valuable tests",
+        "url": "https://github.com/NikoMix/fitness/issues/641",
+        "rewardUsd": 29.02,
+        "score": 48,
+        "summary": "<!-- forge:key=S29.02.04 type=story --> > **Story S29.02.04** | Feature: F29.02 | Epic: E29 | Domain: `quality` | Wave 1 | Size `s` | Platforms: android, ios ## User story **As** technical lead reviewing quality signals **I want** coverage gates that focus on logic instead of generated UI **So that** the team improves risk coverage rather than chasing vanity percentages ## Requirements 1. Forge.Domain line coverage is at least 90 percent and branch coverage is at least 85 percent. 2. Forge.Core line coverage is at least 80 percent for use cases and validators. 3. Forge.App XAML and generated code are excluded from global coverage calculations. 4. Each automated check has deterministic seed data, a clear owner and a failure message that names the violated product or architecture rule. ## Acceptance criteria - [ ] **AC1** - **Given** a pull request adds untested domain validation branches - **When** coverage is calculated - **Then** the domain branch coverage gate fails below 85 percent - [ ] **AC2** - **Given** a pull request only changes XAML layout - **When** coverage is calculated - **Then** the build does not fail solely because XAML has no line coverage - [ ] **AC3** - **Given*"
+      },
+      {
         "id": "github:4563956966",
         "title": "parse_duration drops the days (d) unit",
         "url": "https://github.com/tine1117/oss-hunter-livefire/issues/1",
         "rewardUsd": 50,
         "score": 44,
         "summary": "## Bug `parse_duration` silently drops the **days** (`d`) unit. The README lists `d` as a supported unit, but the parser ignores it and returns a wrong (too-small) result instead of raising or counting it. ### Reproduction ```python from duration_utils import parse_duration parse_duration(\"1d\") # -> 0 (expected 86400) parse_duration(\"2d4h\") # -> 14400 (expected 187200) ``` ### Expected `d` should be counted as 86400 seconds, so `parse_duration(\"1d\") == 86400` and `parse_duration(\"2d4h\") == 187200`. ### Notes The `d` character is already accepted by the token regex, so malformed-input detection still passes — the value is just never added. A fix should add the `d` unit and cover it with tests. /bounty $50"
-      },
-      {
-        "id": "github:5223597392",
-        "title": "[Bounty $1500] ttnn.exp2: fp32 path returns NaN / finite garbage instead of +inf for x >= 128 (missing overflow guard)",
-        "url": "https://github.com/tenstorrent/tt-metal/issues/54054",
-        "rewardUsd": 1500,
-        "score": 46,
-        "summary": "## Summary `ttnn.exp2`'s fp32-accurate kernel (`_sfpu_exp2_fp32_accurate_`, selected when `is_fp32_dest_acc_en == true`) reconstructs `2^x = 2^round(x) * 2^f` by evaluating a minimax polynomial `r = 2^f` (`f = x - round(x)`) and then rebuilding the exponent with `setexp(r, e)`, `e = biased_exp(r) + round(x)`. The exponent path has an **underflow** guard (`e < 1 -> 0`) but **no overflow guard**. For `x >= 128` the true result overflows fp32 and should be `+inf`. Instead `e` reaches `>= 255` and the *unconditional* `setexp(r, e)` writes an out-of-range exponent field: * `x` in `[128, 128.5)` -> `e == 255` with a nonzero mantissa -> **NaN** * `x >= 128.5` -> `e >= 256`, `setexp` keeps only the low 8 bits -> **wrapped finite garbage** The kernel even **precomputes the correct overflow result** one line earlier (`y *= std::numeric_limits<float>::infinity();`, i.e. `y = r * inf = +inf`) and then throws it away by overwriting `y` with the `setexp` result. The overflow half of the reconstruction is simply missing. `exp2(x)` for `x >= 128` is unambiguously `+inf` (2^128 > FLT_MAX), so this is never a representable-range question — the correct answer exists (`+inf`), is cheap, and is already"
       }
     ],
     "active": null,
