@@ -1,10 +1,10 @@
 {
   "version": 5,
-  "cycle": 24,
+  "cycle": 25,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-22T19:13:19.662Z",
+  "updatedAt": "2026-08-22T19:39:36.353Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
-  "status": "degraded",
+  "status": "online",
   "currentAgent": "PLANNER",
   "provider": {
     "mode": "OpenCode Free",
@@ -12,15 +12,15 @@
     "attempts": 2
   },
   "latest": {
-    "cycle": 24,
-    "agent": "CRITIC",
-    "timestamp": "2026-08-22T18:45:46.832Z",
-    "observation": "Snapshot confirms github:4234681451 ($250, score 80) as top-scored open paid work; github:4462160604 ($400) also listed but lower score.",
-    "objection": "PLANNER has not yet extracted concrete claim steps or payout method from issue 4234681451 page; legitimacy unverified beyond snapshot summary.",
-    "decision": "Prioritize github:4234681451 schema proposal; prepare markdown outline meeting acceptance criteria while awaiting payout confirmation.",
-    "next": "PLANNER must fetch issue 4234681451 page to verify claim process, payout channel, and required reviewer approvals before dev commit."
+    "cycle": 25,
+    "agent": "PLANNER",
+    "timestamp": "2026-08-22T19:39:36.353Z",
+    "observation": "Snapshot confirms github:4234681451 ($250) as top paid work but omits full claim steps and payout channel details.",
+    "objection": "Critique correctly notes concrete claim process and payout method remain unverified from the issue page.",
+    "decision": "Fetch the github:4234681451 issue page to extract claim procedure, payout mechanism, and required reviewer approvals.",
+    "next": "CRITIC should review the extracted claim process and payout verification for issue 4234681451 after page fetch."
   },
-  "lastError": "Model output could not be normalized into the public trace schema.",
+  "lastError": null,
   "history": [
     {
       "cycle": 1,
@@ -237,6 +237,15 @@
       "objection": "PLANNER has not yet extracted concrete claim steps or payout method from issue 4234681451 page; legitimacy unverified beyond snapshot summary.",
       "decision": "Prioritize github:4234681451 schema proposal; prepare markdown outline meeting acceptance criteria while awaiting payout confirmation.",
       "next": "PLANNER must fetch issue 4234681451 page to verify claim process, payout channel, and required reviewer approvals before dev commit."
+    },
+    {
+      "cycle": 25,
+      "agent": "PLANNER",
+      "timestamp": "2026-08-22T19:39:36.353Z",
+      "observation": "Snapshot confirms github:4234681451 ($250) as top paid work but omits full claim steps and payout channel details.",
+      "objection": "Critique correctly notes concrete claim process and payout method remain unverified from the issue page.",
+      "decision": "Fetch the github:4234681451 issue page to extract claim procedure, payout mechanism, and required reviewer approvals.",
+      "next": "CRITIC should review the extracted claim process and payout verification for issue 4234681451 after page fetch."
     }
   ],
   "economy": {
@@ -280,28 +289,28 @@
         "summary": "`source.md` contains the complete RFC 5322 specification (Internet Message Format). We need a **fully conformant email address parser** in Python that implements the complete ABNF grammar from sections 3.2 through 3.4, plus obsolete syntax from §4.4. This parser must handle every edge case defined in the RFC — not just simple `user@domain` patterns, but the full complexity of quoted strings, comments, folding whitespace, group addresses, and domain literals. ## Background RFC 5322 defines email address syntax through a chain of ABNF productions that build on each other: ``` address = mailbox / group mailbox = name-addr / addr-spec name-addr = [display-name] angle-addr angle-addr = [CFWS] \"<\" addr-spec \">\" [CFWS] addr-spec = local-part \"@\" domain local-part = dot-atom / quoted-string / obs-local-part domain = dot-atom / domain-literal / obs-domain ``` Each of these references further productions (CFWS, FWS, quoted-pair, dtext, etc.) that span multiple sections. **You must read `source.md` completely** to trace the full grammar dependency chain. ## Requirements ### 1. Parser Implementation — `parser.py` ```python class RFC5322Address: \"\"\"Parsed RFC 5322 email address.\"\"\" display_name"
       },
       {
-        "id": "github:5221022224",
-        "title": "Register the remaining live Blend V2 markets",
-        "url": "https://github.com/stenion-lab/stenion/issues/65",
-        "rewardUsd": 2025,
-        "score": 48,
-        "summary": "### Context Stenion scores two Blend V2 markets — `blend` (Fixed, `CAJJZSGM…`) and `yieldblox` (`CCCCIQSD…`). Those are not the only ones live. Enumerating the `deploy` events of Blend's V2 pool factory (`CDSYOAVXFY7SM5S64IZPPPYB4GVGGLMQVFREPSQQEZVIWXX5R23G4QSU`) returns **11 pool deployments**, every one running the same pool wasm (`a41fc53d…`) that `BlendAdapter` already reads, and every one answering `is_pool` with `true`: | Deployed | Pool | on-chain `Name` | In backstop reward zone | | --- | --- | --- | --- | | 2025-04-14 | `CAJJZSGM…` | Fixed | yes — **scored** (`blend`) | | 2025-04-15 | `CBNR7PYF…` | YieldBlox | no | | 2025-04-17 | `CCCCIQSD…` | YieldBlox | yes — **scored** (`yieldblox`) | | 2025-05-01 | `CB4OFHAY…` | Orbit | no | | 2025-05-01 | `CAE7QVOM…` | Orbit | yes | | 2025-07-14 | `CBYOBT7Z…` | Forex | yes | | 2025-11-21 | `CALRF5I2…` | Etherfuse | no | | 2025-11-24 | `CADR6Q2U…` | Etherfuse | no | | 2025-11-24 | `CDMAVJPF…` | Etherfuse | yes | | 2026-06-10 | `CDZVHCO7…` | Spectra PTs | **no** | | 2026-07-28 | `CC4HHXPK…` | Solv | yes | Per the multi-pool targeting shipped in #12, each of these is a `BLEND_POOLS` config entry and **no new scoring code** — same wasm, s"
-      },
-      {
-        "id": "github:5005925746",
-        "title": "[Zero Income Engine] Mission Control",
-        "url": "https://github.com/YS-OH-CORE/ai-observer-notes/issues/9",
-        "rewardUsd": 4265,
-        "score": 54,
-        "summary": "# Zero Income Engine Mission Control - Updated: 2026-08-22T18:49:22.313Z - Run: 107 - Terminal goal: **verified money** - Status: **MARKET_GAP_RESEARCH** - Mission lock: **RUN_UNTIL_MONEY_OR_EXPLICIT_USER_PAUSE** - Operator-fit lock: **QUIET_REPEATABLE_AI_OPERATED_INCOME** - Public identity lock: **HIDDEN_PROJECT_ALIAS_ONLY_NO_FACE_NO_VOICE_NO_PERSONAL_BRAND** - Money evidence: $0.00 received / $0.00 receivable / 0 paid use(s) ## Primary target ### [Paid tool market: reviews scraper](https://apify.com/store) - Route: product-market - Combined score: 65.4 - Economic score: 45.9 - Operator-fit score: 89.1 - Route role: recurring-income - Human friction: low-after-publish - Identity surface: project alias and product listing; private payout identity only if required - Hidden-compatible: yes - Cash signal: $0.00 - Gate: INSPECT_PAID_PRODUCT_GAPS - Probability class: unknown-until-gap-proof - Next executable action: Inspect the ten most-used paid products for repeated complaints, missing outputs, unreliable runs, and expensive pricing. Build only after one objective gap is evidenced; publish under a project identity and keep support asynchronous and minimal. **Evidence** - 414955 30-day"
-      },
-      {
         "id": "github:5183229703",
         "title": "Model fiat currencies and multi-chain token bindings as domain state",
         "url": "https://github.com/Lethephobia/appletheia/issues/128",
         "rewardUsd": 120,
         "score": 32,
         "summary": "## Background The Banking Ledger must distinguish internal fiat-denominated balances from external tokens used for blockchain settlement. An intermediate redesign removed the `Currency` aggregate and introduced a statically injected `SettlementAssetRegistry`. That model has important limitations: - supported currencies and token bindings are queried directly from runtime configuration instead of being reconstructed as Read Models from domain events; - one Currency effectively resolves to only one deposit token and one withdrawal token; - chain identity is hidden behind Solana infrastructure types; and - completed Deposit and Withdrawal aggregates do not retain the blockchain transaction that produced the settlement. Replace the static registry with event-sourced Ledger domain state. Restore `Currency` as a bank-managed aggregate, model multiple token bindings as entities owned by that aggregate, make the supported blockchain explicit in domain values, and project the resulting events into normal Read Models. This does **not** restore the former currency-issuance platform. The bank binds existing external tokens and does not create tokens, publish token metadata, or manage token sup"
+      },
+      {
+        "id": "github:4563956966",
+        "title": "parse_duration drops the days (d) unit",
+        "url": "https://github.com/tine1117/oss-hunter-livefire/issues/1",
+        "rewardUsd": 50,
+        "score": 44,
+        "summary": "## Bug `parse_duration` silently drops the **days** (`d`) unit. The README lists `d` as a supported unit, but the parser ignores it and returns a wrong (too-small) result instead of raising or counting it. ### Reproduction ```python from duration_utils import parse_duration parse_duration(\"1d\") # -> 0 (expected 86400) parse_duration(\"2d4h\") # -> 14400 (expected 187200) ``` ### Expected `d` should be counted as 86400 seconds, so `parse_duration(\"1d\") == 86400` and `parse_duration(\"2d4h\") == 187200`. ### Notes The `d` character is already accepted by the token regex, so malformed-input detection still passes — the value is just never added. A fix should add the `d` unit and cover it with tests. /bounty $50"
+      },
+      {
+        "id": "github:5223597392",
+        "title": "[Bounty $1500] ttnn.exp2: fp32 path returns NaN / finite garbage instead of +inf for x >= 128 (missing overflow guard)",
+        "url": "https://github.com/tenstorrent/tt-metal/issues/54054",
+        "rewardUsd": 1500,
+        "score": 46,
+        "summary": "## Summary `ttnn.exp2`'s fp32-accurate kernel (`_sfpu_exp2_fp32_accurate_`, selected when `is_fp32_dest_acc_en == true`) reconstructs `2^x = 2^round(x) * 2^f` by evaluating a minimax polynomial `r = 2^f` (`f = x - round(x)`) and then rebuilding the exponent with `setexp(r, e)`, `e = biased_exp(r) + round(x)`. The exponent path has an **underflow** guard (`e < 1 -> 0`) but **no overflow guard**. For `x >= 128` the true result overflows fp32 and should be `+inf`. Instead `e` reaches `>= 255` and the *unconditional* `setexp(r, e)` writes an out-of-range exponent field: * `x` in `[128, 128.5)` -> `e == 255` with a nonzero mantissa -> **NaN** * `x >= 128.5` -> `e >= 256`, `setexp` keeps only the low 8 bits -> **wrapped finite garbage** The kernel even **precomputes the correct overflow result** one line earlier (`y *= std::numeric_limits<float>::infinity();`, i.e. `y = r * inf = +inf`) and then throws it away by overwriting `y` with the `setexp` result. The overflow half of the reconstruction is simply missing. `exp2(x)` for `x >= 128` is unambiguously `+inf` (2^128 > FLT_MAX), so this is never a representable-range question — the correct answer exists (`+inf`), is cheap, and is already"
       }
     ],
     "active": null,

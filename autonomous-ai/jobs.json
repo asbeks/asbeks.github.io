@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-08-22T19:11:45.136Z",
+  "updatedAt": "2026-08-22T19:39:17.813Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -78,73 +78,6 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5221022224",
-      "source": "github",
-      "title": "Register the remaining live Blend V2 markets",
-      "url": "https://github.com/stenion-lab/stenion/issues/65",
-      "repositoryApiUrl": "https://api.github.com/repos/stenion-lab/stenion",
-      "rewardUsd": 2025,
-      "score": 48,
-      "labels": [
-        "enhancement",
-        "adapter"
-      ],
-      "commentCount": 1,
-      "updatedAt": "2026-08-22T18:59:22Z",
-      "summary": "### Context Stenion scores two Blend V2 markets — `blend` (Fixed, `CAJJZSGM…`) and `yieldblox` (`CCCCIQSD…`). Those are not the only ones live. Enumerating the `deploy` events of Blend's V2 pool factory (`CDSYOAVXFY7SM5S64IZPPPYB4GVGGLMQVFREPSQQEZVIWXX5R23G4QSU`) returns **11 pool deployments**, every one running the same pool wasm (`a41fc53d…`) that `BlendAdapter` already reads, and every one answering `is_pool` with `true`: | Deployed | Pool | on-chain `Name` | In backstop reward zone | | --- | --- | --- | --- | | 2025-04-14 | `CAJJZSGM…` | Fixed | yes — **scored** (`blend`) | | 2025-04-15 | `CBNR7PYF…` | YieldBlox | no | | 2025-04-17 | `CCCCIQSD…` | YieldBlox | yes — **scored** (`yieldblox`) | | 2025-05-01 | `CB4OFHAY…` | Orbit | no | | 2025-05-01 | `CAE7QVOM…` | Orbit | yes | | 2025-07-14 | `CBYOBT7Z…` | Forex | yes | | 2025-11-21 | `CALRF5I2…` | Etherfuse | no | | 2025-11-24 | `CADR6Q2U…` | Etherfuse | no | | 2025-11-24 | `CDMAVJPF…` | Etherfuse | yes | | 2026-06-10 | `CDZVHCO7…` | Spectra PTs | **no** | | 2026-07-28 | `CC4HHXPK…` | Solv | yes | Per the multi-pool targeting shipped in #12, each of these is a `BLEND_POOLS` config entry and **no new scoring code** — same wasm, s",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 109,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 1,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 2025,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5005925746",
-      "source": "github",
-      "title": "[Zero Income Engine] Mission Control",
-      "url": "https://github.com/YS-OH-CORE/ai-observer-notes/issues/9",
-      "repositoryApiUrl": "https://api.github.com/repos/YS-OH-CORE/ai-observer-notes",
-      "rewardUsd": 4265,
-      "score": 54,
-      "labels": [],
-      "commentCount": 2,
-      "updatedAt": "2026-08-22T18:49:25Z",
-      "summary": "# Zero Income Engine Mission Control - Updated: 2026-08-22T18:49:22.313Z - Run: 107 - Terminal goal: **verified money** - Status: **MARKET_GAP_RESEARCH** - Mission lock: **RUN_UNTIL_MONEY_OR_EXPLICIT_USER_PAUSE** - Operator-fit lock: **QUIET_REPEATABLE_AI_OPERATED_INCOME** - Public identity lock: **HIDDEN_PROJECT_ALIAS_ONLY_NO_FACE_NO_VOICE_NO_PERSONAL_BRAND** - Money evidence: $0.00 received / $0.00 receivable / 0 paid use(s) ## Primary target ### [Paid tool market: reviews scraper](https://apify.com/store) - Route: product-market - Combined score: 65.4 - Economic score: 45.9 - Operator-fit score: 89.1 - Route role: recurring-income - Human friction: low-after-publish - Identity surface: project alias and product listing; private payout identity only if required - Hidden-compatible: yes - Cash signal: $0.00 - Gate: INSPECT_PAID_PRODUCT_GAPS - Probability class: unknown-until-gap-proof - Next executable action: Inspect the ten most-used paid products for repeated complaints, missing outputs, unreliable runs, and expensive pricing. Build only after one objective gap is evidenced; publish under a project identity and keep support asynchronous and minimal. **Evidence** - 414955 30-day",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 108,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 2,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 4265,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
       "id": "github:5183229703",
       "source": "github",
       "title": "Model fiat currencies and multi-chain token bindings as domain state",
@@ -210,6 +143,40 @@
       "realMoneyEligible": true,
       "economicValueUsd": 50,
       "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5223597392",
+      "source": "github",
+      "title": "[Bounty $1500] ttnn.exp2: fp32 path returns NaN / finite garbage instead of +inf for x >= 128 (missing overflow guard)",
+      "url": "https://github.com/tenstorrent/tt-metal/issues/54054",
+      "repositoryApiUrl": "https://api.github.com/repos/tenstorrent/tt-metal",
+      "rewardUsd": 1500,
+      "score": 46,
+      "labels": [
+        "community"
+      ],
+      "commentCount": 1,
+      "updatedAt": "2026-08-22T19:36:28Z",
+      "summary": "## Summary `ttnn.exp2`'s fp32-accurate kernel (`_sfpu_exp2_fp32_accurate_`, selected when `is_fp32_dest_acc_en == true`) reconstructs `2^x = 2^round(x) * 2^f` by evaluating a minimax polynomial `r = 2^f` (`f = x - round(x)`) and then rebuilding the exponent with `setexp(r, e)`, `e = biased_exp(r) + round(x)`. The exponent path has an **underflow** guard (`e < 1 -> 0`) but **no overflow guard**. For `x >= 128` the true result overflows fp32 and should be `+inf`. Instead `e` reaches `>= 255` and the *unconditional* `setexp(r, e)` writes an out-of-range exponent field: * `x` in `[128, 128.5)` -> `e == 255` with a nonzero mantissa -> **NaN** * `x >= 128.5` -> `e >= 256`, `setexp` keeps only the low 8 bits -> **wrapped finite garbage** The kernel even **precomputes the correct overflow result** one line earlier (`y *= std::numeric_limits<float>::infinity();`, i.e. `y = r * inf = +inf`) and then throws it away by overwriting `y` with the `setexp` result. The overflow half of the reconstruction is simply missing. `exp2(x)` for `x >= 128` is unambiguously `+inf` (2^128 > FLT_MAX), so this is never a representable-range question — the correct answer exists (`+inf`), is cheap, and is already",
+      "state": "candidate",
+      "payoutConfidence": 0.15,
+      "autonomyFit": 0.45,
+      "requiresHumanGate": true,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 8,
+      "complexity": 4,
+      "fundedBountySignal": false,
+      "fastCashScore": 53,
+      "survivalEligible": false,
+      "eligibilityReason": "Too slow for bootstrap mode: first real cash currently requires a <=4 hour task.",
+      "competition": {
+        "comments": 1,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 1500,
+      "requiresPreclaimOrIdentity": false
     }
   ],
   "selected": null,
@@ -222,7 +189,7 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:2940525692\",\"rewardUsd\":10,\"fastCashScore\":60,\"updatedAt\":\"2026-08-18T21:51:22Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-18T21:51:29Z\",\"competition\":{\"comments\":29,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":125,\"updatedAt\":\"2026-08-22T16:37:56Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5005925746\",\"rewardUsd\":4265,\"fastCashScore\":108,\"updatedAt\":\"2026-08-22T18:49:25Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5183229703\",\"rewardUsd\":120,\"fastCashScore\":108,\"updatedAt\":\"2026-08-22T14:54:31Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5221022224\",\"rewardUsd\":2025,\"fastCashScore\":109,\"updatedAt\":\"2026-08-22T18:59:22Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5222232071\",\"rewardUsd\":50,\"fastCashScore\":115,\"updatedAt\":\"2026-08-22T18:56:42Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5222233394\",\"rewardUsd\":35,\"fastCashScore\":114,\"updatedAt\":\"2026-08-22T18:56:37Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5222233495\",\"rewardUsd\":40,\"fastCashScore\":112,\"updatedAt\":\"2026-08-22T18:56:39Z\",\"competition\":{\"comments\":4,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:2940525692\",\"rewardUsd\":10,\"fastCashScore\":60,\"updatedAt\":\"2026-08-18T21:51:22Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-18T21:51:29Z\",\"competition\":{\"comments\":29,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":125,\"updatedAt\":\"2026-08-22T16:37:56Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5183229703\",\"rewardUsd\":120,\"fastCashScore\":108,\"updatedAt\":\"2026-08-22T14:54:31Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5223597392\",\"rewardUsd\":1500,\"fastCashScore\":53,\"updatedAt\":\"2026-08-22T19:36:28Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
@@ -234,11 +201,29 @@
     "maxHours": 4,
     "minPayoutConfidence": 0.8,
     "competitionRequired": "low",
-    "rejectedFakeRevenueCount": 3,
+    "rejectedFakeRevenueCount": 0,
     "rejectedAlreadyPaidCount": 2,
-    "rejectedIdentityGateCount": 3
+    "rejectedIdentityGateCount": 0
   },
   "economicallyRejected": [
+    {
+      "id": "github:3055155077",
+      "title": "Switch to `ky` from `redaxios`",
+      "rewardUsd": 12,
+      "reasons": [
+        "already_rewarded_or_paid"
+      ],
+      "rejectedAt": "2026-08-22T19:39:17.762Z"
+    },
+    {
+      "id": "github:2940525692",
+      "title": "Create download endpoint `/files/download?...` as well as `/files/download/[[file_path]]`",
+      "rewardUsd": 10,
+      "reasons": [
+        "already_rewarded_or_paid"
+      ],
+      "rejectedAt": "2026-08-22T19:39:17.763Z"
+    },
     {
       "id": "github:5222232071",
       "title": "[Bug] Login.tsx uploads to hardcoded https://example.com",
@@ -266,24 +251,6 @@
       "reasons": [
         "testnet_or_test_token_reward",
         "preclaim_or_identity_gate_not_configured"
-      ],
-      "rejectedAt": "2026-08-22T19:11:45.080Z"
-    },
-    {
-      "id": "github:3055155077",
-      "title": "Switch to `ky` from `redaxios`",
-      "rewardUsd": 12,
-      "reasons": [
-        "already_rewarded_or_paid"
-      ],
-      "rejectedAt": "2026-08-22T19:11:45.080Z"
-    },
-    {
-      "id": "github:2940525692",
-      "title": "Create download endpoint `/files/download?...` as well as `/files/download/[[file_path]]`",
-      "rewardUsd": 10,
-      "reasons": [
-        "already_rewarded_or_paid"
       ],
       "rejectedAt": "2026-08-22T19:11:45.080Z"
     },
