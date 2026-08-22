@@ -1,0 +1,47 @@
+name: Autonomous AI Worker
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/autonomous-ai-worker.yml'
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: autonomous-ai-worker
+  cancel-in-progress: false
+
+jobs:
+  prepare-work:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout autonomous state branch
+        uses: actions/checkout@v4
+        with:
+          ref: autonomous-ai-state
+          fetch-depth: 0
+
+      - name: Prepare selected paid work in isolation
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: node autonomous-ai/prepare-work.mjs
+
+      - name: Persist autonomous work product
+        run: |
+          git config user.name "autonomous-ai[bot]"
+          git config user.email "autonomous-ai[bot]@users.noreply.github.com"
+          git add autonomous-ai/jobs.json autonomous-ai/work || true
+          if git diff --cached --quiet; then
+            echo "No new work product"
+            exit 0
+          fi
+          git commit -m "autonomous-ai: prepare selected work $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          git push origin HEAD:autonomous-ai-state
+
+# worker revision: isolated-patch-v1
