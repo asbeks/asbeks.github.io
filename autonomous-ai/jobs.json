@@ -1,148 +1,43 @@
 {
-  "version": 8,
-  "updatedAt": "2026-08-22T15:33:23.676Z",
-  "status": "selector_degraded",
+  "version": 10,
+  "updatedAt": "2026-08-22T15:45:45.635Z",
+  "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
     {
-      "id": "github:5222233495",
+      "id": "github:5043526418",
       "source": "github",
-      "title": "[Bug] Double-submit race: rapid clicks fire duplicate POSTs before isUploading flushes",
-      "url": "https://github.com/Hazyshades/Sendly-Test-Repo/issues/90",
-      "repositoryApiUrl": "https://api.github.com/repos/Hazyshades/Sendly-Test-Repo",
-      "rewardUsd": 40,
-      "score": 58,
+      "title": "[Singapore] MyZubster adoption in Singapore",
+      "url": "https://github.com/MyZubster-Ecosystem/MyZubster-Robot/issues/31",
+      "repositoryApiUrl": "https://api.github.com/repos/MyZubster-Ecosystem/MyZubster-Robot",
+      "rewardUsd": 2500,
+      "score": 42,
       "labels": [
-        "bug",
-        "bounty",
-        "bounty:1",
-        "arc-testnet",
-        "reward-usdc"
+        "regulatory",
+        "country-singapore",
+        "expansion"
       ],
-      "commentCount": 2,
-      "updatedAt": "2026-08-22T15:14:39Z",
-      "summary": "I will pay for a fixed file - details below. ## Bug The guard `disabled={!file || isUploading}` relies on async state flush. Two synchronous activations - fast double-click, Enter+click, assistive-tech activation - dispatch two `handleUpload` invocations while `isUploading` is still `false`, producing duplicate multipart POSTs and racing success/error states. **Repro:** double-click Upload quickly in `Login.tsx`; observe two requests in the network tab. ## Acceptance criteria - [ ] A synchronous ref-based in-flight guard prevents re-entry regardless of state timing - [ ] Applies to Login.tsx, upload_file.tsx and FileUpload.tsx (or their shared core) - [ ] Regression test asserts handler non-reentrancy ## Reward I will pay **40 USDC (test tokens)** on **ARC Testnet** for a merged fix — same flow as #53, but payout is test USDC on ARC, not Base. How to claim: 1. Comment `/attempt` with this issue number before you start. 2. Open a PR referencing this issue (`Fixes #<this issue>`). 3. After the PR is reviewed and merged, comment your **ARC testnet EVM address** here — you receive 40 test USDC on ARC.",
+      "commentCount": 0,
+      "updatedAt": "2026-08-22T15:40:07Z",
+      "summary": "**Goal:** Expand MyZubster to Singapore **Why Singapore:** RWA hub, progressive regulations, financial center ## Tasks - [ ] Research MAS regulations for RWA - [ ] Connect with local financial institutions - [ ] Identify key events (e.g., Singapore FinTech Festival) - [ ] Adapt model for real estate tokenization ## Expected outcome Proof of concept / readiness package for Singapore RWA, subject to the legal/compliance gates in the canonical MyZubster roadmap. ## Reward — MYZ internal accounting - **Reward:** 2,500 MYZ - **Reward type:** internal MyZubster reward/accounting credit - **Funding state:** PROPOSED / internal accounting only - **Legacy XMR reference:** the previous `0.12 XMR` amount is not treated as funded or guaranteed settlement because no verified XMR treasury reservation was linked. **Important:** `2,500 MYZ` is a project-defined bounty amount, **not a conversion rate from 0.12 XMR**. MyZubster currently has no approved XMR↔MYZ exchange rate, and the canonical bounty rules prohibit silent conversion between assets. ## Workflow `OPEN -> CLAIMED -> SUBMITTED -> UNDER_REVIEW -> VERIFIED/REJECTED -> MYZ_RECORDED` `MYZ_RECORDED` means an append-only internal ledger credi",
       "state": "candidate",
-      "payoutConfidence": 0.7,
+      "payoutConfidence": 0.35,
       "autonomyFit": 1,
       "requiresHumanGate": false,
       "requiresSpecialHardware": false,
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 115,
-      "survivalEligible": true,
-      "eligibilityReason": "Fast-cash candidate: bounded, low-friction, no special hardware or human claim gate detected.",
-      "competition": {
-        "comments": 2,
-        "attemptSignals": 0,
-        "risk": "low"
-      }
-    },
-    {
-      "id": "github:5222232235",
-      "source": "github",
-      "title": "[Bug] upload_file.tsx is a drifted copy of Login.tsx with its own hardcoded endpoint",
-      "url": "https://github.com/Hazyshades/Sendly-Test-Repo/issues/79",
-      "repositoryApiUrl": "https://api.github.com/repos/Hazyshades/Sendly-Test-Repo",
-      "rewardUsd": 30,
-      "score": 58,
-      "labels": [
-        "bug",
-        "bounty",
-        "bounty:1",
-        "arc-testnet",
-        "reward-usdc"
-      ],
-      "commentCount": 1,
-      "updatedAt": "2026-08-22T15:26:53Z",
-      "summary": "I will pay for a fixed file - details below. ## Bug [`upload_file.tsx`](https://github.com/Hazyshades/Sendly-Test-Repo/blob/main/upload_file.tsx) duplicates `Login.tsx` almost line-for-line (same `IncorrectUpload` export name!) with only cosmetic drift: single quotes, different error copy `'File upload failed'`, red error styling. Both POST to hardcoded endpoints. This drift is exactly the class of regression fixed in #53: fixes applied to one copy never reach the other. ## Acceptance criteria - [ ] Either delete `upload_file.tsx` and re-point `upload_file.test.js` at `Login.tsx`, or make it re-export the shared implementation - [ ] No hardcoded endpoint remains in either file - [ ] `upload_file.test.js` passes against the consolidated source ## Reward I will pay **30 USDC (test tokens)** on **ARC Testnet** for a merged fix — same flow as #53, but payout is test USDC on ARC, not Base. How to claim: 1. Comment `/attempt` with this issue number before you start. 2. Open a PR referencing this issue (`Fixes #<this issue>`). 3. After the PR is reviewed and merged, comment your **ARC testnet EVM address** here — you receive 30 test USDC on ARC.",
-      "state": "candidate",
-      "payoutConfidence": 0.7,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 115,
-      "survivalEligible": true,
-      "eligibilityReason": "Fast-cash candidate: bounded, low-friction, no special hardware or human claim gate detected.",
-      "competition": {
-        "comments": 1,
-        "attemptSignals": 0,
-        "risk": "low"
-      }
-    },
-    {
-      "id": "github:4462160604",
-      "source": "github",
-      "title": "[bounty $400] Implement ABNF-compliant email address parser with full §3.2–§4.4 coverage",
-      "url": "https://github.com/UnsafeLabs/RFC-5322/issues/1",
-      "repositoryApiUrl": "https://api.github.com/repos/UnsafeLabs/RFC-5322",
-      "rewardUsd": 400,
-      "score": 72,
-      "labels": [
-        "good first issue",
-        "help wanted",
-        "💎 Bounty",
-        "$400"
-      ],
-      "commentCount": 18,
-      "updatedAt": "2026-08-20T01:22:04Z",
-      "summary": "`source.md` contains the complete RFC 5322 specification (Internet Message Format). We need a **fully conformant email address parser** in Python that implements the complete ABNF grammar from sections 3.2 through 3.4, plus obsolete syntax from §4.4. This parser must handle every edge case defined in the RFC — not just simple `user@domain` patterns, but the full complexity of quoted strings, comments, folding whitespace, group addresses, and domain literals. ## Background RFC 5322 defines email address syntax through a chain of ABNF productions that build on each other: ``` address = mailbox / group mailbox = name-addr / addr-spec name-addr = [display-name] angle-addr angle-addr = [CFWS] \"<\" addr-spec \">\" [CFWS] addr-spec = local-part \"@\" domain local-part = dot-atom / quoted-string / obs-local-part domain = dot-atom / domain-literal / obs-domain ``` Each of these references further productions (CFWS, FWS, quoted-pair, dtext, etc.) that span multiple sections. **You must read `source.md` completely** to trace the full grammar dependency chain. ## Requirements ### 1. Parser Implementation — `parser.py` ```python class RFC5322Address: \"\"\"Parsed RFC 5322 email address.\"\"\" display_name",
-      "state": "candidate",
-      "payoutConfidence": 0.92,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": true,
       "fastCashScore": 111,
-      "survivalEligible": true,
-      "eligibilityReason": "Fast-cash candidate: bounded, low-friction, no special hardware or human claim gate detected.",
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is not strong enough.",
       "competition": {
-        "comments": 18,
-        "attemptSignals": 2,
-        "risk": "high"
-      }
-    },
-    {
-      "id": "github:5222233738",
-      "source": "github",
-      "title": "[Bug] maxSizeMB prop silently accepted as NaN / 0 / negative",
-      "url": "https://github.com/Hazyshades/Sendly-Test-Repo/issues/92",
-      "repositoryApiUrl": "https://api.github.com/repos/Hazyshades/Sendly-Test-Repo",
-      "rewardUsd": 10,
-      "score": 48,
-      "labels": [
-        "bug",
-        "good first issue",
-        "bounty",
-        "bounty:1",
-        "arc-testnet",
-        "reward-usdc"
-      ],
-      "commentCount": 1,
-      "updatedAt": "2026-08-22T15:14:18Z",
-      "summary": "I will pay for a fixed file - details below. ## Bug In [`components/FileUpload.tsx`](https://github.com/Hazyshades/Sendly-Test-Repo/blob/main/components/FileUpload.tsx) `maxSizeMB = 5` is trusted blindly. `maxSizeMB={NaN}` makes every comparison false (all files pass); `{0}` or negative rejects everything with nonsense copy like `exceeds 0MB limit`. Add a dev-time guard: validate/coerce the prop, fall back to default with a `console.warn` in development builds. ## Acceptance criteria - [ ] Invalid `maxSizeMB` values cannot produce all-pass or all-fail validation - [ ] Dev warning names the bad value and the fallback used - [ ] Production behavior stays silent and safe ## Reward I will pay **10 USDC (test tokens)** on **ARC Testnet** for a merged fix — same flow as #53, but payout is test USDC on ARC, not Base. How to claim: 1. Comment `/attempt` with this issue number before you start. 2. Open a PR referencing this issue (`Fixes #<this issue>`). 3. After the PR is reviewed and merged, comment your **ARC testnet EVM address** here — you receive 10 test USDC on ARC.",
-      "state": "candidate",
-      "payoutConfidence": 0.7,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 109,
-      "survivalEligible": true,
-      "eligibilityReason": "Fast-cash candidate: bounded, low-friction, no special hardware or human claim gate detected.",
-      "competition": {
-        "comments": 1,
+        "comments": 0,
         "attemptSignals": 0,
         "risk": "low"
-      }
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 2500
     },
     {
       "id": "github:5183229703",
@@ -161,17 +56,19 @@
       "autonomyFit": 1,
       "requiresHumanGate": false,
       "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
+      "estimatedHoursBand": 12,
       "complexity": 0,
       "fundedBountySignal": false,
       "fastCashScore": 108,
       "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is not strong enough.",
+      "eligibilityReason": "Likely too slow for first-revenue survival mode after deliverable-based difficulty correction.",
       "competition": {
         "comments": 0,
         "attemptSignals": 0,
         "risk": "low"
-      }
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 120
     },
     {
       "id": "github:5221215898",
@@ -183,37 +80,45 @@
       "score": 40,
       "labels": [],
       "commentCount": 3,
-      "updatedAt": "2026-08-22T15:20:51Z",
+      "updatedAt": "2026-08-22T15:44:34Z",
       "summary": "## Context PR #269 / Issue #268 corrected the Product lifecycle and is merged. Current Product truth remains: - Food Profile = persistent one-time / explicit-edit dietary setup - conversational UI belongs to Food Profile collection - `食旅を見つけ` = repeatable per-trip discovery / diagnosis function - `今回は、どんな食体験をしてみたいですか？` and subsequent session inputs live under `食旅を見つけ` - Result = real deterministic score-free Top 3 (#255) - guided Golden Path remains deterministic (#257) - Story `Why this region?` evidence remains source-backed and scoring-neutral (#265) #268 could not complete a fresh live-Figma comparison because authenticated MCP / Bridge calls hit the Figma Starter-plan tool-call limit. #271 preserved the blind-audit evidence without changing its contents. A separate high-quality implementation has now been identified and should be used as an **implementation-quality reference**: - Netlify reference: `https://mogu-mogu-5525da.netlify.app` This reference is noticeably stronger in motion, transition rhythm, conversational continuity, tap feedback, scroll behavior, and perceived polish. It is **not** a Product/data/safety source of truth and must not override KiKi's approved Figma ",
       "state": "candidate",
       "payoutConfidence": 0.35,
       "autonomyFit": 1,
       "requiresHumanGate": false,
       "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
+      "estimatedHoursBand": 10,
       "complexity": 0,
       "fundedBountySignal": false,
       "fastCashScore": 106,
       "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is not strong enough.",
+      "eligibilityReason": "Likely too slow for first-revenue survival mode after deliverable-based difficulty correction.",
       "competition": {
         "comments": 3,
         "attemptSignals": 0,
         "risk": "low"
-      }
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 400
     },
     {
-      "id": "github:5121445435",
+      "id": "github:5222665153",
       "source": "github",
-      "title": "Legal en-passant position has no urposition preimage",
-      "url": "https://github.com/tromp/ChessPositionRanking/issues/927",
-      "repositoryApiUrl": "https://api.github.com/repos/tromp/ChessPositionRanking",
-      "rewardUsd": 256,
-      "score": 46,
-      "labels": [],
-      "commentCount": 4,
-      "updatedAt": "2026-08-22T14:30:16Z",
-      "summary": "## Summary The legal en-passant position below has no preimage in the urposition ranking at commit [`e6fc7cde775a0586f905ed4fa0387bae47997ffd`](https://github.com/tromp/ChessPositionRanking/commit/e6fc7cde775a0586f905ed4fa0387bae47997ffd). Running `cpr rank` on it fails in `unplaceOpp`. I am filing this as a claim under the README's $256 bounty for a legal but unrankable position. ## Reachability The position is reached by the legal game ```text 1. c4 c5 2. Nf3 a6 3. Nd4 cxd4 4. c5 d5 ``` Its ordinary FEN is ```text rnbqkbnr/1p2pppp/p7/2Pp4/3p4/8/PP1PPPPP/RNBQKB1R w KQkq d6 0 5 ``` In particular, `3...cxd4` captures the white knight, and `4...d5` advances the black pawn two squares, leaving `d6` as a valid en-passant target for the pawn on `c5`. ## Reproduction For `cpr`, the converter's equivalent-urposition choice list has one element, so the final two fields are `0 1`: ```console $ printf '%s\\n' 'rnbqkbnr/1p2pppp/p7/2Pp4/3p4/8/PP1PPPPP/RNBQKB1R w KQkq d6 0 1' | src/cpr rank cpr: Chess/Position/Ranking.hs:(389,5)-(398,39): Non-exhaustive patterns in function unplaceOpp ``` ## Why there is no global preimage All eight pawns remain for each side and exactly one non-pawn has been ca",
+      "title": "[Intake] test issue",
+      "url": "https://github.com/Ikalus1988/MisakaNet/issues/1239",
+      "repositoryApiUrl": "https://api.github.com/repos/Ikalus1988/MisakaNet",
+      "rewardUsd": 100,
+      "score": 40,
+      "labels": [
+        "needs-ac",
+        "needs-human-review",
+        "intake",
+        "mcp-intake",
+        "pending-review"
+      ],
+      "commentCount": 2,
+      "updatedAt": "2026-08-22T15:42:42Z",
+      "summary": "**Kind:** missing_lesson **Source:** test **Dedup:** `60b0effa-572` ## Problem test issue --- _Submitted via remote MCP (test). No account required._ <br/> <hr/> <details><summary>This repo is using Opire - what does it mean? 👇</summary><br/>💵 Everyone can add rewards for this issue commenting <code>/reward 100</code> (replace <code>100</code> with the amount).<br/>🕵️‍♂️ If someone starts working on this issue to earn the rewards, they can comment <code>/try</code> to let everyone know!<br/>🙌 And when they open the PR, they can comment <code>/claim #1239</code> either in the PR description or in a PR's comment.<br/><br/>🪙 Also, everyone can tip any user commenting <code>/tip 20 @Ikalus1988</code> (replace <code>20</code> with the amount, and <code>@Ikalus1988</code> with the user to tip).<br/><br/>📖 If you want to learn more, check out our <a href=\"https://docs.opire.dev\">documentation</a>.</details>",
       "state": "candidate",
       "payoutConfidence": 0.35,
       "autonomyFit": 1,
@@ -222,47 +127,16 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 105,
+      "fastCashScore": 104,
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is not strong enough.",
       "competition": {
-        "comments": 4,
+        "comments": 2,
         "attemptSignals": 0,
         "risk": "low"
-      }
-    },
-    {
-      "id": "github:3055155077",
-      "source": "github",
-      "title": "Switch to `ky` from `redaxios`",
-      "url": "https://github.com/tscircuit/template-api-fake/issues/2",
-      "repositoryApiUrl": "https://api.github.com/repos/tscircuit/template-api-fake",
-      "rewardUsd": 12,
-      "score": 33,
-      "labels": [
-        "💎 Bounty",
-        "$12",
-        "💰 Rewarded"
-      ],
-      "commentCount": 29,
-      "updatedAt": "2026-08-18T21:51:29Z",
-      "summary": "/bounty $12",
-      "state": "candidate",
-      "payoutConfidence": 0.92,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": true,
-      "fastCashScore": 104,
-      "survivalEligible": true,
-      "eligibilityReason": "Fast-cash candidate: bounded, low-friction, no special hardware or human claim gate detected.",
-      "competition": {
-        "comments": 29,
-        "attemptSignals": 0,
-        "risk": "high"
-      }
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 100
     },
     {
       "id": "github:5222620342",
@@ -297,20 +171,26 @@
         "comments": 3,
         "attemptSignals": 0,
         "risk": "low"
-      }
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 100
     },
     {
-      "id": "github:5190850580",
+      "id": "github:2528092662",
       "source": "github",
-      "title": "📣 MyZubster Community Update — Agosto 2026: roadmap, social proof-of-work, global access e stabilizzazione",
-      "url": "https://github.com/MyZubster-Ecosystem/myzubster/issues/529",
-      "repositoryApiUrl": "https://api.github.com/repos/MyZubster-Ecosystem/myzubster",
-      "rewardUsd": 528,
-      "score": 54,
-      "labels": [],
-      "commentCount": 6,
-      "updatedAt": "2026-08-22T15:10:45Z",
-      "summary": "# 📣 MyZubster Community Update — Agosto 2026 Ciao community e grazie a chi sta contribuendo a MyZubster. Questo aggiornamento raccoglie le novità più importanti e le prossime priorità, mantenendo separati in modo trasparente sviluppo, verifica dei bounty, reward interni e settlement esterni. Contributor pubblicamente verificati che abbiamo visto attivi nel repository includono, tra gli altri: @wasim-builds, @laurentketterle-hub e @Cub4nH1. Questo annuncio resta pubblico per raggiungere anche tutti gli altri contributor e watcher secondo le loro impostazioni di notifica GitHub. ## 🚀 Novità principali ### 1. README e integrazione dei bounty nella vita reale È stata aperta la PR #528 per documentare un flusso concreto: `bounty → creazione contenuto → pubblicazione reale → raccolta evidenze → review → reward/accounting` Il modello include screenshot, URL e metriche come proof-of-work e ribadisce che un reward interno MYZ non equivale automaticamente a un pagamento blockchain. ### 2. Social proof-of-work già sperimentato Sono state pubblicate e archiviate evidenze reali di contenuti MyZubster su Instagram e Facebook. È stato inoltre documentato un album Facebook dedicato ai fumetti My",
+      "title": "[The Eye] Kael'Thas doesn't use Nether Vapor",
+      "url": "https://github.com/azerothcore/azerothcore-wotlk/issues/19982",
+      "repositoryApiUrl": "https://api.github.com/repos/azerothcore/azerothcore-wotlk",
+      "rewardUsd": 55,
+      "score": 40,
+      "labels": [
+        "Confirmed",
+        "Instance - Raid - Outland",
+        "70"
+      ],
+      "commentCount": 2,
+      "updatedAt": "2026-08-22T15:42:31Z",
+      "summary": "Bug Triager Notes: Original CC Report: https://github.com/chromiecraft/chromiecraft/issues/6761#issue-2164791519 Video Source: [Youtube](https://www.youtube.com/watch?v=VYQBUYLuU6s) Vido Source 2: [Youtube](https://www.youtube.com/watch?v=1AKe2yevmVg&t) from minute 12:30 I checked all possible sources, and I can confirm that Kael'Thas should use this ability, but I can only confirm that [Nether Vapor](https://www.wowhead.com/tbc/spell=35859/nether-vapor#used-by-npc) decrease max HP by 10% and It can stack. It is not a cast, It is an instant spell. ### What client do you play on? enGB ### Faction Alliance ### Content Phase: Generic ### Current Behaviour Kael'Thas doesn't c̶a̶s̶t̶ (use) Nether Vapor ### Expected Blizzlike Behaviour He should ### Source https://www.wowhead.com/tbc/guide/kaelthas-sunstrider-the-eye-tempest-keep-strategy-burning-crusade-classic ### Steps to reproduce the problem 1. KT P5 ### Extra Notes _No response_ ### AC rev. hash/commit https://github.com/chromiecraft/azerothcore-wotlk/commit/b9c1dc95dd8f150a77673d9f23235b235dd700e4 ### Operating system Ubuntu 20.04 ### Modules - [mod-ah-bot](https://github.com/azerothcore/mod-ah-bot) - [mod-bg-item-reward](https://",
       "state": "candidate",
       "payoutConfidence": 0.35,
       "autonomyFit": 1,
@@ -319,14 +199,52 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 102,
+      "fastCashScore": 101,
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is not strong enough.",
       "competition": {
-        "comments": 6,
+        "comments": 2,
         "attemptSignals": 0,
-        "risk": "medium"
-      }
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 55
+    },
+    {
+      "id": "github:4462160604",
+      "source": "github",
+      "title": "[bounty $400] Implement ABNF-compliant email address parser with full §3.2–§4.4 coverage",
+      "url": "https://github.com/UnsafeLabs/RFC-5322/issues/1",
+      "repositoryApiUrl": "https://api.github.com/repos/UnsafeLabs/RFC-5322",
+      "rewardUsd": 400,
+      "score": 72,
+      "labels": [
+        "good first issue",
+        "help wanted",
+        "💎 Bounty",
+        "$400"
+      ],
+      "commentCount": 18,
+      "updatedAt": "2026-08-20T01:22:04Z",
+      "summary": "`source.md` contains the complete RFC 5322 specification (Internet Message Format). We need a **fully conformant email address parser** in Python that implements the complete ABNF grammar from sections 3.2 through 3.4, plus obsolete syntax from §4.4. This parser must handle every edge case defined in the RFC — not just simple `user@domain` patterns, but the full complexity of quoted strings, comments, folding whitespace, group addresses, and domain literals. ## Background RFC 5322 defines email address syntax through a chain of ABNF productions that build on each other: ``` address = mailbox / group mailbox = name-addr / addr-spec name-addr = [display-name] angle-addr angle-addr = [CFWS] \"<\" addr-spec \">\" [CFWS] addr-spec = local-part \"@\" domain local-part = dot-atom / quoted-string / obs-local-part domain = dot-atom / domain-literal / obs-domain ``` Each of these references further productions (CFWS, FWS, quoted-pair, dtext, etc.) that span multiple sections. **You must read `source.md` completely** to trace the full grammar dependency chain. ## Requirements ### 1. Parser Implementation — `parser.py` ```python class RFC5322Address: \"\"\"Parsed RFC 5322 email address.\"\"\" display_name",
+      "state": "candidate",
+      "payoutConfidence": 0.92,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 16,
+      "complexity": 0,
+      "fundedBountySignal": true,
+      "fastCashScore": 111,
+      "survivalEligible": false,
+      "eligibilityReason": "Likely too slow for first-revenue survival mode after deliverable-based difficulty correction.",
+      "competition": {
+        "comments": 18,
+        "attemptSignals": 2,
+        "risk": "high"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 400
     },
     {
       "id": "github:4563956966",
@@ -352,60 +270,61 @@
       "complexity": 0,
       "fundedBountySignal": true,
       "fastCashScore": 80,
-      "survivalEligible": true,
+      "survivalEligible": false,
       "eligibilityReason": "Fast-cash candidate: bounded, low-friction, no special hardware or human claim gate detected.",
       "competition": {
         "comments": 42,
         "attemptSignals": 4,
         "risk": "high"
-      }
-    },
-    {
-      "id": "github:2940525692",
-      "source": "github",
-      "title": "Create download endpoint `/files/download?...` as well as `/files/download/[[file_path]]`",
-      "url": "https://github.com/tscircuit/file-server/issues/5",
-      "repositoryApiUrl": "https://api.github.com/repos/tscircuit/file-server",
-      "rewardUsd": 10,
-      "score": 33,
-      "labels": [
-        "💎 Bounty",
-        "💰 Rewarded"
-      ],
-      "commentCount": 30,
-      "updatedAt": "2026-08-18T21:51:22Z",
-      "summary": "This will allow easy-to-use download urls /bounty $10",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 60,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is not strong enough.",
-      "competition": {
-        "comments": 30,
-        "attemptSignals": 0,
-        "risk": "high"
-      }
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 50
     }
   ],
   "selected": null,
   "active": null,
   "completed": [],
-  "lastError": "Selector returned invalid JSON.",
+  "lastError": null,
   "selection": null,
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:2940525692\",\"rewardUsd\":10,\"fastCashScore\":60,\"updatedAt\":\"2026-08-18T21:51:22Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-18T21:51:29Z\",\"competition\":{\"comments\":29,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5121445435\",\"rewardUsd\":256,\"fastCashScore\":105,\"updatedAt\":\"2026-08-22T14:30:16Z\",\"competition\":{\"comments\":4,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5183229703\",\"rewardUsd\":120,\"fastCashScore\":108,\"updatedAt\":\"2026-08-22T14:54:31Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5190850580\",\"rewardUsd\":528,\"fastCashScore\":102,\"updatedAt\":\"2026-08-22T15:10:45Z\",\"competition\":{\"comments\":6,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5221215898\",\"rewardUsd\":400,\"fastCashScore\":106,\"updatedAt\":\"2026-08-22T15:20:51Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5222232235\",\"rewardUsd\":30,\"fastCashScore\":115,\"updatedAt\":\"2026-08-22T15:26:53Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5222233495\",\"rewardUsd\":40,\"fastCashScore\":115,\"updatedAt\":\"2026-08-22T15:14:39Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5222233738\",\"rewardUsd\":10,\"fastCashScore\":109,\"updatedAt\":\"2026-08-22T15:14:18Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5222620342\",\"rewardUsd\":100,\"fastCashScore\":103,\"updatedAt\":\"2026-08-22T15:31:34Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:2528092662\",\"rewardUsd\":55,\"fastCashScore\":101,\"updatedAt\":\"2026-08-22T15:42:31Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:2940525692\",\"rewardUsd\":10,\"fastCashScore\":60,\"updatedAt\":\"2026-08-18T21:51:22Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-18T21:51:29Z\",\"competition\":{\"comments\":29,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5043526418\",\"rewardUsd\":2500,\"fastCashScore\":111,\"updatedAt\":\"2026-08-22T15:40:07Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5183229703\",\"rewardUsd\":120,\"fastCashScore\":108,\"updatedAt\":\"2026-08-22T14:54:31Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5221215898\",\"rewardUsd\":400,\"fastCashScore\":106,\"updatedAt\":\"2026-08-22T15:44:34Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5222232993\",\"rewardUsd\":25,\"fastCashScore\":114,\"updatedAt\":\"2026-08-22T15:41:30Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5222620342\",\"rewardUsd\":100,\"fastCashScore\":103,\"updatedAt\":\"2026-08-22T15:31:34Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5222665153\",\"rewardUsd\":100,\"fastCashScore\":104,\"updatedAt\":\"2026-08-22T15:42:42Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": true,
   "needsSelection": false,
   "survival": {
     "mode": true,
-    "eligibleCount": 6,
+    "eligibleCount": 0,
     "fundedSignalCount": 3,
-    "objective": "first_confirmed_cash_fast"
-  }
+    "objective": "first_real_confirmed_cash_fast",
+    "rejectedFakeRevenueCount": 1,
+    "rejectedAlreadyPaidCount": 2
+  },
+  "economicallyRejected": [
+    {
+      "id": "github:5222232993",
+      "title": "[Bug] Login.tsx has no file-size cap (FileUpload caps at 5MB)",
+      "rewardUsd": 25,
+      "reasons": [
+        "testnet_or_test_token_reward"
+      ],
+      "rejectedAt": "2026-08-22T15:45:45.588Z"
+    },
+    {
+      "id": "github:3055155077",
+      "title": "Switch to `ky` from `redaxios`",
+      "rewardUsd": 12,
+      "reasons": [
+        "already_rewarded_or_paid"
+      ],
+      "rejectedAt": "2026-08-22T15:45:45.588Z"
+    },
+    {
+      "id": "github:2940525692",
+      "title": "Create download endpoint `/files/download?...` as well as `/files/download/[[file_path]]`",
+      "rewardUsd": 10,
+      "reasons": [
+        "already_rewarded_or_paid"
+      ],
+      "rejectedAt": "2026-08-22T15:45:45.588Z"
+    }
+  ]
 }
