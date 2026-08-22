@@ -33,7 +33,7 @@ const jobs = await readJson(jobsPath, { completed: [] });
 const economy = await readJson(economyPath, {});
 const selected = jobs.selected || null;
 const revenue = Number(economy?.totals?.revenueUSDT || 0);
-const survivalMode = revenue <= 0 && (jobs.completed || []).length === 0;
+const bootstrapMode = revenue <= 0 && (jobs.completed || []).length === 0;
 
 let allowed = Boolean(selected);
 let reason = selected ? 'selected_job_passes_worker_gate' : 'no_selected_job';
@@ -45,27 +45,30 @@ if (selected) {
   } else if (alreadyPaid(selected)) {
     allowed = false;
     reason = 'already_rewarded_or_paid';
+  } else if (selected.requiresPreclaimOrIdentity) {
+    allowed = false;
+    reason = 'preclaim_or_identity_not_configured';
   } else if (selected.requiresHumanGate) {
     allowed = false;
     reason = 'human_claim_or_identity_gate';
   } else if (selected.requiresSpecialHardware) {
     allowed = false;
     reason = 'special_hardware_required';
-  } else if (Number(selected.payoutConfidence || 0) < 0.55) {
+  } else if (Number(selected.payoutConfidence || 0) < (bootstrapMode ? 0.8 : 0.55)) {
     allowed = false;
     reason = 'payout_not_verified_enough';
-  } else if (Number(selected.autonomyFit || 0) < 0.75) {
+  } else if (Number(selected.autonomyFit || 0) < (bootstrapMode ? 0.85 : 0.75)) {
     allowed = false;
     reason = 'low_autonomy_fit';
-  } else if (['high', 'saturated'].includes(String(selected.competition?.risk || '')) && survivalMode) {
+  } else if (bootstrapMode && String(selected.competition?.risk || '') !== 'low') {
     allowed = false;
     reason = 'competition_too_high_for_first_cash';
-  } else if (survivalMode && Number(selected.estimatedHoursBand || 99) > 8) {
+  } else if (bootstrapMode && Number(selected.estimatedHoursBand || 99) > 4) {
     allowed = false;
     reason = 'too_slow_for_first_cash';
-  } else if (survivalMode && selected.survivalEligible !== true) {
+  } else if (bootstrapMode && selected.survivalEligible !== true) {
     allowed = false;
-    reason = 'not_survival_eligible';
+    reason = 'not_bootstrap_eligible';
   }
 }
 
@@ -73,14 +76,14 @@ if (selected && !allowed) {
   jobs.rejected = [
     { id: selected.id, title: selected.title, reason, rejectedAt: new Date().toISOString() },
     ...(jobs.rejected || []).filter((x) => x.id !== selected.id),
-  ].slice(0, 40);
+  ].slice(0, 50);
   jobs.selected = null;
   jobs.active = null;
   jobs.status = 'idle';
   jobs.selection = {
     ...(jobs.selection || {}),
-    status: 'rejected_by_worker_gate',
-    rationale: `Worker refused job: ${reason}. Continue scouting for faster real cash.`,
+    status: 'rejected_by_bootstrap_gate',
+    rationale: `Worker refused job: ${reason}. Continue scouting for simple real cash.`,
   };
   jobs.needsSelection = false;
   jobs.updatedAt = new Date().toISOString();
@@ -89,6 +92,6 @@ if (selected && !allowed) {
 
 await emit({
   run: allowed ? 'true' : 'false',
-  mode: survivalMode ? 'survival' : 'growth',
+  mode: bootstrapMode ? 'bootstrap' : 'growth',
   reason,
 });
