@@ -1,0 +1,39 @@
+name: Autonomous AI Public State
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: autonomous-ai-public-state
+  cancel-in-progress: false
+
+jobs:
+  cycle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - name: Checkout public state branch
+        uses: actions/checkout@v4
+        with:
+          ref: autonomous-ai-state
+          fetch-depth: 0
+
+      - name: Run one autonomous cycle
+        run: node autonomous-ai/cycle.mjs
+
+      - name: Persist state
+        run: |
+          git config user.name "autonomous-ai[bot]"
+          git config user.email "autonomous-ai[bot]@users.noreply.github.com"
+          git add autonomous-ai/state.json
+          if git diff --cached --quiet; then
+            echo "No state change"
+            exit 0
+          fi
+          git commit -m "autonomous-ai: public cycle $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          git push origin HEAD:autonomous-ai-state
