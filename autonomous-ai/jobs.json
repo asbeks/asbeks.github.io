@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-08-22T18:45:20.727Z",
+  "updatedAt": "2026-08-22T19:11:45.136Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -41,40 +41,6 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5223345997",
-      "source": "github",
-      "title": "Split the crime ledger into violent and non-violent bounty",
-      "url": "https://github.com/jjgroenendijk/opensky/issues/563",
-      "repositoryApiUrl": "https://api.github.com/repos/jjgroenendijk/opensky",
-      "rewardUsd": 504,
-      "score": 46,
-      "labels": [
-        "roadmap"
-      ],
-      "commentCount": 0,
-      "updatedAt": "2026-08-22T18:30:57Z",
-      "summary": "`CrimeLedgerState` (issue #504) holds one bounty per crime faction. The Creation Kit surface splits it in two, and three declared entry points are unimplemented because of it: - Condition functions `GetCrimeGoldViolent` (stored index 375) and `GetCrimeGoldNonviolent` (376), both `ptFactionNull`, from xEdit dev-4.1.6 `Core/wbDefinitionsTES5.pas`. - Papyrus `Faction.GetCrimeGoldViolent`, `Faction.GetCrimeGoldNonViolent` and `Faction.SetCrimeGoldViolent`. - `Faction.ModCrimeGold(int aiAmount, bool abViolent = False)` currently accepts and ignores its `abViolent` flag, and `Faction.SetCrimeGold`'s documented \"non-violent crime gold\" sets the single total. None was installed over the combined total, because answering a violent-only question with the non-violent bounty included is a convincing wrong number rather than a measurable gap — see the v1 limitations in `docs/engine/crime.md`. ## What this needs 1. Which crimes count as violent. Confirm against a source rather than assuming assault and murder; the Creation Kit `SetCrimeGoldViolent` and `ModCrimeGold` pages are the place to start. 2. Two gold fields per `CrimeLedgerEntry` instead of one, with `CrimeGoldTable` routing each `CrimeK",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 118,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 0,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 504,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
       "id": "github:4462160604",
       "source": "github",
       "title": "[bounty $400] Implement ABNF-compliant email address parser with full §3.2–§4.4 coverage",
@@ -112,6 +78,73 @@
       "requiresPreclaimOrIdentity": false
     },
     {
+      "id": "github:5221022224",
+      "source": "github",
+      "title": "Register the remaining live Blend V2 markets",
+      "url": "https://github.com/stenion-lab/stenion/issues/65",
+      "repositoryApiUrl": "https://api.github.com/repos/stenion-lab/stenion",
+      "rewardUsd": 2025,
+      "score": 48,
+      "labels": [
+        "enhancement",
+        "adapter"
+      ],
+      "commentCount": 1,
+      "updatedAt": "2026-08-22T18:59:22Z",
+      "summary": "### Context Stenion scores two Blend V2 markets — `blend` (Fixed, `CAJJZSGM…`) and `yieldblox` (`CCCCIQSD…`). Those are not the only ones live. Enumerating the `deploy` events of Blend's V2 pool factory (`CDSYOAVXFY7SM5S64IZPPPYB4GVGGLMQVFREPSQQEZVIWXX5R23G4QSU`) returns **11 pool deployments**, every one running the same pool wasm (`a41fc53d…`) that `BlendAdapter` already reads, and every one answering `is_pool` with `true`: | Deployed | Pool | on-chain `Name` | In backstop reward zone | | --- | --- | --- | --- | | 2025-04-14 | `CAJJZSGM…` | Fixed | yes — **scored** (`blend`) | | 2025-04-15 | `CBNR7PYF…` | YieldBlox | no | | 2025-04-17 | `CCCCIQSD…` | YieldBlox | yes — **scored** (`yieldblox`) | | 2025-05-01 | `CB4OFHAY…` | Orbit | no | | 2025-05-01 | `CAE7QVOM…` | Orbit | yes | | 2025-07-14 | `CBYOBT7Z…` | Forex | yes | | 2025-11-21 | `CALRF5I2…` | Etherfuse | no | | 2025-11-24 | `CADR6Q2U…` | Etherfuse | no | | 2025-11-24 | `CDMAVJPF…` | Etherfuse | yes | | 2026-06-10 | `CDZVHCO7…` | Spectra PTs | **no** | | 2026-07-28 | `CC4HHXPK…` | Solv | yes | Per the multi-pool targeting shipped in #12, each of these is a `BLEND_POOLS` config entry and **no new scoring code** — same wasm, s",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 109,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 1,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 2025,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5005925746",
+      "source": "github",
+      "title": "[Zero Income Engine] Mission Control",
+      "url": "https://github.com/YS-OH-CORE/ai-observer-notes/issues/9",
+      "repositoryApiUrl": "https://api.github.com/repos/YS-OH-CORE/ai-observer-notes",
+      "rewardUsd": 4265,
+      "score": 54,
+      "labels": [],
+      "commentCount": 2,
+      "updatedAt": "2026-08-22T18:49:25Z",
+      "summary": "# Zero Income Engine Mission Control - Updated: 2026-08-22T18:49:22.313Z - Run: 107 - Terminal goal: **verified money** - Status: **MARKET_GAP_RESEARCH** - Mission lock: **RUN_UNTIL_MONEY_OR_EXPLICIT_USER_PAUSE** - Operator-fit lock: **QUIET_REPEATABLE_AI_OPERATED_INCOME** - Public identity lock: **HIDDEN_PROJECT_ALIAS_ONLY_NO_FACE_NO_VOICE_NO_PERSONAL_BRAND** - Money evidence: $0.00 received / $0.00 receivable / 0 paid use(s) ## Primary target ### [Paid tool market: reviews scraper](https://apify.com/store) - Route: product-market - Combined score: 65.4 - Economic score: 45.9 - Operator-fit score: 89.1 - Route role: recurring-income - Human friction: low-after-publish - Identity surface: project alias and product listing; private payout identity only if required - Hidden-compatible: yes - Cash signal: $0.00 - Gate: INSPECT_PAID_PRODUCT_GAPS - Probability class: unknown-until-gap-proof - Next executable action: Inspect the ten most-used paid products for repeated complaints, missing outputs, unreliable runs, and expensive pricing. Build only after one objective gap is evidenced; publish under a project identity and keep support asynchronous and minimal. **Evidence** - 414955 30-day",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 108,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 2,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 4265,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
       "id": "github:5183229703",
       "source": "github",
       "title": "Model fiat currencies and multi-chain token bindings as domain state",
@@ -141,145 +174,6 @@
       },
       "realMoneyEligible": true,
       "economicValueUsd": 120,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5223329360",
-      "source": "github",
-      "title": "[Step 2] Reward-aware quoting: band clamp + per-order floor + min_edge",
-      "url": "https://github.com/anumsrp/polymarket-trading-bot-v2/issues/51",
-      "repositoryApiUrl": "https://api.github.com/repos/anumsrp/polymarket-trading-bot-v2",
-      "rewardUsd": 100,
-      "score": 40,
-      "labels": [],
-      "commentCount": 1,
-      "updatedAt": "2026-08-22T18:38:10Z",
-      "summary": "# [Step 2] Reward-aware quoting: band clamp + per-order floor + min_edge guard **Класс:** A (MONEY NOW). **Score 81/100 — рычаг №2.** Prerequisite: реальная экономика в scanner (см. issue «[Step 1] Scanner economics»). ## Проблема Liquidity Rewards платят **только за ордера в-band (≤ rewardsMaxSpread) и ≥ rewardsMinSize, скоринг ПОР ОРДЕРУ**. Текущий `bot/strategy.py::quotes()` строит δ от vol/tox без оглядки на band; `order_usd=25` не связан с min-size. Итог: даже на правильном рынке мы собираем $0 с программы. ## Эталон (MIT, poly-maker `src/polymaker/strategy/quoting.py`) - L84–87: в QUIET `delta = clamp(delta, base, max(base, reward_band))`, где `reward_band = rewards_max_spread / 100`. - L77: `reward_floor = rewards_min_size × reward_size_mult`. - L163–187 `_add_layers`: консолидация слоёв — «если слой < 0.5×floor → меньше слоёв»; добивание слоя до floor; **флор на тотал бесполезен** (скоринг per order). - L143: `price = min(price, fv − min_edge_ticks × tick)` — никогда не бидим ближе min_edge к FV. - L145–149: join-the-touch (`price >= best_bid → price = best_bid`), never cross. ## Что делать (ADAPT) 1. `bot/config.py`: + `rewards_min_size, rewards_max_spread, reward_size_mul",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 106,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 1,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 100,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5126806271",
-      "source": "github",
-      "title": "[feat] Retrieval-augmented remediation: few-shot self-repair from the journal's outcome-verified fixes",
-      "url": "https://github.com/Agent-Clubhouse/Goobers/issues/2834",
-      "repositoryApiUrl": "https://api.github.com/repos/Agent-Clubhouse/Goobers",
-      "rewardUsd": 2829,
-      "score": 48,
-      "labels": [
-        "enhancement",
-        "goobers:approved",
-        "goobers:ready",
-        "type:feature"
-      ],
-      "commentCount": 4,
-      "updatedAt": "2026-08-22T18:41:18Z",
-      "summary": "## Problem / motivation When the self-healing loop (#2830) sends an agent to patch a blamed node, that agent starts cold — it re-derives a fix from scratch even though the org's journal very likely contains a **past failure of the same shape that was already successfully fixed**. #2411 surfaces the *previous attempt* within the same run, but nothing generalizes *across runs*: \"this failure looks like one we solved three weeks ago in a different workflow — here's what worked.\" The append-only journal is, in effect, a labeled corpus of `(failure context -> remediation -> did-it-help outcome)` triples. That's exactly the corpus retrieval-augmented generation wants. Feeding the k-nearest past failures **and the fixes that actually improved the outcome** to the remediation agent as few-shot context should make patches faster, more consistent, and less likely to repeat a known-bad fix. Novelty note: RAG itself is standard; RAG over *an agent factory's own journaled execution history, keyed to outcome-verified remediations,* to bootstrap self-repair is a distinctive application — the retrieval corpus is the system's own past behavior, and relevance is grounded in whether the retrieved fix",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 105,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 4,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 2829,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5190850580",
-      "source": "github",
-      "title": "📣 MyZubster Community Update — Agosto 2026: roadmap, social proof-of-work, global access e stabilizzazione",
-      "url": "https://github.com/MyZubster-Ecosystem/myzubster/issues/529",
-      "repositoryApiUrl": "https://api.github.com/repos/MyZubster-Ecosystem/myzubster",
-      "rewardUsd": 528,
-      "score": 54,
-      "labels": [],
-      "commentCount": 7,
-      "updatedAt": "2026-08-22T18:33:59Z",
-      "summary": "# 📣 MyZubster Community Update — Agosto 2026 Ciao community e grazie a chi sta contribuendo a MyZubster. Questo aggiornamento raccoglie le novità più importanti e le prossime priorità, mantenendo separati in modo trasparente sviluppo, verifica dei bounty, reward interni e settlement esterni. Contributor pubblicamente verificati che abbiamo visto attivi nel repository includono, tra gli altri: @wasim-builds, @laurentketterle-hub e @Cub4nH1. Questo annuncio resta pubblico per raggiungere anche tutti gli altri contributor e watcher secondo le loro impostazioni di notifica GitHub. ## 🚀 Novità principali ### 1. README e integrazione dei bounty nella vita reale È stata aperta la PR #528 per documentare un flusso concreto: `bounty → creazione contenuto → pubblicazione reale → raccolta evidenze → review → reward/accounting` Il modello include screenshot, URL e metriche come proof-of-work e ribadisce che un reward interno MYZ non equivale automaticamente a un pagamento blockchain. ### 2. Social proof-of-work già sperimentato Sono state pubblicate e archiviate evidenze reali di contenuti MyZubster su Instagram e Facebook. È stato inoltre documentato un album Facebook dedicato ai fumetti My",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 100,
-      "survivalEligible": false,
-      "eligibilityReason": "Competition is too high for bootstrap mode.",
-      "competition": {
-        "comments": 7,
-        "attemptSignals": 0,
-        "risk": "medium"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 528,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5223336067",
-      "source": "github",
-      "title": "Add last-hit gold, XP, levels, respawn timers and the lane HUD",
-      "url": "https://github.com/wildware-uk/Udea/issues/131",
-      "repositoryApiUrl": "https://api.github.com/repos/wildware-uk/Udea",
-      "rewardUsd": 18,
-      "score": 44,
-      "labels": [
-        "type/feature",
-        "area/render",
-        "area/moba",
-        "phase/5",
-        "size/L"
-      ],
-      "commentCount": 0,
-      "updatedAt": "2026-08-22T18:32:19Z",
-      "summary": "## Context Spec section 6, Phase 5 requires gold, XP, levels, last-hitting and respawn timers, and Trello #27 (in-game UI) and #22 (loading screen) are scheduled here. This is the layer that makes the lane a game rather than a fight: killing blows credit gold, nearby kills grant shared XP, levels rank up abilities, and death costs increasing time. The HUD is presentation only — the old `example/src/main/kotlin/dev/wildware/udea/example/system/HealthbarSystem.kt:33` is a Fleks `IteratingSystem` calling `shapeRenderer.use(...)` inside `world.update()`, exactly the simulation/presentation mixing spec section 3.3 abolishes, so every HUD element here is a `RenderSystem` in the presentation module. ## Scope - `Gold`, `Experience` and `ChampionLevel` components; passive gold income per tick and starting gold from config. - `BountySystem`: last-hit credit on the killing blow for creeps and towers, shared XP inside a radius, champion kill bounty and an assist window. - Level curve to 18, ability rank points spendable on level-up, level-scaled `ChampionAttributes` growth. - `RespawnTimer` scaled by level, surfaced as a countdown. - HUD as `RenderSystem`s: world-space health/mana bars, abilit",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 98,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 0,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 18,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -316,41 +210,6 @@
       "realMoneyEligible": true,
       "economicValueUsd": 50,
       "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5222341217",
-      "source": "github",
-      "title": "[Bounty $2500] ttnn.remainder: wrong results (off by whole multiples of the divisor) for |dividend/divisor| ratios beyond ~2^23, on both Wormhole and Blackhole",
-      "url": "https://github.com/tenstorrent/tt-metal/issues/54048",
-      "repositoryApiUrl": "https://api.github.com/repos/tenstorrent/tt-metal",
-      "rewardUsd": 2500,
-      "score": 54,
-      "labels": [
-        "bug",
-        "community"
-      ],
-      "commentCount": 0,
-      "updatedAt": "2026-08-22T18:32:47Z",
-      "summary": "## Summary `ttnn.remainder`'s scalar/unary fp32 path computes the quotient via a float multiply-by-reciprocal, corrects it by at most `1`, and stops. Once the true quotient's magnitude exceeds roughly `2^23` (~8.4 million) — i.e. the dividend is more than ~8.4 million times the divisor — floating-point rounding in that multiply can leave the quotient estimate off by more than the single correction can fix, and the kernel returns a result that is wrong by a whole integer multiple of the divisor: ``` ttnn.remainder(x=1.42606e7, 3.0) -> 1.0 (kernel) correct value -> 2.0 ``` ``` ttnn.remainder(x=5.70425e7, 3.0) -> -1.0 (kernel) correct value -> 2.0 ``` This is confirmed identical on **both Wormhole and Blackhole** (`ckernel_sfpu_remainder.h` is byte-for-byte the same algorithm on both architectures — the two files differ only in cosmetic `sfpi::` qualification, not logic). ## Root cause ```cpp // L162-164: sfpi::vFloat value_tmp = vConstFloatPrgm0; // divisor, host-precomputed sfpi::vFloat s = sfpi::abs(value_tmp); sfpi::vFloat recip_val = sfpi::abs(vConstFloatPrgm1); // host-precomputed 1/divisor ``` The quotient is estimated as `v * recip_val` (`v` = `abs(dividend)`), with fractional",
-      "state": "candidate",
-      "payoutConfidence": 0.15,
-      "autonomyFit": 0,
-      "requiresHumanGate": true,
-      "requiresSpecialHardware": true,
-      "estimatedHoursBand": 30,
-      "complexity": 7,
-      "fundedBountySignal": false,
-      "fastCashScore": -11,
-      "survivalEligible": false,
-      "eligibilityReason": "Too slow for bootstrap mode: first real cash currently requires a <=4 hour task.",
-      "competition": {
-        "comments": 0,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 2500,
-      "requiresPreclaimOrIdentity": false
     }
   ],
   "selected": null,
@@ -363,7 +222,7 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:2940525692\",\"rewardUsd\":10,\"fastCashScore\":60,\"updatedAt\":\"2026-08-18T21:51:22Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-18T21:51:29Z\",\"competition\":{\"comments\":29,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":125,\"updatedAt\":\"2026-08-22T16:37:56Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5126806271\",\"rewardUsd\":2829,\"fastCashScore\":105,\"updatedAt\":\"2026-08-22T18:41:18Z\",\"competition\":{\"comments\":4,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5183229703\",\"rewardUsd\":120,\"fastCashScore\":108,\"updatedAt\":\"2026-08-22T14:54:31Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5190850580\",\"rewardUsd\":528,\"fastCashScore\":100,\"updatedAt\":\"2026-08-22T18:33:59Z\",\"competition\":{\"comments\":7,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5222341217\",\"rewardUsd\":2500,\"fastCashScore\":-11,\"updatedAt\":\"2026-08-22T18:32:47Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5223329360\",\"rewardUsd\":100,\"fastCashScore\":106,\"updatedAt\":\"2026-08-22T18:38:10Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5223336067\",\"rewardUsd\":18,\"fastCashScore\":98,\"updatedAt\":\"2026-08-22T18:32:19Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5223345997\",\"rewardUsd\":504,\"fastCashScore\":118,\"updatedAt\":\"2026-08-22T18:30:57Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:2940525692\",\"rewardUsd\":10,\"fastCashScore\":60,\"updatedAt\":\"2026-08-18T21:51:22Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-18T21:51:29Z\",\"competition\":{\"comments\":29,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":125,\"updatedAt\":\"2026-08-22T16:37:56Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5005925746\",\"rewardUsd\":4265,\"fastCashScore\":108,\"updatedAt\":\"2026-08-22T18:49:25Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5183229703\",\"rewardUsd\":120,\"fastCashScore\":108,\"updatedAt\":\"2026-08-22T14:54:31Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5221022224\",\"rewardUsd\":2025,\"fastCashScore\":109,\"updatedAt\":\"2026-08-22T18:59:22Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5222232071\",\"rewardUsd\":50,\"fastCashScore\":115,\"updatedAt\":\"2026-08-22T18:56:42Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5222233394\",\"rewardUsd\":35,\"fastCashScore\":114,\"updatedAt\":\"2026-08-22T18:56:37Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5222233495\",\"rewardUsd\":40,\"fastCashScore\":112,\"updatedAt\":\"2026-08-22T18:56:39Z\",\"competition\":{\"comments\":4,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
@@ -375,11 +234,41 @@
     "maxHours": 4,
     "minPayoutConfidence": 0.8,
     "competitionRequired": "low",
-    "rejectedFakeRevenueCount": 0,
+    "rejectedFakeRevenueCount": 3,
     "rejectedAlreadyPaidCount": 2,
-    "rejectedIdentityGateCount": 0
+    "rejectedIdentityGateCount": 3
   },
   "economicallyRejected": [
+    {
+      "id": "github:5222232071",
+      "title": "[Bug] Login.tsx uploads to hardcoded https://example.com",
+      "rewardUsd": 50,
+      "reasons": [
+        "testnet_or_test_token_reward",
+        "preclaim_or_identity_gate_not_configured"
+      ],
+      "rejectedAt": "2026-08-22T19:11:45.079Z"
+    },
+    {
+      "id": "github:5222233394",
+      "title": "[Bug] No AbortController — unmount mid-upload leaves requests running and setState-after-unmount",
+      "rewardUsd": 35,
+      "reasons": [
+        "testnet_or_test_token_reward",
+        "preclaim_or_identity_gate_not_configured"
+      ],
+      "rejectedAt": "2026-08-22T19:11:45.080Z"
+    },
+    {
+      "id": "github:5222233495",
+      "title": "[Bug] Double-submit race: rapid clicks fire duplicate POSTs before isUploading flushes",
+      "rewardUsd": 40,
+      "reasons": [
+        "testnet_or_test_token_reward",
+        "preclaim_or_identity_gate_not_configured"
+      ],
+      "rejectedAt": "2026-08-22T19:11:45.080Z"
+    },
     {
       "id": "github:3055155077",
       "title": "Switch to `ky` from `redaxios`",
@@ -387,7 +276,7 @@
       "reasons": [
         "already_rewarded_or_paid"
       ],
-      "rejectedAt": "2026-08-22T18:45:20.664Z"
+      "rejectedAt": "2026-08-22T19:11:45.080Z"
     },
     {
       "id": "github:2940525692",
@@ -396,7 +285,7 @@
       "reasons": [
         "already_rewarded_or_paid"
       ],
-      "rejectedAt": "2026-08-22T18:45:20.664Z"
+      "rejectedAt": "2026-08-22T19:11:45.080Z"
     },
     {
       "id": "github:5190340966",
@@ -475,16 +364,6 @@
         "preclaim_or_identity_gate_not_configured"
       ],
       "rejectedAt": "2026-08-22T16:53:31.465Z"
-    },
-    {
-      "id": "github:5222233394",
-      "title": "[Bug] No AbortController — unmount mid-upload leaves requests running and setState-after-unmount",
-      "rewardUsd": 35,
-      "reasons": [
-        "testnet_or_test_token_reward",
-        "preclaim_or_identity_gate_not_configured"
-      ],
-      "rejectedAt": "2026-08-22T16:27:26.619Z"
     },
     {
       "id": "github:5222233094",
