@@ -39,15 +39,7 @@ jobs:
       - name: Reject fake, testnet, paid-out and slow survival work
         run: node autonomous-ai/cash-filter.mjs
 
-      - name: Decide whether market selection needs AI
-        id: pre_gate
-        run: node autonomous-ai/decision-gate.mjs pre
-
-      - name: Select best viable job autonomously
-        if: steps.pre_gate.outputs.select == 'true'
-        run: node autonomous-ai/select-job.mjs
-
-      - name: Guarantee a valid selection without depending on LLM JSON
+      - name: Select by real expected cash without spending inference
         run: node autonomous-ai/selection-fallback.mjs
 
       - name: Decide whether reasoning needs AI
@@ -73,4 +65,4 @@ jobs:
           git commit -m "autonomous-ai: operating cycle $(date -u +%Y-%m-%dT%H:%M:%SZ)"
           git push origin HEAD:autonomous-ai-state
 
-# runner revision: real-cash-survival-v2
+# runner revision: deterministic-real-cash-v3
