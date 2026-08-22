@@ -23,6 +23,11 @@ function isAlreadyRewarded(x) {
     || labels.some((l) => /^(paid|completed bounty|bounty paid|claimed)$/.test(l.replace(/[^a-z ]/g, '').trim()));
 }
 
+function requiresPreclaimOrIdentity(x) {
+  const s = textOf(x);
+  return /\/attempt\b|\/try\b|comment .*before (?:you )?start|claim .*before|request assignment|must be assigned|assigned before|identity verification|\bkyc\b|sign up|signup|required account|join .*slack|fill out .*form|tax form|legal name/.test(s);
+}
+
 function difficultyFloor(x) {
   const s = textOf(x);
   let floor = Number(x.estimatedHoursBand || 4);
@@ -43,29 +48,36 @@ for (const original of jobs.opportunities || []) {
   const reasons = [];
   const testMoney = isTestMoney(x);
   const rewarded = isAlreadyRewarded(x);
+  const preclaim = requiresPreclaimOrIdentity(x);
   const hours = difficultyFloor(x);
 
   x.estimatedHoursBand = hours;
   x.realMoneyEligible = !testMoney;
   x.economicValueUsd = testMoney ? 0 : Number(x.rewardUsd || 0);
+  x.requiresPreclaimOrIdentity = preclaim;
 
   if (testMoney) reasons.push('testnet_or_test_token_reward');
   if (rewarded) reasons.push('already_rewarded_or_paid');
+  if (preclaim) reasons.push('preclaim_or_identity_gate_not_configured');
   if (!Number.isFinite(Number(x.rewardUsd)) || Number(x.rewardUsd) <= 0) reasons.push('no_positive_reward');
 
   x.survivalEligible = Boolean(
     reasons.length === 0
     && x.realMoneyEligible
-    && Number(x.payoutConfidence || 0) >= 0.55
-    && Number(x.autonomyFit || 0) >= 0.75
+    && Number(x.payoutConfidence || 0) >= 0.8
+    && Number(x.autonomyFit || 0) >= 0.85
     && !x.requiresHumanGate
     && !x.requiresSpecialHardware
-    && hours <= 8
-    && !['high', 'saturated'].includes(String(x.competition?.risk || 'unknown'))
+    && hours <= 4
+    && String(x.competition?.risk || 'unknown') === 'low'
   );
 
-  if (hours > 8 && reasons.length === 0) {
-    x.eligibilityReason = 'Likely too slow for first-revenue survival mode after deliverable-based difficulty correction.';
+  if (hours > 4 && reasons.length === 0) {
+    x.eligibilityReason = 'Too slow for bootstrap mode: first real cash currently requires a <=4 hour task.';
+  } else if (String(x.competition?.risk || 'unknown') !== 'low' && reasons.length === 0) {
+    x.eligibilityReason = 'Competition is too high for bootstrap mode.';
+  } else if (Number(x.payoutConfidence || 0) < 0.8 && reasons.length === 0) {
+    x.eligibilityReason = 'Payout evidence is below the bootstrap confidence threshold.';
   }
 
   if (reasons.length) {
@@ -80,27 +92,29 @@ kept.sort((a, b) => {
   const aEligible = a.survivalEligible ? 1 : 0;
   const bEligible = b.survivalEligible ? 1 : 0;
   if (aEligible !== bEligible) return bEligible - aEligible;
-  const aRisk = a.competition?.risk === 'low' ? 2 : a.competition?.risk === 'medium' ? 1 : 0;
-  const bRisk = b.competition?.risk === 'low' ? 2 : b.competition?.risk === 'medium' ? 1 : 0;
-  if (aRisk !== bRisk) return bRisk - aRisk;
   return Number(b.fastCashScore || 0) - Number(a.fastCashScore || 0);
 });
 
 const eligible = kept.filter((x) => x.survivalEligible);
 
-jobs.version = Math.max(10, Number(jobs.version || 0));
+jobs.version = Math.max(11, Number(jobs.version || 0));
 jobs.opportunities = kept;
 jobs.economicallyRejected = [
   ...rejected,
   ...(jobs.economicallyRejected || []).filter((old) => !rejected.some((r) => r.id === old.id)),
-].slice(0, 60);
+].slice(0, 80);
 jobs.survival = {
   ...(jobs.survival || {}),
   mode: Number(jobs.completed?.length || 0) === 0,
   objective: 'first_real_confirmed_cash_fast',
+  policy: 'bootstrap_basic_v1',
   eligibleCount: eligible.length,
+  maxHours: 4,
+  minPayoutConfidence: 0.8,
+  competitionRequired: 'low',
   rejectedFakeRevenueCount: rejected.filter((x) => x.reasons.includes('testnet_or_test_token_reward')).length,
   rejectedAlreadyPaidCount: rejected.filter((x) => x.reasons.includes('already_rewarded_or_paid')).length,
+  rejectedIdentityGateCount: rejected.filter((x) => x.reasons.includes('preclaim_or_identity_gate_not_configured')).length,
 };
 
 let validSelected = false;
@@ -123,4 +137,4 @@ if (!validSelected) {
 
 jobs.updatedAt = new Date().toISOString();
 await fs.writeFile(JOBS_PATH, JSON.stringify(jobs, null, 2) + '\n');
-console.log(`Cash filter: kept=${kept.length}; survival=${eligible.length}; rejected=${rejected.length}`);
+console.log(`Bootstrap cash filter: kept=${kept.length}; eligible=${eligible.length}; rejected=${rejected.length}`);
