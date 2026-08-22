@@ -1,0 +1,46 @@
+name: Autonomous AI Wallet Provision
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/autonomous-ai-wallet.yml'
+  schedule:
+    - cron: '17 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+concurrency:
+  group: autonomous-ai-wallet-provision
+  cancel-in-progress: false
+
+jobs:
+  provision:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - name: Provision or verify backend treasury wallets
+        shell: bash
+        run: |
+          set -euo pipefail
+          separator='&'
+          if [[ "$ACTIONS_ID_TOKEN_REQUEST_URL" != *'?'* ]]; then separator='?'; fi
+          oidc_json="$(curl -fsS \
+            -H "Authorization: bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" \
+            "${ACTIONS_ID_TOKEN_REQUEST_URL}${separator}audience=autonomous-ai-supabase")"
+          token="$(printf '%s' "$oidc_json" | jq -r '.value')"
+          test -n "$token"
+          test "$token" != "null"
+
+          result="$(curl -fsS -X POST \
+            -H "Authorization: Bearer $token" \
+            -H 'Content-Type: application/json' \
+            -d '{}' \
+            'https://yefvzehrytkzcxvylvhz.supabase.co/functions/v1/autonomous-wallet')"
+
+          printf '%s' "$result" | jq '{ok, created, wallets, secretsExposed}'
+
+# wallet revision: vault-provision-v1
