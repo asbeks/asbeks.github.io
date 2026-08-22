@@ -3,7 +3,8 @@ import path from 'node:path';
 
 const JOBS_PATH = path.join(process.cwd(), 'autonomous-ai/jobs.json');
 const API = 'https://api.github.com/search/issues';
-const MAX_RESULTS = 30;
+const MAX_RESULTS = 24;
+const MIN_REWARD_USD = 10;
 
 function clean(value, max = 500) {
   return String(value || '').replace(/\s+/g, ' ').trim().slice(0, max);
@@ -32,30 +33,37 @@ function isBlocked(text = '') {
     'malware', 'ransomware', 'ddos', 'botnet', 'bypass authentication',
     'weapon', 'fraud', 'fake review', 'spam campaign', 'medical diagnosis',
     'legal advice', 'investment advice', 'casino', 'gambling',
+    'bounty alert', 'opportunity radar', 'global cash promoter',
+    'referral code', 'code de parrainage', 'trading bonus', 'affiliate bonus',
+    'find other bounties', 'search fresh open github bounty',
   ];
   return blocked.some((term) => s.includes(term));
 }
 
 function scoreIssue(issue) {
   const title = clean(issue.title, 250);
-  const body = clean(issue.body, 1500);
+  const body = clean(issue.body, 1800);
   const text = `${title} ${body}`;
   if (isBlocked(text)) return null;
 
   const labels = (issue.labels || []).map((x) => typeof x === 'string' ? x : x?.name).filter(Boolean);
   const lower = text.toLowerCase();
   const rewardUsd = parseReward(text);
-  let score = 0;
+  if (rewardUsd === null || rewardUsd < MIN_REWARD_USD) return null;
 
-  if (lower.includes('bounty')) score += 25;
-  if (lower.includes('reward')) score += 15;
-  if (lower.includes('paid')) score += 12;
-  if (lower.includes('usdt')) score += 15;
+  let score = 0;
+  if (lower.includes('bounty')) score += 14;
+  if (lower.includes('reward')) score += 8;
+  if (lower.includes('paid')) score += 8;
+  if (lower.includes('usdt')) score += 8;
   if (labels.some((x) => /help wanted/i.test(x))) score += 8;
-  if (labels.some((x) => /bounty|reward|paid/i.test(x))) score += 12;
-  if (rewardUsd !== null) score += 25;
-  if (rewardUsd !== null && rewardUsd >= 25) score += 8;
-  if (/documentation|docs|typescript|javascript|node|react|api|bug|feature/i.test(text)) score += 8;
+  if (labels.some((x) => /bounty|reward|paid/i.test(x))) score += 10;
+  if (rewardUsd >= 25) score += 12;
+  if (rewardUsd >= 75) score += 8;
+  if (rewardUsd >= 200) score += 6;
+  if (/documentation|docs|typescript|javascript|node|react|api|bug|feature|column|field|test/i.test(text)) score += 12;
+  if (/acceptance criteria|definition of done|requirements/i.test(text)) score += 8;
+  if (/fill out.*form|join.*slack|kyc|identity verification|needs reproduction/i.test(text)) score -= 12;
 
   const ageDays = Math.max(0, (Date.now() - new Date(issue.updated_at).getTime()) / 86400000);
   score += Math.max(0, 10 - Math.floor(ageDays / 3));
@@ -71,7 +79,7 @@ function scoreIssue(issue) {
     score,
     labels,
     updatedAt: issue.updated_at,
-    summary: clean(body, 420),
+    summary: clean(body, 520),
     state: 'candidate',
   };
 }
@@ -83,7 +91,7 @@ async function search(query) {
     'User-Agent': 'autonomous-ai-job-scout',
   };
   if (process.env.GITHUB_TOKEN) headers.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`;
-  const url = `${API}?per_page=15&sort=updated&order=desc&q=${encodeURIComponent(query)}`;
+  const url = `${API}?per_page=20&sort=updated&order=desc&q=${encodeURIComponent(query)}`;
   const response = await fetch(url, { headers, signal: AbortSignal.timeout(15000) });
   const body = await response.json().catch(() => ({}));
   if (!response.ok) throw new Error(body?.message || `GitHub search failed (${response.status})`);
@@ -114,18 +122,18 @@ try {
     if (issue.pull_request) continue;
     const candidate = scoreIssue(issue);
     if (!candidate) continue;
-    if (candidate.rewardUsd === null) continue;
-    if (candidate.score < 45) continue;
+    if (candidate.score < 42) continue;
     candidates.push(candidate);
   }
 
   candidates.sort((a, b) => (b.score - a.score) || ((b.rewardUsd || 0) - (a.rewardUsd || 0)));
-  jobs.version = 2;
+  jobs.version = 3;
   jobs.updatedAt = new Date().toISOString();
-  jobs.status = candidates.length ? 'ready' : 'idle';
+  jobs.status = candidates.length ? 'candidates' : 'idle';
   jobs.source = 'github-public-issues';
   jobs.opportunities = candidates.slice(0, MAX_RESULTS);
-  jobs.selected = candidates[0] || null;
+  jobs.selected = null;
+  jobs.selection = null;
   jobs.lastError = null;
 } catch (error) {
   jobs.updatedAt = new Date().toISOString();
