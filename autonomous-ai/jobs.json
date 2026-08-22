@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-08-22T18:00:52.920Z",
+  "updatedAt": "2026-08-22T18:45:20.727Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -41,93 +41,19 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:4462079225",
+      "id": "github:5223345997",
       "source": "github",
-      "title": "[Bounty Claim] PR Review - RustChain PR #5532 (Bounty #73)",
-      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/10382",
-      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
-      "rewardUsd": 5532,
-      "score": 54,
-      "labels": [
-        "needs-human",
-        "gate-processed",
-        "over-cap"
-      ],
-      "commentCount": 1,
-      "updatedAt": "2026-08-22T16:59:48Z",
-      "summary": "### Bounty Claim - Bounty: #73 - Type: PR review - Repository: Scottcjn/Rustchain - Pull request: https://github.com/Scottcjn/Rustchain/pull/5532 - Reviewed head: `586571fe3b4aaf5a69eb18d361ff83fa94c9c36f` - Review: https://github.com/Scottcjn/Rustchain/pull/5532#pullrequestreview-4304707418 - RTC wallet: `RTC02811ff5e2bb4bb4b95eee44c5429cd9525496e7` ### Summary Reviewed the dependency-only CI/test collection fix. The added root and test requirements match real imports for async SDK, Flask CORS service code, hardware visualization, and PSE result-analysis tests. Validation completed: - `git diff --check --cached` -> passed - `python -B -m py_compile ...` over the affected import targets -> passed - `python -m pip install --disable-pip-version-check -q -r requirements.txt -r tests/requirements.txt` -> passed - `python -c \"import aiohttp, flask_cors, matplotlib, seaborn, Crypto; print('deps ok')\"` -> deps ok - focused pytest collection -> 14 tests collected - focused pytest run -> 14 passed",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 116,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 1,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 5532,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:4462057766",
-      "source": "github",
-      "title": "[Bounty Claim] PR Review - PR #5532 (Bounty #73)",
-      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/10364",
-      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
-      "rewardUsd": 5532,
-      "score": 54,
-      "labels": [
-        "needs-human",
-        "gate-processed",
-        "over-cap"
-      ],
-      "commentCount": 1,
-      "updatedAt": "2026-08-22T16:59:47Z",
-      "summary": "**Claimant:** kongzi123 **GitHub:** kongzi123 **RTC wallet:** `AhqbFaPBPLMMiaLDzA9WhQcyvv4hMxiteLhPk3NhG1iG` ### PR Details - PR: https://github.com/Scottcjn/Rustchain/pull/5532 - Bounty program: https://github.com/Scottcjn/rustchain-bounties/issues/73 ### Review Summary Code review of PR #5532 (fix: add missing CI test dependencies): - Intent is clear: adds 4 missing test dependencies (aiohttp, flask-cors, matplotlib, seaborn) - Version constraints use >= for good compatibility - No functional code changes, pure dependency maintenance ### Expected Reward Standard code review under bounty #73: 5 RTC",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 116,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 1,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 5532,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:4462073859",
-      "source": "github",
-      "title": "[Bounty Claim] PR Review - RustChain PR #5531 (Bounty #73)",
-      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/10379",
-      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
-      "rewardUsd": 5531,
+      "title": "Split the crime ledger into violent and non-violent bounty",
+      "url": "https://github.com/jjgroenendijk/opensky/issues/563",
+      "repositoryApiUrl": "https://api.github.com/repos/jjgroenendijk/opensky",
+      "rewardUsd": 504,
       "score": 46,
       "labels": [
-        "needs-human",
-        "gate-processed",
-        "over-cap"
+        "roadmap"
       ],
-      "commentCount": 1,
-      "updatedAt": "2026-08-22T16:59:48Z",
-      "summary": "### Bounty Claim - Bounty: #73 - Type: PR review - Repository: Scottcjn/Rustchain - Pull request: https://github.com/Scottcjn/Rustchain/pull/5531 - Reviewed head: `1d9e47f895f1a1d04477473bde1f9ee3a1559533` - Review: https://github.com/Scottcjn/Rustchain/pull/5531#pullrequestreview-4304705387 - RTC wallet: `RTC02811ff5e2bb4bb4b95eee44c5429cd9525496e7` ### Summary Reviewed the Flask debug-mode hardening PR. The change disables debug mode in the listed public service entrypoints, leaves the faucet `--debug` flag as a deprecated no-op, updates docs, and adds an AST regression test to prevent reintroducing direct `debug=True` or debug config assignments to `True`. Validation completed: - `git diff --check --cached` -> passed - `python -B -m py_compile keeper_explorer.py contributor_registry.py bridge/bridge_api.py faucet_service/faucet_service.py tests/test_flask_debug_disabled.py` -> passed - `python -B -m pytest -q tests/test_flask_debug_disabled.py --noconftest` -> 1 passed, 1 existing warning - `python tools/bcos_spdx_check.py --base-ref origin/main` -> OK",
+      "commentCount": 0,
+      "updatedAt": "2026-08-22T18:30:57Z",
+      "summary": "`CrimeLedgerState` (issue #504) holds one bounty per crime faction. The Creation Kit surface splits it in two, and three declared entry points are unimplemented because of it: - Condition functions `GetCrimeGoldViolent` (stored index 375) and `GetCrimeGoldNonviolent` (376), both `ptFactionNull`, from xEdit dev-4.1.6 `Core/wbDefinitionsTES5.pas`. - Papyrus `Faction.GetCrimeGoldViolent`, `Faction.GetCrimeGoldNonViolent` and `Faction.SetCrimeGoldViolent`. - `Faction.ModCrimeGold(int aiAmount, bool abViolent = False)` currently accepts and ignores its `abViolent` flag, and `Faction.SetCrimeGold`'s documented \"non-violent crime gold\" sets the single total. None was installed over the combined total, because answering a violent-only question with the non-violent bounty included is a convincing wrong number rather than a measurable gap — see the v1 limitations in `docs/engine/crime.md`. ## What this needs 1. Which crimes count as violent. Confirm against a source rather than assuming assault and murder; the Creation Kit `SetCrimeGoldViolent` and `ModCrimeGold` pages are the place to start. 2. Two gold fields per `CrimeLedgerEntry` instead of one, with `CrimeGoldTable` routing each `CrimeK",
       "state": "candidate",
       "payoutConfidence": 0.5,
       "autonomyFit": 1,
@@ -136,16 +62,16 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 116,
+      "fastCashScore": 118,
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
-        "comments": 1,
+        "comments": 0,
         "attemptSignals": 0,
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 5531,
+      "economicValueUsd": 504,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -186,38 +112,6 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5223172970",
-      "source": "github",
-      "title": "調査: 同一手札固定・他手札シャッフルでBIDの実勝率分布を測定する",
-      "url": "https://github.com/eletim/napoleon-web/issues/409",
-      "repositoryApiUrl": "https://api.github.com/repos/eletim/napoleon-web",
-      "rewardUsd": 400,
-      "score": 40,
-      "labels": [],
-      "commentCount": 1,
-      "updatedAt": "2026-08-22T17:55:57Z",
-      "summary": "Related: #202, #380, #400, #407 Base branch: `feature/issue-202-non-playing-ai` ## 背景 #407 では、実際に勝っているBID actionに対しても margin NN の予測平均 `mu` が大きく負側に寄り、Gaussian-derived win probabilityが極端に低いことが分かった。 ただし現在のcounterfactual datasetは、各state/actionにつき基本的に1つのhidden deal / rollout結果しか持たないため、1回のactual win/lossをそのactionの「真の勝率」とはみなせない。 そこで、NNの絶対値をさらに議論する前に、まず **同じ自分手札を固定し、他プレイヤーの手札・hidden informationだけを再シャッフルしたとき、そのBIDがどの程度の勝率・margin分布を持つのか** を実データで直接測る。 完全に同一観測を保つことは難しいため、このIssueではまず疑似的に「candidateの手札固定」を条件とする。 ## 目的 1. representativeなcandidate handを複数抽出する 2. candidate handを固定したまま、残りカードを合法的に再配布する 3. 同じBID actionを各reshuffleでforced actionとして実行する 4. playing / bidding environmentは既存と同じRuleBased / Conservative 50:50 frozen opponent系を維持する 5. 各 `fixed hand × BID action` について empirical margin distribution と empirical win rate を測る 6. そのempirical分布と #380 margin NNの `mu/sigma`、Gaussian-derived pWinを比較する 7. 「1回勝ったサンプルなのにNNが低評価」なのか、「同じ手札でも本当は勝率が低く、たまたま勝った」のかを切り分ける ## 最重要な実験単位 実験単位を次とする。 ```text fixed candidate hand + fixed candidate seat + fixed bidding context/action semantics as far as practical + fixed forced BID action + reshuffled hidden cards / opponent hands ``` 完全に同じstate observationを再現する必要はない。 初版では ",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 109,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 1,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 400,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
       "id": "github:5183229703",
       "source": "github",
       "title": "Model fiat currencies and multi-chain token bindings as domain state",
@@ -247,6 +141,145 @@
       },
       "realMoneyEligible": true,
       "economicValueUsd": 120,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5223329360",
+      "source": "github",
+      "title": "[Step 2] Reward-aware quoting: band clamp + per-order floor + min_edge",
+      "url": "https://github.com/anumsrp/polymarket-trading-bot-v2/issues/51",
+      "repositoryApiUrl": "https://api.github.com/repos/anumsrp/polymarket-trading-bot-v2",
+      "rewardUsd": 100,
+      "score": 40,
+      "labels": [],
+      "commentCount": 1,
+      "updatedAt": "2026-08-22T18:38:10Z",
+      "summary": "# [Step 2] Reward-aware quoting: band clamp + per-order floor + min_edge guard **Класс:** A (MONEY NOW). **Score 81/100 — рычаг №2.** Prerequisite: реальная экономика в scanner (см. issue «[Step 1] Scanner economics»). ## Проблема Liquidity Rewards платят **только за ордера в-band (≤ rewardsMaxSpread) и ≥ rewardsMinSize, скоринг ПОР ОРДЕРУ**. Текущий `bot/strategy.py::quotes()` строит δ от vol/tox без оглядки на band; `order_usd=25` не связан с min-size. Итог: даже на правильном рынке мы собираем $0 с программы. ## Эталон (MIT, poly-maker `src/polymaker/strategy/quoting.py`) - L84–87: в QUIET `delta = clamp(delta, base, max(base, reward_band))`, где `reward_band = rewards_max_spread / 100`. - L77: `reward_floor = rewards_min_size × reward_size_mult`. - L163–187 `_add_layers`: консолидация слоёв — «если слой < 0.5×floor → меньше слоёв»; добивание слоя до floor; **флор на тотал бесполезен** (скоринг per order). - L143: `price = min(price, fv − min_edge_ticks × tick)` — никогда не бидим ближе min_edge к FV. - L145–149: join-the-touch (`price >= best_bid → price = best_bid`), never cross. ## Что делать (ADAPT) 1. `bot/config.py`: + `rewards_min_size, rewards_max_spread, reward_size_mul",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 106,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 1,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 100,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5126806271",
+      "source": "github",
+      "title": "[feat] Retrieval-augmented remediation: few-shot self-repair from the journal's outcome-verified fixes",
+      "url": "https://github.com/Agent-Clubhouse/Goobers/issues/2834",
+      "repositoryApiUrl": "https://api.github.com/repos/Agent-Clubhouse/Goobers",
+      "rewardUsd": 2829,
+      "score": 48,
+      "labels": [
+        "enhancement",
+        "goobers:approved",
+        "goobers:ready",
+        "type:feature"
+      ],
+      "commentCount": 4,
+      "updatedAt": "2026-08-22T18:41:18Z",
+      "summary": "## Problem / motivation When the self-healing loop (#2830) sends an agent to patch a blamed node, that agent starts cold — it re-derives a fix from scratch even though the org's journal very likely contains a **past failure of the same shape that was already successfully fixed**. #2411 surfaces the *previous attempt* within the same run, but nothing generalizes *across runs*: \"this failure looks like one we solved three weeks ago in a different workflow — here's what worked.\" The append-only journal is, in effect, a labeled corpus of `(failure context -> remediation -> did-it-help outcome)` triples. That's exactly the corpus retrieval-augmented generation wants. Feeding the k-nearest past failures **and the fixes that actually improved the outcome** to the remediation agent as few-shot context should make patches faster, more consistent, and less likely to repeat a known-bad fix. Novelty note: RAG itself is standard; RAG over *an agent factory's own journaled execution history, keyed to outcome-verified remediations,* to bootstrap self-repair is a distinctive application — the retrieval corpus is the system's own past behavior, and relevance is grounded in whether the retrieved fix",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 105,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 4,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 2829,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5190850580",
+      "source": "github",
+      "title": "📣 MyZubster Community Update — Agosto 2026: roadmap, social proof-of-work, global access e stabilizzazione",
+      "url": "https://github.com/MyZubster-Ecosystem/myzubster/issues/529",
+      "repositoryApiUrl": "https://api.github.com/repos/MyZubster-Ecosystem/myzubster",
+      "rewardUsd": 528,
+      "score": 54,
+      "labels": [],
+      "commentCount": 7,
+      "updatedAt": "2026-08-22T18:33:59Z",
+      "summary": "# 📣 MyZubster Community Update — Agosto 2026 Ciao community e grazie a chi sta contribuendo a MyZubster. Questo aggiornamento raccoglie le novità più importanti e le prossime priorità, mantenendo separati in modo trasparente sviluppo, verifica dei bounty, reward interni e settlement esterni. Contributor pubblicamente verificati che abbiamo visto attivi nel repository includono, tra gli altri: @wasim-builds, @laurentketterle-hub e @Cub4nH1. Questo annuncio resta pubblico per raggiungere anche tutti gli altri contributor e watcher secondo le loro impostazioni di notifica GitHub. ## 🚀 Novità principali ### 1. README e integrazione dei bounty nella vita reale È stata aperta la PR #528 per documentare un flusso concreto: `bounty → creazione contenuto → pubblicazione reale → raccolta evidenze → review → reward/accounting` Il modello include screenshot, URL e metriche come proof-of-work e ribadisce che un reward interno MYZ non equivale automaticamente a un pagamento blockchain. ### 2. Social proof-of-work già sperimentato Sono state pubblicate e archiviate evidenze reali di contenuti MyZubster su Instagram e Facebook. È stato inoltre documentato un album Facebook dedicato ai fumetti My",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 100,
+      "survivalEligible": false,
+      "eligibilityReason": "Competition is too high for bootstrap mode.",
+      "competition": {
+        "comments": 7,
+        "attemptSignals": 0,
+        "risk": "medium"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 528,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5223336067",
+      "source": "github",
+      "title": "Add last-hit gold, XP, levels, respawn timers and the lane HUD",
+      "url": "https://github.com/wildware-uk/Udea/issues/131",
+      "repositoryApiUrl": "https://api.github.com/repos/wildware-uk/Udea",
+      "rewardUsd": 18,
+      "score": 44,
+      "labels": [
+        "type/feature",
+        "area/render",
+        "area/moba",
+        "phase/5",
+        "size/L"
+      ],
+      "commentCount": 0,
+      "updatedAt": "2026-08-22T18:32:19Z",
+      "summary": "## Context Spec section 6, Phase 5 requires gold, XP, levels, last-hitting and respawn timers, and Trello #27 (in-game UI) and #22 (loading screen) are scheduled here. This is the layer that makes the lane a game rather than a fight: killing blows credit gold, nearby kills grant shared XP, levels rank up abilities, and death costs increasing time. The HUD is presentation only — the old `example/src/main/kotlin/dev/wildware/udea/example/system/HealthbarSystem.kt:33` is a Fleks `IteratingSystem` calling `shapeRenderer.use(...)` inside `world.update()`, exactly the simulation/presentation mixing spec section 3.3 abolishes, so every HUD element here is a `RenderSystem` in the presentation module. ## Scope - `Gold`, `Experience` and `ChampionLevel` components; passive gold income per tick and starting gold from config. - `BountySystem`: last-hit credit on the killing blow for creeps and towers, shared XP inside a radius, champion kill bounty and an assist window. - Level curve to 18, ability rank points spendable on level-up, level-scaled `ChampionAttributes` growth. - `RespawnTimer` scaled by level, surfaced as a countdown. - HUD as `RenderSystem`s: world-space health/mana bars, abilit",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 98,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 18,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -283,6 +316,41 @@
       "realMoneyEligible": true,
       "economicValueUsd": 50,
       "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5222341217",
+      "source": "github",
+      "title": "[Bounty $2500] ttnn.remainder: wrong results (off by whole multiples of the divisor) for |dividend/divisor| ratios beyond ~2^23, on both Wormhole and Blackhole",
+      "url": "https://github.com/tenstorrent/tt-metal/issues/54048",
+      "repositoryApiUrl": "https://api.github.com/repos/tenstorrent/tt-metal",
+      "rewardUsd": 2500,
+      "score": 54,
+      "labels": [
+        "bug",
+        "community"
+      ],
+      "commentCount": 0,
+      "updatedAt": "2026-08-22T18:32:47Z",
+      "summary": "## Summary `ttnn.remainder`'s scalar/unary fp32 path computes the quotient via a float multiply-by-reciprocal, corrects it by at most `1`, and stops. Once the true quotient's magnitude exceeds roughly `2^23` (~8.4 million) — i.e. the dividend is more than ~8.4 million times the divisor — floating-point rounding in that multiply can leave the quotient estimate off by more than the single correction can fix, and the kernel returns a result that is wrong by a whole integer multiple of the divisor: ``` ttnn.remainder(x=1.42606e7, 3.0) -> 1.0 (kernel) correct value -> 2.0 ``` ``` ttnn.remainder(x=5.70425e7, 3.0) -> -1.0 (kernel) correct value -> 2.0 ``` This is confirmed identical on **both Wormhole and Blackhole** (`ckernel_sfpu_remainder.h` is byte-for-byte the same algorithm on both architectures — the two files differ only in cosmetic `sfpi::` qualification, not logic). ## Root cause ```cpp // L162-164: sfpi::vFloat value_tmp = vConstFloatPrgm0; // divisor, host-precomputed sfpi::vFloat s = sfpi::abs(value_tmp); sfpi::vFloat recip_val = sfpi::abs(vConstFloatPrgm1); // host-precomputed 1/divisor ``` The quotient is estimated as `v * recip_val` (`v` = `abs(dividend)`), with fractional",
+      "state": "candidate",
+      "payoutConfidence": 0.15,
+      "autonomyFit": 0,
+      "requiresHumanGate": true,
+      "requiresSpecialHardware": true,
+      "estimatedHoursBand": 30,
+      "complexity": 7,
+      "fundedBountySignal": false,
+      "fastCashScore": -11,
+      "survivalEligible": false,
+      "eligibilityReason": "Too slow for bootstrap mode: first real cash currently requires a <=4 hour task.",
+      "competition": {
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 2500,
+      "requiresPreclaimOrIdentity": false
     }
   ],
   "selected": null,
@@ -295,7 +363,7 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-18T21:51:29Z\",\"competition\":{\"comments\":29,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":125,\"updatedAt\":\"2026-08-22T16:37:56Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462057766\",\"rewardUsd\":5532,\"fastCashScore\":116,\"updatedAt\":\"2026-08-22T16:59:47Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462073859\",\"rewardUsd\":5531,\"fastCashScore\":116,\"updatedAt\":\"2026-08-22T16:59:48Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462079225\",\"rewardUsd\":5532,\"fastCashScore\":116,\"updatedAt\":\"2026-08-22T16:59:48Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5183229703\",\"rewardUsd\":120,\"fastCashScore\":108,\"updatedAt\":\"2026-08-22T14:54:31Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5190340966\",\"rewardUsd\":2000,\"fastCashScore\":106,\"updatedAt\":\"2026-08-22T17:20:21Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5190341394\",\"rewardUsd\":2000,\"fastCashScore\":89,\"updatedAt\":\"2026-08-22T17:21:02Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5190342386\",\"rewardUsd\":2000,\"fastCashScore\":89,\"updatedAt\":\"2026-08-22T17:20:49Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5223172970\",\"rewardUsd\":400,\"fastCashScore\":109,\"updatedAt\":\"2026-08-22T17:55:57Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:2940525692\",\"rewardUsd\":10,\"fastCashScore\":60,\"updatedAt\":\"2026-08-18T21:51:22Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-18T21:51:29Z\",\"competition\":{\"comments\":29,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":125,\"updatedAt\":\"2026-08-22T16:37:56Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5126806271\",\"rewardUsd\":2829,\"fastCashScore\":105,\"updatedAt\":\"2026-08-22T18:41:18Z\",\"competition\":{\"comments\":4,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5183229703\",\"rewardUsd\":120,\"fastCashScore\":108,\"updatedAt\":\"2026-08-22T14:54:31Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5190850580\",\"rewardUsd\":528,\"fastCashScore\":100,\"updatedAt\":\"2026-08-22T18:33:59Z\",\"competition\":{\"comments\":7,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5222341217\",\"rewardUsd\":2500,\"fastCashScore\":-11,\"updatedAt\":\"2026-08-22T18:32:47Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5223329360\",\"rewardUsd\":100,\"fastCashScore\":106,\"updatedAt\":\"2026-08-22T18:38:10Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5223336067\",\"rewardUsd\":18,\"fastCashScore\":98,\"updatedAt\":\"2026-08-22T18:32:19Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5223345997\",\"rewardUsd\":504,\"fastCashScore\":118,\"updatedAt\":\"2026-08-22T18:30:57Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
@@ -308,23 +376,32 @@
     "minPayoutConfidence": 0.8,
     "competitionRequired": "low",
     "rejectedFakeRevenueCount": 0,
-    "rejectedAlreadyPaidCount": 4,
-    "rejectedIdentityGateCount": 2
+    "rejectedAlreadyPaidCount": 2,
+    "rejectedIdentityGateCount": 0
   },
   "economicallyRejected": [
-    {
-      "id": "github:5190340966",
-      "title": "Fixed-Point Dividend Accounting and O(1) Holder Set for Property Token",
-      "rewardUsd": 2000,
-      "reasons": [
-        "already_rewarded_or_paid"
-      ],
-      "rejectedAt": "2026-08-22T18:00:52.889Z"
-    },
     {
       "id": "github:3055155077",
       "title": "Switch to `ky` from `redaxios`",
       "rewardUsd": 12,
+      "reasons": [
+        "already_rewarded_or_paid"
+      ],
+      "rejectedAt": "2026-08-22T18:45:20.664Z"
+    },
+    {
+      "id": "github:2940525692",
+      "title": "Create download endpoint `/files/download?...` as well as `/files/download/[[file_path]]`",
+      "rewardUsd": 10,
+      "reasons": [
+        "already_rewarded_or_paid"
+      ],
+      "rejectedAt": "2026-08-22T18:45:20.664Z"
+    },
+    {
+      "id": "github:5190340966",
+      "title": "Fixed-Point Dividend Accounting and O(1) Holder Set for Property Token",
+      "rewardUsd": 2000,
       "reasons": [
         "already_rewarded_or_paid"
       ],
@@ -396,15 +473,6 @@
       "rewardUsd": 50000,
       "reasons": [
         "preclaim_or_identity_gate_not_configured"
-      ],
-      "rejectedAt": "2026-08-22T16:53:31.465Z"
-    },
-    {
-      "id": "github:2940525692",
-      "title": "Create download endpoint `/files/download?...` as well as `/files/download/[[file_path]]`",
-      "rewardUsd": 10,
-      "reasons": [
-        "already_rewarded_or_paid"
       ],
       "rejectedAt": "2026-08-22T16:53:31.465Z"
     },
