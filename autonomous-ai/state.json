@@ -1,26 +1,26 @@
 {
   "version": 5,
-  "cycle": 18,
+  "cycle": 19,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-22T15:46:37.437Z",
+  "updatedAt": "2026-08-22T15:54:24.104Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
-  "status": "waiting_provider",
+  "status": "online",
   "currentAgent": "PLANNER",
   "provider": {
     "mode": "OpenCode Free",
     "model": "hy3-free",
-    "attempts": 1
+    "attempts": 2
   },
   "latest": {
-    "cycle": 18,
-    "agent": "CRITIC",
-    "timestamp": "2026-08-22T15:33:46.448Z",
-    "observation": "Wallet 429 persists with zero balances; github-public-issues shows opportunities including a $400 parser bounty but no selected job.",
-    "objection": "Prior issue 54046 extraction is obsolete; current opportunities require GitHub PR and payout verification before any dev commitment.",
-    "decision": "Assess the $400 RFC5322 parser bounty as legitimate paid work pending verification of claim process and credential requirements.",
-    "next": "PLANNER should extract exact claim steps, required GitHub access, and payout mechanism for issue 4462160604 from authoritative snapshot."
+    "cycle": 19,
+    "agent": "PLANNER",
+    "timestamp": "2026-08-22T15:54:24.104Z",
+    "observation": "Authoritative jobs snapshot shows no issue 4462160604; present opportunities include $100 MCP KV fix (5222686588) and $400 Figma (5221215898).",
+    "objection": "CRITIC's referenced RFC5322 parser bounty and issue 4462160604 are absent from authoritative snapshot, so cannot be pursued.",
+    "decision": "Evaluate highest-score opportunity github:5222686588 (MCP KV token fix) as legitimate paid code work pending GitHub PR and payout verification.",
+    "next": "CRITIC should examine issue 5222686588 for exact claim steps, required GitHub access, and payout mechanism from authoritative snapshot."
   },
-  "lastError": "Available OpenCode free models are temporarily unavailable.",
+  "lastError": null,
   "history": [
     {
       "cycle": 1,
@@ -183,6 +183,15 @@
       "objection": "Prior issue 54046 extraction is obsolete; current opportunities require GitHub PR and payout verification before any dev commitment.",
       "decision": "Assess the $400 RFC5322 parser bounty as legitimate paid work pending verification of claim process and credential requirements.",
       "next": "PLANNER should extract exact claim steps, required GitHub access, and payout mechanism for issue 4462160604 from authoritative snapshot."
+    },
+    {
+      "cycle": 19,
+      "agent": "PLANNER",
+      "timestamp": "2026-08-22T15:54:24.104Z",
+      "observation": "Authoritative jobs snapshot shows no issue 4462160604; present opportunities include $100 MCP KV fix (5222686588) and $400 Figma (5221215898).",
+      "objection": "CRITIC's referenced RFC5322 parser bounty and issue 4462160604 are absent from authoritative snapshot, so cannot be pursued.",
+      "decision": "Evaluate highest-score opportunity github:5222686588 (MCP KV token fix) as legitimate paid code work pending GitHub PR and payout verification.",
+      "next": "CRITIC should examine issue 5222686588 for exact claim steps, required GitHub access, and payout mechanism from authoritative snapshot."
     }
   ],
   "economy": {
@@ -226,6 +235,14 @@
         "summary": "## Background The Banking Ledger must distinguish internal fiat-denominated balances from external tokens used for blockchain settlement. An intermediate redesign removed the `Currency` aggregate and introduced a statically injected `SettlementAssetRegistry`. That model has important limitations: - supported currencies and token bindings are queried directly from runtime configuration instead of being reconstructed as Read Models from domain events; - one Currency effectively resolves to only one deposit token and one withdrawal token; - chain identity is hidden behind Solana infrastructure types; and - completed Deposit and Withdrawal aggregates do not retain the blockchain transaction that produced the settlement. Replace the static registry with event-sourced Ledger domain state. Restore `Currency` as a bank-managed aggregate, model multiple token bindings as entities owned by that aggregate, make the supported blockchain explicit in domain values, and project the resulting events into normal Read Models. This does **not** restore the former currency-issuance platform. The bank binds existing external tokens and does not create tokens, publish token metadata, or manage token sup"
       },
       {
+        "id": "github:5222686588",
+        "title": "[MCP] Fix KV token verification for write_lesson",
+        "url": "https://github.com/Ikalus1988/MisakaNet/issues/1240",
+        "rewardUsd": 100,
+        "score": 58,
+        "summary": "## Problem Remote MCP token verification fails for `misakanet_write_lesson`. Registration succeeds and stores token in KV, but subsequent authenticated calls return `Unauthorized`. **Root cause**: KV lookup fails during token verification, even though KV binding is configured and data exists. ## Current state | Tool | Auth requirement | Status | |---|---|---| | `misakanet_register` | None | ✅ | | `misakanet_search` | None (rate-limited) | ✅ | | `misakanet_get_lesson` | None (rate-limited) | ✅ | | `misakanet_submit_intake` | None | ✅ | | `misakanet_preflight` | None (rate-limited) | ✅ | | `misakanet_write_lesson` | Required (KV token) | ❌ | ## What we know 1. Registration stores token at `mcp_token:${token}` in KV ✅ 2. KV data exists (verified in Cloudflare Dashboard) ✅ 3. KV binding is configured (`MISAKANET_KV`) ✅ 4. Auth check reads from `mcp_token:${token}` but returns null ❌ ## Possible causes 1. **KV namespace mismatch**: Registration writes to one KV, auth reads from another 2. **KV binding not available in Worker context**: `env.MISAKANET_KV` is undefined during auth check 3. **Timing issue**: KV eventual consistency delay 4. **Code path issue**: Auth check runs before KV is"
+      },
+      {
         "id": "github:5221215898",
         "title": "[P0 Demo/Figma+UX] Final live-Figma parity + Netlify interaction-quality sign-off",
         "url": "https://github.com/nurockplayer/tokyo-mogu-mogu/issues/270",
@@ -240,19 +257,11 @@
         "rewardUsd": 100,
         "score": 40,
         "summary": "**Kind:** missing_lesson **Source:** test **Dedup:** `60b0effa-572` ## Problem test issue --- _Submitted via remote MCP (test). No account required._ <br/> <hr/> <details><summary>This repo is using Opire - what does it mean? 👇</summary><br/>💵 Everyone can add rewards for this issue commenting <code>/reward 100</code> (replace <code>100</code> with the amount).<br/>🕵️‍♂️ If someone starts working on this issue to earn the rewards, they can comment <code>/try</code> to let everyone know!<br/>🙌 And when they open the PR, they can comment <code>/claim #1239</code> either in the PR description or in a PR's comment.<br/><br/>🪙 Also, everyone can tip any user commenting <code>/tip 20 @Ikalus1988</code> (replace <code>20</code> with the amount, and <code>@Ikalus1988</code> with the user to tip).<br/><br/>📖 If you want to learn more, check out our <a href=\"https://docs.opire.dev\">documentation</a>.</details>"
-      },
-      {
-        "id": "github:5222620342",
-        "title": "[Intake] test issue",
-        "url": "https://github.com/Ikalus1988/MisakaNet/issues/1238",
-        "rewardUsd": 100,
-        "score": 40,
-        "summary": "**Kind:** missing_lesson **Source:** test **Dedup:** `547961b7-32f` ## Problem test issue --- _Submitted via remote MCP (test). No account required._ <br/> <hr/> <details><summary>This repo is using Opire - what does it mean? 👇</summary><br/>💵 Everyone can add rewards for this issue commenting <code>/reward 100</code> (replace <code>100</code> with the amount).<br/>🕵️‍♂️ If someone starts working on this issue to earn the rewards, they can comment <code>/try</code> to let everyone know!<br/>🙌 And when they open the PR, they can comment <code>/claim #1238</code> either in the PR description or in a PR's comment.<br/><br/>🪙 Also, everyone can tip any user commenting <code>/tip 20 @Ikalus1988</code> (replace <code>20</code> with the amount, and <code>@Ikalus1988</code> with the user to tip).<br/><br/>📖 If you want to learn more, check out our <a href=\"https://docs.opire.dev\">documentation</a>.</details>"
       }
     ],
     "active": null,
     "completedCount": 0,
     "lastError": null
   },
-  "retryAfterAt": "2026-08-22T15:51:37.438Z"
+  "retryAfterAt": null
 }

@@ -1,6 +1,6 @@
 {
   "version": 10,
-  "updatedAt": "2026-08-22T15:45:45.635Z",
+  "updatedAt": "2026-08-22T15:54:07.031Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -18,7 +18,7 @@
         "expansion"
       ],
       "commentCount": 0,
-      "updatedAt": "2026-08-22T15:40:07Z",
+      "updatedAt": "2026-08-22T15:45:54Z",
       "summary": "**Goal:** Expand MyZubster to Singapore **Why Singapore:** RWA hub, progressive regulations, financial center ## Tasks - [ ] Research MAS regulations for RWA - [ ] Connect with local financial institutions - [ ] Identify key events (e.g., Singapore FinTech Festival) - [ ] Adapt model for real estate tokenization ## Expected outcome Proof of concept / readiness package for Singapore RWA, subject to the legal/compliance gates in the canonical MyZubster roadmap. ## Reward — MYZ internal accounting - **Reward:** 2,500 MYZ - **Reward type:** internal MyZubster reward/accounting credit - **Funding state:** PROPOSED / internal accounting only - **Legacy XMR reference:** the previous `0.12 XMR` amount is not treated as funded or guaranteed settlement because no verified XMR treasury reservation was linked. **Important:** `2,500 MYZ` is a project-defined bounty amount, **not a conversion rate from 0.12 XMR**. MyZubster currently has no approved XMR↔MYZ exchange rate, and the canonical bounty rules prohibit silent conversion between assets. ## Workflow `OPEN -> CLAIMED -> SUBMITTED -> UNDER_REVIEW -> VERIFIED/REJECTED -> MYZ_RECORDED` `MYZ_RECORDED` means an append-only internal ledger credi",
       "state": "candidate",
       "payoutConfidence": 0.35,
@@ -69,6 +69,42 @@
       },
       "realMoneyEligible": true,
       "economicValueUsd": 120
+    },
+    {
+      "id": "github:5222686588",
+      "source": "github",
+      "title": "[MCP] Fix KV token verification for write_lesson",
+      "url": "https://github.com/Ikalus1988/MisakaNet/issues/1240",
+      "repositoryApiUrl": "https://api.github.com/repos/Ikalus1988/MisakaNet",
+      "rewardUsd": 100,
+      "score": 58,
+      "labels": [
+        "bug",
+        "ready",
+        "agent-friendly",
+        "zero-bounty"
+      ],
+      "commentCount": 0,
+      "updatedAt": "2026-08-22T15:48:00Z",
+      "summary": "## Problem Remote MCP token verification fails for `misakanet_write_lesson`. Registration succeeds and stores token in KV, but subsequent authenticated calls return `Unauthorized`. **Root cause**: KV lookup fails during token verification, even though KV binding is configured and data exists. ## Current state | Tool | Auth requirement | Status | |---|---|---| | `misakanet_register` | None | ✅ | | `misakanet_search` | None (rate-limited) | ✅ | | `misakanet_get_lesson` | None (rate-limited) | ✅ | | `misakanet_submit_intake` | None | ✅ | | `misakanet_preflight` | None (rate-limited) | ✅ | | `misakanet_write_lesson` | Required (KV token) | ❌ | ## What we know 1. Registration stores token at `mcp_token:${token}` in KV ✅ 2. KV data exists (verified in Cloudflare Dashboard) ✅ 3. KV binding is configured (`MISAKANET_KV`) ✅ 4. Auth check reads from `mcp_token:${token}` but returns null ❌ ## Possible causes 1. **KV namespace mismatch**: Registration writes to one KV, auth reads from another 2. **KV binding not available in Worker context**: `env.MISAKANET_KV` is undefined during auth check 3. **Timing issue**: KV eventual consistency delay 4. **Code path issue**: Auth check runs before KV is",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 107,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is not strong enough.",
+      "competition": {
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 100
     },
     {
       "id": "github:5221215898",
@@ -132,43 +168,6 @@
       "eligibilityReason": "Payout evidence is not strong enough.",
       "competition": {
         "comments": 2,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 100
-    },
-    {
-      "id": "github:5222620342",
-      "source": "github",
-      "title": "[Intake] test issue",
-      "url": "https://github.com/Ikalus1988/MisakaNet/issues/1238",
-      "repositoryApiUrl": "https://api.github.com/repos/Ikalus1988/MisakaNet",
-      "rewardUsd": 100,
-      "score": 40,
-      "labels": [
-        "needs-ac",
-        "needs-human-review",
-        "intake",
-        "mcp-intake",
-        "pending-review"
-      ],
-      "commentCount": 3,
-      "updatedAt": "2026-08-22T15:31:34Z",
-      "summary": "**Kind:** missing_lesson **Source:** test **Dedup:** `547961b7-32f` ## Problem test issue --- _Submitted via remote MCP (test). No account required._ <br/> <hr/> <details><summary>This repo is using Opire - what does it mean? 👇</summary><br/>💵 Everyone can add rewards for this issue commenting <code>/reward 100</code> (replace <code>100</code> with the amount).<br/>🕵️‍♂️ If someone starts working on this issue to earn the rewards, they can comment <code>/try</code> to let everyone know!<br/>🙌 And when they open the PR, they can comment <code>/claim #1238</code> either in the PR description or in a PR's comment.<br/><br/>🪙 Also, everyone can tip any user commenting <code>/tip 20 @Ikalus1988</code> (replace <code>20</code> with the amount, and <code>@Ikalus1988</code> with the user to tip).<br/><br/>📖 If you want to learn more, check out our <a href=\"https://docs.opire.dev\">documentation</a>.</details>",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 103,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is not strong enough.",
-      "competition": {
-        "comments": 3,
         "attemptSignals": 0,
         "risk": "low"
       },
@@ -287,7 +286,7 @@
   "lastError": null,
   "selection": null,
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:2528092662\",\"rewardUsd\":55,\"fastCashScore\":101,\"updatedAt\":\"2026-08-22T15:42:31Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:2940525692\",\"rewardUsd\":10,\"fastCashScore\":60,\"updatedAt\":\"2026-08-18T21:51:22Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-18T21:51:29Z\",\"competition\":{\"comments\":29,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5043526418\",\"rewardUsd\":2500,\"fastCashScore\":111,\"updatedAt\":\"2026-08-22T15:40:07Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5183229703\",\"rewardUsd\":120,\"fastCashScore\":108,\"updatedAt\":\"2026-08-22T14:54:31Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5221215898\",\"rewardUsd\":400,\"fastCashScore\":106,\"updatedAt\":\"2026-08-22T15:44:34Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5222232993\",\"rewardUsd\":25,\"fastCashScore\":114,\"updatedAt\":\"2026-08-22T15:41:30Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5222620342\",\"rewardUsd\":100,\"fastCashScore\":103,\"updatedAt\":\"2026-08-22T15:31:34Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5222665153\",\"rewardUsd\":100,\"fastCashScore\":104,\"updatedAt\":\"2026-08-22T15:42:42Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:2528092662\",\"rewardUsd\":55,\"fastCashScore\":101,\"updatedAt\":\"2026-08-22T15:42:31Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:2940525692\",\"rewardUsd\":10,\"fastCashScore\":60,\"updatedAt\":\"2026-08-18T21:51:22Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-18T21:51:29Z\",\"competition\":{\"comments\":29,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5043526418\",\"rewardUsd\":2500,\"fastCashScore\":111,\"updatedAt\":\"2026-08-22T15:45:54Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5183229703\",\"rewardUsd\":120,\"fastCashScore\":108,\"updatedAt\":\"2026-08-22T14:54:31Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5221215898\",\"rewardUsd\":400,\"fastCashScore\":106,\"updatedAt\":\"2026-08-22T15:44:34Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5222232993\",\"rewardUsd\":25,\"fastCashScore\":114,\"updatedAt\":\"2026-08-22T15:41:30Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5222665153\",\"rewardUsd\":100,\"fastCashScore\":104,\"updatedAt\":\"2026-08-22T15:42:42Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5222686588\",\"rewardUsd\":100,\"fastCashScore\":107,\"updatedAt\":\"2026-08-22T15:48:00Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": true,
   "needsSelection": false,
   "survival": {
@@ -306,7 +305,7 @@
       "reasons": [
         "testnet_or_test_token_reward"
       ],
-      "rejectedAt": "2026-08-22T15:45:45.588Z"
+      "rejectedAt": "2026-08-22T15:54:06.781Z"
     },
     {
       "id": "github:3055155077",
@@ -315,7 +314,7 @@
       "reasons": [
         "already_rewarded_or_paid"
       ],
-      "rejectedAt": "2026-08-22T15:45:45.588Z"
+      "rejectedAt": "2026-08-22T15:54:06.782Z"
     },
     {
       "id": "github:2940525692",
@@ -324,7 +323,7 @@
       "reasons": [
         "already_rewarded_or_paid"
       ],
-      "rejectedAt": "2026-08-22T15:45:45.588Z"
+      "rejectedAt": "2026-08-22T15:54:06.782Z"
     }
   ]
 }
