@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-08-22T19:57:55.538Z",
+  "updatedAt": "2026-08-22T20:33:41.546Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -41,6 +41,70 @@
       "requiresPreclaimOrIdentity": false
     },
     {
+      "id": "github:5214938859",
+      "source": "github",
+      "title": "Maintainer notice: enforce rolling bounty liquidity and external-funding GMV loop",
+      "url": "https://github.com/NSPG13/agent-bounties/issues/1117",
+      "repositoryApiUrl": "https://api.github.com/repos/NSPG13/agent-bounties",
+      "rewardUsd": 1115,
+      "score": 54,
+      "labels": [],
+      "commentCount": 3,
+      "updatedAt": "2026-08-22T20:25:00Z",
+      "summary": "## Planned scope Implement a private Open Competition V2 inventory invariant with floor 5 and target 10; a fail-closed deterministic replenishment planner; a bounded 30.40 USDC/day and 152 USDC lifetime execution policy; twenty reviewed structured-artifact candidates; unified public marketplace metrics; structured participant feedback; and external poster/funder conversion paths across web, API, MCP, CLI, and docs. This is needed because the five recently funded competitions settled without replacement and production reached zero active V2 competitions. The public product will continue to present one marketplace: public counts and GMV remain aggregated across supported bounty mechanisms. Only private operational state distinguishes the inventory needed by the replenisher. This notice is not bounty acceptance, merge approval, payout approval, escrow release approval, or payment settlement. ## Affected contracts or workflows Likely affected surfaces include the inventory guard and self-healing policy, the Open Competition V2 seed/planning workflow and scripts, private operational schemas, aggregate platform metrics, opportunity comments, posting/funding guidance, MCP/CLI parity, and ",
+      "state": "candidate",
+      "payoutConfidence": 0.5,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 113,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 3,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 1115,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5223804455",
+      "source": "github",
+      "title": "調査: opening state固定のN-rollout実測で13 BIDとAll-Pass=0を直接比較する",
+      "url": "https://github.com/eletim/napoleon-web/issues/422",
+      "repositoryApiUrl": "https://api.github.com/repos/eletim/napoleon-web",
+      "rewardUsd": 420,
+      "score": 40,
+      "labels": [],
+      "commentCount": 0,
+      "updatedAt": "2026-08-22T20:30:43Z",
+      "summary": "Related: #202, #411, #420, #421 Base branch: `feature/issue-202-non-playing-ai` ## 背景 #420 の相対reward offline評価では no-current-bid の opening BID率は `10.8%` で、hand strength別にも low 0%, medium 8.8%, strong 26.3%, veryStrong 48.1% と自然な傾向が見えた。 一方 #421 では current-bid stateについて同じcurrent context / hand / hidden-deal seedを固定したpaired N-rolloutを行った結果、#420のraise 0.1%が大幅に保守的すぎることが判明した。 そのためopening側も1-rollout panelの見た目だけで信用せず、**no-current-bid stateを固定してopening BIDをN回rolloutし、All-Pass=0との比較が実測でも妥当か**を確認する。 このIssueではNNを再学習しない。まず #411 Napoleon M2 のopening判断が実データ上どこまで正しいかを切り分ける。 ## reward / decision semantics #420と完全に同じ相対rewardを使う。 ```text relativeReward = ownRawReward - mean(rawReward of other 4 players) ``` Napoleon raw reward: - win: `+2d` - loss: `0` candidate Napoleon relative reward: - win: `+7d/4` - loss: `-3d/4` したがって: ```text EV_OPEN_BID(d) = pN * (7d/4) + (1-pN) * (-3d/4) ``` opening PASSはAll-Pass基準として: ```text EV_ALLPASS = 0 ``` d=13では理論境界: ```text pN = 30.0% ``` Adjutant / Citizen / role probability / NapoleonAfterPass / NoContract追加価値はopening比較には使わない。 ## 目的 1. no-current-bid representative statesを抽出する 2. candidate hand / seat / opening context / legal action setを固定する 3. hidden dealだけreshuff",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 111,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 420,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
       "id": "github:4462160604",
       "source": "github",
       "title": "[bounty $400] Implement ABNF-compliant email address parser with full §3.2–§4.4 coverage",
@@ -78,6 +142,38 @@
       "requiresPreclaimOrIdentity": false
     },
     {
+      "id": "github:5223742069",
+      "source": "github",
+      "title": "調査: current bid固定のN-rollout実測でPASSとraiseの相対期待rewardを直接比較する",
+      "url": "https://github.com/eletim/napoleon-web/issues/421",
+      "repositoryApiUrl": "https://api.github.com/repos/eletim/napoleon-web",
+      "rewardUsd": 202,
+      "score": 40,
+      "labels": [],
+      "commentCount": 1,
+      "updatedAt": "2026-08-22T20:27:16Z",
+      "summary": "Related: #202, #411, #414, #420 Base branch: `feature/issue-202-non-playing-ai` ## 背景 #420 の相対reward offline評価では、 - opening BID率: `10.8%` - current-bid-exists の raise BID率: `0.1%` となった。 opening側は hand strength に応じた自然な傾向が見えた一方、誰かがすでに立った後はほぼ全PASSになっている。 ただし #420 の評価panelは各 state/action につき基本1 rollout outcomeであり、hidden deal / downstream policy varianceを十分平均化していない。 #409/#411 で one-shot outcome が大きくノイジーだったことが分かっているため、raise判断についても同様に **実際の current bidding context と candidate hand を固定して、PASS と raise をそれぞれN回rolloutし、empirical relative rewardを直接比較する**。 このIssueではNNを再学習しない。まず「本当にPASSの方が得なのか」「NNのEV比較がPASS寄りに誤っているのか」を実データで切り分ける。 ## 相対reward定義 #420と完全に同じ。 ```text relativeReward = ownRawReward - mean(rawReward of other 4 players) ``` Napoleon raw reward: - win: `+2d` - loss: `0` candidate Napoleonのrelative reward: - win: `+7d/4` - loss: `-3d/4` Citizenのrelative reward: - Napoleon win時: `-3d/4` - Napoleon loss時: `+d/2` Adjutant価値、role probability、NapoleonAfterPass追加価値、NoContract追加価値は期待値scorerには使わない。 ## 目的 1. current bid が存在する representative states を複数抽出する 2. candidate hand / seat / bidding history / current highest bid を可能な限り固定する 3. 同じhidden-deal seed familyについて `PASS` と代表的なlegal raise actionをそれぞれ",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 109,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 1,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 202,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
       "id": "github:5183229703",
       "source": "github",
       "title": "Model fiat currencies and multi-chain token bindings as domain state",
@@ -110,42 +206,71 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5204165375",
+      "id": "github:5206185384",
       "source": "github",
-      "title": "[S29.02.04] Define coverage thresholds that reward valuable tests",
-      "url": "https://github.com/NikoMix/fitness/issues/641",
-      "repositoryApiUrl": "https://api.github.com/repos/NikoMix/fitness",
-      "rewardUsd": 29.02,
-      "score": 48,
-      "labels": [
-        "type:story",
-        "domain:quality",
-        "platform:android",
-        "platform:ios",
-        "wave:1",
-        "status:partial"
-      ],
-      "commentCount": 0,
-      "updatedAt": "2026-08-22T19:52:25Z",
-      "summary": "<!-- forge:key=S29.02.04 type=story --> > **Story S29.02.04** | Feature: F29.02 | Epic: E29 | Domain: `quality` | Wave 1 | Size `s` | Platforms: android, ios ## User story **As** technical lead reviewing quality signals **I want** coverage gates that focus on logic instead of generated UI **So that** the team improves risk coverage rather than chasing vanity percentages ## Requirements 1. Forge.Domain line coverage is at least 90 percent and branch coverage is at least 85 percent. 2. Forge.Core line coverage is at least 80 percent for use cases and validators. 3. Forge.App XAML and generated code are excluded from global coverage calculations. 4. Each automated check has deterministic seed data, a clear owner and a failure message that names the violated product or architecture rule. ## Acceptance criteria - [ ] **AC1** - **Given** a pull request adds untested domain validation branches - **When** coverage is calculated - **Then** the domain branch coverage gate fails below 85 percent - [ ] **AC2** - **Given** a pull request only changes XAML layout - **When** coverage is calculated - **Then** the build does not fail solely because XAML has no line coverage - [ ] **AC3** - **Given*",
+      "title": "Claim: $5,000 unrestricted-memory SipHash-1-2 bounty",
+      "url": "https://github.com/tromp/cuckoo/issues/116",
+      "repositoryApiUrl": "https://api.github.com/repos/tromp/cuckoo",
+      "rewardUsd": 5000,
+      "score": 46,
+      "labels": [],
+      "commentCount": 3,
+      "updatedAt": "2026-08-22T20:30:00Z",
+      "summary": "Hi John, I am submitting a claim for the **second SipHash bounty** in the current README: the **$5,000 unrestricted-memory offer** (“regardless of memory use”), not the separate one-byte-per-edge bounty. ## Public implementation and evidence - Source branch: https://github.com/nexicturbo/splean/tree/codex/siphash12-bounty - Audited submission commit: https://github.com/nexicturbo/splean/commit/9e3083c3fc9c2510f9d2f0e53d65c4ae49e2faaa - Full algorithm, build, reproduction, benchmark, and correctness write-up: https://github.com/nexicturbo/splean/blob/codex/siphash12-bounty/BOUNTY.md - Primary/superseded evidence index: https://github.com/nexicturbo/splean/blob/codex/siphash12-bounty/eval/SIPHASH_BOUNTY.md - Independent 12-cell auditor: https://github.com/nexicturbo/splean/blob/codex/siphash12-bounty/tools/audit_bounty_matrix.py The implementation is open source under the repository’s existing FAIR MINING / GPL-2.0-or-later alternative license. ## Approach This is an exact solver derived from Splean. It replaces the probabilistic walk membership stage with an exact cache-local radix join on every one of the 41 alternating walk steps: 1. merge, sort, and deduplicate the exact target n",
       "state": "candidate",
-      "payoutConfidence": 0.35,
+      "payoutConfidence": 0.5,
       "autonomyFit": 1,
       "requiresHumanGate": false,
       "requiresSpecialHardware": false,
       "estimatedHoursBand": 4,
-      "complexity": 0,
+      "complexity": 2,
       "fundedBountySignal": false,
-      "fastCashScore": 100,
+      "fastCashScore": 105,
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
-        "comments": 0,
+        "comments": 3,
         "attemptSignals": 0,
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 29.02,
+      "economicValueUsd": 5000,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5151978013",
+      "source": "github",
+      "title": "Epic: oracle-first pipeline for autonomous, bounty-worthy blockchain submissions",
+      "url": "https://github.com/gratefulagents/gratefulagents/issues/247",
+      "repositoryApiUrl": "https://api.github.com/repos/gratefulagents/gratefulagents",
+      "rewardUsd": 100,
+      "score": 46,
+      "labels": [
+        "enhancement",
+        "security",
+        "epic"
+      ],
+      "commentCount": 4,
+      "updatedAt": "2026-08-22T20:15:49Z",
+      "summary": "## Why this epic exists Our security stack is strong on authorization, scope pinning, sandboxing, typed tool execution, and gated reporting. It is weak at the only thing that decides whether a finding earns a bounty: **producing machine-checked proof of impact against the system that is actually deployed, in the vocabulary the paying program uses.** This epic reframes the security-researcher product around the acceptance function of real bug bounty and audit-contest platforms, based on primary sources (accessed 2026-08-14, see Evidence below). ### The decisive finding Every AI system that has actually earned bug bounties had a **cheap mechanical oracle plus retries**; every documented failure shipped model prose. - Google Project Zero's Naptime names **\"Perfect Verification\"** as an explicit design principle (success = controller-confirmed ASan crash) and pairs it with independent-trajectory sampling. Big Sleep then found a real pre-release SQLite bug that AFL had missed in 150 CPU-hours. - OSS-Fuzz-Gen has **no LLM in the accept path** (compiler + sanitizer only) and produced 26 reported vulnerabilities including CVE-2024-9143 in OpenSSL. - XBOW reached #1 on the HackerOne US lead",
+      "state": "candidate",
+      "payoutConfidence": 0.5,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 8,
+      "complexity": 4,
+      "fundedBountySignal": false,
+      "fastCashScore": 80,
+      "survivalEligible": false,
+      "eligibilityReason": "Too slow for bootstrap mode: first real cash currently requires a <=4 hour task.",
+      "competition": {
+        "comments": 4,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 100,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -184,71 +309,38 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5223597392",
+      "id": "github:5218809339",
       "source": "github",
-      "title": "[Bounty $1500] ttnn.exp2: fp32 path returns NaN / finite garbage instead of +inf for x >= 128 (missing overflow guard)",
-      "url": "https://github.com/tenstorrent/tt-metal/issues/54054",
+      "title": "[Bounty $35000] Welford Two-Pass Statistics Optimisation",
+      "url": "https://github.com/tenstorrent/tt-metal/issues/54016",
       "repositoryApiUrl": "https://api.github.com/repos/tenstorrent/tt-metal",
-      "rewardUsd": 1500,
-      "score": 46,
+      "rewardUsd": 35000,
+      "score": 54,
       "labels": [
+        "feature-request",
         "community"
       ],
-      "commentCount": 1,
-      "updatedAt": "2026-08-22T19:36:28Z",
-      "summary": "## Summary `ttnn.exp2`'s fp32-accurate kernel (`_sfpu_exp2_fp32_accurate_`, selected when `is_fp32_dest_acc_en == true`) reconstructs `2^x = 2^round(x) * 2^f` by evaluating a minimax polynomial `r = 2^f` (`f = x - round(x)`) and then rebuilding the exponent with `setexp(r, e)`, `e = biased_exp(r) + round(x)`. The exponent path has an **underflow** guard (`e < 1 -> 0`) but **no overflow guard**. For `x >= 128` the true result overflows fp32 and should be `+inf`. Instead `e` reaches `>= 255` and the *unconditional* `setexp(r, e)` writes an out-of-range exponent field: * `x` in `[128, 128.5)` -> `e == 255` with a nonzero mantissa -> **NaN** * `x >= 128.5` -> `e >= 256`, `setexp` keeps only the low 8 bits -> **wrapped finite garbage** The kernel even **precomputes the correct overflow result** one line earlier (`y *= std::numeric_limits<float>::infinity();`, i.e. `y = r * inf = +inf`) and then throws it away by overwriting `y` with the `setexp` result. The overflow half of the reconstruction is simply missing. `exp2(x)` for `x >= 128` is unambiguously `+inf` (2^128 > FLT_MAX), so this is never a representable-range question — the correct answer exists (`+inf`), is cheap, and is already",
+      "commentCount": 2,
+      "updatedAt": "2026-08-22T20:21:09Z",
+      "summary": "## Proposal While optimising the equal-count Welford merge path, I identified and prototyped a broader Welford-path performance improvement based on stable two-pass statistics. The proposed work replaces the underlying statistics calculation used by the Welford paths for standalone variance and standard deviation, GroupNorm, and LayerNorm where the new algorithm is beneficial. The implementation uses shifted two-pass statistics with FP32 accumulation: ```text mean = shift + average(x - shift) variance = average((x - mean)^2) ``` Centring the input before accumulation avoids cancellation for inputs with a large common offset. Separating mean and variance accumulation also removes the per-sample division and recurrence costs of online Welford. ## Scope - Implement shifted two-pass statistics with FP32 accumulation for: - Standalone FP32 `var` and `std`. - GroupNorm. - LayerNorm, including relevant interleaved and sharded paths. - Evaluate BF16 `var` and `std`, enabling two-pass statistics where they are faster without compromising numerical behaviour. - Add data-reuse and eligible L1-replay optimisations so the second pass can reuse resident input data instead of rereading it from DR",
       "state": "candidate",
       "payoutConfidence": 0.15,
       "autonomyFit": 0.45,
       "requiresHumanGate": true,
       "requiresSpecialHardware": false,
-      "estimatedHoursBand": 8,
-      "complexity": 4,
+      "estimatedHoursBand": 4,
+      "complexity": 2,
       "fundedBountySignal": false,
-      "fastCashScore": 53,
+      "fastCashScore": 56,
       "survivalEligible": false,
-      "eligibilityReason": "Too slow for bootstrap mode: first real cash currently requires a <=4 hour task.",
+      "eligibilityReason": "Competition is too high for bootstrap mode.",
       "competition": {
-        "comments": 1,
-        "attemptSignals": 0,
-        "risk": "low"
+        "comments": 2,
+        "attemptSignals": 2,
+        "risk": "medium"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 1500,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5223629185",
-      "source": "github",
-      "title": "[Bounty $750] ttnn.addcdiv: forms in1 * value before dividing, overflowing to +/-inf for finite results",
-      "url": "https://github.com/tenstorrent/tt-metal/issues/54055",
-      "repositoryApiUrl": "https://api.github.com/repos/tenstorrent/tt-metal",
-      "rewardUsd": 750,
-      "score": 46,
-      "labels": [
-        "community"
-      ],
-      "commentCount": 1,
-      "updatedAt": "2026-08-22T19:44:51Z",
-      "summary": "## Summary `ttnn.addcdiv` computes `out = input + value * (tensor1 / tensor2)`. The SFPU kernel evaluates it in the wrong order: ```cpp sfpi::vFloat result = in0 + (in1 * value_float * sfpu_reciprocal_iter<2>(in2)); ``` C++ left-associativity makes this `in0 + ((in1 * value_float) * recip(in2))` — the scaled numerator `in1 * value` is formed **before** the division is applied. When `|in1 * value| > FLT_MAX` but the mathematically exact result `in0 + value*(in1/in2)` is an ordinary finite number, the intermediate overflows to `+/-inf` and poisons the entire lane. `torch.addcdiv` (the golden reference) divides first: `input + value * (tensor1 / tensor2)`, so the intermediate quotient `tensor1/tensor2` is modest and the result is finite. The two orders agree for almost all inputs and diverge exactly on the overflow set — a finite-vs-inf mismatch, not a ULP nit. ## Measured (source-faithful fp32 model of the kernel vs torch/numpy addcdiv golden) Reproduction script attached (`verify_addcdiv.py`, `proof.txt`). | in0 | in1 | in2 | value | kernel | golden `in0+value*(in1/in2)` | | |------|---------|-----|-------|--------|------------------------------|-----| | 0 | 3.0e38 | 8 | 4 | `inf` |",
-      "state": "candidate",
-      "payoutConfidence": 0.15,
-      "autonomyFit": 0.45,
-      "requiresHumanGate": true,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 8,
-      "complexity": 4,
-      "fundedBountySignal": false,
-      "fastCashScore": 53,
-      "survivalEligible": false,
-      "eligibilityReason": "Too slow for bootstrap mode: first real cash currently requires a <=4 hour task.",
-      "competition": {
-        "comments": 1,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 750,
+      "economicValueUsd": 35000,
       "requiresPreclaimOrIdentity": false
     }
   ],
@@ -262,7 +354,7 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:2940525692\",\"rewardUsd\":10,\"fastCashScore\":60,\"updatedAt\":\"2026-08-18T21:51:22Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-18T21:51:29Z\",\"competition\":{\"comments\":29,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":125,\"updatedAt\":\"2026-08-22T16:37:56Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5183229703\",\"rewardUsd\":120,\"fastCashScore\":108,\"updatedAt\":\"2026-08-22T14:54:31Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5204165375\",\"rewardUsd\":29.02,\"fastCashScore\":100,\"updatedAt\":\"2026-08-22T19:52:25Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5223597392\",\"rewardUsd\":1500,\"fastCashScore\":53,\"updatedAt\":\"2026-08-22T19:36:28Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5223629185\",\"rewardUsd\":750,\"fastCashScore\":53,\"updatedAt\":\"2026-08-22T19:44:51Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:2940525692\",\"rewardUsd\":10,\"fastCashScore\":60,\"updatedAt\":\"2026-08-18T21:51:22Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-18T21:51:29Z\",\"competition\":{\"comments\":29,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":125,\"updatedAt\":\"2026-08-22T16:37:56Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5151978013\",\"rewardUsd\":100,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T20:15:49Z\",\"competition\":{\"comments\":4,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5183229703\",\"rewardUsd\":120,\"fastCashScore\":108,\"updatedAt\":\"2026-08-22T14:54:31Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5206185384\",\"rewardUsd\":5000,\"fastCashScore\":105,\"updatedAt\":\"2026-08-22T20:30:00Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5214938859\",\"rewardUsd\":1115,\"fastCashScore\":113,\"updatedAt\":\"2026-08-22T20:25:00Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5218809339\",\"rewardUsd\":35000,\"fastCashScore\":56,\"updatedAt\":\"2026-08-22T20:21:09Z\",\"competition\":{\"comments\":2,\"attemptSignals\":2,\"risk\":\"medium\"}},{\"id\":\"github:5223742069\",\"rewardUsd\":202,\"fastCashScore\":109,\"updatedAt\":\"2026-08-22T20:27:16Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5223804455\",\"rewardUsd\":420,\"fastCashScore\":111,\"updatedAt\":\"2026-08-22T20:30:43Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
@@ -286,7 +378,7 @@
       "reasons": [
         "already_rewarded_or_paid"
       ],
-      "rejectedAt": "2026-08-22T19:57:55.345Z"
+      "rejectedAt": "2026-08-22T20:33:41.220Z"
     },
     {
       "id": "github:2940525692",
@@ -295,7 +387,7 @@
       "reasons": [
         "already_rewarded_or_paid"
       ],
-      "rejectedAt": "2026-08-22T19:57:55.346Z"
+      "rejectedAt": "2026-08-22T20:33:41.220Z"
     },
     {
       "id": "github:5222232071",

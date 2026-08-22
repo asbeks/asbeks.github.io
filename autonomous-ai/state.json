@@ -1,24 +1,24 @@
 {
   "version": 5,
-  "cycle": 26,
+  "cycle": 27,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-22T19:58:21.363Z",
+  "updatedAt": "2026-08-22T20:34:08.006Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "online",
-  "currentAgent": "CRITIC",
+  "currentAgent": "PLANNER",
   "provider": {
     "mode": "OpenCode Free",
-    "model": "mimo-v2.5-free",
+    "model": "hy3-free",
     "attempts": 1
   },
   "latest": {
-    "cycle": 26,
-    "agent": "CRITIC",
-    "timestamp": "2026-08-22T19:58:21.363Z",
-    "observation": "State snapshot does not show extracted claim steps or payout details for issue 4234681451.",
-    "objection": "Without verified payout method and claim procedure, the job's legitimacy is incomplete.",
-    "decision": "Do not proceed with preparation until claim process is confirmed from authoritative source.",
-    "next": "PLANNER must verify issue page fetch and extract full claim instructions and payout mechanism."
+    "cycle": 27,
+    "agent": "PLANNER",
+    "timestamp": "2026-08-22T20:34:08.006Z",
+    "observation": "Snapshot for github:4234681451 still truncates claim steps; summary shows bounty $250 and review by Brandon/Matt but no payout channel.",
+    "objection": "Critique rightly demands verified payout; however preparing proposal draft from stated acceptance criteria is legitimate and does not require payout confirmation.",
+    "decision": "Draft markdown schema proposal outline meeting listed acceptance criteria; flag payout method as unverified pending authoritative issue page fetch.",
+    "next": "CRITIC should examine the drafted outline and note that payout mechanism remains unconfirmed from snapshot alone."
   },
   "lastError": null,
   "history": [
@@ -255,6 +255,15 @@
       "objection": "Without verified payout method and claim procedure, the job's legitimacy is incomplete.",
       "decision": "Do not proceed with preparation until claim process is confirmed from authoritative source.",
       "next": "PLANNER must verify issue page fetch and extract full claim instructions and payout mechanism."
+    },
+    {
+      "cycle": 27,
+      "agent": "PLANNER",
+      "timestamp": "2026-08-22T20:34:08.006Z",
+      "observation": "Snapshot for github:4234681451 still truncates claim steps; summary shows bounty $250 and review by Brandon/Matt but no payout channel.",
+      "objection": "Critique rightly demands verified payout; however preparing proposal draft from stated acceptance criteria is legitimate and does not require payout confirmation.",
+      "decision": "Draft markdown schema proposal outline meeting listed acceptance criteria; flag payout method as unverified pending authoritative issue page fetch.",
+      "next": "CRITIC should examine the drafted outline and note that payout mechanism remains unconfirmed from snapshot alone."
     }
   ],
   "economy": {
@@ -290,6 +299,22 @@
         "summary": "### Summary Inspect the committed Anchore JSON fixtures and propose a schema for tracking vulnerabilities over time. Specifically: what combination of fields uniquely identifies \"the same vulnerability\" across scans? Candidates to evaluate include CVE ID alone, CVE + package name, CVE + package name + version, and CVE + package + image. Write up the tradeoffs, pick a recommendation, and sketch the analytics DB table(s) needed to support first_seen / last_seen / fixed_at / ignored_at / cleared_at fields. **Tech notes:** The Anchore JSON schema is documented at the Anchore project site; worth skimming before diving into fixtures. The goal of this spike is a decision, not code — resist the urge to start implementing. ### Acceptance criteria - [ ] Written proposal (markdown doc in PR) covering identity key options, tradeoffs, and a recommendation - [ ] Proposed analytics DB schema with column types and rationale - [ ] At least one worked example from the fixtures showing how the identity key behaves across days - [ ] Reviewed and approved by Brandon and/or Matt before next ticket starts ## Bounty: $250 This issue has been selected for our paid contributor program. If you wish to claim "
       },
       {
+        "id": "github:5214938859",
+        "title": "Maintainer notice: enforce rolling bounty liquidity and external-funding GMV loop",
+        "url": "https://github.com/NSPG13/agent-bounties/issues/1117",
+        "rewardUsd": 1115,
+        "score": 54,
+        "summary": "## Planned scope Implement a private Open Competition V2 inventory invariant with floor 5 and target 10; a fail-closed deterministic replenishment planner; a bounded 30.40 USDC/day and 152 USDC lifetime execution policy; twenty reviewed structured-artifact candidates; unified public marketplace metrics; structured participant feedback; and external poster/funder conversion paths across web, API, MCP, CLI, and docs. This is needed because the five recently funded competitions settled without replacement and production reached zero active V2 competitions. The public product will continue to present one marketplace: public counts and GMV remain aggregated across supported bounty mechanisms. Only private operational state distinguishes the inventory needed by the replenisher. This notice is not bounty acceptance, merge approval, payout approval, escrow release approval, or payment settlement. ## Affected contracts or workflows Likely affected surfaces include the inventory guard and self-healing policy, the Open Competition V2 seed/planning workflow and scripts, private operational schemas, aggregate platform metrics, opportunity comments, posting/funding guidance, MCP/CLI parity, and "
+      },
+      {
+        "id": "github:5223804455",
+        "title": "調査: opening state固定のN-rollout実測で13 BIDとAll-Pass=0を直接比較する",
+        "url": "https://github.com/eletim/napoleon-web/issues/422",
+        "rewardUsd": 420,
+        "score": 40,
+        "summary": "Related: #202, #411, #420, #421 Base branch: `feature/issue-202-non-playing-ai` ## 背景 #420 の相対reward offline評価では no-current-bid の opening BID率は `10.8%` で、hand strength別にも low 0%, medium 8.8%, strong 26.3%, veryStrong 48.1% と自然な傾向が見えた。 一方 #421 では current-bid stateについて同じcurrent context / hand / hidden-deal seedを固定したpaired N-rolloutを行った結果、#420のraise 0.1%が大幅に保守的すぎることが判明した。 そのためopening側も1-rollout panelの見た目だけで信用せず、**no-current-bid stateを固定してopening BIDをN回rolloutし、All-Pass=0との比較が実測でも妥当か**を確認する。 このIssueではNNを再学習しない。まず #411 Napoleon M2 のopening判断が実データ上どこまで正しいかを切り分ける。 ## reward / decision semantics #420と完全に同じ相対rewardを使う。 ```text relativeReward = ownRawReward - mean(rawReward of other 4 players) ``` Napoleon raw reward: - win: `+2d` - loss: `0` candidate Napoleon relative reward: - win: `+7d/4` - loss: `-3d/4` したがって: ```text EV_OPEN_BID(d) = pN * (7d/4) + (1-pN) * (-3d/4) ``` opening PASSはAll-Pass基準として: ```text EV_ALLPASS = 0 ``` d=13では理論境界: ```text pN = 30.0% ``` Adjutant / Citizen / role probability / NapoleonAfterPass / NoContract追加価値はopening比較には使わない。 ## 目的 1. no-current-bid representative statesを抽出する 2. candidate hand / seat / opening context / legal action setを固定する 3. hidden dealだけreshuff"
+      },
+      {
         "id": "github:4462160604",
         "title": "[bounty $400] Implement ABNF-compliant email address parser with full §3.2–§4.4 coverage",
         "url": "https://github.com/UnsafeLabs/RFC-5322/issues/1",
@@ -298,28 +323,12 @@
         "summary": "`source.md` contains the complete RFC 5322 specification (Internet Message Format). We need a **fully conformant email address parser** in Python that implements the complete ABNF grammar from sections 3.2 through 3.4, plus obsolete syntax from §4.4. This parser must handle every edge case defined in the RFC — not just simple `user@domain` patterns, but the full complexity of quoted strings, comments, folding whitespace, group addresses, and domain literals. ## Background RFC 5322 defines email address syntax through a chain of ABNF productions that build on each other: ``` address = mailbox / group mailbox = name-addr / addr-spec name-addr = [display-name] angle-addr angle-addr = [CFWS] \"<\" addr-spec \">\" [CFWS] addr-spec = local-part \"@\" domain local-part = dot-atom / quoted-string / obs-local-part domain = dot-atom / domain-literal / obs-domain ``` Each of these references further productions (CFWS, FWS, quoted-pair, dtext, etc.) that span multiple sections. **You must read `source.md` completely** to trace the full grammar dependency chain. ## Requirements ### 1. Parser Implementation — `parser.py` ```python class RFC5322Address: \"\"\"Parsed RFC 5322 email address.\"\"\" display_name"
       },
       {
-        "id": "github:5183229703",
-        "title": "Model fiat currencies and multi-chain token bindings as domain state",
-        "url": "https://github.com/Lethephobia/appletheia/issues/128",
-        "rewardUsd": 120,
-        "score": 32,
-        "summary": "## Background The Banking Ledger must distinguish internal fiat-denominated balances from external tokens used for blockchain settlement. An intermediate redesign removed the `Currency` aggregate and introduced a statically injected `SettlementAssetRegistry`. That model has important limitations: - supported currencies and token bindings are queried directly from runtime configuration instead of being reconstructed as Read Models from domain events; - one Currency effectively resolves to only one deposit token and one withdrawal token; - chain identity is hidden behind Solana infrastructure types; and - completed Deposit and Withdrawal aggregates do not retain the blockchain transaction that produced the settlement. Replace the static registry with event-sourced Ledger domain state. Restore `Currency` as a bank-managed aggregate, model multiple token bindings as entities owned by that aggregate, make the supported blockchain explicit in domain values, and project the resulting events into normal Read Models. This does **not** restore the former currency-issuance platform. The bank binds existing external tokens and does not create tokens, publish token metadata, or manage token sup"
-      },
-      {
-        "id": "github:5204165375",
-        "title": "[S29.02.04] Define coverage thresholds that reward valuable tests",
-        "url": "https://github.com/NikoMix/fitness/issues/641",
-        "rewardUsd": 29.02,
-        "score": 48,
-        "summary": "<!-- forge:key=S29.02.04 type=story --> > **Story S29.02.04** | Feature: F29.02 | Epic: E29 | Domain: `quality` | Wave 1 | Size `s` | Platforms: android, ios ## User story **As** technical lead reviewing quality signals **I want** coverage gates that focus on logic instead of generated UI **So that** the team improves risk coverage rather than chasing vanity percentages ## Requirements 1. Forge.Domain line coverage is at least 90 percent and branch coverage is at least 85 percent. 2. Forge.Core line coverage is at least 80 percent for use cases and validators. 3. Forge.App XAML and generated code are excluded from global coverage calculations. 4. Each automated check has deterministic seed data, a clear owner and a failure message that names the violated product or architecture rule. ## Acceptance criteria - [ ] **AC1** - **Given** a pull request adds untested domain validation branches - **When** coverage is calculated - **Then** the domain branch coverage gate fails below 85 percent - [ ] **AC2** - **Given** a pull request only changes XAML layout - **When** coverage is calculated - **Then** the build does not fail solely because XAML has no line coverage - [ ] **AC3** - **Given*"
-      },
-      {
-        "id": "github:4563956966",
-        "title": "parse_duration drops the days (d) unit",
-        "url": "https://github.com/tine1117/oss-hunter-livefire/issues/1",
-        "rewardUsd": 50,
-        "score": 44,
-        "summary": "## Bug `parse_duration` silently drops the **days** (`d`) unit. The README lists `d` as a supported unit, but the parser ignores it and returns a wrong (too-small) result instead of raising or counting it. ### Reproduction ```python from duration_utils import parse_duration parse_duration(\"1d\") # -> 0 (expected 86400) parse_duration(\"2d4h\") # -> 14400 (expected 187200) ``` ### Expected `d` should be counted as 86400 seconds, so `parse_duration(\"1d\") == 86400` and `parse_duration(\"2d4h\") == 187200`. ### Notes The `d` character is already accepted by the token regex, so malformed-input detection still passes — the value is just never added. A fix should add the `d` unit and cover it with tests. /bounty $50"
+        "id": "github:5223742069",
+        "title": "調査: current bid固定のN-rollout実測でPASSとraiseの相対期待rewardを直接比較する",
+        "url": "https://github.com/eletim/napoleon-web/issues/421",
+        "rewardUsd": 202,
+        "score": 40,
+        "summary": "Related: #202, #411, #414, #420 Base branch: `feature/issue-202-non-playing-ai` ## 背景 #420 の相対reward offline評価では、 - opening BID率: `10.8%` - current-bid-exists の raise BID率: `0.1%` となった。 opening側は hand strength に応じた自然な傾向が見えた一方、誰かがすでに立った後はほぼ全PASSになっている。 ただし #420 の評価panelは各 state/action につき基本1 rollout outcomeであり、hidden deal / downstream policy varianceを十分平均化していない。 #409/#411 で one-shot outcome が大きくノイジーだったことが分かっているため、raise判断についても同様に **実際の current bidding context と candidate hand を固定して、PASS と raise をそれぞれN回rolloutし、empirical relative rewardを直接比較する**。 このIssueではNNを再学習しない。まず「本当にPASSの方が得なのか」「NNのEV比較がPASS寄りに誤っているのか」を実データで切り分ける。 ## 相対reward定義 #420と完全に同じ。 ```text relativeReward = ownRawReward - mean(rawReward of other 4 players) ``` Napoleon raw reward: - win: `+2d` - loss: `0` candidate Napoleonのrelative reward: - win: `+7d/4` - loss: `-3d/4` Citizenのrelative reward: - Napoleon win時: `-3d/4` - Napoleon loss時: `+d/2` Adjutant価値、role probability、NapoleonAfterPass追加価値、NoContract追加価値は期待値scorerには使わない。 ## 目的 1. current bid が存在する representative states を複数抽出する 2. candidate hand / seat / bidding history / current highest bid を可能な限り固定する 3. 同じhidden-deal seed familyについて `PASS` と代表的なlegal raise actionをそれぞれ"
       }
     ],
     "active": null,
