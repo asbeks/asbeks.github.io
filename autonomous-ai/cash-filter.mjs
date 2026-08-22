@@ -3,10 +3,6 @@ import path from 'node:path';
 
 const JOBS_PATH = path.join(process.cwd(), 'autonomous-ai/jobs.json');
 
-function clean(v, max = 240) {
-  return String(v || '').replace(/\s+/g, ' ').trim().slice(0, max);
-}
-
 function labelsOf(x) {
   return (x.labels || []).map((v) => String(v).toLowerCase());
 }
@@ -22,9 +18,9 @@ function isTestMoney(x) {
 
 function isAlreadyRewarded(x) {
   const labels = labelsOf(x);
-  return labels.some((l) => /(^|\s|emoji)rewarded$/.test(l.replace(/[^a-z\s]/g, '').trim()))
+  return labels.some((l) => /(^|\s)rewarded$/.test(l.replace(/[^a-z\s]/g, '').trim()))
     || labels.some((l) => l.includes('💰 rewarded'))
-    || labels.some((l) => /^(paid|completed bounty|bounty paid|claimed)$/.test(l));
+    || labels.some((l) => /^(paid|completed bounty|bounty paid|claimed)$/.test(l.replace(/[^a-z ]/g, '').trim()));
 }
 
 function difficultyFloor(x) {
@@ -57,7 +53,6 @@ for (const original of jobs.opportunities || []) {
   if (rewarded) reasons.push('already_rewarded_or_paid');
   if (!Number.isFinite(Number(x.rewardUsd)) || Number(x.rewardUsd) <= 0) reasons.push('no_positive_reward');
 
-  // Recompute survival eligibility using economic truth and corrected difficulty.
   x.survivalEligible = Boolean(
     reasons.length === 0
     && x.realMoneyEligible
@@ -66,11 +61,13 @@ for (const original of jobs.opportunities || []) {
     && !x.requiresHumanGate
     && !x.requiresSpecialHardware
     && hours <= 8
-    && String(x.competition?.risk || 'unknown') !== 'high'
-    && String(x.competition?.risk || 'unknown') !== 'saturated'
+    && !['high', 'saturated'].includes(String(x.competition?.risk || 'unknown'))
   );
 
-  if (hours > 8 && reasons.length === 0) x.eligibilityReason = 'Likely too slow for first-revenue survival mode after deliverable-based difficulty correction.';
+  if (hours > 8 && reasons.length === 0) {
+    x.eligibilityReason = 'Likely too slow for first-revenue survival mode after deliverable-based difficulty correction.';
+  }
+
   if (reasons.length) {
     rejected.push({ id: x.id, title: x.title, rewardUsd: x.rewardUsd, reasons, rejectedAt: new Date().toISOString() });
     continue;
@@ -89,7 +86,9 @@ kept.sort((a, b) => {
   return Number(b.fastCashScore || 0) - Number(a.fastCashScore || 0);
 });
 
-jobs.version = Math.max(9, Number(jobs.version || 0));
+const eligible = kept.filter((x) => x.survivalEligible);
+
+jobs.version = Math.max(10, Number(jobs.version || 0));
 jobs.opportunities = kept;
 jobs.economicallyRejected = [
   ...rejected,
@@ -99,27 +98,29 @@ jobs.survival = {
   ...(jobs.survival || {}),
   mode: Number(jobs.completed?.length || 0) === 0,
   objective: 'first_real_confirmed_cash_fast',
-  eligibleCount: kept.filter((x) => x.survivalEligible).length,
+  eligibleCount: eligible.length,
   rejectedFakeRevenueCount: rejected.filter((x) => x.reasons.includes('testnet_or_test_token_reward')).length,
   rejectedAlreadyPaidCount: rejected.filter((x) => x.reasons.includes('already_rewarded_or_paid')).length,
 };
 
-// Never preserve a selection that failed the new economic checks.
+let validSelected = false;
 if (jobs.selected) {
   const fresh = kept.find((x) => x.id === jobs.selected.id);
-  if (!fresh || !fresh.survivalEligible) {
-    jobs.selected = null;
-    jobs.active = null;
-    jobs.selection = {
-      status: 'invalidated_by_cash_filter',
-      mode: 'survival',
-      rationale: 'Previous selection failed real-money, availability, competition, or time-to-cash checks.',
-    };
-    jobs.status = kept.some((x) => x.survivalEligible) ? 'candidates' : 'idle';
-    jobs.needsSelection = kept.some((x) => x.survivalEligible);
-  }
+  validSelected = Boolean(fresh?.survivalEligible);
+  if (validSelected) jobs.selected = { ...fresh, state: 'selected' };
+}
+
+if (!validSelected) {
+  if (jobs.selected) jobs.active = null;
+  jobs.selected = null;
+  jobs.selection = null;
+  jobs.status = eligible.length ? 'candidates' : 'idle';
+  jobs.needsSelection = eligible.length > 0;
+  jobs.marketChanged = true;
+  jobs.lastError = null;
+  jobs.retryAfterAt = null;
 }
 
 jobs.updatedAt = new Date().toISOString();
 await fs.writeFile(JOBS_PATH, JSON.stringify(jobs, null, 2) + '\n');
-console.log(`Cash filter: kept=${kept.length}; survival=${kept.filter((x) => x.survivalEligible).length}; rejected=${rejected.length}`);
+console.log(`Cash filter: kept=${kept.length}; survival=${eligible.length}; rejected=${rejected.length}`);
