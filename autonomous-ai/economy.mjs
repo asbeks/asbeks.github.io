@@ -6,6 +6,8 @@ const TON_API = 'https://toncenter.com/api/v3';
 const TRON_API = 'https://api.trongrid.io';
 const TON_USDT_MASTER = 'EQCxE6mUtQJKFnGfaROTKOt1lZbDiiX1kCixRv7Nw2Id_sDs';
 const TRON_USDT_CONTRACT = 'TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t';
+const SUPABASE_URL = 'https://yefvzehrytkzcxvylvhz.supabase.co';
+const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_SsKiMmuVhu0-rQkOZkQ0aw_TEJcsZDU';
 
 function units(value, decimals = 6) {
   try { return Number(BigInt(String(value || '0'))) / 10 ** decimals; } catch { return 0; }
@@ -20,6 +22,25 @@ async function getJson(url, headers = {}) {
 
 async function loadEconomy() {
   return JSON.parse(await fs.readFile(ECONOMY_PATH, 'utf8'));
+}
+
+async function discoverBackendWallets() {
+  const response = await fetch(`${SUPABASE_URL}/rest/v1/observer_wallets?select=chain,public_address,active&active=eq.true`, {
+    headers: {
+      apikey: SUPABASE_PUBLISHABLE_KEY,
+      Accept: 'application/json',
+    },
+    cache: 'no-store',
+    signal: AbortSignal.timeout(10000),
+  });
+  if (!response.ok) throw new Error(`Supabase wallet discovery returned ${response.status}`);
+  const rows = await response.json().catch(() => []);
+  const found = { ton: '', tron: '' };
+  for (const row of Array.isArray(rows) ? rows : []) {
+    if (row?.chain === 'ton' && typeof row.public_address === 'string') found.ton = row.public_address;
+    if (row?.chain === 'tron' && typeof row.public_address === 'string') found.tron = row.public_address;
+  }
+  return found;
 }
 
 function seenIds(economy) {
@@ -56,7 +77,7 @@ async function readTon(address, economy) {
       to: address,
       txHash: item.transaction_hash || '',
       timestamp: new Date(Number(item.transaction_now || 0) * 1000).toISOString(),
-      confirmed: true
+      confirmed: true,
     });
   }
   return { balance: { TON, USDT }, deposits, cursor };
@@ -98,15 +119,22 @@ async function readTron(address, economy) {
       to: address,
       txHash: item.transaction_id,
       timestamp: new Date(Number(item.block_timestamp || 0)).toISOString(),
-      confirmed: true
+      confirmed: true,
     });
   }
   return { balance: { TRX, USDT }, deposits, cursor };
 }
 
 const economy = await loadEconomy();
-const tonAddress = process.env.AI_TON_ADDRESS || economy.wallets?.tonAddress || '';
-const tronAddress = process.env.AI_TRON_ADDRESS || economy.wallets?.tronAddress || '';
+let backendWallets = { ton: '', tron: '' };
+try {
+  backendWallets = await discoverBackendWallets();
+} catch (error) {
+  console.warn(`Wallet discovery warning: ${error instanceof Error ? error.message : String(error)}`);
+}
+
+const tonAddress = process.env.AI_TON_ADDRESS || economy.wallets?.tonAddress || backendWallets.ton || '';
+const tronAddress = process.env.AI_TRON_ADDRESS || economy.wallets?.tronAddress || backendWallets.tron || '';
 
 try {
   const [ton, tron] = await Promise.all([readTon(tonAddress, economy), readTron(tronAddress, economy)]);
@@ -117,7 +145,7 @@ try {
     USDT_TON: ton.balance.USDT,
     TRX: tron.balance.TRX,
     USDT_TRON: tron.balance.USDT,
-    totalUSDT: ton.balance.USDT + tron.balance.USDT
+    totalUSDT: ton.balance.USDT + tron.balance.USDT,
   };
   economy.cursors = { tonUtime: ton.cursor, tronTimestamp: tron.cursor };
   economy.ledger = [...(economy.ledger || []), ...added].slice(-500);
@@ -129,11 +157,12 @@ try {
   economy.updatedAt = new Date().toISOString();
   economy.lastError = null;
   await fs.writeFile(ECONOMY_PATH, JSON.stringify(economy, null, 2) + '\n');
-  console.log(`Economy updated: ${economy.balances.totalUSDT.toFixed(2)} USDT, +${added.length} deposits`);
+  console.log(`Economy updated: ${economy.balances.totalUSDT.toFixed(2)} USDT, +${added.length} deposits, wallets=${Number(Boolean(tonAddress)) + Number(Boolean(tronAddress))}/2`);
 } catch (error) {
   economy.status = 'degraded';
   economy.updatedAt = new Date().toISOString();
   economy.lastError = error instanceof Error ? error.message : String(error);
+  economy.wallets = { tonAddress, tronAddress };
   await fs.writeFile(ECONOMY_PATH, JSON.stringify(economy, null, 2) + '\n');
   console.error(`Economy degraded: ${economy.lastError}`);
 }
