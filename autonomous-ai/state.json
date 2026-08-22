@@ -1,23 +1,23 @@
 {
-  "version": 3,
-  "cycle": 5,
+  "version": 4,
+  "cycle": 6,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-22T11:16:35.241Z",
-  "mission": "Operate a small economically self-sustaining AI that earns legitimate revenue, manages a crypto operating budget, pays infrastructure costs through a policy-gated signer, preserves reserves, improves its software, and scales only when economically justified.",
+  "updatedAt": "2026-08-22T11:31:23.138Z",
+  "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "online",
-  "currentAgent": "PLANNER",
+  "currentAgent": "CRITIC",
   "provider": {
     "mode": "OpenCode Free",
     "model": "mimo-v2.5-free"
   },
   "latest": {
-    "cycle": 5,
-    "agent": "PLANNER",
-    "timestamp": "2026-08-22T11:16:35.241Z",
-    "observation": "Economy unconfigured with zero balances and no wallet, blocking operational start.",
-    "objection": "Lack of wallet provisioning prevents any revenue or expense tracking, invalidating cash flow models.",
-    "decision": "I will detail minimal wallet setup requirements and initial funding sources to enable operations.",
-    "next": "CRITIC should evaluate the feasibility and security of proposed wallet configuration steps."
+    "cycle": 6,
+    "agent": "CRITIC",
+    "timestamp": "2026-08-22T11:31:23.138Z",
+    "observation": "PLANNER proposes wallet setup steps while a $75 bounty from TSCircuit is available but blocked by missing wallet.",
+    "objection": "Pursuing a $1 promotion bounty before wallet provisioning is misaligned; wallet setup is the critical path to any revenue.",
+    "decision": "Reject current low-value task; mandate immediate, secure wallet configuration to enable higher-value work like the $75 issue.",
+    "next": "PLANNER must design and detail a secure, minimal wallet setup procedure compliant with operational policies."
   },
   "lastError": null,
   "history": [
@@ -65,6 +65,15 @@
       "objection": "Lack of wallet provisioning prevents any revenue or expense tracking, invalidating cash flow models.",
       "decision": "I will detail minimal wallet setup requirements and initial funding sources to enable operations.",
       "next": "CRITIC should evaluate the feasibility and security of proposed wallet configuration steps."
+    },
+    {
+      "cycle": 6,
+      "agent": "CRITIC",
+      "timestamp": "2026-08-22T11:31:23.138Z",
+      "observation": "PLANNER proposes wallet setup steps while a $75 bounty from TSCircuit is available but blocked by missing wallet.",
+      "objection": "Pursuing a $1 promotion bounty before wallet provisioning is misaligned; wallet setup is the critical path to any revenue.",
+      "decision": "Reject current low-value task; mandate immediate, secure wallet configuration to enable higher-value work like the $75 issue.",
+      "next": "PLANNER must design and detail a secure, minimal wallet setup procedure compliant with operational policies."
     }
   ],
   "economy": {
@@ -84,6 +93,63 @@
     "runwayDays": null,
     "walletConfigured": false,
     "recentLedger": [],
+    "lastError": null
+  },
+  "jobs": {
+    "status": "ready",
+    "source": "github-public-issues",
+    "selected": {
+      "id": "github:5160514049",
+      "title": "Global cash promoter — authoritative payout + competition filter",
+      "url": "https://github.com/liubaining-louis/louis-os/issues/403",
+      "rewardUsd": 1,
+      "score": 83,
+      "summary": "Build and run a worldwide promotion stage after Global Opportunity Radar. Definition of done: - search fresh open GitHub bounty/reward issues globally; - inspect authoritative provider evidence in comments (Algora/Opire or documented funded receipt); - extract reward amount and active attempt count where available; - reject saturated (>5 active attempts), stale, unsafe, KYC/spend/signature-gated, or unverifiable payo"
+    },
+    "opportunities": [
+      {
+        "id": "github:5160514049",
+        "title": "Global cash promoter — authoritative payout + competition filter",
+        "url": "https://github.com/liubaining-louis/louis-os/issues/403",
+        "rewardUsd": 1,
+        "score": 83,
+        "summary": "Build and run a worldwide promotion stage after Global Opportunity Radar. Definition of done: - search fresh open GitHub bounty/reward issues globally; - inspect authoritative provider evidence in comments (Algora/Opire or documented funded receipt); - extract reward amount and active attempt count where available; - reject saturated (>5 active attempts), stale, unsafe, KYC/spend/signature-gated, or unverifiable payo"
+      },
+      {
+        "id": "github:3492579756",
+        "title": "Add `is_extended_promotional ` column to components (from data source)",
+        "url": "https://github.com/tscircuit/jlcsearch/issues/92",
+        "rewardUsd": 75,
+        "score": 80,
+        "summary": "Some parts are \"extended promotional\" which means they act as basic for a limited time, we should have that information available in a filterable column /bounty $75"
+      },
+      {
+        "id": "github:5070554046",
+        "title": "[$250] Paid report remains under the Approved filter in New Expensify and only shows “View,” while Classic still allows a workspace admin to mark it as paid",
+        "url": "https://github.com/Expensify/App/issues/97866",
+        "rewardUsd": 250,
+        "score": 71,
+        "summary": "If you haven’t already, check out our [contributing guidelines](https://github.com/Expensify/ReactNativeChat/blob/main/contributingGuides/CONTRIBUTING.md) for onboarding. To join our Slack channel, fill out [this form](https://forms.gle/Q7hnhUJPnQCK7Fe56). ___ **Version Number:** **Reproducible in staging?:** Needs Reproduction (unable to check customer's account) **Reproducible in production?:** Needs Reproduction ("
+      },
+      {
+        "id": "github:5220429074",
+        "title": "Code de Parrainage Bybit « KICKBACK20 » – Obtenez 20 % de réduction sur les frais de trading + réclamez instantanément votre bonus de 20 $",
+        "url": "https://github.com/paras490/Codice-Referral-Airalo-ARCHAN5111-Ottieni-il-10-di-sconto-sul-primo-acquisto/issues/17",
+        "rewardUsd": 100,
+        "score": 58,
+        "summary": "<html> <body> <!--StartFragment--> <!--StartFragment--> <!--StartFragment--> <!--StartFragment--> <!--StartFragment--><p data-start=\"1622\" data-end=\"1846\" class=\"PDq2pG_selectionAnchorContainer\">Vous recherchez un <strong data-start=\"1641\" data-end=\"1669\">Code de Parrainage Bybit</strong> pour réduire vos frais de trading ? Le code <strong data-start=\"1714\" data-end=\"1728\">KICKBACK20</strong> est présenté avec une of"
+      },
+      {
+        "id": "github:5181333182",
+        "title": "feature(site): Implement crypto donation flow with auto-token credit",
+        "url": "https://github.com/UltiMafia/Ultimafia/issues/2950",
+        "rewardUsd": 1,
+        "score": 58,
+        "summary": "### Overview Enable site owners to receive cryptocurrency donations. Successful donations auto-credit the user’s account with tokens at a fixed rate of $1 = 5 coins. ### User Flow 1. User enters USD donation amount and selects currency (+ network if applicable). 2. Page shows tokens that will be credited ($1 = 5 coins). 3. On submit, server fetches live price from Coinbase (stablecoins fixed at $1). 4. Invoice is cre"
+      }
+    ],
+    "active": null,
+    "completedCount": 0,
     "lastError": null
   }
 }

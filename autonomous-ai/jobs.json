@@ -1,10 +1,98 @@
 {
-  "version": 1,
-  "updatedAt": null,
-  "status": "idle",
+  "version": 2,
+  "updatedAt": "2026-08-22T11:30:41.397Z",
+  "status": "ready",
   "source": "github-public-issues",
-  "opportunities": [],
-  "selected": null,
+  "opportunities": [
+    {
+      "id": "github:5160514049",
+      "source": "github",
+      "title": "Global cash promoter — authoritative payout + competition filter",
+      "url": "https://github.com/liubaining-louis/louis-os/issues/403",
+      "repositoryApiUrl": "https://api.github.com/repos/liubaining-louis/louis-os",
+      "rewardUsd": 1,
+      "score": 83,
+      "labels": [],
+      "updatedAt": "2026-08-22T11:08:53Z",
+      "summary": "Build and run a worldwide promotion stage after Global Opportunity Radar. Definition of done: - search fresh open GitHub bounty/reward issues globally; - inspect authoritative provider evidence in comments (Algora/Opire or documented funded receipt); - extract reward amount and active attempt count where available; - reject saturated (>5 active attempts), stale, unsafe, KYC/spend/signature-gated, or unverifiable payo",
+      "state": "candidate"
+    },
+    {
+      "id": "github:3492579756",
+      "source": "github",
+      "title": "Add `is_extended_promotional ` column to components (from data source)",
+      "url": "https://github.com/tscircuit/jlcsearch/issues/92",
+      "repositoryApiUrl": "https://api.github.com/repos/tscircuit/jlcsearch",
+      "rewardUsd": 75,
+      "score": 80,
+      "labels": [
+        "💎 Bounty",
+        "$1"
+      ],
+      "updatedAt": "2026-08-22T10:55:32Z",
+      "summary": "Some parts are \"extended promotional\" which means they act as basic for a limited time, we should have that information available in a filterable column /bounty $75",
+      "state": "candidate"
+    },
+    {
+      "id": "github:5070554046",
+      "source": "github",
+      "title": "[$250] Paid report remains under the Approved filter in New Expensify and only shows “View,” while Classic still allows a workspace admin to mark it as paid",
+      "url": "https://github.com/Expensify/App/issues/97866",
+      "repositoryApiUrl": "https://api.github.com/repos/Expensify/App",
+      "rewardUsd": 250,
+      "score": 71,
+      "labels": [
+        "External",
+        "Daily",
+        "Needs Reproduction",
+        "Help Wanted",
+        "Overdue",
+        "Bug"
+      ],
+      "updatedAt": "2026-08-22T03:03:18Z",
+      "summary": "If you haven’t already, check out our [contributing guidelines](https://github.com/Expensify/ReactNativeChat/blob/main/contributingGuides/CONTRIBUTING.md) for onboarding. To join our Slack channel, fill out [this form](https://forms.gle/Q7hnhUJPnQCK7Fe56). ___ **Version Number:** **Reproducible in staging?:** Needs Reproduction (unable to check customer's account) **Reproducible in production?:** Needs Reproduction (",
+      "state": "candidate"
+    },
+    {
+      "id": "github:5220429074",
+      "source": "github",
+      "title": "Code de Parrainage Bybit « KICKBACK20 » – Obtenez 20 % de réduction sur les frais de trading + réclamez instantanément votre bonus de 20 $",
+      "url": "https://github.com/paras490/Codice-Referral-Airalo-ARCHAN5111-Ottieni-il-10-di-sconto-sul-primo-acquisto/issues/17",
+      "repositoryApiUrl": "https://api.github.com/repos/paras490/Codice-Referral-Airalo-ARCHAN5111-Ottieni-il-10-di-sconto-sul-primo-acquisto",
+      "rewardUsd": 100,
+      "score": 58,
+      "labels": [],
+      "updatedAt": "2026-08-22T06:00:47Z",
+      "summary": "<html> <body> <!--StartFragment--> <!--StartFragment--> <!--StartFragment--> <!--StartFragment--> <!--StartFragment--><p data-start=\"1622\" data-end=\"1846\" class=\"PDq2pG_selectionAnchorContainer\">Vous recherchez un <strong data-start=\"1641\" data-end=\"1669\">Code de Parrainage Bybit</strong> pour réduire vos frais de trading ? Le code <strong data-start=\"1714\" data-end=\"1728\">KICKBACK20</strong> est présenté avec une of",
+      "state": "candidate"
+    },
+    {
+      "id": "github:5181333182",
+      "source": "github",
+      "title": "feature(site): Implement crypto donation flow with auto-token credit",
+      "url": "https://github.com/UltiMafia/Ultimafia/issues/2950",
+      "repositoryApiUrl": "https://api.github.com/repos/UltiMafia/Ultimafia",
+      "rewardUsd": 1,
+      "score": 58,
+      "labels": [],
+      "updatedAt": "2026-08-22T10:07:51Z",
+      "summary": "### Overview Enable site owners to receive cryptocurrency donations. Successful donations auto-credit the user’s account with tokens at a fixed rate of $1 = 5 coins. ### User Flow 1. User enters USD donation amount and selects currency (+ network if applicable). 2. Page shows tokens that will be credited ($1 = 5 coins). 3. On submit, server fetches live price from Coinbase (stablecoins fixed at $1). 4. Invoice is cre",
+      "state": "candidate"
+    }
+  ],
+  "selected": {
+    "id": "github:5160514049",
+    "source": "github",
+    "title": "Global cash promoter — authoritative payout + competition filter",
+    "url": "https://github.com/liubaining-louis/louis-os/issues/403",
+    "repositoryApiUrl": "https://api.github.com/repos/liubaining-louis/louis-os",
+    "rewardUsd": 1,
+    "score": 83,
+    "labels": [],
+    "updatedAt": "2026-08-22T11:08:53Z",
+    "summary": "Build and run a worldwide promotion stage after Global Opportunity Radar. Definition of done: - search fresh open GitHub bounty/reward issues globally; - inspect authoritative provider evidence in comments (Algora/Opire or documented funded receipt); - extract reward amount and active attempt count where available; - reject saturated (>5 active attempts), stale, unsafe, KYC/spend/signature-gated, or unverifiable payo",
+    "state": "candidate"
+  },
   "active": null,
   "completed": [],
   "lastError": null
