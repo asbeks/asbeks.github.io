@@ -21,7 +21,7 @@ const candidates = (jobs.opportunities || []).slice(0, 10);
 
 if (!candidates.length) {
   jobs.selected = null;
-  jobs.selection = { status: 'none', rationale: 'No verified paid candidate passed the deterministic scout.' };
+  jobs.selection = { status: 'none', rationale: 'No verified paid candidate passed scouting and competition filters.' };
   jobs.status = 'idle';
   jobs.lastError = null;
   await fs.writeFile(JOBS_PATH, JSON.stringify(jobs, null, 2) + '\n');
@@ -29,12 +29,22 @@ if (!candidates.length) {
   process.exit(0);
 }
 
-const system = `You are the public JOB SELECTOR for an autonomous software worker-business. Choose at most one job from the supplied candidates. Do not reveal private chain-of-thought; provide only the compact decision fields requested.\n\nSelection policy:\n- Prefer legitimate, bounded coding/docs/data work with objective acceptance criteria.\n- Prefer higher expected profit, but do not choose a large payout if the task is likely too complex or requires credentials/accounts we do not have.\n- Reject referral promotions, speculative trading, spam, harmful security exploitation, regulated professional work, identity/KYC requirements, or tasks requiring deception.\n- Reject a task if payout evidence is too vague or the candidate looks like a meta-list/aggregator rather than the actual paid task.\n- The worker currently has general JS/TS/Node/React/API/docs/data capability and can learn ordinary open-source codebases.\n- Missing wallet configuration does not prevent preparing work, but it lowers usefulness if the reward cannot later be collected.\n\nReturn VALID JSON only with exactly these fields:\n{"id":string|null,"confidence":number,"rationale":string,"expectedHours":number|null,"expectedCostUsd":number|null,"estimatedProfitUsd":number|null}\nKeep rationale under 220 characters.`;
+const system = `You are the public JOB SELECTOR for an autonomous software worker-business. Choose at most one job from the supplied candidates. Do not reveal private chain-of-thought; provide only the compact decision fields requested.\n\nSelection policy:\n- Prefer legitimate, bounded coding/docs/data work with objective acceptance criteria.\n- Maximize expected value, not headline payout. Consider reward, likely hours, complexity, competition, probability of acceptance, and required credentials.\n- Treat competition.attemptSignals above 5 as saturated and reject it. Heavily penalize high comment counts even when exact active attempts are unknown.\n- Prefer a lower-paying task with low competition over a crowded task with a large advertised reward.\n- Reject referral promotions, speculative trading, spam, harmful security exploitation, regulated professional work, identity/KYC requirements, or tasks requiring deception.\n- Reject a task if payout evidence is vague or the candidate is a meta-list/aggregator rather than the actual paid task.\n- The worker has general JS/TS/Node/React/API/docs/data/bash/Python capability and can learn ordinary open-source codebases.\n- Missing wallet configuration does not prevent preparing work.\n\nReturn VALID JSON only with exactly these fields:\n{"id":string|null,"confidence":number,"rationale":string,"expectedHours":number|null,"expectedCostUsd":number|null,"estimatedProfitUsd":number|null}\nKeep rationale under 220 characters.`;
 
 try {
   const result = await callOpenCode([
     { role: 'system', content: system },
-    { role: 'user', content: JSON.stringify(candidates.map((x) => ({ id: x.id, title: x.title, rewardUsd: x.rewardUsd, score: x.score, labels: x.labels, summary: x.summary, url: x.url }))) },
+    { role: 'user', content: JSON.stringify(candidates.map((x) => ({
+      id: x.id,
+      title: x.title,
+      rewardUsd: x.rewardUsd,
+      score: x.score,
+      labels: x.labels,
+      summary: x.summary,
+      url: x.url,
+      commentCount: x.commentCount,
+      competition: x.competition || null,
+    }))) },
   ], { maxTokens: 2200, temperature: 0.1, timeoutMs: 50000 });
 
   const decision = parseJson(result.content);
@@ -42,6 +52,7 @@ try {
 
   const selected = decision.id ? candidates.find((x) => x.id === decision.id) : null;
   if (decision.id && !selected) throw new Error('Selector chose an unknown candidate.');
+  if (selected && Number(selected.competition?.attemptSignals || 0) > 5) throw new Error('Selector chose a saturated candidate.');
 
   jobs.selected = selected ? { ...selected, state: 'selected' } : null;
   jobs.selection = {
