@@ -1,11 +1,10 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { callOpenCode, isProviderUnavailableError } from './provider.mjs';
 
 const STATE_PATH = path.join(process.cwd(), 'autonomous-ai/state.json');
 const ECONOMY_PATH = path.join(process.cwd(), 'autonomous-ai/economy.json');
 const JOBS_PATH = path.join(process.cwd(), 'autonomous-ai/jobs.json');
-const FREE_URL = 'https://opencode.ai/inference/openai/v1/chat/completions';
-const FREE_MODEL = 'mimo-v2.5-free';
 const MISSION = 'Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.';
 
 async function readJson(file, fallback) {
@@ -82,39 +81,12 @@ function clean(value, max = 220) {
   return String(value || '').replace(/\s+/g, ' ').trim().slice(0, max);
 }
 
-async function rawCall(messages, maxTokens, temperature = 0.2) {
-  const response = await fetch(FREE_URL, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ model: FREE_MODEL, messages, stream: false, temperature, max_tokens: maxTokens }),
-    signal: AbortSignal.timeout(45000),
-  });
-  const data = await response.json().catch(() => ({}));
-  const content = data?.choices?.[0]?.message?.content;
-  if (!response.ok || typeof content !== 'string' || !content.trim()) {
-    const reason = data?.error?.message || (response.ok ? 'HTTP 200 with empty visible output' : `HTTP ${response.status}`);
-    throw new Error(`OpenCode request failed: ${reason}`);
-  }
-  return content;
-}
-
-async function callModel(messages) {
-  const budgets = [900, 1600, 2400];
-  let lastError = new Error('OpenCode request failed.');
-  for (let attempt = 0; attempt < budgets.length; attempt += 1) {
-    try { return await rawCall(messages, budgets[attempt], 0.2); }
-    catch (error) { lastError = error instanceof Error ? error : new Error(String(error)); }
-    if (attempt < budgets.length - 1) await new Promise((resolve) => setTimeout(resolve, 1500 * (attempt + 1)));
-  }
-  throw lastError;
-}
-
 async function repairTrace(content) {
-  const repaired = await rawCall([
+  const result = await callOpenCode([
     { role: 'system', content: 'Convert the supplied PUBLIC reasoning summary into valid JSON only. Do not add new facts. Return exactly four string fields: observation, objection, decision, next.' },
     { role: 'user', content: String(content || '').slice(0, 5000) },
-  ], 700, 0);
-  return parseJson(repaired);
+  ], { maxTokens: 900, temperature: 0, timeoutMs: 45000 });
+  return parseJson(result.content);
 }
 
 const [state, economy, jobs] = await Promise.all([
@@ -141,12 +113,13 @@ const publicState = {
 };
 
 try {
-  const content = await callModel([
+  const result = await callOpenCode([
     { role: 'system', content: system },
     { role: 'user', content: `Continue from this measured public operating state:\n${JSON.stringify(publicState)}` },
-  ]);
-  let parsed = parseJson(content);
-  if (!parsed) parsed = await repairTrace(content);
+  ], { maxTokens: 2400, temperature: 0.2, timeoutMs: 50000 });
+
+  let parsed = parseJson(result.content);
+  if (!parsed) parsed = await repairTrace(result.content);
   if (!parsed) throw new Error('Model output could not be normalized into the public trace schema.');
 
   const entry = {
@@ -158,25 +131,29 @@ try {
     decision: clean(parsed.decision),
     next: clean(parsed.next),
   };
-  state.version = 4;
+  state.version = 5;
   state.cycle = nextCycle;
   state.updatedAt = entry.timestamp;
   state.mission = MISSION;
   state.status = 'online';
   state.currentAgent = agent;
-  state.provider = { mode: 'OpenCode Free', model: FREE_MODEL };
+  state.provider = { mode: result.mode, model: result.model, attempts: result.attempts };
   state.economy = economySnapshot;
   state.jobs = jobsSnapshot;
   state.latest = entry;
   state.lastError = null;
+  state.retryAfterAt = null;
   state.history = [...(state.history || []), entry].slice(-40);
 } catch (error) {
-  state.status = 'degraded';
+  const waiting = isProviderUnavailableError(error);
+  state.status = waiting ? 'waiting_provider' : 'degraded';
   state.updatedAt = new Date().toISOString();
   state.currentAgent = agent;
   state.economy = economySnapshot;
   state.jobs = jobsSnapshot;
+  state.provider = state.provider || { mode: 'OpenCode Free', model: 'rotating free pool' };
   state.lastError = clean(error instanceof Error ? error.message : String(error), 300);
+  state.retryAfterAt = waiting ? new Date(Date.now() + 5 * 60 * 1000).toISOString() : null;
 }
 
 await fs.writeFile(STATE_PATH, JSON.stringify(state, null, 2) + '\n');
