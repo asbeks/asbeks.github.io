@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-08-22T23:33:14.105Z",
+  "updatedAt": "2026-08-22T23:54:17.937Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -206,40 +206,6 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5059483450",
-      "source": "github",
-      "title": "Episode scorecard telemetry (plague example) — backlog",
-      "url": "https://github.com/RimSynapse/Core/issues/70",
-      "repositoryApiUrl": "https://api.github.com/repos/RimSynapse/Core",
-      "rewardUsd": 58,
-      "score": 48,
-      "labels": [
-        "enhancement"
-      ],
-      "commentCount": 0,
-      "updatedAt": "2026-08-22T23:17:05Z",
-      "summary": "**Goal:** Measure how a colony handled a tracked condition, as objective data the Storyteller can *read* and turn into a consequence decision. **Backlog — this is the worked *example* mechanic (plague), not a 0.8 commitment.** **Milestone:** _(none — backlog)_ ## Why backlog The plague-handling reward was the illustrative example throughout the 0.8 storyteller design, not a shipping requirement. It also carries the most version/mod-fragile hooks (see below), so it's parked until the storyteller engine lands and there's appetite for it. ## Scope / Design (when picked up) - On a tracked hediff appearing, open an **episode**; close on recovery/death. Reusable telemetry; plague is the first registered episode type. - **Tend latency:** watch `HediffComp_TendDuration` — `TendableNow` → tended transition; accumulate per-cycle latency. - **Tend quality:** postfix `Hediff.Tended(quality, …)`. - **Bedrest ratio:** rare-tick sampler on `pawn.InBed()` / posture across the episode window (onset → end). - Episode close records outcome + aggregates; the Storyteller reads the scorecard and *decides* the reward through a tool (never a threshold). - **Version/mod-fragility note:** these are Harmony ",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 104,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 0,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 58,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
       "id": "github:5220406146",
       "source": "github",
       "title": "[BOUNTY] Break the NFH Wake holder gate — 25 USDC",
@@ -320,7 +286,7 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:2940525692\",\"rewardUsd\":10,\"fastCashScore\":60,\"updatedAt\":\"2026-08-18T21:51:22Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-18T21:51:29Z\",\"competition\":{\"comments\":29,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":125,\"updatedAt\":\"2026-08-22T16:37:56Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5059483450\",\"rewardUsd\":58,\"fastCashScore\":104,\"updatedAt\":\"2026-08-22T23:17:05Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5183229703\",\"rewardUsd\":120,\"fastCashScore\":108,\"updatedAt\":\"2026-08-22T14:54:31Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5214938859\",\"rewardUsd\":1115,\"fastCashScore\":112,\"updatedAt\":\"2026-08-22T23:27:32Z\",\"competition\":{\"comments\":4,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5220406146\",\"rewardUsd\":25,\"fastCashScore\":100,\"updatedAt\":\"2026-08-22T23:02:19Z\",\"competition\":{\"comments\":4,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5224369661\",\"rewardUsd\":120,\"fastCashScore\":108,\"updatedAt\":\"2026-08-22T23:12:38Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5224428877\",\"rewardUsd\":743,\"fastCashScore\":111,\"updatedAt\":\"2026-08-22T23:31:51Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:2940525692\",\"rewardUsd\":10,\"fastCashScore\":60,\"updatedAt\":\"2026-08-18T21:51:22Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-18T21:51:29Z\",\"competition\":{\"comments\":29,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":125,\"updatedAt\":\"2026-08-22T16:37:56Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5183229703\",\"rewardUsd\":120,\"fastCashScore\":108,\"updatedAt\":\"2026-08-22T14:54:31Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5214938859\",\"rewardUsd\":1115,\"fastCashScore\":112,\"updatedAt\":\"2026-08-22T23:27:32Z\",\"competition\":{\"comments\":4,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5220406146\",\"rewardUsd\":25,\"fastCashScore\":100,\"updatedAt\":\"2026-08-22T23:02:19Z\",\"competition\":{\"comments\":4,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5224369661\",\"rewardUsd\":120,\"fastCashScore\":108,\"updatedAt\":\"2026-08-22T23:12:38Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5224428877\",\"rewardUsd\":743,\"fastCashScore\":111,\"updatedAt\":\"2026-08-22T23:31:51Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
@@ -344,7 +310,7 @@
       "reasons": [
         "already_rewarded_or_paid"
       ],
-      "rejectedAt": "2026-08-22T23:33:14.051Z"
+      "rejectedAt": "2026-08-22T23:54:17.882Z"
     },
     {
       "id": "github:2940525692",
@@ -353,7 +319,7 @@
       "reasons": [
         "already_rewarded_or_paid"
       ],
-      "rejectedAt": "2026-08-22T23:33:14.051Z"
+      "rejectedAt": "2026-08-22T23:54:17.882Z"
     },
     {
       "id": "github:5222232372",
