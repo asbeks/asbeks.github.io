@@ -1,49 +1,19 @@
 {
-  "version": 4,
-  "updatedAt": "2026-08-22T12:51:43.302Z",
+  "version": 5,
+  "updatedAt": "2026-08-22T13:21:31.014Z",
   "status": "idle",
   "source": "github-public-issues",
-  "opportunities": [
-    {
-      "id": "github:5221928005",
-      "source": "github",
-      "title": "[Idea] AVO Verified Research Exchange for On-Chain Science and Data Bounties",
-      "url": "https://github.com/MosslandOpenDevs/agentic-orchestrator/issues/3865",
-      "repositoryApiUrl": "https://api.github.com/repos/MosslandOpenDevs/agentic-orchestrator",
-      "rewardUsd": 5000,
-      "score": 48,
-      "labels": [
-        "type:idea",
-        "status:backlog",
-        "generated:by-orchestrator"
-      ],
-      "commentCount": 0,
-      "updatedAt": "2026-08-22T12:36:31Z",
-      "summary": "## Idea Summary - **Idea Title**: AVO Verified Research Exchange for On-Chain Science and Data Bounties - **Core Analysis**: The AVO demonstration matters because it suggests agents can solve unfamiliar multi-step problems with less hand-holding than current tools. Most Web3 agent ideas are still centered on trading, auditing, or task delegation, but a more durable opportunity is research workflow automation: finding data, validating sources, testing hypotheses, and producing reproducible outputs. This is timely be",
-      "state": "candidate",
-      "competition": {
-        "comments": 0,
-        "attemptSignals": 0,
-        "risk": "low"
-      }
-    }
-  ],
+  "opportunities": [],
   "selected": null,
   "active": null,
   "completed": [],
   "lastError": null,
   "selection": {
     "status": "none",
-    "confidence": 0.8,
-    "rationale": "Idea task lacks bounded coding criteria; subjective and speculative nature.",
-    "expectedHours": 0,
-    "expectedCostUsd": 0,
-    "estimatedProfitUsd": 0,
-    "provider": {
-      "mode": "OpenCode Free",
-      "model": "mimo-v2.5-free",
-      "attempts": 1
-    }
+    "rationale": "No verified paid candidate passed scouting and competition filters."
   },
-  "retryAfterAt": null
+  "retryAfterAt": null,
+  "marketSignature": "[]",
+  "marketChanged": false,
+  "needsSelection": false
 }
