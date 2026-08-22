@@ -23,7 +23,10 @@ if (!candidates.length) {
   jobs.selected = null;
   jobs.selection = { status: 'none', rationale: 'No verified paid candidate passed scouting and competition filters.' };
   jobs.status = 'idle';
+  jobs.needsSelection = false;
+  jobs.marketChanged = false;
   jobs.lastError = null;
+  jobs.retryAfterAt = null;
   await fs.writeFile(JOBS_PATH, JSON.stringify(jobs, null, 2) + '\n');
   console.log('Autonomous selector: no candidate');
   process.exit(0);
@@ -45,7 +48,7 @@ try {
       commentCount: x.commentCount,
       competition: x.competition || null,
     }))) },
-  ], { maxTokens: 2200, temperature: 0.1, timeoutMs: 50000 });
+  ], { maxTokens: 1800, temperature: 0.1, timeoutMs: 50000 });
 
   const decision = parseJson(result.content);
   if (!decision || (!decision.id && decision.id !== null)) throw new Error('Selector returned invalid JSON.');
@@ -65,15 +68,20 @@ try {
     provider: { mode: result.mode, model: result.model, attempts: result.attempts },
   };
   jobs.status = selected ? 'selected' : 'idle';
+  jobs.needsSelection = false;
+  jobs.marketChanged = false;
   jobs.lastError = null;
   jobs.retryAfterAt = null;
 } catch (error) {
   if (isProviderUnavailableError(error)) {
     jobs.status = 'selector_waiting_provider';
+    jobs.needsSelection = true;
     jobs.lastError = clean(error.message, 300);
-    jobs.retryAfterAt = new Date(Date.now() + 5 * 60 * 1000).toISOString();
+    const retrySeconds = Number(error?.retryAfterSeconds || 600);
+    jobs.retryAfterAt = new Date(Date.now() + retrySeconds * 1000).toISOString();
   } else {
     jobs.status = 'selector_degraded';
+    jobs.needsSelection = false;
     jobs.lastError = clean(error instanceof Error ? error.message : String(error), 300);
     jobs.retryAfterAt = null;
   }
