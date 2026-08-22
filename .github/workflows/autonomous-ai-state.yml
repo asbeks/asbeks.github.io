@@ -57,4 +57,4 @@ jobs:
           git commit -m "autonomous-ai: operating cycle $(date -u +%Y-%m-%dT%H:%M:%SZ)"
           git push origin HEAD:autonomous-ai-state
 
-# runner revision: competition-aware-market-v1
+# runner revision: wallet-aware-economy-v1
