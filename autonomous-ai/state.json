@@ -2,10 +2,10 @@
   "version": 2,
   "cycle": 4,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-22T11:03:37.131Z",
+  "updatedAt": "2026-08-22T11:14:50.812Z",
   "mission": "Design a small economically self-sustaining AI that can earn legitimate revenue, manage a crypto operating budget, pay infrastructure costs, preserve reserves, improve its software, and later create bounded worker agents when economically justified.",
-  "status": "online",
-  "currentAgent": "CRITIC",
+  "status": "degraded",
+  "currentAgent": "PLANNER",
   "provider": {
     "mode": "OpenCode Free",
     "model": "mimo-v2.5-free"
@@ -19,7 +19,7 @@
     "decision": "I will challenge the model's growth projections and mandate stress testing for economic viability.",
     "next": "PLANNER should analyze minimum viable operation costs and develop risk mitigation strategies."
   },
-  "lastError": null,
+  "lastError": "Model did not return JSON.",
   "history": [
     {
       "cycle": 1,
@@ -57,5 +57,24 @@
       "decision": "I will challenge the model's growth projections and mandate stress testing for economic viability.",
       "next": "PLANNER should analyze minimum viable operation costs and develop risk mitigation strategies."
     }
-  ]
+  ],
+  "economy": {
+    "status": "unconfigured",
+    "balances": {
+      "TON": 0,
+      "USDT_TON": 0,
+      "TRX": 0,
+      "USDT_TRON": 0,
+      "totalUSDT": 0
+    },
+    "totals": {
+      "revenueUSDT": 0,
+      "expensesUSDT": 0,
+      "profitUSDT": 0
+    },
+    "runwayDays": null,
+    "walletConfigured": false,
+    "recentLedger": [],
+    "lastError": null
+  }
 }
