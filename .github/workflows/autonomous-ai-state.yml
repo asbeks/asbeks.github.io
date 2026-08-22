@@ -19,7 +19,7 @@ concurrency:
 jobs:
   cycle:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 6
     steps:
       - name: Checkout public state branch
         uses: actions/checkout@v4
@@ -30,19 +30,24 @@ jobs:
       - name: Read real crypto economy
         run: node autonomous-ai/economy.mjs
 
-      - name: Run one economy-grounded AI cycle
+      - name: Scout public paid work
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: node autonomous-ai/jobs.mjs
+
+      - name: Run one job-and-economy grounded AI cycle
         run: node autonomous-ai/cycle.mjs
 
-      - name: Persist economic and reasoning state
+      - name: Persist economic, job, and reasoning state
         run: |
           git config user.name "autonomous-ai[bot]"
           git config user.email "autonomous-ai[bot]@users.noreply.github.com"
-          git add autonomous-ai/state.json autonomous-ai/economy.json
+          git add autonomous-ai/state.json autonomous-ai/economy.json autonomous-ai/jobs.json
           if git diff --cached --quiet; then
             echo "No state change"
             exit 0
           fi
-          git commit -m "autonomous-ai: economy cycle $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          git commit -m "autonomous-ai: operating cycle $(date -u +%Y-%m-%dT%H:%M:%SZ)"
           git push origin HEAD:autonomous-ai-state
 
-# runner revision: economy-grounded-v2-repair
+# runner revision: job-market-v1
