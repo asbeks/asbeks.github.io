@@ -1,24 +1,24 @@
 {
   "version": 5,
-  "cycle": 29,
+  "cycle": 30,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-22T21:53:11.010Z",
+  "updatedAt": "2026-08-22T22:20:52.925Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "online",
-  "currentAgent": "PLANNER",
+  "currentAgent": "CRITIC",
   "provider": {
     "mode": "OpenCode Free",
-    "model": "nemotron-3.5-lightning-free",
+    "model": "nemotron-3-ultra-free",
     "attempts": 1
   },
   "latest": {
-    "cycle": 29,
-    "agent": "PLANNER",
-    "timestamp": "2026-08-22T21:53:11.010Z",
-    "observation": "GitHub issue 4234681451 presents $250 bounty with drafted markdown meeting acceptance criteria, but payout channel and claim steps remain unverified.",
-    "objection": "Without authoritative claim procedure and payout mechanism, the job's legitimacy cannot be confirmed.",
-    "decision": "Fetch and parse github:4234681451 issue page to extract verified claim instructions, reviewer approvals, and payout details.",
-    "next": "CRITIC should review the extracted claim process and payout verification from the issue page."
+    "cycle": 30,
+    "agent": "CRITIC",
+    "timestamp": "2026-08-22T22:20:52.925Z",
+    "observation": "PLANNER decided to fetch github:4234681451 but the issue page has not yet been retrieved or parsed for claim steps and payout details.",
+    "objection": "Until the authoritative issue content is extracted, the $250 bounty's claim procedure and payout channel remain unverified.",
+    "decision": "Defer legitimacy assessment until PLANNER returns the parsed claim instructions and payout mechanism from the issue page.",
+    "next": "PLANNER must execute the fetch and parse of github:4234681451 and provide the extracted claim process and payout verification."
   },
   "lastError": null,
   "history": [
@@ -282,6 +282,15 @@
       "objection": "Without authoritative claim procedure and payout mechanism, the job's legitimacy cannot be confirmed.",
       "decision": "Fetch and parse github:4234681451 issue page to extract verified claim instructions, reviewer approvals, and payout details.",
       "next": "CRITIC should review the extracted claim process and payout verification from the issue page."
+    },
+    {
+      "cycle": 30,
+      "agent": "CRITIC",
+      "timestamp": "2026-08-22T22:20:52.925Z",
+      "observation": "PLANNER decided to fetch github:4234681451 but the issue page has not yet been retrieved or parsed for claim steps and payout details.",
+      "objection": "Until the authoritative issue content is extracted, the $250 bounty's claim procedure and payout channel remain unverified.",
+      "decision": "Defer legitimacy assessment until PLANNER returns the parsed claim instructions and payout mechanism from the issue page.",
+      "next": "PLANNER must execute the fetch and parse of github:4234681451 and provide the extracted claim process and payout verification."
     }
   ],
   "economy": {
@@ -325,28 +334,20 @@
         "summary": "`source.md` contains the complete RFC 5322 specification (Internet Message Format). We need a **fully conformant email address parser** in Python that implements the complete ABNF grammar from sections 3.2 through 3.4, plus obsolete syntax from §4.4. This parser must handle every edge case defined in the RFC — not just simple `user@domain` patterns, but the full complexity of quoted strings, comments, folding whitespace, group addresses, and domain literals. ## Background RFC 5322 defines email address syntax through a chain of ABNF productions that build on each other: ``` address = mailbox / group mailbox = name-addr / addr-spec name-addr = [display-name] angle-addr angle-addr = [CFWS] \"<\" addr-spec \">\" [CFWS] addr-spec = local-part \"@\" domain local-part = dot-atom / quoted-string / obs-local-part domain = dot-atom / domain-literal / obs-domain ``` Each of these references further productions (CFWS, FWS, quoted-pair, dtext, etc.) that span multiple sections. **You must read `source.md` completely** to trace the full grammar dependency chain. ## Requirements ### 1. Parser Implementation — `parser.py` ```python class RFC5322Address: \"\"\"Parsed RFC 5322 email address.\"\"\" display_name"
       },
       {
-        "id": "github:5223878741",
-        "title": "実装+実験: candidate=Napoleon・契約固定のN-rollout教師でNapoleon契約価値NNを再学習する",
-        "url": "https://github.com/eletim/napoleon-web/issues/423",
-        "rewardUsd": 420,
-        "score": 40,
-        "summary": "Related: #202, #411, #420, #421, #422 Base branch: `feature/issue-202-non-playing-ai` ## 背景 #411 では fixed-hand × BID action × N hidden-deal rollout の empirical margin mean/std を教師にしたことで、held-out上の margin prediction は大幅に改善した。 一方 #421/#422 の実測では、opening / raise ともに current scorer が Napoleon 側EVを大きく過小評価している false PASS が多数発生した。 ここで重要なのは、#411 datasetでは candidate hand と BID action は固定したが、**candidateの最終roleをNapoleonに強制していない**こと。 そのため #411 model の教師は厳密には ```text この手札でこのBID actionをした後の最終contract margin ``` であり、今EV式で欲しい ```text この手札・target・suitで、自分が最終Napoleonとして契約を取った場合の成功確率 / margin分布 ``` とは意味が一致していない。 このIssueでは、candidateを真の意味でNapoleon固定し、契約target/suitも固定した状態から副官選択・交換・プレイだけをN-rolloutするdatasetを新たに作り、Napoleon契約価値NNを再学習する。 ## 目的 1. candidate roleをNapoleonに完全固定するdataset generatorを実装する 2. target / suit も固定し、競りの続きを回さず契約成立後からrolloutする 3. hidden dealだけ変えてN回rolloutし、Napoleon条件付き empirical margin mean/std/win rate を作る 4. その教師で Napoleon margin / pWin modelを再学習する 5. train/validation/finalをfixedHandId単位で完全分離する 6. #411旧modelと同一のNapoleon-fixed held-out上で比較する 7. #421/#422 representative statesに戻し、opening/raise false PASSがどこまで解消するか確認する ## 学習対象の厳密な意味 新modelが表現するものを以下に固定する。 ```text P(contract success | candid"
-      },
-      {
-        "id": "github:5160374150",
-        "title": "[BOUNTY ROUND] Content Round — articles, video, Hackaday.io, X, BoTTube, referrals (1,000 RTC pool, closes 2026-09-30)",
-        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16497",
-        "rewardUsd": 160,
-        "score": 46,
-        "summary": "## Why this round exists Bounty #160 ran for six months, accumulated roughly 30 claimants and ~35 articles, and never closed. People kept doing real work against a target that never resolved. That was a structural mistake on our side, and this round is built so it cannot happen again: **a fixed pool, an end date, and a per-person cap.** --- ## The pool **1,000 RTC total. Closes 2026-09-30, or when the pool is exhausted — whichever comes first.** A running tally is posted in this thread. When it hits zero, the round is closed the same day and no further claims are accepted. **Maximum 100 RTC per person across all channels**, so one prolific contributor cannot drain it. --- ## What earns RTC | # | Deliverable | RTC | Cap | |---|---|---|---| | 1 | **Long-form article or tutorial** — 500+ words, working code, links back to the repo it covers | 33 | 2 per person | | 2 | **YouTube video** — 3+ minutes, shows something actually running, not a slideshow | 33 | 2 per person | | 3 | **Hackaday.io project page** — a real build/port documented with logs, not a link dump | 33 | 1 per person | | 4 | **BoTTube video** — published on bottube.ai | 15 | 3 per person | | 5 | **X post or thread** — su"
-      },
-      {
         "id": "github:5183229703",
         "title": "Model fiat currencies and multi-chain token bindings as domain state",
         "url": "https://github.com/Lethephobia/appletheia/issues/128",
         "rewardUsd": 120,
         "score": 32,
         "summary": "## Background The Banking Ledger must distinguish internal fiat-denominated balances from external tokens used for blockchain settlement. An intermediate redesign removed the `Currency` aggregate and introduced a statically injected `SettlementAssetRegistry`. That model has important limitations: - supported currencies and token bindings are queried directly from runtime configuration instead of being reconstructed as Read Models from domain events; - one Currency effectively resolves to only one deposit token and one withdrawal token; - chain identity is hidden behind Solana infrastructure types; and - completed Deposit and Withdrawal aggregates do not retain the blockchain transaction that produced the settlement. Replace the static registry with event-sourced Ledger domain state. Restore `Currency` as a bank-managed aggregate, model multiple token bindings as entities owned by that aggregate, make the supported blockchain explicit in domain values, and project the resulting events into normal Read Models. This does **not** restore the former currency-issuance platform. The bank binds existing external tokens and does not create tokens, publish token metadata, or manage token sup"
+      },
+      {
+        "id": "github:4563956966",
+        "title": "parse_duration drops the days (d) unit",
+        "url": "https://github.com/tine1117/oss-hunter-livefire/issues/1",
+        "rewardUsd": 50,
+        "score": 44,
+        "summary": "## Bug `parse_duration` silently drops the **days** (`d`) unit. The README lists `d` as a supported unit, but the parser ignores it and returns a wrong (too-small) result instead of raising or counting it. ### Reproduction ```python from duration_utils import parse_duration parse_duration(\"1d\") # -> 0 (expected 86400) parse_duration(\"2d4h\") # -> 14400 (expected 187200) ``` ### Expected `d` should be counted as 86400 seconds, so `parse_duration(\"1d\") == 86400` and `parse_duration(\"2d4h\") == 187200`. ### Notes The `d` character is already accepted by the token regex, so malformed-input detection still passes — the value is just never added. A fix should add the `d` unit and cover it with tests. /bounty $50"
       }
     ],
     "active": null,

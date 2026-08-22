@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-08-22T21:52:56.303Z",
+  "updatedAt": "2026-08-22T22:20:44.468Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -78,70 +78,6 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5223878741",
-      "source": "github",
-      "title": "実装+実験: candidate=Napoleon・契約固定のN-rollout教師でNapoleon契約価値NNを再学習する",
-      "url": "https://github.com/eletim/napoleon-web/issues/423",
-      "repositoryApiUrl": "https://api.github.com/repos/eletim/napoleon-web",
-      "rewardUsd": 420,
-      "score": 40,
-      "labels": [],
-      "commentCount": 1,
-      "updatedAt": "2026-08-22T21:27:25Z",
-      "summary": "Related: #202, #411, #420, #421, #422 Base branch: `feature/issue-202-non-playing-ai` ## 背景 #411 では fixed-hand × BID action × N hidden-deal rollout の empirical margin mean/std を教師にしたことで、held-out上の margin prediction は大幅に改善した。 一方 #421/#422 の実測では、opening / raise ともに current scorer が Napoleon 側EVを大きく過小評価している false PASS が多数発生した。 ここで重要なのは、#411 datasetでは candidate hand と BID action は固定したが、**candidateの最終roleをNapoleonに強制していない**こと。 そのため #411 model の教師は厳密には ```text この手札でこのBID actionをした後の最終contract margin ``` であり、今EV式で欲しい ```text この手札・target・suitで、自分が最終Napoleonとして契約を取った場合の成功確率 / margin分布 ``` とは意味が一致していない。 このIssueでは、candidateを真の意味でNapoleon固定し、契約target/suitも固定した状態から副官選択・交換・プレイだけをN-rolloutするdatasetを新たに作り、Napoleon契約価値NNを再学習する。 ## 目的 1. candidate roleをNapoleonに完全固定するdataset generatorを実装する 2. target / suit も固定し、競りの続きを回さず契約成立後からrolloutする 3. hidden dealだけ変えてN回rolloutし、Napoleon条件付き empirical margin mean/std/win rate を作る 4. その教師で Napoleon margin / pWin modelを再学習する 5. train/validation/finalをfixedHandId単位で完全分離する 6. #411旧modelと同一のNapoleon-fixed held-out上で比較する 7. #421/#422 representative statesに戻し、opening/raise false PASSがどこまで解消するか確認する ## 学習対象の厳密な意味 新modelが表現するものを以下に固定する。 ```text P(contract success | candid",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 109,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 1,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 420,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5160374150",
-      "source": "github",
-      "title": "[BOUNTY ROUND] Content Round — articles, video, Hackaday.io, X, BoTTube, referrals (1,000 RTC pool, closes 2026-09-30)",
-      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16497",
-      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
-      "rewardUsd": 160,
-      "score": 46,
-      "labels": [],
-      "commentCount": 6,
-      "updatedAt": "2026-08-22T21:42:45Z",
-      "summary": "## Why this round exists Bounty #160 ran for six months, accumulated roughly 30 claimants and ~35 articles, and never closed. People kept doing real work against a target that never resolved. That was a structural mistake on our side, and this round is built so it cannot happen again: **a fixed pool, an end date, and a per-person cap.** --- ## The pool **1,000 RTC total. Closes 2026-09-30, or when the pool is exhausted — whichever comes first.** A running tally is posted in this thread. When it hits zero, the round is closed the same day and no further claims are accepted. **Maximum 100 RTC per person across all channels**, so one prolific contributor cannot drain it. --- ## What earns RTC | # | Deliverable | RTC | Cap | |---|---|---|---| | 1 | **Long-form article or tutorial** — 500+ words, working code, links back to the repo it covers | 33 | 2 per person | | 2 | **YouTube video** — 3+ minutes, shows something actually running, not a slideshow | 33 | 2 per person | | 3 | **Hackaday.io project page** — a real build/port documented with logs, not a link dump | 33 | 1 per person | | 4 | **BoTTube video** — published on bottube.ai | 15 | 3 per person | | 5 | **X post or thread** — su",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 108,
-      "survivalEligible": false,
-      "eligibilityReason": "Competition is too high for bootstrap mode.",
-      "competition": {
-        "comments": 6,
-        "attemptSignals": 0,
-        "risk": "medium"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 160,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
       "id": "github:5183229703",
       "source": "github",
       "title": "Model fiat currencies and multi-chain token bindings as domain state",
@@ -171,81 +107,6 @@
       },
       "realMoneyEligible": true,
       "economicValueUsd": 120,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5177735038",
-      "source": "github",
-      "title": "T-04a: Agregar libro al catálogo",
-      "url": "https://github.com/wigsdev/gestor-biblioteca-digital/issues/6",
-      "repositoryApiUrl": "https://api.github.com/repos/wigsdev/gestor-biblioteca-digital",
-      "rewardUsd": 100,
-      "score": 40,
-      "labels": [
-        "priority: high",
-        "type: feature",
-        "complexity: medium"
-      ],
-      "commentCount": 0,
-      "updatedAt": "2026-08-22T21:27:13Z",
-      "summary": "## Descripción Capturar datos del formulario, crear el objeto libro y agregarlo al catálogo. ## Metadata | Campo | Valor | |-------|-------| | Dependencias | T-01a, T-01c, T-02, T-03 | | Branch | `feature/T-04a-agregar-libro` | | Commit ejemplo | `feat(T-04a): implementar captura y registro de nuevo libro` | ## Entregables - `addEventListener(\"submit\", ...)` con `preventDefault()` - Captura de valores de inputs - Objeto libro con `generarId()` + `disponible: true` - `push()` al array - Llamada a `renderizarLibros()` después de agregar - Limpieza del formulario post-registro ## Criterios de aceptación - [ ] Se puede agregar un libro con datos correctos - [ ] Aparece inmediatamente en la lista - [ ] ID generado automáticamente - [ ] `disponible` se asigna como `true` - [ ] Formulario se limpia tras registro exitoso - [ ] Se usa `addEventListener(\"submit\", ...)` + `preventDefault()` - [ ] Se usa `push()` para agregar al array ## Convenciones - Branch: `feature/T-04a-agregar-libro` - PR Title: `feat(T-04a): implementar lógica de agregar libro` - Merge: Squash and merge - Post-merge: eliminar branch <br/> <hr/> <details><summary>This repo is using Opire - what does it mean? 👇</summary>",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 107,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 0,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 100,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5204165375",
-      "source": "github",
-      "title": "[S29.02.04] Define coverage thresholds that reward valuable tests",
-      "url": "https://github.com/NikoMix/fitness/issues/641",
-      "repositoryApiUrl": "https://api.github.com/repos/NikoMix/fitness",
-      "rewardUsd": 29.02,
-      "score": 48,
-      "labels": [
-        "type:story",
-        "domain:quality",
-        "platform:android",
-        "platform:ios",
-        "wave:1",
-        "status:partial"
-      ],
-      "commentCount": 0,
-      "updatedAt": "2026-08-22T21:34:54Z",
-      "summary": "<!-- forge:key=S29.02.04 type=story --> > **Story S29.02.04** | Feature: F29.02 | Epic: E29 | Domain: `quality` | Wave 1 | Size `s` | Platforms: android, ios ## User story **As** technical lead reviewing quality signals **I want** coverage gates that focus on logic instead of generated UI **So that** the team improves risk coverage rather than chasing vanity percentages ## Requirements 1. Forge.Domain line coverage is at least 90 percent and branch coverage is at least 85 percent. 2. Forge.Core line coverage is at least 80 percent for use cases and validators. 3. Forge.App XAML and generated code are excluded from global coverage calculations. 4. Each automated check has deterministic seed data, a clear owner and a failure message that names the violated product or architecture rule. ## Acceptance criteria - [ ] **AC1** - **Given** a pull request adds untested domain validation branches - **When** coverage is calculated - **Then** the domain branch coverage gate fails below 85 percent - [ ] **AC2** - **Given** a pull request only changes XAML layout - **When** coverage is calculated - **Then** the build does not fail solely because XAML has no line coverage - [ ] **AC3** - **Given*",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 100,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 0,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 29.02,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -294,7 +155,7 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:2940525692\",\"rewardUsd\":10,\"fastCashScore\":60,\"updatedAt\":\"2026-08-18T21:51:22Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-18T21:51:29Z\",\"competition\":{\"comments\":29,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":125,\"updatedAt\":\"2026-08-22T16:37:56Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5160374150\",\"rewardUsd\":160,\"fastCashScore\":108,\"updatedAt\":\"2026-08-22T21:42:45Z\",\"competition\":{\"comments\":6,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5177735038\",\"rewardUsd\":100,\"fastCashScore\":107,\"updatedAt\":\"2026-08-22T21:27:13Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5183229703\",\"rewardUsd\":120,\"fastCashScore\":108,\"updatedAt\":\"2026-08-22T14:54:31Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5204165375\",\"rewardUsd\":29.02,\"fastCashScore\":100,\"updatedAt\":\"2026-08-22T21:34:54Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5223878741\",\"rewardUsd\":420,\"fastCashScore\":109,\"updatedAt\":\"2026-08-22T21:27:25Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:2940525692\",\"rewardUsd\":10,\"fastCashScore\":60,\"updatedAt\":\"2026-08-18T21:51:22Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-18T21:51:29Z\",\"competition\":{\"comments\":29,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":125,\"updatedAt\":\"2026-08-22T16:37:56Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5183229703\",\"rewardUsd\":120,\"fastCashScore\":108,\"updatedAt\":\"2026-08-22T14:54:31Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5222232622\",\"rewardUsd\":10,\"fastCashScore\":107,\"updatedAt\":\"2026-08-22T22:12:18Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
@@ -306,11 +167,21 @@
     "maxHours": 4,
     "minPayoutConfidence": 0.8,
     "competitionRequired": "low",
-    "rejectedFakeRevenueCount": 0,
+    "rejectedFakeRevenueCount": 1,
     "rejectedAlreadyPaidCount": 2,
-    "rejectedIdentityGateCount": 0
+    "rejectedIdentityGateCount": 1
   },
   "economicallyRejected": [
+    {
+      "id": "github:5222232622",
+      "title": "[Bug] fix.py is a stale hardcoded stub",
+      "rewardUsd": 10,
+      "reasons": [
+        "testnet_or_test_token_reward",
+        "preclaim_or_identity_gate_not_configured"
+      ],
+      "rejectedAt": "2026-08-22T22:20:44.416Z"
+    },
     {
       "id": "github:3055155077",
       "title": "Switch to `ky` from `redaxios`",
@@ -318,7 +189,7 @@
       "reasons": [
         "already_rewarded_or_paid"
       ],
-      "rejectedAt": "2026-08-22T21:52:56.252Z"
+      "rejectedAt": "2026-08-22T22:20:44.416Z"
     },
     {
       "id": "github:2940525692",
@@ -327,7 +198,7 @@
       "reasons": [
         "already_rewarded_or_paid"
       ],
-      "rejectedAt": "2026-08-22T21:52:56.252Z"
+      "rejectedAt": "2026-08-22T22:20:44.416Z"
     },
     {
       "id": "github:5222232071",
