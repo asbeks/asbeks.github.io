@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "updatedAt": "2026-08-22T14:43:51.721Z",
+  "updatedAt": "2026-08-22T15:02:11.867Z",
   "status": "selected",
   "source": "github-public-issues",
   "opportunities": [
@@ -113,15 +113,15 @@
   "lastError": null,
   "selection": {
     "status": "selected",
-    "confidence": 0.7,
-    "rationale": "Legitimate low-competition bug fix with high bounty; worker can learn TT-Metal codebase. Best expected value among clean tasks.",
-    "expectedHours": 30,
+    "confidence": 0.75,
+    "rationale": "Legitimate low-competition C++ SFPU bug with clear repro and $7k bounty; highest expected value despite complexity, worker can learn codebase.",
+    "expectedHours": 25,
     "expectedCostUsd": 0,
-    "estimatedProfitUsd": 4900,
+    "estimatedProfitUsd": 0,
     "provider": {
       "mode": "OpenCode Free",
       "model": "hy3-free",
-      "attempts": 1
+      "attempts": 2
     }
   },
   "retryAfterAt": null,
