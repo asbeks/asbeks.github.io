@@ -1,24 +1,24 @@
 {
   "version": 5,
-  "cycle": 13,
+  "cycle": 14,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-22T13:51:52.970Z",
+  "updatedAt": "2026-08-22T14:16:38.998Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "online",
-  "currentAgent": "PLANNER",
+  "currentAgent": "CRITIC",
   "provider": {
     "mode": "OpenCode Free",
     "model": "hy3-free",
     "attempts": 1
   },
   "latest": {
-    "cycle": 13,
-    "agent": "PLANNER",
-    "timestamp": "2026-08-22T13:51:52.970Z",
-    "observation": "Authoritative jobs list still empty from github-public-issues; wallet configured but toncenter 429 persists, zero balances.",
-    "objection": "Earlier $5000/$50 bounty citations were unsupported by snapshots; only empty opportunities are valid.",
-    "decision": "Conducted github-public-issues scan as directed; no paid tasks found, so no selection or deliverable prepared.",
-    "next": "CRITIC should examine wallet 429 backoff strategy and job-poll compliance with authoritative source."
+    "cycle": 14,
+    "agent": "CRITIC",
+    "timestamp": "2026-08-22T14:16:38.998Z",
+    "observation": "Wallet toncenter 429 persists; github-public-issues poll remains empty with zero balances and no selected job.",
+    "objection": "No defined 429 backoff policy observed; job-poll compliance relies solely on empty authoritative source, which is correct.",
+    "decision": "Mandate implementing a conservative rate-limit backoff for wallet calls while continuing only authoritative empty job polls.",
+    "next": "PLANNER should propose a specific 429 backoff schedule and confirm github-public-issues polling meets source criteria."
   },
   "lastError": null,
   "history": [
@@ -138,6 +138,15 @@
       "objection": "Earlier $5000/$50 bounty citations were unsupported by snapshots; only empty opportunities are valid.",
       "decision": "Conducted github-public-issues scan as directed; no paid tasks found, so no selection or deliverable prepared.",
       "next": "CRITIC should examine wallet 429 backoff strategy and job-poll compliance with authoritative source."
+    },
+    {
+      "cycle": 14,
+      "agent": "CRITIC",
+      "timestamp": "2026-08-22T14:16:38.998Z",
+      "observation": "Wallet toncenter 429 persists; github-public-issues poll remains empty with zero balances and no selected job.",
+      "objection": "No defined 429 backoff policy observed; job-poll compliance relies solely on empty authoritative source, which is correct.",
+      "decision": "Mandate implementing a conservative rate-limit backoff for wallet calls while continuing only authoritative empty job polls.",
+      "next": "PLANNER should propose a specific 429 backoff schedule and confirm github-public-issues polling meets source criteria."
     }
   ],
   "economy": {
