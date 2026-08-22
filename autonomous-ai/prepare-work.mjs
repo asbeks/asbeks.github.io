@@ -77,7 +77,8 @@ async function readFileTool(root, rel) {
 }
 
 async function listTool(root, rel = '') {
-  const safe = rel ? safeRelative(rel) : '';
+  const raw = String(rel || '').trim();
+  const safe = !raw || raw === '.' || raw === './' ? '' : safeRelative(raw);
   const dir = safe ? path.join(root, safe) : root;
   const entries = await fs.readdir(dir, { withFileTypes: true });
   return entries.filter((x) => !BLOCKED_PREFIXES.some((p) => `${safe ? `${safe}/` : ''}${x.name}`.startsWith(p))).slice(0, 120).map((x) => `${x.isDirectory() ? 'dir' : 'file'} ${x.name}`).join('\n');
@@ -177,7 +178,7 @@ try {
     tree: tree.slice(0, 300),
   };
 
-  const system = `You are WORKER, an autonomous software contractor preparing a patch for one public GitHub issue. Do not reveal hidden chain-of-thought. Work through explicit tool actions only.\n\nYou are in an isolated clone and may use only these JSON actions:\n{"action":"list","path":"relative/dir"}\n{"action":"read","path":"relative/file"}\n{"action":"search","query":"text"}\n{"action":"write","path":"relative/file","content":"complete file content"}\n{"action":"finish","summary":"short public delivery summary"}\n\nRules:\n- Return exactly one JSON action each turn and nothing else.\n- Read relevant code before editing.\n- Make the smallest change that satisfies the actual issue.\n- Do not edit .github, .git, generated build directories, dependency lockfiles, secrets, licenses, or unrelated files.\n- Do not add network callbacks, telemetry, credentials, payment redirects, or unrelated dependencies.\n- Do not weaken security or tests.\n- You cannot run arbitrary repository code. Static checks happen after you finish.\n- If the issue cannot be responsibly implemented with the available context, finish with a summary explaining that rather than fabricating work.`;
+  const system = `You are WORKER, an autonomous software contractor preparing a patch for one public GitHub issue. Do not reveal hidden chain-of-thought. Work through explicit tool actions only.\n\nYou are in an isolated clone and may use only these JSON actions:\n{"action":"list","path":"relative/dir"}\n{"action":"read","path":"relative/file"}\n{"action":"search","query":"text"}\n{"action":"write","path":"relative/file","content":"complete file content"}\n{"action":"finish","summary":"short public delivery summary"}\n\nRules:\n- Return exactly one JSON action each turn and nothing else.\n- Read relevant code before editing.\n- Make the smallest change that satisfies the actual issue.\n- Do not edit .github, .git, generated build directories, dependency lockfiles, secrets, licenses, or unrelated files.\n- Do not add network callbacks, telemetry, credentials, payment redirects, or unrelated dependencies.\n- Do not weaken security or tests.\n- You cannot run arbitrary repository code. Static checks happen after you finish.\n- For the repository root, use {"action":"list","path":"."}.\n- If a tool returns an error, correct the action and continue instead of abandoning the job.\n- If the issue cannot be responsibly implemented with the available context, finish with a summary explaining that rather than fabricating work.`;
 
   const messages = [
     { role: 'system', content: system },
@@ -191,15 +192,21 @@ try {
     if (!action?.action) throw new Error('Worker returned an invalid tool action.');
     messages.push({ role: 'assistant', content: JSON.stringify(action) });
 
-    let result;
-    if (action.action === 'list') result = await listTool(repoDir, action.path || '');
-    else if (action.action === 'read') result = await readFileTool(repoDir, action.path);
-    else if (action.action === 'search') result = await searchTool(repoDir, action.query);
-    else if (action.action === 'write') result = await writeFileTool(repoDir, action.path, action.content);
-    else if (action.action === 'finish') {
+    if (action.action === 'finish') {
       deliverySummary = clean(action.summary, 600);
       break;
-    } else throw new Error(`Unsupported worker action: ${action.action}`);
+    }
+
+    let result;
+    try {
+      if (action.action === 'list') result = await listTool(repoDir, action.path || '');
+      else if (action.action === 'read') result = await readFileTool(repoDir, action.path);
+      else if (action.action === 'search') result = await searchTool(repoDir, action.query);
+      else if (action.action === 'write') result = await writeFileTool(repoDir, action.path, action.content);
+      else throw new Error(`Unsupported worker action: ${action.action}`);
+    } catch (toolError) {
+      result = `TOOL ERROR: ${clean(toolError instanceof Error ? toolError.message : String(toolError), 500)}. Use repository-relative paths only; use "." for the repository root.`;
+    }
 
     messages.push({ role: 'user', content: `TOOL RESULT:\n${String(result).slice(0, 16000)}` });
   }
