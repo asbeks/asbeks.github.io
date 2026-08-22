@@ -22,7 +22,14 @@ function marketSignature(items = []) {
   })).sort((a, b) => String(a.id).localeCompare(String(b.id))));
 }
 
-function parseReward(text = '') {
+function parseReward(text = '', labels = []) {
+  for (const label of labels) {
+    const match = String(label).match(/^\$\s*([0-9][0-9,]*(?:\.\d+)?)$/);
+    if (match) {
+      const amount = Number(match[1].replace(/,/g, ''));
+      if (Number.isFinite(amount) && amount > 0 && amount <= 100000) return amount;
+    }
+  }
   const patterns = [
     /(?:USDT|USD)\s*[$:]?\s*([0-9][0-9,]*(?:\.\d+)?)/i,
     /\$\s*([0-9][0-9,]*(?:\.\d+)?)/,
@@ -57,6 +64,8 @@ function classifyCandidate(issue, candidate) {
   const hasBountyLabel = labels.some((x) => /^bounty$/i.test(x));
   const hasDifficultyLabel = labels.some((x) => /^bounty_difficulty\//i.test(x));
   const hasPaidLabel = labels.some((x) => /bounty|reward|paid/i.test(x));
+  const hasAlgoraBounty = labels.some((x) => /💎\s*bounty/i.test(x));
+  const hasAmountLabel = labels.some((x) => /^\$\s*[0-9]/.test(x));
   const hasAcceptance = /acceptance criteria|success criteria|definition of done|deliverables/.test(text);
   const titleBounty = /\bbounty\b/.test(candidate.title.toLowerCase());
 
@@ -77,7 +86,8 @@ function classifyCandidate(issue, candidate) {
   const estimatedHoursBand = requiresSpecialHardware ? 30 : complexity >= 8 ? 24 : complexity >= 5 ? 16 : complexity >= 3 ? 8 : 4;
 
   let payoutConfidence = 0.35;
-  if (hasPaidLabel && titleBounty && hasAcceptance) payoutConfidence = 0.85;
+  if (hasAlgoraBounty && hasAmountLabel) payoutConfidence = 0.92;
+  else if (hasPaidLabel && titleBounty && hasAcceptance) payoutConfidence = 0.85;
   else if (titleBounty && hasAcceptance) payoutConfidence = 0.65;
   else if (hasPaidLabel && hasAcceptance) payoutConfidence = 0.7;
   else if (titleBounty) payoutConfidence = 0.5;
@@ -93,8 +103,9 @@ function classifyCandidate(issue, candidate) {
   const competitionPenalty = Math.min(35, Number(candidate.commentCount || 0) * 1.5);
   const rewardUtility = Math.min(30, Math.log2(candidate.rewardUsd + 1) * 4);
   const speedUtility = estimatedHoursBand <= 4 ? 30 : estimatedHoursBand <= 8 ? 18 : estimatedHoursBand <= 16 ? 5 : -20;
+  const fundedBonus = hasAlgoraBounty && hasAmountLabel ? 18 : 0;
   const fastCashScore = Math.round(
-    payoutConfidence * 45 + autonomyFit * 35 + rewardUtility + speedUtility - complexity * 4 - competitionPenalty,
+    payoutConfidence * 45 + autonomyFit * 35 + rewardUtility + speedUtility + fundedBonus - complexity * 4 - competitionPenalty,
   );
 
   const survivalEligible = Boolean(
@@ -114,6 +125,7 @@ function classifyCandidate(issue, candidate) {
     requiresSpecialHardware,
     estimatedHoursBand,
     complexity,
+    fundedBountySignal: Boolean(hasAlgoraBounty && hasAmountLabel),
     fastCashScore,
     survivalEligible,
     eligibilityReason: survivalEligible
@@ -138,7 +150,7 @@ function baseCandidate(issue) {
 
   const labels = (issue.labels || []).map((x) => typeof x === 'string' ? x : x?.name).filter(Boolean);
   const lower = text.toLowerCase();
-  const rewardUsd = parseReward(text);
+  const rewardUsd = parseReward(text, labels);
   const commentCount = Number(issue.comments || 0);
   if (rewardUsd === null || rewardUsd < MIN_REWARD_USD || commentCount > MAX_COMMENTS) return null;
 
@@ -149,6 +161,7 @@ function baseCandidate(issue) {
   if (lower.includes('usdt')) score += 8;
   if (labels.some((x) => /help wanted/i.test(x))) score += 8;
   if (labels.some((x) => /bounty|reward|paid/i.test(x))) score += 10;
+  if (labels.some((x) => /💎\s*bounty/i.test(x))) score += 18;
   if (rewardUsd >= 25) score += 10;
   if (/documentation|docs|typescript|javascript|node|react|api|bug|feature|column|field|test|bash|python|json|yaml/i.test(text)) score += 12;
   if (/acceptance criteria|definition of done|requirements|deliverables/i.test(text)) score += 8;
@@ -225,6 +238,7 @@ const headers = {
 if (process.env.GITHUB_TOKEN) headers.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`;
 
 const queries = [
+  `is:issue is:open label:"💎 Bounty" updated:>=${since}`,
   `is:issue is:open bounty in:title,body updated:>=${since}`,
   `is:issue is:open reward in:title,body updated:>=${since}`,
   `is:issue is:open USDT in:title,body updated:>=${since}`,
@@ -260,7 +274,7 @@ try {
   const marketChanged = nextSignature !== previousSignature;
   const selectedStillExists = previousSelected?.id && nextOpportunities.some((x) => x.id === previousSelected.id);
 
-  jobs.version = 6;
+  jobs.version = 7;
   jobs.updatedAt = new Date().toISOString();
   jobs.source = 'github-public-issues';
   jobs.opportunities = nextOpportunities;
@@ -269,6 +283,7 @@ try {
   jobs.survival = {
     mode: (jobs.completed || []).length === 0,
     eligibleCount: nextOpportunities.filter((x) => x.survivalEligible).length,
+    fundedSignalCount: nextOpportunities.filter((x) => x.fundedBountySignal).length,
     objective: 'first_confirmed_cash_fast',
   };
 
@@ -293,4 +308,4 @@ try {
 }
 
 await fs.writeFile(JOBS_PATH, JSON.stringify(jobs, null, 2) + '\n');
-console.log(`Autonomous job scout: ${jobs.status}; opportunities=${jobs.opportunities?.length || 0}; survivalEligible=${jobs.survival?.eligibleCount || 0}`);
+console.log(`Autonomous job scout: ${jobs.status}; opportunities=${jobs.opportunities?.length || 0}; survivalEligible=${jobs.survival?.eligibleCount || 0}; fundedSignals=${jobs.survival?.fundedSignalCount || 0}`);
