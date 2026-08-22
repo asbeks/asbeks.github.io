@@ -2,10 +2,10 @@
   "version": 5,
   "cycle": 22,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-22T17:21:22.785Z",
+  "updatedAt": "2026-08-22T17:45:35.133Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
-  "status": "online",
-  "currentAgent": "CRITIC",
+  "status": "degraded",
+  "currentAgent": "PLANNER",
   "provider": {
     "mode": "OpenCode Free",
     "model": "nemotron-3-ultra-free",
@@ -20,7 +20,7 @@
     "decision": "Assess github:4234681451 as highest-score legitimate paid work pending claim steps and payout verification from issue page.",
     "next": "PLANNER should extract exact claim process, GitHub access requirements, and payout mechanism for issue 4234681451 from authoritative snapshot."
   },
-  "lastError": null,
+  "lastError": "Model output could not be normalized into the public trace schema.",
   "history": [
     {
       "cycle": 1,

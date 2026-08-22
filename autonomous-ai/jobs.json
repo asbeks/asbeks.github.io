@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-08-22T17:21:09.088Z",
+  "updatedAt": "2026-08-22T17:44:28.222Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -221,42 +221,6 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:4460048610",
-      "source": "github",
-      "title": "[Bounty Claim] PR Reviews - 250+ PRs Total (Bounty #73) - HCIE2054",
-      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/9999",
-      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
-      "rewardUsd": 250,
-      "score": 34,
-      "labels": [
-        "needs-human",
-        "gate-processed",
-        "over-cap"
-      ],
-      "commentCount": 1,
-      "updatedAt": "2026-08-22T16:59:41Z",
-      "summary": "## Bounty Claim #73 - 250+ PR Reviews **GitHub:** HCIE2054 **Wallet:** RTC0069ce999590624987151e19a8b005555d17794b 250+ PRs reviewed across Rustchain ecosystem. All approved with LGTM. Thank you!",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 116,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 1,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 250,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
       "id": "github:4460041460",
       "source": "github",
       "title": "[Bounty Claim] PR Reviews - 200+ PRs (Bounty #73) - HCIE2054",
@@ -328,78 +292,6 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:4459678719",
-      "source": "github",
-      "title": "[Bounty Claim] Star + Review Open PR (Bounty #2782) - HCIE2054",
-      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/9962",
-      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
-      "rewardUsd": 2782,
-      "score": 34,
-      "labels": [
-        "needs-human",
-        "gate-processed",
-        "over-cap"
-      ],
-      "commentCount": 2,
-      "updatedAt": "2026-08-22T16:59:39Z",
-      "summary": "## Bounty Claim #2782 - Star + Review Open PR **GitHub Username:** HCIE2054 **Wallet:** RTC02811ff5e2bb4bb4b95eee44c5429cd9525496e7 ### Completed Tasks - Starred RustChain repo - Reviewed 70+ open PRs across RustChain, BoTTube, ram-coffers, and other ecosystem repos - All reviews were APPROVE (LGTM) Thank you!",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 115,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 2,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 2782,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:4460036431",
-      "source": "github",
-      "title": "[Bounty Claim] PR Reviews - Massive Batch 150+ PRs (Bounty #73) - HCIE2054",
-      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/9996",
-      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
-      "rewardUsd": 150,
-      "score": 34,
-      "labels": [
-        "needs-human",
-        "gate-processed",
-        "over-cap"
-      ],
-      "commentCount": 1,
-      "updatedAt": "2026-08-22T16:59:40Z",
-      "summary": "## Bounty Claim #73 - 150+ PR Reviews **GitHub:** HCIE2054 **Wallet:** RTC0069ce999590624987151e19a8b005555d17794b ### 150+ Rustchain PRs reviewed (all APPROVED with LGTM) All open PRs reviewed across Rustchain, BoTTube, ram-coffers, beacon-skill, grazer-skill, rustchain-mcp, rustchain-monitor, llama-cpp-power8 ecosystem repos. Thank you!",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 115,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 1,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 150,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
       "id": "github:4462160604",
       "source": "github",
       "title": "[bounty $400] Implement ABNF-compliant email address parser with full §3.2–§4.4 coverage",
@@ -434,6 +326,70 @@
       },
       "realMoneyEligible": true,
       "economicValueUsd": 400,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5223086774",
+      "source": "github",
+      "title": "調査: 実サンプルごとにBID勝敗・NN勝率・EV_BID・EV_PASSを追跡する",
+      "url": "https://github.com/eletim/napoleon-web/issues/407",
+      "repositoryApiUrl": "https://api.github.com/repos/eletim/napoleon-web",
+      "rewardUsd": 400,
+      "score": 40,
+      "labels": [],
+      "commentCount": 1,
+      "updatedAt": "2026-08-22T17:35:14Z",
+      "summary": "Related: #202, #380, #395, #400 Base branch: `feature/issue-202-non-playing-ai` ## 背景 #400 では mean+sigma から勝率を算出し、役職報酬期待値でBID/PASSを比較したが、R1/R2ともPASS collapseが残った。 現状の集約指標だけでは、 - 実際にBIDで勝っているsampleに対してNNが何%勝ちと予測しているか - そのsampleでEV_BIDが何点になっているか - 同じstateのPASSに対してEV_PASSが何点になっているか - なぜ実際に勝てるBIDよりPASSが選ばれているのか が直接確認できない。 このIssueでは新しい学習やreward tuningは行わず、#400のheld-out all-legal datasetと学習済みmodelを使って **sample-level diagnostics** を出す。 ## 目的 実際のcounterfactual rollout結果とNN出力を同じ行に並べ、特に **実際にNapoleonとしてBIDして勝利したaction** に対して、NNの予測と期待報酬計算がどうなっているかを確認する。 ## 使用対象 原則として #400 と同じfinal held-outを使う。 - dataset: `/tmp/napoleon-issue390-heldout-alllegal-1000` - final split: 500 states - state hash: `258e66d47462b993f6dbef0bfcf9854d068d460ec45f0596f23ad66cbb3d6901` 使用modelも #400 と同一checkpointを使う。 最低限: - Napoleon margin mean+sigma model - Citizen margin mean+sigma model - Adjutant margin mean+sigma model - PASS Adjutant/Citizen binary classifier - #378 explicit Napoleon success head（比較用） ## 最重要: sample-level table 各 `stateKey × legal action` について、最低限以下をCSV/JSONで出す。 ### State information - stateKey - candidate seat - bidding step - current highest bid / target / suit - strongest suit / hand strength ### ",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 109,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 1,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 400,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5183229703",
+      "source": "github",
+      "title": "Model fiat currencies and multi-chain token bindings as domain state",
+      "url": "https://github.com/Lethephobia/appletheia/issues/128",
+      "repositoryApiUrl": "https://api.github.com/repos/Lethephobia/appletheia",
+      "rewardUsd": 120,
+      "score": 32,
+      "labels": [],
+      "commentCount": 0,
+      "updatedAt": "2026-08-22T14:54:31Z",
+      "summary": "## Background The Banking Ledger must distinguish internal fiat-denominated balances from external tokens used for blockchain settlement. An intermediate redesign removed the `Currency` aggregate and introduced a statically injected `SettlementAssetRegistry`. That model has important limitations: - supported currencies and token bindings are queried directly from runtime configuration instead of being reconstructed as Read Models from domain events; - one Currency effectively resolves to only one deposit token and one withdrawal token; - chain identity is hidden behind Solana infrastructure types; and - completed Deposit and Withdrawal aggregates do not retain the blockchain transaction that produced the settlement. Replace the static registry with event-sourced Ledger domain state. Restore `Currency` as a bank-managed aggregate, model multiple token bindings as entities owned by that aggregate, make the supported blockchain explicit in domain values, and project the resulting events into normal Read Models. This does **not** restore the former currency-issuance platform. The bank binds existing external tokens and does not create tokens, publish token metadata, or manage token sup",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 12,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 108,
+      "survivalEligible": false,
+      "eligibilityReason": "Too slow for bootstrap mode: first real cash currently requires a <=4 hour task.",
+      "competition": {
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 120,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -482,7 +438,7 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":125,\"updatedAt\":\"2026-08-22T16:37:56Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4459678719\",\"rewardUsd\":2782,\"fastCashScore\":115,\"updatedAt\":\"2026-08-22T16:59:39Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4460036431\",\"rewardUsd\":150,\"fastCashScore\":115,\"updatedAt\":\"2026-08-22T16:59:40Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4460041460\",\"rewardUsd\":200,\"fastCashScore\":116,\"updatedAt\":\"2026-08-22T16:59:41Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4460048610\",\"rewardUsd\":250,\"fastCashScore\":116,\"updatedAt\":\"2026-08-22T16:59:41Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462048029\",\"rewardUsd\":5533,\"fastCashScore\":116,\"updatedAt\":\"2026-08-22T16:59:45Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462050784\",\"rewardUsd\":5531,\"fastCashScore\":115,\"updatedAt\":\"2026-08-22T16:59:46Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462056980\",\"rewardUsd\":5533,\"fastCashScore\":116,\"updatedAt\":\"2026-08-22T16:59:46Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462057766\",\"rewardUsd\":5532,\"fastCashScore\":116,\"updatedAt\":\"2026-08-22T16:59:47Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462073859\",\"rewardUsd\":5531,\"fastCashScore\":116,\"updatedAt\":\"2026-08-22T16:59:48Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462079225\",\"rewardUsd\":5532,\"fastCashScore\":116,\"updatedAt\":\"2026-08-22T16:59:48Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5222232498\",\"rewardUsd\":20,\"fastCashScore\":113,\"updatedAt\":\"2026-08-22T17:18:51Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5222233187\",\"rewardUsd\":20,\"fastCashScore\":113,\"updatedAt\":\"2026-08-22T17:01:32Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":125,\"updatedAt\":\"2026-08-22T16:37:56Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4460041460\",\"rewardUsd\":200,\"fastCashScore\":116,\"updatedAt\":\"2026-08-22T16:59:41Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462048029\",\"rewardUsd\":5533,\"fastCashScore\":116,\"updatedAt\":\"2026-08-22T16:59:45Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462050784\",\"rewardUsd\":5531,\"fastCashScore\":115,\"updatedAt\":\"2026-08-22T16:59:46Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462056980\",\"rewardUsd\":5533,\"fastCashScore\":116,\"updatedAt\":\"2026-08-22T16:59:46Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462057766\",\"rewardUsd\":5532,\"fastCashScore\":116,\"updatedAt\":\"2026-08-22T16:59:47Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462073859\",\"rewardUsd\":5531,\"fastCashScore\":116,\"updatedAt\":\"2026-08-22T16:59:48Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462079225\",\"rewardUsd\":5532,\"fastCashScore\":116,\"updatedAt\":\"2026-08-22T16:59:48Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5183229703\",\"rewardUsd\":120,\"fastCashScore\":108,\"updatedAt\":\"2026-08-22T14:54:31Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5222231802\",\"rewardUsd\":15,\"fastCashScore\":111,\"updatedAt\":\"2026-08-22T17:36:32Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5223086774\",\"rewardUsd\":400,\"fastCashScore\":109,\"updatedAt\":\"2026-08-22T17:35:14Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
@@ -494,11 +450,21 @@
     "maxHours": 4,
     "minPayoutConfidence": 0.8,
     "competitionRequired": "low",
-    "rejectedFakeRevenueCount": 2,
+    "rejectedFakeRevenueCount": 1,
     "rejectedAlreadyPaidCount": 0,
-    "rejectedIdentityGateCount": 2
+    "rejectedIdentityGateCount": 1
   },
   "economicallyRejected": [
+    {
+      "id": "github:5222231802",
+      "title": "[Bug] npm test silently skips file_upload_component.test.js",
+      "rewardUsd": 15,
+      "reasons": [
+        "testnet_or_test_token_reward",
+        "preclaim_or_identity_gate_not_configured"
+      ],
+      "rejectedAt": "2026-08-22T17:44:28.172Z"
+    },
     {
       "id": "github:5222232498",
       "title": "[Bug] No tsconfig.json / typecheck despite .tsx sources",
