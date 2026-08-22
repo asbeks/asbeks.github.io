@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-08-22T23:03:38.024Z",
+  "updatedAt": "2026-08-22T23:33:14.105Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -41,6 +41,70 @@
       "requiresPreclaimOrIdentity": false
     },
     {
+      "id": "github:5214938859",
+      "source": "github",
+      "title": "Maintainer notice: enforce rolling bounty liquidity and external-funding GMV loop",
+      "url": "https://github.com/NSPG13/agent-bounties/issues/1117",
+      "repositoryApiUrl": "https://api.github.com/repos/NSPG13/agent-bounties",
+      "rewardUsd": 1115,
+      "score": 54,
+      "labels": [],
+      "commentCount": 4,
+      "updatedAt": "2026-08-22T23:27:32Z",
+      "summary": "## Planned scope Implement a private Open Competition V2 inventory invariant with floor 5 and target 10; a fail-closed deterministic replenishment planner; a bounded 30.40 USDC/day and 152 USDC lifetime execution policy; twenty reviewed structured-artifact candidates; unified public marketplace metrics; structured participant feedback; and external poster/funder conversion paths across web, API, MCP, CLI, and docs. This is needed because the five recently funded competitions settled without replacement and production reached zero active V2 competitions. The public product will continue to present one marketplace: public counts and GMV remain aggregated across supported bounty mechanisms. Only private operational state distinguishes the inventory needed by the replenisher. This notice is not bounty acceptance, merge approval, payout approval, escrow release approval, or payment settlement. ## Affected contracts or workflows Likely affected surfaces include the inventory guard and self-healing policy, the Open Competition V2 seed/planning workflow and scripts, private operational schemas, aggregate platform metrics, opportunity comments, posting/funding guidance, MCP/CLI parity, and ",
+      "state": "candidate",
+      "payoutConfidence": 0.5,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 112,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 4,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 1115,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5224428877",
+      "source": "github",
+      "title": "feat(utils): implement asynchronous retry with exponential backoff and jitter (#743)",
+      "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/12017",
+      "repositoryApiUrl": "https://api.github.com/repos/SecureBananaLabs/bug-bounty",
+      "rewardUsd": 743,
+      "score": 46,
+      "labels": [],
+      "commentCount": 0,
+      "updatedAt": "2026-08-22T23:31:51Z",
+      "summary": "Parent bounty: #743 ## Feature Request Resilient handling of transient RPC timeouts and rate-limited endpoints requires an asynchronous retryWithBackoff utility with jitter and AbortSignal support. ## Bounty Claim Wallet: 0x9f8F72aA9304c8B593d555F12eF6589cC3A579A2",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 111,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 743,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
       "id": "github:4462160604",
       "source": "github",
       "title": "[bounty $400] Implement ABNF-compliant email address parser with full §3.2–§4.4 coverage",
@@ -78,6 +142,38 @@
       "requiresPreclaimOrIdentity": false
     },
     {
+      "id": "github:5224369661",
+      "source": "github",
+      "title": "Missing: LibertAI Sovereign Program",
+      "url": "https://github.com/sourcey/startup-credits/issues/718",
+      "repositoryApiUrl": "https://api.github.com/repos/sourcey/startup-credits",
+      "rewardUsd": 120,
+      "score": 34,
+      "labels": [],
+      "commentCount": 0,
+      "updatedAt": "2026-08-22T23:12:38Z",
+      "summary": "First-party source: https://libertai.io/ LibertAI's Sovereign Program currently offers selected startups building on private inference up to $10,000 in credits for GLM-5.2 and the full model catalog, plus migration support. I am preparing one data-only vendor record for Frantic bounty #120. AI-assisted contribution; reviewed and submitted by the verified operator.",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 108,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 120,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
       "id": "github:5183229703",
       "source": "github",
       "title": "Model fiat currencies and multi-chain token bindings as domain state",
@@ -107,6 +203,40 @@
       },
       "realMoneyEligible": true,
       "economicValueUsd": 120,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5059483450",
+      "source": "github",
+      "title": "Episode scorecard telemetry (plague example) — backlog",
+      "url": "https://github.com/RimSynapse/Core/issues/70",
+      "repositoryApiUrl": "https://api.github.com/repos/RimSynapse/Core",
+      "rewardUsd": 58,
+      "score": 48,
+      "labels": [
+        "enhancement"
+      ],
+      "commentCount": 0,
+      "updatedAt": "2026-08-22T23:17:05Z",
+      "summary": "**Goal:** Measure how a colony handled a tracked condition, as objective data the Storyteller can *read* and turn into a consequence decision. **Backlog — this is the worked *example* mechanic (plague), not a 0.8 commitment.** **Milestone:** _(none — backlog)_ ## Why backlog The plague-handling reward was the illustrative example throughout the 0.8 storyteller design, not a shipping requirement. It also carries the most version/mod-fragile hooks (see below), so it's parked until the storyteller engine lands and there's appetite for it. ## Scope / Design (when picked up) - On a tracked hediff appearing, open an **episode**; close on recovery/death. Reusable telemetry; plague is the first registered episode type. - **Tend latency:** watch `HediffComp_TendDuration` — `TendableNow` → tended transition; accumulate per-cycle latency. - **Tend quality:** postfix `Hediff.Tended(quality, …)`. - **Bedrest ratio:** rare-tick sampler on `pawn.InBed()` / posture across the episode window (onset → end). - Episode close records outcome + aggregates; the Storyteller reads the scorecard and *decides* the reward through a tool (never a threshold). - **Version/mod-fragility note:** these are Harmony ",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 104,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 58,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -190,7 +320,7 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:2940525692\",\"rewardUsd\":10,\"fastCashScore\":60,\"updatedAt\":\"2026-08-18T21:51:22Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-18T21:51:29Z\",\"competition\":{\"comments\":29,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":125,\"updatedAt\":\"2026-08-22T16:37:56Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5183229703\",\"rewardUsd\":120,\"fastCashScore\":108,\"updatedAt\":\"2026-08-22T14:54:31Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5220406146\",\"rewardUsd\":25,\"fastCashScore\":100,\"updatedAt\":\"2026-08-22T23:02:19Z\",\"competition\":{\"comments\":4,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5222232372\",\"rewardUsd\":35,\"fastCashScore\":114,\"updatedAt\":\"2026-08-22T23:00:25Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:2940525692\",\"rewardUsd\":10,\"fastCashScore\":60,\"updatedAt\":\"2026-08-18T21:51:22Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-18T21:51:29Z\",\"competition\":{\"comments\":29,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":125,\"updatedAt\":\"2026-08-22T16:37:56Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5059483450\",\"rewardUsd\":58,\"fastCashScore\":104,\"updatedAt\":\"2026-08-22T23:17:05Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5183229703\",\"rewardUsd\":120,\"fastCashScore\":108,\"updatedAt\":\"2026-08-22T14:54:31Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5214938859\",\"rewardUsd\":1115,\"fastCashScore\":112,\"updatedAt\":\"2026-08-22T23:27:32Z\",\"competition\":{\"comments\":4,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5220406146\",\"rewardUsd\":25,\"fastCashScore\":100,\"updatedAt\":\"2026-08-22T23:02:19Z\",\"competition\":{\"comments\":4,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5224369661\",\"rewardUsd\":120,\"fastCashScore\":108,\"updatedAt\":\"2026-08-22T23:12:38Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5224428877\",\"rewardUsd\":743,\"fastCashScore\":111,\"updatedAt\":\"2026-08-22T23:31:51Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
@@ -202,11 +332,29 @@
     "maxHours": 4,
     "minPayoutConfidence": 0.8,
     "competitionRequired": "low",
-    "rejectedFakeRevenueCount": 1,
+    "rejectedFakeRevenueCount": 0,
     "rejectedAlreadyPaidCount": 2,
-    "rejectedIdentityGateCount": 1
+    "rejectedIdentityGateCount": 0
   },
   "economicallyRejected": [
+    {
+      "id": "github:3055155077",
+      "title": "Switch to `ky` from `redaxios`",
+      "rewardUsd": 12,
+      "reasons": [
+        "already_rewarded_or_paid"
+      ],
+      "rejectedAt": "2026-08-22T23:33:14.051Z"
+    },
+    {
+      "id": "github:2940525692",
+      "title": "Create download endpoint `/files/download?...` as well as `/files/download/[[file_path]]`",
+      "rewardUsd": 10,
+      "reasons": [
+        "already_rewarded_or_paid"
+      ],
+      "rejectedAt": "2026-08-22T23:33:14.051Z"
+    },
     {
       "id": "github:5222232372",
       "title": "[Bug] FileUpload accepts files that violate the accept filter (no MIME/extension check)",
@@ -216,24 +364,6 @@
         "preclaim_or_identity_gate_not_configured"
       ],
       "rejectedAt": "2026-08-22T23:03:37.969Z"
-    },
-    {
-      "id": "github:3055155077",
-      "title": "Switch to `ky` from `redaxios`",
-      "rewardUsd": 12,
-      "reasons": [
-        "already_rewarded_or_paid"
-      ],
-      "rejectedAt": "2026-08-22T23:03:37.970Z"
-    },
-    {
-      "id": "github:2940525692",
-      "title": "Create download endpoint `/files/download?...` as well as `/files/download/[[file_path]]`",
-      "rewardUsd": 10,
-      "reasons": [
-        "already_rewarded_or_paid"
-      ],
-      "rejectedAt": "2026-08-22T23:03:37.970Z"
     },
     {
       "id": "github:5222232622",
