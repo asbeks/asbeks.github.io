@@ -1,24 +1,24 @@
 {
   "version": 5,
-  "cycle": 19,
+  "cycle": 20,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-22T15:54:24.104Z",
+  "updatedAt": "2026-08-22T16:28:23.666Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "online",
-  "currentAgent": "PLANNER",
+  "currentAgent": "CRITIC",
   "provider": {
     "mode": "OpenCode Free",
-    "model": "hy3-free",
+    "model": "nemotron-3-ultra-free",
     "attempts": 2
   },
   "latest": {
-    "cycle": 19,
-    "agent": "PLANNER",
-    "timestamp": "2026-08-22T15:54:24.104Z",
-    "observation": "Authoritative jobs snapshot shows no issue 4462160604; present opportunities include $100 MCP KV fix (5222686588) and $400 Figma (5221215898).",
-    "objection": "CRITIC's referenced RFC5322 parser bounty and issue 4462160604 are absent from authoritative snapshot, so cannot be pursued.",
-    "decision": "Evaluate highest-score opportunity github:5222686588 (MCP KV token fix) as legitimate paid code work pending GitHub PR and payout verification.",
-    "next": "CRITIC should examine issue 5222686588 for exact claim steps, required GitHub access, and payout mechanism from authoritative snapshot."
+    "cycle": 20,
+    "agent": "CRITIC",
+    "timestamp": "2026-08-22T16:28:23.666Z",
+    "observation": "PLANNER claims snapshot lacks issue 4462160604 but it appears in opportunities with $400 reward and score 72; PLANNER references issue 5222686588 which is absent from snapshot.",
+    "objection": "PLANNER's observation contradicts authoritative snapshot data; cannot evaluate non-existent issue 5222686588 while ignoring verified $400 RFC5322 parser bounty (github:4462160604).",
+    "decision": "Assess github:4462160604 (RFC5322 parser $400, score 72) as highest-score legitimate paid code work pending claim steps and payout verification.",
+    "next": "PLANNER should extract exact claim process, required GitHub access, and payout mechanism for issue 4462160604 from authoritative snapshot."
   },
   "lastError": null,
   "history": [
@@ -192,6 +192,15 @@
       "objection": "CRITIC's referenced RFC5322 parser bounty and issue 4462160604 are absent from authoritative snapshot, so cannot be pursued.",
       "decision": "Evaluate highest-score opportunity github:5222686588 (MCP KV token fix) as legitimate paid code work pending GitHub PR and payout verification.",
       "next": "CRITIC should examine issue 5222686588 for exact claim steps, required GitHub access, and payout mechanism from authoritative snapshot."
+    },
+    {
+      "cycle": 20,
+      "agent": "CRITIC",
+      "timestamp": "2026-08-22T16:28:23.666Z",
+      "observation": "PLANNER claims snapshot lacks issue 4462160604 but it appears in opportunities with $400 reward and score 72; PLANNER references issue 5222686588 which is absent from snapshot.",
+      "objection": "PLANNER's observation contradicts authoritative snapshot data; cannot evaluate non-existent issue 5222686588 while ignoring verified $400 RFC5322 parser bounty (github:4462160604).",
+      "decision": "Assess github:4462160604 (RFC5322 parser $400, score 72) as highest-score legitimate paid code work pending claim steps and payout verification.",
+      "next": "PLANNER should extract exact claim process, required GitHub access, and payout mechanism for issue 4462160604 from authoritative snapshot."
     }
   ],
   "economy": {
@@ -227,20 +236,20 @@
         "summary": "**Goal:** Expand MyZubster to Singapore **Why Singapore:** RWA hub, progressive regulations, financial center ## Tasks - [ ] Research MAS regulations for RWA - [ ] Connect with local financial institutions - [ ] Identify key events (e.g., Singapore FinTech Festival) - [ ] Adapt model for real estate tokenization ## Expected outcome Proof of concept / readiness package for Singapore RWA, subject to the legal/compliance gates in the canonical MyZubster roadmap. ## Reward — MYZ internal accounting - **Reward:** 2,500 MYZ - **Reward type:** internal MyZubster reward/accounting credit - **Funding state:** PROPOSED / internal accounting only - **Legacy XMR reference:** the previous `0.12 XMR` amount is not treated as funded or guaranteed settlement because no verified XMR treasury reservation was linked. **Important:** `2,500 MYZ` is a project-defined bounty amount, **not a conversion rate from 0.12 XMR**. MyZubster currently has no approved XMR↔MYZ exchange rate, and the canonical bounty rules prohibit silent conversion between assets. ## Workflow `OPEN -> CLAIMED -> SUBMITTED -> UNDER_REVIEW -> VERIFIED/REJECTED -> MYZ_RECORDED` `MYZ_RECORDED` means an append-only internal ledger credi"
       },
       {
+        "id": "github:4462160604",
+        "title": "[bounty $400] Implement ABNF-compliant email address parser with full §3.2–§4.4 coverage",
+        "url": "https://github.com/UnsafeLabs/RFC-5322/issues/1",
+        "rewardUsd": 400,
+        "score": 72,
+        "summary": "`source.md` contains the complete RFC 5322 specification (Internet Message Format). We need a **fully conformant email address parser** in Python that implements the complete ABNF grammar from sections 3.2 through 3.4, plus obsolete syntax from §4.4. This parser must handle every edge case defined in the RFC — not just simple `user@domain` patterns, but the full complexity of quoted strings, comments, folding whitespace, group addresses, and domain literals. ## Background RFC 5322 defines email address syntax through a chain of ABNF productions that build on each other: ``` address = mailbox / group mailbox = name-addr / addr-spec name-addr = [display-name] angle-addr angle-addr = [CFWS] \"<\" addr-spec \">\" [CFWS] addr-spec = local-part \"@\" domain local-part = dot-atom / quoted-string / obs-local-part domain = dot-atom / domain-literal / obs-domain ``` Each of these references further productions (CFWS, FWS, quoted-pair, dtext, etc.) that span multiple sections. **You must read `source.md` completely** to trace the full grammar dependency chain. ## Requirements ### 1. Parser Implementation — `parser.py` ```python class RFC5322Address: \"\"\"Parsed RFC 5322 email address.\"\"\" display_name"
+      },
+      {
         "id": "github:5183229703",
         "title": "Model fiat currencies and multi-chain token bindings as domain state",
         "url": "https://github.com/Lethephobia/appletheia/issues/128",
         "rewardUsd": 120,
         "score": 32,
         "summary": "## Background The Banking Ledger must distinguish internal fiat-denominated balances from external tokens used for blockchain settlement. An intermediate redesign removed the `Currency` aggregate and introduced a statically injected `SettlementAssetRegistry`. That model has important limitations: - supported currencies and token bindings are queried directly from runtime configuration instead of being reconstructed as Read Models from domain events; - one Currency effectively resolves to only one deposit token and one withdrawal token; - chain identity is hidden behind Solana infrastructure types; and - completed Deposit and Withdrawal aggregates do not retain the blockchain transaction that produced the settlement. Replace the static registry with event-sourced Ledger domain state. Restore `Currency` as a bank-managed aggregate, model multiple token bindings as entities owned by that aggregate, make the supported blockchain explicit in domain values, and project the resulting events into normal Read Models. This does **not** restore the former currency-issuance platform. The bank binds existing external tokens and does not create tokens, publish token metadata, or manage token sup"
-      },
-      {
-        "id": "github:5222686588",
-        "title": "[MCP] Fix KV token verification for write_lesson",
-        "url": "https://github.com/Ikalus1988/MisakaNet/issues/1240",
-        "rewardUsd": 100,
-        "score": 58,
-        "summary": "## Problem Remote MCP token verification fails for `misakanet_write_lesson`. Registration succeeds and stores token in KV, but subsequent authenticated calls return `Unauthorized`. **Root cause**: KV lookup fails during token verification, even though KV binding is configured and data exists. ## Current state | Tool | Auth requirement | Status | |---|---|---| | `misakanet_register` | None | ✅ | | `misakanet_search` | None (rate-limited) | ✅ | | `misakanet_get_lesson` | None (rate-limited) | ✅ | | `misakanet_submit_intake` | None | ✅ | | `misakanet_preflight` | None (rate-limited) | ✅ | | `misakanet_write_lesson` | Required (KV token) | ❌ | ## What we know 1. Registration stores token at `mcp_token:${token}` in KV ✅ 2. KV data exists (verified in Cloudflare Dashboard) ✅ 3. KV binding is configured (`MISAKANET_KV`) ✅ 4. Auth check reads from `mcp_token:${token}` but returns null ❌ ## Possible causes 1. **KV namespace mismatch**: Registration writes to one KV, auth reads from another 2. **KV binding not available in Worker context**: `env.MISAKANET_KV` is undefined during auth check 3. **Timing issue**: KV eventual consistency delay 4. **Code path issue**: Auth check runs before KV is"
       },
       {
         "id": "github:5221215898",
@@ -251,12 +260,12 @@
         "summary": "## Context PR #269 / Issue #268 corrected the Product lifecycle and is merged. Current Product truth remains: - Food Profile = persistent one-time / explicit-edit dietary setup - conversational UI belongs to Food Profile collection - `食旅を見つけ` = repeatable per-trip discovery / diagnosis function - `今回は、どんな食体験をしてみたいですか？` and subsequent session inputs live under `食旅を見つけ` - Result = real deterministic score-free Top 3 (#255) - guided Golden Path remains deterministic (#257) - Story `Why this region?` evidence remains source-backed and scoring-neutral (#265) #268 could not complete a fresh live-Figma comparison because authenticated MCP / Bridge calls hit the Figma Starter-plan tool-call limit. #271 preserved the blind-audit evidence without changing its contents. A separate high-quality implementation has now been identified and should be used as an **implementation-quality reference**: - Netlify reference: `https://mogu-mogu-5525da.netlify.app` This reference is noticeably stronger in motion, transition rhythm, conversational continuity, tap feedback, scroll behavior, and perceived polish. It is **not** a Product/data/safety source of truth and must not override KiKi's approved Figma "
       },
       {
-        "id": "github:5222665153",
-        "title": "[Intake] test issue",
-        "url": "https://github.com/Ikalus1988/MisakaNet/issues/1239",
-        "rewardUsd": 100,
+        "id": "github:2010304061",
+        "title": "[Mob] Gordok Hyenas in Dire Maul",
+        "url": "https://github.com/chromiecraft/chromiecraft/issues/6351",
+        "rewardUsd": 55,
         "score": 40,
-        "summary": "**Kind:** missing_lesson **Source:** test **Dedup:** `60b0effa-572` ## Problem test issue --- _Submitted via remote MCP (test). No account required._ <br/> <hr/> <details><summary>This repo is using Opire - what does it mean? 👇</summary><br/>💵 Everyone can add rewards for this issue commenting <code>/reward 100</code> (replace <code>100</code> with the amount).<br/>🕵️‍♂️ If someone starts working on this issue to earn the rewards, they can comment <code>/try</code> to let everyone know!<br/>🙌 And when they open the PR, they can comment <code>/claim #1239</code> either in the PR description or in a PR's comment.<br/><br/>🪙 Also, everyone can tip any user commenting <code>/tip 20 @Ikalus1988</code> (replace <code>20</code> with the amount, and <code>@Ikalus1988</code> with the user to tip).<br/><br/>📖 If you want to learn more, check out our <a href=\"https://docs.opire.dev\">documentation</a>.</details>"
+        "summary": "### What client do you play on? enUS ### Faction Both ### Content Phase: 50-59 ### Current Behaviour I've just found a few a little bit bugged [Gordok Hyenas](https://wowgaming.altervista.org/aowow/?npc=12418) in Dire Maul. They are not in the dungeon, but in the entrance zone in Feralas. There is an arena in the middle of the zone and there is a small corridor leading from the arena to the surface. In the corridor, there are three side rooms and a sleeping hyena in the each one. The thing is when I attack them, they wake up, attack back, die, drop loot, but they always remain in this sleeping pose, nothing changes in their animation. Maybe there are more of them (ones that sleep), but I managed to find only these three. Easily reproducible. ### Expected Blizzlike Behaviour I believe that each hyena should stand up and fight like a man, there is no place for such cowardice. ### Source https://wowgaming.altervista.org/aowow/?npc=12418 ### Steps to reproduce the problem 1. Go to the Dire Maul entrance zone, jump into the arena, the before mentioned corridor is the only way back. 2. Attack sleeping hyenas in the rooms. ### Extra Notes _No response_ ### AC rev. hash/commit https://gith"
       }
     ],
     "active": null,

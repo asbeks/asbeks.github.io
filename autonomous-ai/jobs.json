@@ -1,6 +1,6 @@
 {
-  "version": 10,
-  "updatedAt": "2026-08-22T15:54:07.031Z",
+  "version": 11,
+  "updatedAt": "2026-08-22T16:27:26.662Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -30,184 +30,15 @@
       "fundedBountySignal": false,
       "fastCashScore": 111,
       "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is not strong enough.",
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
         "comments": 0,
         "attemptSignals": 0,
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 2500
-    },
-    {
-      "id": "github:5183229703",
-      "source": "github",
-      "title": "Model fiat currencies and multi-chain token bindings as domain state",
-      "url": "https://github.com/Lethephobia/appletheia/issues/128",
-      "repositoryApiUrl": "https://api.github.com/repos/Lethephobia/appletheia",
-      "rewardUsd": 120,
-      "score": 32,
-      "labels": [],
-      "commentCount": 0,
-      "updatedAt": "2026-08-22T14:54:31Z",
-      "summary": "## Background The Banking Ledger must distinguish internal fiat-denominated balances from external tokens used for blockchain settlement. An intermediate redesign removed the `Currency` aggregate and introduced a statically injected `SettlementAssetRegistry`. That model has important limitations: - supported currencies and token bindings are queried directly from runtime configuration instead of being reconstructed as Read Models from domain events; - one Currency effectively resolves to only one deposit token and one withdrawal token; - chain identity is hidden behind Solana infrastructure types; and - completed Deposit and Withdrawal aggregates do not retain the blockchain transaction that produced the settlement. Replace the static registry with event-sourced Ledger domain state. Restore `Currency` as a bank-managed aggregate, model multiple token bindings as entities owned by that aggregate, make the supported blockchain explicit in domain values, and project the resulting events into normal Read Models. This does **not** restore the former currency-issuance platform. The bank binds existing external tokens and does not create tokens, publish token metadata, or manage token sup",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 12,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 108,
-      "survivalEligible": false,
-      "eligibilityReason": "Likely too slow for first-revenue survival mode after deliverable-based difficulty correction.",
-      "competition": {
-        "comments": 0,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 120
-    },
-    {
-      "id": "github:5222686588",
-      "source": "github",
-      "title": "[MCP] Fix KV token verification for write_lesson",
-      "url": "https://github.com/Ikalus1988/MisakaNet/issues/1240",
-      "repositoryApiUrl": "https://api.github.com/repos/Ikalus1988/MisakaNet",
-      "rewardUsd": 100,
-      "score": 58,
-      "labels": [
-        "bug",
-        "ready",
-        "agent-friendly",
-        "zero-bounty"
-      ],
-      "commentCount": 0,
-      "updatedAt": "2026-08-22T15:48:00Z",
-      "summary": "## Problem Remote MCP token verification fails for `misakanet_write_lesson`. Registration succeeds and stores token in KV, but subsequent authenticated calls return `Unauthorized`. **Root cause**: KV lookup fails during token verification, even though KV binding is configured and data exists. ## Current state | Tool | Auth requirement | Status | |---|---|---| | `misakanet_register` | None | ✅ | | `misakanet_search` | None (rate-limited) | ✅ | | `misakanet_get_lesson` | None (rate-limited) | ✅ | | `misakanet_submit_intake` | None | ✅ | | `misakanet_preflight` | None (rate-limited) | ✅ | | `misakanet_write_lesson` | Required (KV token) | ❌ | ## What we know 1. Registration stores token at `mcp_token:${token}` in KV ✅ 2. KV data exists (verified in Cloudflare Dashboard) ✅ 3. KV binding is configured (`MISAKANET_KV`) ✅ 4. Auth check reads from `mcp_token:${token}` but returns null ❌ ## Possible causes 1. **KV namespace mismatch**: Registration writes to one KV, auth reads from another 2. **KV binding not available in Worker context**: `env.MISAKANET_KV` is undefined during auth check 3. **Timing issue**: KV eventual consistency delay 4. **Code path issue**: Auth check runs before KV is",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 107,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is not strong enough.",
-      "competition": {
-        "comments": 0,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 100
-    },
-    {
-      "id": "github:5221215898",
-      "source": "github",
-      "title": "[P0 Demo/Figma+UX] Final live-Figma parity + Netlify interaction-quality sign-off",
-      "url": "https://github.com/nurockplayer/tokyo-mogu-mogu/issues/270",
-      "repositoryApiUrl": "https://api.github.com/repos/nurockplayer/tokyo-mogu-mogu",
-      "rewardUsd": 400,
-      "score": 40,
-      "labels": [],
-      "commentCount": 3,
-      "updatedAt": "2026-08-22T15:44:34Z",
-      "summary": "## Context PR #269 / Issue #268 corrected the Product lifecycle and is merged. Current Product truth remains: - Food Profile = persistent one-time / explicit-edit dietary setup - conversational UI belongs to Food Profile collection - `食旅を見つけ` = repeatable per-trip discovery / diagnosis function - `今回は、どんな食体験をしてみたいですか？` and subsequent session inputs live under `食旅を見つけ` - Result = real deterministic score-free Top 3 (#255) - guided Golden Path remains deterministic (#257) - Story `Why this region?` evidence remains source-backed and scoring-neutral (#265) #268 could not complete a fresh live-Figma comparison because authenticated MCP / Bridge calls hit the Figma Starter-plan tool-call limit. #271 preserved the blind-audit evidence without changing its contents. A separate high-quality implementation has now been identified and should be used as an **implementation-quality reference**: - Netlify reference: `https://mogu-mogu-5525da.netlify.app` This reference is noticeably stronger in motion, transition rhythm, conversational continuity, tap feedback, scroll behavior, and perceived polish. It is **not** a Product/data/safety source of truth and must not override KiKi's approved Figma ",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 10,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 106,
-      "survivalEligible": false,
-      "eligibilityReason": "Likely too slow for first-revenue survival mode after deliverable-based difficulty correction.",
-      "competition": {
-        "comments": 3,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 400
-    },
-    {
-      "id": "github:5222665153",
-      "source": "github",
-      "title": "[Intake] test issue",
-      "url": "https://github.com/Ikalus1988/MisakaNet/issues/1239",
-      "repositoryApiUrl": "https://api.github.com/repos/Ikalus1988/MisakaNet",
-      "rewardUsd": 100,
-      "score": 40,
-      "labels": [
-        "needs-ac",
-        "needs-human-review",
-        "intake",
-        "mcp-intake",
-        "pending-review"
-      ],
-      "commentCount": 2,
-      "updatedAt": "2026-08-22T15:42:42Z",
-      "summary": "**Kind:** missing_lesson **Source:** test **Dedup:** `60b0effa-572` ## Problem test issue --- _Submitted via remote MCP (test). No account required._ <br/> <hr/> <details><summary>This repo is using Opire - what does it mean? 👇</summary><br/>💵 Everyone can add rewards for this issue commenting <code>/reward 100</code> (replace <code>100</code> with the amount).<br/>🕵️‍♂️ If someone starts working on this issue to earn the rewards, they can comment <code>/try</code> to let everyone know!<br/>🙌 And when they open the PR, they can comment <code>/claim #1239</code> either in the PR description or in a PR's comment.<br/><br/>🪙 Also, everyone can tip any user commenting <code>/tip 20 @Ikalus1988</code> (replace <code>20</code> with the amount, and <code>@Ikalus1988</code> with the user to tip).<br/><br/>📖 If you want to learn more, check out our <a href=\"https://docs.opire.dev\">documentation</a>.</details>",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 104,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is not strong enough.",
-      "competition": {
-        "comments": 2,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 100
-    },
-    {
-      "id": "github:2528092662",
-      "source": "github",
-      "title": "[The Eye] Kael'Thas doesn't use Nether Vapor",
-      "url": "https://github.com/azerothcore/azerothcore-wotlk/issues/19982",
-      "repositoryApiUrl": "https://api.github.com/repos/azerothcore/azerothcore-wotlk",
-      "rewardUsd": 55,
-      "score": 40,
-      "labels": [
-        "Confirmed",
-        "Instance - Raid - Outland",
-        "70"
-      ],
-      "commentCount": 2,
-      "updatedAt": "2026-08-22T15:42:31Z",
-      "summary": "Bug Triager Notes: Original CC Report: https://github.com/chromiecraft/chromiecraft/issues/6761#issue-2164791519 Video Source: [Youtube](https://www.youtube.com/watch?v=VYQBUYLuU6s) Vido Source 2: [Youtube](https://www.youtube.com/watch?v=1AKe2yevmVg&t) from minute 12:30 I checked all possible sources, and I can confirm that Kael'Thas should use this ability, but I can only confirm that [Nether Vapor](https://www.wowhead.com/tbc/spell=35859/nether-vapor#used-by-npc) decrease max HP by 10% and It can stack. It is not a cast, It is an instant spell. ### What client do you play on? enGB ### Faction Alliance ### Content Phase: Generic ### Current Behaviour Kael'Thas doesn't c̶a̶s̶t̶ (use) Nether Vapor ### Expected Blizzlike Behaviour He should ### Source https://www.wowhead.com/tbc/guide/kaelthas-sunstrider-the-eye-tempest-keep-strategy-burning-crusade-classic ### Steps to reproduce the problem 1. KT P5 ### Extra Notes _No response_ ### AC rev. hash/commit https://github.com/chromiecraft/azerothcore-wotlk/commit/b9c1dc95dd8f150a77673d9f23235b235dd700e4 ### Operating system Ubuntu 20.04 ### Modules - [mod-ah-bot](https://github.com/azerothcore/mod-ah-bot) - [mod-bg-item-reward](https://",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 101,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is not strong enough.",
-      "competition": {
-        "comments": 2,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 55
+      "economicValueUsd": 2500,
+      "requiresPreclaimOrIdentity": false
     },
     {
       "id": "github:4462160604",
@@ -236,14 +67,114 @@
       "fundedBountySignal": true,
       "fastCashScore": 111,
       "survivalEligible": false,
-      "eligibilityReason": "Likely too slow for first-revenue survival mode after deliverable-based difficulty correction.",
+      "eligibilityReason": "Too slow for bootstrap mode: first real cash currently requires a <=4 hour task.",
       "competition": {
         "comments": 18,
         "attemptSignals": 2,
         "risk": "high"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 400
+      "economicValueUsd": 400,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5183229703",
+      "source": "github",
+      "title": "Model fiat currencies and multi-chain token bindings as domain state",
+      "url": "https://github.com/Lethephobia/appletheia/issues/128",
+      "repositoryApiUrl": "https://api.github.com/repos/Lethephobia/appletheia",
+      "rewardUsd": 120,
+      "score": 32,
+      "labels": [],
+      "commentCount": 0,
+      "updatedAt": "2026-08-22T14:54:31Z",
+      "summary": "## Background The Banking Ledger must distinguish internal fiat-denominated balances from external tokens used for blockchain settlement. An intermediate redesign removed the `Currency` aggregate and introduced a statically injected `SettlementAssetRegistry`. That model has important limitations: - supported currencies and token bindings are queried directly from runtime configuration instead of being reconstructed as Read Models from domain events; - one Currency effectively resolves to only one deposit token and one withdrawal token; - chain identity is hidden behind Solana infrastructure types; and - completed Deposit and Withdrawal aggregates do not retain the blockchain transaction that produced the settlement. Replace the static registry with event-sourced Ledger domain state. Restore `Currency` as a bank-managed aggregate, model multiple token bindings as entities owned by that aggregate, make the supported blockchain explicit in domain values, and project the resulting events into normal Read Models. This does **not** restore the former currency-issuance platform. The bank binds existing external tokens and does not create tokens, publish token metadata, or manage token sup",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 12,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 108,
+      "survivalEligible": false,
+      "eligibilityReason": "Too slow for bootstrap mode: first real cash currently requires a <=4 hour task.",
+      "competition": {
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 120,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5221215898",
+      "source": "github",
+      "title": "[P0 Demo/Figma+UX] Final live-Figma parity + Netlify interaction-quality sign-off",
+      "url": "https://github.com/nurockplayer/tokyo-mogu-mogu/issues/270",
+      "repositoryApiUrl": "https://api.github.com/repos/nurockplayer/tokyo-mogu-mogu",
+      "rewardUsd": 400,
+      "score": 40,
+      "labels": [],
+      "commentCount": 3,
+      "updatedAt": "2026-08-22T16:11:18Z",
+      "summary": "## Context PR #269 / Issue #268 corrected the Product lifecycle and is merged. Current Product truth remains: - Food Profile = persistent one-time / explicit-edit dietary setup - conversational UI belongs to Food Profile collection - `食旅を見つけ` = repeatable per-trip discovery / diagnosis function - `今回は、どんな食体験をしてみたいですか？` and subsequent session inputs live under `食旅を見つけ` - Result = real deterministic score-free Top 3 (#255) - guided Golden Path remains deterministic (#257) - Story `Why this region?` evidence remains source-backed and scoring-neutral (#265) #268 could not complete a fresh live-Figma comparison because authenticated MCP / Bridge calls hit the Figma Starter-plan tool-call limit. #271 preserved the blind-audit evidence without changing its contents. A separate high-quality implementation has now been identified and should be used as an **implementation-quality reference**: - Netlify reference: `https://mogu-mogu-5525da.netlify.app` This reference is noticeably stronger in motion, transition rhythm, conversational continuity, tap feedback, scroll behavior, and perceived polish. It is **not** a Product/data/safety source of truth and must not override KiKi's approved Figma ",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 10,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 106,
+      "survivalEligible": false,
+      "eligibilityReason": "Too slow for bootstrap mode: first real cash currently requires a <=4 hour task.",
+      "competition": {
+        "comments": 3,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 400,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:2010304061",
+      "source": "github",
+      "title": "[Mob] Gordok Hyenas in Dire Maul",
+      "url": "https://github.com/chromiecraft/chromiecraft/issues/6351",
+      "repositoryApiUrl": "https://api.github.com/repos/chromiecraft/chromiecraft",
+      "rewardUsd": 55,
+      "score": 40,
+      "labels": [
+        "Confirmed",
+        "Linked [AC]"
+      ],
+      "commentCount": 1,
+      "updatedAt": "2026-08-22T16:12:03Z",
+      "summary": "### What client do you play on? enUS ### Faction Both ### Content Phase: 50-59 ### Current Behaviour I've just found a few a little bit bugged [Gordok Hyenas](https://wowgaming.altervista.org/aowow/?npc=12418) in Dire Maul. They are not in the dungeon, but in the entrance zone in Feralas. There is an arena in the middle of the zone and there is a small corridor leading from the arena to the surface. In the corridor, there are three side rooms and a sleeping hyena in the each one. The thing is when I attack them, they wake up, attack back, die, drop loot, but they always remain in this sleeping pose, nothing changes in their animation. Maybe there are more of them (ones that sleep), but I managed to find only these three. Easily reproducible. ### Expected Blizzlike Behaviour I believe that each hyena should stand up and fight like a man, there is no place for such cowardice. ### Source https://wowgaming.altervista.org/aowow/?npc=12418 ### Steps to reproduce the problem 1. Go to the Dire Maul entrance zone, jump into the arena, the before mentioned corridor is the only way back. 2. Attack sleeping hyenas in the rooms. ### Extra Notes _No response_ ### AC rev. hash/commit https://gith",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 102,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 1,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 55,
+      "requiresPreclaimOrIdentity": false
     },
     {
       "id": "github:4563956966",
@@ -270,42 +201,97 @@
       "fundedBountySignal": true,
       "fastCashScore": 80,
       "survivalEligible": false,
-      "eligibilityReason": "Fast-cash candidate: bounded, low-friction, no special hardware or human claim gate detected.",
+      "eligibilityReason": "Competition is too high for bootstrap mode.",
       "competition": {
         "comments": 42,
         "attemptSignals": 4,
         "risk": "high"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 50
+      "economicValueUsd": 50,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5222744708",
+      "source": "github",
+      "title": "[Bounty $8000] ttnn.erfc: no fp32-accurate path at all — self-documented ~9M ULP error, independently reproduced at ~9.39M ULP (114% relative error) in the [2.5, 5.0] tail",
+      "url": "https://github.com/tenstorrent/tt-metal/issues/54053",
+      "repositoryApiUrl": "https://api.github.com/repos/tenstorrent/tt-metal",
+      "rewardUsd": 8000,
+      "score": 54,
+      "labels": [
+        "community"
+      ],
+      "commentCount": 0,
+      "updatedAt": "2026-08-22T16:02:17Z",
+      "summary": "## Summary `ttnn.erfc` uses a single two-segment rational approximation (`ERFC_LUT`, degree 4 numerator / degree 5 denominator) for **both** bf16 and fp32 precision — there is no separate fp32-accurate path at all, unlike its sibling `ttnn.erf` (which has distinct degree-16/16 fp32 and degree-8/8 bf16 fits). The file's own header comment already documents the consequence: ```cpp // BF16 MaxULP=118 (was 128 with 3-seg n4/d4 on [-5,5]) // FP32 MaxULP≈9M (was 1.47B) ``` I independently reproduced this rather than take the comment at face value: a fp32 reimplementation of the exact kernel arithmetic, checked against `scipy.special.erfc` over a 2-million-point sweep of `[-5, 5]`, finds **max ULP error of 9,387,962** at `x ≈ 4.999` — matching the self-documented number almost exactly — where the kernel returns `3.31e-12` against a true value of `1.55e-12`, a **114% relative error**. ## Root cause ```cpp // L28-31: constexpr uint32_t ERFC_NUM_DEGREE = 4; constexpr uint32_t ERFC_DEN_DEGREE = 5; constexpr uint32_t ERFC_NUM_SEGMENTS = 2; ``` `calculate_erfc()` (unlike `calculate_erf()` in the same directory) has no `is_fp32_dest_acc_en` template parameter and no `#ifdef INP_FLOAT32` branch —",
+      "state": "candidate",
+      "payoutConfidence": 0.15,
+      "autonomyFit": 0.45,
+      "requiresHumanGate": true,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 8,
+      "complexity": 4,
+      "fundedBountySignal": false,
+      "fastCashScore": 55,
+      "survivalEligible": false,
+      "eligibilityReason": "Too slow for bootstrap mode: first real cash currently requires a <=4 hour task.",
+      "competition": {
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 8000,
+      "requiresPreclaimOrIdentity": false
     }
   ],
   "selected": null,
   "active": null,
   "completed": [],
   "lastError": null,
-  "selection": null,
+  "selection": {
+    "status": "none_bootstrap",
+    "mode": "bootstrap",
+    "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
+  },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:2528092662\",\"rewardUsd\":55,\"fastCashScore\":101,\"updatedAt\":\"2026-08-22T15:42:31Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:2940525692\",\"rewardUsd\":10,\"fastCashScore\":60,\"updatedAt\":\"2026-08-18T21:51:22Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-18T21:51:29Z\",\"competition\":{\"comments\":29,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5043526418\",\"rewardUsd\":2500,\"fastCashScore\":111,\"updatedAt\":\"2026-08-22T15:45:54Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5183229703\",\"rewardUsd\":120,\"fastCashScore\":108,\"updatedAt\":\"2026-08-22T14:54:31Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5221215898\",\"rewardUsd\":400,\"fastCashScore\":106,\"updatedAt\":\"2026-08-22T15:44:34Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5222232993\",\"rewardUsd\":25,\"fastCashScore\":114,\"updatedAt\":\"2026-08-22T15:41:30Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5222665153\",\"rewardUsd\":100,\"fastCashScore\":104,\"updatedAt\":\"2026-08-22T15:42:42Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5222686588\",\"rewardUsd\":100,\"fastCashScore\":107,\"updatedAt\":\"2026-08-22T15:48:00Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
-  "marketChanged": true,
+  "marketSignature": "[{\"id\":\"github:2010304061\",\"rewardUsd\":55,\"fastCashScore\":102,\"updatedAt\":\"2026-08-22T16:12:03Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:2940525692\",\"rewardUsd\":10,\"fastCashScore\":60,\"updatedAt\":\"2026-08-18T21:51:22Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-18T21:51:29Z\",\"competition\":{\"comments\":29,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5043526418\",\"rewardUsd\":2500,\"fastCashScore\":111,\"updatedAt\":\"2026-08-22T15:45:54Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5183229703\",\"rewardUsd\":120,\"fastCashScore\":108,\"updatedAt\":\"2026-08-22T14:54:31Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5218571040\",\"rewardUsd\":50000,\"fastCashScore\":89,\"updatedAt\":\"2026-08-22T16:26:59Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5221215898\",\"rewardUsd\":400,\"fastCashScore\":106,\"updatedAt\":\"2026-08-22T16:11:18Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5222233094\",\"rewardUsd\":30,\"fastCashScore\":115,\"updatedAt\":\"2026-08-22T16:12:05Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5222233394\",\"rewardUsd\":35,\"fastCashScore\":116,\"updatedAt\":\"2026-08-22T15:56:13Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5222744708\",\"rewardUsd\":8000,\"fastCashScore\":55,\"updatedAt\":\"2026-08-22T16:02:17Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketChanged": false,
   "needsSelection": false,
   "survival": {
     "mode": true,
     "eligibleCount": 0,
     "fundedSignalCount": 3,
     "objective": "first_real_confirmed_cash_fast",
-    "rejectedFakeRevenueCount": 1,
-    "rejectedAlreadyPaidCount": 2
+    "policy": "bootstrap_basic_v1",
+    "maxHours": 4,
+    "minPayoutConfidence": 0.8,
+    "competitionRequired": "low",
+    "rejectedFakeRevenueCount": 2,
+    "rejectedAlreadyPaidCount": 2,
+    "rejectedIdentityGateCount": 3
   },
   "economicallyRejected": [
     {
-      "id": "github:5222232993",
-      "title": "[Bug] Login.tsx has no file-size cap (FileUpload caps at 5MB)",
-      "rewardUsd": 25,
+      "id": "github:5222233394",
+      "title": "[Bug] No AbortController — unmount mid-upload leaves requests running and setState-after-unmount",
+      "rewardUsd": 35,
       "reasons": [
-        "testnet_or_test_token_reward"
+        "testnet_or_test_token_reward",
+        "preclaim_or_identity_gate_not_configured"
       ],
-      "rejectedAt": "2026-08-22T15:54:06.781Z"
+      "rejectedAt": "2026-08-22T16:27:26.619Z"
+    },
+    {
+      "id": "github:5222233094",
+      "title": "[Bug] Cannot remove an individual selected file; previews keyed by array index",
+      "rewardUsd": 30,
+      "reasons": [
+        "testnet_or_test_token_reward",
+        "preclaim_or_identity_gate_not_configured"
+      ],
+      "rejectedAt": "2026-08-22T16:27:26.620Z"
     },
     {
       "id": "github:3055155077",
@@ -314,7 +300,16 @@
       "reasons": [
         "already_rewarded_or_paid"
       ],
-      "rejectedAt": "2026-08-22T15:54:06.782Z"
+      "rejectedAt": "2026-08-22T16:27:26.620Z"
+    },
+    {
+      "id": "github:5218571040",
+      "title": "Zcash East Africa @ ETHSafari 2026",
+      "rewardUsd": 50000,
+      "reasons": [
+        "preclaim_or_identity_gate_not_configured"
+      ],
+      "rejectedAt": "2026-08-22T16:27:26.620Z"
     },
     {
       "id": "github:2940525692",
@@ -323,7 +318,16 @@
       "reasons": [
         "already_rewarded_or_paid"
       ],
-      "rejectedAt": "2026-08-22T15:54:06.782Z"
+      "rejectedAt": "2026-08-22T16:27:26.620Z"
+    },
+    {
+      "id": "github:5222232993",
+      "title": "[Bug] Login.tsx has no file-size cap (FileUpload caps at 5MB)",
+      "rewardUsd": 25,
+      "reasons": [
+        "testnet_or_test_token_reward"
+      ],
+      "rejectedAt": "2026-08-22T15:54:06.781Z"
     }
   ]
 }
