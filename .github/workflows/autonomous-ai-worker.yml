@@ -28,15 +28,22 @@ jobs:
           ref: autonomous-ai-state
           fetch-depth: 0
 
+      - name: Check survival economics before spending inference
+        id: worker_gate
+        run: node autonomous-ai/survival-gate.mjs
+
       - name: Prepare selected paid work in isolation
+        if: steps.worker_gate.outputs.run == 'true'
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: node autonomous-ai/prepare-work.mjs
 
       - name: Synchronize worker state to Supabase
+        if: always()
         run: node autonomous-ai/sync-supabase.mjs
 
       - name: Persist autonomous work product
+        if: always()
         run: |
           git config user.name "autonomous-ai[bot]"
           git config user.email "autonomous-ai[bot]@users.noreply.github.com"
@@ -48,4 +55,4 @@ jobs:
           git commit -m "autonomous-ai: prepare selected work $(date -u +%Y-%m-%dT%H:%M:%SZ)"
           git push origin HEAD:autonomous-ai-state
 
-# worker revision: resilient-provider-v1
+# worker revision: survival-gated-v1
