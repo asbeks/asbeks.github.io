@@ -31,8 +31,9 @@ function parseReward(text = '', labels = []) {
     }
   }
   const patterns = [
+    /(?:bounty|reward|payout|prize|compensation)[^$0-9]{0,40}\$?\s*([0-9][0-9,]*(?:\.\d+)?)/i,
     /(?:USDT|USD)\s*[$:]?\s*([0-9][0-9,]*(?:\.\d+)?)/i,
-    /\$\s*([0-9][0-9,]*(?:\.\d+)?)/,
+    /\$\s*([0-9][0-9,]*(?:\.\d+)?)\s*(?:bounty|reward|payout|prize|paid)/i,
     /([0-9][0-9,]*(?:\.\d+)?)\s*(?:USDT|USD)\b/i,
   ];
   for (const pattern of patterns) {
@@ -150,6 +151,9 @@ function baseCandidate(issue) {
 
   const labels = (issue.labels || []).map((x) => typeof x === 'string' ? x : x?.name).filter(Boolean);
   const lower = text.toLowerCase();
+  const paidContext = labels.some((x) => /bounty|reward|paid/i.test(x)) || /\bbounty\b|\breward\b|\bpayout\b|\bpaid\b|\bprize\b|\bcompensation\b|\busdt\b/.test(lower);
+  if (!paidContext) return null;
+
   const rewardUsd = parseReward(text, labels);
   const commentCount = Number(issue.comments || 0);
   if (rewardUsd === null || rewardUsd < MIN_REWARD_USD || commentCount > MAX_COMMENTS) return null;
@@ -230,6 +234,7 @@ const previousSignature = jobs.marketSignature || marketSignature(jobs.opportuni
 const previousSelected = jobs.selected || null;
 const previousSelection = jobs.selection || null;
 const since = new Date(Date.now() - 45 * 86400000).toISOString().slice(0, 10);
+const fundedSince = new Date(Date.now() - 365 * 86400000).toISOString().slice(0, 10);
 const headers = {
   Accept: 'application/vnd.github+json',
   'X-GitHub-Api-Version': '2022-11-28',
@@ -238,7 +243,7 @@ const headers = {
 if (process.env.GITHUB_TOKEN) headers.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`;
 
 const queries = [
-  `is:issue is:open label:"💎 Bounty" updated:>=${since}`,
+  `is:issue is:open label:"💎 Bounty" updated:>=${fundedSince}`,
   `is:issue is:open bounty in:title,body updated:>=${since}`,
   `is:issue is:open reward in:title,body updated:>=${since}`,
   `is:issue is:open USDT in:title,body updated:>=${since}`,
@@ -274,7 +279,7 @@ try {
   const marketChanged = nextSignature !== previousSignature;
   const selectedStillExists = previousSelected?.id && nextOpportunities.some((x) => x.id === previousSelected.id);
 
-  jobs.version = 7;
+  jobs.version = 8;
   jobs.updatedAt = new Date().toISOString();
   jobs.source = 'github-public-issues';
   jobs.opportunities = nextOpportunities;
