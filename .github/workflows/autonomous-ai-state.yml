@@ -1,6 +1,10 @@
 name: Autonomous AI Public State
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/autonomous-ai-state.yml'
   schedule:
     - cron: '*/5 * * * *'
   workflow_dispatch:
