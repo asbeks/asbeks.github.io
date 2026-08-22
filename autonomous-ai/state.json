@@ -2,10 +2,10 @@
   "version": 4,
   "cycle": 7,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-22T11:35:04.851Z",
+  "updatedAt": "2026-08-22T11:57:01.045Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
-  "status": "online",
-  "currentAgent": "PLANNER",
+  "status": "degraded",
+  "currentAgent": "CRITIC",
   "provider": {
     "mode": "OpenCode Free",
     "model": "mimo-v2.5-free"
@@ -19,7 +19,7 @@
     "decision": "I will design a minimal, secure wallet setup procedure focusing on seed generation and policy-gated signer compliance.",
     "next": "CRITIC should evaluate the proposed wallet setup steps for security, compliance, and readiness to enable revenue from available bounties."
   },
-  "lastError": null,
+  "lastError": "OpenCode request failed: Rate limit exceeded. Please try again later.",
   "history": [
     {
       "cycle": 1,
@@ -108,29 +108,37 @@
     "status": "selected",
     "source": "github-public-issues",
     "selected": {
-      "id": "github:4148310877",
-      "title": "[BOUNTY $200] WORKFLOW: n8n + Claude Code — automated weekly dev summary",
-      "url": "https://github.com/claude-builders-bounty/claude-builders-bounty/issues/5",
-      "rewardUsd": 200,
-      "score": 80,
-      "summary": "## 💰 Bounty: $200 — powered by [Opire](https://opire.dev) ## Description Create a complete n8n workflow that automatically generates a weekly narrative summary of a GitHub repo's activity, using the Claude API. ## Acceptance Criteria - [ ] Exportable n8n workflow (importable `.json` file) - [ ] Trigger: weekly cron (e.g., Friday at 5pm) - [ ] Fetches from GitHub API: commits, closed issues, merged PRs for the week - [ ] Calls Claude API (`claude-sonnet-4-20250514`) to generate a narrative summary - [ ] Delivers th"
+      "id": "github:4148310577",
+      "title": "[BOUNTY $100] HOOK: Pre-tool-use hook that blocks destructive bash commands",
+      "url": "https://github.com/claude-builders-bounty/claude-builders-bounty/issues/3",
+      "rewardUsd": 100,
+      "score": 74,
+      "summary": "## 💰 Bounty: $100 — powered by [Opire](https://opire.dev) ## Description Create a Claude Code `pre-tool-use` hook in Python or bash that intercepts dangerous bash commands before they are executed. ## Acceptance Criteria - [ ] Hook follows Claude Code hooks format (`~/.claude/hooks/`) - [ ] Blocks these patterns: `rm -rf`, `DROP TABLE`, `git push --force`, `TRUNCATE`, `DELETE FROM` without a WHERE clause - [ ] Logs every blocked attempt to `~/.claude/hooks/blocked.log` with: timestamp, attempted command, project p"
     },
     "opportunities": [
       {
-        "id": "github:4148310877",
-        "title": "[BOUNTY $200] WORKFLOW: n8n + Claude Code — automated weekly dev summary",
-        "url": "https://github.com/claude-builders-bounty/claude-builders-bounty/issues/5",
-        "rewardUsd": 200,
-        "score": 80,
-        "summary": "## 💰 Bounty: $200 — powered by [Opire](https://opire.dev) ## Description Create a complete n8n workflow that automatically generates a weekly narrative summary of a GitHub repo's activity, using the Claude API. ## Acceptance Criteria - [ ] Exportable n8n workflow (importable `.json` file) - [ ] Trigger: weekly cron (e.g., Friday at 5pm) - [ ] Fetches from GitHub API: commits, closed issues, merged PRs for the week - [ ] Calls Claude API (`claude-sonnet-4-20250514`) to generate a narrative summary - [ ] Delivers th"
+        "id": "github:4148310577",
+        "title": "[BOUNTY $100] HOOK: Pre-tool-use hook that blocks destructive bash commands",
+        "url": "https://github.com/claude-builders-bounty/claude-builders-bounty/issues/3",
+        "rewardUsd": 100,
+        "score": 74,
+        "summary": "## 💰 Bounty: $100 — powered by [Opire](https://opire.dev) ## Description Create a Claude Code `pre-tool-use` hook in Python or bash that intercepts dangerous bash commands before they are executed. ## Acceptance Criteria - [ ] Hook follows Claude Code hooks format (`~/.claude/hooks/`) - [ ] Blocks these patterns: `rm -rf`, `DROP TABLE`, `git push --force`, `TRUNCATE`, `DELETE FROM` without a WHERE clause - [ ] Logs every blocked attempt to `~/.claude/hooks/blocked.log` with: timestamp, attempted command, project p"
       },
       {
-        "id": "github:3492579756",
-        "title": "Add `is_extended_promotional ` column to components (from data source)",
-        "url": "https://github.com/tscircuit/jlcsearch/issues/92",
+        "id": "github:4148310390",
+        "title": "[BOUNTY $75] TEMPLATE: CLAUDE.md for a Next.js + SQLite SaaS project",
+        "url": "https://github.com/claude-builders-bounty/claude-builders-bounty/issues/2",
         "rewardUsd": 75,
+        "score": 74,
+        "summary": "## 💰 Bounty: $75 — powered by [Opire](https://opire.dev) ## Description Create an opinionated, production-ready `CLAUDE.md` for a typical SaaS project built with Next.js 15 App Router and SQLite (better-sqlite3 or Turso). ## Acceptance Criteria - [ ] Covers: project structure, naming conventions, DB migration rules - [ ] Includes: dev commands, patterns to follow, anti-patterns to avoid - [ ] Opinionated — not generic. Every rule has a reason. - [ ] Usable without modification on a greenfield Next.js + SQLite proj"
+      },
+      {
+        "id": "github:4148310244",
+        "title": "[BOUNTY $50] SKILL: Generate a structured CHANGELOG from git history",
+        "url": "https://github.com/claude-builders-bounty/claude-builders-bounty/issues/1",
+        "rewardUsd": 50,
         "score": 66,
-        "summary": "Some parts are \"extended promotional\" which means they act as basic for a limited time, we should have that information available in a filterable column /bounty $75"
+        "summary": "## 💰 Bounty: $50 — powered by [Opire](https://opire.dev) ## Description Create a Claude Code skill (`SKILL.md`) or a bash script that automatically generates a structured `CHANGELOG.md` from a project's git history. ## Acceptance Criteria - [ ] Works via `/generate-changelog` command or `bash changelog.sh` - [ ] Fetches commits since the last git tag - [ ] Auto-categorizes into: `Added` / `Fixed` / `Changed` / `Removed` - [ ] Outputs a properly formatted `CHANGELOG.md` - [ ] Tested on a real GitHub repo (include a"
       },
       {
         "id": "github:5070554046",

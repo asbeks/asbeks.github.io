@@ -1,39 +1,57 @@
 {
   "version": 3,
-  "updatedAt": "2026-08-22T11:34:30.172Z",
+  "updatedAt": "2026-08-22T11:56:10.307Z",
   "status": "selected",
   "source": "github-public-issues",
   "opportunities": [
     {
-      "id": "github:4148310877",
+      "id": "github:4148310577",
       "source": "github",
-      "title": "[BOUNTY $200] WORKFLOW: n8n + Claude Code — automated weekly dev summary",
-      "url": "https://github.com/claude-builders-bounty/claude-builders-bounty/issues/5",
+      "title": "[BOUNTY $100] HOOK: Pre-tool-use hook that blocks destructive bash commands",
+      "url": "https://github.com/claude-builders-bounty/claude-builders-bounty/issues/3",
       "repositoryApiUrl": "https://api.github.com/repos/claude-builders-bounty/claude-builders-bounty",
-      "rewardUsd": 200,
-      "score": 80,
+      "rewardUsd": 100,
+      "score": 74,
       "labels": [
         "bounty",
-        "workflow"
+        "hook",
+        "security"
       ],
-      "updatedAt": "2026-08-22T10:00:31Z",
-      "summary": "## 💰 Bounty: $200 — powered by [Opire](https://opire.dev) ## Description Create a complete n8n workflow that automatically generates a weekly narrative summary of a GitHub repo's activity, using the Claude API. ## Acceptance Criteria - [ ] Exportable n8n workflow (importable `.json` file) - [ ] Trigger: weekly cron (e.g., Friday at 5pm) - [ ] Fetches from GitHub API: commits, closed issues, merged PRs for the week - [ ] Calls Claude API (`claude-sonnet-4-20250514`) to generate a narrative summary - [ ] Delivers th",
+      "updatedAt": "2026-08-22T11:53:54Z",
+      "summary": "## 💰 Bounty: $100 — powered by [Opire](https://opire.dev) ## Description Create a Claude Code `pre-tool-use` hook in Python or bash that intercepts dangerous bash commands before they are executed. ## Acceptance Criteria - [ ] Hook follows Claude Code hooks format (`~/.claude/hooks/`) - [ ] Blocks these patterns: `rm -rf`, `DROP TABLE`, `git push --force`, `TRUNCATE`, `DELETE FROM` without a WHERE clause - [ ] Logs every blocked attempt to `~/.claude/hooks/blocked.log` with: timestamp, attempted command, project p",
       "state": "candidate"
     },
     {
-      "id": "github:3492579756",
+      "id": "github:4148310390",
       "source": "github",
-      "title": "Add `is_extended_promotional ` column to components (from data source)",
-      "url": "https://github.com/tscircuit/jlcsearch/issues/92",
-      "repositoryApiUrl": "https://api.github.com/repos/tscircuit/jlcsearch",
+      "title": "[BOUNTY $75] TEMPLATE: CLAUDE.md for a Next.js + SQLite SaaS project",
+      "url": "https://github.com/claude-builders-bounty/claude-builders-bounty/issues/2",
+      "repositoryApiUrl": "https://api.github.com/repos/claude-builders-bounty/claude-builders-bounty",
       "rewardUsd": 75,
+      "score": 74,
+      "labels": [
+        "bounty",
+        "template"
+      ],
+      "updatedAt": "2026-08-22T11:53:47Z",
+      "summary": "## 💰 Bounty: $75 — powered by [Opire](https://opire.dev) ## Description Create an opinionated, production-ready `CLAUDE.md` for a typical SaaS project built with Next.js 15 App Router and SQLite (better-sqlite3 or Turso). ## Acceptance Criteria - [ ] Covers: project structure, naming conventions, DB migration rules - [ ] Includes: dev commands, patterns to follow, anti-patterns to avoid - [ ] Opinionated — not generic. Every rule has a reason. - [ ] Usable without modification on a greenfield Next.js + SQLite proj",
+      "state": "candidate"
+    },
+    {
+      "id": "github:4148310244",
+      "source": "github",
+      "title": "[BOUNTY $50] SKILL: Generate a structured CHANGELOG from git history",
+      "url": "https://github.com/claude-builders-bounty/claude-builders-bounty/issues/1",
+      "repositoryApiUrl": "https://api.github.com/repos/claude-builders-bounty/claude-builders-bounty",
+      "rewardUsd": 50,
       "score": 66,
       "labels": [
-        "💎 Bounty",
-        "$1"
+        "bounty",
+        "skill",
+        "good first issue"
       ],
-      "updatedAt": "2026-08-22T10:55:32Z",
-      "summary": "Some parts are \"extended promotional\" which means they act as basic for a limited time, we should have that information available in a filterable column /bounty $75",
+      "updatedAt": "2026-08-22T11:53:27Z",
+      "summary": "## 💰 Bounty: $50 — powered by [Opire](https://opire.dev) ## Description Create a Claude Code skill (`SKILL.md`) or a bash script that automatically generates a structured `CHANGELOG.md` from a project's git history. ## Acceptance Criteria - [ ] Works via `/generate-changelog` command or `bash changelog.sh` - [ ] Fetches commits since the last git tag - [ ] Auto-categorizes into: `Added` / `Fixed` / `Changed` / `Removed` - [ ] Outputs a properly formatted `CHANGELOG.md` - [ ] Tested on a real GitHub repo (include a",
       "state": "candidate"
     },
     {
@@ -71,19 +89,20 @@
     }
   ],
   "selected": {
-    "id": "github:4148310877",
+    "id": "github:4148310577",
     "source": "github",
-    "title": "[BOUNTY $200] WORKFLOW: n8n + Claude Code — automated weekly dev summary",
-    "url": "https://github.com/claude-builders-bounty/claude-builders-bounty/issues/5",
+    "title": "[BOUNTY $100] HOOK: Pre-tool-use hook that blocks destructive bash commands",
+    "url": "https://github.com/claude-builders-bounty/claude-builders-bounty/issues/3",
     "repositoryApiUrl": "https://api.github.com/repos/claude-builders-bounty/claude-builders-bounty",
-    "rewardUsd": 200,
-    "score": 80,
+    "rewardUsd": 100,
+    "score": 74,
     "labels": [
       "bounty",
-      "workflow"
+      "hook",
+      "security"
     ],
-    "updatedAt": "2026-08-22T10:00:31Z",
-    "summary": "## 💰 Bounty: $200 — powered by [Opire](https://opire.dev) ## Description Create a complete n8n workflow that automatically generates a weekly narrative summary of a GitHub repo's activity, using the Claude API. ## Acceptance Criteria - [ ] Exportable n8n workflow (importable `.json` file) - [ ] Trigger: weekly cron (e.g., Friday at 5pm) - [ ] Fetches from GitHub API: commits, closed issues, merged PRs for the week - [ ] Calls Claude API (`claude-sonnet-4-20250514`) to generate a narrative summary - [ ] Delivers th",
+    "updatedAt": "2026-08-22T11:53:54Z",
+    "summary": "## 💰 Bounty: $100 — powered by [Opire](https://opire.dev) ## Description Create a Claude Code `pre-tool-use` hook in Python or bash that intercepts dangerous bash commands before they are executed. ## Acceptance Criteria - [ ] Hook follows Claude Code hooks format (`~/.claude/hooks/`) - [ ] Blocks these patterns: `rm -rf`, `DROP TABLE`, `git push --force`, `TRUNCATE`, `DELETE FROM` without a WHERE clause - [ ] Logs every blocked attempt to `~/.claude/hooks/blocked.log` with: timestamp, attempted command, project p",
     "state": "selected"
   },
   "active": null,
@@ -92,9 +111,9 @@
   "selection": {
     "status": "selected",
     "confidence": 0.9,
-    "rationale": "Legitimate n8n workflow with Claude API; clear acceptance criteria, $200 bounty, feasible with JS/TS skills.",
-    "expectedHours": 8,
+    "rationale": "Legitimate bounty with clear acceptance criteria, high reward, within worker's coding capabilities.",
+    "expectedHours": 3,
     "expectedCostUsd": 0,
-    "estimatedProfitUsd": 200
+    "estimatedProfitUsd": 100
   }
 }
