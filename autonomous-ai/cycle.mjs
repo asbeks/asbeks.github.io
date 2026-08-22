@@ -11,7 +11,7 @@ async function readState() {
 }
 
 function compactHistory(history = []) {
-  return history.slice(-8).map((item) => ({
+  return history.slice(-4).map((item) => ({
     cycle: item.cycle,
     agent: item.agent,
     observation: item.observation,
@@ -34,25 +34,42 @@ function clean(value, max = 220) {
 }
 
 async function callModel(messages) {
-  const response = await fetch(FREE_URL, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      model: FREE_MODEL,
-      messages,
-      stream: false,
-      temperature: 0.3,
-      max_tokens: 700,
-    }),
-    signal: AbortSignal.timeout(30000),
-  });
+  const budgets = [900, 1600, 2400];
+  let lastError = new Error('OpenCode request failed.');
 
-  const data = await response.json().catch(() => ({}));
-  const content = data?.choices?.[0]?.message?.content;
-  if (!response.ok || typeof content !== 'string' || !content.trim()) {
-    throw new Error(`OpenCode request failed: ${data?.error?.message || `HTTP ${response.status}`}`);
+  for (let attempt = 0; attempt < budgets.length; attempt += 1) {
+    try {
+      const response = await fetch(FREE_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          model: FREE_MODEL,
+          messages,
+          stream: false,
+          temperature: 0.2,
+          max_tokens: budgets[attempt],
+        }),
+        signal: AbortSignal.timeout(45000),
+      });
+
+      const data = await response.json().catch(() => ({}));
+      const content = data?.choices?.[0]?.message?.content;
+      if (response.ok && typeof content === 'string' && content.trim()) {
+        return content;
+      }
+
+      const reason = data?.error?.message || (response.ok ? 'HTTP 200 with empty visible output' : `HTTP ${response.status}`);
+      lastError = new Error(`OpenCode request failed: ${reason}`);
+    } catch (error) {
+      lastError = error instanceof Error ? error : new Error(String(error));
+    }
+
+    if (attempt < budgets.length - 1) {
+      await new Promise((resolve) => setTimeout(resolve, 1500 * (attempt + 1)));
+    }
   }
-  return content;
+
+  throw lastError;
 }
 
 const state = await readState();
@@ -60,7 +77,7 @@ const nextCycle = Number(state.cycle || 0) + 1;
 const agent = nextCycle % 2 === 1 ? 'PLANNER' : 'CRITIC';
 const otherAgent = agent === 'PLANNER' ? 'CRITIC' : 'PLANNER';
 
-const system = `You are ${agent}, one role in an autonomous engineering design loop. Publish a SHORT PUBLIC REASONING TRACE only. Do not reveal private chain-of-thought. Give only concise conclusions and rationale deliberately intended for observers.\n\nMISSION: ${MISSION}\n\nRules:\n- Return VALID JSON only.\n- Exactly four string fields: observation, objection, decision, next.\n- Each field is one short sentence, maximum 180 characters.\n- Be concrete, engineering-focused, and financially realistic.\n- ${agent === 'PLANNER' ? 'Propose the smallest useful next move and directly address the latest critique.' : 'Challenge the latest plan, identify the most important failure mode, then refine the next move.'}\n- Do not execute external actions.\n- Do not propose uncontrolled replication, evading shutdown, credential theft, unauthorized access, or hiding activity.\n- The next field should tell ${otherAgent} what to examine next.`;
+const system = `You are ${agent}, one role in an autonomous engineering design loop. Publish a SHORT PUBLIC REASONING TRACE only. Do not reveal private chain-of-thought. Give only concise conclusions and rationale deliberately intended for observers.\n\nMISSION: ${MISSION}\n\nRules:\n- Return VALID JSON only, with no prose before or after it.\n- Exactly four string fields: observation, objection, decision, next.\n- Each field is one short sentence, maximum 180 characters.\n- Be concrete, engineering-focused, and financially realistic.\n- ${agent === 'PLANNER' ? 'Propose the smallest useful next move and directly address the latest critique.' : 'Challenge the latest plan, identify the most important failure mode, then refine the next move.'}\n- Do not execute external actions.\n- Do not propose uncontrolled replication, evading shutdown, credential theft, unauthorized access, or hiding activity.\n- The next field should tell ${otherAgent} what to examine next.`;
 
 const publicState = {
   cycle: nextCycle,
