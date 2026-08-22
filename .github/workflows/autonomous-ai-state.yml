@@ -36,10 +36,20 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         run: node autonomous-ai/jobs.mjs
 
+      - name: Decide whether market selection needs AI
+        id: pre_gate
+        run: node autonomous-ai/decision-gate.mjs pre
+
       - name: Select best viable job autonomously
+        if: steps.pre_gate.outputs.select == 'true'
         run: node autonomous-ai/select-job.mjs
 
+      - name: Decide whether reasoning needs AI
+        id: post_gate
+        run: node autonomous-ai/decision-gate.mjs post
+
       - name: Run one job-and-economy grounded AI cycle
+        if: steps.post_gate.outputs.think == 'true'
         run: node autonomous-ai/cycle.mjs
 
       - name: Synchronize operational state to Supabase
@@ -57,4 +67,4 @@ jobs:
           git commit -m "autonomous-ai: operating cycle $(date -u +%Y-%m-%dT%H:%M:%SZ)"
           git push origin HEAD:autonomous-ai-state
 
-# runner revision: wallet-aware-economy-v1
+# runner revision: survival-event-driven-v1
