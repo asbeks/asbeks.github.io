@@ -19,7 +19,7 @@ concurrency:
 jobs:
   cycle:
     runs-on: ubuntu-latest
-    timeout-minutes: 6
+    timeout-minutes: 7
     steps:
       - name: Checkout public state branch
         uses: actions/checkout@v4
@@ -34,6 +34,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: node autonomous-ai/jobs.mjs
+
+      - name: Select best viable job autonomously
+        run: node autonomous-ai/select-job.mjs
 
       - name: Run one job-and-economy grounded AI cycle
         run: node autonomous-ai/cycle.mjs
@@ -50,4 +53,4 @@ jobs:
           git commit -m "autonomous-ai: operating cycle $(date -u +%Y-%m-%dT%H:%M:%SZ)"
           git push origin HEAD:autonomous-ai-state
 
-# runner revision: job-market-v1
+# runner revision: autonomous-job-selector-v1
