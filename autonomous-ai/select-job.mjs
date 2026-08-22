@@ -2,7 +2,9 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { callOpenCode, isProviderUnavailableError } from './provider.mjs';
 
-const JOBS_PATH = path.join(process.cwd(), 'autonomous-ai/jobs.json');
+const ROOT = path.join(process.cwd(), 'autonomous-ai');
+const JOBS_PATH = path.join(ROOT, 'jobs.json');
+const ECONOMY_PATH = path.join(ROOT, 'economy.json');
 
 function clean(value, max = 500) {
   return String(value || '').replace(/\s+/g, ' ').trim().slice(0, max);
@@ -16,23 +18,40 @@ function parseJson(content) {
   try { return JSON.parse(match[0]); } catch { return null; }
 }
 
-const jobs = JSON.parse(await fs.readFile(JOBS_PATH, 'utf8'));
-const candidates = (jobs.opportunities || []).slice(0, 10);
+async function readJson(file, fallback = {}) {
+  try { return JSON.parse(await fs.readFile(file, 'utf8')); } catch { return fallback; }
+}
+
+const jobs = await readJson(JOBS_PATH, { opportunities: [], completed: [] });
+const economy = await readJson(ECONOMY_PATH, {});
+const revenue = Number(economy?.totals?.revenueUSDT || 0);
+const firstRevenueMissing = revenue <= 0 && (jobs.completed || []).length === 0;
+const allCandidates = (jobs.opportunities || []).slice(0, 12);
+const candidates = firstRevenueMissing
+  ? allCandidates.filter((x) => x.survivalEligible === true)
+  : allCandidates.filter((x) => Number(x.payoutConfidence || 0) >= 0.5 && Number(x.autonomyFit || 0) >= 0.5 && !x.requiresHumanGate);
 
 if (!candidates.length) {
   jobs.selected = null;
-  jobs.selection = { status: 'none', rationale: 'No verified paid candidate passed scouting and competition filters.' };
+  jobs.selection = {
+    status: 'none',
+    mode: firstRevenueMissing ? 'survival' : 'growth',
+    rationale: firstRevenueMissing
+      ? 'No job currently passes fast-cash survival rules. Keep scouting instead of burning compute on slow or blocked work.'
+      : 'No autonomous paid candidate currently meets minimum payout and autonomy requirements.',
+  };
   jobs.status = 'idle';
   jobs.needsSelection = false;
   jobs.marketChanged = false;
   jobs.lastError = null;
   jobs.retryAfterAt = null;
+  jobs.updatedAt = new Date().toISOString();
   await fs.writeFile(JOBS_PATH, JSON.stringify(jobs, null, 2) + '\n');
-  console.log('Autonomous selector: no candidate');
+  console.log('Autonomous selector: no survival-eligible candidate');
   process.exit(0);
 }
 
-const system = `You are the public JOB SELECTOR for an autonomous software worker-business. Choose at most one job from the supplied candidates. Do not reveal private chain-of-thought; provide only the compact decision fields requested.\n\nSelection policy:\n- Prefer legitimate, bounded coding/docs/data work with objective acceptance criteria.\n- Maximize expected value, not headline payout. Consider reward, likely hours, complexity, competition, probability of acceptance, and required credentials.\n- Treat competition.attemptSignals above 5 as saturated and reject it. Heavily penalize high comment counts even when exact active attempts are unknown.\n- Prefer a lower-paying task with low competition over a crowded task with a large advertised reward.\n- Reject referral promotions, speculative trading, spam, harmful security exploitation, regulated professional work, identity/KYC requirements, or tasks requiring deception.\n- Reject a task if payout evidence is vague or the candidate is a meta-list/aggregator rather than the actual paid task.\n- The worker has general JS/TS/Node/React/API/docs/data/bash/Python capability and can learn ordinary open-source codebases.\n- Missing wallet configuration does not prevent preparing work.\n\nReturn VALID JSON only with exactly these fields:\n{"id":string|null,"confidence":number,"rationale":string,"expectedHours":number|null,"expectedCostUsd":number|null,"estimatedProfitUsd":number|null}\nKeep rationale under 220 characters.`;
+const system = `You are the JOB SELECTOR for a cash-starved autonomous software worker-business. Do not reveal private chain-of-thought. Choose at most one candidate and return compact JSON only.\n\nCURRENT MODE: ${firstRevenueMissing ? 'SURVIVAL: first confirmed cash is more important than headline reward.' : 'GROWTH: maximize reliable expected profit.'}\n\nSelection policy:\n- Optimize probability of receiving money soon, not advertised bounty size.\n- In survival mode prefer work likely finishable in <= 8 hours, ideally <= 4 hours.\n- Strongly prefer high payoutConfidence, high autonomyFit, low competition, clear acceptance criteria, ordinary software stacks, and zero-cost execution.\n- Reject any candidate requiring human assignment/claim, KYC, special hardware, device validation, paid infrastructure, deception, spam, regulated work, or unclear payout.\n- Treat a $50 task that can be completed and paid today as better than a $7000 task that may take days or need approval/hardware.\n- Account for probability of acceptance and payment.\n- If none is realistically fast and payable, choose null.\n\nReturn VALID JSON only:\n{"id":string|null,"confidence":number,"rationale":string,"expectedHours":number|null,"timeToCashHours":number|null,"expectedCostUsd":number|null}\nKeep rationale under 220 characters.`;
 
 try {
   const result = await callOpenCode([
@@ -41,33 +60,54 @@ try {
       id: x.id,
       title: x.title,
       rewardUsd: x.rewardUsd,
-      score: x.score,
+      fastCashScore: x.fastCashScore,
+      payoutConfidence: x.payoutConfidence,
+      autonomyFit: x.autonomyFit,
+      estimatedHoursBand: x.estimatedHoursBand,
+      survivalEligible: x.survivalEligible,
+      eligibilityReason: x.eligibilityReason,
+      competition: x.competition || null,
       labels: x.labels,
       summary: x.summary,
       url: x.url,
-      commentCount: x.commentCount,
-      competition: x.competition || null,
     }))) },
-  ], { maxTokens: 1800, temperature: 0.1, timeoutMs: 50000 });
+  ], { maxTokens: 1400, temperature: 0.05, timeoutMs: 50000 });
 
   const decision = parseJson(result.content);
   if (!decision || (!decision.id && decision.id !== null)) throw new Error('Selector returned invalid JSON.');
-
   const selected = decision.id ? candidates.find((x) => x.id === decision.id) : null;
   if (decision.id && !selected) throw new Error('Selector chose an unknown candidate.');
-  if (selected && Number(selected.competition?.attemptSignals || 0) > 5) throw new Error('Selector chose a saturated candidate.');
 
-  jobs.selected = selected ? { ...selected, state: 'selected' } : null;
+  const expectedHours = Number.isFinite(Number(decision.expectedHours)) ? Number(decision.expectedHours) : (selected?.estimatedHoursBand ?? null);
+  const expectedCostUsd = Number.isFinite(Number(decision.expectedCostUsd)) ? Math.max(0, Number(decision.expectedCostUsd)) : 0;
+  const timeToCashHours = Number.isFinite(Number(decision.timeToCashHours)) ? Math.max(0, Number(decision.timeToCashHours)) : expectedHours;
+
+  let approved = selected;
+  let rejectReason = '';
+  if (approved && firstRevenueMissing && expectedHours > 8) {
+    rejectReason = 'Model estimated more than 8 hours, too slow for survival mode.';
+    approved = null;
+  }
+  if (approved && (approved.requiresHumanGate || approved.requiresSpecialHardware || approved.survivalEligible === false && firstRevenueMissing)) {
+    rejectReason = 'Candidate violates survival autonomy constraints.';
+    approved = null;
+  }
+
+  jobs.selected = approved ? { ...approved, state: 'selected' } : null;
   jobs.selection = {
-    status: selected ? 'selected' : 'none',
+    status: approved ? 'selected' : 'none',
+    mode: firstRevenueMissing ? 'survival' : 'growth',
     confidence: Math.max(0, Math.min(1, Number(decision.confidence) || 0)),
-    rationale: clean(decision.rationale, 220),
-    expectedHours: Number.isFinite(Number(decision.expectedHours)) ? Number(decision.expectedHours) : null,
-    expectedCostUsd: Number.isFinite(Number(decision.expectedCostUsd)) ? Number(decision.expectedCostUsd) : null,
-    estimatedProfitUsd: Number.isFinite(Number(decision.estimatedProfitUsd)) ? Number(decision.estimatedProfitUsd) : null,
+    rationale: clean(rejectReason || decision.rationale, 220),
+    expectedHours,
+    timeToCashHours,
+    expectedCostUsd,
+    estimatedProfitUsd: approved ? Math.max(0, Number(approved.rewardUsd || 0) - expectedCostUsd) : 0,
+    payoutConfidence: approved ? approved.payoutConfidence : null,
+    autonomyFit: approved ? approved.autonomyFit : null,
     provider: { mode: result.mode, model: result.model, attempts: result.attempts },
   };
-  jobs.status = selected ? 'selected' : 'idle';
+  jobs.status = approved ? 'selected' : 'idle';
   jobs.needsSelection = false;
   jobs.marketChanged = false;
   jobs.lastError = null;
@@ -85,9 +125,8 @@ try {
     jobs.lastError = clean(error instanceof Error ? error.message : String(error), 300);
     jobs.retryAfterAt = null;
   }
-  // Preserve the previous viable selection during temporary provider failures.
 }
 
 jobs.updatedAt = new Date().toISOString();
 await fs.writeFile(JOBS_PATH, JSON.stringify(jobs, null, 2) + '\n');
-console.log(`Autonomous selector: ${jobs.status}; selected=${jobs.selected?.title || 'none'}`);
+console.log(`Autonomous selector: ${jobs.status}; selected=${jobs.selected?.title || 'none'}; mode=${jobs.selection?.mode || 'unknown'}`);
