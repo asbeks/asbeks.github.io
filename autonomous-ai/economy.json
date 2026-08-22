@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "updatedAt": null,
+  "status": "unconfigured",
+  "wallets": {
+    "tonAddress": "",
+    "tronAddress": ""
+  },
+  "balances": {
+    "TON": 0,
+    "USDT_TON": 0,
+    "TRX": 0,
+    "USDT_TRON": 0,
+    "totalUSDT": 0
+  },
+  "totals": {
+    "revenueUSDT": 0,
+    "expensesUSDT": 0,
+    "profitUSDT": 0
+  },
+  "runwayDays": null,
+  "cursors": {
+    "tonUtime": 0,
+    "tronTimestamp": 0
+  },
+  "ledger": [],
+  "lastError": null
+}
