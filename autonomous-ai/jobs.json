@@ -1,24 +1,71 @@
 {
-  "version": 5,
-  "updatedAt": "2026-08-22T15:02:11.867Z",
-  "status": "selected",
+  "version": 6,
+  "updatedAt": "2026-08-22T15:13:25.723Z",
+  "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
     {
-      "id": "github:5222319078",
+      "id": "github:5194199589",
       "source": "github",
-      "title": "[Bounty $7000] ttnn.xielu: exponent-reconstruction overflow produces values up to ±2.7e38 (and NaN) for x < -87.68",
-      "url": "https://github.com/tenstorrent/tt-metal/issues/54046",
-      "repositoryApiUrl": "https://api.github.com/repos/tenstorrent/tt-metal",
-      "rewardUsd": 7000,
-      "score": 62,
+      "title": "[FEAT-0247] Interactive chart positions and draggable TP/SL lines",
+      "url": "https://github.com/mydcc/cachy-app/issues/2097",
+      "repositoryApiUrl": "https://api.github.com/repos/mydcc/cachy-app",
+      "rewardUsd": 68500,
+      "score": 48,
       "labels": [
-        "community"
+        "trade-panel",
+        "feature",
+        "status:in-progress",
+        "edition:community",
+        "edition:pro",
+        "edition:private",
+        "P2",
+        "agent:eligible",
+        "backlog-id:FEAT-0247"
       ],
       "commentCount": 0,
-      "updatedAt": "2026-08-22T14:17:50Z",
-      "summary": "## Summary `ttnn.xielu`'s negative-input branch calls an internal helper, `_sfpu_neg_exp_f32_`, to compute `exp(x)`. For any input `x < -87.68`, this helper's range-reduction logic breaks down and returns a essentially-random-magnitude garbage value instead of a number close to zero — including values as large as `2.7e38` (within a factor of ~1.25 of `FLT_MAX`) and, in some cases, `NaN`. This propagates directly into `ttnn.xielu`'s output: ``` ttnn.xielu(x=-90.0, alpha_p=..., alpha_n=0.8) -> 2.342323e+37 ``` ``` co",
+      "updatedAt": "2026-08-22T09:24:41Z",
+      "summary": "> **Depends on:** FEAT-0017, FEAT-0070 # FEAT-0247 — Interactive chart positions and draggable TP/SL lines ## Problem Traders monitoring charts in Cachy currently have to switch between the candlestick view and the trade/positions panel or TP/SL modal to see their open positions, entry prices, liquidation thresholds, and resting take-profit/stop-loss levels. Modifying a stop-loss or take-profit requires opening an edit modal and typing numerical values by hand. TradingView and modern exchange terminals allow traders to see their active positions and resting TP/SL orders directly on the price chart as horizontal price lines, and to drag those lines to adjust TP/SL orders interactively. ## Proposal Leverage Lightweight Charts v5 APIs (`createPriceLine`, `priceToCoordinate`, `coordinateToPrice`) in `CandleChartView.svelte` to: 1. Render live price lines for the active symbol's open position (Entry, Liquidation) and pending TP/SL orders. 2. Display distance (% and USDT PnL) directly on the line labels. 3. Enable dragging of TP and SL lines: hovering over a line shows a resize cursor, dragging updates the line in real-time with tick-size snapping, and releasing (drop) sends `modifyTpSlO",
       "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fastCashScore": 111,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is not strong enough.",
+      "competition": {
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
+      }
+    },
+    {
+      "id": "github:5222219470",
+      "source": "github",
+      "title": "OI 卡 v2：完整标题与报价 + CoinGlass 清算水平 shadow",
+      "url": "https://github.com/AnalyThothAI/tracefold/issues/144",
+      "repositoryApiUrl": "https://api.github.com/repos/AnalyThothAI/tracefold",
+      "rewardUsd": 73.01,
+      "score": 40,
+      "labels": [
+        "ready-for-agent"
+      ],
+      "commentCount": 0,
+      "updatedAt": "2026-08-22T13:53:19Z",
+      "summary": "## Problem Two related reader-market-context gaps share the same delivery/working-set seam. 1. OI telemetry already parses and persists all four numbers, but the Feishu header only shows `{symbol} 持仓异动 {pct}`; the remaining OI value, Whale/OI ratio, whale-long profit, and 4h rank live only in `why_zh`, so notification previews hide the complete signal. 2. A deterministic OI verdict carries one primary perp asset, but Gate grounding is deliberately empty. `card_assets()` therefore removes that asset and Deliverer never requests the existing Quote Snapshot. Quote planning also reads only `news_event_assets`, so a new OI-only symbol is not guaranteed to be warmed. 3. We need a bounded shadow of `AnalyThothAI/coinglass-cli liquidation-levels` to measure coverage, payload change, staleness, errors, and clustering feasibility before any liquidation data reaches a reader card. Live read-only reproduction on 2026-08-22 confirmed a DOGE Event with OI +8.64%, OI value $73.01M, Whale/OI 210.97%, whale-long profit 80.60%, rank 1, decision push, delivery sent. The delivered header was short while the complete metrics were in the first body line. DOGE Quote Snapshot existed; `grounded_assets=[]`",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fastCashScore": 106,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is not strong enough.",
       "competition": {
         "comments": 0,
         "attemptSignals": 0,
@@ -32,35 +79,23 @@
       "url": "https://github.com/tromp/ChessPositionRanking/issues/927",
       "repositoryApiUrl": "https://api.github.com/repos/tromp/ChessPositionRanking",
       "rewardUsd": 256,
-      "score": 62,
+      "score": 46,
       "labels": [],
       "commentCount": 4,
       "updatedAt": "2026-08-22T14:30:16Z",
-      "summary": "## Summary The legal en-passant position below has no preimage in the urposition ranking at commit [`e6fc7cde775a0586f905ed4fa0387bae47997ffd`](https://github.com/tromp/ChessPositionRanking/commit/e6fc7cde775a0586f905ed4fa0387bae47997ffd). Running `cpr rank` on it fails in `unplaceOpp`. I am filing this as a claim under the README's $256 bounty for a legal but unrankable position. ## Reachability The position is reached by the legal game ```text 1. c4 c5 2. Nf3 a6 3. Nd4 cxd4 4. c5 d5 ``` Its ordinary FEN is ```tex",
+      "summary": "## Summary The legal en-passant position below has no preimage in the urposition ranking at commit [`e6fc7cde775a0586f905ed4fa0387bae47997ffd`](https://github.com/tromp/ChessPositionRanking/commit/e6fc7cde775a0586f905ed4fa0387bae47997ffd). Running `cpr rank` on it fails in `unplaceOpp`. I am filing this as a claim under the README's $256 bounty for a legal but unrankable position. ## Reachability The position is reached by the legal game ```text 1. c4 c5 2. Nf3 a6 3. Nd4 cxd4 4. c5 d5 ``` Its ordinary FEN is ```text rnbqkbnr/1p2pppp/p7/2Pp4/3p4/8/PP1PPPPP/RNBQKB1R w KQkq d6 0 5 ``` In particular, `3...cxd4` captures the white knight, and `4...d5` advances the black pawn two squares, leaving `d6` as a valid en-passant target for the pawn on `c5`. ## Reproduction For `cpr`, the converter's equivalent-urposition choice list has one element, so the final two fields are `0 1`: ```console $ printf '%s\\n' 'rnbqkbnr/1p2pppp/p7/2Pp4/3p4/8/PP1PPPPP/RNBQKB1R w KQkq d6 0 1' | src/cpr rank cpr: Chess/Position/Ranking.hs:(389,5)-(398,39): Non-exhaustive patterns in function unplaceOpp ``` ## Why there is no global preimage All eight pawns remain for each side and exactly one non-pawn has been ca",
       "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fastCashScore": 105,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is not strong enough.",
       "competition": {
         "comments": 4,
-        "attemptSignals": 0,
-        "risk": "low"
-      }
-    },
-    {
-      "id": "github:5222341217",
-      "source": "github",
-      "title": "[Bounty $2500] ttnn.remainder: wrong results (off by whole multiples of the divisor) for |dividend/divisor| ratios beyond ~2^23, on both Wormhole and Blackhole",
-      "url": "https://github.com/tenstorrent/tt-metal/issues/54048",
-      "repositoryApiUrl": "https://api.github.com/repos/tenstorrent/tt-metal",
-      "rewardUsd": 2500,
-      "score": 50,
-      "labels": [
-        "community"
-      ],
-      "commentCount": 0,
-      "updatedAt": "2026-08-22T14:23:18Z",
-      "summary": "## Summary `ttnn.remainder`'s scalar/unary fp32 path computes the quotient via a float multiply-by-reciprocal, corrects it by at most `1`, and stops. Once the true quotient's magnitude exceeds roughly `2^23` (~8.4 million) — i.e. the dividend is more than ~8.4 million times the divisor — floating-point rounding in that multiply can leave the quotient estimate off by more than the single correction can fix, and the kernel returns a result that is wrong by a whole integer multiple of the divisor: ``` ttnn.remainder(x",
-      "state": "candidate",
-      "competition": {
-        "comments": 0,
         "attemptSignals": 0,
         "risk": "low"
       }
@@ -72,14 +107,83 @@
       "url": "https://github.com/tenstorrent/tt-metal/issues/54049",
       "repositoryApiUrl": "https://api.github.com/repos/tenstorrent/tt-metal",
       "rewardUsd": 1500,
-      "score": 50,
+      "score": 54,
       "labels": [
         "community"
       ],
       "commentCount": 0,
       "updatedAt": "2026-08-22T14:24:09Z",
-      "summary": "## Summary `ttnn.erfinv` computes the inverse error function using only the Winitzki (2008) closed-form approximation (`a = 0.147`) — a deliberately cheap, low-accuracy analytical formula, not a minimax fit. Unlike every other SFPU kernel checked in this codebase (`sigmoid`, `tanh`, `gelu`, `softplus` — all have a real `APPROXIMATION_MODE`-gated fast-vs-accurate split), `calculate_erfinv`'s `APPROXIMATION_MODE` template parameter is never actually used: there is exactly one code path, hardcoded, regardless of preci",
+      "summary": "## Summary `ttnn.erfinv` computes the inverse error function using only the Winitzki (2008) closed-form approximation (`a = 0.147`) — a deliberately cheap, low-accuracy analytical formula, not a minimax fit. Unlike every other SFPU kernel checked in this codebase (`sigmoid`, `tanh`, `gelu`, `softplus` — all have a real `APPROXIMATION_MODE`-gated fast-vs-accurate split), `calculate_erfinv`'s `APPROXIMATION_MODE` template parameter is never actually used: there is exactly one code path, hardcoded, regardless of precision mode. A source-level fp32 model of the kernel, cross-checked against both `scipy.special` (a 4-million-point domain sweep) and independent `mpmath` 50-decimal-digit spot checks, finds a peak relative error of **~1.96e-3 (0.2%)** near the domain edges, growing steadily worse the closer the input gets to `±1`: ``` x = 0.999 erfinv(x) = 2.32675377 (true, mpmath 50-digit) = 2.32231736 (kernel, fp32 model) rel err = 1.91e-3 x = 0.9999 erfinv(x) = 2.75106391 (true) = 2.74588323 (kernel) rel err = 1.88e-3 ``` ## Root cause ```cpp // L18-19: template <bool APPROXIMATION_MODE> sfpi_inline sfpi::vFloat calculate_erfinv_body(sfpi::vFloat x) { ``` `APPROXIMATION_MODE` is declare",
       "state": "candidate",
+      "payoutConfidence": 0.15,
+      "autonomyFit": 0.45,
+      "requiresHumanGate": true,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 8,
+      "complexity": 4,
+      "fastCashScore": 55,
+      "survivalEligible": false,
+      "eligibilityReason": "Human claim/assignment/KYC gate detected.",
+      "competition": {
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
+      }
+    },
+    {
+      "id": "github:5222319078",
+      "source": "github",
+      "title": "[Bounty $7000] ttnn.xielu: exponent-reconstruction overflow produces values up to ±2.7e38 (and NaN) for x < -87.68",
+      "url": "https://github.com/tenstorrent/tt-metal/issues/54046",
+      "repositoryApiUrl": "https://api.github.com/repos/tenstorrent/tt-metal",
+      "rewardUsd": 7000,
+      "score": 46,
+      "labels": [
+        "community"
+      ],
+      "commentCount": 1,
+      "updatedAt": "2026-08-22T15:04:20Z",
+      "summary": "## Summary `ttnn.xielu`'s negative-input branch calls an internal helper, `_sfpu_neg_exp_f32_`, to compute `exp(x)`. For any input `x < -87.68`, this helper's range-reduction logic breaks down and returns a essentially-random-magnitude garbage value instead of a number close to zero — including values as large as `2.7e38` (within a factor of ~1.25 of `FLT_MAX`) and, in some cases, `NaN`. This propagates directly into `ttnn.xielu`'s output: ``` ttnn.xielu(x=-90.0, alpha_p=..., alpha_n=0.8) -> 2.342323e+37 ``` ``` correct value (torch reference) -> 26.2 ``` A source-level fp32 model of the kernel, cross-checked bit-for-bit against the IEEE 754 semantics `exexp`/`setexp` actually implement, confirms this is not an isolated input: a dense sweep of the affected region (`x` from `-87.68` to `-300`, step `0.01`, 21,232 points) finds ~0.9% of points produce an absolute error greater than 1 (i.e. clearly, visibly wrong, not just imprecise), with errors reaching `±2.7e38`. ## Root cause `_sfpu_neg_exp_f32_` (`ckernel_sfpu_xielu.h`) computes `exp(x)` via the standard range-reduction-then-polynomial approach: `x = k*ln(2) + r`, evaluate a 7-term Taylor polynomial for `exp(r)` on the small redu",
+      "state": "candidate",
+      "payoutConfidence": 0.15,
+      "autonomyFit": 0.45,
+      "requiresHumanGate": true,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 8,
+      "complexity": 4,
+      "fastCashScore": 45,
+      "survivalEligible": false,
+      "eligibilityReason": "Human claim/assignment/KYC gate detected.",
+      "competition": {
+        "comments": 1,
+        "attemptSignals": 1,
+        "risk": "medium"
+      }
+    },
+    {
+      "id": "github:5222341217",
+      "source": "github",
+      "title": "[Bounty $2500] ttnn.remainder: wrong results (off by whole multiples of the divisor) for |dividend/divisor| ratios beyond ~2^23, on both Wormhole and Blackhole",
+      "url": "https://github.com/tenstorrent/tt-metal/issues/54048",
+      "repositoryApiUrl": "https://api.github.com/repos/tenstorrent/tt-metal",
+      "rewardUsd": 2500,
+      "score": 54,
+      "labels": [
+        "community"
+      ],
+      "commentCount": 0,
+      "updatedAt": "2026-08-22T14:23:18Z",
+      "summary": "## Summary `ttnn.remainder`'s scalar/unary fp32 path computes the quotient via a float multiply-by-reciprocal, corrects it by at most `1`, and stops. Once the true quotient's magnitude exceeds roughly `2^23` (~8.4 million) — i.e. the dividend is more than ~8.4 million times the divisor — floating-point rounding in that multiply can leave the quotient estimate off by more than the single correction can fix, and the kernel returns a result that is wrong by a whole integer multiple of the divisor: ``` ttnn.remainder(x=1.42606e7, 3.0) -> 1.0 (kernel) correct value -> 2.0 ``` ``` ttnn.remainder(x=5.70425e7, 3.0) -> -1.0 (kernel) correct value -> 2.0 ``` This is confirmed identical on **both Wormhole and Blackhole** (`ckernel_sfpu_remainder.h` is byte-for-byte the same algorithm on both architectures — the two files differ only in cosmetic `sfpi::` qualification, not logic). ## Root cause ```cpp // L162-164: sfpi::vFloat value_tmp = vConstFloatPrgm0; // divisor, host-precomputed sfpi::vFloat s = sfpi::abs(value_tmp); sfpi::vFloat recip_val = sfpi::abs(vConstFloatPrgm1); // host-precomputed 1/divisor ``` The quotient is estimated as `v * recip_val` (`v` = `abs(dividend)`), with fractional",
+      "state": "candidate",
+      "payoutConfidence": 0.15,
+      "autonomyFit": 0,
+      "requiresHumanGate": true,
+      "requiresSpecialHardware": true,
+      "estimatedHoursBand": 30,
+      "complexity": 7,
+      "fastCashScore": -11,
+      "survivalEligible": false,
+      "eligibilityReason": "Human claim/assignment/KYC gate detected.",
       "competition": {
         "comments": 0,
         "attemptSignals": 0,
@@ -87,45 +191,18 @@
       }
     }
   ],
-  "selected": {
-    "id": "github:5222319078",
-    "source": "github",
-    "title": "[Bounty $7000] ttnn.xielu: exponent-reconstruction overflow produces values up to ±2.7e38 (and NaN) for x < -87.68",
-    "url": "https://github.com/tenstorrent/tt-metal/issues/54046",
-    "repositoryApiUrl": "https://api.github.com/repos/tenstorrent/tt-metal",
-    "rewardUsd": 7000,
-    "score": 62,
-    "labels": [
-      "community"
-    ],
-    "commentCount": 0,
-    "updatedAt": "2026-08-22T14:17:50Z",
-    "summary": "## Summary `ttnn.xielu`'s negative-input branch calls an internal helper, `_sfpu_neg_exp_f32_`, to compute `exp(x)`. For any input `x < -87.68`, this helper's range-reduction logic breaks down and returns a essentially-random-magnitude garbage value instead of a number close to zero — including values as large as `2.7e38` (within a factor of ~1.25 of `FLT_MAX`) and, in some cases, `NaN`. This propagates directly into `ttnn.xielu`'s output: ``` ttnn.xielu(x=-90.0, alpha_p=..., alpha_n=0.8) -> 2.342323e+37 ``` ``` co",
-    "state": "selected",
-    "competition": {
-      "comments": 0,
-      "attemptSignals": 0,
-      "risk": "low"
-    }
-  },
+  "selected": null,
   "active": null,
   "completed": [],
   "lastError": null,
-  "selection": {
-    "status": "selected",
-    "confidence": 0.75,
-    "rationale": "Legitimate low-competition C++ SFPU bug with clear repro and $7k bounty; highest expected value despite complexity, worker can learn codebase.",
-    "expectedHours": 25,
-    "expectedCostUsd": 0,
-    "estimatedProfitUsd": 0,
-    "provider": {
-      "mode": "OpenCode Free",
-      "model": "hy3-free",
-      "attempts": 2
-    }
-  },
+  "selection": null,
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:5121445435\",\"rewardUsd\":256,\"score\":62,\"updatedAt\":\"2026-08-22T14:30:16Z\",\"competition\":{\"comments\":4,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5222319078\",\"rewardUsd\":7000,\"score\":62,\"updatedAt\":\"2026-08-22T14:17:50Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5222341217\",\"rewardUsd\":2500,\"score\":50,\"updatedAt\":\"2026-08-22T14:23:18Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5222344479\",\"rewardUsd\":1500,\"score\":50,\"updatedAt\":\"2026-08-22T14:24:09Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
-  "marketChanged": false,
-  "needsSelection": false
+  "marketSignature": "[{\"id\":\"github:5121445435\",\"rewardUsd\":256,\"fastCashScore\":105,\"updatedAt\":\"2026-08-22T14:30:16Z\",\"competition\":{\"comments\":4,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5194199589\",\"rewardUsd\":68500,\"fastCashScore\":111,\"updatedAt\":\"2026-08-22T09:24:41Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5222219470\",\"rewardUsd\":73.01,\"fastCashScore\":106,\"updatedAt\":\"2026-08-22T13:53:19Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5222319078\",\"rewardUsd\":7000,\"fastCashScore\":45,\"updatedAt\":\"2026-08-22T15:04:20Z\",\"competition\":{\"comments\":1,\"attemptSignals\":1,\"risk\":\"medium\"}},{\"id\":\"github:5222341217\",\"rewardUsd\":2500,\"fastCashScore\":-11,\"updatedAt\":\"2026-08-22T14:23:18Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5222344479\",\"rewardUsd\":1500,\"fastCashScore\":55,\"updatedAt\":\"2026-08-22T14:24:09Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketChanged": true,
+  "needsSelection": false,
+  "survival": {
+    "mode": true,
+    "eligibleCount": 0,
+    "objective": "first_confirmed_cash_fast"
+  }
 }
