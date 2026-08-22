@@ -1,46 +1,9 @@
 {
-  "version": 3,
-  "updatedAt": "2026-08-22T12:42:54.316Z",
-  "status": "selected",
+  "version": 4,
+  "updatedAt": "2026-08-22T12:48:10.548Z",
+  "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
-    {
-      "id": "github:4148310244",
-      "source": "github",
-      "title": "[BOUNTY $50] SKILL: Generate a structured CHANGELOG from git history",
-      "url": "https://github.com/claude-builders-bounty/claude-builders-bounty/issues/1",
-      "repositoryApiUrl": "https://api.github.com/repos/claude-builders-bounty/claude-builders-bounty",
-      "rewardUsd": 50,
-      "score": 66,
-      "labels": [
-        "bounty",
-        "skill",
-        "good first issue"
-      ],
-      "updatedAt": "2026-08-22T12:24:30Z",
-      "summary": "## 💰 Bounty: $50 — powered by [Opire](https://opire.dev) ## Description Create a Claude Code skill (`SKILL.md`) or a bash script that automatically generates a structured `CHANGELOG.md` from a project's git history. ## Acceptance Criteria - [ ] Works via `/generate-changelog` command or `bash changelog.sh` - [ ] Fetches commits since the last git tag - [ ] Auto-categorizes into: `Added` / `Fixed` / `Changed` / `Removed` - [ ] Outputs a properly formatted `CHANGELOG.md` - [ ] Tested on a real GitHub repo (include a",
-      "state": "candidate"
-    },
-    {
-      "id": "github:5070554046",
-      "source": "github",
-      "title": "[$250] Paid report remains under the Approved filter in New Expensify and only shows “View,” while Classic still allows a workspace admin to mark it as paid",
-      "url": "https://github.com/Expensify/App/issues/97866",
-      "repositoryApiUrl": "https://api.github.com/repos/Expensify/App",
-      "rewardUsd": 250,
-      "score": 52,
-      "labels": [
-        "External",
-        "Daily",
-        "Needs Reproduction",
-        "Help Wanted",
-        "Overdue",
-        "Bug"
-      ],
-      "updatedAt": "2026-08-22T03:03:18Z",
-      "summary": "If you haven’t already, check out our [contributing guidelines](https://github.com/Expensify/ReactNativeChat/blob/main/contributingGuides/CONTRIBUTING.md) for onboarding. To join our Slack channel, fill out [this form](https://forms.gle/Q7hnhUJPnQCK7Fe56). ___ **Version Number:** **Reproducible in staging?:** Needs Reproduction (unable to check customer's account) **Reproducible in production?:** Needs Reproduction (unable to check customer's account) **If this was caught during regression testing, add the test nam",
-      "state": "candidate"
-    },
     {
       "id": "github:5221928005",
       "source": "github",
@@ -54,38 +17,28 @@
         "status:backlog",
         "generated:by-orchestrator"
       ],
+      "commentCount": 0,
       "updatedAt": "2026-08-22T12:36:31Z",
       "summary": "## Idea Summary - **Idea Title**: AVO Verified Research Exchange for On-Chain Science and Data Bounties - **Core Analysis**: The AVO demonstration matters because it suggests agents can solve unfamiliar multi-step problems with less hand-holding than current tools. Most Web3 agent ideas are still centered on trading, auditing, or task delegation, but a more durable opportunity is research workflow automation: finding data, validating sources, testing hypotheses, and producing reproducible outputs. This is timely be",
-      "state": "candidate"
+      "state": "candidate",
+      "competition": {
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
+      }
     }
   ],
-  "selected": {
-    "id": "github:4148310244",
-    "source": "github",
-    "title": "[BOUNTY $50] SKILL: Generate a structured CHANGELOG from git history",
-    "url": "https://github.com/claude-builders-bounty/claude-builders-bounty/issues/1",
-    "repositoryApiUrl": "https://api.github.com/repos/claude-builders-bounty/claude-builders-bounty",
-    "rewardUsd": 50,
-    "score": 66,
-    "labels": [
-      "bounty",
-      "skill",
-      "good first issue"
-    ],
-    "updatedAt": "2026-08-22T12:24:30Z",
-    "summary": "## 💰 Bounty: $50 — powered by [Opire](https://opire.dev) ## Description Create a Claude Code skill (`SKILL.md`) or a bash script that automatically generates a structured `CHANGELOG.md` from a project's git history. ## Acceptance Criteria - [ ] Works via `/generate-changelog` command or `bash changelog.sh` - [ ] Fetches commits since the last git tag - [ ] Auto-categorizes into: `Added` / `Fixed` / `Changed` / `Removed` - [ ] Outputs a properly formatted `CHANGELOG.md` - [ ] Tested on a real GitHub repo (include a",
-    "state": "selected"
-  },
+  "selected": null,
   "active": null,
   "completed": [],
   "lastError": null,
   "selection": {
-    "status": "selected",
-    "confidence": 0.85,
-    "rationale": "Bounded coding bounty with clear acceptance criteria; fits worker's JS/TS/bash skills; moderate payout and low complexity.",
-    "expectedHours": 3,
+    "status": "none",
+    "confidence": 0.95,
+    "rationale": "Idea submission lacks bounded criteria and objective deliverables; not a concrete coding task per policy.",
+    "expectedHours": 0,
     "expectedCostUsd": 0,
-    "estimatedProfitUsd": 50,
+    "estimatedProfitUsd": 0,
     "provider": {
       "mode": "OpenCode Free",
       "model": "mimo-v2.5-free",
