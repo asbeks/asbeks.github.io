@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-08-22T17:44:28.222Z",
+  "updatedAt": "2026-08-22T18:00:52.920Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -38,78 +38,6 @@
       },
       "realMoneyEligible": true,
       "economicValueUsd": 250,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:4462056980",
-      "source": "github",
-      "title": "[Bounty Claim] PR Review - PR #5533 (Bounty #73)",
-      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/10363",
-      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
-      "rewardUsd": 5533,
-      "score": 54,
-      "labels": [
-        "needs-human",
-        "gate-processed",
-        "over-cap"
-      ],
-      "commentCount": 1,
-      "updatedAt": "2026-08-22T16:59:46Z",
-      "summary": "**Claimant:** kongzi123 **GitHub:** kongzi123 **RTC wallet:** `AhqbFaPBPLMMiaLDzA9WhQcyvv4hMxiteLhPk3NhG1iG` ### PR Details - PR: https://github.com/Scottcjn/Rustchain/pull/5533 - Bounty program: https://github.com/Scottcjn/rustchain-bounties/issues/73 ### Review Summary Security-focused code review of PR #5533 (fix: fail closed when sync admin key is unset): - Bug analysis: correctly identified that `hmac.compare_digest(key, None)` throws TypeError when admin_key is unset, allowing authentication bypass - Fix verification: the triple-condition short-circuit (`not key or not admin_key or not hmac.compare_digest`) properly prevents compare_digest from receiving None - Security impact: HIGH priority — prevents unauthenticated access when admin_key is not configured (fail-open to fail-closed) - Test coverage: new test uses monkeypatch + spy to verify compare_digest is never called with unset admin key ### Expected Reward Security-focused code review under bounty #73: 15-20 RTC (+10 for finding security-relevant fix)",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 116,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 1,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 5533,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:4462048029",
-      "source": "github",
-      "title": "[Bounty Claim] PR Review - RustChain PR #5533 (Bounty #73)",
-      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/10357",
-      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
-      "rewardUsd": 5533,
-      "score": 46,
-      "labels": [
-        "needs-human",
-        "gate-processed",
-        "over-cap"
-      ],
-      "commentCount": 1,
-      "updatedAt": "2026-08-22T16:59:45Z",
-      "summary": "### Bounty Claim - Bounty: #73 - Type: PR review - Repository: Scottcjn/Rustchain - Pull request: https://github.com/Scottcjn/Rustchain/pull/5533 - Reviewed head: `25ad0e67cd2c75fb4ac7d40c2dbfb579e641abbb` - Review: https://github.com/Scottcjn/Rustchain/pull/5533#pullrequestreview-4304693885 - RTC wallet: `RTC02811ff5e2bb4bb4b95eee44c5429cd9525496e7` ### Summary Reviewed the sync admin-key hardening change. The PR now fails closed when `admin_key` is unset, keeps configured-key checks on `hmac.compare_digest`, and includes a regression test proving the unset-key path rejects without passing an unset expected value to `compare_digest`. Validation completed: - `python -B -m py_compile node/rustchain_sync_endpoints.py node/tests/test_rustchain_sync_endpoints.py` -> passed - `python -B -m pytest -q node/tests/test_rustchain_sync_endpoints.py --noconftest` -> 2 passed - `git diff --check origin/main...HEAD` -> passed - `python tools/bcos_spdx_check.py --base-ref origin/main` -> OK",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 116,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 1,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 5533,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -221,77 +149,6 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:4460041460",
-      "source": "github",
-      "title": "[Bounty Claim] PR Reviews - 200+ PRs (Bounty #73) - HCIE2054",
-      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/9997",
-      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
-      "rewardUsd": 200,
-      "score": 34,
-      "labels": [
-        "needs-human",
-        "gate-processed",
-        "over-cap"
-      ],
-      "commentCount": 1,
-      "updatedAt": "2026-08-22T16:59:41Z",
-      "summary": "## Bounty Claim #73 - 200+ PR Reviews **GitHub:** HCIE2054 **Wallet:** RTC0069ce999590624987151e19a8b005555d17794b Massive PR review batch. All open PRs across Rustchain ecosystem reviewed with APPROVE + LGTM. Thank you!",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 116,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 1,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 200,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:4462050784",
-      "source": "github",
-      "title": "[Bounty Claim] PR Review - RustChain PR #5531 (Bounty #73)",
-      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/10359",
-      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
-      "rewardUsd": 5531,
-      "score": 46,
-      "labels": [
-        "needs-human",
-        "gate-processed"
-      ],
-      "commentCount": 2,
-      "updatedAt": "2026-08-22T16:59:46Z",
-      "summary": "## PR Review Claim\\n\\nBounty: #73\\nRepository: Scottcjn/Rustchain\\nPull request reviewed: https://github.com/Scottcjn/Rustchain/pull/5531\\nReview: https://github.com/Scottcjn/Rustchain/pull/5531#pullrequestreview-4304695456\\nReviewed head: 1d9e47f895f1a1d04477473bde1f9ee3a1559533\\nResult: Approved\\n\\nValidation performed:\\n- git diff --check origin/main...review-pr-5531 -- keeper_explorer.py contributor_registry.py bridge/bridge_api.py faucet_service/faucet_service.py faucet_service/README.md faucet_service/IMPLEMENTATION_SUMMARY.md tests/test_flask_debug_disabled.py\\n- python -B -m py_compile keeper_explorer.py contributor_registry.py bridge/bridge_api.py faucet_service/faucet_service.py tests/test_flask_debug_disabled.py\\n- Imported tests/test_flask_debug_disabled.py and executed test_public_flask_entrypoints_do_not_enable_debug_mode() directly because pytest was not installed in this local interpreter\\n\\nFinding:\\nNo blocker found. The PR disables Flask debug mode at the listed public entrypoints, makes the faucet debug flag a compatibility no-op after config loading, updates docs that previously recommended debug startup, and adds a focused static regression test for debug=True",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 115,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 2,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 5531,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
       "id": "github:4462160604",
       "source": "github",
       "title": "[bounty $400] Implement ABNF-compliant email address parser with full §3.2–§4.4 coverage",
@@ -329,17 +186,17 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5223086774",
+      "id": "github:5223172970",
       "source": "github",
-      "title": "調査: 実サンプルごとにBID勝敗・NN勝率・EV_BID・EV_PASSを追跡する",
-      "url": "https://github.com/eletim/napoleon-web/issues/407",
+      "title": "調査: 同一手札固定・他手札シャッフルでBIDの実勝率分布を測定する",
+      "url": "https://github.com/eletim/napoleon-web/issues/409",
       "repositoryApiUrl": "https://api.github.com/repos/eletim/napoleon-web",
       "rewardUsd": 400,
       "score": 40,
       "labels": [],
       "commentCount": 1,
-      "updatedAt": "2026-08-22T17:35:14Z",
-      "summary": "Related: #202, #380, #395, #400 Base branch: `feature/issue-202-non-playing-ai` ## 背景 #400 では mean+sigma から勝率を算出し、役職報酬期待値でBID/PASSを比較したが、R1/R2ともPASS collapseが残った。 現状の集約指標だけでは、 - 実際にBIDで勝っているsampleに対してNNが何%勝ちと予測しているか - そのsampleでEV_BIDが何点になっているか - 同じstateのPASSに対してEV_PASSが何点になっているか - なぜ実際に勝てるBIDよりPASSが選ばれているのか が直接確認できない。 このIssueでは新しい学習やreward tuningは行わず、#400のheld-out all-legal datasetと学習済みmodelを使って **sample-level diagnostics** を出す。 ## 目的 実際のcounterfactual rollout結果とNN出力を同じ行に並べ、特に **実際にNapoleonとしてBIDして勝利したaction** に対して、NNの予測と期待報酬計算がどうなっているかを確認する。 ## 使用対象 原則として #400 と同じfinal held-outを使う。 - dataset: `/tmp/napoleon-issue390-heldout-alllegal-1000` - final split: 500 states - state hash: `258e66d47462b993f6dbef0bfcf9854d068d460ec45f0596f23ad66cbb3d6901` 使用modelも #400 と同一checkpointを使う。 最低限: - Napoleon margin mean+sigma model - Citizen margin mean+sigma model - Adjutant margin mean+sigma model - PASS Adjutant/Citizen binary classifier - #378 explicit Napoleon success head（比較用） ## 最重要: sample-level table 各 `stateKey × legal action` について、最低限以下をCSV/JSONで出す。 ### State information - stateKey - candidate seat - bidding step - current highest bid / target / suit - strongest suit / hand strength ### ",
+      "updatedAt": "2026-08-22T17:55:57Z",
+      "summary": "Related: #202, #380, #400, #407 Base branch: `feature/issue-202-non-playing-ai` ## 背景 #407 では、実際に勝っているBID actionに対しても margin NN の予測平均 `mu` が大きく負側に寄り、Gaussian-derived win probabilityが極端に低いことが分かった。 ただし現在のcounterfactual datasetは、各state/actionにつき基本的に1つのhidden deal / rollout結果しか持たないため、1回のactual win/lossをそのactionの「真の勝率」とはみなせない。 そこで、NNの絶対値をさらに議論する前に、まず **同じ自分手札を固定し、他プレイヤーの手札・hidden informationだけを再シャッフルしたとき、そのBIDがどの程度の勝率・margin分布を持つのか** を実データで直接測る。 完全に同一観測を保つことは難しいため、このIssueではまず疑似的に「candidateの手札固定」を条件とする。 ## 目的 1. representativeなcandidate handを複数抽出する 2. candidate handを固定したまま、残りカードを合法的に再配布する 3. 同じBID actionを各reshuffleでforced actionとして実行する 4. playing / bidding environmentは既存と同じRuleBased / Conservative 50:50 frozen opponent系を維持する 5. 各 `fixed hand × BID action` について empirical margin distribution と empirical win rate を測る 6. そのempirical分布と #380 margin NNの `mu/sigma`、Gaussian-derived pWinを比較する 7. 「1回勝ったサンプルなのにNNが低評価」なのか、「同じ手札でも本当は勝率が低く、たまたま勝った」のかを切り分ける ## 最重要な実験単位 実験単位を次とする。 ```text fixed candidate hand + fixed candidate seat + fixed bidding context/action semantics as far as practical + fixed forced BID action + reshuffled hidden cards / opponent hands ``` 完全に同じstate observationを再現する必要はない。 初版では ",
       "state": "candidate",
       "payoutConfidence": 0.35,
       "autonomyFit": 1,
@@ -438,23 +295,61 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":125,\"updatedAt\":\"2026-08-22T16:37:56Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4460041460\",\"rewardUsd\":200,\"fastCashScore\":116,\"updatedAt\":\"2026-08-22T16:59:41Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462048029\",\"rewardUsd\":5533,\"fastCashScore\":116,\"updatedAt\":\"2026-08-22T16:59:45Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462050784\",\"rewardUsd\":5531,\"fastCashScore\":115,\"updatedAt\":\"2026-08-22T16:59:46Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462056980\",\"rewardUsd\":5533,\"fastCashScore\":116,\"updatedAt\":\"2026-08-22T16:59:46Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462057766\",\"rewardUsd\":5532,\"fastCashScore\":116,\"updatedAt\":\"2026-08-22T16:59:47Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462073859\",\"rewardUsd\":5531,\"fastCashScore\":116,\"updatedAt\":\"2026-08-22T16:59:48Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462079225\",\"rewardUsd\":5532,\"fastCashScore\":116,\"updatedAt\":\"2026-08-22T16:59:48Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5183229703\",\"rewardUsd\":120,\"fastCashScore\":108,\"updatedAt\":\"2026-08-22T14:54:31Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5222231802\",\"rewardUsd\":15,\"fastCashScore\":111,\"updatedAt\":\"2026-08-22T17:36:32Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5223086774\",\"rewardUsd\":400,\"fastCashScore\":109,\"updatedAt\":\"2026-08-22T17:35:14Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-18T21:51:29Z\",\"competition\":{\"comments\":29,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":125,\"updatedAt\":\"2026-08-22T16:37:56Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462057766\",\"rewardUsd\":5532,\"fastCashScore\":116,\"updatedAt\":\"2026-08-22T16:59:47Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462073859\",\"rewardUsd\":5531,\"fastCashScore\":116,\"updatedAt\":\"2026-08-22T16:59:48Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462079225\",\"rewardUsd\":5532,\"fastCashScore\":116,\"updatedAt\":\"2026-08-22T16:59:48Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5183229703\",\"rewardUsd\":120,\"fastCashScore\":108,\"updatedAt\":\"2026-08-22T14:54:31Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5190340966\",\"rewardUsd\":2000,\"fastCashScore\":106,\"updatedAt\":\"2026-08-22T17:20:21Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5190341394\",\"rewardUsd\":2000,\"fastCashScore\":89,\"updatedAt\":\"2026-08-22T17:21:02Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5190342386\",\"rewardUsd\":2000,\"fastCashScore\":89,\"updatedAt\":\"2026-08-22T17:20:49Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5223172970\",\"rewardUsd\":400,\"fastCashScore\":109,\"updatedAt\":\"2026-08-22T17:55:57Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
     "mode": true,
     "eligibleCount": 0,
-    "fundedSignalCount": 2,
+    "fundedSignalCount": 3,
     "objective": "first_real_confirmed_cash_fast",
     "policy": "bootstrap_basic_v1",
     "maxHours": 4,
     "minPayoutConfidence": 0.8,
     "competitionRequired": "low",
-    "rejectedFakeRevenueCount": 1,
-    "rejectedAlreadyPaidCount": 0,
-    "rejectedIdentityGateCount": 1
+    "rejectedFakeRevenueCount": 0,
+    "rejectedAlreadyPaidCount": 4,
+    "rejectedIdentityGateCount": 2
   },
   "economicallyRejected": [
+    {
+      "id": "github:5190340966",
+      "title": "Fixed-Point Dividend Accounting and O(1) Holder Set for Property Token",
+      "rewardUsd": 2000,
+      "reasons": [
+        "already_rewarded_or_paid"
+      ],
+      "rejectedAt": "2026-08-22T18:00:52.889Z"
+    },
+    {
+      "id": "github:3055155077",
+      "title": "Switch to `ky` from `redaxios`",
+      "rewardUsd": 12,
+      "reasons": [
+        "already_rewarded_or_paid"
+      ],
+      "rejectedAt": "2026-08-22T18:00:52.889Z"
+    },
+    {
+      "id": "github:5190341394",
+      "title": "KYC Registry Expiry Index Compaction and Per-Subject Verifier Log",
+      "rewardUsd": 2000,
+      "reasons": [
+        "already_rewarded_or_paid",
+        "preclaim_or_identity_gate_not_configured"
+      ],
+      "rejectedAt": "2026-08-22T18:00:52.889Z"
+    },
+    {
+      "id": "github:5190342386",
+      "title": "Invoice Token Secondary Market Enablement and Partial Redemption Precision",
+      "rewardUsd": 2000,
+      "reasons": [
+        "already_rewarded_or_paid",
+        "preclaim_or_identity_gate_not_configured"
+      ],
+      "rejectedAt": "2026-08-22T18:00:52.889Z"
+    },
     {
       "id": "github:5222231802",
       "title": "[Bug] npm test silently skips file_upload_component.test.js",
@@ -494,15 +389,6 @@
         "preclaim_or_identity_gate_not_configured"
       ],
       "rejectedAt": "2026-08-22T16:53:31.464Z"
-    },
-    {
-      "id": "github:3055155077",
-      "title": "Switch to `ky` from `redaxios`",
-      "rewardUsd": 12,
-      "reasons": [
-        "already_rewarded_or_paid"
-      ],
-      "rejectedAt": "2026-08-22T16:53:31.465Z"
     },
     {
       "id": "github:5218571040",
