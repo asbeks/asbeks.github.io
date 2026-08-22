@@ -1,34 +1,68 @@
 {
   "version": 11,
-  "updatedAt": "2026-08-22T16:27:26.662Z",
+  "updatedAt": "2026-08-22T16:53:31.517Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
     {
-      "id": "github:5043526418",
+      "id": "github:4234681451",
       "source": "github",
-      "title": "[Singapore] MyZubster adoption in Singapore",
-      "url": "https://github.com/MyZubster-Ecosystem/MyZubster-Robot/issues/31",
-      "repositoryApiUrl": "https://api.github.com/repos/MyZubster-Ecosystem/MyZubster-Robot",
-      "rewardUsd": 2500,
-      "score": 42,
+      "title": "Propose vulnerability identity key and lifecycle schema",
+      "url": "https://github.com/HHS/simpler-grants-gov/issues/9504",
+      "repositoryApiUrl": "https://api.github.com/repos/HHS/simpler-grants-gov",
+      "rewardUsd": 250,
+      "score": 80,
       "labels": [
-        "regulatory",
-        "country-singapore",
-        "expansion"
+        "help wanted",
+        "bounty:M",
+        "status: open bounty"
       ],
-      "commentCount": 0,
-      "updatedAt": "2026-08-22T15:45:54Z",
-      "summary": "**Goal:** Expand MyZubster to Singapore **Why Singapore:** RWA hub, progressive regulations, financial center ## Tasks - [ ] Research MAS regulations for RWA - [ ] Connect with local financial institutions - [ ] Identify key events (e.g., Singapore FinTech Festival) - [ ] Adapt model for real estate tokenization ## Expected outcome Proof of concept / readiness package for Singapore RWA, subject to the legal/compliance gates in the canonical MyZubster roadmap. ## Reward — MYZ internal accounting - **Reward:** 2,500 MYZ - **Reward type:** internal MyZubster reward/accounting credit - **Funding state:** PROPOSED / internal accounting only - **Legacy XMR reference:** the previous `0.12 XMR` amount is not treated as funded or guaranteed settlement because no verified XMR treasury reservation was linked. **Important:** `2,500 MYZ` is a project-defined bounty amount, **not a conversion rate from 0.12 XMR**. MyZubster currently has no approved XMR↔MYZ exchange rate, and the canonical bounty rules prohibit silent conversion between assets. ## Workflow `OPEN -> CLAIMED -> SUBMITTED -> UNDER_REVIEW -> VERIFIED/REJECTED -> MYZ_RECORDED` `MYZ_RECORDED` means an append-only internal ledger credi",
+      "commentCount": 1,
+      "updatedAt": "2026-08-22T16:37:56Z",
+      "summary": "### Summary Inspect the committed Anchore JSON fixtures and propose a schema for tracking vulnerabilities over time. Specifically: what combination of fields uniquely identifies \"the same vulnerability\" across scans? Candidates to evaluate include CVE ID alone, CVE + package name, CVE + package name + version, and CVE + package + image. Write up the tradeoffs, pick a recommendation, and sketch the analytics DB table(s) needed to support first_seen / last_seen / fixed_at / ignored_at / cleared_at fields. **Tech notes:** The Anchore JSON schema is documented at the Anchore project site; worth skimming before diving into fixtures. The goal of this spike is a decision, not code — resist the urge to start implementing. ### Acceptance criteria - [ ] Written proposal (markdown doc in PR) covering identity key options, tradeoffs, and a recommendation - [ ] Proposed analytics DB schema with column types and rationale - [ ] At least one worked example from the fixtures showing how the identity key behaves across days - [ ] Reviewed and approved by Brandon and/or Matt before next ticket starts ## Bounty: $250 This issue has been selected for our paid contributor program. If you wish to claim ",
       "state": "candidate",
-      "payoutConfidence": 0.35,
+      "payoutConfidence": 0.7,
       "autonomyFit": 1,
       "requiresHumanGate": false,
       "requiresSpecialHardware": false,
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 111,
+      "fastCashScore": 125,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 1,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 250,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5222863169",
+      "source": "github",
+      "title": "[Bug] Bounty carriers showing as standard Hunters after picking up the token",
+      "url": "https://github.com/ArchitectMeow/HuntDMA-Research/issues/3",
+      "repositoryApiUrl": "https://api.github.com/repos/ArchitectMeow/HuntDMA-Research",
+      "rewardUsd": 1896,
+      "score": 46,
+      "labels": [
+        "bug"
+      ],
+      "commentCount": 0,
+      "updatedAt": "2026-08-22T16:31:09Z",
+      "summary": "**Describe the bug** In the latest version, the ESP correctly identifies the boss lair and the bounty tokens on the ground. However, once an enemy hunter picks up the bounty token, their bounding box color defaults back to the standard \"Enemy\" color instead of the \"Bounty Carrier\" high-priority color (which I have set to solid Orange). **Expected behavior** When a player entity has the bounty token attached to them, their ESP box and skeleton should change to the assigned `BountyCarrierColor` defined in the config. **Screenshots** *(Skipping upload, but I can send it in the Discord ticket).* **Additional context** I think the entity flag for `IsBountyCarrier` might have changed in the 1896 engine update. It seems to be reading them as regular players once the token entity is removed from the world and attached to their inventory.",
+      "state": "candidate",
+      "payoutConfidence": 0.5,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 118,
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
@@ -37,7 +71,39 @@
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 2500,
+      "economicValueUsd": 1896,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5214938859",
+      "source": "github",
+      "title": "Maintainer notice: enforce rolling bounty liquidity and external-funding GMV loop",
+      "url": "https://github.com/NSPG13/agent-bounties/issues/1117",
+      "repositoryApiUrl": "https://api.github.com/repos/NSPG13/agent-bounties",
+      "rewardUsd": 1115,
+      "score": 54,
+      "labels": [],
+      "commentCount": 2,
+      "updatedAt": "2026-08-22T16:48:43Z",
+      "summary": "## Planned scope Implement a private Open Competition V2 inventory invariant with floor 5 and target 10; a fail-closed deterministic replenishment planner; a bounded 30.40 USDC/day and 152 USDC lifetime execution policy; twenty reviewed structured-artifact candidates; unified public marketplace metrics; structured participant feedback; and external poster/funder conversion paths across web, API, MCP, CLI, and docs. This is needed because the five recently funded competitions settled without replacement and production reached zero active V2 competitions. The public product will continue to present one marketplace: public counts and GMV remain aggregated across supported bounty mechanisms. Only private operational state distinguishes the inventory needed by the replenisher. This notice is not bounty acceptance, merge approval, payout approval, escrow release approval, or payment settlement. ## Affected contracts or workflows Likely affected surfaces include the inventory guard and self-healing policy, the Open Competition V2 seed/planning workflow and scripts, private operational schemas, aggregate platform metrics, opportunity comments, posting/funding guidance, MCP/CLI parity, and ",
+      "state": "candidate",
+      "payoutConfidence": 0.5,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 115,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 2,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 1115,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -78,6 +144,38 @@
       "requiresPreclaimOrIdentity": false
     },
     {
+      "id": "github:5222903340",
+      "source": "github",
+      "title": "Docs: homepage states a 2MB upload limit while the backend accepts 500MB before transcoding",
+      "url": "https://github.com/Scottcjn/bottube/issues/1741",
+      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/bottube",
+      "rewardUsd": 254,
+      "score": 46,
+      "labels": [],
+      "commentCount": 0,
+      "updatedAt": "2026-08-22T16:40:46Z",
+      "summary": "**Filed on behalf of @AInoAKARI**, who is 403-blocked from creating issues here (a token-scope limit on their GitHub integration, not anything on our side). Submitted by email 2026-08-22 via the documented fallback. Bounty context: `Scottcjn/rustchain-bounties#254`. --- The public homepage tells new agents the upload constraint is **\"720x720 max, 2MB. FFmpeg or raw.\"** — but that conflates the *source upload cap* with the *post-transcode output target*. Per the current backend spec (tracked in #297), the real behaviour is: - max **500MB** upload - 8 seconds max duration - max 720x720 output bounds - H.264 final transcode path - **~2MB final size target after transcoding** **Why it matters:** an API user reading the homepage will either pre-compress source video unnecessarily, or conclude that a perfectly valid upload is too large and never attempt it. That is a silent drop-off — the user does not hit an error, they just do not try. **Suggested copy:** > Upload up to 500MB; output is transcoded to max 720x720, ≤8s, ~2MB H.264. **Duplicate check (theirs, and I re-ran it):** #297 tracks dashboard onboarding copy but nothing tracks the stale homepage wording specifically. `720x720` cur",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 111,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 254,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
       "id": "github:5183229703",
       "source": "github",
       "title": "Model fiat currencies and multi-chain token bindings as domain state",
@@ -110,70 +208,37 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5221215898",
+      "id": "github:4644823208",
       "source": "github",
-      "title": "[P0 Demo/Figma+UX] Final live-Figma parity + Netlify interaction-quality sign-off",
-      "url": "https://github.com/nurockplayer/tokyo-mogu-mogu/issues/270",
-      "repositoryApiUrl": "https://api.github.com/repos/nurockplayer/tokyo-mogu-mogu",
-      "rewardUsd": 400,
-      "score": 40,
-      "labels": [],
-      "commentCount": 3,
-      "updatedAt": "2026-08-22T16:11:18Z",
-      "summary": "## Context PR #269 / Issue #268 corrected the Product lifecycle and is merged. Current Product truth remains: - Food Profile = persistent one-time / explicit-edit dietary setup - conversational UI belongs to Food Profile collection - `食旅を見つけ` = repeatable per-trip discovery / diagnosis function - `今回は、どんな食体験をしてみたいですか？` and subsequent session inputs live under `食旅を見つけ` - Result = real deterministic score-free Top 3 (#255) - guided Golden Path remains deterministic (#257) - Story `Why this region?` evidence remains source-backed and scoring-neutral (#265) #268 could not complete a fresh live-Figma comparison because authenticated MCP / Bridge calls hit the Figma Starter-plan tool-call limit. #271 preserved the blind-audit evidence without changing its contents. A separate high-quality implementation has now been identified and should be used as an **implementation-quality reference**: - Netlify reference: `https://mogu-mogu-5525da.netlify.app` This reference is noticeably stronger in motion, transition rhythm, conversational continuity, tap feedback, scroll behavior, and perceived polish. It is **not** a Product/data/safety source of truth and must not override KiKi's approved Figma ",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 10,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 106,
-      "survivalEligible": false,
-      "eligibilityReason": "Too slow for bootstrap mode: first real cash currently requires a <=4 hour task.",
-      "competition": {
-        "comments": 3,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 400,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:2010304061",
-      "source": "github",
-      "title": "[Mob] Gordok Hyenas in Dire Maul",
-      "url": "https://github.com/chromiecraft/chromiecraft/issues/6351",
-      "repositoryApiUrl": "https://api.github.com/repos/chromiecraft/chromiecraft",
-      "rewardUsd": 55,
-      "score": 40,
+      "title": "[BOUNTY: 10 RTC] Proof-of-Antiquity Explainer — Diagram, Infographic, or 60s Video",
+      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/13954",
+      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
+      "rewardUsd": 10,
+      "score": 54,
       "labels": [
-        "Confirmed",
-        "Linked [AC]"
+        "bounty"
       ],
-      "commentCount": 1,
-      "updatedAt": "2026-08-22T16:12:03Z",
-      "summary": "### What client do you play on? enUS ### Faction Both ### Content Phase: 50-59 ### Current Behaviour I've just found a few a little bit bugged [Gordok Hyenas](https://wowgaming.altervista.org/aowow/?npc=12418) in Dire Maul. They are not in the dungeon, but in the entrance zone in Feralas. There is an arena in the middle of the zone and there is a small corridor leading from the arena to the surface. In the corridor, there are three side rooms and a sleeping hyena in the each one. The thing is when I attack them, they wake up, attack back, die, drop loot, but they always remain in this sleeping pose, nothing changes in their animation. Maybe there are more of them (ones that sleep), but I managed to find only these three. Easily reproducible. ### Expected Blizzlike Behaviour I believe that each hyena should stand up and fight like a man, there is no place for such cowardice. ### Source https://wowgaming.altervista.org/aowow/?npc=12418 ### Steps to reproduce the problem 1. Go to the Dire Maul entrance zone, jump into the arena, the before mentioned corridor is the only way back. 2. Attack sleeping hyenas in the rooms. ### Extra Notes _No response_ ### AC rev. hash/commit https://gith",
+      "commentCount": 10,
+      "updatedAt": "2026-08-22T16:40:00Z",
+      "summary": "## Make Proof-of-Antiquity click in 60 seconds — 10 RTC Create an **original visual explainer** of how RustChain works: Proof-of-Antiquity (vintage hardware earns more), the 6-check hardware fingerprint, and why VMs earn ~nothing. Aimed at a smart newcomer. ### Format (pick one) - Infographic / diagram (PNG/SVG) - 60-second video (animation, screen-record, or talking-head) - A clear annotated flowchart ### Must cover - 1 CPU = 1 vote, weighted by hardware antiquity - The fingerprint/anti-emulation idea (real hardware vs VM) - Where to start (`pip install clawrtc`) ### How to claim Comment with the asset (or a link — YouTube/imgur/a PR adding it to `docs/`) + your wallet/handle. Must be **your original work**, accurate, and genuinely clear. ### Reward **10 RTC.** Best ones may get featured on rustchain.org and pinned — extra reach for you. <!-- machine-readable bounty spec --> ```bounty-spec # auto-backfilled; maintainer may refine paid: true reward_rtc: 10 per: one-time cap: 1 submit: [comment, email] not_in_repo: true ```",
       "state": "candidate",
-      "payoutConfidence": 0.35,
+      "payoutConfidence": 0.5,
       "autonomyFit": 1,
       "requiresHumanGate": false,
       "requiresSpecialHardware": false,
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 102,
+      "fastCashScore": 86,
       "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "eligibilityReason": "Competition is too high for bootstrap mode.",
       "competition": {
-        "comments": 1,
+        "comments": 10,
         "attemptSignals": 0,
-        "risk": "low"
+        "risk": "medium"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 55,
+      "economicValueUsd": 10,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -210,40 +275,6 @@
       "realMoneyEligible": true,
       "economicValueUsd": 50,
       "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5222744708",
-      "source": "github",
-      "title": "[Bounty $8000] ttnn.erfc: no fp32-accurate path at all — self-documented ~9M ULP error, independently reproduced at ~9.39M ULP (114% relative error) in the [2.5, 5.0] tail",
-      "url": "https://github.com/tenstorrent/tt-metal/issues/54053",
-      "repositoryApiUrl": "https://api.github.com/repos/tenstorrent/tt-metal",
-      "rewardUsd": 8000,
-      "score": 54,
-      "labels": [
-        "community"
-      ],
-      "commentCount": 0,
-      "updatedAt": "2026-08-22T16:02:17Z",
-      "summary": "## Summary `ttnn.erfc` uses a single two-segment rational approximation (`ERFC_LUT`, degree 4 numerator / degree 5 denominator) for **both** bf16 and fp32 precision — there is no separate fp32-accurate path at all, unlike its sibling `ttnn.erf` (which has distinct degree-16/16 fp32 and degree-8/8 bf16 fits). The file's own header comment already documents the consequence: ```cpp // BF16 MaxULP=118 (was 128 with 3-seg n4/d4 on [-5,5]) // FP32 MaxULP≈9M (was 1.47B) ``` I independently reproduced this rather than take the comment at face value: a fp32 reimplementation of the exact kernel arithmetic, checked against `scipy.special.erfc` over a 2-million-point sweep of `[-5, 5]`, finds **max ULP error of 9,387,962** at `x ≈ 4.999` — matching the self-documented number almost exactly — where the kernel returns `3.31e-12` against a true value of `1.55e-12`, a **114% relative error**. ## Root cause ```cpp // L28-31: constexpr uint32_t ERFC_NUM_DEGREE = 4; constexpr uint32_t ERFC_DEN_DEGREE = 5; constexpr uint32_t ERFC_NUM_SEGMENTS = 2; ``` `calculate_erfc()` (unlike `calculate_erf()` in the same directory) has no `is_fp32_dest_acc_en` template parameter and no `#ifdef INP_FLOAT32` branch —",
-      "state": "candidate",
-      "payoutConfidence": 0.15,
-      "autonomyFit": 0.45,
-      "requiresHumanGate": true,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 8,
-      "complexity": 4,
-      "fundedBountySignal": false,
-      "fastCashScore": 55,
-      "survivalEligible": false,
-      "eligibilityReason": "Too slow for bootstrap mode: first real cash currently requires a <=4 hour task.",
-      "competition": {
-        "comments": 0,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 8000,
-      "requiresPreclaimOrIdentity": false
     }
   ],
   "selected": null,
@@ -256,7 +287,7 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:2010304061\",\"rewardUsd\":55,\"fastCashScore\":102,\"updatedAt\":\"2026-08-22T16:12:03Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:2940525692\",\"rewardUsd\":10,\"fastCashScore\":60,\"updatedAt\":\"2026-08-18T21:51:22Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-18T21:51:29Z\",\"competition\":{\"comments\":29,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5043526418\",\"rewardUsd\":2500,\"fastCashScore\":111,\"updatedAt\":\"2026-08-22T15:45:54Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5183229703\",\"rewardUsd\":120,\"fastCashScore\":108,\"updatedAt\":\"2026-08-22T14:54:31Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5218571040\",\"rewardUsd\":50000,\"fastCashScore\":89,\"updatedAt\":\"2026-08-22T16:26:59Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5221215898\",\"rewardUsd\":400,\"fastCashScore\":106,\"updatedAt\":\"2026-08-22T16:11:18Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5222233094\",\"rewardUsd\":30,\"fastCashScore\":115,\"updatedAt\":\"2026-08-22T16:12:05Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5222233394\",\"rewardUsd\":35,\"fastCashScore\":116,\"updatedAt\":\"2026-08-22T15:56:13Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5222744708\",\"rewardUsd\":8000,\"fastCashScore\":55,\"updatedAt\":\"2026-08-22T16:02:17Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:2940525692\",\"rewardUsd\":10,\"fastCashScore\":60,\"updatedAt\":\"2026-08-18T21:51:22Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-18T21:51:29Z\",\"competition\":{\"comments\":29,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":125,\"updatedAt\":\"2026-08-22T16:37:56Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:4644823208\",\"rewardUsd\":10,\"fastCashScore\":86,\"updatedAt\":\"2026-08-22T16:40:00Z\",\"competition\":{\"comments\":10,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5183229703\",\"rewardUsd\":120,\"fastCashScore\":108,\"updatedAt\":\"2026-08-22T14:54:31Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5214938859\",\"rewardUsd\":1115,\"fastCashScore\":115,\"updatedAt\":\"2026-08-22T16:48:43Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5218571040\",\"rewardUsd\":50000,\"fastCashScore\":89,\"updatedAt\":\"2026-08-22T16:26:59Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5222233299\",\"rewardUsd\":20,\"fastCashScore\":113,\"updatedAt\":\"2026-08-22T16:42:54Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5222863169\",\"rewardUsd\":1896,\"fastCashScore\":118,\"updatedAt\":\"2026-08-22T16:31:09Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5222903340\",\"rewardUsd\":254,\"fastCashScore\":111,\"updatedAt\":\"2026-08-22T16:40:46Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
@@ -268,11 +299,48 @@
     "maxHours": 4,
     "minPayoutConfidence": 0.8,
     "competitionRequired": "low",
-    "rejectedFakeRevenueCount": 2,
+    "rejectedFakeRevenueCount": 1,
     "rejectedAlreadyPaidCount": 2,
-    "rejectedIdentityGateCount": 3
+    "rejectedIdentityGateCount": 2
   },
   "economicallyRejected": [
+    {
+      "id": "github:5222233299",
+      "title": "[Bug] File inputs have no accessible label — screen readers announce an unnamed control",
+      "rewardUsd": 20,
+      "reasons": [
+        "testnet_or_test_token_reward",
+        "preclaim_or_identity_gate_not_configured"
+      ],
+      "rejectedAt": "2026-08-22T16:53:31.464Z"
+    },
+    {
+      "id": "github:3055155077",
+      "title": "Switch to `ky` from `redaxios`",
+      "rewardUsd": 12,
+      "reasons": [
+        "already_rewarded_or_paid"
+      ],
+      "rejectedAt": "2026-08-22T16:53:31.465Z"
+    },
+    {
+      "id": "github:5218571040",
+      "title": "Zcash East Africa @ ETHSafari 2026",
+      "rewardUsd": 50000,
+      "reasons": [
+        "preclaim_or_identity_gate_not_configured"
+      ],
+      "rejectedAt": "2026-08-22T16:53:31.465Z"
+    },
+    {
+      "id": "github:2940525692",
+      "title": "Create download endpoint `/files/download?...` as well as `/files/download/[[file_path]]`",
+      "rewardUsd": 10,
+      "reasons": [
+        "already_rewarded_or_paid"
+      ],
+      "rejectedAt": "2026-08-22T16:53:31.465Z"
+    },
     {
       "id": "github:5222233394",
       "title": "[Bug] No AbortController — unmount mid-upload leaves requests running and setState-after-unmount",
@@ -290,33 +358,6 @@
       "reasons": [
         "testnet_or_test_token_reward",
         "preclaim_or_identity_gate_not_configured"
-      ],
-      "rejectedAt": "2026-08-22T16:27:26.620Z"
-    },
-    {
-      "id": "github:3055155077",
-      "title": "Switch to `ky` from `redaxios`",
-      "rewardUsd": 12,
-      "reasons": [
-        "already_rewarded_or_paid"
-      ],
-      "rejectedAt": "2026-08-22T16:27:26.620Z"
-    },
-    {
-      "id": "github:5218571040",
-      "title": "Zcash East Africa @ ETHSafari 2026",
-      "rewardUsd": 50000,
-      "reasons": [
-        "preclaim_or_identity_gate_not_configured"
-      ],
-      "rejectedAt": "2026-08-22T16:27:26.620Z"
-    },
-    {
-      "id": "github:2940525692",
-      "title": "Create download endpoint `/files/download?...` as well as `/files/download/[[file_path]]`",
-      "rewardUsd": 10,
-      "reasons": [
-        "already_rewarded_or_paid"
       ],
       "rejectedAt": "2026-08-22T16:27:26.620Z"
     },
