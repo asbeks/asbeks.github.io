@@ -43,36 +43,55 @@ function parseJson(content) {
   const cleaned = String(content || '').trim().replace(/^```(?:json)?\s*/i, '').replace(/```$/i, '').trim();
   try { return JSON.parse(cleaned); } catch {}
   const match = cleaned.match(/\{[\s\S]*\}/);
-  if (!match) throw new Error('Model did not return JSON.');
-  return JSON.parse(match[0]);
+  if (match) {
+    try { return JSON.parse(match[0]); } catch {}
+  }
+  const out = {};
+  for (const key of ['observation', 'objection', 'decision', 'next']) {
+    const label = new RegExp(`(?:^|\\n)\\s*(?:\\*\\*)?${key}(?:\\*\\*)?\\s*[:\\-]\\s*["']?([^\\n"']+)`, 'i');
+    const found = cleaned.match(label);
+    if (found?.[1]) out[key] = found[1].trim();
+  }
+  return Object.keys(out).length === 4 ? out : null;
 }
 
 function clean(value, max = 220) {
   return String(value || '').replace(/\s+/g, ' ').trim().slice(0, max);
 }
 
+async function rawCall(messages, maxTokens, temperature = 0.2) {
+  const response = await fetch(FREE_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ model: FREE_MODEL, messages, stream: false, temperature, max_tokens: maxTokens }),
+    signal: AbortSignal.timeout(45000),
+  });
+  const data = await response.json().catch(() => ({}));
+  const content = data?.choices?.[0]?.message?.content;
+  if (!response.ok || typeof content !== 'string' || !content.trim()) {
+    const reason = data?.error?.message || (response.ok ? 'HTTP 200 with empty visible output' : `HTTP ${response.status}`);
+    throw new Error(`OpenCode request failed: ${reason}`);
+  }
+  return content;
+}
+
 async function callModel(messages) {
   const budgets = [900, 1600, 2400];
   let lastError = new Error('OpenCode request failed.');
   for (let attempt = 0; attempt < budgets.length; attempt += 1) {
-    try {
-      const response = await fetch(FREE_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ model: FREE_MODEL, messages, stream: false, temperature: 0.2, max_tokens: budgets[attempt] }),
-        signal: AbortSignal.timeout(45000),
-      });
-      const data = await response.json().catch(() => ({}));
-      const content = data?.choices?.[0]?.message?.content;
-      if (response.ok && typeof content === 'string' && content.trim()) return content;
-      const reason = data?.error?.message || (response.ok ? 'HTTP 200 with empty visible output' : `HTTP ${response.status}`);
-      lastError = new Error(`OpenCode request failed: ${reason}`);
-    } catch (error) {
-      lastError = error instanceof Error ? error : new Error(String(error));
-    }
+    try { return await rawCall(messages, budgets[attempt], 0.2); }
+    catch (error) { lastError = error instanceof Error ? error : new Error(String(error)); }
     if (attempt < budgets.length - 1) await new Promise((resolve) => setTimeout(resolve, 1500 * (attempt + 1)));
   }
   throw lastError;
+}
+
+async function repairTrace(content) {
+  const repaired = await rawCall([
+    { role: 'system', content: 'Convert the supplied PUBLIC reasoning summary into valid JSON only. Do not add new facts. Return exactly four string fields: observation, objection, decision, next.' },
+    { role: 'user', content: String(content || '').slice(0, 5000) },
+  ], 700, 0);
+  return parseJson(repaired);
 }
 
 const [state, economy] = await Promise.all([readState(), readEconomy()]);
@@ -96,7 +115,10 @@ try {
     { role: 'system', content: system },
     { role: 'user', content: `Continue from this measured public state:\n${JSON.stringify(publicState)}` },
   ]);
-  const parsed = parseJson(content);
+  let parsed = parseJson(content);
+  if (!parsed) parsed = await repairTrace(content);
+  if (!parsed) throw new Error('Model output could not be normalized into the public trace schema.');
+
   const entry = {
     cycle: nextCycle,
     agent,
