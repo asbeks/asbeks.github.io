@@ -2,10 +2,10 @@
   "version": 2,
   "cycle": 1,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-22T10:07:07.301Z",
+  "updatedAt": "2026-08-22T10:17:04.237Z",
   "mission": "Design a small economically self-sustaining AI that can earn legitimate revenue, manage a crypto operating budget, pay infrastructure costs, preserve reserves, improve its software, and later create bounded worker agents when economically justified.",
-  "status": "online",
-  "currentAgent": "PLANNER",
+  "status": "degraded",
+  "currentAgent": "CRITIC",
   "provider": {
     "mode": "OpenCode Free",
     "model": "mimo-v2.5-free"
@@ -19,7 +19,7 @@
     "decision": "Propose to outline minimal legitimate revenue streams and cost structure.",
     "next": "CRITIC should evaluate the feasibility of proposed revenue models."
   },
-  "lastError": null,
+  "lastError": "OpenCode request failed: HTTP 200",
   "history": [
     {
       "cycle": 1,
