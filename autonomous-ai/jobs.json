@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-08-22T22:45:59.495Z",
+  "updatedAt": "2026-08-22T23:03:38.024Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -110,6 +110,41 @@
       "requiresPreclaimOrIdentity": false
     },
     {
+      "id": "github:5220406146",
+      "source": "github",
+      "title": "[BOUNTY] Break the NFH Wake holder gate — 25 USDC",
+      "url": "https://github.com/notforhumansfun-rgb/not-for-humans-mcp/issues/6",
+      "repositoryApiUrl": "https://api.github.com/repos/notforhumansfun-rgb/not-for-humans-mcp",
+      "rewardUsd": 25,
+      "score": 72,
+      "labels": [
+        "security",
+        "bounty"
+      ],
+      "commentCount": 4,
+      "updatedAt": "2026-08-22T23:02:19Z",
+      "summary": "## 25 USDC audit bounty Find the first valid, non-duplicate way to make the **unmodified official NFH Wake Kit** at commit [`76e681e`](https://github.com/notforhumansfun-rgb/not-for-humans-mcp/commit/76e681e) emit a holder-gated mission or receipt when **no fresh direct-owner Agent Presence heartbeat exists for that token's current owner**. **Prize:** one award of **25 USDC**, paid after the finding is reproduced and fix coordination is complete. The settlement network and recipient address will be agreed privately with the accepted reporter. No gas reimbursement. **Closes:** September 5, 2026 at 23:59 UTC, or when an award is accepted. ### In scope - Missing, expired, delegated, or mismatched heartbeat bypasses - Canonical endpoint substitution or validation failure - Token/owner mismatch - Transfer or expiry races - A forged `HOLDER_VERIFIED_AT_WAKE` result through the unmodified official CLI - Parser, timestamp, or canonical-URL validation failures ### Not a finding - Editing or forking the source to remove the checks - Using a legitimately active direct-owner heartbeat exactly as designed - The documented distinction between a self-reported receipt and accepted-work proof - Beh",
+      "state": "candidate",
+      "payoutConfidence": 0.5,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 100,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 4,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 25,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
       "id": "github:4563956966",
       "source": "github",
       "title": "parse_duration drops the days (d) unit",
@@ -155,7 +190,7 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:2940525692\",\"rewardUsd\":10,\"fastCashScore\":60,\"updatedAt\":\"2026-08-18T21:51:22Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-18T21:51:29Z\",\"competition\":{\"comments\":29,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":125,\"updatedAt\":\"2026-08-22T16:37:56Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5183229703\",\"rewardUsd\":120,\"fastCashScore\":108,\"updatedAt\":\"2026-08-22T14:54:31Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:2940525692\",\"rewardUsd\":10,\"fastCashScore\":60,\"updatedAt\":\"2026-08-18T21:51:22Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-18T21:51:29Z\",\"competition\":{\"comments\":29,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":125,\"updatedAt\":\"2026-08-22T16:37:56Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5183229703\",\"rewardUsd\":120,\"fastCashScore\":108,\"updatedAt\":\"2026-08-22T14:54:31Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5220406146\",\"rewardUsd\":25,\"fastCashScore\":100,\"updatedAt\":\"2026-08-22T23:02:19Z\",\"competition\":{\"comments\":4,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5222232372\",\"rewardUsd\":35,\"fastCashScore\":114,\"updatedAt\":\"2026-08-22T23:00:25Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
@@ -167,11 +202,21 @@
     "maxHours": 4,
     "minPayoutConfidence": 0.8,
     "competitionRequired": "low",
-    "rejectedFakeRevenueCount": 0,
+    "rejectedFakeRevenueCount": 1,
     "rejectedAlreadyPaidCount": 2,
-    "rejectedIdentityGateCount": 0
+    "rejectedIdentityGateCount": 1
   },
   "economicallyRejected": [
+    {
+      "id": "github:5222232372",
+      "title": "[Bug] FileUpload accepts files that violate the accept filter (no MIME/extension check)",
+      "rewardUsd": 35,
+      "reasons": [
+        "testnet_or_test_token_reward",
+        "preclaim_or_identity_gate_not_configured"
+      ],
+      "rejectedAt": "2026-08-22T23:03:37.969Z"
+    },
     {
       "id": "github:3055155077",
       "title": "Switch to `ky` from `redaxios`",
@@ -179,7 +224,7 @@
       "reasons": [
         "already_rewarded_or_paid"
       ],
-      "rejectedAt": "2026-08-22T22:45:59.462Z"
+      "rejectedAt": "2026-08-22T23:03:37.970Z"
     },
     {
       "id": "github:2940525692",
@@ -188,7 +233,7 @@
       "reasons": [
         "already_rewarded_or_paid"
       ],
-      "rejectedAt": "2026-08-22T22:45:59.462Z"
+      "rejectedAt": "2026-08-22T23:03:37.970Z"
     },
     {
       "id": "github:5222232622",

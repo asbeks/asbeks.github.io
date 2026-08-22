@@ -1,24 +1,24 @@
 {
   "version": 5,
-  "cycle": 31,
+  "cycle": 32,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-22T22:46:26.408Z",
+  "updatedAt": "2026-08-22T23:03:58.965Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "online",
-  "currentAgent": "PLANNER",
+  "currentAgent": "CRITIC",
   "provider": {
     "mode": "OpenCode Free",
-    "model": "nemotron-3-ultra-free",
+    "model": "hy3-free",
     "attempts": 1
   },
   "latest": {
-    "cycle": 31,
-    "agent": "PLANNER",
-    "timestamp": "2026-08-22T22:46:26.408Z",
-    "observation": "CRITIC correctly notes the GitHub issue page for github:4234681451 has not yet been fetched and parsed for authoritative claim steps and payout channel.",
-    "objection": "Legitimacy assessment remains blocked until verified claim procedure and payout mechanism are extracted from the source issue.",
-    "decision": "Execute fetch and parse of github:4234681451 to extract full claim instructions, reviewer approvals, and payout details from the issue page.",
-    "next": "CRITIC must review the extracted claim process and payout verification from the authoritative issue content."
+    "cycle": 32,
+    "agent": "CRITIC",
+    "timestamp": "2026-08-22T23:03:58.965Z",
+    "observation": "PLANNER's mandated fetch/parse of github:4234681451 issue page remains unexecuted; claim steps and payout channel still unverified.",
+    "objection": "Legitimacy and payout of $250 bounty cannot be confirmed without authoritative issue content extraction.",
+    "decision": "Defer acceptance of github:4234681451 and maintain blocked status until parsed claim procedure is provided.",
+    "next": "PLANNER must immediately fetch and parse github:4234681451 to supply verified claim instructions and payout details."
   },
   "lastError": null,
   "history": [
@@ -300,6 +300,15 @@
       "objection": "Legitimacy assessment remains blocked until verified claim procedure and payout mechanism are extracted from the source issue.",
       "decision": "Execute fetch and parse of github:4234681451 to extract full claim instructions, reviewer approvals, and payout details from the issue page.",
       "next": "CRITIC must review the extracted claim process and payout verification from the authoritative issue content."
+    },
+    {
+      "cycle": 32,
+      "agent": "CRITIC",
+      "timestamp": "2026-08-22T23:03:58.965Z",
+      "observation": "PLANNER's mandated fetch/parse of github:4234681451 issue page remains unexecuted; claim steps and payout channel still unverified.",
+      "objection": "Legitimacy and payout of $250 bounty cannot be confirmed without authoritative issue content extraction.",
+      "decision": "Defer acceptance of github:4234681451 and maintain blocked status until parsed claim procedure is provided.",
+      "next": "PLANNER must immediately fetch and parse github:4234681451 to supply verified claim instructions and payout details."
     }
   ],
   "economy": {
@@ -349,6 +358,14 @@
         "rewardUsd": 120,
         "score": 32,
         "summary": "## Background The Banking Ledger must distinguish internal fiat-denominated balances from external tokens used for blockchain settlement. An intermediate redesign removed the `Currency` aggregate and introduced a statically injected `SettlementAssetRegistry`. That model has important limitations: - supported currencies and token bindings are queried directly from runtime configuration instead of being reconstructed as Read Models from domain events; - one Currency effectively resolves to only one deposit token and one withdrawal token; - chain identity is hidden behind Solana infrastructure types; and - completed Deposit and Withdrawal aggregates do not retain the blockchain transaction that produced the settlement. Replace the static registry with event-sourced Ledger domain state. Restore `Currency` as a bank-managed aggregate, model multiple token bindings as entities owned by that aggregate, make the supported blockchain explicit in domain values, and project the resulting events into normal Read Models. This does **not** restore the former currency-issuance platform. The bank binds existing external tokens and does not create tokens, publish token metadata, or manage token sup"
+      },
+      {
+        "id": "github:5220406146",
+        "title": "[BOUNTY] Break the NFH Wake holder gate — 25 USDC",
+        "url": "https://github.com/notforhumansfun-rgb/not-for-humans-mcp/issues/6",
+        "rewardUsd": 25,
+        "score": 72,
+        "summary": "## 25 USDC audit bounty Find the first valid, non-duplicate way to make the **unmodified official NFH Wake Kit** at commit [`76e681e`](https://github.com/notforhumansfun-rgb/not-for-humans-mcp/commit/76e681e) emit a holder-gated mission or receipt when **no fresh direct-owner Agent Presence heartbeat exists for that token's current owner**. **Prize:** one award of **25 USDC**, paid after the finding is reproduced and fix coordination is complete. The settlement network and recipient address will be agreed privately with the accepted reporter. No gas reimbursement. **Closes:** September 5, 2026 at 23:59 UTC, or when an award is accepted. ### In scope - Missing, expired, delegated, or mismatched heartbeat bypasses - Canonical endpoint substitution or validation failure - Token/owner mismatch - Transfer or expiry races - A forged `HOLDER_VERIFIED_AT_WAKE` result through the unmodified official CLI - Parser, timestamp, or canonical-URL validation failures ### Not a finding - Editing or forking the source to remove the checks - Using a legitimately active direct-owner heartbeat exactly as designed - The documented distinction between a self-reported receipt and accepted-work proof - Beh"
       },
       {
         "id": "github:4563956966",
