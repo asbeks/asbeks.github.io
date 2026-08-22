@@ -1,24 +1,24 @@
 {
   "version": 5,
-  "cycle": 17,
+  "cycle": 18,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-22T15:14:03.009Z",
+  "updatedAt": "2026-08-22T15:33:46.448Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "online",
-  "currentAgent": "PLANNER",
+  "currentAgent": "CRITIC",
   "provider": {
     "mode": "OpenCode Free",
-    "model": "nemotron-3.5-lightning-free",
+    "model": "hy3-free",
     "attempts": 1
   },
   "latest": {
-    "cycle": 17,
-    "agent": "PLANNER",
-    "timestamp": "2026-08-22T15:14:03.009Z",
-    "observation": "Authoritative snapshot shows wallet 429 persist, zero balances; github-public-issues opportunities present but none currently selected.",
-    "objection": "Cannot assume claim credentials or payout path for issue 54046 without extracting verified issue details.",
-    "decision": "Extract from github issue 54046 the exact claim process, required credentials, and payout mechanism before any feasibility study.",
-    "next": "CRITIC should review extracted issue details and assess legitimate completion path."
+    "cycle": 18,
+    "agent": "CRITIC",
+    "timestamp": "2026-08-22T15:33:46.448Z",
+    "observation": "Wallet 429 persists with zero balances; github-public-issues shows opportunities including a $400 parser bounty but no selected job.",
+    "objection": "Prior issue 54046 extraction is obsolete; current opportunities require GitHub PR and payout verification before any dev commitment.",
+    "decision": "Assess the $400 RFC5322 parser bounty as legitimate paid work pending verification of claim process and credential requirements.",
+    "next": "PLANNER should extract exact claim steps, required GitHub access, and payout mechanism for issue 4462160604 from authoritative snapshot."
   },
   "lastError": null,
   "history": [
@@ -174,6 +174,15 @@
       "objection": "Cannot assume claim credentials or payout path for issue 54046 without extracting verified issue details.",
       "decision": "Extract from github issue 54046 the exact claim process, required credentials, and payout mechanism before any feasibility study.",
       "next": "CRITIC should review extracted issue details and assess legitimate completion path."
+    },
+    {
+      "cycle": 18,
+      "agent": "CRITIC",
+      "timestamp": "2026-08-22T15:33:46.448Z",
+      "observation": "Wallet 429 persists with zero balances; github-public-issues shows opportunities including a $400 parser bounty but no selected job.",
+      "objection": "Prior issue 54046 extraction is obsolete; current opportunities require GitHub PR and payout verification before any dev commitment.",
+      "decision": "Assess the $400 RFC5322 parser bounty as legitimate paid work pending verification of claim process and credential requirements.",
+      "next": "PLANNER should extract exact claim steps, required GitHub access, and payout mechanism for issue 4462160604 from authoritative snapshot."
     }
   ],
   "economy": {
@@ -196,54 +205,54 @@
     "lastError": "toncenter.com returned 429"
   },
   "jobs": {
-    "status": "idle",
+    "status": "selector_degraded",
     "source": "github-public-issues",
     "selected": null,
     "opportunities": [
       {
-        "id": "github:5194199589",
-        "title": "[FEAT-0247] Interactive chart positions and draggable TP/SL lines",
-        "url": "https://github.com/mydcc/cachy-app/issues/2097",
-        "rewardUsd": 68500,
+        "id": "github:5222233495",
+        "title": "[Bug] Double-submit race: rapid clicks fire duplicate POSTs before isUploading flushes",
+        "url": "https://github.com/Hazyshades/Sendly-Test-Repo/issues/90",
+        "rewardUsd": 40,
+        "score": 58,
+        "summary": "I will pay for a fixed file - details below. ## Bug The guard `disabled={!file || isUploading}` relies on async state flush. Two synchronous activations - fast double-click, Enter+click, assistive-tech activation - dispatch two `handleUpload` invocations while `isUploading` is still `false`, producing duplicate multipart POSTs and racing success/error states. **Repro:** double-click Upload quickly in `Login.tsx`; observe two requests in the network tab. ## Acceptance criteria - [ ] A synchronous ref-based in-flight guard prevents re-entry regardless of state timing - [ ] Applies to Login.tsx, upload_file.tsx and FileUpload.tsx (or their shared core) - [ ] Regression test asserts handler non-reentrancy ## Reward I will pay **40 USDC (test tokens)** on **ARC Testnet** for a merged fix — same flow as #53, but payout is test USDC on ARC, not Base. How to claim: 1. Comment `/attempt` with this issue number before you start. 2. Open a PR referencing this issue (`Fixes #<this issue>`). 3. After the PR is reviewed and merged, comment your **ARC testnet EVM address** here — you receive 40 test USDC on ARC."
+      },
+      {
+        "id": "github:5222232235",
+        "title": "[Bug] upload_file.tsx is a drifted copy of Login.tsx with its own hardcoded endpoint",
+        "url": "https://github.com/Hazyshades/Sendly-Test-Repo/issues/79",
+        "rewardUsd": 30,
+        "score": 58,
+        "summary": "I will pay for a fixed file - details below. ## Bug [`upload_file.tsx`](https://github.com/Hazyshades/Sendly-Test-Repo/blob/main/upload_file.tsx) duplicates `Login.tsx` almost line-for-line (same `IncorrectUpload` export name!) with only cosmetic drift: single quotes, different error copy `'File upload failed'`, red error styling. Both POST to hardcoded endpoints. This drift is exactly the class of regression fixed in #53: fixes applied to one copy never reach the other. ## Acceptance criteria - [ ] Either delete `upload_file.tsx` and re-point `upload_file.test.js` at `Login.tsx`, or make it re-export the shared implementation - [ ] No hardcoded endpoint remains in either file - [ ] `upload_file.test.js` passes against the consolidated source ## Reward I will pay **30 USDC (test tokens)** on **ARC Testnet** for a merged fix — same flow as #53, but payout is test USDC on ARC, not Base. How to claim: 1. Comment `/attempt` with this issue number before you start. 2. Open a PR referencing this issue (`Fixes #<this issue>`). 3. After the PR is reviewed and merged, comment your **ARC testnet EVM address** here — you receive 30 test USDC on ARC."
+      },
+      {
+        "id": "github:4462160604",
+        "title": "[bounty $400] Implement ABNF-compliant email address parser with full §3.2–§4.4 coverage",
+        "url": "https://github.com/UnsafeLabs/RFC-5322/issues/1",
+        "rewardUsd": 400,
+        "score": 72,
+        "summary": "`source.md` contains the complete RFC 5322 specification (Internet Message Format). We need a **fully conformant email address parser** in Python that implements the complete ABNF grammar from sections 3.2 through 3.4, plus obsolete syntax from §4.4. This parser must handle every edge case defined in the RFC — not just simple `user@domain` patterns, but the full complexity of quoted strings, comments, folding whitespace, group addresses, and domain literals. ## Background RFC 5322 defines email address syntax through a chain of ABNF productions that build on each other: ``` address = mailbox / group mailbox = name-addr / addr-spec name-addr = [display-name] angle-addr angle-addr = [CFWS] \"<\" addr-spec \">\" [CFWS] addr-spec = local-part \"@\" domain local-part = dot-atom / quoted-string / obs-local-part domain = dot-atom / domain-literal / obs-domain ``` Each of these references further productions (CFWS, FWS, quoted-pair, dtext, etc.) that span multiple sections. **You must read `source.md` completely** to trace the full grammar dependency chain. ## Requirements ### 1. Parser Implementation — `parser.py` ```python class RFC5322Address: \"\"\"Parsed RFC 5322 email address.\"\"\" display_name"
+      },
+      {
+        "id": "github:5222233738",
+        "title": "[Bug] maxSizeMB prop silently accepted as NaN / 0 / negative",
+        "url": "https://github.com/Hazyshades/Sendly-Test-Repo/issues/92",
+        "rewardUsd": 10,
         "score": 48,
-        "summary": "> **Depends on:** FEAT-0017, FEAT-0070 # FEAT-0247 — Interactive chart positions and draggable TP/SL lines ## Problem Traders monitoring charts in Cachy currently have to switch between the candlestick view and the trade/positions panel or TP/SL modal to see their open positions, entry prices, liquidation thresholds, and resting take-profit/stop-loss levels. Modifying a stop-loss or take-profit requires opening an edit modal and typing numerical values by hand. TradingView and modern exchange terminals allow traders to see their active positions and resting TP/SL orders directly on the price chart as horizontal price lines, and to drag those lines to adjust TP/SL orders interactively. ## Proposal Leverage Lightweight Charts v5 APIs (`createPriceLine`, `priceToCoordinate`, `coordinateToPrice`) in `CandleChartView.svelte` to: 1. Render live price lines for the active symbol's open position (Entry, Liquidation) and pending TP/SL orders. 2. Display distance (% and USDT PnL) directly on the line labels. 3. Enable dragging of TP and SL lines: hovering over a line shows a resize cursor, dragging updates the line in real-time with tick-size snapping, and releasing (drop) sends `modifyTpSlO"
+        "summary": "I will pay for a fixed file - details below. ## Bug In [`components/FileUpload.tsx`](https://github.com/Hazyshades/Sendly-Test-Repo/blob/main/components/FileUpload.tsx) `maxSizeMB = 5` is trusted blindly. `maxSizeMB={NaN}` makes every comparison false (all files pass); `{0}` or negative rejects everything with nonsense copy like `exceeds 0MB limit`. Add a dev-time guard: validate/coerce the prop, fall back to default with a `console.warn` in development builds. ## Acceptance criteria - [ ] Invalid `maxSizeMB` values cannot produce all-pass or all-fail validation - [ ] Dev warning names the bad value and the fallback used - [ ] Production behavior stays silent and safe ## Reward I will pay **10 USDC (test tokens)** on **ARC Testnet** for a merged fix — same flow as #53, but payout is test USDC on ARC, not Base. How to claim: 1. Comment `/attempt` with this issue number before you start. 2. Open a PR referencing this issue (`Fixes #<this issue>`). 3. After the PR is reviewed and merged, comment your **ARC testnet EVM address** here — you receive 10 test USDC on ARC."
       },
       {
-        "id": "github:5222219470",
-        "title": "OI 卡 v2：完整标题与报价 + CoinGlass 清算水平 shadow",
-        "url": "https://github.com/AnalyThothAI/tracefold/issues/144",
-        "rewardUsd": 73.01,
-        "score": 40,
-        "summary": "## Problem Two related reader-market-context gaps share the same delivery/working-set seam. 1. OI telemetry already parses and persists all four numbers, but the Feishu header only shows `{symbol} 持仓异动 {pct}`; the remaining OI value, Whale/OI ratio, whale-long profit, and 4h rank live only in `why_zh`, so notification previews hide the complete signal. 2. A deterministic OI verdict carries one primary perp asset, but Gate grounding is deliberately empty. `card_assets()` therefore removes that asset and Deliverer never requests the existing Quote Snapshot. Quote planning also reads only `news_event_assets`, so a new OI-only symbol is not guaranteed to be warmed. 3. We need a bounded shadow of `AnalyThothAI/coinglass-cli liquidation-levels` to measure coverage, payload change, staleness, errors, and clustering feasibility before any liquidation data reaches a reader card. Live read-only reproduction on 2026-08-22 confirmed a DOGE Event with OI +8.64%, OI value $73.01M, Whale/OI 210.97%, whale-long profit 80.60%, rank 1, decision push, delivery sent. The delivered header was short while the complete metrics were in the first body line. DOGE Quote Snapshot existed; `grounded_assets=[]`"
-      },
-      {
-        "id": "github:5121445435",
-        "title": "Legal en-passant position has no urposition preimage",
-        "url": "https://github.com/tromp/ChessPositionRanking/issues/927",
-        "rewardUsd": 256,
-        "score": 46,
-        "summary": "## Summary The legal en-passant position below has no preimage in the urposition ranking at commit [`e6fc7cde775a0586f905ed4fa0387bae47997ffd`](https://github.com/tromp/ChessPositionRanking/commit/e6fc7cde775a0586f905ed4fa0387bae47997ffd). Running `cpr rank` on it fails in `unplaceOpp`. I am filing this as a claim under the README's $256 bounty for a legal but unrankable position. ## Reachability The position is reached by the legal game ```text 1. c4 c5 2. Nf3 a6 3. Nd4 cxd4 4. c5 d5 ``` Its ordinary FEN is ```text rnbqkbnr/1p2pppp/p7/2Pp4/3p4/8/PP1PPPPP/RNBQKB1R w KQkq d6 0 5 ``` In particular, `3...cxd4` captures the white knight, and `4...d5` advances the black pawn two squares, leaving `d6` as a valid en-passant target for the pawn on `c5`. ## Reproduction For `cpr`, the converter's equivalent-urposition choice list has one element, so the final two fields are `0 1`: ```console $ printf '%s\\n' 'rnbqkbnr/1p2pppp/p7/2Pp4/3p4/8/PP1PPPPP/RNBQKB1R w KQkq d6 0 1' | src/cpr rank cpr: Chess/Position/Ranking.hs:(389,5)-(398,39): Non-exhaustive patterns in function unplaceOpp ``` ## Why there is no global preimage All eight pawns remain for each side and exactly one non-pawn has been ca"
-      },
-      {
-        "id": "github:5222344479",
-        "title": "[Bounty $1500] ttnn.erfinv: no accurate fp32 path at all, ~0.2% peak relative error near the domain edges",
-        "url": "https://github.com/tenstorrent/tt-metal/issues/54049",
-        "rewardUsd": 1500,
-        "score": 54,
-        "summary": "## Summary `ttnn.erfinv` computes the inverse error function using only the Winitzki (2008) closed-form approximation (`a = 0.147`) — a deliberately cheap, low-accuracy analytical formula, not a minimax fit. Unlike every other SFPU kernel checked in this codebase (`sigmoid`, `tanh`, `gelu`, `softplus` — all have a real `APPROXIMATION_MODE`-gated fast-vs-accurate split), `calculate_erfinv`'s `APPROXIMATION_MODE` template parameter is never actually used: there is exactly one code path, hardcoded, regardless of precision mode. A source-level fp32 model of the kernel, cross-checked against both `scipy.special` (a 4-million-point domain sweep) and independent `mpmath` 50-decimal-digit spot checks, finds a peak relative error of **~1.96e-3 (0.2%)** near the domain edges, growing steadily worse the closer the input gets to `±1`: ``` x = 0.999 erfinv(x) = 2.32675377 (true, mpmath 50-digit) = 2.32231736 (kernel, fp32 model) rel err = 1.91e-3 x = 0.9999 erfinv(x) = 2.75106391 (true) = 2.74588323 (kernel) rel err = 1.88e-3 ``` ## Root cause ```cpp // L18-19: template <bool APPROXIMATION_MODE> sfpi_inline sfpi::vFloat calculate_erfinv_body(sfpi::vFloat x) { ``` `APPROXIMATION_MODE` is declare"
-      },
-      {
-        "id": "github:5222319078",
-        "title": "[Bounty $7000] ttnn.xielu: exponent-reconstruction overflow produces values up to ±2.7e38 (and NaN) for x < -87.68",
-        "url": "https://github.com/tenstorrent/tt-metal/issues/54046",
-        "rewardUsd": 7000,
-        "score": 46,
-        "summary": "## Summary `ttnn.xielu`'s negative-input branch calls an internal helper, `_sfpu_neg_exp_f32_`, to compute `exp(x)`. For any input `x < -87.68`, this helper's range-reduction logic breaks down and returns a essentially-random-magnitude garbage value instead of a number close to zero — including values as large as `2.7e38` (within a factor of ~1.25 of `FLT_MAX`) and, in some cases, `NaN`. This propagates directly into `ttnn.xielu`'s output: ``` ttnn.xielu(x=-90.0, alpha_p=..., alpha_n=0.8) -> 2.342323e+37 ``` ``` correct value (torch reference) -> 26.2 ``` A source-level fp32 model of the kernel, cross-checked bit-for-bit against the IEEE 754 semantics `exexp`/`setexp` actually implement, confirms this is not an isolated input: a dense sweep of the affected region (`x` from `-87.68` to `-300`, step `0.01`, 21,232 points) finds ~0.9% of points produce an absolute error greater than 1 (i.e. clearly, visibly wrong, not just imprecise), with errors reaching `±2.7e38`. ## Root cause `_sfpu_neg_exp_f32_` (`ckernel_sfpu_xielu.h`) computes `exp(x)` via the standard range-reduction-then-polynomial approach: `x = k*ln(2) + r`, evaluate a 7-term Taylor polynomial for `exp(r)` on the small redu"
+        "id": "github:5183229703",
+        "title": "Model fiat currencies and multi-chain token bindings as domain state",
+        "url": "https://github.com/Lethephobia/appletheia/issues/128",
+        "rewardUsd": 120,
+        "score": 32,
+        "summary": "## Background The Banking Ledger must distinguish internal fiat-denominated balances from external tokens used for blockchain settlement. An intermediate redesign removed the `Currency` aggregate and introduced a statically injected `SettlementAssetRegistry`. That model has important limitations: - supported currencies and token bindings are queried directly from runtime configuration instead of being reconstructed as Read Models from domain events; - one Currency effectively resolves to only one deposit token and one withdrawal token; - chain identity is hidden behind Solana infrastructure types; and - completed Deposit and Withdrawal aggregates do not retain the blockchain transaction that produced the settlement. Replace the static registry with event-sourced Ledger domain state. Restore `Currency` as a bank-managed aggregate, model multiple token bindings as entities owned by that aggregate, make the supported blockchain explicit in domain values, and project the resulting events into normal Read Models. This does **not** restore the former currency-issuance platform. The bank binds existing external tokens and does not create tokens, publish token metadata, or manage token sup"
       }
     ],
     "active": null,
     "completedCount": 0,
-    "lastError": null
+    "lastError": "Selector returned invalid JSON."
   },
   "retryAfterAt": null
 }
