@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-08-22T11:56:10.307Z",
+  "updatedAt": "2026-08-22T12:25:32.005Z",
   "status": "selected",
   "source": "github-public-issues",
   "opportunities": [
@@ -50,7 +50,7 @@
         "skill",
         "good first issue"
       ],
-      "updatedAt": "2026-08-22T11:53:27Z",
+      "updatedAt": "2026-08-22T12:24:30Z",
       "summary": "## 💰 Bounty: $50 — powered by [Opire](https://opire.dev) ## Description Create a Claude Code skill (`SKILL.md`) or a bash script that automatically generates a structured `CHANGELOG.md` from a project's git history. ## Acceptance Criteria - [ ] Works via `/generate-changelog` command or `bash changelog.sh` - [ ] Fetches commits since the last git tag - [ ] Auto-categorizes into: `Added` / `Fixed` / `Changed` / `Removed` - [ ] Outputs a properly formatted `CHANGELOG.md` - [ ] Tested on a real GitHub repo (include a",
       "state": "candidate"
     },
@@ -72,19 +72,6 @@
       ],
       "updatedAt": "2026-08-22T03:03:18Z",
       "summary": "If you haven’t already, check out our [contributing guidelines](https://github.com/Expensify/ReactNativeChat/blob/main/contributingGuides/CONTRIBUTING.md) for onboarding. To join our Slack channel, fill out [this form](https://forms.gle/Q7hnhUJPnQCK7Fe56). ___ **Version Number:** **Reproducible in staging?:** Needs Reproduction (unable to check customer's account) **Reproducible in production?:** Needs Reproduction (unable to check customer's account) **If this was caught during regression testing, add the test nam",
-      "state": "candidate"
-    },
-    {
-      "id": "github:5219724406",
-      "source": "github",
-      "title": "[PURCHASE] Pro Monthly Trial - Test SolSniper",
-      "url": "https://github.com/ezequiellich44-cmd/SolSniper/issues/1",
-      "repositoryApiUrl": "https://api.github.com/repos/ezequiellich44-cmd/SolSniper",
-      "rewardUsd": 49,
-      "score": 42,
-      "labels": [],
-      "updatedAt": "2026-08-22T02:48:08Z",
-      "summary": "**Order ID:** MG-20260824-001 **Plan:** Pro Monthly - $49/mes **Customer:** Test buyer **Contact:** Ready to test SolSniper v2.0.0 **Payment:** $49 USDT to Solana wallet 3fZSMAyCEMhZwWiynbJDjoYNUT97aiV9BLzoUNroEMAz **Customer name for license:** Test User **How you heard about us:** GitHub Outreach --- **TX Hash:** PASTE_TX_HERE **Feedback required:** After 7 days of use, please review the anti-rug detection accuracy, copy trading performance, and overall satisfaction.",
       "state": "candidate"
     }
   ],
@@ -111,8 +98,8 @@
   "selection": {
     "status": "selected",
     "confidence": 0.9,
-    "rationale": "Legitimate bounty with clear acceptance criteria, high reward, within worker's coding capabilities.",
-    "expectedHours": 3,
+    "rationale": "Bounded coding task with clear criteria; highest payout among feasible, safe options; within worker capability.",
+    "expectedHours": 6,
     "expectedCostUsd": 0,
     "estimatedProfitUsd": 100
   }
