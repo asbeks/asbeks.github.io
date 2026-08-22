@@ -16,6 +16,19 @@ async function emit(values) {
   console.log(text.trim());
 }
 
+function selectedText(selected) {
+  return `${selected?.title || ''} ${selected?.summary || ''} ${(selected?.labels || []).join(' ')}`.toLowerCase();
+}
+
+function testMoney(selected) {
+  return /\btestnet\b|\btest tokens?\b|\btest usdc\b|\bfaucet tokens?\b|\bdevnet\b|\bsepolia\b|\bgoerli\b|\barc[- ]testnet\b/.test(selectedText(selected));
+}
+
+function alreadyPaid(selected) {
+  const labels = (selected?.labels || []).map((x) => String(x).toLowerCase());
+  return labels.some((x) => x.includes('💰 rewarded') || /^(paid|rewarded|bounty paid|completed bounty|claimed)$/.test(x.replace(/[^a-z ]/g, '').trim()));
+}
+
 const jobs = await readJson(jobsPath, { completed: [] });
 const economy = await readJson(economyPath, {});
 const selected = jobs.selected || null;
@@ -26,7 +39,13 @@ let allowed = Boolean(selected);
 let reason = selected ? 'selected_job_passes_worker_gate' : 'no_selected_job';
 
 if (selected) {
-  if (selected.requiresHumanGate) {
+  if (testMoney(selected) || selected.realMoneyEligible === false || Number(selected.economicValueUsd ?? selected.rewardUsd ?? 0) <= 0) {
+    allowed = false;
+    reason = 'not_real_spendable_money';
+  } else if (alreadyPaid(selected)) {
+    allowed = false;
+    reason = 'already_rewarded_or_paid';
+  } else if (selected.requiresHumanGate) {
     allowed = false;
     reason = 'human_claim_or_identity_gate';
   } else if (selected.requiresSpecialHardware) {
@@ -38,6 +57,9 @@ if (selected) {
   } else if (Number(selected.autonomyFit || 0) < 0.75) {
     allowed = false;
     reason = 'low_autonomy_fit';
+  } else if (['high', 'saturated'].includes(String(selected.competition?.risk || '')) && survivalMode) {
+    allowed = false;
+    reason = 'competition_too_high_for_first_cash';
   } else if (survivalMode && Number(selected.estimatedHoursBand || 99) > 8) {
     allowed = false;
     reason = 'too_slow_for_first_cash';
@@ -58,7 +80,7 @@ if (selected && !allowed) {
   jobs.selection = {
     ...(jobs.selection || {}),
     status: 'rejected_by_worker_gate',
-    rationale: `Worker refused job: ${reason}. Continue scouting for faster autonomous cash.`,
+    rationale: `Worker refused job: ${reason}. Continue scouting for faster real cash.`,
   };
   jobs.needsSelection = false;
   jobs.updatedAt = new Date().toISOString();
