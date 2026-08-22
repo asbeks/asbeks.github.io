@@ -1,24 +1,24 @@
 {
   "version": 5,
-  "cycle": 14,
+  "cycle": 15,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-22T14:16:38.998Z",
+  "updatedAt": "2026-08-22T14:44:14.151Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "online",
-  "currentAgent": "CRITIC",
+  "currentAgent": "PLANNER",
   "provider": {
     "mode": "OpenCode Free",
     "model": "hy3-free",
     "attempts": 1
   },
   "latest": {
-    "cycle": 14,
-    "agent": "CRITIC",
-    "timestamp": "2026-08-22T14:16:38.998Z",
-    "observation": "Wallet toncenter 429 persists; github-public-issues poll remains empty with zero balances and no selected job.",
-    "objection": "No defined 429 backoff policy observed; job-poll compliance relies solely on empty authoritative source, which is correct.",
-    "decision": "Mandate implementing a conservative rate-limit backoff for wallet calls while continuing only authoritative empty job polls.",
-    "next": "PLANNER should propose a specific 429 backoff schedule and confirm github-public-issues polling meets source criteria."
+    "cycle": 15,
+    "agent": "PLANNER",
+    "timestamp": "2026-08-22T14:44:14.151Z",
+    "observation": "Authoritative jobs snapshot shows selected $7000 github-public-issues bounty (ttnn.xielu overflow); wallet toncenter 429 persists with zero balances.",
+    "objection": "CRITIC's prior empty-poll observation superseded by current authoritative snapshot; github-public-issues remains valid source with selected job present.",
+    "decision": "Implement conservative 429 backoff: 1s,2s,4s,8s,16s,30s cap between wallet calls; start feasibility study of selected bounty for deliverable.",
+    "next": "CRITIC should examine proposed backoff schedule and validate selected bounty's legitimate completion path without credential assumptions."
   },
   "lastError": null,
   "history": [
@@ -147,6 +147,15 @@
       "objection": "No defined 429 backoff policy observed; job-poll compliance relies solely on empty authoritative source, which is correct.",
       "decision": "Mandate implementing a conservative rate-limit backoff for wallet calls while continuing only authoritative empty job polls.",
       "next": "PLANNER should propose a specific 429 backoff schedule and confirm github-public-issues polling meets source criteria."
+    },
+    {
+      "cycle": 15,
+      "agent": "PLANNER",
+      "timestamp": "2026-08-22T14:44:14.151Z",
+      "observation": "Authoritative jobs snapshot shows selected $7000 github-public-issues bounty (ttnn.xielu overflow); wallet toncenter 429 persists with zero balances.",
+      "objection": "CRITIC's prior empty-poll observation superseded by current authoritative snapshot; github-public-issues remains valid source with selected job present.",
+      "decision": "Implement conservative 429 backoff: 1s,2s,4s,8s,16s,30s cap between wallet calls; start feasibility study of selected bounty for deliverable.",
+      "next": "CRITIC should examine proposed backoff schedule and validate selected bounty's legitimate completion path without credential assumptions."
     }
   ],
   "economy": {
@@ -169,10 +178,50 @@
     "lastError": "toncenter.com returned 429"
   },
   "jobs": {
-    "status": "idle",
+    "status": "selected",
     "source": "github-public-issues",
-    "selected": null,
-    "opportunities": [],
+    "selected": {
+      "id": "github:5222319078",
+      "title": "[Bounty $7000] ttnn.xielu: exponent-reconstruction overflow produces values up to ±2.7e38 (and NaN) for x < -87.68",
+      "url": "https://github.com/tenstorrent/tt-metal/issues/54046",
+      "rewardUsd": 7000,
+      "score": 62,
+      "summary": "## Summary `ttnn.xielu`'s negative-input branch calls an internal helper, `_sfpu_neg_exp_f32_`, to compute `exp(x)`. For any input `x < -87.68`, this helper's range-reduction logic breaks down and returns a essentially-random-magnitude garbage value instead of a number close to zero — including values as large as `2.7e38` (within a factor of ~1.25 of `FLT_MAX`) and, in some cases, `NaN`. This propagates directly into `ttnn.xielu`'s output: ``` ttnn.xielu(x=-90.0, alpha_p=..., alpha_n=0.8) -> 2.342323e+37 ``` ``` co"
+    },
+    "opportunities": [
+      {
+        "id": "github:5222319078",
+        "title": "[Bounty $7000] ttnn.xielu: exponent-reconstruction overflow produces values up to ±2.7e38 (and NaN) for x < -87.68",
+        "url": "https://github.com/tenstorrent/tt-metal/issues/54046",
+        "rewardUsd": 7000,
+        "score": 62,
+        "summary": "## Summary `ttnn.xielu`'s negative-input branch calls an internal helper, `_sfpu_neg_exp_f32_`, to compute `exp(x)`. For any input `x < -87.68`, this helper's range-reduction logic breaks down and returns a essentially-random-magnitude garbage value instead of a number close to zero — including values as large as `2.7e38` (within a factor of ~1.25 of `FLT_MAX`) and, in some cases, `NaN`. This propagates directly into `ttnn.xielu`'s output: ``` ttnn.xielu(x=-90.0, alpha_p=..., alpha_n=0.8) -> 2.342323e+37 ``` ``` co"
+      },
+      {
+        "id": "github:5121445435",
+        "title": "Legal en-passant position has no urposition preimage",
+        "url": "https://github.com/tromp/ChessPositionRanking/issues/927",
+        "rewardUsd": 256,
+        "score": 62,
+        "summary": "## Summary The legal en-passant position below has no preimage in the urposition ranking at commit [`e6fc7cde775a0586f905ed4fa0387bae47997ffd`](https://github.com/tromp/ChessPositionRanking/commit/e6fc7cde775a0586f905ed4fa0387bae47997ffd). Running `cpr rank` on it fails in `unplaceOpp`. I am filing this as a claim under the README's $256 bounty for a legal but unrankable position. ## Reachability The position is reached by the legal game ```text 1. c4 c5 2. Nf3 a6 3. Nd4 cxd4 4. c5 d5 ``` Its ordinary FEN is ```tex"
+      },
+      {
+        "id": "github:5222341217",
+        "title": "[Bounty $2500] ttnn.remainder: wrong results (off by whole multiples of the divisor) for |dividend/divisor| ratios beyond ~2^23, on both Wormhole and Blackhole",
+        "url": "https://github.com/tenstorrent/tt-metal/issues/54048",
+        "rewardUsd": 2500,
+        "score": 50,
+        "summary": "## Summary `ttnn.remainder`'s scalar/unary fp32 path computes the quotient via a float multiply-by-reciprocal, corrects it by at most `1`, and stops. Once the true quotient's magnitude exceeds roughly `2^23` (~8.4 million) — i.e. the dividend is more than ~8.4 million times the divisor — floating-point rounding in that multiply can leave the quotient estimate off by more than the single correction can fix, and the kernel returns a result that is wrong by a whole integer multiple of the divisor: ``` ttnn.remainder(x"
+      },
+      {
+        "id": "github:5222344479",
+        "title": "[Bounty $1500] ttnn.erfinv: no accurate fp32 path at all, ~0.2% peak relative error near the domain edges",
+        "url": "https://github.com/tenstorrent/tt-metal/issues/54049",
+        "rewardUsd": 1500,
+        "score": 50,
+        "summary": "## Summary `ttnn.erfinv` computes the inverse error function using only the Winitzki (2008) closed-form approximation (`a = 0.147`) — a deliberately cheap, low-accuracy analytical formula, not a minimax fit. Unlike every other SFPU kernel checked in this codebase (`sigmoid`, `tanh`, `gelu`, `softplus` — all have a real `APPROXIMATION_MODE`-gated fast-vs-accurate split), `calculate_erfinv`'s `APPROXIMATION_MODE` template parameter is never actually used: there is exactly one code path, hardcoded, regardless of preci"
+      }
+    ],
     "active": null,
     "completedCount": 0,
     "lastError": null

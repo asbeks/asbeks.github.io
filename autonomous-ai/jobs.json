@@ -1,19 +1,131 @@
 {
   "version": 5,
-  "updatedAt": "2026-08-22T14:16:29.373Z",
-  "status": "idle",
+  "updatedAt": "2026-08-22T14:43:51.721Z",
+  "status": "selected",
   "source": "github-public-issues",
-  "opportunities": [],
-  "selected": null,
+  "opportunities": [
+    {
+      "id": "github:5222319078",
+      "source": "github",
+      "title": "[Bounty $7000] ttnn.xielu: exponent-reconstruction overflow produces values up to ±2.7e38 (and NaN) for x < -87.68",
+      "url": "https://github.com/tenstorrent/tt-metal/issues/54046",
+      "repositoryApiUrl": "https://api.github.com/repos/tenstorrent/tt-metal",
+      "rewardUsd": 7000,
+      "score": 62,
+      "labels": [
+        "community"
+      ],
+      "commentCount": 0,
+      "updatedAt": "2026-08-22T14:17:50Z",
+      "summary": "## Summary `ttnn.xielu`'s negative-input branch calls an internal helper, `_sfpu_neg_exp_f32_`, to compute `exp(x)`. For any input `x < -87.68`, this helper's range-reduction logic breaks down and returns a essentially-random-magnitude garbage value instead of a number close to zero — including values as large as `2.7e38` (within a factor of ~1.25 of `FLT_MAX`) and, in some cases, `NaN`. This propagates directly into `ttnn.xielu`'s output: ``` ttnn.xielu(x=-90.0, alpha_p=..., alpha_n=0.8) -> 2.342323e+37 ``` ``` co",
+      "state": "candidate",
+      "competition": {
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
+      }
+    },
+    {
+      "id": "github:5121445435",
+      "source": "github",
+      "title": "Legal en-passant position has no urposition preimage",
+      "url": "https://github.com/tromp/ChessPositionRanking/issues/927",
+      "repositoryApiUrl": "https://api.github.com/repos/tromp/ChessPositionRanking",
+      "rewardUsd": 256,
+      "score": 62,
+      "labels": [],
+      "commentCount": 4,
+      "updatedAt": "2026-08-22T14:30:16Z",
+      "summary": "## Summary The legal en-passant position below has no preimage in the urposition ranking at commit [`e6fc7cde775a0586f905ed4fa0387bae47997ffd`](https://github.com/tromp/ChessPositionRanking/commit/e6fc7cde775a0586f905ed4fa0387bae47997ffd). Running `cpr rank` on it fails in `unplaceOpp`. I am filing this as a claim under the README's $256 bounty for a legal but unrankable position. ## Reachability The position is reached by the legal game ```text 1. c4 c5 2. Nf3 a6 3. Nd4 cxd4 4. c5 d5 ``` Its ordinary FEN is ```tex",
+      "state": "candidate",
+      "competition": {
+        "comments": 4,
+        "attemptSignals": 0,
+        "risk": "low"
+      }
+    },
+    {
+      "id": "github:5222341217",
+      "source": "github",
+      "title": "[Bounty $2500] ttnn.remainder: wrong results (off by whole multiples of the divisor) for |dividend/divisor| ratios beyond ~2^23, on both Wormhole and Blackhole",
+      "url": "https://github.com/tenstorrent/tt-metal/issues/54048",
+      "repositoryApiUrl": "https://api.github.com/repos/tenstorrent/tt-metal",
+      "rewardUsd": 2500,
+      "score": 50,
+      "labels": [
+        "community"
+      ],
+      "commentCount": 0,
+      "updatedAt": "2026-08-22T14:23:18Z",
+      "summary": "## Summary `ttnn.remainder`'s scalar/unary fp32 path computes the quotient via a float multiply-by-reciprocal, corrects it by at most `1`, and stops. Once the true quotient's magnitude exceeds roughly `2^23` (~8.4 million) — i.e. the dividend is more than ~8.4 million times the divisor — floating-point rounding in that multiply can leave the quotient estimate off by more than the single correction can fix, and the kernel returns a result that is wrong by a whole integer multiple of the divisor: ``` ttnn.remainder(x",
+      "state": "candidate",
+      "competition": {
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
+      }
+    },
+    {
+      "id": "github:5222344479",
+      "source": "github",
+      "title": "[Bounty $1500] ttnn.erfinv: no accurate fp32 path at all, ~0.2% peak relative error near the domain edges",
+      "url": "https://github.com/tenstorrent/tt-metal/issues/54049",
+      "repositoryApiUrl": "https://api.github.com/repos/tenstorrent/tt-metal",
+      "rewardUsd": 1500,
+      "score": 50,
+      "labels": [
+        "community"
+      ],
+      "commentCount": 0,
+      "updatedAt": "2026-08-22T14:24:09Z",
+      "summary": "## Summary `ttnn.erfinv` computes the inverse error function using only the Winitzki (2008) closed-form approximation (`a = 0.147`) — a deliberately cheap, low-accuracy analytical formula, not a minimax fit. Unlike every other SFPU kernel checked in this codebase (`sigmoid`, `tanh`, `gelu`, `softplus` — all have a real `APPROXIMATION_MODE`-gated fast-vs-accurate split), `calculate_erfinv`'s `APPROXIMATION_MODE` template parameter is never actually used: there is exactly one code path, hardcoded, regardless of preci",
+      "state": "candidate",
+      "competition": {
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
+      }
+    }
+  ],
+  "selected": {
+    "id": "github:5222319078",
+    "source": "github",
+    "title": "[Bounty $7000] ttnn.xielu: exponent-reconstruction overflow produces values up to ±2.7e38 (and NaN) for x < -87.68",
+    "url": "https://github.com/tenstorrent/tt-metal/issues/54046",
+    "repositoryApiUrl": "https://api.github.com/repos/tenstorrent/tt-metal",
+    "rewardUsd": 7000,
+    "score": 62,
+    "labels": [
+      "community"
+    ],
+    "commentCount": 0,
+    "updatedAt": "2026-08-22T14:17:50Z",
+    "summary": "## Summary `ttnn.xielu`'s negative-input branch calls an internal helper, `_sfpu_neg_exp_f32_`, to compute `exp(x)`. For any input `x < -87.68`, this helper's range-reduction logic breaks down and returns a essentially-random-magnitude garbage value instead of a number close to zero — including values as large as `2.7e38` (within a factor of ~1.25 of `FLT_MAX`) and, in some cases, `NaN`. This propagates directly into `ttnn.xielu`'s output: ``` ttnn.xielu(x=-90.0, alpha_p=..., alpha_n=0.8) -> 2.342323e+37 ``` ``` co",
+    "state": "selected",
+    "competition": {
+      "comments": 0,
+      "attemptSignals": 0,
+      "risk": "low"
+    }
+  },
   "active": null,
   "completed": [],
   "lastError": null,
   "selection": {
-    "status": "none",
-    "rationale": "No verified paid candidate passed scouting and competition filters."
+    "status": "selected",
+    "confidence": 0.7,
+    "rationale": "Legitimate low-competition bug fix with high bounty; worker can learn TT-Metal codebase. Best expected value among clean tasks.",
+    "expectedHours": 30,
+    "expectedCostUsd": 0,
+    "estimatedProfitUsd": 4900,
+    "provider": {
+      "mode": "OpenCode Free",
+      "model": "hy3-free",
+      "attempts": 1
+    }
   },
   "retryAfterAt": null,
-  "marketSignature": "[]",
+  "marketSignature": "[{\"id\":\"github:5121445435\",\"rewardUsd\":256,\"score\":62,\"updatedAt\":\"2026-08-22T14:30:16Z\",\"competition\":{\"comments\":4,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5222319078\",\"rewardUsd\":7000,\"score\":62,\"updatedAt\":\"2026-08-22T14:17:50Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5222341217\",\"rewardUsd\":2500,\"score\":50,\"updatedAt\":\"2026-08-22T14:23:18Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5222344479\",\"rewardUsd\":1500,\"score\":50,\"updatedAt\":\"2026-08-22T14:24:09Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false
 }
