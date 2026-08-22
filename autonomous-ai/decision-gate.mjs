@@ -43,7 +43,6 @@ function previousEconomy(state = {}) {
 
 function currentJobs(jobs = {}) {
   return {
-    opportunities: (jobs.opportunities || []).slice(0, 10).map((x) => ({ id: x.id, rewardUsd: x.rewardUsd, score: x.score })),
     selectedId: jobs.selected?.id || null,
     selectionStatus: jobs.selection?.status || null,
     active: jobs.active ? {
@@ -52,13 +51,13 @@ function currentJobs(jobs = {}) {
       error: jobs.active.error || null,
       preparedAt: jobs.active.preparedAt || null,
     } : null,
+    completedCount: (jobs.completed || []).length,
   };
 }
 
 function previousJobs(state = {}) {
   const jobs = state.jobs || {};
   return {
-    opportunities: (jobs.opportunities || []).slice(0, 10).map((x) => ({ id: x.id, rewardUsd: x.rewardUsd, score: x.score })),
     selectedId: jobs.selected?.id || null,
     selectionStatus: jobs.selection?.status || null,
     active: jobs.active ? {
@@ -67,6 +66,7 @@ function previousJobs(state = {}) {
       error: jobs.active.error || null,
       preparedAt: jobs.active.preparedAt || null,
     } : null,
+    completedCount: Number(jobs.completedCount || 0),
   };
 }
 
@@ -86,11 +86,14 @@ const now = Date.now();
 const retryAt = jobs.retryAfterAt ? Date.parse(jobs.retryAfterAt) : 0;
 const providerWaiting = /waiting_provider|retry_wait/i.test(String(jobs.status || '')) && retryAt > now;
 const select = Boolean(jobs.needsSelection) && !providerWaiting;
+const revenue = Number(economy?.totals?.revenueUSDT || 0);
+const bootstrapMode = revenue <= 0 && (jobs.completed || []).length === 0;
 
 const economyChanged = !same(currentEconomy(economy), previousEconomy(state));
 const jobsChanged = !same(currentJobs(jobs), previousJobs(state));
 const ageMs = now - (Date.parse(state.updatedAt || 0) || 0);
-const heartbeatDue = ageMs >= 60 * 60 * 1000;
+const heartbeatMs = bootstrapMode ? 6 * 60 * 60 * 1000 : 60 * 60 * 1000;
+const heartbeatDue = ageMs >= heartbeatMs;
 
 if (mode === 'pre') {
   await emit({
@@ -101,16 +104,16 @@ if (mode === 'pre') {
   });
 } else {
   const stillWaiting = Boolean(jobs.needsSelection) && /waiting_provider|retry_wait/i.test(String(jobs.status || ''));
-  const postJobsChanged = !same(currentJobs(jobs), previousJobs(state));
   const think = Number(state.cycle || 0) === 0
     || economyChanged
-    || (!stillWaiting && postJobsChanged)
+    || (!stillWaiting && jobsChanged)
     || (!stillWaiting && heartbeatDue);
 
   await emit({
     think: think ? 'true' : 'false',
+    mode: bootstrapMode ? 'bootstrap' : 'growth',
     reason: think
-      ? (economyChanged ? 'economy_changed' : postJobsChanged ? 'job_state_changed' : heartbeatDue ? 'hourly_heartbeat' : 'initial_cycle')
-      : (stillWaiting ? 'provider_cooldown' : 'no_material_change'),
+      ? (economyChanged ? 'economy_changed' : jobsChanged ? 'earning_state_changed' : heartbeatDue ? 'heartbeat' : 'initial_cycle')
+      : (stillWaiting ? 'provider_cooldown' : 'no_earning_event'),
   });
 }
