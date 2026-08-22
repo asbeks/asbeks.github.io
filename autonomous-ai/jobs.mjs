@@ -12,6 +12,20 @@ function clean(value, max = 500) {
   return String(value || '').replace(/\s+/g, ' ').trim().slice(0, max);
 }
 
+function marketSignature(items = []) {
+  return JSON.stringify((items || []).map((x) => ({
+    id: x.id,
+    rewardUsd: x.rewardUsd ?? null,
+    score: x.score ?? null,
+    updatedAt: x.updatedAt || null,
+    competition: x.competition ? {
+      comments: x.competition.comments ?? null,
+      attemptSignals: x.competition.attemptSignals ?? null,
+      risk: x.competition.risk || null,
+    } : null,
+  })).sort((a, b) => String(a.id).localeCompare(String(b.id))));
+}
+
 function parseReward(text = '') {
   const s = String(text);
   const patterns = [
@@ -129,6 +143,9 @@ async function readJobs() {
 }
 
 const jobs = await readJobs();
+const previousSignature = jobs.marketSignature || marketSignature(jobs.opportunities || []);
+const previousSelected = jobs.selected || null;
+const previousSelection = jobs.selection || null;
 const since = new Date(Date.now() - 45 * 86400000).toISOString().slice(0, 10);
 const headers = {
   Accept: 'application/vnd.github+json',
@@ -169,19 +186,37 @@ try {
   }
 
   inspected.sort((a, b) => (b.score - a.score) || ((b.rewardUsd || 0) - (a.rewardUsd || 0)));
-  jobs.version = 4;
+  const nextOpportunities = inspected.slice(0, MAX_RESULTS);
+  const nextSignature = marketSignature(nextOpportunities);
+  const marketChanged = nextSignature !== previousSignature;
+  const selectedStillExists = previousSelected?.id && nextOpportunities.some((x) => x.id === previousSelected.id);
+
+  jobs.version = 5;
   jobs.updatedAt = new Date().toISOString();
-  jobs.status = inspected.length ? 'candidates' : 'idle';
   jobs.source = 'github-public-issues';
-  jobs.opportunities = inspected.slice(0, MAX_RESULTS);
-  jobs.selected = null;
-  jobs.selection = null;
+  jobs.opportunities = nextOpportunities;
+  jobs.marketSignature = nextSignature;
+  jobs.marketChanged = marketChanged;
+
+  if (!marketChanged && previousSelection) {
+    jobs.selected = selectedStillExists ? previousSelected : null;
+    jobs.selection = previousSelection;
+    jobs.needsSelection = false;
+    jobs.status = jobs.selected ? 'selected' : 'idle';
+  } else {
+    jobs.selected = null;
+    jobs.selection = null;
+    jobs.needsSelection = nextOpportunities.length > 0;
+    jobs.status = nextOpportunities.length ? 'candidates' : 'idle';
+  }
   jobs.lastError = null;
 } catch (error) {
   jobs.updatedAt = new Date().toISOString();
   jobs.status = 'degraded';
+  jobs.marketChanged = false;
+  jobs.needsSelection = false;
   jobs.lastError = clean(error instanceof Error ? error.message : String(error), 300);
 }
 
 await fs.writeFile(JOBS_PATH, JSON.stringify(jobs, null, 2) + '\n');
-console.log(`Autonomous job scout: ${jobs.status}; opportunities=${jobs.opportunities?.length || 0}`);
+console.log(`Autonomous job scout: ${jobs.status}; opportunities=${jobs.opportunities?.length || 0}; marketChanged=${Boolean(jobs.marketChanged)}`);
