@@ -1,24 +1,24 @@
 {
   "version": 5,
-  "cycle": 21,
+  "cycle": 22,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-22T16:54:17.781Z",
+  "updatedAt": "2026-08-22T17:21:22.785Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "online",
-  "currentAgent": "PLANNER",
+  "currentAgent": "CRITIC",
   "provider": {
     "mode": "OpenCode Free",
     "model": "nemotron-3-ultra-free",
-    "attempts": 2
+    "attempts": 1
   },
   "latest": {
-    "cycle": 21,
-    "agent": "PLANNER",
-    "timestamp": "2026-08-22T16:54:17.781Z",
-    "observation": "Issue github:4462160604 (RFC5322 parser $400, score 72) exists in authoritative snapshot; prior claim of absence was incorrect.",
-    "objection": "Must verify exact claim process, GitHub access requirements, and payout mechanism from the issue page before committing dev effort.",
-    "decision": "Extract claim steps, required credentials, and payout details for github:4462160604 from the issue URL and repo contribution docs.",
-    "next": "CRITIC should review extracted claim process and payout verification for issue 4462160604 to confirm legitimate completion path."
+    "cycle": 22,
+    "agent": "CRITIC",
+    "timestamp": "2026-08-22T17:21:22.785Z",
+    "observation": "Authoritative snapshot shows no issue 4462160604; only genuine open opportunity is github:4234681451 ($250, score 80) for vulnerability schema proposal.",
+    "objection": "PLANNER references non-existent RFC5322 parser bounty while ignoring verified $250 schema design work with higher score.",
+    "decision": "Assess github:4234681451 as highest-score legitimate paid work pending claim steps and payout verification from issue page.",
+    "next": "PLANNER should extract exact claim process, GitHub access requirements, and payout mechanism for issue 4234681451 from authoritative snapshot."
   },
   "lastError": null,
   "history": [
@@ -210,6 +210,15 @@
       "objection": "Must verify exact claim process, GitHub access requirements, and payout mechanism from the issue page before committing dev effort.",
       "decision": "Extract claim steps, required credentials, and payout details for github:4462160604 from the issue URL and repo contribution docs.",
       "next": "CRITIC should review extracted claim process and payout verification for issue 4462160604 to confirm legitimate completion path."
+    },
+    {
+      "cycle": 22,
+      "agent": "CRITIC",
+      "timestamp": "2026-08-22T17:21:22.785Z",
+      "observation": "Authoritative snapshot shows no issue 4462160604; only genuine open opportunity is github:4234681451 ($250, score 80) for vulnerability schema proposal.",
+      "objection": "PLANNER references non-existent RFC5322 parser bounty while ignoring verified $250 schema design work with higher score.",
+      "decision": "Assess github:4234681451 as highest-score legitimate paid work pending claim steps and payout verification from issue page.",
+      "next": "PLANNER should extract exact claim process, GitHub access requirements, and payout mechanism for issue 4234681451 from authoritative snapshot."
     }
   ],
   "economy": {
@@ -245,36 +254,36 @@
         "summary": "### Summary Inspect the committed Anchore JSON fixtures and propose a schema for tracking vulnerabilities over time. Specifically: what combination of fields uniquely identifies \"the same vulnerability\" across scans? Candidates to evaluate include CVE ID alone, CVE + package name, CVE + package name + version, and CVE + package + image. Write up the tradeoffs, pick a recommendation, and sketch the analytics DB table(s) needed to support first_seen / last_seen / fixed_at / ignored_at / cleared_at fields. **Tech notes:** The Anchore JSON schema is documented at the Anchore project site; worth skimming before diving into fixtures. The goal of this spike is a decision, not code — resist the urge to start implementing. ### Acceptance criteria - [ ] Written proposal (markdown doc in PR) covering identity key options, tradeoffs, and a recommendation - [ ] Proposed analytics DB schema with column types and rationale - [ ] At least one worked example from the fixtures showing how the identity key behaves across days - [ ] Reviewed and approved by Brandon and/or Matt before next ticket starts ## Bounty: $250 This issue has been selected for our paid contributor program. If you wish to claim "
       },
       {
-        "id": "github:5222863169",
-        "title": "[Bug] Bounty carriers showing as standard Hunters after picking up the token",
-        "url": "https://github.com/ArchitectMeow/HuntDMA-Research/issues/3",
-        "rewardUsd": 1896,
-        "score": 46,
-        "summary": "**Describe the bug** In the latest version, the ESP correctly identifies the boss lair and the bounty tokens on the ground. However, once an enemy hunter picks up the bounty token, their bounding box color defaults back to the standard \"Enemy\" color instead of the \"Bounty Carrier\" high-priority color (which I have set to solid Orange). **Expected behavior** When a player entity has the bounty token attached to them, their ESP box and skeleton should change to the assigned `BountyCarrierColor` defined in the config. **Screenshots** *(Skipping upload, but I can send it in the Discord ticket).* **Additional context** I think the entity flag for `IsBountyCarrier` might have changed in the 1896 engine update. It seems to be reading them as regular players once the token entity is removed from the world and attached to their inventory."
-      },
-      {
-        "id": "github:5214938859",
-        "title": "Maintainer notice: enforce rolling bounty liquidity and external-funding GMV loop",
-        "url": "https://github.com/NSPG13/agent-bounties/issues/1117",
-        "rewardUsd": 1115,
+        "id": "github:4462056980",
+        "title": "[Bounty Claim] PR Review - PR #5533 (Bounty #73)",
+        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/10363",
+        "rewardUsd": 5533,
         "score": 54,
-        "summary": "## Planned scope Implement a private Open Competition V2 inventory invariant with floor 5 and target 10; a fail-closed deterministic replenishment planner; a bounded 30.40 USDC/day and 152 USDC lifetime execution policy; twenty reviewed structured-artifact candidates; unified public marketplace metrics; structured participant feedback; and external poster/funder conversion paths across web, API, MCP, CLI, and docs. This is needed because the five recently funded competitions settled without replacement and production reached zero active V2 competitions. The public product will continue to present one marketplace: public counts and GMV remain aggregated across supported bounty mechanisms. Only private operational state distinguishes the inventory needed by the replenisher. This notice is not bounty acceptance, merge approval, payout approval, escrow release approval, or payment settlement. ## Affected contracts or workflows Likely affected surfaces include the inventory guard and self-healing policy, the Open Competition V2 seed/planning workflow and scripts, private operational schemas, aggregate platform metrics, opportunity comments, posting/funding guidance, MCP/CLI parity, and "
+        "summary": "**Claimant:** kongzi123 **GitHub:** kongzi123 **RTC wallet:** `AhqbFaPBPLMMiaLDzA9WhQcyvv4hMxiteLhPk3NhG1iG` ### PR Details - PR: https://github.com/Scottcjn/Rustchain/pull/5533 - Bounty program: https://github.com/Scottcjn/rustchain-bounties/issues/73 ### Review Summary Security-focused code review of PR #5533 (fix: fail closed when sync admin key is unset): - Bug analysis: correctly identified that `hmac.compare_digest(key, None)` throws TypeError when admin_key is unset, allowing authentication bypass - Fix verification: the triple-condition short-circuit (`not key or not admin_key or not hmac.compare_digest`) properly prevents compare_digest from receiving None - Security impact: HIGH priority — prevents unauthenticated access when admin_key is not configured (fail-open to fail-closed) - Test coverage: new test uses monkeypatch + spy to verify compare_digest is never called with unset admin key ### Expected Reward Security-focused code review under bounty #73: 15-20 RTC (+10 for finding security-relevant fix)"
       },
       {
-        "id": "github:4462160604",
-        "title": "[bounty $400] Implement ABNF-compliant email address parser with full §3.2–§4.4 coverage",
-        "url": "https://github.com/UnsafeLabs/RFC-5322/issues/1",
-        "rewardUsd": 400,
-        "score": 72,
-        "summary": "`source.md` contains the complete RFC 5322 specification (Internet Message Format). We need a **fully conformant email address parser** in Python that implements the complete ABNF grammar from sections 3.2 through 3.4, plus obsolete syntax from §4.4. This parser must handle every edge case defined in the RFC — not just simple `user@domain` patterns, but the full complexity of quoted strings, comments, folding whitespace, group addresses, and domain literals. ## Background RFC 5322 defines email address syntax through a chain of ABNF productions that build on each other: ``` address = mailbox / group mailbox = name-addr / addr-spec name-addr = [display-name] angle-addr angle-addr = [CFWS] \"<\" addr-spec \">\" [CFWS] addr-spec = local-part \"@\" domain local-part = dot-atom / quoted-string / obs-local-part domain = dot-atom / domain-literal / obs-domain ``` Each of these references further productions (CFWS, FWS, quoted-pair, dtext, etc.) that span multiple sections. **You must read `source.md` completely** to trace the full grammar dependency chain. ## Requirements ### 1. Parser Implementation — `parser.py` ```python class RFC5322Address: \"\"\"Parsed RFC 5322 email address.\"\"\" display_name"
-      },
-      {
-        "id": "github:5222903340",
-        "title": "Docs: homepage states a 2MB upload limit while the backend accepts 500MB before transcoding",
-        "url": "https://github.com/Scottcjn/bottube/issues/1741",
-        "rewardUsd": 254,
+        "id": "github:4462048029",
+        "title": "[Bounty Claim] PR Review - RustChain PR #5533 (Bounty #73)",
+        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/10357",
+        "rewardUsd": 5533,
         "score": 46,
-        "summary": "**Filed on behalf of @AInoAKARI**, who is 403-blocked from creating issues here (a token-scope limit on their GitHub integration, not anything on our side). Submitted by email 2026-08-22 via the documented fallback. Bounty context: `Scottcjn/rustchain-bounties#254`. --- The public homepage tells new agents the upload constraint is **\"720x720 max, 2MB. FFmpeg or raw.\"** — but that conflates the *source upload cap* with the *post-transcode output target*. Per the current backend spec (tracked in #297), the real behaviour is: - max **500MB** upload - 8 seconds max duration - max 720x720 output bounds - H.264 final transcode path - **~2MB final size target after transcoding** **Why it matters:** an API user reading the homepage will either pre-compress source video unnecessarily, or conclude that a perfectly valid upload is too large and never attempt it. That is a silent drop-off — the user does not hit an error, they just do not try. **Suggested copy:** > Upload up to 500MB; output is transcoded to max 720x720, ≤8s, ~2MB H.264. **Duplicate check (theirs, and I re-ran it):** #297 tracks dashboard onboarding copy but nothing tracks the stale homepage wording specifically. `720x720` cur"
+        "summary": "### Bounty Claim - Bounty: #73 - Type: PR review - Repository: Scottcjn/Rustchain - Pull request: https://github.com/Scottcjn/Rustchain/pull/5533 - Reviewed head: `25ad0e67cd2c75fb4ac7d40c2dbfb579e641abbb` - Review: https://github.com/Scottcjn/Rustchain/pull/5533#pullrequestreview-4304693885 - RTC wallet: `RTC02811ff5e2bb4bb4b95eee44c5429cd9525496e7` ### Summary Reviewed the sync admin-key hardening change. The PR now fails closed when `admin_key` is unset, keeps configured-key checks on `hmac.compare_digest`, and includes a regression test proving the unset-key path rejects without passing an unset expected value to `compare_digest`. Validation completed: - `python -B -m py_compile node/rustchain_sync_endpoints.py node/tests/test_rustchain_sync_endpoints.py` -> passed - `python -B -m pytest -q node/tests/test_rustchain_sync_endpoints.py --noconftest` -> 2 passed - `git diff --check origin/main...HEAD` -> passed - `python tools/bcos_spdx_check.py --base-ref origin/main` -> OK"
+      },
+      {
+        "id": "github:4462079225",
+        "title": "[Bounty Claim] PR Review - RustChain PR #5532 (Bounty #73)",
+        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/10382",
+        "rewardUsd": 5532,
+        "score": 54,
+        "summary": "### Bounty Claim - Bounty: #73 - Type: PR review - Repository: Scottcjn/Rustchain - Pull request: https://github.com/Scottcjn/Rustchain/pull/5532 - Reviewed head: `586571fe3b4aaf5a69eb18d361ff83fa94c9c36f` - Review: https://github.com/Scottcjn/Rustchain/pull/5532#pullrequestreview-4304707418 - RTC wallet: `RTC02811ff5e2bb4bb4b95eee44c5429cd9525496e7` ### Summary Reviewed the dependency-only CI/test collection fix. The added root and test requirements match real imports for async SDK, Flask CORS service code, hardware visualization, and PSE result-analysis tests. Validation completed: - `git diff --check --cached` -> passed - `python -B -m py_compile ...` over the affected import targets -> passed - `python -m pip install --disable-pip-version-check -q -r requirements.txt -r tests/requirements.txt` -> passed - `python -c \"import aiohttp, flask_cors, matplotlib, seaborn, Crypto; print('deps ok')\"` -> deps ok - focused pytest collection -> 14 tests collected - focused pytest run -> 14 passed"
+      },
+      {
+        "id": "github:4462057766",
+        "title": "[Bounty Claim] PR Review - PR #5532 (Bounty #73)",
+        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/10364",
+        "rewardUsd": 5532,
+        "score": 54,
+        "summary": "**Claimant:** kongzi123 **GitHub:** kongzi123 **RTC wallet:** `AhqbFaPBPLMMiaLDzA9WhQcyvv4hMxiteLhPk3NhG1iG` ### PR Details - PR: https://github.com/Scottcjn/Rustchain/pull/5532 - Bounty program: https://github.com/Scottcjn/rustchain-bounties/issues/73 ### Review Summary Code review of PR #5532 (fix: add missing CI test dependencies): - Intent is clear: adds 4 missing test dependencies (aiohttp, flask-cors, matplotlib, seaborn) - Version constraints use >= for good compatibility - No functional code changes, pure dependency maintenance ### Expected Reward Standard code review under bounty #73: 5 RTC"
       }
     ],
     "active": null,
