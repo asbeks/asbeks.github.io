@@ -1,10 +1,10 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-22T12:47:36.161Z",
-  "status": "unconfigured",
+  "updatedAt": "2026-08-22T12:51:20.122Z",
+  "status": "degraded",
   "wallets": {
-    "tonAddress": "",
-    "tronAddress": ""
+    "tonAddress": "UQDVMl0cuJfXe3aY9h7Q0YZOlv6L95mgmgP5oiwP__bjbjav",
+    "tronAddress": "TKdwmwh8KnrU19MPLQc7E1wxAgZnsbWn6U"
   },
   "balances": {
     "TON": 0,
@@ -24,5 +24,5 @@
     "tronTimestamp": 0
   },
   "ledger": [],
-  "lastError": null
+  "lastError": "toncenter.com returned 429"
 }
