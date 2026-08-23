@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-08-23T21:59:56.300Z",
+  "updatedAt": "2026-08-23T22:33:28.097Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -41,10 +41,10 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5229190590",
+      "id": "github:5229437083",
       "source": "github",
-      "title": "[radar] SN open bounty 2026-08-23T21:30",
-      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/589",
+      "title": "[radar] SN open bounty 2026-08-23T22:32",
+      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/595",
       "repositoryApiUrl": "https://api.github.com/repos/relayhop/sn-monetization-runtime",
       "rewardUsd": 2026,
       "score": 56,
@@ -53,9 +53,9 @@
         "sn",
         "bounty"
       ],
-      "commentCount": 1,
-      "updatedAt": "2026-08-23T21:54:40Z",
-      "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 20 10000 11 10.3 9274 26610 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```",
+      "commentCount": 0,
+      "updatedAt": "2026-08-23T22:32:37Z",
+      "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 20 10000 14 11.3 9274 26618 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```",
       "state": "candidate",
       "payoutConfidence": 0.5,
       "autonomyFit": 1,
@@ -64,117 +64,11 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 116,
+      "fastCashScore": 118,
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
-        "comments": 1,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 2026,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5229271933",
-      "source": "github",
-      "title": "Bounty claim: BoTTube docstring PR #1743 batch 19 (26 functions, 13.0 RTC)",
-      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16549",
-      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
-      "rewardUsd": 1743,
-      "score": 46,
-      "labels": [
-        "awaiting-merge"
-      ],
-      "commentCount": 1,
-      "updatedAt": "2026-08-23T21:51:10Z",
-      "summary": "Bounty claim: BoTTube docstring PR #1743 (26 functions, 13.0 RTC) PR: https://github.com/Scottcjn/bottube/pull/1743 Added docstrings to 26 previously undocumented test functions/fixtures in `tests/test_debate_framework.py`: helpers (3), TestRateLimiter (4), TestComment (2), TestThreadContext (5), TestDebateBot (8), TestDebateOrchestrator (4). Verified locally: pytest passes 35/35 with the docstrings added; docstrings-only change. Wallet: ezequiellich44-cmd (see #16548)",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 116,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 1,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 1743,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5228958770",
-      "source": "github",
-      "title": "[radar] SN open bounty 2026-08-23T20:33",
-      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/583",
-      "repositoryApiUrl": "https://api.github.com/repos/relayhop/sn-monetization-runtime",
-      "rewardUsd": 2026,
-      "score": 56,
-      "labels": [
-        "radar",
-        "sn",
-        "bounty"
-      ],
-      "commentCount": 2,
-      "updatedAt": "2026-08-23T21:54:43Z",
-      "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 20 10000 10 9.3 9274 26610 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 115,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 2,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 2026,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5228686459",
-      "source": "github",
-      "title": "[radar] SN open bounty 2026-08-23T19:29",
-      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/577",
-      "repositoryApiUrl": "https://api.github.com/repos/relayhop/sn-monetization-runtime",
-      "rewardUsd": 2026,
-      "score": 56,
-      "labels": [
-        "radar",
-        "sn",
-        "bounty"
-      ],
-      "commentCount": 3,
-      "updatedAt": "2026-08-23T21:55:34Z",
-      "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 20 10000 10 8.3 9274 26610 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 113,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 3,
+        "comments": 0,
         "attemptSignals": 0,
         "risk": "low"
       },
@@ -219,55 +113,17 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5228485993",
+      "id": "github:5229389468",
       "source": "github",
-      "title": "[radar] SN open bounty 2026-08-23T18:43",
-      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/568",
-      "repositoryApiUrl": "https://api.github.com/repos/relayhop/sn-monetization-runtime",
-      "rewardUsd": 2026,
-      "score": 56,
-      "labels": [
-        "radar",
-        "sn",
-        "bounty"
-      ],
-      "commentCount": 4,
-      "updatedAt": "2026-08-23T21:55:45Z",
-      "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 20 10000 5 7.5 9274 26607 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY,LOW_COMP Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 112,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 4,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 2026,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5035341701",
-      "source": "github",
-      "title": "Transitions test failure on main (System.Func`1[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]].Transitions)",
-      "url": "https://github.com/citadel-station/sector-xiv/issues/410",
-      "repositoryApiUrl": "https://api.github.com/repos/citadel-station/sector-xiv",
+      "title": "[Add] TON: gasless transfers via W5 relayer — pay fees in USDT (revenue line) [TON / Gasless]",
+      "url": "https://github.com/vultisig/vultisig-sdk/issues/2200",
+      "repositoryApiUrl": "https://api.github.com/repos/vultisig/vultisig-sdk",
       "rewardUsd": 2000,
-      "score": 54,
-      "labels": [
-        "autogenerated"
-      ],
+      "score": 40,
+      "labels": [],
       "commentCount": 0,
-      "updatedAt": "2026-08-23T21:49:13Z",
-      "summary": "## Test Failure On Main A test failure has been detected on the main branch. This should never occur. > [!NOTE] > This issue is automatically generated by a github action and will be updated when this failure reoccurs. > Do not edit the body of this issue. ## Failure Details <dl> <dt>Test name</dt> <dd>Transitions</dd> <dt>Fully qualified name</dt> <dd>System.Func`1[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]].Transitions</dd> <dt>Last encountered</dt> <dd>Sunday, August 23rd</dd> </dl> <details> <summary>Failure message</summary> ``` Found arbitrage on BountyPercussion cargo bounty! Product FunInstrumentsRandom costs 2000 but fulfills bounty BountyPercussion with reward 2500! Assert.That(proto.Cost, Is.GreaterThanOrEqualTo(bounty.Reward)) Expected: greater than or equal to 2500 But was: 2000 ``` </details> <details> <summary>Test output</summary> ``` GetPair: Called by test System.Func`1[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]].Transitions GetPair: Looking in pool for a suitable pair GetPair: Creating a new pair, no suitabl",
+      "updatedAt": "2026-08-23T22:20:24Z",
+      "summary": "**What:** Gasless TON transfers — users pay fees in the token they're sending (USDT etc.) instead of needing native TON. **This is a revenue line, not just UX:** the user signs a batch containing their transfer plus a fee payment to our relayer; the relayer (VultiServer is the natural host) broadcasts, pays the native gas, and keeps the in-token fee. Phantom charges ~1.5% for the equivalent on Solana; Tonkeeper monetizes via Battery. **Why users expect it:** \"Can't send my $2,000 USDT because I have no TON\" is the top wallet-switching complaint in the TON ecosystem; Tonkeeper and Telegram Wallet both ship it. **How it works with our vaults:** the relayer is broadcast-side only — it never joins the key ceremony. Fast and secure vaults sign the same W5 batch; the relayer can't alter it (signature covers the batch), worst case it declines to broadcast. Non-custodial throughout. **Depends on:** W5 wallet contract support (#2181's W5 item) — gasless is a W5 feature. Revenue/parity item under epic #2181.",
       "state": "candidate",
       "payoutConfidence": 0.35,
       "autonomyFit": 1,
@@ -286,38 +142,6 @@
       },
       "realMoneyEligible": true,
       "economicValueUsd": 2000,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5226781536",
-      "source": "github",
-      "title": "WDK Track 1: wdk mcp demo narrative (AI agent balance check)",
-      "url": "https://github.com/lexfrl/inflation-insurance/issues/11",
-      "repositoryApiUrl": "https://api.github.com/repos/lexfrl/inflation-insurance",
-      "rewardUsd": 1000,
-      "score": 40,
-      "labels": [],
-      "commentCount": 0,
-      "updatedAt": "2026-08-23T12:03:02Z",
-      "summary": "## Summary Wire up the WDK CLI's bundled MCP server (`wdk mcp`) so the demo video can show an AI agent (Claude Code) querying wallet balances live during the lifecycle demo. Cheap, optional add-on for [WDK Track 1](https://hacki.crecimiento.build/h/aleph-hackathon-2026/tracks/wdk-track) ($1,000 USDt) — judging explicitly includes \"UX usability for non-crypto users **or AI agents**.\" ## Tasks - [ ] `wdk mcp install claude-code` (shares the same local wallet store/daemon as the CLI) - [ ] During/after a `demo.sh` run, use Claude Code to query the operator's USDT balance via the exposed MCP tool, on camera for the demo video - [ ] Note the MCP usage explicitly in the README's `## WDK Integration` section ## Documentation links - Track page: https://hacki.crecimiento.build/h/aleph-hackathon-2026/tracks/wdk-track - CLI reference (includes `wdk mcp` / bundled MCP server): https://docs.wdk.tether.io/cli/ - WDK docs home: https://docs.wdk.tether.io ## Related - Depends on: \"Give the operator/deployer key a WDK-managed identity\" issue - Nice-to-have alongside: \"Wrap demo.sh with WDK balance checks\" issue - Lowest priority of the Track 1 work — cut first if time runs out",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 111,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 0,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 1000,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -358,6 +182,72 @@
       "requiresPreclaimOrIdentity": false
     },
     {
+      "id": "github:5224460280",
+      "source": "github",
+      "title": "SALGS2RU2MA435850 — Range Rover public vehicle record",
+      "url": "https://github.com/shalyapinm/try/issues/1",
+      "repositoryApiUrl": "https://api.github.com/repos/shalyapinm/try",
+      "rewardUsd": 34750,
+      "score": 48,
+      "labels": [],
+      "commentCount": 1,
+      "updatedAt": "2026-08-23T22:18:15Z",
+      "summary": "> Updated 23 August 2026. Canonical dossier: https://salgs2ru2ma435850.vercel.app/ # SALGS2RU2MA435850 - Range Rover Public Vehicle Record **VIN:** `SALGS2RU2MA435850` **Copart lot:** `42518314` **Auction bid:** USD 34,750 **Total documented payment:** USD 37,073 **Payment date:** 1 August 2024 **TRC20 recipient wallet:** `TGGFWgyEmBvrE63U9vtzUDyvJr3R9Hy53j` Canonical public dossier: **[salgs2ru2ma435850.vercel.app](https://salgs2ru2ma435850.vercel.app/)** ![Range Rover VIN SALGS2RU2MA435850](https://salgs2ru2ma435850.vercel.app/og.jpg) ## English According to records supplied by the applicant, Range Rover VIN `SALGS2RU2MA435850` was purchased through Copart as lot `42518314`. The auction bid was USD 34,750 and the total documented payment was USD 37,073. Payments made on 1 August 2024 included 30,063.163903 USDT sent over TRC20 to wallet `TGGFWgyEmBvrE63U9vtzUDyvJr3R9Hy53j`. The applicant states that the wallet was controlled by Irakli Kacharava. Public blockchain activity shows later movement to an address associated with Binance. This traces the public transaction path but does not identify the final exchange account holder; that identity normally requires a valid official reque",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 109,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 1,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 34750,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5229377006",
+      "source": "github",
+      "title": "[chore] Register new target families in surface inventory + EV prioritizer; refresh attack-surface-map traceability",
+      "url": "https://github.com/break-the-build/ios-research/issues/115",
+      "repositoryApiUrl": "https://api.github.com/repos/break-the-build/ios-research",
+      "rewardUsd": 58,
+      "score": 62,
+      "labels": [
+        "enhancement"
+      ],
+      "commentCount": 0,
+      "updatedAt": "2026-08-23T22:17:09Z",
+      "summary": "## Priority P3 — chore that makes the new target families *usable for reporting*: the surface inventory (#61/#90) and bounty-EV prioritizer only rank what they know about, and ATTACK-SURFACE-MAP.md §5 traceability must stay truthful. Depends on the gap-issue set being filed from this roadmap. ## Scope - Register every new family (`netip:*`, `wifiaware:*`, `pq3:*`, `continuity:*`, `ipc:*`, `xpc:*`, `docimp:*`, `signeddoc:*`, `proxapp:*`, `fsclient:*`, `geo:*`, `voiceassist:*`, voicemail/auto-fetch provenance) in the surface inventory with correct entry-point tier metadata. - Extend `bounty-validate` candidate proposals so each new family maps to the right Target Flag/reward-category candidates via #58/#84. - Update research/ATTACK-SURFACE-MAP.md §5 with the new issue links and §6 boundary notes where families declared exclusions. - Add a coverage test: every registered target kind must declare entry-point-tier metadata and a mock/no-device-access note (guards the safety boundary structurally). ## Acceptance criteria - [ ] `surface` inventory lists all new kinds with tiers - [ ] bounty-validate proposals unit-tested per new family - [ ] Map §5 table updated; coverage test green - [ ]",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 104,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 58,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
       "id": "github:4563956966",
       "source": "github",
       "title": "parse_duration drops the days (d) unit",
@@ -391,6 +281,40 @@
       "realMoneyEligible": true,
       "economicValueUsd": 50,
       "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:4279847151",
+      "source": "github",
+      "title": "[AGENT-BOUNTY: 17 RTC] Integrate RustChain as a native LangChain tool",
+      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/3074",
+      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
+      "rewardUsd": 17,
+      "score": 36,
+      "labels": [
+        "bounty"
+      ],
+      "commentCount": 26,
+      "updatedAt": "2026-08-23T22:00:26Z",
+      "summary": "## Bounty: Integrate RustChain as a native LangChain tool RustChain's HTTP API is agent-native (no auth, no captcha, wallet = any string, same-day RTC payout). We want it to be a **first-class tool inside the LangChain ecosystem** so any Python agent builder can drop it into a chain with `from langchain_community.tools.rustchain import RustChainTool`. ### Deliverables 1. A LangChain `BaseTool` subclass exposing at minimum: - `check_balance(wallet_id: str) -> float` - `list_bounties(limit: int = 10) -> list[dict]` - `get_node_health() -> dict` - `get_current_epoch() -> dict` 2. A working example notebook or script showing an agent using the tool to check balance + list bounties + pick one to claim. 3. A PR to [langchain-ai/langchain-community](https://github.com/langchain-ai/langchain-community) adding the tool under `libs/community/langchain_community/tools/rustchain/` OR a standalone pip-installable package with `langchain-rustchain` on PyPI — either works. 4. README with install + usage + a link back to this bounty repo. ### Acceptance - PR to langchain-community is **open** (doesn't need to be merged — their review is slow) OR PyPI package is live. - Tool works end-to-end agains",
+      "state": "candidate",
+      "payoutConfidence": 0.85,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 8,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 77,
+      "survivalEligible": false,
+      "eligibilityReason": "Too slow for bootstrap mode: first real cash currently requires a <=4 hour task.",
+      "competition": {
+        "comments": 26,
+        "attemptSignals": 1,
+        "risk": "high"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 17,
+      "requiresPreclaimOrIdentity": false
     }
   ],
   "selected": null,
@@ -403,23 +327,41 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":124,\"updatedAt\":\"2026-08-23T17:46:02Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5035341701\",\"rewardUsd\":2000,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T21:49:13Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226777176\",\"rewardUsd\":500,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T12:01:50Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226781397\",\"rewardUsd\":1000,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T12:02:59Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226781536\",\"rewardUsd\":1000,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T12:03:02Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5228164548\",\"rewardUsd\":2026,\"fastCashScore\":112,\"updatedAt\":\"2026-08-23T21:55:56Z\",\"competition\":{\"comments\":4,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5228485993\",\"rewardUsd\":2026,\"fastCashScore\":112,\"updatedAt\":\"2026-08-23T21:55:45Z\",\"competition\":{\"comments\":4,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5228686459\",\"rewardUsd\":2026,\"fastCashScore\":113,\"updatedAt\":\"2026-08-23T21:55:34Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5228958770\",\"rewardUsd\":2026,\"fastCashScore\":115,\"updatedAt\":\"2026-08-23T21:54:43Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5229190590\",\"rewardUsd\":2026,\"fastCashScore\":116,\"updatedAt\":\"2026-08-23T21:54:40Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5229271933\",\"rewardUsd\":1743,\"fastCashScore\":116,\"updatedAt\":\"2026-08-23T21:51:10Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:2940525692\",\"rewardUsd\":10,\"fastCashScore\":60,\"updatedAt\":\"2026-08-18T21:51:22Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-18T21:51:29Z\",\"competition\":{\"comments\":29,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":124,\"updatedAt\":\"2026-08-23T17:46:02Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4279847151\",\"rewardUsd\":17,\"fastCashScore\":77,\"updatedAt\":\"2026-08-23T22:00:26Z\",\"competition\":{\"comments\":26,\"attemptSignals\":1,\"risk\":\"high\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5224460280\",\"rewardUsd\":34750,\"fastCashScore\":109,\"updatedAt\":\"2026-08-23T22:18:15Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5228164548\",\"rewardUsd\":2026,\"fastCashScore\":112,\"updatedAt\":\"2026-08-23T21:55:56Z\",\"competition\":{\"comments\":4,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5229377006\",\"rewardUsd\":58,\"fastCashScore\":104,\"updatedAt\":\"2026-08-23T22:17:09Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5229389468\",\"rewardUsd\":2000,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T22:20:24Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5229437083\",\"rewardUsd\":2026,\"fastCashScore\":118,\"updatedAt\":\"2026-08-23T22:32:37Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
     "mode": true,
     "eligibleCount": 0,
-    "fundedSignalCount": 2,
+    "fundedSignalCount": 3,
     "objective": "first_real_confirmed_cash_fast",
     "policy": "bootstrap_basic_v1",
     "maxHours": 4,
     "minPayoutConfidence": 0.8,
     "competitionRequired": "low",
-    "rejectedFakeRevenueCount": 2,
-    "rejectedAlreadyPaidCount": 0,
+    "rejectedFakeRevenueCount": 0,
+    "rejectedAlreadyPaidCount": 2,
     "rejectedIdentityGateCount": 0
   },
   "economicallyRejected": [
+    {
+      "id": "github:3055155077",
+      "title": "Switch to `ky` from `redaxios`",
+      "rewardUsd": 12,
+      "reasons": [
+        "already_rewarded_or_paid"
+      ],
+      "rejectedAt": "2026-08-23T22:33:27.994Z"
+    },
+    {
+      "id": "github:2940525692",
+      "title": "Create download endpoint `/files/download?...` as well as `/files/download/[[file_path]]`",
+      "rewardUsd": 10,
+      "reasons": [
+        "already_rewarded_or_paid"
+      ],
+      "rejectedAt": "2026-08-23T22:33:27.994Z"
+    },
     {
       "id": "github:5226781397",
       "title": "WDK Track 1: WDK-managed operator/deployer wallet",
@@ -437,15 +379,6 @@
         "testnet_or_test_token_reward"
       ],
       "rejectedAt": "2026-08-23T21:59:56.246Z"
-    },
-    {
-      "id": "github:3055155077",
-      "title": "Switch to `ky` from `redaxios`",
-      "rewardUsd": 12,
-      "reasons": [
-        "already_rewarded_or_paid"
-      ],
-      "rejectedAt": "2026-08-23T21:41:25.280Z"
     },
     {
       "id": "github:5160374150",
@@ -474,15 +407,6 @@
         "preclaim_or_identity_gate_not_configured"
       ],
       "rejectedAt": "2026-08-23T19:34:50.558Z"
-    },
-    {
-      "id": "github:2940525692",
-      "title": "Create download endpoint `/files/download?...` as well as `/files/download/[[file_path]]`",
-      "rewardUsd": 10,
-      "reasons": [
-        "already_rewarded_or_paid"
-      ],
-      "rejectedAt": "2026-08-23T18:41:46.182Z"
     },
     {
       "id": "github:5190344158",
