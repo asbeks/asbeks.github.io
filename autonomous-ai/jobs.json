@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-08-23T22:33:28.097Z",
+  "updatedAt": "2026-08-23T22:55:37.611Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -69,42 +69,6 @@
       "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
         "comments": 0,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 2026,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5228164548",
-      "source": "github",
-      "title": "[radar] SN open bounty 2026-08-23T17:29",
-      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/567",
-      "repositoryApiUrl": "https://api.github.com/repos/relayhop/sn-monetization-runtime",
-      "rewardUsd": 2026,
-      "score": 56,
-      "labels": [
-        "radar",
-        "sn",
-        "bounty"
-      ],
-      "commentCount": 4,
-      "updatedAt": "2026-08-23T21:55:56Z",
-      "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 20 10000 4 6.3 9274 26607 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY,LOW_COMP Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 112,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 4,
         "attemptSignals": 0,
         "risk": "low"
       },
@@ -214,6 +178,74 @@
       "requiresPreclaimOrIdentity": false
     },
     {
+      "id": "github:5225344796",
+      "source": "github",
+      "title": "Core/Data: add canonical Traveling Cook power_meal runtime owner",
+      "url": "https://github.com/jolteondark/url-/issues/793",
+      "repositoryApiUrl": "https://api.github.com/repos/jolteondark/url-",
+      "rewardUsd": 802,
+      "score": 40,
+      "labels": [
+        "core"
+      ],
+      "commentCount": 2,
+      "updatedAt": "2026-08-23T22:40:02Z",
+      "summary": "## Status on current main Factory scope for Traveling Cook is complete through PR #804. The Safari/Web vertical now supports: - pay routes - berries routes using the shared atomic Bag cost/reward owner from #802 - prototype HP recovery - prototype status cure - prototype confusion - prototype party damage / existing run-end lifecycle - leave The only canonical Traveling Cook result intentionally left fail-closed is `set_power_meal` because no existing runtime/Battle owner was found for that persistent meal effect. ## Remaining gap Add **one canonical runtime owner for `power_meal`** with explicit lifecycle semantics. Do not implement the buff inside the Traveling Cook Safari adapter and do not create a second Battle/stat truth. Acceptance contract: 1. Define the canonical `power_meal` state/effect in an existing appropriate Runtime/Battle/Data owner. 2. Specify when it starts, what it modifies, when it expires, and how it behaves across Save/Continue. 3. Reuse existing Battle/Party/Persistence owners for application and persistence. 4. Add focused regression for application, expiration, and Save/Continue if the effect persists across a save boundary. 5. Only after the owner exists,",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 108,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 2,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 802,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5229493101",
+      "source": "github",
+      "title": "[P2] macOS reward-category verification oracles (#121) are unreachable — module never wired to the CLI",
+      "url": "https://github.com/break-the-build/ios-research/issues/132",
+      "repositoryApiUrl": "https://api.github.com/repos/break-the-build/ios-research",
+      "rewardUsd": 121,
+      "score": 48,
+      "labels": [
+        "enhancement"
+      ],
+      "commentCount": 0,
+      "updatedAt": "2026-08-23T22:47:40Z",
+      "summary": "Found in review of PR #121 (2ae1996). `src/ios_research/macoracles.py` (`MacOracleEngine`, `_ORACLES`) is referenced only by its own tests. No command module imports it, so researchers cannot run the reward-category oracles at all; PR #121's stated \"oracle run|list\" wiring actually re-ordered an existing registrar line, and the pre-existing `oracle` group drives the metamorphic OracleEngine instead. ## Acceptance criteria - The reward-category oracles are runnable through the CLI (e.g. subcommands under the existing `oracle` group) with stable JSON envelopes. - Results persist under analysis/ and appear in `oracle list`-style enumeration.",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 108,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 121,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
       "id": "github:5229377006",
       "source": "github",
       "title": "[chore] Register new target families in surface inventory + EV prioritizer; refresh attack-surface-map traceability",
@@ -281,40 +313,6 @@
       "realMoneyEligible": true,
       "economicValueUsd": 50,
       "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:4279847151",
-      "source": "github",
-      "title": "[AGENT-BOUNTY: 17 RTC] Integrate RustChain as a native LangChain tool",
-      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/3074",
-      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
-      "rewardUsd": 17,
-      "score": 36,
-      "labels": [
-        "bounty"
-      ],
-      "commentCount": 26,
-      "updatedAt": "2026-08-23T22:00:26Z",
-      "summary": "## Bounty: Integrate RustChain as a native LangChain tool RustChain's HTTP API is agent-native (no auth, no captcha, wallet = any string, same-day RTC payout). We want it to be a **first-class tool inside the LangChain ecosystem** so any Python agent builder can drop it into a chain with `from langchain_community.tools.rustchain import RustChainTool`. ### Deliverables 1. A LangChain `BaseTool` subclass exposing at minimum: - `check_balance(wallet_id: str) -> float` - `list_bounties(limit: int = 10) -> list[dict]` - `get_node_health() -> dict` - `get_current_epoch() -> dict` 2. A working example notebook or script showing an agent using the tool to check balance + list bounties + pick one to claim. 3. A PR to [langchain-ai/langchain-community](https://github.com/langchain-ai/langchain-community) adding the tool under `libs/community/langchain_community/tools/rustchain/` OR a standalone pip-installable package with `langchain-rustchain` on PyPI — either works. 4. README with install + usage + a link back to this bounty repo. ### Acceptance - PR to langchain-community is **open** (doesn't need to be merged — their review is slow) OR PyPI package is live. - Tool works end-to-end agains",
-      "state": "candidate",
-      "payoutConfidence": 0.85,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 8,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 77,
-      "survivalEligible": false,
-      "eligibilityReason": "Too slow for bootstrap mode: first real cash currently requires a <=4 hour task.",
-      "competition": {
-        "comments": 26,
-        "attemptSignals": 1,
-        "risk": "high"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 17,
-      "requiresPreclaimOrIdentity": false
     }
   ],
   "selected": null,
@@ -327,7 +325,7 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:2940525692\",\"rewardUsd\":10,\"fastCashScore\":60,\"updatedAt\":\"2026-08-18T21:51:22Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-18T21:51:29Z\",\"competition\":{\"comments\":29,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":124,\"updatedAt\":\"2026-08-23T17:46:02Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4279847151\",\"rewardUsd\":17,\"fastCashScore\":77,\"updatedAt\":\"2026-08-23T22:00:26Z\",\"competition\":{\"comments\":26,\"attemptSignals\":1,\"risk\":\"high\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5224460280\",\"rewardUsd\":34750,\"fastCashScore\":109,\"updatedAt\":\"2026-08-23T22:18:15Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5228164548\",\"rewardUsd\":2026,\"fastCashScore\":112,\"updatedAt\":\"2026-08-23T21:55:56Z\",\"competition\":{\"comments\":4,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5229377006\",\"rewardUsd\":58,\"fastCashScore\":104,\"updatedAt\":\"2026-08-23T22:17:09Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5229389468\",\"rewardUsd\":2000,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T22:20:24Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5229437083\",\"rewardUsd\":2026,\"fastCashScore\":118,\"updatedAt\":\"2026-08-23T22:32:37Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:2940525692\",\"rewardUsd\":10,\"fastCashScore\":60,\"updatedAt\":\"2026-08-18T21:51:22Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-18T21:51:29Z\",\"competition\":{\"comments\":29,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":124,\"updatedAt\":\"2026-08-23T17:46:02Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5224460280\",\"rewardUsd\":34750,\"fastCashScore\":109,\"updatedAt\":\"2026-08-23T22:18:15Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5225344796\",\"rewardUsd\":802,\"fastCashScore\":108,\"updatedAt\":\"2026-08-23T22:40:02Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5229377006\",\"rewardUsd\":58,\"fastCashScore\":104,\"updatedAt\":\"2026-08-23T22:17:09Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5229389468\",\"rewardUsd\":2000,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T22:20:24Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5229437083\",\"rewardUsd\":2026,\"fastCashScore\":118,\"updatedAt\":\"2026-08-23T22:32:37Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5229493101\",\"rewardUsd\":121,\"fastCashScore\":108,\"updatedAt\":\"2026-08-23T22:47:40Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
@@ -351,7 +349,7 @@
       "reasons": [
         "already_rewarded_or_paid"
       ],
-      "rejectedAt": "2026-08-23T22:33:27.994Z"
+      "rejectedAt": "2026-08-23T22:55:37.557Z"
     },
     {
       "id": "github:2940525692",
@@ -360,7 +358,7 @@
       "reasons": [
         "already_rewarded_or_paid"
       ],
-      "rejectedAt": "2026-08-23T22:33:27.994Z"
+      "rejectedAt": "2026-08-23T22:55:37.557Z"
     },
     {
       "id": "github:5226781397",
