@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-08-23T11:03:07.467Z",
+  "updatedAt": "2026-08-23T11:32:22.321Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -41,26 +41,21 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5189454900",
+      "id": "github:5226664248",
       "source": "github",
-      "title": "[BOUNTY · OPEN FOR CONTRIBUTORS] Crea il fumetto visuale “Come funziona MyZubster” — 300 MYZ proposed",
-      "url": "https://github.com/MyZubster-Ecosystem/myzubster/issues/526",
-      "repositoryApiUrl": "https://api.github.com/repos/MyZubster-Ecosystem/myzubster",
-      "rewardUsd": 300,
-      "score": 72,
+      "title": "[radar] SN open bounty 2026-08-23T11:30",
+      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/550",
+      "repositoryApiUrl": "https://api.github.com/repos/relayhop/sn-monetization-runtime",
+      "rewardUsd": 2026,
+      "score": 56,
       "labels": [
-        "documentation",
-        "good first issue",
-        "bounty",
-        "type:bounty",
-        "status:proposed",
-        "reward:myz",
-        "reward:xmr",
-        "reward:token"
+        "radar",
+        "sn",
+        "bounty"
       ],
-      "commentCount": 4,
-      "updatedAt": "2026-08-23T10:18:02Z",
-      "summary": "# 🎨 Bounty — Crea il fumetto visuale “Come funziona MyZubster” ## Status **OPEN FOR CONTRIBUTORS / PROPOSED** > Questa issue è aperta a contributor visuali, illustratori e designer. Per evitare lavoro duplicato, commenta **`CLAIM`** prima di iniziare indicando alias, workflow (human-made / AI-assisted / mixed) e data prevista di consegna. ## Reward **300 MYZ proposed** — `Discovery Episode` tier. - Asset/accounting unit: **MYZ internal reward/accounting ledger** - Amount: **300 MYZ proposed** - Funding state: **PROPOSED — not yet guaranteed or externally settled** - Review: **manual maintainer verification** La definizione del reward rende il task leggibile e confrontabile, ma non costituisce promessa automatica di pagamento. Il reward può essere registrato solo dopo i gate previsti da `BOUNTIES.md`; qualunque settlement esterno resta separato e richiede verifica indipendente. ## Objective Trasformare il workflow **“Come funziona MyZubster”** in un fumetto/visual guide originale, chiaro, coerente con l’architettura reale del progetto e comprensibile anche a chi non conosce il codice. ## Deliverable minimo Realizzare **4–8 vignette/pagine + cover**, oppure una tavola equivalente ad",
+      "commentCount": 0,
+      "updatedAt": "2026-08-23T11:30:20Z",
+      "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 0 10000 0 0.3 9274 26598 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY,LOW_COMP,FRESH Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```",
       "state": "candidate",
       "payoutConfidence": 0.5,
       "autonomyFit": 1,
@@ -69,30 +64,30 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 112,
+      "fastCashScore": 118,
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
-        "comments": 4,
+        "comments": 0,
         "attemptSignals": 0,
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 300,
+      "economicValueUsd": 2026,
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5226437489",
+      "id": "github:5224460280",
       "source": "github",
-      "title": "fix(api): map Multer upload parser errors to 400",
-      "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/12031",
-      "repositoryApiUrl": "https://api.github.com/repos/SecureBananaLabs/bug-bounty",
-      "rewardUsd": 11398,
-      "score": 46,
+      "title": "SALGS2RU2MA435850 — Range Rover public vehicle record",
+      "url": "https://github.com/shalyapinm/try/issues/1",
+      "repositoryApiUrl": "https://api.github.com/repos/shalyapinm/try",
+      "rewardUsd": 34750,
+      "score": 48,
       "labels": [],
       "commentCount": 0,
-      "updatedAt": "2026-08-23T10:25:07Z",
-      "summary": "## Bug `POST /api/uploads` uses `upload.single(\"file\")`. When a client sends malformed multipart input such as a file under an unexpected field name (`avatar` instead of `file`), Multer raises a `MulterError` with code `LIMIT_UNEXPECTED_FILE`. The current global error handler treats every such parser error as an unexpected server failure and returns HTTP 500. Malformed multipart input is a client error, so returning 500 is misleading and encourages incorrect retries. ## Expected fix - Recognize Multer parser errors in the shared API error handler. - Return HTTP 400 using the existing `{ success: false, message }` response shape. - Preserve the existing 500 behavior for unrelated unexpected errors. - Add focused regression coverage for an unexpected multipart file field. ## Scope Keep this limited to Multer parser error handling and focused API tests. Do not add file-size policy, MIME filtering, upload authentication, or missing-file handling in this issue. This issue is limited only to the creator of this issue. This means that only the issue author can attempt to solve this issue. If you would like to work on it, please create another issue with the same contents and refer to issu",
+      "updatedAt": "2026-08-23T11:11:11Z",
+      "summary": "> Updated 23 August 2026. Canonical dossier: https://salgs2ru2ma435850.vercel.app/ # SALGS2RU2MA435850 - Range Rover Public Vehicle Record **VIN:** `SALGS2RU2MA435850` **Copart lot:** `42518314` **Auction bid:** USD 34,750 **Total documented payment:** USD 37,073 **Payment date:** 1 August 2024 **TRC20 recipient wallet:** `TGGFWgyEmBvrE63U9vtzUDyvJr3R9Hy53j` Canonical public dossier: **[salgs2ru2ma435850.vercel.app](https://salgs2ru2ma435850.vercel.app/)** ![Range Rover VIN SALGS2RU2MA435850](https://salgs2ru2ma435850.vercel.app/og.jpg) ## English According to records supplied by the applicant, Range Rover VIN `SALGS2RU2MA435850` was purchased through Copart as lot `42518314`. The auction bid was USD 34,750 and the total documented payment was USD 37,073. Payments made on 1 August 2024 included 30,063.163903 USDT sent over TRC20 to wallet `TGGFWgyEmBvrE63U9vtzUDyvJr3R9Hy53j`. The applicant states that the wallet was controlled by Irakli Kacharava. Public blockchain activity shows later movement to an address associated with Binance. This traces the public transaction path but does not identify the final exchange account holder; that identity normally requires a valid official reque",
       "state": "candidate",
       "payoutConfidence": 0.35,
       "autonomyFit": 1,
@@ -110,43 +105,7 @@
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 11398,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5226422314",
-      "source": "github",
-      "title": "H1 — Dual-Dialect Interop Bridge (Obsidian-native files + Notion-compatible content)",
-      "url": "https://github.com/coderhd/lekhan/issues/78",
-      "repositoryApiUrl": "https://api.github.com/repos/coderhd/lekhan",
-      "rewardUsd": 5000,
-      "score": 54,
-      "labels": [
-        "ready-for-agent",
-        "epic",
-        "h1"
-      ],
-      "commentCount": 0,
-      "updatedAt": "2026-08-23T10:20:36Z",
-      "summary": "## Problem Statement People who think in both tools live a split-brain life today: - **Notion → Obsidian** migrations lose wikilinks (or need a plugin), degrade databases to flat CSVs, append UUIDs to every filename, and break image paths. A \\$5,000 bounty for proper database import has sat open on Obsidian's own importer for 2+ years. - **Obsidian → Notion** is worse: Notion's built-in zip import turns `[[wikilinks]]` into dead plain text, flattens callouts into generic quotes, dumps YAML frontmatter as raw text, renders `![[embeds]]` literally, and caps free imports at 5 MB. - **Copy-paste between them** loses links, callouts, highlights, and metadata both ways. The most common community advice for people who want both worlds is *\"run both tools and maintain two knowledge systems.\"* That is a tax on a large population, paid daily. ## Solution Lekhan becomes the compatibility layer — the Wine of PKM: one knowledge graph that speaks both dialects natively. 1. **Inbound**: import from an Obsidian vault or a Notion workspace; everything resolves to Lekhan Pages, Page links, Page properties, and Tags — with an honest Import report. 2. **Outbound**: one-click export of any Page or whol",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 111,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 0,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 5000,
+      "economicValueUsd": 34750,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -187,41 +146,6 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5226565169",
-      "source": "github",
-      "title": "Catch assertion-free tests with mutation testing on changed files",
-      "url": "https://github.com/ls1intum/Hephaestus/issues/1498",
-      "repositoryApiUrl": "https://api.github.com/repos/ls1intum/Hephaestus",
-      "rewardUsd": 27,
-      "score": 40,
-      "labels": [
-        "size:M",
-        "test"
-      ],
-      "commentCount": 0,
-      "updatedAt": "2026-08-23T11:02:30Z",
-      "summary": "Coverage tells you a line executed. It cannot tell you an assertion checked anything. That gap is the specific failure mode of AI-written tests. Thoughtworks Technology Radar Vol 34 (April 2026) places mutation testing in **Trial** and says why: it *\"acts as a reinforcement layer for catching 'perpetually green' tests — those that pass regardless of logic changes due to missing assertions or decoupled mocks.\"* The failure it guards against is measured, not hypothetical. SpecBench ([arXiv:2605.21384](https://arxiv.org/abs/2605.21384), May 2026) documents agents overwriting tests and deleting assertions to satisfy a verifier, with the reward-hacking gap widening roughly 27 percentage points per 10× increase in code size. Independently, weak assertions in LLM-generated tests are documented empirically in [arXiv:2406.18181](https://arxiv.org/abs/2406.18181). We have 1,496 Storybook tests, 932 webapp unit tests and three server test tiers. Nothing currently distinguishes the ones that would still pass if the code under them were wrong. ## Scope Pilot on **one module**, scoped to changed files, on a nightly or PR-scoped tier — never the inner loop. - TypeScript: **StrykerJS** has first-c",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 100,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 0,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 27,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
       "id": "github:5224489257",
       "source": "github",
       "title": "R-#214: ClusterFundV2 — el 10% de pagos de cursos GD llega íntegro al fondo del país",
@@ -251,6 +175,78 @@
       },
       "realMoneyEligible": true,
       "economicValueUsd": 10,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5161425279",
+      "source": "github",
+      "title": "Semantic content invariants: the extractor's enforced check set",
+      "url": "https://github.com/maximsan/brewpath/issues/100",
+      "repositoryApiUrl": "https://api.github.com/repos/maximsan/brewpath",
+      "rewardUsd": 10,
+      "score": 30,
+      "labels": [
+        "enhancement",
+        "ready-for-agent"
+      ],
+      "commentCount": 2,
+      "updatedAt": "2026-08-23T11:28:20Z",
+      "summary": "> *This was generated by AI during triage.* Specifies the invariant set resolved on [#27](https://github.com/maximsan/brewpath/issues/27). Blocked by [#77](https://github.com/maximsan/brewpath/issues/77), which builds the extractor, the `ContentCard` union and the write mechanism this extends. ## Problem Statement A content author can break the course in ways that every existing check passes clean. The extractor's referential integrity asks *does this id resolve?* Three classes of real defect answer yes and are still wrong: - **A reference that resolves but is not true.** Five Espresso dictionary terms pointed at Grind lessons that never mention crema, portafilter, cortado, tamp or channeling. The lessons exist. The pointers resolve. They are simply false. Run today's audit logic against the commit before the audit was written and it flags **25 such pointers**. - **The same content in two places.** Two lessons carried a byte-identical `concept` card — and that was the visible tip of **five overlapping cards** between them, the other four being paraphrase that no byte comparison reaches. - **Collisions in fields nobody promised were unique.** Two collectibles titled *Fermentation*, ",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 92,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 2,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 10,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5214386459",
+      "source": "github",
+      "title": "[Test] Add Hypothesis fuzz tests for search, intake, MCP protocol",
+      "url": "https://github.com/Ikalus1988/MisakaNet/issues/1182",
+      "repositoryApiUrl": "https://api.github.com/repos/Ikalus1988/MisakaNet",
+      "rewardUsd": 100,
+      "score": 58,
+      "labels": [
+        "enhancement",
+        "ready",
+        "agent-friendly",
+        "zero-bounty"
+      ],
+      "commentCount": 3,
+      "updatedAt": "2026-08-23T11:27:55Z",
+      "summary": "## Problem The repo has contract tests (`test_mcp_auth_contract.py`) and stress tests (`mcp-stress.yml`) but no fuzz testing. Fuzz testing is the only way to find edge cases in: - BM25 search query parsing (special characters, unicode, extremely long queries) - Intake redaction (adversarial inputs trying to bypass redaction) - MCP protocol handling (malformed JSON-RPC, oversized payloads) ## Proposed Design ### Search fuzzing ```python # tests/test_search_fuzz.py from hypothesis import given, strategies as st @given(query=st.text(min_size=0, max_size=10000)) def test_search_never_crashes(query): \"\"\"Search should never crash, regardless of input.\"\"\" result = search_lessons(query) assert isinstance(result, list) @given(query=st.text(alphabet=st.characters(blacklist_categories=(\"Cs\",)))) def test_search_handles_unicode(query): \"\"\"Search handles all unicode without error.\"\"\" result = search_lessons(query) assert isinstance(result, list) ``` ### Intake redaction fuzzing ```python # tests/test_intake_fuzz.py @given(payload=st.dictionaries( keys=st.text(min_size=1, max_size=100), values=st.text(min_size=0, max_size=10000) )) def test_redaction_never_leaks_secrets(payload): \"\"\"Redaction sh",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 87,
+      "survivalEligible": false,
+      "eligibilityReason": "Competition is too high for bootstrap mode.",
+      "competition": {
+        "comments": 3,
+        "attemptSignals": 2,
+        "risk": "medium"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 100,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -287,38 +283,6 @@
       "realMoneyEligible": true,
       "economicValueUsd": 50,
       "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5226052030",
-      "source": "github",
-      "title": "[ABI/stdlib] External bool decoder accepts non-canonical returndata: any >=32-byte buffer with leading true-word decodes as true, tail ignored (v26.1.0, v26.2.0)",
-      "url": "https://github.com/argotorg/fe/issues/1539",
-      "repositoryApiUrl": "https://api.github.com/repos/argotorg/fe",
-      "rewardUsd": 33,
-      "score": 54,
-      "labels": [],
-      "commentCount": 1,
-      "updatedAt": "2026-08-23T09:54:49Z",
-      "summary": "## Summary The msg-decode helper emitted by fe/Sonatina for external calls returning `bool` accepts **any returndata buffer of at least 32 bytes whose first 32-byte word equals the canonical true word** — everything past byte 32 is silently ignored. A contract author's mental model (\"the external call returned exactly one ABI-encoded bool\") does not match emitted behavior (\"first word is 1, tail is irrelevant\"). A counterparty returning `(true, <attacker-controlled data>)` tuples, padded buffers, or stale-memory tails decodes as a clean `true`. This diverges from Solidity's stricter handling and widens the attack surface for cross-language contract composition. ## Reproduction Setup: real fe BountyRegistry build deployed locally (self-admin); a Solidity mock challenge whose `isSolved()` returns attacker-chosen raw returndata via inline assembly `return(ptr, len)`; register → fund → lock → claim pipeline per shape. ### Accept/reject matrix (12 shapes) | Shape | Length | Payload | Result | |---|---|---|---| | canonical true (control) | 32 | `...01` | ACCEPT — prize paid | | true + garbage byte | 33 | `...01 ff` | **ACCEPT — prize paid** | | true + zero tail | 33 | `...01 00` | **ACCE",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 8,
-      "complexity": 4,
-      "fundedBountySignal": false,
-      "fastCashScore": 72,
-      "survivalEligible": false,
-      "eligibilityReason": "Too slow for bootstrap mode: first real cash currently requires a <=4 hour task.",
-      "competition": {
-        "comments": 1,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 33,
-      "requiresPreclaimOrIdentity": false
     }
   ],
   "selected": null,
@@ -331,7 +295,7 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-18T21:51:29Z\",\"competition\":{\"comments\":29,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":125,\"updatedAt\":\"2026-08-22T16:37:56Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5189454900\",\"rewardUsd\":300,\"fastCashScore\":112,\"updatedAt\":\"2026-08-23T10:18:02Z\",\"competition\":{\"comments\":4,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5222232739\",\"rewardUsd\":15,\"fastCashScore\":108,\"updatedAt\":\"2026-08-23T10:15:05Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5224489257\",\"rewardUsd\":10,\"fastCashScore\":95,\"updatedAt\":\"2026-08-23T00:46:19Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226052030\",\"rewardUsd\":33,\"fastCashScore\":72,\"updatedAt\":\"2026-08-23T09:54:49Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226422314\",\"rewardUsd\":5000,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T10:20:36Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226437489\",\"rewardUsd\":11398,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T10:25:07Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226523324\",\"rewardUsd\":10,\"fastCashScore\":74,\"updatedAt\":\"2026-08-23T10:56:50Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226565169\",\"rewardUsd\":27,\"fastCashScore\":100,\"updatedAt\":\"2026-08-23T11:02:30Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:2940525692\",\"rewardUsd\":10,\"fastCashScore\":60,\"updatedAt\":\"2026-08-18T21:51:22Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-18T21:51:29Z\",\"competition\":{\"comments\":29,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":125,\"updatedAt\":\"2026-08-22T16:37:56Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5161425279\",\"rewardUsd\":10,\"fastCashScore\":92,\"updatedAt\":\"2026-08-23T11:28:20Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5214386459\",\"rewardUsd\":100,\"fastCashScore\":87,\"updatedAt\":\"2026-08-23T11:27:55Z\",\"competition\":{\"comments\":3,\"attemptSignals\":2,\"risk\":\"medium\"}},{\"id\":\"github:5221221220\",\"rewardUsd\":100,\"fastCashScore\":112,\"updatedAt\":\"2026-08-23T11:27:55Z\",\"competition\":{\"comments\":2,\"attemptSignals\":1,\"risk\":\"medium\"}},{\"id\":\"github:5224460280\",\"rewardUsd\":34750,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T11:11:11Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5224489257\",\"rewardUsd\":10,\"fastCashScore\":95,\"updatedAt\":\"2026-08-23T00:46:19Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226584139\",\"rewardUsd\":100,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T11:27:52Z\",\"competition\":{\"comments\":3,\"attemptSignals\":1,\"risk\":\"medium\"}},{\"id\":\"github:5226664248\",\"rewardUsd\":2026,\"fastCashScore\":118,\"updatedAt\":\"2026-08-23T11:30:20Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
@@ -343,11 +307,47 @@
     "maxHours": 4,
     "minPayoutConfidence": 0.8,
     "competitionRequired": "low",
-    "rejectedFakeRevenueCount": 1,
-    "rejectedAlreadyPaidCount": 1,
+    "rejectedFakeRevenueCount": 0,
+    "rejectedAlreadyPaidCount": 2,
     "rejectedIdentityGateCount": 2
   },
   "economicallyRejected": [
+    {
+      "id": "github:5221221220",
+      "title": "[Provenance] Batch 3: Add provenance to remaining 107 lessons",
+      "rewardUsd": 100,
+      "reasons": [
+        "preclaim_or_identity_gate_not_configured"
+      ],
+      "rejectedAt": "2026-08-23T11:32:22.268Z"
+    },
+    {
+      "id": "github:5226584139",
+      "title": "[Intake] Add intake content validation script",
+      "rewardUsd": 100,
+      "reasons": [
+        "preclaim_or_identity_gate_not_configured"
+      ],
+      "rejectedAt": "2026-08-23T11:32:22.268Z"
+    },
+    {
+      "id": "github:3055155077",
+      "title": "Switch to `ky` from `redaxios`",
+      "rewardUsd": 12,
+      "reasons": [
+        "already_rewarded_or_paid"
+      ],
+      "rejectedAt": "2026-08-23T11:32:22.268Z"
+    },
+    {
+      "id": "github:2940525692",
+      "title": "Create download endpoint `/files/download?...` as well as `/files/download/[[file_path]]`",
+      "rewardUsd": 10,
+      "reasons": [
+        "already_rewarded_or_paid"
+      ],
+      "rejectedAt": "2026-08-23T11:32:22.269Z"
+    },
     {
       "id": "github:5222232739",
       "title": "[Docs] README payout instructions say Base — bounties pay test USDC on ARC Testnet",
@@ -359,15 +359,6 @@
       "rejectedAt": "2026-08-23T11:03:07.364Z"
     },
     {
-      "id": "github:3055155077",
-      "title": "Switch to `ky` from `redaxios`",
-      "rewardUsd": 12,
-      "reasons": [
-        "already_rewarded_or_paid"
-      ],
-      "rejectedAt": "2026-08-23T11:03:07.364Z"
-    },
-    {
       "id": "github:5226523324",
       "title": "[QUEST] Add polli earnings to the CLI",
       "rewardUsd": 10,
@@ -375,15 +366,6 @@
         "preclaim_or_identity_gate_not_configured"
       ],
       "rejectedAt": "2026-08-23T11:03:07.365Z"
-    },
-    {
-      "id": "github:2940525692",
-      "title": "Create download endpoint `/files/download?...` as well as `/files/download/[[file_path]]`",
-      "rewardUsd": 10,
-      "reasons": [
-        "already_rewarded_or_paid"
-      ],
-      "rejectedAt": "2026-08-23T10:43:15.114Z"
     },
     {
       "id": "github:5112736273",
