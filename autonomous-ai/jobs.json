@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-08-23T19:34:50.604Z",
+  "updatedAt": "2026-08-23T19:54:05.181Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -53,8 +53,8 @@
         "sn",
         "bounty"
       ],
-      "commentCount": 0,
-      "updatedAt": "2026-08-23T19:29:33Z",
+      "commentCount": 1,
+      "updatedAt": "2026-08-23T19:52:32Z",
       "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 20 10000 10 8.3 9274 26610 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```",
       "state": "candidate",
       "payoutConfidence": 0.5,
@@ -64,11 +64,11 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 118,
+      "fastCashScore": 116,
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
-        "comments": 0,
+        "comments": 1,
         "attemptSignals": 0,
         "risk": "low"
       },
@@ -77,10 +77,10 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5226664248",
+      "id": "github:5228164548",
       "source": "github",
-      "title": "[radar] SN open bounty 2026-08-23T11:30",
-      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/550",
+      "title": "[radar] SN open bounty 2026-08-23T17:29",
+      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/567",
       "repositoryApiUrl": "https://api.github.com/repos/relayhop/sn-monetization-runtime",
       "rewardUsd": 2026,
       "score": 56,
@@ -90,8 +90,8 @@
         "bounty"
       ],
       "commentCount": 2,
-      "updatedAt": "2026-08-23T19:24:41Z",
-      "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 0 10000 0 0.3 9274 26598 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY,LOW_COMP,FRESH Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```",
+      "updatedAt": "2026-08-23T19:53:25Z",
+      "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 20 10000 4 6.3 9274 26607 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY,LOW_COMP Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```",
       "state": "candidate",
       "payoutConfidence": 0.5,
       "autonomyFit": 1,
@@ -113,10 +113,10 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5226985077",
+      "id": "github:5228485993",
       "source": "github",
-      "title": "[radar] SN open bounty 2026-08-23T12:56",
-      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/551",
+      "title": "[radar] SN open bounty 2026-08-23T18:43",
+      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/568",
       "repositoryApiUrl": "https://api.github.com/repos/relayhop/sn-monetization-runtime",
       "rewardUsd": 2026,
       "score": 56,
@@ -126,8 +126,8 @@
         "bounty"
       ],
       "commentCount": 2,
-      "updatedAt": "2026-08-23T19:24:38Z",
-      "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 0 10000 1 1.7 9274 26599 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY,LOW_COMP,FRESH Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```",
+      "updatedAt": "2026-08-23T19:52:36Z",
+      "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 20 10000 5 7.5 9274 26607 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY,LOW_COMP Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```",
       "state": "candidate",
       "payoutConfidence": 0.5,
       "autonomyFit": 1,
@@ -178,6 +178,38 @@
       },
       "realMoneyEligible": true,
       "economicValueUsd": 34750,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5228779691",
+      "source": "github",
+      "title": "Strikes Back Luck Boxes do not appear",
+      "url": "https://github.com/anzensan/project-liminal-gate/issues/76",
+      "repositoryApiUrl": "https://api.github.com/repos/anzensan/project-liminal-gate",
+      "rewardUsd": 1080,
+      "score": 40,
+      "labels": [],
+      "commentCount": 0,
+      "updatedAt": "2026-08-23T19:53:01Z",
+      "summary": "The luck rewards never appear for any of the Strikes Back quests. Cleared Kraken Kino (level 65) with the below team that has 81 average luck, but the luck reward didn't even appear. <img width=\"1080\" height=\"2340\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/7842d315-f9f0-4e7c-a4ba-0e6befedbe98\" /> Not normally a big issue, but there are character specific companions that ONLY appear from the luck 100 chests from these quests. I have tested this on both Slugosaur Kino and 8-bit Golem and none show the luck box rewards.",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 111,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 1080,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -250,21 +282,57 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5227381871",
+      "id": "github:5226422314",
       "source": "github",
-      "title": "[radar] SN open bounty 2026-08-23T14:33",
-      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/553",
+      "title": "H1 — Dual-Dialect Interop Bridge (Obsidian-native files + Notion-compatible content)",
+      "url": "https://github.com/coderhd/lekhan/issues/78",
+      "repositoryApiUrl": "https://api.github.com/repos/coderhd/lekhan",
+      "rewardUsd": 5000,
+      "score": 54,
+      "labels": [
+        "ready-for-agent",
+        "epic",
+        "h1"
+      ],
+      "commentCount": 1,
+      "updatedAt": "2026-08-23T19:45:35Z",
+      "summary": "## Problem Statement People who think in both tools live a split-brain life today: - **Notion → Obsidian** migrations lose wikilinks (or need a plugin), degrade databases to flat CSVs, append UUIDs to every filename, and break image paths. A \\$5,000 bounty for proper database import has sat open on Obsidian's own importer for 2+ years. - **Obsidian → Notion** is worse: Notion's built-in zip import turns `[[wikilinks]]` into dead plain text, flattens callouts into generic quotes, dumps YAML frontmatter as raw text, renders `![[embeds]]` literally, and caps free imports at 5 MB. - **Copy-paste between them** loses links, callouts, highlights, and metadata both ways. The most common community advice for people who want both worlds is *\"run both tools and maintain two knowledge systems.\"* That is a tax on a large population, paid daily. ## Solution Lekhan becomes the compatibility layer — the Wine of PKM: one knowledge graph that speaks both dialects natively. 1. **Inbound**: import from an Obsidian vault or a Notion workspace; everything resolves to Lekhan Pages, Page links, Page properties, and Tags — with an honest Import report. 2. **Outbound**: one-click export of any Page or whol",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 109,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 1,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 5000,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5227922199",
+      "source": "github",
+      "title": "[radar] SN open bounty 2026-08-23T16:36",
+      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/555",
       "repositoryApiUrl": "https://api.github.com/repos/relayhop/sn-monetization-runtime",
       "rewardUsd": 2026,
-      "score": 56,
+      "score": 48,
       "labels": [
         "radar",
         "sn",
         "bounty"
       ],
-      "commentCount": 5,
-      "updatedAt": "2026-08-23T19:22:33Z",
-      "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 0 10000 2 3.3 9274 26606 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY,LOW_COMP Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```",
+      "commentCount": 8,
+      "updatedAt": "2026-08-23T19:53:31Z",
+      "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 20 10000 4 5.4 9274 26606 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY,LOW_COMP Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```",
       "state": "candidate",
       "payoutConfidence": 0.5,
       "autonomyFit": 1,
@@ -273,57 +341,16 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 110,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 5,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 2026,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5189454900",
-      "source": "github",
-      "title": "[BOUNTY · OPEN FOR CONTRIBUTORS] Crea il fumetto visuale “Come funziona MyZubster” — 300 MYZ proposed",
-      "url": "https://github.com/MyZubster-Ecosystem/myzubster/issues/526",
-      "repositoryApiUrl": "https://api.github.com/repos/MyZubster-Ecosystem/myzubster",
-      "rewardUsd": 300,
-      "score": 64,
-      "labels": [
-        "documentation",
-        "good first issue",
-        "bounty",
-        "type:bounty",
-        "status:proposed",
-        "reward:myz",
-        "reward:xmr",
-        "reward:token"
-      ],
-      "commentCount": 7,
-      "updatedAt": "2026-08-23T19:15:58Z",
-      "summary": "# 🎨 Bounty — Crea il fumetto visuale “Come funziona MyZubster” ## Status **OPEN FOR CONTRIBUTORS / PROPOSED** > Questa issue è aperta a contributor visuali, illustratori e designer. Per evitare lavoro duplicato, commenta **`CLAIM`** prima di iniziare indicando alias, workflow (human-made / AI-assisted / mixed) e data prevista di consegna. ## Reward **300 MYZ proposed** — `Discovery Episode` tier. - Asset/accounting unit: **MYZ internal reward/accounting ledger** - Amount: **300 MYZ proposed** - Funding state: **PROPOSED — not yet guaranteed or externally settled** - Review: **manual maintainer verification** La definizione del reward rende il task leggibile e confrontabile, ma non costituisce promessa automatica di pagamento. Il reward può essere registrato solo dopo i gate previsti da `BOUNTIES.md`; qualunque settlement esterno resta separato e richiede verifica indipendente. ## Objective Trasformare il workflow **“Come funziona MyZubster”** in un fumetto/visual guide originale, chiaro, coerente con l’architettura reale del progetto e comprensibile anche a chi non conosce il codice. ## Deliverable minimo Realizzare **4–8 vignette/pagine + cover**, oppure una tavola equivalente ad",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 107,
+      "fastCashScore": 106,
       "survivalEligible": false,
       "eligibilityReason": "Competition is too high for bootstrap mode.",
       "competition": {
-        "comments": 7,
+        "comments": 8,
         "attemptSignals": 0,
         "risk": "medium"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 300,
+      "economicValueUsd": 2026,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -372,7 +399,7 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":124,\"updatedAt\":\"2026-08-23T17:46:02Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5189454900\",\"rewardUsd\":300,\"fastCashScore\":107,\"updatedAt\":\"2026-08-23T19:15:58Z\",\"competition\":{\"comments\":7,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5222233094\",\"rewardUsd\":30,\"fastCashScore\":107,\"updatedAt\":\"2026-08-23T19:11:52Z\",\"competition\":{\"comments\":6,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5224460280\",\"rewardUsd\":34750,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T11:11:11Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226664248\",\"rewardUsd\":2026,\"fastCashScore\":115,\"updatedAt\":\"2026-08-23T19:24:41Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226777176\",\"rewardUsd\":500,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T12:01:50Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226781397\",\"rewardUsd\":1000,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T12:02:59Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226781536\",\"rewardUsd\":1000,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T12:03:02Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226985077\",\"rewardUsd\":2026,\"fastCashScore\":115,\"updatedAt\":\"2026-08-23T19:24:38Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5227381871\",\"rewardUsd\":2026,\"fastCashScore\":110,\"updatedAt\":\"2026-08-23T19:22:33Z\",\"competition\":{\"comments\":5,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5228686459\",\"rewardUsd\":2026,\"fastCashScore\":118,\"updatedAt\":\"2026-08-23T19:29:33Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":124,\"updatedAt\":\"2026-08-23T17:46:02Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5224460280\",\"rewardUsd\":34750,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T11:11:11Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226422314\",\"rewardUsd\":5000,\"fastCashScore\":109,\"updatedAt\":\"2026-08-23T19:45:35Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226777176\",\"rewardUsd\":500,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T12:01:50Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226781397\",\"rewardUsd\":1000,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T12:02:59Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226781536\",\"rewardUsd\":1000,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T12:03:02Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5227922199\",\"rewardUsd\":2026,\"fastCashScore\":106,\"updatedAt\":\"2026-08-23T19:53:31Z\",\"competition\":{\"comments\":8,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5228164548\",\"rewardUsd\":2026,\"fastCashScore\":115,\"updatedAt\":\"2026-08-23T19:53:25Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5228485993\",\"rewardUsd\":2026,\"fastCashScore\":115,\"updatedAt\":\"2026-08-23T19:52:36Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5228686459\",\"rewardUsd\":2026,\"fastCashScore\":116,\"updatedAt\":\"2026-08-23T19:52:32Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5228779691\",\"rewardUsd\":1080,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T19:53:01Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
@@ -384,9 +411,9 @@
     "maxHours": 4,
     "minPayoutConfidence": 0.8,
     "competitionRequired": "low",
-    "rejectedFakeRevenueCount": 3,
+    "rejectedFakeRevenueCount": 2,
     "rejectedAlreadyPaidCount": 0,
-    "rejectedIdentityGateCount": 1
+    "rejectedIdentityGateCount": 0
   },
   "economicallyRejected": [
     {
@@ -396,7 +423,7 @@
       "reasons": [
         "testnet_or_test_token_reward"
       ],
-      "rejectedAt": "2026-08-23T19:34:50.557Z"
+      "rejectedAt": "2026-08-23T19:54:05.124Z"
     },
     {
       "id": "github:5226777176",
@@ -405,7 +432,7 @@
       "reasons": [
         "testnet_or_test_token_reward"
       ],
-      "rejectedAt": "2026-08-23T19:34:50.558Z"
+      "rejectedAt": "2026-08-23T19:54:05.124Z"
     },
     {
       "id": "github:5222233094",

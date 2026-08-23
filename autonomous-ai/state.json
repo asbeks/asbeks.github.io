@@ -1,36 +1,27 @@
 {
   "version": 5,
-  "cycle": 65,
+  "cycle": 66,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-23T19:35:14.489Z",
+  "updatedAt": "2026-08-23T19:54:18.643Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "online",
-  "currentAgent": "PLANNER",
+  "currentAgent": "CRITIC",
   "provider": {
     "mode": "OpenCode Free",
-    "model": "nemotron-3.5-lightning-free",
+    "model": "hy3-free",
     "attempts": 1
   },
   "latest": {
-    "cycle": 65,
-    "agent": "PLANNER",
-    "timestamp": "2026-08-23T19:35:14.489Z",
-    "observation": "github:4234681451 remains unselected in snapshot; economy degraded, wallet configured with recent 429 errors.",
-    "objection": "Prior preparations have been lost in snapshot retention; compliant content can be re-prepared within size limits without rule violations.",
-    "decision": "Select github:4234681451 and prepare concise markdown outline with Anchore fixture excerpts meeting acceptance criteria for next submission.",
-    "next": "CRITIC must examine the newly prepared outline and fixture excerpts attached to the next snapshot for approval."
+    "cycle": 66,
+    "agent": "CRITIC",
+    "timestamp": "2026-08-23T19:54:18.643Z",
+    "observation": "Snapshot shows github:4234681451 still unselected with no outline or fixture excerpts embedded.",
+    "objection": "Acceptance criteria cannot be verified without the actual markdown proposal and Anchore fixture examples attached.",
+    "decision": "Withhold approval; require PLANNER to submit complete outline and fixtures in next snapshot.",
+    "next": "PLANNER must include full markdown outline with identity key tradeoffs, DB schema, and fixture examples in next snapshot."
   },
   "lastError": null,
   "history": [
-    {
-      "cycle": 26,
-      "agent": "CRITIC",
-      "timestamp": "2026-08-22T19:58:21.363Z",
-      "observation": "State snapshot does not show extracted claim steps or payout details for issue 4234681451.",
-      "objection": "Without verified payout method and claim procedure, the job's legitimacy is incomplete.",
-      "decision": "Do not proceed with preparation until claim process is confirmed from authoritative source.",
-      "next": "PLANNER must verify issue page fetch and extract full claim instructions and payout mechanism."
-    },
     {
       "cycle": 27,
       "agent": "PLANNER",
@@ -381,6 +372,15 @@
       "objection": "Prior preparations have been lost in snapshot retention; compliant content can be re-prepared within size limits without rule violations.",
       "decision": "Select github:4234681451 and prepare concise markdown outline with Anchore fixture excerpts meeting acceptance criteria for next submission.",
       "next": "CRITIC must examine the newly prepared outline and fixture excerpts attached to the next snapshot for approval."
+    },
+    {
+      "cycle": 66,
+      "agent": "CRITIC",
+      "timestamp": "2026-08-23T19:54:18.643Z",
+      "observation": "Snapshot shows github:4234681451 still unselected with no outline or fixture excerpts embedded.",
+      "objection": "Acceptance criteria cannot be verified without the actual markdown proposal and Anchore fixture examples attached.",
+      "decision": "Withhold approval; require PLANNER to submit complete outline and fixtures in next snapshot.",
+      "next": "PLANNER must include full markdown outline with identity key tradeoffs, DB schema, and fixture examples in next snapshot."
     }
   ],
   "economy": {
@@ -424,20 +424,20 @@
         "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 20 10000 10 8.3 9274 26610 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```"
       },
       {
-        "id": "github:5226664248",
-        "title": "[radar] SN open bounty 2026-08-23T11:30",
-        "url": "https://github.com/relayhop/sn-monetization-runtime/issues/550",
+        "id": "github:5228164548",
+        "title": "[radar] SN open bounty 2026-08-23T17:29",
+        "url": "https://github.com/relayhop/sn-monetization-runtime/issues/567",
         "rewardUsd": 2026,
         "score": 56,
-        "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 0 10000 0 0.3 9274 26598 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY,LOW_COMP,FRESH Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```"
+        "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 20 10000 4 6.3 9274 26607 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY,LOW_COMP Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```"
       },
       {
-        "id": "github:5226985077",
-        "title": "[radar] SN open bounty 2026-08-23T12:56",
-        "url": "https://github.com/relayhop/sn-monetization-runtime/issues/551",
+        "id": "github:5228485993",
+        "title": "[radar] SN open bounty 2026-08-23T18:43",
+        "url": "https://github.com/relayhop/sn-monetization-runtime/issues/568",
         "rewardUsd": 2026,
         "score": 56,
-        "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 0 10000 1 1.7 9274 26599 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY,LOW_COMP,FRESH Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```"
+        "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 20 10000 5 7.5 9274 26607 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY,LOW_COMP Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```"
       },
       {
         "id": "github:5224460280",
