@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-08-23T14:55:19.987Z",
+  "updatedAt": "2026-08-23T15:27:59.979Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -70,42 +70,6 @@
       },
       "realMoneyEligible": true,
       "economicValueUsd": 500,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5226664248",
-      "source": "github",
-      "title": "[radar] SN open bounty 2026-08-23T11:30",
-      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/550",
-      "repositoryApiUrl": "https://api.github.com/repos/relayhop/sn-monetization-runtime",
-      "rewardUsd": 2026,
-      "score": 56,
-      "labels": [
-        "radar",
-        "sn",
-        "bounty"
-      ],
-      "commentCount": 1,
-      "updatedAt": "2026-08-23T14:34:56Z",
-      "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 0 10000 0 0.3 9274 26598 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY,LOW_COMP,FRESH Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 116,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 1,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 2026,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -246,71 +210,44 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5227470319",
+      "id": "github:5189454900",
       "source": "github",
-      "title": "[Feature] MCP Registration Enhancement - v2.21.0 Roadmap",
-      "url": "https://github.com/Ikalus1988/MisakaNet/issues/1258",
-      "repositoryApiUrl": "https://api.github.com/repos/Ikalus1988/MisakaNet",
-      "rewardUsd": 100,
-      "score": 48,
+      "title": "[BOUNTY · OPEN FOR CONTRIBUTORS] Crea il fumetto visuale “Come funziona MyZubster” — 300 MYZ proposed",
+      "url": "https://github.com/MyZubster-Ecosystem/myzubster/issues/526",
+      "repositoryApiUrl": "https://api.github.com/repos/MyZubster-Ecosystem/myzubster",
+      "rewardUsd": 300,
+      "score": 64,
       "labels": [
-        "enhancement",
-        "roadmap",
-        "ready"
+        "documentation",
+        "good first issue",
+        "bounty",
+        "type:bounty",
+        "status:proposed",
+        "reward:myz",
+        "reward:xmr",
+        "reward:token"
       ],
-      "commentCount": 0,
-      "updatedAt": "2026-08-23T14:53:30Z",
-      "summary": "## Overview Tracking issue for MCP registration enhancements planned for v2.21.0. ## Proposed Features ### 1. MCP Server Registration - [ ] Auto-register MCP servers on first connection - [ ] Store server metadata (name, version, capabilities) - [ ] Health check endpoint for registered servers ### 2. Agent Registration Improvements - [ ] Rate limiting per agent token - [ ] Agent capability discovery - [ ] Registration expiry and renewal ### 3. Federation Enhancements - [ ] Cross-node token verification - [ ] Shared lesson propagation - [ ] Conflict resolution for concurrent writes ## Acceptance Criteria - [ ] misakanet_register returns server capabilities - [ ] Token verification works across all tools - [ ] Rate limits configurable per agent - [ ] Registration data persisted in KV - [ ] Health check endpoint returns server status - [ ] Integration tests pass for all registration flows - [ ] Documentation updated with new registration API ## Related Issues - Closes #1240 (KV token verification) - Related to #1252 (intake validation) - Related to #1253 (auto labels) ## Labels enhancement, roadmap, mcp <br/> <hr/> <details><summary>This repo is using Opire - what does it mean? 👇</su",
+      "commentCount": 6,
+      "updatedAt": "2026-08-23T15:14:35Z",
+      "summary": "# 🎨 Bounty — Crea il fumetto visuale “Come funziona MyZubster” ## Status **OPEN FOR CONTRIBUTORS / PROPOSED** > Questa issue è aperta a contributor visuali, illustratori e designer. Per evitare lavoro duplicato, commenta **`CLAIM`** prima di iniziare indicando alias, workflow (human-made / AI-assisted / mixed) e data prevista di consegna. ## Reward **300 MYZ proposed** — `Discovery Episode` tier. - Asset/accounting unit: **MYZ internal reward/accounting ledger** - Amount: **300 MYZ proposed** - Funding state: **PROPOSED — not yet guaranteed or externally settled** - Review: **manual maintainer verification** La definizione del reward rende il task leggibile e confrontabile, ma non costituisce promessa automatica di pagamento. Il reward può essere registrato solo dopo i gate previsti da `BOUNTIES.md`; qualunque settlement esterno resta separato e richiede verifica indipendente. ## Objective Trasformare il workflow **“Come funziona MyZubster”** in un fumetto/visual guide originale, chiaro, coerente con l’architettura reale del progetto e comprensibile anche a chi non conosce il codice. ## Deliverable minimo Realizzare **4–8 vignette/pagine + cover**, oppure una tavola equivalente ad",
       "state": "candidate",
-      "payoutConfidence": 0.35,
+      "payoutConfidence": 0.5,
       "autonomyFit": 1,
       "requiresHumanGate": false,
       "requiresSpecialHardware": false,
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 107,
+      "fastCashScore": 109,
       "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "eligibilityReason": "Competition is too high for bootstrap mode.",
       "competition": {
-        "comments": 0,
+        "comments": 6,
         "attemptSignals": 0,
-        "risk": "low"
+        "risk": "medium"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 100,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5227155517",
-      "source": "github",
-      "title": "実装+実験: 埋札286候補combination value modelを学習・評価する",
-      "url": "https://github.com/eletim/napoleon-web/issues/436",
-      "repositoryApiUrl": "https://api.github.com/repos/eletim/napoleon-web",
-      "rewardUsd": 32.45,
-      "score": 40,
-      "labels": [],
-      "commentCount": 1,
-      "updatedAt": "2026-08-23T14:51:13Z",
-      "summary": "Related: #202, #431, #433, #434 Base branch: `feature/issue-202-non-playing-ai` ## 背景 #434で、実ゲームflow由来のpickup後exchange stateから `C(13,3)=286` の合法埋札候補を全列挙し、各候補をplaying完走してcounterfactual valueを付けるdataset generatorを実装した。 Diagnostic 50 states / 14,300 candidatesでは: - 286 candidates/state を安定生成、invariant failure 0 - margin spread/state 平均 12 - relative reward spread/state 平均 32.45 - RuleBased best一致 3/50 = 6% - RuleBased margin regret 平均 3.88 - RuleBased relative reward regret 平均 11.15 と、combination間ranking signalが十分にある。 このIssueでは、#434 datasetを使って **pickup後exchange observation + candidate 3-card discard mask -> scalar value** のcombination value modelを学習し、held-out上でRuleBasedより良い埋札rankingができるか確認する。 このIssueではまずモデル自体を固める。runtime wiringは原則次Issueに分ける。 ## 目的 1. `exchange-counterfactual-value-v1` datasetをPython側で読み込めるようにする 2. 1,000 unique exchange states規模のmain datasetを生成する 3. exchange observation 2671 dims + candidate discard mask 53 dims を入力にしたscalar value modelを実装する 4. fixed source state単位でtrain/validation/finalを分離する 5. held-outでvalue精度だけでなくsame-state rankingを評価する 6. RuleBased discardとの比較を行う 7. 必要ならdataset scaleを2,000 statesまで増やしlearning curveを見る 8. 次のFrozen/runtime wiringへ進めるモデル候補を決める ## 前提 ",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 100,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 1,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 32.45,
+      "economicValueUsd": 300,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -359,7 +296,7 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-18T21:51:29Z\",\"competition\":{\"comments\":29,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":125,\"updatedAt\":\"2026-08-22T16:37:56Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5224460280\",\"rewardUsd\":34750,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T11:11:11Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226422314\",\"rewardUsd\":5000,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T14:49:39Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226664248\",\"rewardUsd\":2026,\"fastCashScore\":116,\"updatedAt\":\"2026-08-23T14:34:56Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226777176\",\"rewardUsd\":500,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T12:01:50Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226781397\",\"rewardUsd\":1000,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T12:02:59Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226781536\",\"rewardUsd\":1000,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T12:03:02Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5227155517\",\"rewardUsd\":32.45,\"fastCashScore\":100,\"updatedAt\":\"2026-08-23T14:51:13Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5227470319\",\"rewardUsd\":100,\"fastCashScore\":107,\"updatedAt\":\"2026-08-23T14:53:30Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5227477302\",\"rewardUsd\":500,\"fastCashScore\":118,\"updatedAt\":\"2026-08-23T14:54:55Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:2940525692\",\"rewardUsd\":10,\"fastCashScore\":60,\"updatedAt\":\"2026-08-18T21:51:22Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-18T21:51:29Z\",\"competition\":{\"comments\":29,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":125,\"updatedAt\":\"2026-08-22T16:37:56Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5189454900\",\"rewardUsd\":300,\"fastCashScore\":109,\"updatedAt\":\"2026-08-23T15:14:35Z\",\"competition\":{\"comments\":6,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5224460280\",\"rewardUsd\":34750,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T11:11:11Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226422314\",\"rewardUsd\":5000,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T14:49:39Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226777176\",\"rewardUsd\":500,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T12:01:50Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226781397\",\"rewardUsd\":1000,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T12:02:59Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226781536\",\"rewardUsd\":1000,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T12:03:02Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5227477302\",\"rewardUsd\":500,\"fastCashScore\":118,\"updatedAt\":\"2026-08-23T14:54:55Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
@@ -372,7 +309,7 @@
     "minPayoutConfidence": 0.8,
     "competitionRequired": "low",
     "rejectedFakeRevenueCount": 2,
-    "rejectedAlreadyPaidCount": 1,
+    "rejectedAlreadyPaidCount": 2,
     "rejectedIdentityGateCount": 0
   },
   "economicallyRejected": [
@@ -383,7 +320,7 @@
       "reasons": [
         "testnet_or_test_token_reward"
       ],
-      "rejectedAt": "2026-08-23T14:55:19.934Z"
+      "rejectedAt": "2026-08-23T15:27:59.926Z"
     },
     {
       "id": "github:5226777176",
@@ -392,7 +329,7 @@
       "reasons": [
         "testnet_or_test_token_reward"
       ],
-      "rejectedAt": "2026-08-23T14:55:19.935Z"
+      "rejectedAt": "2026-08-23T15:27:59.926Z"
     },
     {
       "id": "github:3055155077",
@@ -401,7 +338,16 @@
       "reasons": [
         "already_rewarded_or_paid"
       ],
-      "rejectedAt": "2026-08-23T14:55:19.935Z"
+      "rejectedAt": "2026-08-23T15:27:59.926Z"
+    },
+    {
+      "id": "github:2940525692",
+      "title": "Create download endpoint `/files/download?...` as well as `/files/download/[[file_path]]`",
+      "rewardUsd": 10,
+      "reasons": [
+        "already_rewarded_or_paid"
+      ],
+      "rejectedAt": "2026-08-23T15:27:59.926Z"
     },
     {
       "id": "github:5221222820",
@@ -457,15 +403,6 @@
         "already_rewarded_or_paid"
       ],
       "rejectedAt": "2026-08-23T12:49:32.781Z"
-    },
-    {
-      "id": "github:2940525692",
-      "title": "Create download endpoint `/files/download?...` as well as `/files/download/[[file_path]]`",
-      "rewardUsd": 10,
-      "reasons": [
-        "already_rewarded_or_paid"
-      ],
-      "rejectedAt": "2026-08-23T11:54:56.153Z"
     },
     {
       "id": "github:5222232739",

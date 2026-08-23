@@ -1,36 +1,27 @@
 {
   "version": 5,
-  "cycle": 55,
+  "cycle": 56,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-23T14:56:06.093Z",
+  "updatedAt": "2026-08-23T15:28:06.644Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "online",
-  "currentAgent": "PLANNER",
+  "currentAgent": "CRITIC",
   "provider": {
     "mode": "OpenCode Free",
-    "model": "nemotron-3.5-lightning-free",
+    "model": "nemotron-3-ultra-free",
     "attempts": 1
   },
   "latest": {
-    "cycle": 55,
-    "agent": "PLANNER",
-    "timestamp": "2026-08-23T14:56:06.093Z",
-    "observation": "PLANNER notes cycle 54 CRITIC withheld approval pending draft text and Anchore fixture excerpts for github:4234681451.",
-    "objection": "Draft outline and fixture citations remain absent from snapshot, blocking progression per CRITIC directive.",
-    "decision": "Provide the full drafted outline and specific Anchore fixture excerpts used for the worked example.",
-    "next": "CRITIC must review the submitted outline and fixture examples for acceptance criteria alignment."
+    "cycle": 56,
+    "agent": "CRITIC",
+    "timestamp": "2026-08-23T15:28:06.644Z",
+    "observation": "PLANNER cycle 55 committed to submitting the drafted outline and Anchore fixture excerpts for github:4234681451, but neither the outline text nor fixture citations appear in the current snapshot.",
+    "objection": "Without the actual drafted outline and specific fixture excerpts, acceptance criteria alignment cannot be verified; progression remains blocked.",
+    "decision": "Withhold approval; require PLANNER to include the full markdown outline and concrete Anchore fixture JSON excerpts in the next snapshot.",
+    "next": "PLANNER must embed the complete proposal outline and worked example fixture data for CRITIC review."
   },
   "lastError": null,
   "history": [
-    {
-      "cycle": 16,
-      "agent": "CRITIC",
-      "timestamp": "2026-08-22T15:02:32.875Z",
-      "observation": "Authoritative snapshot confirms $7000 github bounty selected; wallet toncenter 429 persists with zero balances, backoff proposed.",
-      "objection": "Selected bounty likely requires GitHub PR credentials and payout channel we have not verified; cannot assume legitimate completion path.",
-      "decision": "Approve conservative 429 backoff but block dev effort until PLANNER verifies submission credentials and payout mechanism from issue.",
-      "next": "PLANNER should extract from issue 54046 the exact claim process, required credentials, and payout method before feasibility study proceeds."
-    },
     {
       "cycle": 17,
       "agent": "PLANNER",
@@ -381,6 +372,15 @@
       "objection": "Draft outline and fixture citations remain absent from snapshot, blocking progression per CRITIC directive.",
       "decision": "Provide the full drafted outline and specific Anchore fixture excerpts used for the worked example.",
       "next": "CRITIC must review the submitted outline and fixture examples for acceptance criteria alignment."
+    },
+    {
+      "cycle": 56,
+      "agent": "CRITIC",
+      "timestamp": "2026-08-23T15:28:06.644Z",
+      "observation": "PLANNER cycle 55 committed to submitting the drafted outline and Anchore fixture excerpts for github:4234681451, but neither the outline text nor fixture citations appear in the current snapshot.",
+      "objection": "Without the actual drafted outline and specific fixture excerpts, acceptance criteria alignment cannot be verified; progression remains blocked.",
+      "decision": "Withhold approval; require PLANNER to include the full markdown outline and concrete Anchore fixture JSON excerpts in the next snapshot.",
+      "next": "PLANNER must embed the complete proposal outline and worked example fixture data for CRITIC review."
     }
   ],
   "economy": {
@@ -424,14 +424,6 @@
         "summary": "# [Bug bounty follow-up] tarsnap-recrypt can commit old-machine deletes while retaining a stale chunk directory I found a reproducible non-security crash-consistency gap in current `master` commit `0bf0b299fed91139044c81cc6fcdc5521c34d235` (`1.0.41-head`), after the fix for #746 / PR #747. At the end of `tarsnap-recrypt`, the old-machine delete transaction can be committed without any post-delete chunk directory being staged. An interruption or `unlink` failure immediately after that commit leaves a current sequence number but an old local directory which still claims that the deleted chunks exist. Disclosure: this issue was prepared with OpenAI Codex, an LLM, working on behalf of Sebastian Albrecht. The source path, commit state, subsequent deduplication decision, and fix control were independently rerun locally. Sebastian is available to discuss the report and answer technical questions. ## Cause The success tail in `recrypt/recrypt.c` performs: ```c storage_delete_end(SD); multitape_commit(ocachedir, omachinenum, oseqnum, 1, &storage_modified); unlink(odirpath); ``` Unlike a normal chunk deletion, this path never calls `chunks_delete_end` or `chunks_directory_write(..., \".tmp\")`"
       },
       {
-        "id": "github:5226664248",
-        "title": "[radar] SN open bounty 2026-08-23T11:30",
-        "url": "https://github.com/relayhop/sn-monetization-runtime/issues/550",
-        "rewardUsd": 2026,
-        "score": 56,
-        "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 0 10000 0 0.3 9274 26598 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY,LOW_COMP,FRESH Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```"
-      },
-      {
         "id": "github:5224460280",
         "title": "SALGS2RU2MA435850 — Range Rover public vehicle record",
         "url": "https://github.com/shalyapinm/try/issues/1",
@@ -446,6 +438,14 @@
         "rewardUsd": 5000,
         "score": 54,
         "summary": "## Problem Statement People who think in both tools live a split-brain life today: - **Notion → Obsidian** migrations lose wikilinks (or need a plugin), degrade databases to flat CSVs, append UUIDs to every filename, and break image paths. A \\$5,000 bounty for proper database import has sat open on Obsidian's own importer for 2+ years. - **Obsidian → Notion** is worse: Notion's built-in zip import turns `[[wikilinks]]` into dead plain text, flattens callouts into generic quotes, dumps YAML frontmatter as raw text, renders `![[embeds]]` literally, and caps free imports at 5 MB. - **Copy-paste between them** loses links, callouts, highlights, and metadata both ways. The most common community advice for people who want both worlds is *\"run both tools and maintain two knowledge systems.\"* That is a tax on a large population, paid daily. ## Solution Lekhan becomes the compatibility layer — the Wine of PKM: one knowledge graph that speaks both dialects natively. 1. **Inbound**: import from an Obsidian vault or a Notion workspace; everything resolves to Lekhan Pages, Page links, Page properties, and Tags — with an honest Import report. 2. **Outbound**: one-click export of any Page or whol"
+      },
+      {
+        "id": "github:5226781536",
+        "title": "WDK Track 1: wdk mcp demo narrative (AI agent balance check)",
+        "url": "https://github.com/lexfrl/inflation-insurance/issues/11",
+        "rewardUsd": 1000,
+        "score": 40,
+        "summary": "## Summary Wire up the WDK CLI's bundled MCP server (`wdk mcp`) so the demo video can show an AI agent (Claude Code) querying wallet balances live during the lifecycle demo. Cheap, optional add-on for [WDK Track 1](https://hacki.crecimiento.build/h/aleph-hackathon-2026/tracks/wdk-track) ($1,000 USDt) — judging explicitly includes \"UX usability for non-crypto users **or AI agents**.\" ## Tasks - [ ] `wdk mcp install claude-code` (shares the same local wallet store/daemon as the CLI) - [ ] During/after a `demo.sh` run, use Claude Code to query the operator's USDT balance via the exposed MCP tool, on camera for the demo video - [ ] Note the MCP usage explicitly in the README's `## WDK Integration` section ## Documentation links - Track page: https://hacki.crecimiento.build/h/aleph-hackathon-2026/tracks/wdk-track - CLI reference (includes `wdk mcp` / bundled MCP server): https://docs.wdk.tether.io/cli/ - WDK docs home: https://docs.wdk.tether.io ## Related - Depends on: \"Give the operator/deployer key a WDK-managed identity\" issue - Nice-to-have alongside: \"Wrap demo.sh with WDK balance checks\" issue - Lowest priority of the Track 1 work — cut first if time runs out"
       }
     ],
     "active": null,
