@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-08-23T17:38:59.345Z",
+  "updatedAt": "2026-08-23T17:57:36.817Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -17,8 +17,8 @@
         "bounty:M",
         "status: open bounty"
       ],
-      "commentCount": 1,
-      "updatedAt": "2026-08-22T16:37:56Z",
+      "commentCount": 2,
+      "updatedAt": "2026-08-23T17:46:02Z",
       "summary": "### Summary Inspect the committed Anchore JSON fixtures and propose a schema for tracking vulnerabilities over time. Specifically: what combination of fields uniquely identifies \"the same vulnerability\" across scans? Candidates to evaluate include CVE ID alone, CVE + package name, CVE + package name + version, and CVE + package + image. Write up the tradeoffs, pick a recommendation, and sketch the analytics DB table(s) needed to support first_seen / last_seen / fixed_at / ignored_at / cleared_at fields. **Tech notes:** The Anchore JSON schema is documented at the Anchore project site; worth skimming before diving into fixtures. The goal of this spike is a decision, not code — resist the urge to start implementing. ### Acceptance criteria - [ ] Written proposal (markdown doc in PR) covering identity key options, tradeoffs, and a recommendation - [ ] Proposed analytics DB schema with column types and rationale - [ ] At least one worked example from the fixtures showing how the identity key behaves across days - [ ] Reviewed and approved by Brandon and/or Matt before next ticket starts ## Bounty: $250 This issue has been selected for our paid contributor program. If you wish to claim ",
       "state": "candidate",
       "payoutConfidence": 0.7,
@@ -28,11 +28,11 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 125,
+      "fastCashScore": 124,
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
-        "comments": 1,
+        "comments": 2,
         "attemptSignals": 0,
         "risk": "low"
       },
@@ -213,38 +213,6 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5228201483",
-      "source": "github",
-      "title": "[daydream] out-of-scope finding: <unknown>",
-      "url": "https://github.com/existential-birds/daydream/issues/874",
-      "repositoryApiUrl": "https://api.github.com/repos/existential-birds/daydream",
-      "rewardUsd": 432,
-      "score": 48,
-      "labels": [],
-      "commentCount": 0,
-      "updatedAt": "2026-08-23T17:37:17Z",
-      "summary": "`_parse_job_results` is fail-open: an empty job dir (or one whose trials carry neither `reward.json` nor `reward-details.json`) returns `(True, [])`, so the Oracle receipt is written with zero scored evidence and the paid default-run gate is unlocked without proving gold reproduction. - File: `<unknown>` - Line: ? - Evidence: run.py:412 `if not reward_path.is_file(): continue`; run.py:432 `if (verifier / \"reward-details.json\").is_file(): return (False, [])`; run.py:434 `return (oracle_ok, environments)` with `oracle_ok = True` at init; run.py:666 `ok, _ = _parse_job_results(actual_dir) if actual_dir else (False, [])`; run.py:675-679 receipt write on `returncode == 0 and ok`; run.py:496 `_write_oracle_receipt` re-parses the same job dir. Filed by daydream fix loop: out of scope for PR. <!-- daydream-scope-finding: ad5765eda5ddca93ddca456d650dadc708faa5b9f6203ba5126ce89486ed14bb -->",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 111,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 0,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 432,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
       "id": "github:4462160604",
       "source": "github",
       "title": "[bounty $400] Implement ABNF-compliant email address parser with full §3.2–§4.4 coverage",
@@ -354,6 +322,45 @@
       "requiresPreclaimOrIdentity": false
     },
     {
+      "id": "github:5219117851",
+      "source": "github",
+      "title": "stella dataset export's planned `reward` column has no source since #3865, and [reward] in stella.toml now steers nothing",
+      "url": "https://github.com/macanderson/stella/issues/4224",
+      "repositoryApiUrl": "https://api.github.com/repos/macanderson/stella",
+      "rewardUsd": 3865,
+      "score": 48,
+      "labels": [
+        "bug",
+        "question",
+        "P2",
+        "area:cli",
+        "goal:witness",
+        "blocked"
+      ],
+      "commentCount": 2,
+      "updatedAt": "2026-08-23T17:49:10Z",
+      "summary": "## The defect Two capability rows in `doc:self-driving-foundry` §2 were marked **Shipped** and are not. Both named modules in `crates/stella-pipeline`, deleted in #3865: | Capability | Named | State | |---|---|---| | Full-transcript trace capture **with reward labels** | `crates/stella-cli/src/trace.rs` (#1042) + `crates/stella-pipeline/src/reward.rs` (#1043) | trace capture ships; **reward labelling is gone** | | Event-stream replay and equivalence checking | `crates/stella-pipeline/src/replay.rs` | **gone** | The rows are now annotated (Refs #3901), so the document no longer overstates what exists. This issue is about the hole underneath, which is a **planned feature with a missing dependency**, not just prose. ## The concrete blocker `doc:self-driving-foundry` §7 plans: > `stella dataset export` gains `reward` (from `stella-pipeline/src/reward.rs`) > and `prompt_messages` (from `Store::reconstruct_call`, gated on > `is_verified()`), closing the two gaps it shipped with. The `prompt_messages` half is fine — `crates/stella-store/src/reconstruct.rs` is intact. The `reward` half has **no source**. `RewardSettings` still parses from `stella.toml` (`deterministic_weight`, `per_step`, ",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 108,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 2,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 3865,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
       "id": "github:4563956966",
       "source": "github",
       "title": "parse_duration drops the days (d) unit",
@@ -399,7 +406,7 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":125,\"updatedAt\":\"2026-08-22T16:37:56Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5224460280\",\"rewardUsd\":34750,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T11:11:11Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226777176\",\"rewardUsd\":500,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T12:01:50Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226781397\",\"rewardUsd\":1000,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T12:02:59Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226781536\",\"rewardUsd\":1000,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T12:03:02Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5227158139\",\"rewardUsd\":2026,\"fastCashScore\":115,\"updatedAt\":\"2026-08-23T17:24:45Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5227381871\",\"rewardUsd\":2026,\"fastCashScore\":112,\"updatedAt\":\"2026-08-23T17:24:42Z\",\"competition\":{\"comments\":4,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5227640203\",\"rewardUsd\":2026,\"fastCashScore\":110,\"updatedAt\":\"2026-08-23T17:23:36Z\",\"competition\":{\"comments\":5,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5227922199\",\"rewardUsd\":2026,\"fastCashScore\":109,\"updatedAt\":\"2026-08-23T17:23:32Z\",\"competition\":{\"comments\":6,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5228164548\",\"rewardUsd\":2026,\"fastCashScore\":118,\"updatedAt\":\"2026-08-23T17:29:36Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5228201483\",\"rewardUsd\":432,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T17:37:17Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":124,\"updatedAt\":\"2026-08-23T17:46:02Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5219117851\",\"rewardUsd\":3865,\"fastCashScore\":108,\"updatedAt\":\"2026-08-23T17:49:10Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5224460280\",\"rewardUsd\":34750,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T11:11:11Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226777176\",\"rewardUsd\":500,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T12:01:50Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226781397\",\"rewardUsd\":1000,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T12:02:59Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226781536\",\"rewardUsd\":1000,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T12:03:02Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5227158139\",\"rewardUsd\":2026,\"fastCashScore\":115,\"updatedAt\":\"2026-08-23T17:24:45Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5227381871\",\"rewardUsd\":2026,\"fastCashScore\":112,\"updatedAt\":\"2026-08-23T17:24:42Z\",\"competition\":{\"comments\":4,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5227640203\",\"rewardUsd\":2026,\"fastCashScore\":110,\"updatedAt\":\"2026-08-23T17:23:36Z\",\"competition\":{\"comments\":5,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5227922199\",\"rewardUsd\":2026,\"fastCashScore\":109,\"updatedAt\":\"2026-08-23T17:23:32Z\",\"competition\":{\"comments\":6,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5228164548\",\"rewardUsd\":2026,\"fastCashScore\":118,\"updatedAt\":\"2026-08-23T17:29:36Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
@@ -423,7 +430,7 @@
       "reasons": [
         "testnet_or_test_token_reward"
       ],
-      "rejectedAt": "2026-08-23T17:38:59.287Z"
+      "rejectedAt": "2026-08-23T17:57:36.773Z"
     },
     {
       "id": "github:5226777176",
@@ -432,7 +439,7 @@
       "reasons": [
         "testnet_or_test_token_reward"
       ],
-      "rejectedAt": "2026-08-23T17:38:59.288Z"
+      "rejectedAt": "2026-08-23T17:57:36.773Z"
     },
     {
       "id": "github:5190344158",
