@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-08-23T22:55:37.611Z",
+  "updatedAt": "2026-08-23T23:27:41.785Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -41,6 +41,38 @@
       "requiresPreclaimOrIdentity": false
     },
     {
+      "id": "github:5229603958",
+      "source": "github",
+      "title": "[Bug bounty] --newer rejects dates from 2038 onward even with 64-bit time_t",
+      "url": "https://github.com/Tarsnap/tarsnap/issues/766",
+      "repositoryApiUrl": "https://api.github.com/repos/Tarsnap/tarsnap",
+      "rewardUsd": 2038,
+      "score": 46,
+      "labels": [],
+      "commentCount": 0,
+      "updatedAt": "2026-08-23T23:16:53Z",
+      "summary": "# `--newer` rejects every date from 2038 onwards, on 64-bit systems too Classification: functional defect with a known upstream fix. ## Product and version - Tarsnap client `1.0.41-head`, `Tarsnap/tarsnap` master at `0bf0b299fed91139044c81cc6fcdc5521c34d235` - File: `tar/getdate.c:718-726`, `Convert()` - Reached from `--newer` / `--newer-ctime` and `--newer-mtime` ## The finding ```c /* tar/getdate.c:718-726 */ DaysInMonth[1] = Year % 4 == 0 && (Year % 100 != 0 || Year % 400 == 0) ? 29 : 28; /* Checking for 2038 bogusly assumes that time_t is 32 bits. But I'm too lazy to try to check for time_t overflow in another way. */ if (Year < EPOCH || Year >= 2038 || Month < 1 || Month > 12 /* Lint fluff: \"conversion from long may lose accuracy\" */ || Day < 1 || Day > DaysInMonth[(int)--Month]) return -1; ``` The comment is the diagnosis. The check is unconditional, so on a host where `time_t` is 64 bits — every platform tarsnap is normally built on — any date in 2038 or later is refused: ```text sizeof(time_t) = 8 2026-01-01 -> ok 2030-06-15 -> ok 2037-12-31 -> ok 2038-01-01 -> REJECTED (Could not parse date) 2038-06-01 -> REJECTED (Could not parse date) 2040-01-01 -> REJECTED (Could not pa",
+      "state": "candidate",
+      "payoutConfidence": 0.5,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 118,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 2038,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
       "id": "github:5229437083",
       "source": "github",
       "title": "[radar] SN open bounty 2026-08-23T22:32",
@@ -65,6 +97,38 @@
       "complexity": 0,
       "fundedBountySignal": false,
       "fastCashScore": 118,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 2026,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:4886135851",
+      "source": "github",
+      "title": "10 Best Sites to Get Monopoly GO Free Dice Links (Rewards Guide) 2026",
+      "url": "https://github.com/BVLC/caffe/issues/7262",
+      "repositoryApiUrl": "https://api.github.com/repos/BVLC/caffe",
+      "rewardUsd": 2026,
+      "score": 40,
+      "labels": [],
+      "commentCount": 0,
+      "updatedAt": "2026-08-23T23:25:01Z",
+      "summary": "Updated : 15 July 2026 In today’s digital world, mobile gaming has become one of the most popular forms of entertainment for millions of players worldwide. Monopoly GO has quickly become one of the most successful mobile board games, attracting players who enjoy collecting stickers, building landmarks, competing in events, and earning rewards. Everyone wants more dice rolls, faster progress, and better rewards without spending money. That’s why the topic of Monopoly GO free dice links has become extremely popular among players looking for extra rolls and bonuses. If you are searching for the latest Monopoly GO free dice links, this complete guide will help you understand how free dice rewards work, safe methods to collect daily rolls, and ways to improve your gameplay in 2026. [✅ Free Dice Rolls](https://www.borderclick.com/BC/media/Borderclick/Files/monopoly-rolls.html) What Are Monopoly GO Free Dice Links? Monopoly GO free dice links are special reward links that allow players to claim free dice rolls without purchasing them with real money. These links are usually shared through official Monopoly GO channels, community updates, special events, and daily reward campaigns. Free di",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 111,
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
@@ -178,53 +242,17 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5225344796",
+      "id": "github:4983371263",
       "source": "github",
-      "title": "Core/Data: add canonical Traveling Cook power_meal runtime owner",
-      "url": "https://github.com/jolteondark/url-/issues/793",
-      "repositoryApiUrl": "https://api.github.com/repos/jolteondark/url-",
-      "rewardUsd": 802,
+      "title": "Top 10 Working Free Monopoly Go! Free Dice Links (Updates 2026) Rewards",
+      "url": "https://github.com/BVLC/caffe/issues/7489",
+      "repositoryApiUrl": "https://api.github.com/repos/BVLC/caffe",
+      "rewardUsd": 27,
       "score": 40,
-      "labels": [
-        "core"
-      ],
-      "commentCount": 2,
-      "updatedAt": "2026-08-23T22:40:02Z",
-      "summary": "## Status on current main Factory scope for Traveling Cook is complete through PR #804. The Safari/Web vertical now supports: - pay routes - berries routes using the shared atomic Bag cost/reward owner from #802 - prototype HP recovery - prototype status cure - prototype confusion - prototype party damage / existing run-end lifecycle - leave The only canonical Traveling Cook result intentionally left fail-closed is `set_power_meal` because no existing runtime/Battle owner was found for that persistent meal effect. ## Remaining gap Add **one canonical runtime owner for `power_meal`** with explicit lifecycle semantics. Do not implement the buff inside the Traveling Cook Safari adapter and do not create a second Battle/stat truth. Acceptance contract: 1. Define the canonical `power_meal` state/effect in an existing appropriate Runtime/Battle/Data owner. 2. Specify when it starts, what it modifies, when it expires, and how it behaves across Save/Continue. 3. Reuse existing Battle/Party/Persistence owners for application and persistence. 4. Add focused regression for application, expiration, and Save/Continue if the effect persists across a save boundary. 5. Only after the owner exists,",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 108,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 2,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 802,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5229493101",
-      "source": "github",
-      "title": "[P2] macOS reward-category verification oracles (#121) are unreachable — module never wired to the CLI",
-      "url": "https://github.com/break-the-build/ios-research/issues/132",
-      "repositoryApiUrl": "https://api.github.com/repos/break-the-build/ios-research",
-      "rewardUsd": 121,
-      "score": 48,
-      "labels": [
-        "enhancement"
-      ],
+      "labels": [],
       "commentCount": 0,
-      "updatedAt": "2026-08-23T22:47:40Z",
-      "summary": "Found in review of PR #121 (2ae1996). `src/ios_research/macoracles.py` (`MacOracleEngine`, `_ORACLES`) is referenced only by its own tests. No command module imports it, so researchers cannot run the reward-category oracles at all; PR #121's stated \"oracle run|list\" wiring actually re-ordered an existing registrar line, and the pre-existing `oracle` group drives the metamorphic OracleEngine instead. ## Acceptance criteria - The reward-category oracles are runnable through the CLI (e.g. subcommands under the existing `oracle` group) with stable JSON envelopes. - Results persist under analysis/ and appear in `oracle list`-style enumeration.",
+      "updatedAt": "2026-08-23T23:26:35Z",
+      "summary": "Update: 27 July 2026 **Introduction:** Monopoly GO continues to be one of the most downloaded mobile board games in the United States, and one of the biggest reasons players keep coming back is the steady stream of free dice rewards that Scopely releases throughout the week. As of July 26, 2026, thousands of players are searching for the newest free dice rolls so they can keep building their boards, finishing sticker albums, and climbing tournament leaderboards without spending real money. This guide walks through everything current and new players need to know about free dice links, how the reward system works, and the smartest ways to spend every roll you collect. [✅ Free Monopoly Go Free Dice Links](https://www.borderclick.com/BC/media/Borderclick/Files/scopely-monopoly.html) **What Are Monopoly GO Free Dice Links?** Free dice links are promotional rewards shared by the Monopoly GO team through the game's official social media channels and in-app notifications. When a player taps one of these links on a mobile device, the game opens automatically and credits a set number of dice rolls directly to that player's account. These links are typically posted multiple times a day and ar",
       "state": "candidate",
       "payoutConfidence": 0.35,
       "autonomyFit": 1,
@@ -233,7 +261,7 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 108,
+      "fastCashScore": 100,
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
@@ -242,41 +270,7 @@
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 121,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5229377006",
-      "source": "github",
-      "title": "[chore] Register new target families in surface inventory + EV prioritizer; refresh attack-surface-map traceability",
-      "url": "https://github.com/break-the-build/ios-research/issues/115",
-      "repositoryApiUrl": "https://api.github.com/repos/break-the-build/ios-research",
-      "rewardUsd": 58,
-      "score": 62,
-      "labels": [
-        "enhancement"
-      ],
-      "commentCount": 0,
-      "updatedAt": "2026-08-23T22:17:09Z",
-      "summary": "## Priority P3 — chore that makes the new target families *usable for reporting*: the surface inventory (#61/#90) and bounty-EV prioritizer only rank what they know about, and ATTACK-SURFACE-MAP.md §5 traceability must stay truthful. Depends on the gap-issue set being filed from this roadmap. ## Scope - Register every new family (`netip:*`, `wifiaware:*`, `pq3:*`, `continuity:*`, `ipc:*`, `xpc:*`, `docimp:*`, `signeddoc:*`, `proxapp:*`, `fsclient:*`, `geo:*`, `voiceassist:*`, voicemail/auto-fetch provenance) in the surface inventory with correct entry-point tier metadata. - Extend `bounty-validate` candidate proposals so each new family maps to the right Target Flag/reward-category candidates via #58/#84. - Update research/ATTACK-SURFACE-MAP.md §5 with the new issue links and §6 boundary notes where families declared exclusions. - Add a coverage test: every registered target kind must declare entry-point-tier metadata and a mock/no-device-access note (guards the safety boundary structurally). ## Acceptance criteria - [ ] `surface` inventory lists all new kinds with tiers - [ ] bounty-validate proposals unit-tested per new family - [ ] Map §5 table updated; coverage test green - [ ]",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 104,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 0,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 58,
+      "economicValueUsd": 27,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -325,7 +319,7 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:2940525692\",\"rewardUsd\":10,\"fastCashScore\":60,\"updatedAt\":\"2026-08-18T21:51:22Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-18T21:51:29Z\",\"competition\":{\"comments\":29,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":124,\"updatedAt\":\"2026-08-23T17:46:02Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5224460280\",\"rewardUsd\":34750,\"fastCashScore\":109,\"updatedAt\":\"2026-08-23T22:18:15Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5225344796\",\"rewardUsd\":802,\"fastCashScore\":108,\"updatedAt\":\"2026-08-23T22:40:02Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5229377006\",\"rewardUsd\":58,\"fastCashScore\":104,\"updatedAt\":\"2026-08-23T22:17:09Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5229389468\",\"rewardUsd\":2000,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T22:20:24Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5229437083\",\"rewardUsd\":2026,\"fastCashScore\":118,\"updatedAt\":\"2026-08-23T22:32:37Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5229493101\",\"rewardUsd\":121,\"fastCashScore\":108,\"updatedAt\":\"2026-08-23T22:47:40Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:2940525692\",\"rewardUsd\":10,\"fastCashScore\":60,\"updatedAt\":\"2026-08-18T21:51:22Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-18T21:51:29Z\",\"competition\":{\"comments\":29,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":124,\"updatedAt\":\"2026-08-23T17:46:02Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:4886135851\",\"rewardUsd\":2026,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T23:25:01Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4983371263\",\"rewardUsd\":27,\"fastCashScore\":100,\"updatedAt\":\"2026-08-23T23:26:35Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5224460280\",\"rewardUsd\":34750,\"fastCashScore\":109,\"updatedAt\":\"2026-08-23T22:18:15Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5229389468\",\"rewardUsd\":2000,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T22:20:24Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5229437083\",\"rewardUsd\":2026,\"fastCashScore\":118,\"updatedAt\":\"2026-08-23T22:32:37Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5229603958\",\"rewardUsd\":2038,\"fastCashScore\":118,\"updatedAt\":\"2026-08-23T23:16:53Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
@@ -349,7 +343,7 @@
       "reasons": [
         "already_rewarded_or_paid"
       ],
-      "rejectedAt": "2026-08-23T22:55:37.557Z"
+      "rejectedAt": "2026-08-23T23:27:41.729Z"
     },
     {
       "id": "github:2940525692",
@@ -358,7 +352,7 @@
       "reasons": [
         "already_rewarded_or_paid"
       ],
-      "rejectedAt": "2026-08-23T22:55:37.557Z"
+      "rejectedAt": "2026-08-23T23:27:41.729Z"
     },
     {
       "id": "github:5226781397",
