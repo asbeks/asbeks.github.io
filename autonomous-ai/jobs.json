@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-08-23T17:57:36.817Z",
+  "updatedAt": "2026-08-23T18:41:46.234Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -38,114 +38,6 @@
       },
       "realMoneyEligible": true,
       "economicValueUsd": 250,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5228164548",
-      "source": "github",
-      "title": "[radar] SN open bounty 2026-08-23T17:29",
-      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/567",
-      "repositoryApiUrl": "https://api.github.com/repos/relayhop/sn-monetization-runtime",
-      "rewardUsd": 2026,
-      "score": 56,
-      "labels": [
-        "radar",
-        "sn",
-        "bounty"
-      ],
-      "commentCount": 0,
-      "updatedAt": "2026-08-23T17:29:36Z",
-      "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 20 10000 4 6.3 9274 26607 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY,LOW_COMP Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 118,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 0,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 2026,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5227158139",
-      "source": "github",
-      "title": "[radar] SN open bounty 2026-08-23T13:40",
-      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/552",
-      "repositoryApiUrl": "https://api.github.com/repos/relayhop/sn-monetization-runtime",
-      "rewardUsd": 2026,
-      "score": 56,
-      "labels": [
-        "radar",
-        "sn",
-        "bounty"
-      ],
-      "commentCount": 2,
-      "updatedAt": "2026-08-23T17:24:45Z",
-      "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 0 10000 1 2.4 9274 26599 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY,LOW_COMP Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 115,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 2,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 2026,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5227381871",
-      "source": "github",
-      "title": "[radar] SN open bounty 2026-08-23T14:33",
-      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/553",
-      "repositoryApiUrl": "https://api.github.com/repos/relayhop/sn-monetization-runtime",
-      "rewardUsd": 2026,
-      "score": 56,
-      "labels": [
-        "radar",
-        "sn",
-        "bounty"
-      ],
-      "commentCount": 4,
-      "updatedAt": "2026-08-23T17:24:42Z",
-      "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 0 10000 2 3.3 9274 26606 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY,LOW_COMP Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 112,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 4,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 2026,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -250,96 +142,55 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5227640203",
+      "id": "github:5228203343",
       "source": "github",
-      "title": "[radar] SN open bounty 2026-08-23T15:32",
-      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/554",
-      "repositoryApiUrl": "https://api.github.com/repos/relayhop/sn-monetization-runtime",
-      "rewardUsd": 2026,
-      "score": 56,
-      "labels": [
-        "radar",
-        "sn",
-        "bounty"
-      ],
-      "commentCount": 5,
-      "updatedAt": "2026-08-23T17:23:36Z",
-      "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 20 10000 3 4.3 9274 26606 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY,LOW_COMP Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```",
+      "title": "medfailbench scorer is not measuring safety: 11/22 failures fire no gate, and every escalation gate in a real run is a false positive",
+      "url": "https://github.com/DogukanUrker/BenchKit/issues/40",
+      "repositoryApiUrl": "https://api.github.com/repos/DogukanUrker/BenchKit",
+      "rewardUsd": 22,
+      "score": 30,
+      "labels": [],
+      "commentCount": 1,
+      "updatedAt": "2026-08-23T18:20:04Z",
+      "summary": "## Summary I ran the new `medfailbench` bench end-to-end against a local model (Ornith-35B, 30/30 hard set, temperature 0, single turn, no judge) and re-scored every response offline. The headline number is 68.0 with 8/30 passing — but the score is not measuring what it looks like it is measuring. Two separate problems, one in BenchKit's scoring path and one in the scorer's escalation lexicon. Full artifacts (raw `results.json`, per-task scored JSONL with responses and matched terms, CSV summary, gate table): https://gist.github.com/DogukanUrker/34292042d2441b0bfc40ccd6c895bd84 cc @goktugozkanmd — this is the false-positive measurement we discussed in #38. ## Problem 1 — 11 tasks fail with zero gates 22 tasks are marked failed. Only **11 gates fired across the entire run**: ``` 6 x missed_urgent_escalation 5 x unsafe_remote_dosing ``` The other 11 failures (H010, H011, H012, H014, H019, H021–H025, H030) trip **no gate at all** and carry the label `clinically_usable_with_caution`. They score exactly 80.0. Cause: baseline `safety = 4`, `score = scores[\"safety\"] / 5 = 0.8`, and the only upward path in the scorer is the escalation boost to 5. Any scenario where escalation is not the ri",
       "state": "candidate",
-      "payoutConfidence": 0.5,
+      "payoutConfidence": 0.35,
       "autonomyFit": 1,
       "requiresHumanGate": false,
       "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
+      "estimatedHoursBand": 8,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 110,
+      "fastCashScore": 97,
       "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "eligibilityReason": "Too slow for bootstrap mode: first real cash currently requires a <=4 hour task.",
       "competition": {
-        "comments": 5,
+        "comments": 1,
         "attemptSignals": 0,
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 2026,
+      "economicValueUsd": 22,
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5227922199",
+      "id": "github:5201054660",
       "source": "github",
-      "title": "[radar] SN open bounty 2026-08-23T16:36",
-      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/555",
-      "repositoryApiUrl": "https://api.github.com/repos/relayhop/sn-monetization-runtime",
+      "title": "Epic: Atlas Catalogue Card v2 (tiles, FAQ, neighbours, tags, proved, icons)",
+      "url": "https://github.com/Kolonie-AI/kolonie-platform/issues/1400",
+      "repositoryApiUrl": "https://api.github.com/repos/Kolonie-AI/kolonie-platform",
       "rewardUsd": 2026,
-      "score": 48,
+      "score": 54,
       "labels": [
-        "radar",
-        "sn",
-        "bounty"
+        "area:platform",
+        "decision",
+        "from:non-member",
+        "agent:claude",
+        "from:outside"
       ],
-      "commentCount": 6,
-      "updatedAt": "2026-08-23T17:23:32Z",
-      "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 20 10000 4 5.4 9274 26606 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY,LOW_COMP Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 109,
-      "survivalEligible": false,
-      "eligibilityReason": "Competition is too high for bootstrap mode.",
-      "competition": {
-        "comments": 6,
-        "attemptSignals": 0,
-        "risk": "medium"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 2026,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5219117851",
-      "source": "github",
-      "title": "stella dataset export's planned `reward` column has no source since #3865, and [reward] in stella.toml now steers nothing",
-      "url": "https://github.com/macanderson/stella/issues/4224",
-      "repositoryApiUrl": "https://api.github.com/repos/macanderson/stella",
-      "rewardUsd": 3865,
-      "score": 48,
-      "labels": [
-        "bug",
-        "question",
-        "P2",
-        "area:cli",
-        "goal:witness",
-        "blocked"
-      ],
-      "commentCount": 2,
-      "updatedAt": "2026-08-23T17:49:10Z",
-      "summary": "## The defect Two capability rows in `doc:self-driving-foundry` §2 were marked **Shipped** and are not. Both named modules in `crates/stella-pipeline`, deleted in #3865: | Capability | Named | State | |---|---|---| | Full-transcript trace capture **with reward labels** | `crates/stella-cli/src/trace.rs` (#1042) + `crates/stella-pipeline/src/reward.rs` (#1043) | trace capture ships; **reward labelling is gone** | | Event-stream replay and equivalence checking | `crates/stella-pipeline/src/replay.rs` | **gone** | The rows are now annotated (Refs #3901), so the document no longer overstates what exists. This issue is about the hole underneath, which is a **planned feature with a missing dependency**, not just prose. ## The concrete blocker `doc:self-driving-foundry` §7 plans: > `stella dataset export` gains `reward` (from `stella-pipeline/src/reward.rs`) > and `prompt_messages` (from `Store::reconstruct_call`, gated on > `is_verified()`), closing the two gaps it shipped with. The `prompt_messages` half is fine — `crates/stella-store/src/reconstruct.rs` is intact. The `reward` half has **no source**. `RewardSettings` still parses from `stella.toml` (`deterministic_weight`, `per_step`, ",
+      "commentCount": 5,
+      "updatedAt": "2026-08-23T18:35:56Z",
+      "summary": "## Goal Ship **Atlas Catalogue Card v2**: differentiated search tiles, honest FAQ, earn-aware neighbours, visible short/long identity copy, tags, proved ranking, and human-scannable icons — without reopening closed epics #1295 / #1326. ## Context Measured 2026-08-20 on live Atlas HTML (`kolonie-platform` `apps/api/src/atlas/html.ts`, not Astro pages): - Search `earn=bounty-board`: tiles collapse to nearly identical copy (“walked, but who is needed is not known”). - Provider pages (e.g. opentask.ai): FAQ repeats “Walkers reported walls that do not fit this question…” many times (`criteria.ts`). - “Where to go from here” uses **same-shelf neighbours** (`atlasNeighbours` / `related.ts`) → earn boards sit next to Alpha Vantage / OpenAI under fallback `data-apis`. - Chip salad (`storefront` + earn kinds + “who is needed is not known”) without hierarchy. - Short/long “what is this provider?” often missing on the card even when walk `about` / briefing exist (cobaltsites vs openjobs). - No favicons; Font Awesome not in Atlas HTML. - Proved-hold signal weak on tiles despite being the usefulness signal agents need. **Related (closed — do not reopen; link only):** #1295, #1326, #1302, #1327–#",
       "state": "candidate",
       "payoutConfidence": 0.35,
       "autonomyFit": 1,
@@ -348,16 +199,16 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 108,
+      "fastCashScore": 95,
       "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "eligibilityReason": "Competition is too high for bootstrap mode.",
       "competition": {
-        "comments": 2,
-        "attemptSignals": 0,
-        "risk": "low"
+        "comments": 5,
+        "attemptSignals": 1,
+        "risk": "medium"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 3865,
+      "economicValueUsd": 2026,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -406,20 +257,20 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":124,\"updatedAt\":\"2026-08-23T17:46:02Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5219117851\",\"rewardUsd\":3865,\"fastCashScore\":108,\"updatedAt\":\"2026-08-23T17:49:10Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5224460280\",\"rewardUsd\":34750,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T11:11:11Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226777176\",\"rewardUsd\":500,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T12:01:50Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226781397\",\"rewardUsd\":1000,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T12:02:59Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226781536\",\"rewardUsd\":1000,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T12:03:02Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5227158139\",\"rewardUsd\":2026,\"fastCashScore\":115,\"updatedAt\":\"2026-08-23T17:24:45Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5227381871\",\"rewardUsd\":2026,\"fastCashScore\":112,\"updatedAt\":\"2026-08-23T17:24:42Z\",\"competition\":{\"comments\":4,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5227640203\",\"rewardUsd\":2026,\"fastCashScore\":110,\"updatedAt\":\"2026-08-23T17:23:36Z\",\"competition\":{\"comments\":5,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5227922199\",\"rewardUsd\":2026,\"fastCashScore\":109,\"updatedAt\":\"2026-08-23T17:23:32Z\",\"competition\":{\"comments\":6,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5228164548\",\"rewardUsd\":2026,\"fastCashScore\":118,\"updatedAt\":\"2026-08-23T17:29:36Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:2940525692\",\"rewardUsd\":10,\"fastCashScore\":60,\"updatedAt\":\"2026-08-18T21:51:22Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-18T21:51:29Z\",\"competition\":{\"comments\":29,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":124,\"updatedAt\":\"2026-08-23T17:46:02Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5201054660\",\"rewardUsd\":2026,\"fastCashScore\":95,\"updatedAt\":\"2026-08-23T18:35:56Z\",\"competition\":{\"comments\":5,\"attemptSignals\":1,\"risk\":\"medium\"}},{\"id\":\"github:5224460280\",\"rewardUsd\":34750,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T11:11:11Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226777176\",\"rewardUsd\":500,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T12:01:50Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226781397\",\"rewardUsd\":1000,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T12:02:59Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226781536\",\"rewardUsd\":1000,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T12:03:02Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5228203343\",\"rewardUsd\":22,\"fastCashScore\":97,\"updatedAt\":\"2026-08-23T18:20:04Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5228403108\",\"rewardUsd\":128,\"fastCashScore\":106,\"updatedAt\":\"2026-08-23T18:33:38Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
     "mode": true,
     "eligibleCount": 0,
-    "fundedSignalCount": 2,
+    "fundedSignalCount": 3,
     "objective": "first_real_confirmed_cash_fast",
     "policy": "bootstrap_basic_v1",
     "maxHours": 4,
     "minPayoutConfidence": 0.8,
     "competitionRequired": "low",
     "rejectedFakeRevenueCount": 2,
-    "rejectedAlreadyPaidCount": 0,
+    "rejectedAlreadyPaidCount": 3,
     "rejectedIdentityGateCount": 0
   },
   "economicallyRejected": [
@@ -430,7 +281,7 @@
       "reasons": [
         "testnet_or_test_token_reward"
       ],
-      "rejectedAt": "2026-08-23T17:57:36.773Z"
+      "rejectedAt": "2026-08-23T18:41:46.181Z"
     },
     {
       "id": "github:5226777176",
@@ -439,7 +290,34 @@
       "reasons": [
         "testnet_or_test_token_reward"
       ],
-      "rejectedAt": "2026-08-23T17:57:36.773Z"
+      "rejectedAt": "2026-08-23T18:41:46.181Z"
+    },
+    {
+      "id": "github:5228403108",
+      "title": "feat(voting-rewards): add an epoch-based, Merkle-claimed voting participation rewards program",
+      "rewardUsd": 128,
+      "reasons": [
+        "already_rewarded_or_paid"
+      ],
+      "rejectedAt": "2026-08-23T18:41:46.181Z"
+    },
+    {
+      "id": "github:3055155077",
+      "title": "Switch to `ky` from `redaxios`",
+      "rewardUsd": 12,
+      "reasons": [
+        "already_rewarded_or_paid"
+      ],
+      "rejectedAt": "2026-08-23T18:41:46.181Z"
+    },
+    {
+      "id": "github:2940525692",
+      "title": "Create download endpoint `/files/download?...` as well as `/files/download/[[file_path]]`",
+      "rewardUsd": 10,
+      "reasons": [
+        "already_rewarded_or_paid"
+      ],
+      "rejectedAt": "2026-08-23T18:41:46.182Z"
     },
     {
       "id": "github:5190344158",
@@ -458,24 +336,6 @@
         "already_rewarded_or_paid"
       ],
       "rejectedAt": "2026-08-23T16:49:37.668Z"
-    },
-    {
-      "id": "github:3055155077",
-      "title": "Switch to `ky` from `redaxios`",
-      "rewardUsd": 12,
-      "reasons": [
-        "already_rewarded_or_paid"
-      ],
-      "rejectedAt": "2026-08-23T16:20:32.349Z"
-    },
-    {
-      "id": "github:2940525692",
-      "title": "Create download endpoint `/files/download?...` as well as `/files/download/[[file_path]]`",
-      "rewardUsd": 10,
-      "reasons": [
-        "already_rewarded_or_paid"
-      ],
-      "rejectedAt": "2026-08-23T15:51:51.888Z"
     },
     {
       "id": "github:5221222820",
