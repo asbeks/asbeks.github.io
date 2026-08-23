@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-08-23T08:03:21.105Z",
+  "updatedAt": "2026-08-23T08:45:46.365Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -41,78 +41,6 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5225741340",
-      "source": "github",
-      "title": "[radar] SN open bounty 2026-08-23T06:56",
-      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/545",
-      "repositoryApiUrl": "https://api.github.com/repos/relayhop/sn-monetization-runtime",
-      "rewardUsd": 2026,
-      "score": 44,
-      "labels": [
-        "radar",
-        "sn",
-        "bounty"
-      ],
-      "commentCount": 3,
-      "updatedAt": "2026-08-23T07:51:00Z",
-      "summary": "New SN OPEN_BOUNTY detected: ``` 1552806 Stacker_Sports 3 203 1000 18 15.5 1448206 1999 recent@Stacker_Sports|top@Stacker_Sports OPEN_BOUNTY,SELF_POST_OPP Nail the NFL top 10 ```",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 113,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 3,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 2026,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5189454900",
-      "source": "github",
-      "title": "[BOUNTY · OPEN FOR CONTRIBUTORS] Crea il fumetto visuale “Come funziona MyZubster” — 300 MYZ proposed",
-      "url": "https://github.com/MyZubster-Ecosystem/myzubster/issues/526",
-      "repositoryApiUrl": "https://api.github.com/repos/MyZubster-Ecosystem/myzubster",
-      "rewardUsd": 300,
-      "score": 72,
-      "labels": [
-        "documentation",
-        "good first issue",
-        "bounty"
-      ],
-      "commentCount": 3,
-      "updatedAt": "2026-08-23T07:57:16Z",
-      "summary": "# 🎨 Bounty — Crea il fumetto visuale “Come funziona MyZubster” ## Status **OPEN FOR CONTRIBUTORS / PROPOSED** > Questa issue è aperta a contributor visuali, illustratori e designer. Per evitare lavoro duplicato, commenta **`CLAIM`** prima di iniziare indicando alias, workflow (human-made / AI-assisted / mixed) e data prevista di consegna. ## Reward **300 MYZ proposed** — `Discovery Episode` tier. - Asset/accounting unit: **MYZ internal reward/accounting ledger** - Amount: **300 MYZ proposed** - Funding state: **PROPOSED — not yet guaranteed or externally settled** - Review: **manual maintainer verification** La definizione del reward rende il task leggibile e confrontabile, ma non costituisce promessa automatica di pagamento. Il reward può essere registrato solo dopo i gate previsti da `BOUNTIES.md`; qualunque settlement esterno resta separato e richiede verifica indipendente. ## Objective Trasformare il workflow **“Come funziona MyZubster”** in un fumetto/visual guide originale, chiaro, coerente con l’architettura reale del progetto e comprensibile anche a chi non conosce il codice. ## Deliverable minimo Realizzare **4–8 vignette/pagine + cover**, oppure una tavola equivalente ad",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 113,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 3,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 300,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
       "id": "github:4462160604",
       "source": "github",
       "title": "[bounty $400] Implement ABNF-compliant email address parser with full §3.2–§4.4 coverage",
@@ -150,81 +78,21 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5224698362",
+      "id": "github:5225741340",
       "source": "github",
-      "title": "Funding avenues for Dimecoin open-source development (for team consideration)",
-      "url": "https://github.com/dime-coin/dimecoin/issues/102",
-      "repositoryApiUrl": "https://api.github.com/repos/dime-coin/dimecoin",
-      "rewardUsd": 2024,
-      "score": 62,
-      "labels": [],
-      "commentCount": 2,
-      "updatedAt": "2026-08-23T07:16:19Z",
-      "summary": "## Purpose This is a **discussion / consideration** item, not a code change. It collects legitimate funding avenues for *open-source development* of Dimecoin, so the team can decide how to fund ongoing work (protocol hardening, light-wallet maturity, P2P/privacy infrastructure, running redundant ElectrumX). > Note on scope: this is strictly about **development funding** (grants, > foundation treasury, bounties). It deliberately excludes token sales / ICOs / > promotional activity, which are out of scope for this project. ## External OSS / infrastructure grants (coin-agnostic) These funds support open internet / P2P / privacy infrastructure and do **not** require the project to be Bitcoin: | Source | Where | Fits Dimecoin work | Amount / timing | | --- | --- | --- | --- | | **NLnet — NGI Zero Commons / Restack** | https://nlnet.nl (Apply) | BIP324 encrypted P2P, I2P, BIP157/158 light-client filters — package as \"censorship-resistant P2P transport + light-client privacy\" | €5k–50k, scalable. NGI0 Commons call reopens after summer 2026 | | **Sovereign Tech Fund** | https://www.sovereign.tech/programs/fund | P2P / encryption as \"open digital base technology\" | min €50k, ~6 months to co",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 108,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 2,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 2024,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5224489257",
-      "source": "github",
-      "title": "R-#214: ClusterFundV2 — el 10% de pagos de cursos GD llega íntegro al fondo del país",
-      "url": "https://github.com/pasosdeJesus/learn.tg/issues/214",
-      "repositoryApiUrl": "https://api.github.com/repos/pasosdeJesus/learn.tg",
-      "rewardUsd": 10,
-      "score": 38,
-      "labels": [],
-      "commentCount": 0,
-      "updatedAt": "2026-08-23T00:46:19Z",
-      "summary": "# R-#214: ClusterFundV2 — el 10% de pagos de cursos GD llega íntegro al fondo del país El contrato `ClusterFunds` aplica su mecánica de donación (`_distributeFees`: fee 10% + cashback 10%) a **todo** monto que recibe. Cuando un pago de curso GD rutea su 10% al fondo del país, el contrato lo vuelve a gravar: el fondo solo recibe 8% del pago y el backend recibe 2% (fee + cashback minted) — un doble cobro que no tiene sentido. Se crea `ClusterFundsV2` con funciones de *contribución* que acreditan el 100% del monto ruteado, y se alinea el % de pdJ GD a 40 según REQ/128. --- **Created:** 2026-08-22 **Status:** En progreso (contrato desplegado, código actualizado, e2e de distribución escrito — falta migración, deploy y validación e2e) --- ## 1. Motivación ### 1.1 El fondo recibe 8%, no 10% Flujo actual de un pago de curso GD de 10 USDT: 1. El comprador envía 10 USDT al backend. 2. `purchase/route.ts` rutea el 10% (1 USDT) a `ClusterFunds` vía `routeToClusterFunds`. 3. El contrato llama `_distributeFees(1 USDT)`: - 10% fee → wallet de pdJ/backend (0.1 USDT) - 10% cashback → `mintAndReserve` al backend (0.1 USDT → 2.2 SLEARN) - **80% → fondo del país: 0.8 USDT** 4. El 90% restante pasa por",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 95,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 0,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 10,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5214938859",
-      "source": "github",
-      "title": "Maintainer notice: enforce rolling bounty liquidity and external-funding GMV loop",
-      "url": "https://github.com/NSPG13/agent-bounties/issues/1117",
-      "repositoryApiUrl": "https://api.github.com/repos/NSPG13/agent-bounties",
-      "rewardUsd": 1115,
+      "title": "[radar] SN open bounty 2026-08-23T06:56",
+      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/545",
+      "repositoryApiUrl": "https://api.github.com/repos/relayhop/sn-monetization-runtime",
+      "rewardUsd": 2026,
       "score": 36,
-      "labels": [],
-      "commentCount": 20,
-      "updatedAt": "2026-08-23T08:01:23Z",
-      "summary": "## Planned scope Implement a private Open Competition V2 inventory invariant with floor 5 and target 10; a fail-closed deterministic replenishment planner; a bounded 30.40 USDC/day and 152 USDC lifetime execution policy; twenty reviewed structured-artifact candidates; unified public marketplace metrics; structured participant feedback; and external poster/funder conversion paths across web, API, MCP, CLI, and docs. This is needed because the five recently funded competitions settled without replacement and production reached zero active V2 competitions. The public product will continue to present one marketplace: public counts and GMV remain aggregated across supported bounty mechanisms. Only private operational state distinguishes the inventory needed by the replenisher. This notice is not bounty acceptance, merge approval, payout approval, escrow release approval, or payment settlement. ## Affected contracts or workflows Likely affected surfaces include the inventory guard and self-healing policy, the Open Competition V2 seed/planning workflow and scripts, private operational schemas, aggregate platform metrics, opportunity comments, posting/funding guidance, MCP/CLI parity, and ",
+      "labels": [
+        "radar",
+        "sn",
+        "bounty"
+      ],
+      "commentCount": 6,
+      "updatedAt": "2026-08-23T08:44:19Z",
+      "summary": "New SN OPEN_BOUNTY detected: ``` 1552806 Stacker_Sports 3 203 1000 18 15.5 1448206 1999 recent@Stacker_Sports|top@Stacker_Sports OPEN_BOUNTY,SELF_POST_OPP Nail the NFL top 10 ```",
       "state": "candidate",
       "payoutConfidence": 0.5,
       "autonomyFit": 1,
@@ -233,16 +101,16 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 88,
+      "fastCashScore": 109,
       "survivalEligible": false,
       "eligibilityReason": "Competition is too high for bootstrap mode.",
       "competition": {
-        "comments": 20,
+        "comments": 6,
         "attemptSignals": 0,
-        "risk": "high"
+        "risk": "medium"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 1115,
+      "economicValueUsd": 2026,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -291,7 +159,7 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-18T21:51:29Z\",\"competition\":{\"comments\":29,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":125,\"updatedAt\":\"2026-08-22T16:37:56Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5189454900\",\"rewardUsd\":300,\"fastCashScore\":113,\"updatedAt\":\"2026-08-23T07:57:16Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5214938859\",\"rewardUsd\":1115,\"fastCashScore\":88,\"updatedAt\":\"2026-08-23T08:01:23Z\",\"competition\":{\"comments\":20,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:5222233738\",\"rewardUsd\":10,\"fastCashScore\":103,\"updatedAt\":\"2026-08-23T07:51:53Z\",\"competition\":{\"comments\":5,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5222233848\",\"rewardUsd\":30,\"fastCashScore\":106,\"updatedAt\":\"2026-08-23T07:51:53Z\",\"competition\":{\"comments\":7,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5222234010\",\"rewardUsd\":15,\"fastCashScore\":96,\"updatedAt\":\"2026-08-23T07:51:03Z\",\"competition\":{\"comments\":11,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5224489257\",\"rewardUsd\":10,\"fastCashScore\":95,\"updatedAt\":\"2026-08-23T00:46:19Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5224698362\",\"rewardUsd\":2024,\"fastCashScore\":108,\"updatedAt\":\"2026-08-23T07:16:19Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5225741340\",\"rewardUsd\":2026,\"fastCashScore\":113,\"updatedAt\":\"2026-08-23T07:51:00Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-18T21:51:29Z\",\"competition\":{\"comments\":29,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":125,\"updatedAt\":\"2026-08-22T16:37:56Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5222231802\",\"rewardUsd\":15,\"fastCashScore\":102,\"updatedAt\":\"2026-08-23T08:43:29Z\",\"competition\":{\"comments\":7,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5222231944\",\"rewardUsd\":40,\"fastCashScore\":107,\"updatedAt\":\"2026-08-23T08:43:03Z\",\"competition\":{\"comments\":7,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5222232372\",\"rewardUsd\":35,\"fastCashScore\":104,\"updatedAt\":\"2026-08-23T08:43:01Z\",\"competition\":{\"comments\":9,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5222232864\",\"rewardUsd\":30,\"fastCashScore\":101,\"updatedAt\":\"2026-08-23T08:43:27Z\",\"competition\":{\"comments\":10,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5222233187\",\"rewardUsd\":20,\"fastCashScore\":105,\"updatedAt\":\"2026-08-23T08:43:35Z\",\"competition\":{\"comments\":6,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5222233299\",\"rewardUsd\":20,\"fastCashScore\":102,\"updatedAt\":\"2026-08-23T08:43:18Z\",\"competition\":{\"comments\":8,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5222233394\",\"rewardUsd\":35,\"fastCashScore\":110,\"updatedAt\":\"2026-08-23T08:42:38Z\",\"competition\":{\"comments\":5,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5222233612\",\"rewardUsd\":60,\"fastCashScore\":110,\"updatedAt\":\"2026-08-23T08:43:20Z\",\"competition\":{\"comments\":7,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5225741340\",\"rewardUsd\":2026,\"fastCashScore\":109,\"updatedAt\":\"2026-08-23T08:44:19Z\",\"competition\":{\"comments\":6,\"attemptSignals\":0,\"risk\":\"medium\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
@@ -303,20 +171,60 @@
     "maxHours": 4,
     "minPayoutConfidence": 0.8,
     "competitionRequired": "low",
-    "rejectedFakeRevenueCount": 3,
+    "rejectedFakeRevenueCount": 8,
     "rejectedAlreadyPaidCount": 1,
-    "rejectedIdentityGateCount": 3
+    "rejectedIdentityGateCount": 8
   },
   "economicallyRejected": [
     {
-      "id": "github:5222233848",
-      "title": "[Bug] Drag-and-drop path would bypass validation — no dropzone wiring through the validator",
-      "rewardUsd": 30,
+      "id": "github:5222233612",
+      "title": "[Refactor] Extract shared useFileUpload hook — three drifted copies of one uploader",
+      "rewardUsd": 60,
       "reasons": [
         "testnet_or_test_token_reward",
         "preclaim_or_identity_gate_not_configured"
       ],
-      "rejectedAt": "2026-08-23T08:03:21.072Z"
+      "rejectedAt": "2026-08-23T08:45:46.309Z"
+    },
+    {
+      "id": "github:5222233394",
+      "title": "[Bug] No AbortController — unmount mid-upload leaves requests running and setState-after-unmount",
+      "rewardUsd": 35,
+      "reasons": [
+        "testnet_or_test_token_reward",
+        "preclaim_or_identity_gate_not_configured"
+      ],
+      "rejectedAt": "2026-08-23T08:45:46.309Z"
+    },
+    {
+      "id": "github:5222231944",
+      "title": "[Bug] The two FileUpload test suites assert contradictory contracts",
+      "rewardUsd": 40,
+      "reasons": [
+        "testnet_or_test_token_reward",
+        "preclaim_or_identity_gate_not_configured"
+      ],
+      "rejectedAt": "2026-08-23T08:45:46.310Z"
+    },
+    {
+      "id": "github:5222233187",
+      "title": "[Bug] Raw fetch errors surfaced to users ('Upload failed with status 500', 'Failed to fetch')",
+      "rewardUsd": 20,
+      "reasons": [
+        "testnet_or_test_token_reward",
+        "preclaim_or_identity_gate_not_configured"
+      ],
+      "rejectedAt": "2026-08-23T08:45:46.310Z"
+    },
+    {
+      "id": "github:5222232372",
+      "title": "[Bug] FileUpload accepts files that violate the accept filter (no MIME/extension check)",
+      "rewardUsd": 35,
+      "reasons": [
+        "testnet_or_test_token_reward",
+        "preclaim_or_identity_gate_not_configured"
+      ],
+      "rejectedAt": "2026-08-23T08:45:46.310Z"
     },
     {
       "id": "github:3055155077",
@@ -324,6 +232,46 @@
       "rewardUsd": 12,
       "reasons": [
         "already_rewarded_or_paid"
+      ],
+      "rejectedAt": "2026-08-23T08:45:46.310Z"
+    },
+    {
+      "id": "github:5222233299",
+      "title": "[Bug] File inputs have no accessible label — screen readers announce an unnamed control",
+      "rewardUsd": 20,
+      "reasons": [
+        "testnet_or_test_token_reward",
+        "preclaim_or_identity_gate_not_configured"
+      ],
+      "rejectedAt": "2026-08-23T08:45:46.310Z"
+    },
+    {
+      "id": "github:5222231802",
+      "title": "[Bug] npm test silently skips file_upload_component.test.js",
+      "rewardUsd": 15,
+      "reasons": [
+        "testnet_or_test_token_reward",
+        "preclaim_or_identity_gate_not_configured"
+      ],
+      "rejectedAt": "2026-08-23T08:45:46.310Z"
+    },
+    {
+      "id": "github:5222232864",
+      "title": "[Bug] No CI workflow — tests never run on push/PR",
+      "rewardUsd": 30,
+      "reasons": [
+        "testnet_or_test_token_reward",
+        "preclaim_or_identity_gate_not_configured"
+      ],
+      "rejectedAt": "2026-08-23T08:45:46.310Z"
+    },
+    {
+      "id": "github:5222233848",
+      "title": "[Bug] Drag-and-drop path would bypass validation — no dropzone wiring through the validator",
+      "rewardUsd": 30,
+      "reasons": [
+        "testnet_or_test_token_reward",
+        "preclaim_or_identity_gate_not_configured"
       ],
       "rejectedAt": "2026-08-23T08:03:21.072Z"
     },
@@ -348,36 +296,6 @@
       "rejectedAt": "2026-08-23T08:03:21.072Z"
     },
     {
-      "id": "github:5222233612",
-      "title": "[Refactor] Extract shared useFileUpload hook — three drifted copies of one uploader",
-      "rewardUsd": 60,
-      "reasons": [
-        "testnet_or_test_token_reward",
-        "preclaim_or_identity_gate_not_configured"
-      ],
-      "rejectedAt": "2026-08-23T07:41:28.554Z"
-    },
-    {
-      "id": "github:5222231944",
-      "title": "[Bug] The two FileUpload test suites assert contradictory contracts",
-      "rewardUsd": 40,
-      "reasons": [
-        "testnet_or_test_token_reward",
-        "preclaim_or_identity_gate_not_configured"
-      ],
-      "rejectedAt": "2026-08-23T07:41:28.554Z"
-    },
-    {
-      "id": "github:5222233299",
-      "title": "[Bug] File inputs have no accessible label — screen readers announce an unnamed control",
-      "rewardUsd": 20,
-      "reasons": [
-        "testnet_or_test_token_reward",
-        "preclaim_or_identity_gate_not_configured"
-      ],
-      "rejectedAt": "2026-08-23T07:41:28.554Z"
-    },
-    {
       "id": "github:2940525692",
       "title": "Create download endpoint `/files/download?...` as well as `/files/download/[[file_path]]`",
       "rewardUsd": 10,
@@ -395,16 +313,6 @@
         "preclaim_or_identity_gate_not_configured"
       ],
       "rejectedAt": "2026-08-23T06:03:47.482Z"
-    },
-    {
-      "id": "github:5222232372",
-      "title": "[Bug] FileUpload accepts files that violate the accept filter (no MIME/extension check)",
-      "rewardUsd": 35,
-      "reasons": [
-        "testnet_or_test_token_reward",
-        "preclaim_or_identity_gate_not_configured"
-      ],
-      "rejectedAt": "2026-08-23T02:48:57.993Z"
     },
     {
       "id": "github:5222232235",
@@ -457,16 +365,6 @@
       "rejectedAt": "2026-08-22T19:11:45.079Z"
     },
     {
-      "id": "github:5222233394",
-      "title": "[Bug] No AbortController — unmount mid-upload leaves requests running and setState-after-unmount",
-      "rewardUsd": 35,
-      "reasons": [
-        "testnet_or_test_token_reward",
-        "preclaim_or_identity_gate_not_configured"
-      ],
-      "rejectedAt": "2026-08-22T19:11:45.080Z"
-    },
-    {
       "id": "github:5190340966",
       "title": "Fixed-Point Dividend Accounting and O(1) Holder Set for Property Token",
       "rewardUsd": 2000,
@@ -496,16 +394,6 @@
       "rejectedAt": "2026-08-22T18:00:52.889Z"
     },
     {
-      "id": "github:5222231802",
-      "title": "[Bug] npm test silently skips file_upload_component.test.js",
-      "rewardUsd": 15,
-      "reasons": [
-        "testnet_or_test_token_reward",
-        "preclaim_or_identity_gate_not_configured"
-      ],
-      "rejectedAt": "2026-08-22T17:44:28.172Z"
-    },
-    {
       "id": "github:5222232498",
       "title": "[Bug] No tsconfig.json / typecheck despite .tsx sources",
       "rewardUsd": 20,
@@ -514,16 +402,6 @@
         "preclaim_or_identity_gate_not_configured"
       ],
       "rejectedAt": "2026-08-22T17:21:09.030Z"
-    },
-    {
-      "id": "github:5222233187",
-      "title": "[Bug] Raw fetch errors surfaced to users ('Upload failed with status 500', 'Failed to fetch')",
-      "rewardUsd": 20,
-      "reasons": [
-        "testnet_or_test_token_reward",
-        "preclaim_or_identity_gate_not_configured"
-      ],
-      "rejectedAt": "2026-08-22T17:21:09.031Z"
     },
     {
       "id": "github:5218571040",
