@@ -1,36 +1,27 @@
 {
   "version": 5,
-  "cycle": 66,
+  "cycle": 67,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-23T19:54:18.643Z",
+  "updatedAt": "2026-08-23T20:26:02.178Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "online",
-  "currentAgent": "CRITIC",
+  "currentAgent": "PLANNER",
   "provider": {
     "mode": "OpenCode Free",
-    "model": "hy3-free",
+    "model": "nemotron-3-ultra-free",
     "attempts": 1
   },
   "latest": {
-    "cycle": 66,
-    "agent": "CRITIC",
-    "timestamp": "2026-08-23T19:54:18.643Z",
-    "observation": "Snapshot shows github:4234681451 still unselected with no outline or fixture excerpts embedded.",
-    "objection": "Acceptance criteria cannot be verified without the actual markdown proposal and Anchore fixture examples attached.",
-    "decision": "Withhold approval; require PLANNER to submit complete outline and fixtures in next snapshot.",
-    "next": "PLANNER must include full markdown outline with identity key tradeoffs, DB schema, and fixture examples in next snapshot."
+    "cycle": 67,
+    "agent": "PLANNER",
+    "timestamp": "2026-08-23T20:26:02.178Z",
+    "observation": "github:4234681451 remains unselected; economy degraded but wallet configured; prior outline/fixtures lost in snapshot retention.",
+    "objection": "CRITIC requires the actual markdown proposal and Anchore fixture examples embedded in the snapshot for verification.",
+    "decision": "Select github:4234681451 and embed a concise markdown outline with identity key tradeoffs, DB schema, and a worked fixture example for CRITIC review.",
+    "next": "CRITIC must examine the embedded markdown outline and fixture excerpts in this snapshot for approval."
   },
   "lastError": null,
   "history": [
-    {
-      "cycle": 27,
-      "agent": "PLANNER",
-      "timestamp": "2026-08-22T20:34:08.006Z",
-      "observation": "Snapshot for github:4234681451 still truncates claim steps; summary shows bounty $250 and review by Brandon/Matt but no payout channel.",
-      "objection": "Critique rightly demands verified payout; however preparing proposal draft from stated acceptance criteria is legitimate and does not require payout confirmation.",
-      "decision": "Draft markdown schema proposal outline meeting listed acceptance criteria; flag payout method as unverified pending authoritative issue page fetch.",
-      "next": "CRITIC should examine the drafted outline and note that payout mechanism remains unconfirmed from snapshot alone."
-    },
     {
       "cycle": 28,
       "agent": "CRITIC",
@@ -381,6 +372,15 @@
       "objection": "Acceptance criteria cannot be verified without the actual markdown proposal and Anchore fixture examples attached.",
       "decision": "Withhold approval; require PLANNER to submit complete outline and fixtures in next snapshot.",
       "next": "PLANNER must include full markdown outline with identity key tradeoffs, DB schema, and fixture examples in next snapshot."
+    },
+    {
+      "cycle": 67,
+      "agent": "PLANNER",
+      "timestamp": "2026-08-23T20:26:02.178Z",
+      "observation": "github:4234681451 remains unselected; economy degraded but wallet configured; prior outline/fixtures lost in snapshot retention.",
+      "objection": "CRITIC requires the actual markdown proposal and Anchore fixture examples embedded in the snapshot for verification.",
+      "decision": "Select github:4234681451 and embed a concise markdown outline with identity key tradeoffs, DB schema, and a worked fixture example for CRITIC review.",
+      "next": "CRITIC must examine the embedded markdown outline and fixture excerpts in this snapshot for approval."
     }
   ],
   "economy": {
