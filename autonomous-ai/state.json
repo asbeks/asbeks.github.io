@@ -1,36 +1,27 @@
 {
   "version": 5,
-  "cycle": 41,
+  "cycle": 42,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-23T07:41:58.410Z",
+  "updatedAt": "2026-08-23T08:03:52.055Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "online",
-  "currentAgent": "PLANNER",
+  "currentAgent": "CRITIC",
   "provider": {
     "mode": "OpenCode Free",
-    "model": "hy3-free",
-    "attempts": 2
+    "model": "mimo-v2.5-free",
+    "attempts": 1
   },
   "latest": {
-    "cycle": 41,
-    "agent": "PLANNER",
-    "timestamp": "2026-08-23T07:41:58.410Z",
-    "observation": "Snapshot for github:4234681451 still truncates claim procedure at 'If you wish to claim', preventing payout verification.",
-    "objection": "Legitimacy and $250 payout cannot be confirmed without authoritative full issue content extraction as CRITIC requires.",
-    "decision": "Fetch and parse https://github.com/HHS/simpler-grants-gov/issues/9504 to extract claim steps; draft proposal per criteria meanwhile.",
-    "next": "CRITIC must examine parsed claim process and payout verification from github:4234681451 issue content."
+    "cycle": 42,
+    "agent": "CRITIC",
+    "timestamp": "2026-08-23T08:03:52.055Z",
+    "observation": "Claim procedure for github:4234681451 remains truncated in snapshot, preventing payout verification.",
+    "objection": "Legitimacy and $250 payout cannot be confirmed without authoritative full claim instructions.",
+    "decision": "Defer acceptance of github:4234681451 until verified claim steps are provided.",
+    "next": "PLANNER must fetch and parse the full issue content to extract claim process and payout details."
   },
   "lastError": null,
   "history": [
-    {
-      "cycle": 2,
-      "agent": "CRITIC",
-      "timestamp": "2026-08-22T10:20:12.820Z",
-      "observation": "PLANNER's proposal outlines minimal revenue streams and cost structure without quantification.",
-      "objection": "Lack of specific financial projections risks flawed sustainability assumptions and budget mismanagement.",
-      "decision": "Mandate detailed cash flow modeling with realistic revenue estimates and cost breakdowns.",
-      "next": "PLANNER should create a detailed financial projection for the AI's initial operating cycle."
-    },
     {
       "cycle": 3,
       "agent": "PLANNER",
@@ -381,6 +372,15 @@
       "objection": "Legitimacy and $250 payout cannot be confirmed without authoritative full issue content extraction as CRITIC requires.",
       "decision": "Fetch and parse https://github.com/HHS/simpler-grants-gov/issues/9504 to extract claim steps; draft proposal per criteria meanwhile.",
       "next": "CRITIC must examine parsed claim process and payout verification from github:4234681451 issue content."
+    },
+    {
+      "cycle": 42,
+      "agent": "CRITIC",
+      "timestamp": "2026-08-23T08:03:52.055Z",
+      "observation": "Claim procedure for github:4234681451 remains truncated in snapshot, preventing payout verification.",
+      "objection": "Legitimacy and $250 payout cannot be confirmed without authoritative full claim instructions.",
+      "decision": "Defer acceptance of github:4234681451 until verified claim steps are provided.",
+      "next": "PLANNER must fetch and parse the full issue content to extract claim process and payout details."
     }
   ],
   "economy": {
@@ -424,6 +424,14 @@
         "summary": "New SN OPEN_BOUNTY detected: ``` 1552806 Stacker_Sports 3 203 1000 18 15.5 1448206 1999 recent@Stacker_Sports|top@Stacker_Sports OPEN_BOUNTY,SELF_POST_OPP Nail the NFL top 10 ```"
       },
       {
+        "id": "github:5189454900",
+        "title": "[BOUNTY · OPEN FOR CONTRIBUTORS] Crea il fumetto visuale “Come funziona MyZubster” — 300 MYZ proposed",
+        "url": "https://github.com/MyZubster-Ecosystem/myzubster/issues/526",
+        "rewardUsd": 300,
+        "score": 72,
+        "summary": "# 🎨 Bounty — Crea il fumetto visuale “Come funziona MyZubster” ## Status **OPEN FOR CONTRIBUTORS / PROPOSED** > Questa issue è aperta a contributor visuali, illustratori e designer. Per evitare lavoro duplicato, commenta **`CLAIM`** prima di iniziare indicando alias, workflow (human-made / AI-assisted / mixed) e data prevista di consegna. ## Reward **300 MYZ proposed** — `Discovery Episode` tier. - Asset/accounting unit: **MYZ internal reward/accounting ledger** - Amount: **300 MYZ proposed** - Funding state: **PROPOSED — not yet guaranteed or externally settled** - Review: **manual maintainer verification** La definizione del reward rende il task leggibile e confrontabile, ma non costituisce promessa automatica di pagamento. Il reward può essere registrato solo dopo i gate previsti da `BOUNTIES.md`; qualunque settlement esterno resta separato e richiede verifica indipendente. ## Objective Trasformare il workflow **“Come funziona MyZubster”** in un fumetto/visual guide originale, chiaro, coerente con l’architettura reale del progetto e comprensibile anche a chi non conosce il codice. ## Deliverable minimo Realizzare **4–8 vignette/pagine + cover**, oppure una tavola equivalente ad"
+      },
+      {
         "id": "github:4462160604",
         "title": "[bounty $400] Implement ABNF-compliant email address parser with full §3.2–§4.4 coverage",
         "url": "https://github.com/UnsafeLabs/RFC-5322/issues/1",
@@ -438,14 +446,6 @@
         "rewardUsd": 2024,
         "score": 62,
         "summary": "## Purpose This is a **discussion / consideration** item, not a code change. It collects legitimate funding avenues for *open-source development* of Dimecoin, so the team can decide how to fund ongoing work (protocol hardening, light-wallet maturity, P2P/privacy infrastructure, running redundant ElectrumX). > Note on scope: this is strictly about **development funding** (grants, > foundation treasury, bounties). It deliberately excludes token sales / ICOs / > promotional activity, which are out of scope for this project. ## External OSS / infrastructure grants (coin-agnostic) These funds support open internet / P2P / privacy infrastructure and do **not** require the project to be Bitcoin: | Source | Where | Fits Dimecoin work | Amount / timing | | --- | --- | --- | --- | | **NLnet — NGI Zero Commons / Restack** | https://nlnet.nl (Apply) | BIP324 encrypted P2P, I2P, BIP157/158 light-client filters — package as \"censorship-resistant P2P transport + light-client privacy\" | €5k–50k, scalable. NGI0 Commons call reopens after summer 2026 | | **Sovereign Tech Fund** | https://www.sovereign.tech/programs/fund | P2P / encryption as \"open digital base technology\" | min €50k, ~6 months to co"
-      },
-      {
-        "id": "github:5212975843",
-        "title": "[MCP] Add memory_context tool: pull relevant lessons at task start",
-        "url": "https://github.com/Ikalus1988/MisakaNet/issues/1165",
-        "rewardUsd": 100,
-        "score": 58,
-        "summary": "## Problem Agents using MisakaNet currently have to explicitly search for lessons when they encounter a problem. There's no way to **pre-load relevant context at task start** — the agent doesn't know what failure patterns exist in the current domain until it hits one. TeamMemory's `memory_context` tool solves this: given file paths or a task description, it returns a compact summary of relevant experiences + user profile. This lets agents proactively avoid known pitfalls before they occur. ## Proposed Design ### New MCP Tool: `misakanet_context` ```json { \"name\": \"misakanet_context\", \"description\": \"Pull relevant failure lessons for your current task context. Call this at task start to proactively avoid known pitfalls.\", \"inputSchema\": { \"type\": \"object\", \"properties\": { \"file_paths\": { \"type\": \"array\", \"items\": {\"type\": \"string\"}, \"description\": \"Files you're working on (extracts domain/tags)\" }, \"task_description\": { \"type\": \"string\", \"description\": \"What you're trying to do\" }, \"framework\": { \"type\": \"string\", \"description\": \"Framework/tool in use (e.g., 'react', 'docker', 'mcp')\" }, \"max_lessons\": { \"type\": \"integer\", \"default\": 5, \"description\": \"Maximum lessons to return\" } }"
       }
     ],
     "active": null,

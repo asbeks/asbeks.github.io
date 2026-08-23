@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-08-23T07:41:28.606Z",
+  "updatedAt": "2026-08-23T08:03:21.105Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -53,8 +53,8 @@
         "sn",
         "bounty"
       ],
-      "commentCount": 1,
-      "updatedAt": "2026-08-23T07:26:34Z",
+      "commentCount": 3,
+      "updatedAt": "2026-08-23T07:51:00Z",
       "summary": "New SN OPEN_BOUNTY detected: ``` 1552806 Stacker_Sports 3 203 1000 18 15.5 1448206 1999 recent@Stacker_Sports|top@Stacker_Sports OPEN_BOUNTY,SELF_POST_OPP Nail the NFL top 10 ```",
       "state": "candidate",
       "payoutConfidence": 0.5,
@@ -64,16 +64,52 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 116,
+      "fastCashScore": 113,
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
-        "comments": 1,
+        "comments": 3,
         "attemptSignals": 0,
         "risk": "low"
       },
       "realMoneyEligible": true,
       "economicValueUsd": 2026,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5189454900",
+      "source": "github",
+      "title": "[BOUNTY · OPEN FOR CONTRIBUTORS] Crea il fumetto visuale “Come funziona MyZubster” — 300 MYZ proposed",
+      "url": "https://github.com/MyZubster-Ecosystem/myzubster/issues/526",
+      "repositoryApiUrl": "https://api.github.com/repos/MyZubster-Ecosystem/myzubster",
+      "rewardUsd": 300,
+      "score": 72,
+      "labels": [
+        "documentation",
+        "good first issue",
+        "bounty"
+      ],
+      "commentCount": 3,
+      "updatedAt": "2026-08-23T07:57:16Z",
+      "summary": "# 🎨 Bounty — Crea il fumetto visuale “Come funziona MyZubster” ## Status **OPEN FOR CONTRIBUTORS / PROPOSED** > Questa issue è aperta a contributor visuali, illustratori e designer. Per evitare lavoro duplicato, commenta **`CLAIM`** prima di iniziare indicando alias, workflow (human-made / AI-assisted / mixed) e data prevista di consegna. ## Reward **300 MYZ proposed** — `Discovery Episode` tier. - Asset/accounting unit: **MYZ internal reward/accounting ledger** - Amount: **300 MYZ proposed** - Funding state: **PROPOSED — not yet guaranteed or externally settled** - Review: **manual maintainer verification** La definizione del reward rende il task leggibile e confrontabile, ma non costituisce promessa automatica di pagamento. Il reward può essere registrato solo dopo i gate previsti da `BOUNTIES.md`; qualunque settlement esterno resta separato e richiede verifica indipendente. ## Objective Trasformare il workflow **“Come funziona MyZubster”** in un fumetto/visual guide originale, chiaro, coerente con l’architettura reale del progetto e comprensibile anche a chi non conosce il codice. ## Deliverable minimo Realizzare **4–8 vignette/pagine + cover**, oppure una tavola equivalente ad",
+      "state": "candidate",
+      "payoutConfidence": 0.5,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 113,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 3,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 300,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -146,22 +182,17 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5212975843",
+      "id": "github:5224489257",
       "source": "github",
-      "title": "[MCP] Add memory_context tool: pull relevant lessons at task start",
-      "url": "https://github.com/Ikalus1988/MisakaNet/issues/1165",
-      "repositoryApiUrl": "https://api.github.com/repos/Ikalus1988/MisakaNet",
-      "rewardUsd": 100,
-      "score": 58,
-      "labels": [
-        "enhancement",
-        "ready",
-        "agent-friendly",
-        "zero-bounty"
-      ],
-      "commentCount": 1,
-      "updatedAt": "2026-08-23T07:39:28Z",
-      "summary": "## Problem Agents using MisakaNet currently have to explicitly search for lessons when they encounter a problem. There's no way to **pre-load relevant context at task start** — the agent doesn't know what failure patterns exist in the current domain until it hits one. TeamMemory's `memory_context` tool solves this: given file paths or a task description, it returns a compact summary of relevant experiences + user profile. This lets agents proactively avoid known pitfalls before they occur. ## Proposed Design ### New MCP Tool: `misakanet_context` ```json { \"name\": \"misakanet_context\", \"description\": \"Pull relevant failure lessons for your current task context. Call this at task start to proactively avoid known pitfalls.\", \"inputSchema\": { \"type\": \"object\", \"properties\": { \"file_paths\": { \"type\": \"array\", \"items\": {\"type\": \"string\"}, \"description\": \"Files you're working on (extracts domain/tags)\" }, \"task_description\": { \"type\": \"string\", \"description\": \"What you're trying to do\" }, \"framework\": { \"type\": \"string\", \"description\": \"Framework/tool in use (e.g., 'react', 'docker', 'mcp')\" }, \"max_lessons\": { \"type\": \"integer\", \"default\": 5, \"description\": \"Maximum lessons to return\" } }",
+      "title": "R-#214: ClusterFundV2 — el 10% de pagos de cursos GD llega íntegro al fondo del país",
+      "url": "https://github.com/pasosdeJesus/learn.tg/issues/214",
+      "repositoryApiUrl": "https://api.github.com/repos/pasosdeJesus/learn.tg",
+      "rewardUsd": 10,
+      "score": 38,
+      "labels": [],
+      "commentCount": 0,
+      "updatedAt": "2026-08-23T00:46:19Z",
+      "summary": "# R-#214: ClusterFundV2 — el 10% de pagos de cursos GD llega íntegro al fondo del país El contrato `ClusterFunds` aplica su mecánica de donación (`_distributeFees`: fee 10% + cashback 10%) a **todo** monto que recibe. Cuando un pago de curso GD rutea su 10% al fondo del país, el contrato lo vuelve a gravar: el fondo solo recibe 8% del pago y el backend recibe 2% (fee + cashback minted) — un doble cobro que no tiene sentido. Se crea `ClusterFundsV2` con funciones de *contribución* que acreditan el 100% del monto ruteado, y se alinea el % de pdJ GD a 40 según REQ/128. --- **Created:** 2026-08-22 **Status:** En progreso (contrato desplegado, código actualizado, e2e de distribución escrito — falta migración, deploy y validación e2e) --- ## 1. Motivación ### 1.1 El fondo recibe 8%, no 10% Flujo actual de un pago de curso GD de 10 USDT: 1. El comprador envía 10 USDT al backend. 2. `purchase/route.ts` rutea el 10% (1 USDT) a `ClusterFunds` vía `routeToClusterFunds`. 3. El contrato llama `_distributeFees(1 USDT)`: - 10% fee → wallet de pdJ/backend (0.1 USDT) - 10% cashback → `mintAndReserve` al backend (0.1 USDT → 2.2 SLEARN) - **80% → fondo del país: 0.8 USDT** 4. El 90% restante pasa por",
       "state": "candidate",
       "payoutConfidence": 0.35,
       "autonomyFit": 1,
@@ -170,127 +201,48 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 98,
+      "fastCashScore": 95,
       "survivalEligible": false,
-      "eligibilityReason": "Competition is too high for bootstrap mode.",
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
-        "comments": 1,
-        "attemptSignals": 1,
-        "risk": "medium"
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 100,
+      "economicValueUsd": 10,
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5214386459",
+      "id": "github:5214938859",
       "source": "github",
-      "title": "[Test] Add Hypothesis fuzz tests for search, intake, MCP protocol",
-      "url": "https://github.com/Ikalus1988/MisakaNet/issues/1182",
-      "repositoryApiUrl": "https://api.github.com/repos/Ikalus1988/MisakaNet",
-      "rewardUsd": 100,
-      "score": 58,
-      "labels": [
-        "enhancement",
-        "ready",
-        "agent-friendly",
-        "zero-bounty"
-      ],
-      "commentCount": 1,
-      "updatedAt": "2026-08-23T07:39:23Z",
-      "summary": "## Problem The repo has contract tests (`test_mcp_auth_contract.py`) and stress tests (`mcp-stress.yml`) but no fuzz testing. Fuzz testing is the only way to find edge cases in: - BM25 search query parsing (special characters, unicode, extremely long queries) - Intake redaction (adversarial inputs trying to bypass redaction) - MCP protocol handling (malformed JSON-RPC, oversized payloads) ## Proposed Design ### Search fuzzing ```python # tests/test_search_fuzz.py from hypothesis import given, strategies as st @given(query=st.text(min_size=0, max_size=10000)) def test_search_never_crashes(query): \"\"\"Search should never crash, regardless of input.\"\"\" result = search_lessons(query) assert isinstance(result, list) @given(query=st.text(alphabet=st.characters(blacklist_categories=(\"Cs\",)))) def test_search_handles_unicode(query): \"\"\"Search handles all unicode without error.\"\"\" result = search_lessons(query) assert isinstance(result, list) ``` ### Intake redaction fuzzing ```python # tests/test_intake_fuzz.py @given(payload=st.dictionaries( keys=st.text(min_size=1, max_size=100), values=st.text(min_size=0, max_size=10000) )) def test_redaction_never_leaks_secrets(payload): \"\"\"Redaction sh",
+      "title": "Maintainer notice: enforce rolling bounty liquidity and external-funding GMV loop",
+      "url": "https://github.com/NSPG13/agent-bounties/issues/1117",
+      "repositoryApiUrl": "https://api.github.com/repos/NSPG13/agent-bounties",
+      "rewardUsd": 1115,
+      "score": 36,
+      "labels": [],
+      "commentCount": 20,
+      "updatedAt": "2026-08-23T08:01:23Z",
+      "summary": "## Planned scope Implement a private Open Competition V2 inventory invariant with floor 5 and target 10; a fail-closed deterministic replenishment planner; a bounded 30.40 USDC/day and 152 USDC lifetime execution policy; twenty reviewed structured-artifact candidates; unified public marketplace metrics; structured participant feedback; and external poster/funder conversion paths across web, API, MCP, CLI, and docs. This is needed because the five recently funded competitions settled without replacement and production reached zero active V2 competitions. The public product will continue to present one marketplace: public counts and GMV remain aggregated across supported bounty mechanisms. Only private operational state distinguishes the inventory needed by the replenisher. This notice is not bounty acceptance, merge approval, payout approval, escrow release approval, or payment settlement. ## Affected contracts or workflows Likely affected surfaces include the inventory guard and self-healing policy, the Open Competition V2 seed/planning workflow and scripts, private operational schemas, aggregate platform metrics, opportunity comments, posting/funding guidance, MCP/CLI parity, and ",
       "state": "candidate",
-      "payoutConfidence": 0.35,
+      "payoutConfidence": 0.5,
       "autonomyFit": 1,
       "requiresHumanGate": false,
       "requiresSpecialHardware": false,
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 98,
+      "fastCashScore": 88,
       "survivalEligible": false,
       "eligibilityReason": "Competition is too high for bootstrap mode.",
       "competition": {
-        "comments": 1,
-        "attemptSignals": 1,
-        "risk": "medium"
+        "comments": 20,
+        "attemptSignals": 0,
+        "risk": "high"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 100,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5214377429",
-      "source": "github",
-      "title": "[Refactor] Split mcp_server.py (41kB) into misakanet/server/ package",
-      "url": "https://github.com/Ikalus1988/MisakaNet/issues/1180",
-      "repositoryApiUrl": "https://api.github.com/repos/Ikalus1988/MisakaNet",
-      "rewardUsd": 100,
-      "score": 58,
-      "labels": [
-        "enhancement",
-        "ready",
-        "agent-friendly",
-        "zero-bounty"
-      ],
-      "commentCount": 1,
-      "updatedAt": "2026-08-23T07:39:15Z",
-      "summary": "## Problem `scripts/mcp_server.py` is 40,975 bytes (~41kB) — a single file containing MCP protocol handling, tool definitions, request routing, and business logic. This is the only script in the repo that's genuinely too large. Other scripts (quality_scorer.py 20kB, queue_lesson.py 15kB, lesson_lint.py 15kB) are reasonable size. The Copilot review flagged all scripts as large — that's inaccurate. But mcp_server.py genuinely needs splitting. ## Current structure ``` scripts/mcp_server.py (41kB) ├── MCP protocol handling (stdio transport, JSON-RPC) ├── Tool definitions (7 tools: search, get_lesson, submit_usage, etc.) ├── Request handlers (handle_search, handle_get_lesson, etc.) ├── Business logic (search execution, lesson formatting, intake processing) ├── Auth/token management └── CLI entry point ``` ## Proposed refactor ``` misakanet/ server/ __init__.py protocol.py # MCP JSON-RPC protocol handling tools.py # Tool definitions and schemas handlers/ __init__.py search.py # misakanet_search handler get_lesson.py # misakanet_get_lesson handler submit.py # misakanet_submit_usage + submit_intake write.py # misakanet_write_lesson preflight.py # misakanet_preflight status.py # misakanet_u",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 98,
-      "survivalEligible": false,
-      "eligibilityReason": "Competition is too high for bootstrap mode.",
-      "competition": {
-        "comments": 1,
-        "attemptSignals": 1,
-        "risk": "medium"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 100,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5222686588",
-      "source": "github",
-      "title": "[MCP] Fix KV token verification for write_lesson",
-      "url": "https://github.com/Ikalus1988/MisakaNet/issues/1240",
-      "repositoryApiUrl": "https://api.github.com/repos/Ikalus1988/MisakaNet",
-      "rewardUsd": 100,
-      "score": 58,
-      "labels": [
-        "bug",
-        "ready",
-        "agent-friendly",
-        "zero-bounty"
-      ],
-      "commentCount": 1,
-      "updatedAt": "2026-08-23T07:39:10Z",
-      "summary": "## Problem Remote MCP token verification fails for `misakanet_write_lesson`. Registration succeeds and stores token in KV, but subsequent authenticated calls return `Unauthorized`. **Root cause**: KV lookup fails during token verification, even though KV binding is configured and data exists. ## Current state | Tool | Auth requirement | Status | |---|---|---| | `misakanet_register` | None | ✅ | | `misakanet_search` | None (rate-limited) | ✅ | | `misakanet_get_lesson` | None (rate-limited) | ✅ | | `misakanet_submit_intake` | None | ✅ | | `misakanet_preflight` | None (rate-limited) | ✅ | | `misakanet_write_lesson` | Required (KV token) | ❌ | ## What we know 1. Registration stores token at `mcp_token:${token}` in KV ✅ 2. KV data exists (verified in Cloudflare Dashboard) ✅ 3. KV binding is configured (`MISAKANET_KV`) ✅ 4. Auth check reads from `mcp_token:${token}` but returns null ❌ ## Possible causes 1. **KV namespace mismatch**: Registration writes to one KV, auth reads from another 2. **KV binding not available in Worker context**: `env.MISAKANET_KV` is undefined during auth check 3. **Timing issue**: KV eventual consistency delay 4. **Code path issue**: Auth check runs before KV is",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 98,
-      "survivalEligible": false,
-      "eligibilityReason": "Competition is too high for bootstrap mode.",
-      "competition": {
-        "comments": 1,
-        "attemptSignals": 1,
-        "risk": "medium"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 100,
+      "economicValueUsd": 1115,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -339,23 +291,62 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":125,\"updatedAt\":\"2026-08-22T16:37:56Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5212975843\",\"rewardUsd\":100,\"fastCashScore\":98,\"updatedAt\":\"2026-08-23T07:39:28Z\",\"competition\":{\"comments\":1,\"attemptSignals\":1,\"risk\":\"medium\"}},{\"id\":\"github:5214377429\",\"rewardUsd\":100,\"fastCashScore\":98,\"updatedAt\":\"2026-08-23T07:39:15Z\",\"competition\":{\"comments\":1,\"attemptSignals\":1,\"risk\":\"medium\"}},{\"id\":\"github:5214386459\",\"rewardUsd\":100,\"fastCashScore\":98,\"updatedAt\":\"2026-08-23T07:39:23Z\",\"competition\":{\"comments\":1,\"attemptSignals\":1,\"risk\":\"medium\"}},{\"id\":\"github:5222231944\",\"rewardUsd\":40,\"fastCashScore\":110,\"updatedAt\":\"2026-08-23T07:35:54Z\",\"competition\":{\"comments\":5,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5222233299\",\"rewardUsd\":20,\"fastCashScore\":107,\"updatedAt\":\"2026-08-23T07:36:58Z\",\"competition\":{\"comments\":5,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5222233612\",\"rewardUsd\":60,\"fastCashScore\":114,\"updatedAt\":\"2026-08-23T07:36:42Z\",\"competition\":{\"comments\":4,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5222233848\",\"rewardUsd\":30,\"fastCashScore\":109,\"updatedAt\":\"2026-08-23T07:36:15Z\",\"competition\":{\"comments\":5,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5222686588\",\"rewardUsd\":100,\"fastCashScore\":98,\"updatedAt\":\"2026-08-23T07:39:10Z\",\"competition\":{\"comments\":1,\"attemptSignals\":1,\"risk\":\"medium\"}},{\"id\":\"github:5224698362\",\"rewardUsd\":2024,\"fastCashScore\":108,\"updatedAt\":\"2026-08-23T07:16:19Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5225741340\",\"rewardUsd\":2026,\"fastCashScore\":116,\"updatedAt\":\"2026-08-23T07:26:34Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-18T21:51:29Z\",\"competition\":{\"comments\":29,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":125,\"updatedAt\":\"2026-08-22T16:37:56Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5189454900\",\"rewardUsd\":300,\"fastCashScore\":113,\"updatedAt\":\"2026-08-23T07:57:16Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5214938859\",\"rewardUsd\":1115,\"fastCashScore\":88,\"updatedAt\":\"2026-08-23T08:01:23Z\",\"competition\":{\"comments\":20,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:5222233738\",\"rewardUsd\":10,\"fastCashScore\":103,\"updatedAt\":\"2026-08-23T07:51:53Z\",\"competition\":{\"comments\":5,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5222233848\",\"rewardUsd\":30,\"fastCashScore\":106,\"updatedAt\":\"2026-08-23T07:51:53Z\",\"competition\":{\"comments\":7,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5222234010\",\"rewardUsd\":15,\"fastCashScore\":96,\"updatedAt\":\"2026-08-23T07:51:03Z\",\"competition\":{\"comments\":11,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5224489257\",\"rewardUsd\":10,\"fastCashScore\":95,\"updatedAt\":\"2026-08-23T00:46:19Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5224698362\",\"rewardUsd\":2024,\"fastCashScore\":108,\"updatedAt\":\"2026-08-23T07:16:19Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5225741340\",\"rewardUsd\":2026,\"fastCashScore\":113,\"updatedAt\":\"2026-08-23T07:51:00Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
     "mode": true,
     "eligibleCount": 0,
-    "fundedSignalCount": 2,
+    "fundedSignalCount": 3,
     "objective": "first_real_confirmed_cash_fast",
     "policy": "bootstrap_basic_v1",
     "maxHours": 4,
     "minPayoutConfidence": 0.8,
     "competitionRequired": "low",
-    "rejectedFakeRevenueCount": 4,
-    "rejectedAlreadyPaidCount": 0,
-    "rejectedIdentityGateCount": 4
+    "rejectedFakeRevenueCount": 3,
+    "rejectedAlreadyPaidCount": 1,
+    "rejectedIdentityGateCount": 3
   },
   "economicallyRejected": [
+    {
+      "id": "github:5222233848",
+      "title": "[Bug] Drag-and-drop path would bypass validation — no dropzone wiring through the validator",
+      "rewardUsd": 30,
+      "reasons": [
+        "testnet_or_test_token_reward",
+        "preclaim_or_identity_gate_not_configured"
+      ],
+      "rejectedAt": "2026-08-23T08:03:21.072Z"
+    },
+    {
+      "id": "github:3055155077",
+      "title": "Switch to `ky` from `redaxios`",
+      "rewardUsd": 12,
+      "reasons": [
+        "already_rewarded_or_paid"
+      ],
+      "rejectedAt": "2026-08-23T08:03:21.072Z"
+    },
+    {
+      "id": "github:5222233738",
+      "title": "[Bug] maxSizeMB prop silently accepted as NaN / 0 / negative",
+      "rewardUsd": 10,
+      "reasons": [
+        "testnet_or_test_token_reward",
+        "preclaim_or_identity_gate_not_configured"
+      ],
+      "rejectedAt": "2026-08-23T08:03:21.072Z"
+    },
+    {
+      "id": "github:5222234010",
+      "title": "[Bug] Enter key after choosing a file doesn't start upload (no form submit path)",
+      "rewardUsd": 15,
+      "reasons": [
+        "testnet_or_test_token_reward",
+        "preclaim_or_identity_gate_not_configured"
+      ],
+      "rejectedAt": "2026-08-23T08:03:21.072Z"
+    },
     {
       "id": "github:5222233612",
       "title": "[Refactor] Extract shared useFileUpload hook — three drifted copies of one uploader",
@@ -377,16 +368,6 @@
       "rejectedAt": "2026-08-23T07:41:28.554Z"
     },
     {
-      "id": "github:5222233848",
-      "title": "[Bug] Drag-and-drop path would bypass validation — no dropzone wiring through the validator",
-      "rewardUsd": 30,
-      "reasons": [
-        "testnet_or_test_token_reward",
-        "preclaim_or_identity_gate_not_configured"
-      ],
-      "rejectedAt": "2026-08-23T07:41:28.554Z"
-    },
-    {
       "id": "github:5222233299",
       "title": "[Bug] File inputs have no accessible label — screen readers announce an unnamed control",
       "rewardUsd": 20,
@@ -395,15 +376,6 @@
         "preclaim_or_identity_gate_not_configured"
       ],
       "rejectedAt": "2026-08-23T07:41:28.554Z"
-    },
-    {
-      "id": "github:3055155077",
-      "title": "Switch to `ky` from `redaxios`",
-      "rewardUsd": 12,
-      "reasons": [
-        "already_rewarded_or_paid"
-      ],
-      "rejectedAt": "2026-08-23T06:58:35.377Z"
     },
     {
       "id": "github:2940525692",
