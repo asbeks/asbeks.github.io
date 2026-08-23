@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-08-23T14:29:49.104Z",
+  "updatedAt": "2026-08-23T14:55:19.987Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -41,40 +41,71 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5220101735",
+      "id": "github:5227477302",
       "source": "github",
-      "title": "[MCP] HTTP proxy support for Remote MCP behind corporate firewalls",
-      "url": "https://github.com/Ikalus1988/MisakaNet/issues/1207",
-      "repositoryApiUrl": "https://api.github.com/repos/Ikalus1988/MisakaNet",
-      "rewardUsd": 100,
-      "score": 58,
-      "labels": [
-        "enhancement",
-        "ready",
-        "agent-friendly",
-        "zero-bounty"
-      ],
-      "commentCount": 2,
-      "updatedAt": "2026-08-23T14:12:18Z",
-      "summary": "## Context mcp-remote provides `--enable-proxy` to respect `HTTP_PROXY`/`HTTPS_PROXY` environment variables. MisakaNet Remote MCP has no proxy awareness — agents behind corporate firewalls cannot reach `misakanet.org/mcp`. ## Why - Enterprise adoption: many corporate environments require HTTP proxy for outbound connections - China mainland: some networks need proxy to reach Cloudflare CDN reliably - Self-hosted: users running MisakaNet Worker on internal networks may need proxy for KV/GitHub API ## Proposed design For the Cloudflare Worker (server-side): not applicable — Workers run on Cloudflare edge, no proxy needed. For client-side integration (agents, CLI, SDK): 1. Document `HTTPS_PROXY` / `HTTPS_PROXY` support in README 2. In `misaka capture` CLI and any future SDK, respect proxy env vars: ```python import urllib.request proxy = os.environ.get(\"HTTPS_PROXY\") or os.environ.get(\"HTTP_PROXY\") if proxy: handler = urllib.request.ProxyHandler({\"https\": proxy}) opener = urllib.request.build_opener(handler) ``` 3. For MCP client config (Claude Desktop, Cursor): document proxy setup in troubleshooting ## Acceptance criteria - [ ] README troubleshooting section covers proxy setup - [ ] ",
+      "title": "[Bug bounty follow-up] tarsnap-recrypt can commit old-machine deletes while retaining a stale chunk directory",
+      "url": "https://github.com/Tarsnap/tarsnap/issues/757",
+      "repositoryApiUrl": "https://api.github.com/repos/Tarsnap/tarsnap",
+      "rewardUsd": 500,
+      "score": 46,
+      "labels": [],
+      "commentCount": 0,
+      "updatedAt": "2026-08-23T14:54:55Z",
+      "summary": "# [Bug bounty follow-up] tarsnap-recrypt can commit old-machine deletes while retaining a stale chunk directory I found a reproducible non-security crash-consistency gap in current `master` commit `0bf0b299fed91139044c81cc6fcdc5521c34d235` (`1.0.41-head`), after the fix for #746 / PR #747. At the end of `tarsnap-recrypt`, the old-machine delete transaction can be committed without any post-delete chunk directory being staged. An interruption or `unlink` failure immediately after that commit leaves a current sequence number but an old local directory which still claims that the deleted chunks exist. Disclosure: this issue was prepared with OpenAI Codex, an LLM, working on behalf of Sebastian Albrecht. The source path, commit state, subsequent deduplication decision, and fix control were independently rerun locally. Sebastian is available to discuss the report and answer technical questions. ## Cause The success tail in `recrypt/recrypt.c` performs: ```c storage_delete_end(SD); multitape_commit(ocachedir, omachinenum, oseqnum, 1, &storage_modified); unlink(odirpath); ``` Unlike a normal chunk deletion, this path never calls `chunks_delete_end` or `chunks_directory_write(..., \".tmp\")`",
       "state": "candidate",
-      "payoutConfidence": 0.7,
+      "payoutConfidence": 0.5,
       "autonomyFit": 1,
       "requiresHumanGate": false,
       "requiresSpecialHardware": false,
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 112,
+      "fastCashScore": 118,
       "survivalEligible": false,
-      "eligibilityReason": "Competition is too high for bootstrap mode.",
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
-        "comments": 2,
-        "attemptSignals": 1,
-        "risk": "medium"
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 100,
+      "economicValueUsd": 500,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5226664248",
+      "source": "github",
+      "title": "[radar] SN open bounty 2026-08-23T11:30",
+      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/550",
+      "repositoryApiUrl": "https://api.github.com/repos/relayhop/sn-monetization-runtime",
+      "rewardUsd": 2026,
+      "score": 56,
+      "labels": [
+        "radar",
+        "sn",
+        "bounty"
+      ],
+      "commentCount": 1,
+      "updatedAt": "2026-08-23T14:34:56Z",
+      "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 0 10000 0 0.3 9274 26598 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY,LOW_COMP,FRESH Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```",
+      "state": "candidate",
+      "payoutConfidence": 0.5,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 116,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 1,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 2026,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -107,6 +138,42 @@
       },
       "realMoneyEligible": true,
       "economicValueUsd": 34750,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5226422314",
+      "source": "github",
+      "title": "H1 — Dual-Dialect Interop Bridge (Obsidian-native files + Notion-compatible content)",
+      "url": "https://github.com/coderhd/lekhan/issues/78",
+      "repositoryApiUrl": "https://api.github.com/repos/coderhd/lekhan",
+      "rewardUsd": 5000,
+      "score": 54,
+      "labels": [
+        "ready-for-agent",
+        "epic",
+        "h1"
+      ],
+      "commentCount": 0,
+      "updatedAt": "2026-08-23T14:49:39Z",
+      "summary": "## Problem Statement People who think in both tools live a split-brain life today: - **Notion → Obsidian** migrations lose wikilinks (or need a plugin), degrade databases to flat CSVs, append UUIDs to every filename, and break image paths. A \\$5,000 bounty for proper database import has sat open on Obsidian's own importer for 2+ years. - **Obsidian → Notion** is worse: Notion's built-in zip import turns `[[wikilinks]]` into dead plain text, flattens callouts into generic quotes, dumps YAML frontmatter as raw text, renders `![[embeds]]` literally, and caps free imports at 5 MB. - **Copy-paste between them** loses links, callouts, highlights, and metadata both ways. The most common community advice for people who want both worlds is *\"run both tools and maintain two knowledge systems.\"* That is a tax on a large population, paid daily. ## Solution Lekhan becomes the compatibility layer — the Wine of PKM: one knowledge graph that speaks both dialects natively. 1. **Inbound**: import from an Obsidian vault or a Notion workspace; everything resolves to Lekhan Pages, Page links, Page properties, and Tags — with an honest Import report. 2. **Outbound**: one-click export of any Page or whol",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 111,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 5000,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -179,19 +246,21 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5227327714",
+      "id": "github:5227470319",
       "source": "github",
-      "title": "Login streak rewards grant skins",
-      "url": "https://github.com/faytranevozter/7spade/issues/108",
-      "repositoryApiUrl": "https://api.github.com/repos/faytranevozter/7spade",
-      "rewardUsd": 104,
+      "title": "[Feature] MCP Registration Enhancement - v2.21.0 Roadmap",
+      "url": "https://github.com/Ikalus1988/MisakaNet/issues/1258",
+      "repositoryApiUrl": "https://api.github.com/repos/Ikalus1988/MisakaNet",
+      "rewardUsd": 100,
       "score": 48,
       "labels": [
-        "ready-for-agent"
+        "enhancement",
+        "roadmap",
+        "ready"
       ],
       "commentCount": 0,
-      "updatedAt": "2026-08-23T14:20:49Z",
-      "summary": "## Parent #104 ## What to build Make successful interactive account authentication advance a deterministic daily login streak and unlock configured cosmetics end to end. Update registered-user login progression and skin ownership atomically, return newly inserted grants from the authentication flow, present the reward to the signed-in player, expose it in cosmetics, and allow it to be equipped. ## Acceptance criteria - [ ] Registered accounts have durable current streak, best streak, and last counted login date state. - [ ] Login days use documented UTC calendar boundaries. - [ ] A first interactive authentication starts the streak at one. - [ ] A login on the next UTC date increments the streak. - [ ] Repeated or concurrent authentication on the same UTC date counts once. - [ ] A missed UTC date resets the current streak to one. - [ ] Password and linked-provider authentication use the same progression behavior. - [ ] Registration or provider completion that issues a normal registered session follows the documented first-day policy. - [ ] Refresh-token rotation, access-token validation, page loads, and WebSocket reconnects do not count as login days. - [ ] Reaching a configured st",
+      "updatedAt": "2026-08-23T14:53:30Z",
+      "summary": "## Overview Tracking issue for MCP registration enhancements planned for v2.21.0. ## Proposed Features ### 1. MCP Server Registration - [ ] Auto-register MCP servers on first connection - [ ] Store server metadata (name, version, capabilities) - [ ] Health check endpoint for registered servers ### 2. Agent Registration Improvements - [ ] Rate limiting per agent token - [ ] Agent capability discovery - [ ] Registration expiry and renewal ### 3. Federation Enhancements - [ ] Cross-node token verification - [ ] Shared lesson propagation - [ ] Conflict resolution for concurrent writes ## Acceptance Criteria - [ ] misakanet_register returns server capabilities - [ ] Token verification works across all tools - [ ] Rate limits configurable per agent - [ ] Registration data persisted in KV - [ ] Health check endpoint returns server status - [ ] Integration tests pass for all registration flows - [ ] Documentation updated with new registration API ## Related Issues - Closes #1240 (KV token verification) - Related to #1252 (intake validation) - Related to #1253 (auto labels) ## Labels enhancement, roadmap, mcp <br/> <hr/> <details><summary>This repo is using Opire - what does it mean? 👇</su",
       "state": "candidate",
       "payoutConfidence": 0.35,
       "autonomyFit": 1,
@@ -200,7 +269,7 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 108,
+      "fastCashScore": 107,
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
@@ -209,23 +278,21 @@
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 104,
+      "economicValueUsd": 100,
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5227325320",
+      "id": "github:5227155517",
       "source": "github",
-      "title": "Achievement rewards grant skins",
-      "url": "https://github.com/faytranevozter/7spade/issues/105",
-      "repositoryApiUrl": "https://api.github.com/repos/faytranevozter/7spade",
-      "rewardUsd": 104,
-      "score": 48,
-      "labels": [
-        "ready-for-agent"
-      ],
-      "commentCount": 0,
-      "updatedAt": "2026-08-23T14:20:15Z",
-      "summary": "## Parent #104 ## What to build Make achievement rewards unlock durable cosmetics end to end. When a registered player earns a configured achievement from an authoritative completed game, grant the associated enabled skin in the same transaction. Return newly inserted grants to that player through the completed-game response, show the reward in the game-over experience, expose it in the authenticated cosmetics inventory, and allow it to be equipped through the existing controls. This slice establishes the server-authoritative unlock-rule catalog and shared transactional grant behavior used by later progression sources. ## Acceptance criteria - [ ] A migration can configure an enabled skin to be rewarded by a stable achievement ID. - [ ] Earning the configured achievement grants durable ownership in the same completed-game transaction. - [ ] One achievement may reward multiple skins without duplicating achievement ownership. - [ ] Only newly inserted ownership is reported as a new unlock. - [ ] A retried completed-game save does not duplicate stats, achievements, skin ownership, or the unlock announcement. - [ ] Disabled skins, invalid rules, guests, and bots receive no grant. - [ ]",
+      "title": "実装+実験: 埋札286候補combination value modelを学習・評価する",
+      "url": "https://github.com/eletim/napoleon-web/issues/436",
+      "repositoryApiUrl": "https://api.github.com/repos/eletim/napoleon-web",
+      "rewardUsd": 32.45,
+      "score": 40,
+      "labels": [],
+      "commentCount": 1,
+      "updatedAt": "2026-08-23T14:51:13Z",
+      "summary": "Related: #202, #431, #433, #434 Base branch: `feature/issue-202-non-playing-ai` ## 背景 #434で、実ゲームflow由来のpickup後exchange stateから `C(13,3)=286` の合法埋札候補を全列挙し、各候補をplaying完走してcounterfactual valueを付けるdataset generatorを実装した。 Diagnostic 50 states / 14,300 candidatesでは: - 286 candidates/state を安定生成、invariant failure 0 - margin spread/state 平均 12 - relative reward spread/state 平均 32.45 - RuleBased best一致 3/50 = 6% - RuleBased margin regret 平均 3.88 - RuleBased relative reward regret 平均 11.15 と、combination間ranking signalが十分にある。 このIssueでは、#434 datasetを使って **pickup後exchange observation + candidate 3-card discard mask -> scalar value** のcombination value modelを学習し、held-out上でRuleBasedより良い埋札rankingができるか確認する。 このIssueではまずモデル自体を固める。runtime wiringは原則次Issueに分ける。 ## 目的 1. `exchange-counterfactual-value-v1` datasetをPython側で読み込めるようにする 2. 1,000 unique exchange states規模のmain datasetを生成する 3. exchange observation 2671 dims + candidate discard mask 53 dims を入力にしたscalar value modelを実装する 4. fixed source state単位でtrain/validation/finalを分離する 5. held-outでvalue精度だけでなくsame-state rankingを評価する 6. RuleBased discardとの比較を行う 7. 必要ならdataset scaleを2,000 statesまで増やしlearning curveを見る 8. 次のFrozen/runtime wiringへ進めるモデル候補を決める ## 前提 ",
       "state": "candidate",
       "payoutConfidence": 0.35,
       "autonomyFit": 1,
@@ -234,16 +301,16 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 108,
+      "fastCashScore": 100,
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
-        "comments": 0,
+        "comments": 1,
         "attemptSignals": 0,
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 104,
+      "economicValueUsd": 32.45,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -292,32 +359,23 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":125,\"updatedAt\":\"2026-08-22T16:37:56Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5220101735\",\"rewardUsd\":100,\"fastCashScore\":112,\"updatedAt\":\"2026-08-23T14:12:18Z\",\"competition\":{\"comments\":2,\"attemptSignals\":1,\"risk\":\"medium\"}},{\"id\":\"github:5221221220\",\"rewardUsd\":100,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T14:12:21Z\",\"competition\":{\"comments\":3,\"attemptSignals\":1,\"risk\":\"medium\"}},{\"id\":\"github:5221222820\",\"rewardUsd\":100,\"fastCashScore\":112,\"updatedAt\":\"2026-08-23T14:12:16Z\",\"competition\":{\"comments\":2,\"attemptSignals\":1,\"risk\":\"medium\"}},{\"id\":\"github:5224460280\",\"rewardUsd\":34750,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T11:11:11Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226584139\",\"rewardUsd\":100,\"fastCashScore\":109,\"updatedAt\":\"2026-08-23T14:12:23Z\",\"competition\":{\"comments\":4,\"attemptSignals\":1,\"risk\":\"medium\"}},{\"id\":\"github:5226777176\",\"rewardUsd\":500,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T12:01:50Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226781397\",\"rewardUsd\":1000,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T12:02:59Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226781536\",\"rewardUsd\":1000,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T12:03:02Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5227325320\",\"rewardUsd\":104,\"fastCashScore\":108,\"updatedAt\":\"2026-08-23T14:20:15Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5227327714\",\"rewardUsd\":104,\"fastCashScore\":108,\"updatedAt\":\"2026-08-23T14:20:49Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-18T21:51:29Z\",\"competition\":{\"comments\":29,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":125,\"updatedAt\":\"2026-08-22T16:37:56Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5224460280\",\"rewardUsd\":34750,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T11:11:11Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226422314\",\"rewardUsd\":5000,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T14:49:39Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226664248\",\"rewardUsd\":2026,\"fastCashScore\":116,\"updatedAt\":\"2026-08-23T14:34:56Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226777176\",\"rewardUsd\":500,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T12:01:50Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226781397\",\"rewardUsd\":1000,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T12:02:59Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226781536\",\"rewardUsd\":1000,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T12:03:02Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5227155517\",\"rewardUsd\":32.45,\"fastCashScore\":100,\"updatedAt\":\"2026-08-23T14:51:13Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5227470319\",\"rewardUsd\":100,\"fastCashScore\":107,\"updatedAt\":\"2026-08-23T14:53:30Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5227477302\",\"rewardUsd\":500,\"fastCashScore\":118,\"updatedAt\":\"2026-08-23T14:54:55Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
     "mode": true,
     "eligibleCount": 0,
-    "fundedSignalCount": 2,
+    "fundedSignalCount": 3,
     "objective": "first_real_confirmed_cash_fast",
     "policy": "bootstrap_basic_v1",
     "maxHours": 4,
     "minPayoutConfidence": 0.8,
     "competitionRequired": "low",
     "rejectedFakeRevenueCount": 2,
-    "rejectedAlreadyPaidCount": 0,
-    "rejectedIdentityGateCount": 3
+    "rejectedAlreadyPaidCount": 1,
+    "rejectedIdentityGateCount": 0
   },
   "economicallyRejected": [
-    {
-      "id": "github:5221222820",
-      "title": "[Search] Configurable BM25/vector hybrid weights",
-      "rewardUsd": 100,
-      "reasons": [
-        "preclaim_or_identity_gate_not_configured"
-      ],
-      "rejectedAt": "2026-08-23T14:29:49.057Z"
-    },
     {
       "id": "github:5226781397",
       "title": "WDK Track 1: WDK-managed operator/deployer wallet",
@@ -325,7 +383,7 @@
       "reasons": [
         "testnet_or_test_token_reward"
       ],
-      "rejectedAt": "2026-08-23T14:29:49.057Z"
+      "rejectedAt": "2026-08-23T14:55:19.934Z"
     },
     {
       "id": "github:5226777176",
@@ -333,6 +391,24 @@
       "rewardUsd": 500,
       "reasons": [
         "testnet_or_test_token_reward"
+      ],
+      "rejectedAt": "2026-08-23T14:55:19.935Z"
+    },
+    {
+      "id": "github:3055155077",
+      "title": "Switch to `ky` from `redaxios`",
+      "rewardUsd": 12,
+      "reasons": [
+        "already_rewarded_or_paid"
+      ],
+      "rejectedAt": "2026-08-23T14:55:19.935Z"
+    },
+    {
+      "id": "github:5221222820",
+      "title": "[Search] Configurable BM25/vector hybrid weights",
+      "rewardUsd": 100,
+      "reasons": [
+        "preclaim_or_identity_gate_not_configured"
       ],
       "rejectedAt": "2026-08-23T14:29:49.057Z"
     },
@@ -381,15 +457,6 @@
         "already_rewarded_or_paid"
       ],
       "rejectedAt": "2026-08-23T12:49:32.781Z"
-    },
-    {
-      "id": "github:3055155077",
-      "title": "Switch to `ky` from `redaxios`",
-      "rewardUsd": 12,
-      "reasons": [
-        "already_rewarded_or_paid"
-      ],
-      "rejectedAt": "2026-08-23T11:54:56.153Z"
     },
     {
       "id": "github:2940525692",
