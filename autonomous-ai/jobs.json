@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-08-23T20:25:55.169Z",
+  "updatedAt": "2026-08-23T20:51:50.797Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -41,10 +41,10 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5228686459",
+      "id": "github:5228958770",
       "source": "github",
-      "title": "[radar] SN open bounty 2026-08-23T19:29",
-      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/577",
+      "title": "[radar] SN open bounty 2026-08-23T20:33",
+      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/583",
       "repositoryApiUrl": "https://api.github.com/repos/relayhop/sn-monetization-runtime",
       "rewardUsd": 2026,
       "score": 56,
@@ -53,9 +53,9 @@
         "sn",
         "bounty"
       ],
-      "commentCount": 1,
-      "updatedAt": "2026-08-23T19:52:32Z",
-      "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 20 10000 10 8.3 9274 26610 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```",
+      "commentCount": 0,
+      "updatedAt": "2026-08-23T20:33:59Z",
+      "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 20 10000 10 9.3 9274 26610 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```",
       "state": "candidate",
       "payoutConfidence": 0.5,
       "autonomyFit": 1,
@@ -64,83 +64,11 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 116,
+      "fastCashScore": 118,
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
-        "comments": 1,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 2026,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5228164548",
-      "source": "github",
-      "title": "[radar] SN open bounty 2026-08-23T17:29",
-      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/567",
-      "repositoryApiUrl": "https://api.github.com/repos/relayhop/sn-monetization-runtime",
-      "rewardUsd": 2026,
-      "score": 56,
-      "labels": [
-        "radar",
-        "sn",
-        "bounty"
-      ],
-      "commentCount": 2,
-      "updatedAt": "2026-08-23T19:53:25Z",
-      "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 20 10000 4 6.3 9274 26607 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY,LOW_COMP Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 115,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 2,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 2026,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5228485993",
-      "source": "github",
-      "title": "[radar] SN open bounty 2026-08-23T18:43",
-      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/568",
-      "repositoryApiUrl": "https://api.github.com/repos/relayhop/sn-monetization-runtime",
-      "rewardUsd": 2026,
-      "score": 56,
-      "labels": [
-        "radar",
-        "sn",
-        "bounty"
-      ],
-      "commentCount": 2,
-      "updatedAt": "2026-08-23T19:52:36Z",
-      "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 20 10000 5 7.5 9274 26607 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY,LOW_COMP Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 115,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 2,
+        "comments": 0,
         "attemptSignals": 0,
         "risk": "low"
       },
@@ -250,39 +178,35 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5226422314",
+      "id": "github:5225874230",
       "source": "github",
-      "title": "H1 — Dual-Dialect Interop Bridge (Obsidian-native files + Notion-compatible content)",
-      "url": "https://github.com/coderhd/lekhan/issues/78",
-      "repositoryApiUrl": "https://api.github.com/repos/coderhd/lekhan",
-      "rewardUsd": 5000,
-      "score": 54,
-      "labels": [
-        "ready-for-agent",
-        "epic",
-        "h1"
-      ],
-      "commentCount": 1,
-      "updatedAt": "2026-08-23T19:45:35Z",
-      "summary": "## Problem Statement People who think in both tools live a split-brain life today: - **Notion → Obsidian** migrations lose wikilinks (or need a plugin), degrade databases to flat CSVs, append UUIDs to every filename, and break image paths. A \\$5,000 bounty for proper database import has sat open on Obsidian's own importer for 2+ years. - **Obsidian → Notion** is worse: Notion's built-in zip import turns `[[wikilinks]]` into dead plain text, flattens callouts into generic quotes, dumps YAML frontmatter as raw text, renders `![[embeds]]` literally, and caps free imports at 5 MB. - **Copy-paste between them** loses links, callouts, highlights, and metadata both ways. The most common community advice for people who want both worlds is *\"run both tools and maintain two knowledge systems.\"* That is a tax on a large population, paid daily. ## Solution Lekhan becomes the compatibility layer — the Wine of PKM: one knowledge graph that speaks both dialects natively. 1. **Inbound**: import from an Obsidian vault or a Notion workspace; everything resolves to Lekhan Pages, Page links, Page properties, and Tags — with an honest Import report. 2. **Outbound**: one-click export of any Page or whol",
+      "title": "Playable Queue P1: Lost Pokémon — reuse shared event Battle continuation",
+      "url": "https://github.com/jolteondark/url-/issues/799",
+      "repositoryApiUrl": "https://api.github.com/repos/jolteondark/url-",
+      "rewardUsd": 802,
+      "score": 40,
+      "labels": [],
+      "commentCount": 2,
+      "updatedAt": "2026-08-23T20:41:15Z",
+      "summary": "## Integrator dispatch — current main after #802 This remains the **single next Playable Factory target**. Do not start Traveling Cook #793 in parallel unless Lost Pokémon exposes a genuinely new shared blocker. Shared prerequisites already on main: - #794 normal-event -> existing wild Battle -> post-Battle continuation - #797 canonical event `modifier` propagation - #801 canonical event `enemy_stages` propagation - #798 proves the shared continuation end-to-end for Honey Tree - #802 adds atomic Bag `costs + reward` transactions, so the `berry` branch no longer needs a new Bag owner ## Factory task Make canonical `lost_pokemon` playable end-to-end in Safari/Web using existing owners only. Canonical branches: - `berry`: consume exactly one berry and apply canonical reward **through #802 `resolveRewardTransaction({costs, items})`**; no partial mutation - `join`: create the canonical unevolved Pokémon and route through existing Pokémon Runtime + Party/Storage ownership - `search`: canonical reward / parent-found / modifier:1 wild Battle branch - `leave`: leave ### Highest-value next step Do **not** re-audit Battle plumbing or invent another Bag transaction. The only material owner unc",
       "state": "candidate",
       "payoutConfidence": 0.35,
       "autonomyFit": 1,
       "requiresHumanGate": false,
       "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
+      "estimatedHoursBand": 8,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 109,
+      "fastCashScore": 108,
       "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "eligibilityReason": "Too slow for bootstrap mode: first real cash currently requires a <=4 hour task.",
       "competition": {
-        "comments": 1,
+        "comments": 2,
         "attemptSignals": 0,
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 5000,
+      "economicValueUsd": 802,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -322,39 +246,39 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5227922199",
+      "id": "github:5228805873",
       "source": "github",
-      "title": "[radar] SN open bounty 2026-08-23T16:36",
-      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/555",
-      "repositoryApiUrl": "https://api.github.com/repos/relayhop/sn-monetization-runtime",
-      "rewardUsd": 2026,
-      "score": 48,
+      "title": "[Eye of Eternity] Weird parachute interaction",
+      "url": "https://github.com/chromiecraft/chromiecraft/issues/10052",
+      "repositoryApiUrl": "https://api.github.com/repos/chromiecraft/chromiecraft",
+      "rewardUsd": 55,
+      "score": 40,
       "labels": [
-        "radar",
-        "sn",
-        "bounty"
+        "Needs Triage",
+        "bot-triaged",
+        "bot-confidence-medium"
       ],
-      "commentCount": 8,
-      "updatedAt": "2026-08-23T19:53:31Z",
-      "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 20 10000 4 5.4 9274 26606 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY,LOW_COMP Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```",
+      "commentCount": 1,
+      "updatedAt": "2026-08-23T20:48:09Z",
+      "summary": "### Current Behaviour Utilizing your parachute during the transition between phases 2 and 3 of Malygos' fight makes the parachute pop out and stay out for it's duration despite the player being mounted, which is expected. However, after the fight is over and the player exits the raid, the parachute effect lingers indefinitely. ### Expected Behaviour Ideally the effect should be dispelled after 30 seconds of activating the parachute. ### Official Sources (that prove or disprove) the issue being reported I have no way of knowing if this is a bug that got carried away from the original wow servers or if it's a Chromie thing. ### Steps to reproduce the problem Reach the transition between Phases 2 and 3 of Eye of Eternity, wait for Malygos to break the platform and use your parachute before the drake rides have a chance to catch you. If you survive the encounter, you should now have the same effect as I did. ### Extra Notes - The effect does not show on the buff list, as it shows on the first screenshot below; - Taking damage or even losing a duel does not remove the effect; - Dying does not remove the effect; - You still retain the effect while in ghost form; - You still take damage a",
       "state": "candidate",
-      "payoutConfidence": 0.5,
+      "payoutConfidence": 0.35,
       "autonomyFit": 1,
       "requiresHumanGate": false,
       "requiresSpecialHardware": false,
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 106,
+      "fastCashScore": 102,
       "survivalEligible": false,
-      "eligibilityReason": "Competition is too high for bootstrap mode.",
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
-        "comments": 8,
+        "comments": 1,
         "attemptSignals": 0,
-        "risk": "medium"
+        "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 2026,
+      "economicValueUsd": 55,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -403,20 +327,20 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":124,\"updatedAt\":\"2026-08-23T17:46:02Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5224460280\",\"rewardUsd\":34750,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T11:11:11Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226422314\",\"rewardUsd\":5000,\"fastCashScore\":109,\"updatedAt\":\"2026-08-23T19:45:35Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226777176\",\"rewardUsd\":500,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T12:01:50Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226781397\",\"rewardUsd\":1000,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T12:02:59Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226781536\",\"rewardUsd\":1000,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T12:03:02Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5227640203\",\"rewardUsd\":2026,\"fastCashScore\":107,\"updatedAt\":\"2026-08-23T19:54:37Z\",\"competition\":{\"comments\":7,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5227922199\",\"rewardUsd\":2026,\"fastCashScore\":106,\"updatedAt\":\"2026-08-23T19:53:31Z\",\"competition\":{\"comments\":8,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5228164548\",\"rewardUsd\":2026,\"fastCashScore\":115,\"updatedAt\":\"2026-08-23T19:53:25Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5228485993\",\"rewardUsd\":2026,\"fastCashScore\":115,\"updatedAt\":\"2026-08-23T19:52:36Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5228686459\",\"rewardUsd\":2026,\"fastCashScore\":116,\"updatedAt\":\"2026-08-23T19:52:32Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-18T21:51:29Z\",\"competition\":{\"comments\":29,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":124,\"updatedAt\":\"2026-08-23T17:46:02Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5224460280\",\"rewardUsd\":34750,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T11:11:11Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5225874230\",\"rewardUsd\":802,\"fastCashScore\":108,\"updatedAt\":\"2026-08-23T20:41:15Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226777176\",\"rewardUsd\":500,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T12:01:50Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226781397\",\"rewardUsd\":1000,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T12:02:59Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226781536\",\"rewardUsd\":1000,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T12:03:02Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5227640203\",\"rewardUsd\":2026,\"fastCashScore\":107,\"updatedAt\":\"2026-08-23T19:54:37Z\",\"competition\":{\"comments\":7,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5228403108\",\"rewardUsd\":128,\"fastCashScore\":104,\"updatedAt\":\"2026-08-23T20:39:08Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5228805873\",\"rewardUsd\":55,\"fastCashScore\":102,\"updatedAt\":\"2026-08-23T20:48:09Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5228958770\",\"rewardUsd\":2026,\"fastCashScore\":118,\"updatedAt\":\"2026-08-23T20:33:59Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
     "mode": true,
     "eligibleCount": 0,
-    "fundedSignalCount": 2,
+    "fundedSignalCount": 3,
     "objective": "first_real_confirmed_cash_fast",
     "policy": "bootstrap_basic_v1",
     "maxHours": 4,
     "minPayoutConfidence": 0.8,
     "competitionRequired": "low",
     "rejectedFakeRevenueCount": 2,
-    "rejectedAlreadyPaidCount": 0,
+    "rejectedAlreadyPaidCount": 2,
     "rejectedIdentityGateCount": 0
   },
   "economicallyRejected": [
@@ -427,7 +351,7 @@
       "reasons": [
         "testnet_or_test_token_reward"
       ],
-      "rejectedAt": "2026-08-23T20:25:55.121Z"
+      "rejectedAt": "2026-08-23T20:51:50.740Z"
     },
     {
       "id": "github:5226777176",
@@ -436,7 +360,25 @@
       "reasons": [
         "testnet_or_test_token_reward"
       ],
-      "rejectedAt": "2026-08-23T20:25:55.122Z"
+      "rejectedAt": "2026-08-23T20:51:50.740Z"
+    },
+    {
+      "id": "github:5228403108",
+      "title": "feat(voting-rewards): add an epoch-based, Merkle-claimed voting participation rewards program",
+      "rewardUsd": 128,
+      "reasons": [
+        "already_rewarded_or_paid"
+      ],
+      "rejectedAt": "2026-08-23T20:51:50.740Z"
+    },
+    {
+      "id": "github:3055155077",
+      "title": "Switch to `ky` from `redaxios`",
+      "rewardUsd": 12,
+      "reasons": [
+        "already_rewarded_or_paid"
+      ],
+      "rejectedAt": "2026-08-23T20:51:50.740Z"
     },
     {
       "id": "github:5222233094",
@@ -447,24 +389,6 @@
         "preclaim_or_identity_gate_not_configured"
       ],
       "rejectedAt": "2026-08-23T19:34:50.558Z"
-    },
-    {
-      "id": "github:3055155077",
-      "title": "Switch to `ky` from `redaxios`",
-      "rewardUsd": 12,
-      "reasons": [
-        "already_rewarded_or_paid"
-      ],
-      "rejectedAt": "2026-08-23T19:08:01.552Z"
-    },
-    {
-      "id": "github:5228403108",
-      "title": "feat(voting-rewards): add an epoch-based, Merkle-claimed voting participation rewards program",
-      "rewardUsd": 128,
-      "reasons": [
-        "already_rewarded_or_paid"
-      ],
-      "rejectedAt": "2026-08-23T18:41:46.181Z"
     },
     {
       "id": "github:2940525692",
