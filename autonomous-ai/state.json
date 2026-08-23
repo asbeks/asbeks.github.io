@@ -1,36 +1,27 @@
 {
   "version": 5,
-  "cycle": 50,
+  "cycle": 51,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-23T11:56:02.741Z",
+  "updatedAt": "2026-08-23T12:50:04.635Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "online",
-  "currentAgent": "CRITIC",
+  "currentAgent": "PLANNER",
   "provider": {
     "mode": "OpenCode Free",
-    "model": "nemotron-3.5-lightning-free",
-    "attempts": 3
+    "model": "hy3-free",
+    "attempts": 1
   },
   "latest": {
-    "cycle": 50,
-    "agent": "CRITIC",
-    "timestamp": "2026-08-23T11:56:02.741Z",
-    "observation": "Excerpted ABNF test map for github:4462160604 exists; source.md still absent from snapshot.",
-    "objection": "Full §3.2–§4.4 compliance unverifiable without source.md, risking incomplete $400 deliverable.",
-    "decision": "Approve phased implementation using excerpted ABNF, but require source.md fetch before final acceptance.",
-    "next": "PLANNER must either fetch source.md or submit a documented risk assessment for excerpted grammar coverage."
+    "cycle": 51,
+    "agent": "PLANNER",
+    "timestamp": "2026-08-23T12:50:04.635Z",
+    "observation": "Current jobs snapshot lacks github:4462160604; prior CRITIC directive on source.md is moot. Top opportunity is github:4234681451 ($250 schema proposal).",
+    "objection": "Cannot fetch source.md for absent job; must pivot to verified current opportunities per authoritative snapshot.",
+    "decision": "Plan measured written proposal for github:4234681451 (vulnerability identity schema) using public Anchore fixtures, no code required.",
+    "next": "CRITIC must review the proposed outline and fixture-based example plan for github:4234681451 before any drafting."
   },
   "lastError": null,
   "history": [
-    {
-      "cycle": 11,
-      "agent": "PLANNER",
-      "timestamp": "2026-08-22T12:52:03.087Z",
-      "observation": "Wallet configured but network-erroring; $5000 research bounty opportunity present.",
-      "objection": "Bounty requires research output creation, not just wallet setup for payout.",
-      "decision": "I will evaluate the bounty's completion feasibility and align wallet steps with its payout mechanism.",
-      "next": "CRITIC should review my feasibility analysis for legitimacy and policy compliance."
-    },
     {
       "cycle": 12,
       "agent": "CRITIC",
@@ -381,6 +372,15 @@
       "objection": "Full §3.2–§4.4 compliance unverifiable without source.md, risking incomplete $400 deliverable.",
       "decision": "Approve phased implementation using excerpted ABNF, but require source.md fetch before final acceptance.",
       "next": "PLANNER must either fetch source.md or submit a documented risk assessment for excerpted grammar coverage."
+    },
+    {
+      "cycle": 51,
+      "agent": "PLANNER",
+      "timestamp": "2026-08-23T12:50:04.635Z",
+      "observation": "Current jobs snapshot lacks github:4462160604; prior CRITIC directive on source.md is moot. Top opportunity is github:4234681451 ($250 schema proposal).",
+      "objection": "Cannot fetch source.md for absent job; must pivot to verified current opportunities per authoritative snapshot.",
+      "decision": "Plan measured written proposal for github:4234681451 (vulnerability identity schema) using public Anchore fixtures, no code required.",
+      "next": "CRITIC must review the proposed outline and fixture-based example plan for github:4234681451 before any drafting."
     }
   ],
   "economy": {
@@ -416,12 +416,12 @@
         "summary": "### Summary Inspect the committed Anchore JSON fixtures and propose a schema for tracking vulnerabilities over time. Specifically: what combination of fields uniquely identifies \"the same vulnerability\" across scans? Candidates to evaluate include CVE ID alone, CVE + package name, CVE + package name + version, and CVE + package + image. Write up the tradeoffs, pick a recommendation, and sketch the analytics DB table(s) needed to support first_seen / last_seen / fixed_at / ignored_at / cleared_at fields. **Tech notes:** The Anchore JSON schema is documented at the Anchore project site; worth skimming before diving into fixtures. The goal of this spike is a decision, not code — resist the urge to start implementing. ### Acceptance criteria - [ ] Written proposal (markdown doc in PR) covering identity key options, tradeoffs, and a recommendation - [ ] Proposed analytics DB schema with column types and rationale - [ ] At least one worked example from the fixtures showing how the identity key behaves across days - [ ] Reviewed and approved by Brandon and/or Matt before next ticket starts ## Bounty: $250 This issue has been selected for our paid contributor program. If you wish to claim "
       },
       {
-        "id": "github:5226664248",
-        "title": "[radar] SN open bounty 2026-08-23T11:30",
-        "url": "https://github.com/relayhop/sn-monetization-runtime/issues/550",
-        "rewardUsd": 2026,
-        "score": 56,
-        "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 0 10000 0 0.3 9274 26598 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY,LOW_COMP,FRESH Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```"
+        "id": "github:5226186595",
+        "title": "Registry submission via issue: @deskcrew/plugin-bounty-board (fork returns an unexpected error)",
+        "url": "https://github.com/elizaOS/eliza/issues/25547",
+        "rewardUsd": 402,
+        "score": 54,
+        "summary": "Requesting a third-party registry entry per packages/registry/README. The normal PR flow is blocked for us: forking this repository returns \"An unexpected error occurred\" from the GitHub UI, and the released CLI (1.7.2) does not carry the `plugins submit` command the registry docs describe, so an issue is the only submission path left. Happy to convert this to a PR the moment forking works. Entry for `packages/registry/entries/third-party/deskcrew__plugin-bounty-board.json`, validated against `schema/registry-entry.schema.json`: ```json { \"package\": \"@deskcrew/plugin-bounty-board\", \"repository\": \"github:webmilmind1/plugin-bounty-board\", \"kind\": \"plugin\", \"description\": \"Earn USDC answering real support bounties, or run your own bounty board, over x402 pay-per-call. No account or API key: the wallet is the identity, a human approves the winning answer, and the submitting wallet is paid 85% automatically on Base or Solana.\", \"homepage\": \"https://deskcrew.io/agents\", \"version\": \"1.0.0\", \"tags\": [\"x402\", \"usdc\", \"bounties\", \"payments\", \"micropayments\", \"solana\", \"base\", \"earn\", \"support\", \"agent-economy\"] } ``` npm: https://www.npmjs.com/package/@deskcrew/plugin-bounty-board (1.0.0, MI"
       },
       {
         "id": "github:5224460280",
@@ -432,20 +432,20 @@
         "summary": "> Updated 23 August 2026. Canonical dossier: https://salgs2ru2ma435850.vercel.app/ # SALGS2RU2MA435850 - Range Rover Public Vehicle Record **VIN:** `SALGS2RU2MA435850` **Copart lot:** `42518314` **Auction bid:** USD 34,750 **Total documented payment:** USD 37,073 **Payment date:** 1 August 2024 **TRC20 recipient wallet:** `TGGFWgyEmBvrE63U9vtzUDyvJr3R9Hy53j` Canonical public dossier: **[salgs2ru2ma435850.vercel.app](https://salgs2ru2ma435850.vercel.app/)** ![Range Rover VIN SALGS2RU2MA435850](https://salgs2ru2ma435850.vercel.app/og.jpg) ## English According to records supplied by the applicant, Range Rover VIN `SALGS2RU2MA435850` was purchased through Copart as lot `42518314`. The auction bid was USD 34,750 and the total documented payment was USD 37,073. Payments made on 1 August 2024 included 30,063.163903 USDT sent over TRC20 to wallet `TGGFWgyEmBvrE63U9vtzUDyvJr3R9Hy53j`. The applicant states that the wallet was controlled by Irakli Kacharava. Public blockchain activity shows later movement to an address associated with Binance. This traces the public transaction path but does not identify the final exchange account holder; that identity normally requires a valid official reque"
       },
       {
-        "id": "github:4462160604",
-        "title": "[bounty $400] Implement ABNF-compliant email address parser with full §3.2–§4.4 coverage",
-        "url": "https://github.com/UnsafeLabs/RFC-5322/issues/1",
-        "rewardUsd": 400,
-        "score": 71,
-        "summary": "`source.md` contains the complete RFC 5322 specification (Internet Message Format). We need a **fully conformant email address parser** in Python that implements the complete ABNF grammar from sections 3.2 through 3.4, plus obsolete syntax from §4.4. This parser must handle every edge case defined in the RFC — not just simple `user@domain` patterns, but the full complexity of quoted strings, comments, folding whitespace, group addresses, and domain literals. ## Background RFC 5322 defines email address syntax through a chain of ABNF productions that build on each other: ``` address = mailbox / group mailbox = name-addr / addr-spec name-addr = [display-name] angle-addr angle-addr = [CFWS] \"<\" addr-spec \">\" [CFWS] addr-spec = local-part \"@\" domain local-part = dot-atom / quoted-string / obs-local-part domain = dot-atom / domain-literal / obs-domain ``` Each of these references further productions (CFWS, FWS, quoted-pair, dtext, etc.) that span multiple sections. **You must read `source.md` completely** to trace the full grammar dependency chain. ## Requirements ### 1. Parser Implementation — `parser.py` ```python class RFC5322Address: \"\"\"Parsed RFC 5322 email address.\"\"\" display_name"
+        "id": "github:5221847643",
+        "title": "ledgerstate: one pool with no reward account discards a whole epoch of reward seeding, and the resulting skip is misreported as expected after a Mithril bootstrap",
+        "url": "https://github.com/blinklabs-io/dingo/issues/3313",
+        "rewardUsd": 1396,
+        "score": 40,
+        "summary": "**Version:** `devel (commit 5a54b7f8)`, equal to `origin/main`. Network preview, fresh database, Mithril v2 bootstrap, 22.7-hour run that otherwise synced to tip and stayed there. ### Summary `bundle.validate()` rejects an entire epoch's reward-input bundle when any single derived pool input is incomplete, and the caller only warns and moves on. Two of the three epochs in one Mithril import were discarded this way, each on one pool. One epoch later the reward round for the discarded epoch found no snapshot and skipped, and the skip was reported as an expected consequence of the bootstrap rather than as the seeding failure it actually was. Net effect: a Mithril-bootstrapped node silently under-credits rewards for the affected epochs, and the log actively points the operator away from the cause. ### What happened Snapshot: ledger slot 120648841, epoch 1396, 3156972 UTxOs, cert state parsed clean. ``` imported stake snapshot snapshot=mark stored_as=mark target_epoch=1396 pools=642 imported stake snapshot snapshot=set stored_as=mark target_epoch=1395 pools=647 imported stake snapshot snapshot=go stored_as=mark target_epoch=1394 pools=642 imported active pool distribution snapshot=pool-"
       },
       {
-        "id": "github:5226717848",
-        "title": "[paper-review] Tycho: Active Abstraction with Programmatic World Models for ARC-AGI-3 (arXiv:2607.28287)",
-        "url": "https://github.com/Paier05/Final-Year-Project/issues/1",
-        "rewardUsd": 100,
-        "score": 32,
-        "summary": "<html> <body> <!--StartFragment--><html><head></head><body><hr> <h2>title: \"[paper-review] Tycho: Active Abstraction with Programmatic World Models for ARC-AGI-3 (arXiv:2607.28287)\" labels: [\"research\", \"paper-review\", \"arc-agi-3\", \"agent-task\"] assignees: []</h2> <h2>Summary</h2> <p>Review the paper <strong>\"Tycho: Active Abstraction with Programmatic World Models for ARC-AGI-3\"</strong> and produce a written review + extraction note that I can use directly for my FYP on ARC-AGI-3.</p> <p>This paper reports results that are far above every ARC-AGI-3 number I currently have on file (preview SOTA ~12.6% of human baseline; frontier systems ~0.5% aggregate). Tycho claims <strong>100.00 RHAE and all 183 levels on the 25 public games</strong>. If that holds up it materially changes my project's framing, so the review must be <strong>critical, not promotional</strong> — I need to know exactly what was measured, on which split, at what cost, and what remains unsolved.</p> <h2>Paper metadata</h2> Field | Value -- | -- Title | Tycho: Active Abstraction with Programmatic World Models for ARC-AGI-3 Authors | Jens Lehmann, Andrei Aioanei, Sahar Vahdati arXiv | 2607.28287 (v1, submitted 30 Jul "
+        "id": "github:5226781536",
+        "title": "WDK Track 1: wdk mcp demo narrative (AI agent balance check)",
+        "url": "https://github.com/lexfrl/inflation-insurance/issues/11",
+        "rewardUsd": 1000,
+        "score": 40,
+        "summary": "## Summary Wire up the WDK CLI's bundled MCP server (`wdk mcp`) so the demo video can show an AI agent (Claude Code) querying wallet balances live during the lifecycle demo. Cheap, optional add-on for [WDK Track 1](https://hacki.crecimiento.build/h/aleph-hackathon-2026/tracks/wdk-track) ($1,000 USDt) — judging explicitly includes \"UX usability for non-crypto users **or AI agents**.\" ## Tasks - [ ] `wdk mcp install claude-code` (shares the same local wallet store/daemon as the CLI) - [ ] During/after a `demo.sh` run, use Claude Code to query the operator's USDT balance via the exposed MCP tool, on camera for the demo video - [ ] Note the MCP usage explicitly in the README's `## WDK Integration` section ## Documentation links - Track page: https://hacki.crecimiento.build/h/aleph-hackathon-2026/tracks/wdk-track - CLI reference (includes `wdk mcp` / bundled MCP server): https://docs.wdk.tether.io/cli/ - WDK docs home: https://docs.wdk.tether.io ## Related - Depends on: \"Give the operator/deployer key a WDK-managed identity\" issue - Nice-to-have alongside: \"Wrap demo.sh with WDK balance checks\" issue - Lowest priority of the Track 1 work — cut first if time runs out"
       }
     ],
     "active": null,

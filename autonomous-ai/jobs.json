@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-08-23T11:54:56.207Z",
+  "updatedAt": "2026-08-23T12:49:32.834Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -41,21 +41,19 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5226664248",
+      "id": "github:5226186595",
       "source": "github",
-      "title": "[radar] SN open bounty 2026-08-23T11:30",
-      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/550",
-      "repositoryApiUrl": "https://api.github.com/repos/relayhop/sn-monetization-runtime",
-      "rewardUsd": 2026,
-      "score": 56,
+      "title": "Registry submission via issue: @deskcrew/plugin-bounty-board (fork returns an unexpected error)",
+      "url": "https://github.com/elizaOS/eliza/issues/25547",
+      "repositoryApiUrl": "https://api.github.com/repos/elizaOS/eliza",
+      "rewardUsd": 402,
+      "score": 54,
       "labels": [
-        "radar",
-        "sn",
-        "bounty"
+        "enhancement"
       ],
-      "commentCount": 0,
-      "updatedAt": "2026-08-23T11:30:20Z",
-      "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 0 10000 0 0.3 9274 26598 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY,LOW_COMP,FRESH Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```",
+      "commentCount": 2,
+      "updatedAt": "2026-08-23T12:23:50Z",
+      "summary": "Requesting a third-party registry entry per packages/registry/README. The normal PR flow is blocked for us: forking this repository returns \"An unexpected error occurred\" from the GitHub UI, and the released CLI (1.7.2) does not carry the `plugins submit` command the registry docs describe, so an issue is the only submission path left. Happy to convert this to a PR the moment forking works. Entry for `packages/registry/entries/third-party/deskcrew__plugin-bounty-board.json`, validated against `schema/registry-entry.schema.json`: ```json { \"package\": \"@deskcrew/plugin-bounty-board\", \"repository\": \"github:webmilmind1/plugin-bounty-board\", \"kind\": \"plugin\", \"description\": \"Earn USDC answering real support bounties, or run your own bounty board, over x402 pay-per-call. No account or API key: the wallet is the identity, a human approves the winning answer, and the submitting wallet is paid 85% automatically on Base or Solana.\", \"homepage\": \"https://deskcrew.io/agents\", \"version\": \"1.0.0\", \"tags\": [\"x402\", \"usdc\", \"bounties\", \"payments\", \"micropayments\", \"solana\", \"base\", \"earn\", \"support\", \"agent-economy\"] } ``` npm: https://www.npmjs.com/package/@deskcrew/plugin-bounty-board (1.0.0, MI",
       "state": "candidate",
       "payoutConfidence": 0.5,
       "autonomyFit": 1,
@@ -64,16 +62,16 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 118,
+      "fastCashScore": 115,
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
-        "comments": 0,
+        "comments": 2,
         "attemptSignals": 0,
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 2026,
+      "economicValueUsd": 402,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -106,6 +104,70 @@
       },
       "realMoneyEligible": true,
       "economicValueUsd": 34750,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5221847643",
+      "source": "github",
+      "title": "ledgerstate: one pool with no reward account discards a whole epoch of reward seeding, and the resulting skip is misreported as expected after a Mithril bootstrap",
+      "url": "https://github.com/blinklabs-io/dingo/issues/3313",
+      "repositoryApiUrl": "https://api.github.com/repos/blinklabs-io/dingo",
+      "rewardUsd": 1396,
+      "score": 40,
+      "labels": [],
+      "commentCount": 0,
+      "updatedAt": "2026-08-23T12:31:27Z",
+      "summary": "**Version:** `devel (commit 5a54b7f8)`, equal to `origin/main`. Network preview, fresh database, Mithril v2 bootstrap, 22.7-hour run that otherwise synced to tip and stayed there. ### Summary `bundle.validate()` rejects an entire epoch's reward-input bundle when any single derived pool input is incomplete, and the caller only warns and moves on. Two of the three epochs in one Mithril import were discarded this way, each on one pool. One epoch later the reward round for the discarded epoch found no snapshot and skipped, and the skip was reported as an expected consequence of the bootstrap rather than as the seeding failure it actually was. Net effect: a Mithril-bootstrapped node silently under-credits rewards for the affected epochs, and the log actively points the operator away from the cause. ### What happened Snapshot: ledger slot 120648841, epoch 1396, 3156972 UTxOs, cert state parsed clean. ``` imported stake snapshot snapshot=mark stored_as=mark target_epoch=1396 pools=642 imported stake snapshot snapshot=set stored_as=mark target_epoch=1395 pools=647 imported stake snapshot snapshot=go stored_as=mark target_epoch=1394 pools=642 imported active pool distribution snapshot=pool-",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 111,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 1396,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5226781536",
+      "source": "github",
+      "title": "WDK Track 1: wdk mcp demo narrative (AI agent balance check)",
+      "url": "https://github.com/lexfrl/inflation-insurance/issues/11",
+      "repositoryApiUrl": "https://api.github.com/repos/lexfrl/inflation-insurance",
+      "rewardUsd": 1000,
+      "score": 40,
+      "labels": [],
+      "commentCount": 0,
+      "updatedAt": "2026-08-23T12:03:02Z",
+      "summary": "## Summary Wire up the WDK CLI's bundled MCP server (`wdk mcp`) so the demo video can show an AI agent (Claude Code) querying wallet balances live during the lifecycle demo. Cheap, optional add-on for [WDK Track 1](https://hacki.crecimiento.build/h/aleph-hackathon-2026/tracks/wdk-track) ($1,000 USDt) — judging explicitly includes \"UX usability for non-crypto users **or AI agents**.\" ## Tasks - [ ] `wdk mcp install claude-code` (shares the same local wallet store/daemon as the CLI) - [ ] During/after a `demo.sh` run, use Claude Code to query the operator's USDT balance via the exposed MCP tool, on camera for the demo video - [ ] Note the MCP usage explicitly in the README's `## WDK Integration` section ## Documentation links - Track page: https://hacki.crecimiento.build/h/aleph-hackathon-2026/tracks/wdk-track - CLI reference (includes `wdk mcp` / bundled MCP server): https://docs.wdk.tether.io/cli/ - WDK docs home: https://docs.wdk.tether.io ## Related - Depends on: \"Give the operator/deployer key a WDK-managed identity\" issue - Nice-to-have alongside: \"Wrap demo.sh with WDK balance checks\" issue - Lowest priority of the Track 1 work — cut first if time runs out",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 111,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 1000,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -146,29 +208,28 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5226717848",
+      "id": "github:5225100116",
       "source": "github",
-      "title": "[paper-review] Tycho: Active Abstraction with Programmatic World Models for ARC-AGI-3 (arXiv:2607.28287)",
-      "url": "https://github.com/Paier05/Final-Year-Project/issues/1",
-      "repositoryApiUrl": "https://api.github.com/repos/Paier05/Final-Year-Project",
-      "rewardUsd": 100,
-      "score": 32,
+      "title": "[security] Penetration Testing Program: Annual External Pentest, Continuous Bug Bounty, Red Team Exercises",
+      "url": "https://github.com/ExcelDsigN-tech/dukapay/issues/465",
+      "repositoryApiUrl": "https://api.github.com/repos/ExcelDsigN-tech/dukapay",
+      "rewardUsd": 10,
+      "score": 52,
       "labels": [
-        "research",
-        "paper-review"
+        "Stellar Wave"
       ],
       "commentCount": 0,
-      "updatedAt": "2026-08-23T11:45:21Z",
-      "summary": "<html> <body> <!--StartFragment--><html><head></head><body><hr> <h2>title: \"[paper-review] Tycho: Active Abstraction with Programmatic World Models for ARC-AGI-3 (arXiv:2607.28287)\" labels: [\"research\", \"paper-review\", \"arc-agi-3\", \"agent-task\"] assignees: []</h2> <h2>Summary</h2> <p>Review the paper <strong>\"Tycho: Active Abstraction with Programmatic World Models for ARC-AGI-3\"</strong> and produce a written review + extraction note that I can use directly for my FYP on ARC-AGI-3.</p> <p>This paper reports results that are far above every ARC-AGI-3 number I currently have on file (preview SOTA ~12.6% of human baseline; frontier systems ~0.5% aggregate). Tycho claims <strong>100.00 RHAE and all 183 levels on the 25 public games</strong>. If that holds up it materially changes my project's framing, so the review must be <strong>critical, not promotional</strong> — I need to know exactly what was measured, on which split, at what cost, and what remains unsolved.</p> <h2>Paper metadata</h2> Field | Value -- | -- Title | Tycho: Active Abstraction with Programmatic World Models for ARC-AGI-3 Authors | Jens Lehmann, Andrei Aioanei, Sahar Vahdati arXiv | 2607.28287 (v1, submitted 30 Jul ",
+      "updatedAt": "2026-08-23T12:43:48Z",
+      "summary": "∩╗┐Γê⌐ΓòùΓöÉ╬ô├¬ΓîÉ╬ô├▓├╣╬ô├╢├ë# [security] Penetration Testing Program: Annual External Pentest, Continuous Bug Bounty, Red Team Exercises **Description:** No structured penetration testing program. Implement: annual external pentest (Cobalt.io, HackerOne), continuous bug bounty ($10k-$100k rewards), quarterly red team exercises, automated SAST/DAST in CI. **Impact:** Proactive vulnerability discovery; compliance (SOC2, ISO27001); insurance requirement; community trust; reduces breach probability. **Suggested Fix:** 1. Contract annual pentest with Cobalt.io or HackerOne 2. Launch bug bounty on HackerOne/Immunefi ($10k-$100k) 3. Quarterly red team exercises with internal team 4. Add SAST (semgrep, CodeQL) and DAST (OWASP ZAP) to CI 5. Vulnerability disclosure policy and safe harbor **Points:** 200 **Type:** security ## Definition of Done - [ ] Annual external pentest contracted - [ ] Bug bounty program live with rewards - [ ] Quarterly red team exercises scheduled - [ ] SAST/DAST in CI pipeline - [ ] Vulnerability disclosure policy published - [ ] No hardcoded secrets remain in source (grep scan clean) - [ ] Authentication flow verified and tested - [ ] Security headers and CSP con",
       "state": "candidate",
-      "payoutConfidence": 0.35,
+      "payoutConfidence": 0.65,
       "autonomyFit": 1,
       "requiresHumanGate": false,
       "requiresSpecialHardware": false,
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 107,
+      "fastCashScore": 108,
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
@@ -177,39 +238,7 @@
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 100,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5226704761",
-      "source": "github",
-      "title": "bug(nexting): integer/boolean cumulant series silently truncate gamma and produce degenerate forward-view returns",
-      "url": "https://github.com/SlopDotCash/asi/issues/2368",
-      "repositoryApiUrl": "https://api.github.com/repos/SlopDotCash/asi",
-      "rewardUsd": 32,
-      "score": 40,
-      "labels": [],
-      "commentCount": 1,
-      "updatedAt": "2026-08-23T11:44:11Z",
-      "summary": "## Summary `alberta_framework/utils/nexting.py` computes forward-view returns by casting the discount and terminal value into the **cumulant series' dtype**: ```python gamma_s = jnp.asarray(gamma, dtype=cumulants.dtype) init = jnp.asarray(terminal_value, dtype=cumulants.dtype) ``` When the caller passes an integer or boolean cumulant series, this silently truncates `gamma` (and `terminal_value`) instead of promoting the computation to a float dtype. The docstrings advertise `Float[Array, \" T\"]`, but nothing enforces it: `_concrete_numeric_array` admits every dtype of kind `b i u f`, so integer and boolean series flow straight through validation into the truncated cast. ## Reproduction At `main` (commit `c9aba7b5`), eager mode: ```python import jax.numpy as jnp from alberta_framework import forward_view_returns c = jnp.array([1, 0, 0, 0, 1], dtype=jnp.int32) # two reward events # float32 series is correct: forward_view_returns(c.astype(jnp.float32), 0.9) # -> [1.6561, 0.729, 0.81, 0.9, 1.0] # int32 series is wrong -- gamma=0.9 truncates to 0 inside the scan, # so the recursion degenerates to a raw cumulant echo: forward_view_returns(c, 0.9) # -> [1, 0, 0, 0, 1] (dtype int32) ``` Wit",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 99,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 1,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 32,
+      "economicValueUsd": 10,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -246,40 +275,6 @@
       "realMoneyEligible": true,
       "economicValueUsd": 50,
       "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5112736410",
-      "source": "github",
-      "title": "[BOUNTY: 20 RTC] BoTTube CI jobs hang to a 15-minute timeout and blame the contributor",
-      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16472",
-      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
-      "rewardUsd": 20,
-      "score": 46,
-      "labels": [
-        "bounty"
-      ],
-      "commentCount": 15,
-      "updatedAt": "2026-08-23T11:41:16Z",
-      "summary": "## The problem Some BoTTube pull requests fail four checks at once — `label`, `lint`, `security`, `test` — and every one reports a duration of **15m01s**. That is a job timeout, not a test failure. Confirmed examples: bottube#1640 and bottube#1639. On those two, `label` fails despite passing on all 30 other open PRs in the repo, which is what rules out the contributors' code as the cause. The effect is that contributors are told their work failed CI when the runner hung. At least two people were asked to chase a failure that was never theirs. ## What this bounty is Find out why those jobs hang, and fix it. Likely directions, not prescriptions: - A step with no timeout waiting on something that never returns (network fetch, package index, external API) - Runner resource exhaustion when several workflows fire on the same commit - A dependency install that hangs rather than failing ## What qualifies for payment - A named root cause, evidenced from job logs rather than inferred - A fix that makes the hang either impossible or fast-failing with a clear message - **Explicit per-step timeouts** so that if it recurs, CI says \"timed out after N minutes\" instead of pretending the code failed",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 48,
-      "survivalEligible": false,
-      "eligibilityReason": "Competition is too high for bootstrap mode.",
-      "competition": {
-        "comments": 15,
-        "attemptSignals": 5,
-        "risk": "high"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 20,
-      "requiresPreclaimOrIdentity": false
     }
   ],
   "selected": null,
@@ -292,23 +287,69 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:2940525692\",\"rewardUsd\":10,\"fastCashScore\":60,\"updatedAt\":\"2026-08-18T21:51:22Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-18T21:51:29Z\",\"competition\":{\"comments\":29,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":125,\"updatedAt\":\"2026-08-22T16:37:56Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5112736410\",\"rewardUsd\":20,\"fastCashScore\":48,\"updatedAt\":\"2026-08-23T11:41:16Z\",\"competition\":{\"comments\":15,\"attemptSignals\":5,\"risk\":\"high\"}},{\"id\":\"github:5224460280\",\"rewardUsd\":34750,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T11:11:11Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226584139\",\"rewardUsd\":100,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T11:27:52Z\",\"competition\":{\"comments\":3,\"attemptSignals\":1,\"risk\":\"medium\"}},{\"id\":\"github:5226664248\",\"rewardUsd\":2026,\"fastCashScore\":118,\"updatedAt\":\"2026-08-23T11:30:20Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226704761\",\"rewardUsd\":32,\"fastCashScore\":99,\"updatedAt\":\"2026-08-23T11:44:11Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226717848\",\"rewardUsd\":100,\"fastCashScore\":107,\"updatedAt\":\"2026-08-23T11:45:21Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":125,\"updatedAt\":\"2026-08-22T16:37:56Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5190343724\",\"rewardUsd\":2000,\"fastCashScore\":106,\"updatedAt\":\"2026-08-23T12:43:51Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5190345732\",\"rewardUsd\":2000,\"fastCashScore\":105,\"updatedAt\":\"2026-08-23T12:43:22Z\",\"competition\":{\"comments\":4,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5190346636\",\"rewardUsd\":2000,\"fastCashScore\":108,\"updatedAt\":\"2026-08-23T12:31:46Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5221847643\",\"rewardUsd\":1396,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T12:31:27Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5224460280\",\"rewardUsd\":34750,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T11:11:11Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5225100116\",\"rewardUsd\":10,\"fastCashScore\":108,\"updatedAt\":\"2026-08-23T12:43:48Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226186595\",\"rewardUsd\":402,\"fastCashScore\":115,\"updatedAt\":\"2026-08-23T12:23:50Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226777176\",\"rewardUsd\":500,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T12:01:50Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226781397\",\"rewardUsd\":1000,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T12:02:59Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226781536\",\"rewardUsd\":1000,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T12:03:02Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
     "mode": true,
     "eligibleCount": 0,
-    "fundedSignalCount": 3,
+    "fundedSignalCount": 2,
     "objective": "first_real_confirmed_cash_fast",
     "policy": "bootstrap_basic_v1",
     "maxHours": 4,
     "minPayoutConfidence": 0.8,
     "competitionRequired": "low",
-    "rejectedFakeRevenueCount": 0,
-    "rejectedAlreadyPaidCount": 2,
-    "rejectedIdentityGateCount": 1
+    "rejectedFakeRevenueCount": 3,
+    "rejectedAlreadyPaidCount": 3,
+    "rejectedIdentityGateCount": 0
   },
   "economicallyRejected": [
+    {
+      "id": "github:5226781397",
+      "title": "WDK Track 1: WDK-managed operator/deployer wallet",
+      "rewardUsd": 1000,
+      "reasons": [
+        "testnet_or_test_token_reward"
+      ],
+      "rejectedAt": "2026-08-23T12:49:32.781Z"
+    },
+    {
+      "id": "github:5226777176",
+      "title": "WDK Track 2: gasless transactions (USD₮ as gas token)",
+      "rewardUsd": 500,
+      "reasons": [
+        "testnet_or_test_token_reward"
+      ],
+      "rejectedAt": "2026-08-23T12:49:32.781Z"
+    },
+    {
+      "id": "github:5190346636",
+      "title": "Automated Multi-Stage CI/CD Pipeline for WASM Build, Testnet Deployment, and Mainnet Gate",
+      "rewardUsd": 2000,
+      "reasons": [
+        "testnet_or_test_token_reward",
+        "already_rewarded_or_paid"
+      ],
+      "rejectedAt": "2026-08-23T12:49:32.781Z"
+    },
+    {
+      "id": "github:5190343724",
+      "title": "Off-Chain Soroban Contract Event Indexer Service",
+      "rewardUsd": 2000,
+      "reasons": [
+        "already_rewarded_or_paid"
+      ],
+      "rejectedAt": "2026-08-23T12:49:32.781Z"
+    },
+    {
+      "id": "github:5190345732",
+      "title": "Multi-Wallet Provider Abstraction with Ledger Hardware Wallet Support",
+      "rewardUsd": 2000,
+      "reasons": [
+        "already_rewarded_or_paid"
+      ],
+      "rejectedAt": "2026-08-23T12:49:32.781Z"
+    },
     {
       "id": "github:5226584139",
       "title": "[Intake] Add intake content validation script",
