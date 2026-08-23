@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-08-23T05:40:33.733Z",
+  "updatedAt": "2026-08-23T06:03:47.536Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -328,38 +328,6 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5225506720",
-      "source": "github",
-      "title": "実装+実験: T1 Napoleon契約価値NNを競りruntimeへ接続し通しゲームで評価する",
-      "url": "https://github.com/eletim/napoleon-web/issues/429",
-      "repositoryApiUrl": "https://api.github.com/repos/eletim/napoleon-web",
-      "rewardUsd": 427,
-      "score": 40,
-      "labels": [],
-      "commentCount": 0,
-      "updatedAt": "2026-08-23T05:38:15Z",
-      "summary": "Related: #202, #423, #427 Base branch: `feature/issue-202-non-playing-ai` ## 背景 #423で candidate=Napo / contract owner / target / suit固定のNapoleon契約価値NNを構築し、opening判定は大幅に改善した。 #427では、raise用teacherを ```text candidate hand固定 → remaining deck shuffle → RuleBased/Conservativeで競りを最初から実行 → 実dealから自然発生したraise stateを収集 → candidate=Napo・contract固定でteacher生成 ``` へ変更した。 同じsingle-head architectureのまま、#423 checkpointをhistory-consistent raise datasetでfine-tuneしたT1がofflineで最良だった。 #421 raise diagnostic: - B0 #423 M2: sign 67.5%, false PASS 12/40, EV bias -8.75 - T1: sign 80.0%, false PASS 7/40, EV bias -5.55 #422 opening diagnostic: - T1: sign 88.9%, false PASS 0/45, false BID 5/45 境界付近の少数誤判定をこれ以上offlineで詰めるより、実際の競りruntimeで全体分布が自然かを評価する段階とする。 ## 方針 T1を競りruntimeへ接続し、実ゲームを多数実行して以下を評価する。 - PASS/BID/raise率 - opening参加率 - raise率 - 最終Napoleon率 - 宣言target/suit分布 - contract success率 - relative reward - hand strength別挙動 - illegal/fallback有無 このIssueではrewardやNN architectureを再設計しない。 ## 使用model #427 T1 checkpointを採用する。 ```text /tmp/issue427-t1-strong-raise-ft/checkpoint.pt ``` 実装では `/tmp` 固定パスをruntime dependencyにしないこと。 既存のcheckpoint/config assetの配置規約を調査し、runtimeから再現可能に読み込める形へ組み込む。 モデル構造は#423 single-head M2: ```t",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 111,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 0,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 427,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
       "id": "github:4462160604",
       "source": "github",
       "title": "[bounty $400] Implement ABNF-compliant email address parser with full §3.2–§4.4 coverage",
@@ -397,21 +365,19 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:4461504464",
+      "id": "github:4932910628",
       "source": "github",
-      "title": "PR Review Batch - 22 rustchain-bounties PRs - RTC0069ce999590624987151e19a8b005555d17794b",
-      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/10240",
-      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
-      "rewardUsd": 73,
-      "score": 34,
+      "title": "[DEV-FEATURE] Community Model Groups — round-robin routing, unified pricing, Stable badge",
+      "url": "https://github.com/pollinations/pollinations/issues/12615",
+      "repositoryApiUrl": "https://api.github.com/repos/pollinations/pollinations",
+      "rewardUsd": 75,
+      "score": 40,
       "labels": [
-        "needs-human",
-        "gate-processed",
-        "over-cap"
+        "DEV-FEATURE"
       ],
       "commentCount": 1,
-      "updatedAt": "2026-08-23T05:07:32Z",
-      "summary": "## Additional PR Reviews — rustchain-bounties **Wallet:** `RTC0069ce999590624987151e19a8b005555d17794b` **Reviewed PRs (22):** #9573, #9572, #9571, #9570, #9569, #9568, #9567, #9566, #9563, #9560, #9558, #9523, #9504, #9482, #9479, #9470, #9461, #9457, #9451, #9445, #9442, #9290 --- **Total: 22 PRs** (Bounty #73) *Submitted via automated review system.*",
+      "updatedAt": "2026-08-23T05:59:09Z",
+      "summary": "## Summary Introduce **groups** for community models: multiple community providers offering the same model join under a single `group/model` id. Requests are round-robined across active members with fallback on failure. Groups display a **Stable** badge (vs. implicit \"Community\" for standalone models) and sort to the top of the community section in the catalog. **Goal:** Reduce deactivation churn by pooling reliability. A 3-member group has ~3× the uptime of any single member. Equal round-robin distribution means each member earns a share of *more total traffic* than they'd get solo — the reliability premium. ## Motivation - Community models are deactivated by the monitor when failure rates exceed thresholds (`disabled_at` on D1 row → dropped from catalog). No rerouting to an equivalent. - Users gravitate to reliable models. A group backed by N providers is inherently more dependable than any single community operator running on thin-margin backends. - Equal distribution + earn-on-success means downtime self-corrects the split: stay up, collect your share; go down, the others absorb your traffic and the revenue. ## Spec ### Naming & Catalog - Group models appear as `group/model` in",
       "state": "candidate",
       "payoutConfidence": 0.35,
       "autonomyFit": 1,
@@ -429,7 +395,7 @@
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 73,
+      "economicValueUsd": 75,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -478,7 +444,7 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":125,\"updatedAt\":\"2026-08-22T16:37:56Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4460041460\",\"rewardUsd\":200,\"fastCashScore\":116,\"updatedAt\":\"2026-08-23T05:07:26Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4460048610\",\"rewardUsd\":250,\"fastCashScore\":116,\"updatedAt\":\"2026-08-23T05:07:27Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4461504464\",\"rewardUsd\":73,\"fastCashScore\":104,\"updatedAt\":\"2026-08-23T05:07:32Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462048029\",\"rewardUsd\":5533,\"fastCashScore\":116,\"updatedAt\":\"2026-08-23T05:07:33Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462050784\",\"rewardUsd\":5531,\"fastCashScore\":115,\"updatedAt\":\"2026-08-23T05:07:34Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462056980\",\"rewardUsd\":5533,\"fastCashScore\":116,\"updatedAt\":\"2026-08-23T05:07:35Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462057766\",\"rewardUsd\":5532,\"fastCashScore\":116,\"updatedAt\":\"2026-08-23T05:07:36Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462073859\",\"rewardUsd\":5531,\"fastCashScore\":116,\"updatedAt\":\"2026-08-23T05:07:37Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462079225\",\"rewardUsd\":5532,\"fastCashScore\":116,\"updatedAt\":\"2026-08-23T05:07:38Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5225506720\",\"rewardUsd\":427,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T05:38:15Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":125,\"updatedAt\":\"2026-08-22T16:37:56Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4460041460\",\"rewardUsd\":200,\"fastCashScore\":116,\"updatedAt\":\"2026-08-23T05:07:26Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4460048610\",\"rewardUsd\":250,\"fastCashScore\":116,\"updatedAt\":\"2026-08-23T05:07:27Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462048029\",\"rewardUsd\":5533,\"fastCashScore\":116,\"updatedAt\":\"2026-08-23T05:07:33Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462050784\",\"rewardUsd\":5531,\"fastCashScore\":115,\"updatedAt\":\"2026-08-23T05:07:34Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462056980\",\"rewardUsd\":5533,\"fastCashScore\":116,\"updatedAt\":\"2026-08-23T05:07:35Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462057766\",\"rewardUsd\":5532,\"fastCashScore\":116,\"updatedAt\":\"2026-08-23T05:07:36Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462073859\",\"rewardUsd\":5531,\"fastCashScore\":116,\"updatedAt\":\"2026-08-23T05:07:37Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462079225\",\"rewardUsd\":5532,\"fastCashScore\":116,\"updatedAt\":\"2026-08-23T05:07:38Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:4932910628\",\"rewardUsd\":75,\"fastCashScore\":104,\"updatedAt\":\"2026-08-23T05:59:09Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5222233495\",\"rewardUsd\":40,\"fastCashScore\":110,\"updatedAt\":\"2026-08-23T06:03:23Z\",\"competition\":{\"comments\":5,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
@@ -490,11 +456,21 @@
     "maxHours": 4,
     "minPayoutConfidence": 0.8,
     "competitionRequired": "low",
-    "rejectedFakeRevenueCount": 0,
+    "rejectedFakeRevenueCount": 1,
     "rejectedAlreadyPaidCount": 0,
-    "rejectedIdentityGateCount": 0
+    "rejectedIdentityGateCount": 1
   },
   "economicallyRejected": [
+    {
+      "id": "github:5222233495",
+      "title": "[Bug] Double-submit race: rapid clicks fire duplicate POSTs before isUploading flushes",
+      "rewardUsd": 40,
+      "reasons": [
+        "testnet_or_test_token_reward",
+        "preclaim_or_identity_gate_not_configured"
+      ],
+      "rejectedAt": "2026-08-23T06:03:47.482Z"
+    },
     {
       "id": "github:3055155077",
       "title": "Switch to `ky` from `redaxios`",
@@ -597,16 +573,6 @@
       "id": "github:5222233394",
       "title": "[Bug] No AbortController — unmount mid-upload leaves requests running and setState-after-unmount",
       "rewardUsd": 35,
-      "reasons": [
-        "testnet_or_test_token_reward",
-        "preclaim_or_identity_gate_not_configured"
-      ],
-      "rejectedAt": "2026-08-22T19:11:45.080Z"
-    },
-    {
-      "id": "github:5222233495",
-      "title": "[Bug] Double-submit race: rapid clicks fire duplicate POSTs before isUploading flushes",
-      "rewardUsd": 40,
       "reasons": [
         "testnet_or_test_token_reward",
         "preclaim_or_identity_gate_not_configured"
