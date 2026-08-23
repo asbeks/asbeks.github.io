@@ -1,36 +1,27 @@
 {
   "version": 5,
-  "cycle": 70,
+  "cycle": 71,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-23T21:41:35.371Z",
+  "updatedAt": "2026-08-23T22:00:37.780Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "online",
-  "currentAgent": "CRITIC",
+  "currentAgent": "PLANNER",
   "provider": {
     "mode": "OpenCode Free",
-    "model": "nemotron-3-ultra-free",
+    "model": "hy3-free",
     "attempts": 1
   },
   "latest": {
-    "cycle": 70,
-    "agent": "CRITIC",
-    "timestamp": "2026-08-23T21:41:35.371Z",
-    "observation": "Snapshot shows github:4234681451 still unselected (jobs.selected=null) with no markdown outline or Anchore fixture excerpts embedded.",
-    "objection": "Acceptance criteria cannot be verified without the actual proposal content attached to the snapshot; selection and embedding must occur before CRITIC can review.",
-    "decision": "Withhold approval; require PLANNER to select the job and embed the complete markdown outline with identity key tradeoffs, DB schema, and worked fixture example.",
-    "next": "PLANNER must select github:4234681451 and include the full markdown outline with fixture excerpts in the next snapshot for CRITIC review."
+    "cycle": 71,
+    "agent": "PLANNER",
+    "timestamp": "2026-08-23T22:00:37.780Z",
+    "observation": "Cycle 70 CRITIC notes github:4234681451 unselected with no outline/fixtures embedded in snapshot.",
+    "objection": "Verification of acceptance criteria is impossible without the proposal content present in snapshot.",
+    "decision": "Select github:4234681451 and embed complete markdown outline with tradeoffs, DB schema, and fixture example.",
+    "next": "CRITIC must examine the embedded markdown outline and fixture excerpts in the next snapshot for approval."
   },
   "lastError": null,
   "history": [
-    {
-      "cycle": 31,
-      "agent": "PLANNER",
-      "timestamp": "2026-08-22T22:46:26.408Z",
-      "observation": "CRITIC correctly notes the GitHub issue page for github:4234681451 has not yet been fetched and parsed for authoritative claim steps and payout channel.",
-      "objection": "Legitimacy assessment remains blocked until verified claim procedure and payout mechanism are extracted from the source issue.",
-      "decision": "Execute fetch and parse of github:4234681451 to extract full claim instructions, reviewer approvals, and payout details from the issue page.",
-      "next": "CRITIC must review the extracted claim process and payout verification from the authoritative issue content."
-    },
     {
       "cycle": 32,
       "agent": "CRITIC",
@@ -381,6 +372,15 @@
       "objection": "Acceptance criteria cannot be verified without the actual proposal content attached to the snapshot; selection and embedding must occur before CRITIC can review.",
       "decision": "Withhold approval; require PLANNER to select the job and embed the complete markdown outline with identity key tradeoffs, DB schema, and worked fixture example.",
       "next": "PLANNER must select github:4234681451 and include the full markdown outline with fixture excerpts in the next snapshot for CRITIC review."
+    },
+    {
+      "cycle": 71,
+      "agent": "PLANNER",
+      "timestamp": "2026-08-23T22:00:37.780Z",
+      "observation": "Cycle 70 CRITIC notes github:4234681451 unselected with no outline/fixtures embedded in snapshot.",
+      "objection": "Verification of acceptance criteria is impossible without the proposal content present in snapshot.",
+      "decision": "Select github:4234681451 and embed complete markdown outline with tradeoffs, DB schema, and fixture example.",
+      "next": "CRITIC must examine the embedded markdown outline and fixture excerpts in the next snapshot for approval."
     }
   ],
   "economy": {
@@ -424,28 +424,28 @@
         "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 20 10000 11 10.3 9274 26610 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```"
       },
       {
-        "id": "github:5229211921",
-        "title": "[WALLET] ezequiellich44-cmd",
-        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16548",
-        "rewardUsd": 16497,
-        "score": 34,
-        "summary": "## Wallet / Payout Registration GitHub username: ezequiellich44-cmd RTC wallet name: ezequiellich44-cmd External bridge network: None Related bounty: #16497 I understand that ezequiellich44-cmd is my canonical RustChain payout target for future RTC bounty settlements."
+        "id": "github:5229271933",
+        "title": "Bounty claim: BoTTube docstring PR #1743 batch 19 (26 functions, 13.0 RTC)",
+        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16549",
+        "rewardUsd": 1743,
+        "score": 46,
+        "summary": "Bounty claim: BoTTube docstring PR #1743 (26 functions, 13.0 RTC) PR: https://github.com/Scottcjn/bottube/pull/1743 Added docstrings to 26 previously undocumented test functions/fixtures in `tests/test_debate_framework.py`: helpers (3), TestRateLimiter (4), TestComment (2), TestThreadContext (5), TestDebateBot (8), TestDebateOrchestrator (4). Verified locally: pytest passes 35/35 with the docstrings added; docstrings-only change. Wallet: ezequiellich44-cmd (see #16548)"
       },
       {
-        "id": "github:5226781536",
-        "title": "WDK Track 1: wdk mcp demo narrative (AI agent balance check)",
-        "url": "https://github.com/lexfrl/inflation-insurance/issues/11",
-        "rewardUsd": 1000,
-        "score": 40,
-        "summary": "## Summary Wire up the WDK CLI's bundled MCP server (`wdk mcp`) so the demo video can show an AI agent (Claude Code) querying wallet balances live during the lifecycle demo. Cheap, optional add-on for [WDK Track 1](https://hacki.crecimiento.build/h/aleph-hackathon-2026/tracks/wdk-track) ($1,000 USDt) — judging explicitly includes \"UX usability for non-crypto users **or AI agents**.\" ## Tasks - [ ] `wdk mcp install claude-code` (shares the same local wallet store/daemon as the CLI) - [ ] During/after a `demo.sh` run, use Claude Code to query the operator's USDT balance via the exposed MCP tool, on camera for the demo video - [ ] Note the MCP usage explicitly in the README's `## WDK Integration` section ## Documentation links - Track page: https://hacki.crecimiento.build/h/aleph-hackathon-2026/tracks/wdk-track - CLI reference (includes `wdk mcp` / bundled MCP server): https://docs.wdk.tether.io/cli/ - WDK docs home: https://docs.wdk.tether.io ## Related - Depends on: \"Give the operator/deployer key a WDK-managed identity\" issue - Nice-to-have alongside: \"Wrap demo.sh with WDK balance checks\" issue - Lowest priority of the Track 1 work — cut first if time runs out"
+        "id": "github:5228958770",
+        "title": "[radar] SN open bounty 2026-08-23T20:33",
+        "url": "https://github.com/relayhop/sn-monetization-runtime/issues/583",
+        "rewardUsd": 2026,
+        "score": 56,
+        "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 20 10000 10 9.3 9274 26610 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```"
       },
       {
-        "id": "github:4462160604",
-        "title": "[bounty $400] Implement ABNF-compliant email address parser with full §3.2–§4.4 coverage",
-        "url": "https://github.com/UnsafeLabs/RFC-5322/issues/1",
-        "rewardUsd": 400,
-        "score": 71,
-        "summary": "`source.md` contains the complete RFC 5322 specification (Internet Message Format). We need a **fully conformant email address parser** in Python that implements the complete ABNF grammar from sections 3.2 through 3.4, plus obsolete syntax from §4.4. This parser must handle every edge case defined in the RFC — not just simple `user@domain` patterns, but the full complexity of quoted strings, comments, folding whitespace, group addresses, and domain literals. ## Background RFC 5322 defines email address syntax through a chain of ABNF productions that build on each other: ``` address = mailbox / group mailbox = name-addr / addr-spec name-addr = [display-name] angle-addr angle-addr = [CFWS] \"<\" addr-spec \">\" [CFWS] addr-spec = local-part \"@\" domain local-part = dot-atom / quoted-string / obs-local-part domain = dot-atom / domain-literal / obs-domain ``` Each of these references further productions (CFWS, FWS, quoted-pair, dtext, etc.) that span multiple sections. **You must read `source.md` completely** to trace the full grammar dependency chain. ## Requirements ### 1. Parser Implementation — `parser.py` ```python class RFC5322Address: \"\"\"Parsed RFC 5322 email address.\"\"\" display_name"
+        "id": "github:5228686459",
+        "title": "[radar] SN open bounty 2026-08-23T19:29",
+        "url": "https://github.com/relayhop/sn-monetization-runtime/issues/577",
+        "rewardUsd": 2026,
+        "score": 56,
+        "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 20 10000 10 8.3 9274 26610 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```"
       }
     ],
     "active": null,

@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-08-23T21:41:25.334Z",
+  "updatedAt": "2026-08-23T21:59:56.300Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -53,8 +53,8 @@
         "sn",
         "bounty"
       ],
-      "commentCount": 0,
-      "updatedAt": "2026-08-23T21:30:48Z",
+      "commentCount": 1,
+      "updatedAt": "2026-08-23T21:54:40Z",
       "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 20 10000 11 10.3 9274 26610 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```",
       "state": "candidate",
       "payoutConfidence": 0.5,
@@ -64,11 +64,11 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 118,
+      "fastCashScore": 116,
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
-        "comments": 0,
+        "comments": 1,
         "attemptSignals": 0,
         "risk": "low"
       },
@@ -77,17 +77,197 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5229211921",
+      "id": "github:5229271933",
       "source": "github",
-      "title": "[WALLET] ezequiellich44-cmd",
-      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16548",
+      "title": "Bounty claim: BoTTube docstring PR #1743 batch 19 (26 functions, 13.0 RTC)",
+      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16549",
       "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
-      "rewardUsd": 16497,
-      "score": 34,
-      "labels": [],
+      "rewardUsd": 1743,
+      "score": 46,
+      "labels": [
+        "awaiting-merge"
+      ],
+      "commentCount": 1,
+      "updatedAt": "2026-08-23T21:51:10Z",
+      "summary": "Bounty claim: BoTTube docstring PR #1743 (26 functions, 13.0 RTC) PR: https://github.com/Scottcjn/bottube/pull/1743 Added docstrings to 26 previously undocumented test functions/fixtures in `tests/test_debate_framework.py`: helpers (3), TestRateLimiter (4), TestComment (2), TestThreadContext (5), TestDebateBot (8), TestDebateOrchestrator (4). Verified locally: pytest passes 35/35 with the docstrings added; docstrings-only change. Wallet: ezequiellich44-cmd (see #16548)",
+      "state": "candidate",
+      "payoutConfidence": 0.5,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 116,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 1,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 1743,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5228958770",
+      "source": "github",
+      "title": "[radar] SN open bounty 2026-08-23T20:33",
+      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/583",
+      "repositoryApiUrl": "https://api.github.com/repos/relayhop/sn-monetization-runtime",
+      "rewardUsd": 2026,
+      "score": 56,
+      "labels": [
+        "radar",
+        "sn",
+        "bounty"
+      ],
+      "commentCount": 2,
+      "updatedAt": "2026-08-23T21:54:43Z",
+      "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 20 10000 10 9.3 9274 26610 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```",
+      "state": "candidate",
+      "payoutConfidence": 0.5,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 115,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 2,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 2026,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5228686459",
+      "source": "github",
+      "title": "[radar] SN open bounty 2026-08-23T19:29",
+      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/577",
+      "repositoryApiUrl": "https://api.github.com/repos/relayhop/sn-monetization-runtime",
+      "rewardUsd": 2026,
+      "score": 56,
+      "labels": [
+        "radar",
+        "sn",
+        "bounty"
+      ],
+      "commentCount": 3,
+      "updatedAt": "2026-08-23T21:55:34Z",
+      "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 20 10000 10 8.3 9274 26610 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```",
+      "state": "candidate",
+      "payoutConfidence": 0.5,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 113,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 3,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 2026,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5228164548",
+      "source": "github",
+      "title": "[radar] SN open bounty 2026-08-23T17:29",
+      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/567",
+      "repositoryApiUrl": "https://api.github.com/repos/relayhop/sn-monetization-runtime",
+      "rewardUsd": 2026,
+      "score": 56,
+      "labels": [
+        "radar",
+        "sn",
+        "bounty"
+      ],
+      "commentCount": 4,
+      "updatedAt": "2026-08-23T21:55:56Z",
+      "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 20 10000 4 6.3 9274 26607 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY,LOW_COMP Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```",
+      "state": "candidate",
+      "payoutConfidence": 0.5,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 112,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 4,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 2026,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5228485993",
+      "source": "github",
+      "title": "[radar] SN open bounty 2026-08-23T18:43",
+      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/568",
+      "repositoryApiUrl": "https://api.github.com/repos/relayhop/sn-monetization-runtime",
+      "rewardUsd": 2026,
+      "score": 56,
+      "labels": [
+        "radar",
+        "sn",
+        "bounty"
+      ],
+      "commentCount": 4,
+      "updatedAt": "2026-08-23T21:55:45Z",
+      "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 20 10000 5 7.5 9274 26607 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY,LOW_COMP Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```",
+      "state": "candidate",
+      "payoutConfidence": 0.5,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 112,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 4,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 2026,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5035341701",
+      "source": "github",
+      "title": "Transitions test failure on main (System.Func`1[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]].Transitions)",
+      "url": "https://github.com/citadel-station/sector-xiv/issues/410",
+      "repositoryApiUrl": "https://api.github.com/repos/citadel-station/sector-xiv",
+      "rewardUsd": 2000,
+      "score": 54,
+      "labels": [
+        "autogenerated"
+      ],
       "commentCount": 0,
-      "updatedAt": "2026-08-23T21:35:23Z",
-      "summary": "## Wallet / Payout Registration GitHub username: ezequiellich44-cmd RTC wallet name: ezequiellich44-cmd External bridge network: None Related bounty: #16497 I understand that ezequiellich44-cmd is my canonical RustChain payout target for future RTC bounty settlements.",
+      "updatedAt": "2026-08-23T21:49:13Z",
+      "summary": "## Test Failure On Main A test failure has been detected on the main branch. This should never occur. > [!NOTE] > This issue is automatically generated by a github action and will be updated when this failure reoccurs. > Do not edit the body of this issue. ## Failure Details <dl> <dt>Test name</dt> <dd>Transitions</dd> <dt>Fully qualified name</dt> <dd>System.Func`1[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]].Transitions</dd> <dt>Last encountered</dt> <dd>Sunday, August 23rd</dd> </dl> <details> <summary>Failure message</summary> ``` Found arbitrage on BountyPercussion cargo bounty! Product FunInstrumentsRandom costs 2000 but fulfills bounty BountyPercussion with reward 2500! Assert.That(proto.Cost, Is.GreaterThanOrEqualTo(bounty.Reward)) Expected: greater than or equal to 2500 But was: 2000 ``` </details> <details> <summary>Test output</summary> ``` GetPair: Called by test System.Func`1[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]].Transitions GetPair: Looking in pool for a suitable pair GetPair: Creating a new pair, no suitabl",
       "state": "candidate",
       "payoutConfidence": 0.35,
       "autonomyFit": 1,
@@ -105,7 +285,7 @@
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 16497,
+      "economicValueUsd": 2000,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -178,115 +358,6 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5229188221",
-      "source": "github",
-      "title": "[Ulduar] Thorim - After Defeat of the boss combat bug",
-      "url": "https://github.com/azerothcore/azerothcore-wotlk/issues/27280",
-      "repositoryApiUrl": "https://api.github.com/repos/azerothcore/azerothcore-wotlk",
-      "rewardUsd": 55,
-      "score": 40,
-      "labels": [
-        "Confirmed",
-        "Instance - Raid - Northrend",
-        "80"
-      ],
-      "commentCount": 0,
-      "updatedAt": "2026-08-23T21:30:46Z",
-      "summary": "### Current Behaviour You encounter a combat bug after Defeating Thorim [21:05:59] Threatened by me list of Shaele (GUID Full: 0x000000000000350b Type: Player Low: 13579) [21:05:59] End of threatened by me list. [21:05:59] Combat refs (InCombat: true | HasCombat: true) [21:05:59] [PvE] Thunder Orb (GUID Full: 0xf130008262000547 Type: Creature Entry: 33378 Low: 1351) Entry: 33378 [21:05:59] [PvE] Thunder Orb (GUID Full: 0xf130008262000491 Type: Creature Entry: 33378 Low: 1169) Entry: 33378 ### Expected Behaviour Everything should reset ### Source pretty obvious but hey, here from Classic server first https://youtu.be/bXP9TEAwhzU?si=h8xwGxwVzDA-z4rw&t=2219 ### Steps to reproduce the problem - be level 80 - `.cheat god` - `.tele Thorim` - progress through the fight and defeat Thorim after some time playing the encounter - observe after defeat that you are still in combat ### Extra Notes _No response_ ### AC rev. hash/commit AzerothCore rev. ca8e6d78dee1 2026-08-23 10:24:54 +0200 (master branch) (Unix, RelWithDebInfo, Static) ### Operating system Windows 11 ### Custom changes or Modules - [mod-1v1-arena](https://github.com/azerothcore/mod-1v1-arena) - [mod-ah-bot](https://github.com/az",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 104,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 0,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 55,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5229187085",
-      "source": "github",
-      "title": "[ULDUAR]Life Tap not activating Glyph of Life Tap during Vezax encounter",
-      "url": "https://github.com/azerothcore/azerothcore-wotlk/issues/27279",
-      "repositoryApiUrl": "https://api.github.com/repos/azerothcore/azerothcore-wotlk",
-      "rewardUsd": 55,
-      "score": 40,
-      "labels": [
-        "Confirmed",
-        "Class - Warlock",
-        "Instance - Raid - Northrend",
-        "80"
-      ],
-      "commentCount": 0,
-      "updatedAt": "2026-08-23T21:30:38Z",
-      "summary": "### Triage Issue linked from CC: https://github.com/chromiecraft/chromiecraft/issues/10053 Triage Notes: repro: - be warlock level 80 - .learn all my class - .add 45785 learn it - .tele vezax - engage and use life tap,observe test: https://dl.dropboxusercontent.com/scl/fi/xi8cwzcclzygrkz2k8wz9/wow_luyNekZkeE.mp4?rlkey=hf765ia30t0utzk7ff3rw61rw&dl=0 src: <img width=\"1246\" height=\"65\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/e5b2af72-4709-4ae2-9c64-57947697e3c7\" /> Original Post Below: --- ### Current Behaviour Casting Life Tap, no matter which rank, does not gain you the buff from Glyph of Life Tap while fighting General Vezax. ### Expected Behaviour Even though Life Tap does not generate mana, it should still give you the buff from Glyph of Life Tap. ### Official Sources (that prove or disprove) the issue being reported https://www.wowhead.com/wotlk/npc=33271/general-vezax#comments;40 <img width=\"1246\" height=\"65\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/1ab33bb8-1f1b-4431-bf42-a7f7c8bf5681\" /> ### Steps to reproduce the problem 1. Enter combat with General Vezax. 2. Cast Life Tap. ### Extra Notes Glyph: https://wowgaming.altervista.org/aowow/?",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 104,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 0,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 55,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5228805873",
-      "source": "github",
-      "title": "[Eye of Eternity] Weird parachute interaction",
-      "url": "https://github.com/chromiecraft/chromiecraft/issues/10052",
-      "repositoryApiUrl": "https://api.github.com/repos/chromiecraft/chromiecraft",
-      "rewardUsd": 55,
-      "score": 40,
-      "labels": [
-        "Waiting for more feedback",
-        "bot-triaged",
-        "bot-confidence-low"
-      ],
-      "commentCount": 2,
-      "updatedAt": "2026-08-23T21:26:35Z",
-      "summary": "### Current Behaviour Utilizing your parachute during the transition between phases 2 and 3 of Malygos' fight makes the parachute pop out and stay out for it's duration despite the player being mounted, which is expected. However, after the fight is over and the player exits the raid, the parachute effect lingers indefinitely. ### Expected Behaviour Ideally the effect should be dispelled after 30 seconds of activating the parachute. ### Official Sources (that prove or disprove) the issue being reported I have no way of knowing if this is a bug that got carried away from the original wow servers or if it's a Chromie thing. ### Steps to reproduce the problem Reach the transition between Phases 2 and 3 of Eye of Eternity, wait for Malygos to break the platform and use your parachute before the drake rides have a chance to catch you. If you survive the encounter, you should now have the same effect as I did. ### Extra Notes - The effect does not show on the buff list, as it shows on the first screenshot below; - Taking damage or even losing a duel does not remove the effect; - Dying does not remove the effect; - You still retain the effect while in ghost form; - You still take damage a",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 101,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 2,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 55,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
       "id": "github:4563956966",
       "source": "github",
       "title": "parse_duration drops the days (d) unit",
@@ -332,20 +403,20 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-18T21:51:29Z\",\"competition\":{\"comments\":29,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":124,\"updatedAt\":\"2026-08-23T17:46:02Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5160374150\",\"rewardUsd\":160,\"fastCashScore\":100,\"updatedAt\":\"2026-08-23T21:38:26Z\",\"competition\":{\"comments\":11,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5226777176\",\"rewardUsd\":500,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T12:01:50Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226781397\",\"rewardUsd\":1000,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T12:02:59Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226781536\",\"rewardUsd\":1000,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T12:03:02Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5228805873\",\"rewardUsd\":55,\"fastCashScore\":101,\"updatedAt\":\"2026-08-23T21:26:35Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5229187085\",\"rewardUsd\":55,\"fastCashScore\":104,\"updatedAt\":\"2026-08-23T21:30:38Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5229188221\",\"rewardUsd\":55,\"fastCashScore\":104,\"updatedAt\":\"2026-08-23T21:30:46Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5229190590\",\"rewardUsd\":2026,\"fastCashScore\":118,\"updatedAt\":\"2026-08-23T21:30:48Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5229211921\",\"rewardUsd\":16497,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T21:35:23Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":124,\"updatedAt\":\"2026-08-23T17:46:02Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5035341701\",\"rewardUsd\":2000,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T21:49:13Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226777176\",\"rewardUsd\":500,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T12:01:50Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226781397\",\"rewardUsd\":1000,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T12:02:59Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226781536\",\"rewardUsd\":1000,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T12:03:02Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5228164548\",\"rewardUsd\":2026,\"fastCashScore\":112,\"updatedAt\":\"2026-08-23T21:55:56Z\",\"competition\":{\"comments\":4,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5228485993\",\"rewardUsd\":2026,\"fastCashScore\":112,\"updatedAt\":\"2026-08-23T21:55:45Z\",\"competition\":{\"comments\":4,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5228686459\",\"rewardUsd\":2026,\"fastCashScore\":113,\"updatedAt\":\"2026-08-23T21:55:34Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5228958770\",\"rewardUsd\":2026,\"fastCashScore\":115,\"updatedAt\":\"2026-08-23T21:54:43Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5229190590\",\"rewardUsd\":2026,\"fastCashScore\":116,\"updatedAt\":\"2026-08-23T21:54:40Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5229271933\",\"rewardUsd\":1743,\"fastCashScore\":116,\"updatedAt\":\"2026-08-23T21:51:10Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
     "mode": true,
     "eligibleCount": 0,
-    "fundedSignalCount": 3,
+    "fundedSignalCount": 2,
     "objective": "first_real_confirmed_cash_fast",
     "policy": "bootstrap_basic_v1",
     "maxHours": 4,
     "minPayoutConfidence": 0.8,
     "competitionRequired": "low",
     "rejectedFakeRevenueCount": 2,
-    "rejectedAlreadyPaidCount": 2,
+    "rejectedAlreadyPaidCount": 0,
     "rejectedIdentityGateCount": 0
   },
   "economicallyRejected": [
@@ -356,7 +427,7 @@
       "reasons": [
         "testnet_or_test_token_reward"
       ],
-      "rejectedAt": "2026-08-23T21:41:25.280Z"
+      "rejectedAt": "2026-08-23T21:59:56.245Z"
     },
     {
       "id": "github:5226777176",
@@ -365,7 +436,7 @@
       "reasons": [
         "testnet_or_test_token_reward"
       ],
-      "rejectedAt": "2026-08-23T21:41:25.280Z"
+      "rejectedAt": "2026-08-23T21:59:56.246Z"
     },
     {
       "id": "github:3055155077",
