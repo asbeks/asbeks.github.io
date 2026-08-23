@@ -1,36 +1,27 @@
 {
   "version": 5,
-  "cycle": 40,
+  "cycle": 41,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-23T06:59:02.900Z",
+  "updatedAt": "2026-08-23T07:41:58.410Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "online",
-  "currentAgent": "CRITIC",
+  "currentAgent": "PLANNER",
   "provider": {
     "mode": "OpenCode Free",
     "model": "hy3-free",
-    "attempts": 1
+    "attempts": 2
   },
   "latest": {
-    "cycle": 40,
-    "agent": "CRITIC",
-    "timestamp": "2026-08-23T06:59:02.900Z",
-    "observation": "Job github:4234681451 summary present but full claim procedure and payout channel still truncated in snapshot.",
-    "objection": "Legitimacy and $250 payout cannot be confirmed without authoritative extraction of complete claim instructions from issue.",
-    "decision": "Defer acceptance of github:4234681451 and keep blocked until PLANNER provides verified claim steps and payout details.",
-    "next": "PLANNER must fetch and parse full github:4234681451 issue content to extract claim process and payout verification."
+    "cycle": 41,
+    "agent": "PLANNER",
+    "timestamp": "2026-08-23T07:41:58.410Z",
+    "observation": "Snapshot for github:4234681451 still truncates claim procedure at 'If you wish to claim', preventing payout verification.",
+    "objection": "Legitimacy and $250 payout cannot be confirmed without authoritative full issue content extraction as CRITIC requires.",
+    "decision": "Fetch and parse https://github.com/HHS/simpler-grants-gov/issues/9504 to extract claim steps; draft proposal per criteria meanwhile.",
+    "next": "CRITIC must examine parsed claim process and payout verification from github:4234681451 issue content."
   },
   "lastError": null,
   "history": [
-    {
-      "cycle": 1,
-      "agent": "PLANNER",
-      "timestamp": "2026-08-22T10:07:07.301Z",
-      "observation": "Cycle 1 begins with an empty state; foundational design is needed.",
-      "objection": "No initial revenue or capital exists; sustainability is uncertain.",
-      "decision": "Propose to outline minimal legitimate revenue streams and cost structure.",
-      "next": "CRITIC should evaluate the feasibility of proposed revenue models."
-    },
     {
       "cycle": 2,
       "agent": "CRITIC",
@@ -381,6 +372,15 @@
       "objection": "Legitimacy and $250 payout cannot be confirmed without authoritative extraction of complete claim instructions from issue.",
       "decision": "Defer acceptance of github:4234681451 and keep blocked until PLANNER provides verified claim steps and payout details.",
       "next": "PLANNER must fetch and parse full github:4234681451 issue content to extract claim process and payout verification."
+    },
+    {
+      "cycle": 41,
+      "agent": "PLANNER",
+      "timestamp": "2026-08-23T07:41:58.410Z",
+      "observation": "Snapshot for github:4234681451 still truncates claim procedure at 'If you wish to claim', preventing payout verification.",
+      "objection": "Legitimacy and $250 payout cannot be confirmed without authoritative full issue content extraction as CRITIC requires.",
+      "decision": "Fetch and parse https://github.com/HHS/simpler-grants-gov/issues/9504 to extract claim steps; draft proposal per criteria meanwhile.",
+      "next": "CRITIC must examine parsed claim process and payout verification from github:4234681451 issue content."
     }
   ],
   "economy": {
@@ -432,20 +432,20 @@
         "summary": "`source.md` contains the complete RFC 5322 specification (Internet Message Format). We need a **fully conformant email address parser** in Python that implements the complete ABNF grammar from sections 3.2 through 3.4, plus obsolete syntax from §4.4. This parser must handle every edge case defined in the RFC — not just simple `user@domain` patterns, but the full complexity of quoted strings, comments, folding whitespace, group addresses, and domain literals. ## Background RFC 5322 defines email address syntax through a chain of ABNF productions that build on each other: ``` address = mailbox / group mailbox = name-addr / addr-spec name-addr = [display-name] angle-addr angle-addr = [CFWS] \"<\" addr-spec \">\" [CFWS] addr-spec = local-part \"@\" domain local-part = dot-atom / quoted-string / obs-local-part domain = dot-atom / domain-literal / obs-domain ``` Each of these references further productions (CFWS, FWS, quoted-pair, dtext, etc.) that span multiple sections. **You must read `source.md` completely** to trace the full grammar dependency chain. ## Requirements ### 1. Parser Implementation — `parser.py` ```python class RFC5322Address: \"\"\"Parsed RFC 5322 email address.\"\"\" display_name"
       },
       {
-        "id": "github:5221356660",
-        "title": "Go/no-go: does Researchd replace the whole science system?",
-        "url": "https://github.com/adamico/planetary-factory/issues/45",
-        "rewardUsd": 25,
-        "score": 40,
-        "summary": "Part of #25 ## Question [Researchd](https://www.curseforge.com/minecraft/mc-mods/researchd) (1.2.5, MC 1.21.1/NeoForge, [wiki](https://porting-dead-mods.github.io/Researchd/), [source](https://github.com/Porting-Dead-Mods/Researchd)) is a Factorio research system for Minecraft: a research graph and queue UI, a **Research Lab** multiblock, **research packs** as a first-class item type, and data-driven researches — `researchd:simple` with a `method` (`consume_item`, `check_item_presence`, `consume_pack`, `and`/`or`) and an `effect` (`unlock_recipe`, `unlock_item`, `dimension_unlock`, `and`). Team-scoped, with an FTB Teams compat module. Required dependency: `portingdeadlibs` (one jar). Optional: KubeJS, JEI, EMI. **The decision is all-or-nothing**: Researchd owns the science system entire — packs, tree, lab and recipe locking — displacing FTB Quests Task Screens as the gate and GTCEu's `RecipeCondition` as the lock. Partial adoption was considered and rejected: two lock mechanisms with different reach means two places to look when something is craftable that should not be. That decision is **conditional on this ticket**. Install the mod and establish four facts, in order of how fatal"
+        "id": "github:5224698362",
+        "title": "Funding avenues for Dimecoin open-source development (for team consideration)",
+        "url": "https://github.com/dime-coin/dimecoin/issues/102",
+        "rewardUsd": 2024,
+        "score": 62,
+        "summary": "## Purpose This is a **discussion / consideration** item, not a code change. It collects legitimate funding avenues for *open-source development* of Dimecoin, so the team can decide how to fund ongoing work (protocol hardening, light-wallet maturity, P2P/privacy infrastructure, running redundant ElectrumX). > Note on scope: this is strictly about **development funding** (grants, > foundation treasury, bounties). It deliberately excludes token sales / ICOs / > promotional activity, which are out of scope for this project. ## External OSS / infrastructure grants (coin-agnostic) These funds support open internet / P2P / privacy infrastructure and do **not** require the project to be Bitcoin: | Source | Where | Fits Dimecoin work | Amount / timing | | --- | --- | --- | --- | | **NLnet — NGI Zero Commons / Restack** | https://nlnet.nl (Apply) | BIP324 encrypted P2P, I2P, BIP157/158 light-client filters — package as \"censorship-resistant P2P transport + light-client privacy\" | €5k–50k, scalable. NGI0 Commons call reopens after summer 2026 | | **Sovereign Tech Fund** | https://www.sovereign.tech/programs/fund | P2P / encryption as \"open digital base technology\" | min €50k, ~6 months to co"
       },
       {
-        "id": "github:5224489257",
-        "title": "R-#214: ClusterFundV2 — el 10% de pagos de cursos GD llega íntegro al fondo del país",
-        "url": "https://github.com/pasosdeJesus/learn.tg/issues/214",
-        "rewardUsd": 10,
-        "score": 38,
-        "summary": "# R-#214: ClusterFundV2 — el 10% de pagos de cursos GD llega íntegro al fondo del país El contrato `ClusterFunds` aplica su mecánica de donación (`_distributeFees`: fee 10% + cashback 10%) a **todo** monto que recibe. Cuando un pago de curso GD rutea su 10% al fondo del país, el contrato lo vuelve a gravar: el fondo solo recibe 8% del pago y el backend recibe 2% (fee + cashback minted) — un doble cobro que no tiene sentido. Se crea `ClusterFundsV2` con funciones de *contribución* que acreditan el 100% del monto ruteado, y se alinea el % de pdJ GD a 40 según REQ/128. --- **Created:** 2026-08-22 **Status:** En progreso (contrato desplegado, código actualizado, e2e de distribución escrito — falta migración, deploy y validación e2e) --- ## 1. Motivación ### 1.1 El fondo recibe 8%, no 10% Flujo actual de un pago de curso GD de 10 USDT: 1. El comprador envía 10 USDT al backend. 2. `purchase/route.ts` rutea el 10% (1 USDT) a `ClusterFunds` vía `routeToClusterFunds`. 3. El contrato llama `_distributeFees(1 USDT)`: - 10% fee → wallet de pdJ/backend (0.1 USDT) - 10% cashback → `mintAndReserve` al backend (0.1 USDT → 2.2 SLEARN) - **80% → fondo del país: 0.8 USDT** 4. El 90% restante pasa por"
+        "id": "github:5212975843",
+        "title": "[MCP] Add memory_context tool: pull relevant lessons at task start",
+        "url": "https://github.com/Ikalus1988/MisakaNet/issues/1165",
+        "rewardUsd": 100,
+        "score": 58,
+        "summary": "## Problem Agents using MisakaNet currently have to explicitly search for lessons when they encounter a problem. There's no way to **pre-load relevant context at task start** — the agent doesn't know what failure patterns exist in the current domain until it hits one. TeamMemory's `memory_context` tool solves this: given file paths or a task description, it returns a compact summary of relevant experiences + user profile. This lets agents proactively avoid known pitfalls before they occur. ## Proposed Design ### New MCP Tool: `misakanet_context` ```json { \"name\": \"misakanet_context\", \"description\": \"Pull relevant failure lessons for your current task context. Call this at task start to proactively avoid known pitfalls.\", \"inputSchema\": { \"type\": \"object\", \"properties\": { \"file_paths\": { \"type\": \"array\", \"items\": {\"type\": \"string\"}, \"description\": \"Files you're working on (extracts domain/tags)\" }, \"task_description\": { \"type\": \"string\", \"description\": \"What you're trying to do\" }, \"framework\": { \"type\": \"string\", \"description\": \"Framework/tool in use (e.g., 'react', 'docker', 'mcp')\" }, \"max_lessons\": { \"type\": \"integer\", \"default\": 5, \"description\": \"Maximum lessons to return\" } }"
       }
     ],
     "active": null,

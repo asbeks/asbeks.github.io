@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-08-23T06:58:35.414Z",
+  "updatedAt": "2026-08-23T07:41:28.606Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -53,8 +53,8 @@
         "sn",
         "bounty"
       ],
-      "commentCount": 0,
-      "updatedAt": "2026-08-23T06:56:24Z",
+      "commentCount": 1,
+      "updatedAt": "2026-08-23T07:26:34Z",
       "summary": "New SN OPEN_BOUNTY detected: ``` 1552806 Stacker_Sports 3 203 1000 18 15.5 1448206 1999 recent@Stacker_Sports|top@Stacker_Sports OPEN_BOUNTY,SELF_POST_OPP Nail the NFL top 10 ```",
       "state": "candidate",
       "payoutConfidence": 0.5,
@@ -64,11 +64,11 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 118,
+      "fastCashScore": 116,
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
-        "comments": 0,
+        "comments": 1,
         "attemptSignals": 0,
         "risk": "low"
       },
@@ -114,51 +114,17 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5221356660",
+      "id": "github:5224698362",
       "source": "github",
-      "title": "Go/no-go: does Researchd replace the whole science system?",
-      "url": "https://github.com/adamico/planetary-factory/issues/45",
-      "repositoryApiUrl": "https://api.github.com/repos/adamico/planetary-factory",
-      "rewardUsd": 25,
-      "score": 40,
-      "labels": [
-        "wayfinder:prototype"
-      ],
-      "commentCount": 0,
-      "updatedAt": "2026-08-23T06:54:22Z",
-      "summary": "Part of #25 ## Question [Researchd](https://www.curseforge.com/minecraft/mc-mods/researchd) (1.2.5, MC 1.21.1/NeoForge, [wiki](https://porting-dead-mods.github.io/Researchd/), [source](https://github.com/Porting-Dead-Mods/Researchd)) is a Factorio research system for Minecraft: a research graph and queue UI, a **Research Lab** multiblock, **research packs** as a first-class item type, and data-driven researches — `researchd:simple` with a `method` (`consume_item`, `check_item_presence`, `consume_pack`, `and`/`or`) and an `effect` (`unlock_recipe`, `unlock_item`, `dimension_unlock`, `and`). Team-scoped, with an FTB Teams compat module. Required dependency: `portingdeadlibs` (one jar). Optional: KubeJS, JEI, EMI. **The decision is all-or-nothing**: Researchd owns the science system entire — packs, tree, lab and recipe locking — displacing FTB Quests Task Screens as the gate and GTCEu's `RecipeCondition` as the lock. Partial adoption was considered and rejected: two lock mechanisms with different reach means two places to look when something is craftable that should not be. That decision is **conditional on this ticket**. Install the mod and establish four facts, in order of how fatal",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 100,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 0,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 25,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5224489257",
-      "source": "github",
-      "title": "R-#214: ClusterFundV2 — el 10% de pagos de cursos GD llega íntegro al fondo del país",
-      "url": "https://github.com/pasosdeJesus/learn.tg/issues/214",
-      "repositoryApiUrl": "https://api.github.com/repos/pasosdeJesus/learn.tg",
-      "rewardUsd": 10,
-      "score": 38,
+      "title": "Funding avenues for Dimecoin open-source development (for team consideration)",
+      "url": "https://github.com/dime-coin/dimecoin/issues/102",
+      "repositoryApiUrl": "https://api.github.com/repos/dime-coin/dimecoin",
+      "rewardUsd": 2024,
+      "score": 62,
       "labels": [],
-      "commentCount": 0,
-      "updatedAt": "2026-08-23T00:46:19Z",
-      "summary": "# R-#214: ClusterFundV2 — el 10% de pagos de cursos GD llega íntegro al fondo del país El contrato `ClusterFunds` aplica su mecánica de donación (`_distributeFees`: fee 10% + cashback 10%) a **todo** monto que recibe. Cuando un pago de curso GD rutea su 10% al fondo del país, el contrato lo vuelve a gravar: el fondo solo recibe 8% del pago y el backend recibe 2% (fee + cashback minted) — un doble cobro que no tiene sentido. Se crea `ClusterFundsV2` con funciones de *contribución* que acreditan el 100% del monto ruteado, y se alinea el % de pdJ GD a 40 según REQ/128. --- **Created:** 2026-08-22 **Status:** En progreso (contrato desplegado, código actualizado, e2e de distribución escrito — falta migración, deploy y validación e2e) --- ## 1. Motivación ### 1.1 El fondo recibe 8%, no 10% Flujo actual de un pago de curso GD de 10 USDT: 1. El comprador envía 10 USDT al backend. 2. `purchase/route.ts` rutea el 10% (1 USDT) a `ClusterFunds` vía `routeToClusterFunds`. 3. El contrato llama `_distributeFees(1 USDT)`: - 10% fee → wallet de pdJ/backend (0.1 USDT) - 10% cashback → `mintAndReserve` al backend (0.1 USDT → 2.2 SLEARN) - **80% → fondo del país: 0.8 USDT** 4. El 90% restante pasa por",
+      "commentCount": 2,
+      "updatedAt": "2026-08-23T07:16:19Z",
+      "summary": "## Purpose This is a **discussion / consideration** item, not a code change. It collects legitimate funding avenues for *open-source development* of Dimecoin, so the team can decide how to fund ongoing work (protocol hardening, light-wallet maturity, P2P/privacy infrastructure, running redundant ElectrumX). > Note on scope: this is strictly about **development funding** (grants, > foundation treasury, bounties). It deliberately excludes token sales / ICOs / > promotional activity, which are out of scope for this project. ## External OSS / infrastructure grants (coin-agnostic) These funds support open internet / P2P / privacy infrastructure and do **not** require the project to be Bitcoin: | Source | Where | Fits Dimecoin work | Amount / timing | | --- | --- | --- | --- | | **NLnet — NGI Zero Commons / Restack** | https://nlnet.nl (Apply) | BIP324 encrypted P2P, I2P, BIP157/158 light-client filters — package as \"censorship-resistant P2P transport + light-client privacy\" | €5k–50k, scalable. NGI0 Commons call reopens after summer 2026 | | **Sovereign Tech Fund** | https://www.sovereign.tech/programs/fund | P2P / encryption as \"open digital base technology\" | min €50k, ~6 months to co",
       "state": "candidate",
       "payoutConfidence": 0.35,
       "autonomyFit": 1,
@@ -167,85 +133,164 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 95,
+      "fastCashScore": 108,
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
-        "comments": 0,
+        "comments": 2,
         "attemptSignals": 0,
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 10,
+      "economicValueUsd": 2024,
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5220496905",
+      "id": "github:5212975843",
       "source": "github",
-      "title": "[Bounty] [BOUNTY] Break the NFH Wake holder gate — 25 USDC",
-      "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/882",
-      "repositoryApiUrl": "https://api.github.com/repos/zhangjiayang6835-cyber/bounty-plaza",
-      "rewardUsd": 25,
-      "score": 72,
+      "title": "[MCP] Add memory_context tool: pull relevant lessons at task start",
+      "url": "https://github.com/Ikalus1988/MisakaNet/issues/1165",
+      "repositoryApiUrl": "https://api.github.com/repos/Ikalus1988/MisakaNet",
+      "rewardUsd": 100,
+      "score": 58,
       "labels": [
-        "bounty",
-        "real"
+        "enhancement",
+        "ready",
+        "agent-friendly",
+        "zero-bounty"
       ],
-      "commentCount": 4,
-      "updatedAt": "2026-08-23T06:48:35Z",
-      "summary": "### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/notforhumansfun-rgb/not-for-humans-mcp/issues/6 ### 漏洞描述 / Description [BOUNTY] Break the NFH Wake holder gate — 25 USDC ## 25 USDC audit bounty Find the first valid, non-duplicate way to make the **unmodified official NFH Wake Kit** at commit [`76e681e`](https://github.com/notforhumansfun-rgb/not-for-humans-mcp/commit/76e681e) emit a holder-gated mission or receipt when **no fresh direct-owner Agent Presence heartbeat exists for that token's current owner**. **Prize:** one award of **25 USDC**, paid after the finding is reproduced and fix coordination is complete. The settlement network and recipient address will be agreed privately with the accepted reporter. No gas reimbursement. **Closes:** September 5, 2026 at 23:59 UTC, or when an award is accepted. ### In scope - Missing, expired, delegated, or mismatched heartbeat bypasses - Canonical endpoint substitution or validation failure - Token/owner mismatch - Transfer or expiry races - A forged `HOLDER_VERIFIED_AT_WAKE` result through the unmodified official CLI - Parser, timestamp, or canonical-URL validation failures ### Not a finding - Editing or forking the so",
+      "commentCount": 1,
+      "updatedAt": "2026-08-23T07:39:28Z",
+      "summary": "## Problem Agents using MisakaNet currently have to explicitly search for lessons when they encounter a problem. There's no way to **pre-load relevant context at task start** — the agent doesn't know what failure patterns exist in the current domain until it hits one. TeamMemory's `memory_context` tool solves this: given file paths or a task description, it returns a compact summary of relevant experiences + user profile. This lets agents proactively avoid known pitfalls before they occur. ## Proposed Design ### New MCP Tool: `misakanet_context` ```json { \"name\": \"misakanet_context\", \"description\": \"Pull relevant failure lessons for your current task context. Call this at task start to proactively avoid known pitfalls.\", \"inputSchema\": { \"type\": \"object\", \"properties\": { \"file_paths\": { \"type\": \"array\", \"items\": {\"type\": \"string\"}, \"description\": \"Files you're working on (extracts domain/tags)\" }, \"task_description\": { \"type\": \"string\", \"description\": \"What you're trying to do\" }, \"framework\": { \"type\": \"string\", \"description\": \"Framework/tool in use (e.g., 'react', 'docker', 'mcp')\" }, \"max_lessons\": { \"type\": \"integer\", \"default\": 5, \"description\": \"Maximum lessons to return\" } }",
       "state": "candidate",
-      "payoutConfidence": 0.5,
+      "payoutConfidence": 0.35,
       "autonomyFit": 1,
       "requiresHumanGate": false,
       "requiresSpecialHardware": false,
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 92,
+      "fastCashScore": 98,
       "survivalEligible": false,
       "eligibilityReason": "Competition is too high for bootstrap mode.",
       "competition": {
-        "comments": 4,
+        "comments": 1,
         "attemptSignals": 1,
         "risk": "medium"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 25,
+      "economicValueUsd": 100,
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:4644823208",
+      "id": "github:5214386459",
       "source": "github",
-      "title": "[BOUNTY: 10 RTC] Proof-of-Antiquity Explainer — Diagram, Infographic, or 60s Video",
-      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/13954",
-      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
-      "rewardUsd": 10,
-      "score": 54,
+      "title": "[Test] Add Hypothesis fuzz tests for search, intake, MCP protocol",
+      "url": "https://github.com/Ikalus1988/MisakaNet/issues/1182",
+      "repositoryApiUrl": "https://api.github.com/repos/Ikalus1988/MisakaNet",
+      "rewardUsd": 100,
+      "score": 58,
       "labels": [
-        "bounty"
+        "enhancement",
+        "ready",
+        "agent-friendly",
+        "zero-bounty"
       ],
-      "commentCount": 12,
-      "updatedAt": "2026-08-23T06:46:53Z",
-      "summary": "## Make Proof-of-Antiquity click in 60 seconds — 10 RTC Create an **original visual explainer** of how RustChain works: Proof-of-Antiquity (vintage hardware earns more), the 6-check hardware fingerprint, and why VMs earn ~nothing. Aimed at a smart newcomer. ### Format (pick one) - Infographic / diagram (PNG/SVG) - 60-second video (animation, screen-record, or talking-head) - A clear annotated flowchart ### Must cover - 1 CPU = 1 vote, weighted by hardware antiquity - The fingerprint/anti-emulation idea (real hardware vs VM) - Where to start (`pip install clawrtc`) ### How to claim Comment with the asset (or a link — YouTube/imgur/a PR adding it to `docs/`) + your wallet/handle. Must be **your original work**, accurate, and genuinely clear. ### Reward **10 RTC.** Best ones may get featured on rustchain.org and pinned — extra reach for you. <!-- machine-readable bounty spec --> ```bounty-spec # auto-backfilled; maintainer may refine paid: true reward_rtc: 10 per: one-time cap: 1 submit: [comment, email] not_in_repo: true ```",
+      "commentCount": 1,
+      "updatedAt": "2026-08-23T07:39:23Z",
+      "summary": "## Problem The repo has contract tests (`test_mcp_auth_contract.py`) and stress tests (`mcp-stress.yml`) but no fuzz testing. Fuzz testing is the only way to find edge cases in: - BM25 search query parsing (special characters, unicode, extremely long queries) - Intake redaction (adversarial inputs trying to bypass redaction) - MCP protocol handling (malformed JSON-RPC, oversized payloads) ## Proposed Design ### Search fuzzing ```python # tests/test_search_fuzz.py from hypothesis import given, strategies as st @given(query=st.text(min_size=0, max_size=10000)) def test_search_never_crashes(query): \"\"\"Search should never crash, regardless of input.\"\"\" result = search_lessons(query) assert isinstance(result, list) @given(query=st.text(alphabet=st.characters(blacklist_categories=(\"Cs\",)))) def test_search_handles_unicode(query): \"\"\"Search handles all unicode without error.\"\"\" result = search_lessons(query) assert isinstance(result, list) ``` ### Intake redaction fuzzing ```python # tests/test_intake_fuzz.py @given(payload=st.dictionaries( keys=st.text(min_size=1, max_size=100), values=st.text(min_size=0, max_size=10000) )) def test_redaction_never_leaks_secrets(payload): \"\"\"Redaction sh",
       "state": "candidate",
-      "payoutConfidence": 0.5,
+      "payoutConfidence": 0.35,
       "autonomyFit": 1,
       "requiresHumanGate": false,
       "requiresSpecialHardware": false,
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 83,
+      "fastCashScore": 98,
       "survivalEligible": false,
       "eligibilityReason": "Competition is too high for bootstrap mode.",
       "competition": {
-        "comments": 12,
-        "attemptSignals": 0,
+        "comments": 1,
+        "attemptSignals": 1,
         "risk": "medium"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 10,
+      "economicValueUsd": 100,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5214377429",
+      "source": "github",
+      "title": "[Refactor] Split mcp_server.py (41kB) into misakanet/server/ package",
+      "url": "https://github.com/Ikalus1988/MisakaNet/issues/1180",
+      "repositoryApiUrl": "https://api.github.com/repos/Ikalus1988/MisakaNet",
+      "rewardUsd": 100,
+      "score": 58,
+      "labels": [
+        "enhancement",
+        "ready",
+        "agent-friendly",
+        "zero-bounty"
+      ],
+      "commentCount": 1,
+      "updatedAt": "2026-08-23T07:39:15Z",
+      "summary": "## Problem `scripts/mcp_server.py` is 40,975 bytes (~41kB) — a single file containing MCP protocol handling, tool definitions, request routing, and business logic. This is the only script in the repo that's genuinely too large. Other scripts (quality_scorer.py 20kB, queue_lesson.py 15kB, lesson_lint.py 15kB) are reasonable size. The Copilot review flagged all scripts as large — that's inaccurate. But mcp_server.py genuinely needs splitting. ## Current structure ``` scripts/mcp_server.py (41kB) ├── MCP protocol handling (stdio transport, JSON-RPC) ├── Tool definitions (7 tools: search, get_lesson, submit_usage, etc.) ├── Request handlers (handle_search, handle_get_lesson, etc.) ├── Business logic (search execution, lesson formatting, intake processing) ├── Auth/token management └── CLI entry point ``` ## Proposed refactor ``` misakanet/ server/ __init__.py protocol.py # MCP JSON-RPC protocol handling tools.py # Tool definitions and schemas handlers/ __init__.py search.py # misakanet_search handler get_lesson.py # misakanet_get_lesson handler submit.py # misakanet_submit_usage + submit_intake write.py # misakanet_write_lesson preflight.py # misakanet_preflight status.py # misakanet_u",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 98,
+      "survivalEligible": false,
+      "eligibilityReason": "Competition is too high for bootstrap mode.",
+      "competition": {
+        "comments": 1,
+        "attemptSignals": 1,
+        "risk": "medium"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 100,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5222686588",
+      "source": "github",
+      "title": "[MCP] Fix KV token verification for write_lesson",
+      "url": "https://github.com/Ikalus1988/MisakaNet/issues/1240",
+      "repositoryApiUrl": "https://api.github.com/repos/Ikalus1988/MisakaNet",
+      "rewardUsd": 100,
+      "score": 58,
+      "labels": [
+        "bug",
+        "ready",
+        "agent-friendly",
+        "zero-bounty"
+      ],
+      "commentCount": 1,
+      "updatedAt": "2026-08-23T07:39:10Z",
+      "summary": "## Problem Remote MCP token verification fails for `misakanet_write_lesson`. Registration succeeds and stores token in KV, but subsequent authenticated calls return `Unauthorized`. **Root cause**: KV lookup fails during token verification, even though KV binding is configured and data exists. ## Current state | Tool | Auth requirement | Status | |---|---|---| | `misakanet_register` | None | ✅ | | `misakanet_search` | None (rate-limited) | ✅ | | `misakanet_get_lesson` | None (rate-limited) | ✅ | | `misakanet_submit_intake` | None | ✅ | | `misakanet_preflight` | None (rate-limited) | ✅ | | `misakanet_write_lesson` | Required (KV token) | ❌ | ## What we know 1. Registration stores token at `mcp_token:${token}` in KV ✅ 2. KV data exists (verified in Cloudflare Dashboard) ✅ 3. KV binding is configured (`MISAKANET_KV`) ✅ 4. Auth check reads from `mcp_token:${token}` but returns null ❌ ## Possible causes 1. **KV namespace mismatch**: Registration writes to one KV, auth reads from another 2. **KV binding not available in Worker context**: `env.MISAKANET_KV` is undefined during auth check 3. **Timing issue**: KV eventual consistency delay 4. **Code path issue**: Auth check runs before KV is",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 98,
+      "survivalEligible": false,
+      "eligibilityReason": "Competition is too high for bootstrap mode.",
+      "competition": {
+        "comments": 1,
+        "attemptSignals": 1,
+        "risk": "medium"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 100,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -294,23 +339,63 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:2940525692\",\"rewardUsd\":10,\"fastCashScore\":60,\"updatedAt\":\"2026-08-18T21:51:22Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-18T21:51:29Z\",\"competition\":{\"comments\":29,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":125,\"updatedAt\":\"2026-08-22T16:37:56Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:4644823208\",\"rewardUsd\":10,\"fastCashScore\":83,\"updatedAt\":\"2026-08-23T06:46:53Z\",\"competition\":{\"comments\":12,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5220496905\",\"rewardUsd\":25,\"fastCashScore\":92,\"updatedAt\":\"2026-08-23T06:48:35Z\",\"competition\":{\"comments\":4,\"attemptSignals\":1,\"risk\":\"medium\"}},{\"id\":\"github:5221356660\",\"rewardUsd\":25,\"fastCashScore\":100,\"updatedAt\":\"2026-08-23T06:54:22Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5224489257\",\"rewardUsd\":10,\"fastCashScore\":95,\"updatedAt\":\"2026-08-23T00:46:19Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5225741340\",\"rewardUsd\":2026,\"fastCashScore\":118,\"updatedAt\":\"2026-08-23T06:56:24Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":125,\"updatedAt\":\"2026-08-22T16:37:56Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5212975843\",\"rewardUsd\":100,\"fastCashScore\":98,\"updatedAt\":\"2026-08-23T07:39:28Z\",\"competition\":{\"comments\":1,\"attemptSignals\":1,\"risk\":\"medium\"}},{\"id\":\"github:5214377429\",\"rewardUsd\":100,\"fastCashScore\":98,\"updatedAt\":\"2026-08-23T07:39:15Z\",\"competition\":{\"comments\":1,\"attemptSignals\":1,\"risk\":\"medium\"}},{\"id\":\"github:5214386459\",\"rewardUsd\":100,\"fastCashScore\":98,\"updatedAt\":\"2026-08-23T07:39:23Z\",\"competition\":{\"comments\":1,\"attemptSignals\":1,\"risk\":\"medium\"}},{\"id\":\"github:5222231944\",\"rewardUsd\":40,\"fastCashScore\":110,\"updatedAt\":\"2026-08-23T07:35:54Z\",\"competition\":{\"comments\":5,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5222233299\",\"rewardUsd\":20,\"fastCashScore\":107,\"updatedAt\":\"2026-08-23T07:36:58Z\",\"competition\":{\"comments\":5,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5222233612\",\"rewardUsd\":60,\"fastCashScore\":114,\"updatedAt\":\"2026-08-23T07:36:42Z\",\"competition\":{\"comments\":4,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5222233848\",\"rewardUsd\":30,\"fastCashScore\":109,\"updatedAt\":\"2026-08-23T07:36:15Z\",\"competition\":{\"comments\":5,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5222686588\",\"rewardUsd\":100,\"fastCashScore\":98,\"updatedAt\":\"2026-08-23T07:39:10Z\",\"competition\":{\"comments\":1,\"attemptSignals\":1,\"risk\":\"medium\"}},{\"id\":\"github:5224698362\",\"rewardUsd\":2024,\"fastCashScore\":108,\"updatedAt\":\"2026-08-23T07:16:19Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5225741340\",\"rewardUsd\":2026,\"fastCashScore\":116,\"updatedAt\":\"2026-08-23T07:26:34Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
     "mode": true,
     "eligibleCount": 0,
-    "fundedSignalCount": 3,
+    "fundedSignalCount": 2,
     "objective": "first_real_confirmed_cash_fast",
     "policy": "bootstrap_basic_v1",
     "maxHours": 4,
     "minPayoutConfidence": 0.8,
     "competitionRequired": "low",
-    "rejectedFakeRevenueCount": 0,
-    "rejectedAlreadyPaidCount": 2,
-    "rejectedIdentityGateCount": 0
+    "rejectedFakeRevenueCount": 4,
+    "rejectedAlreadyPaidCount": 0,
+    "rejectedIdentityGateCount": 4
   },
   "economicallyRejected": [
+    {
+      "id": "github:5222233612",
+      "title": "[Refactor] Extract shared useFileUpload hook — three drifted copies of one uploader",
+      "rewardUsd": 60,
+      "reasons": [
+        "testnet_or_test_token_reward",
+        "preclaim_or_identity_gate_not_configured"
+      ],
+      "rejectedAt": "2026-08-23T07:41:28.554Z"
+    },
+    {
+      "id": "github:5222231944",
+      "title": "[Bug] The two FileUpload test suites assert contradictory contracts",
+      "rewardUsd": 40,
+      "reasons": [
+        "testnet_or_test_token_reward",
+        "preclaim_or_identity_gate_not_configured"
+      ],
+      "rejectedAt": "2026-08-23T07:41:28.554Z"
+    },
+    {
+      "id": "github:5222233848",
+      "title": "[Bug] Drag-and-drop path would bypass validation — no dropzone wiring through the validator",
+      "rewardUsd": 30,
+      "reasons": [
+        "testnet_or_test_token_reward",
+        "preclaim_or_identity_gate_not_configured"
+      ],
+      "rejectedAt": "2026-08-23T07:41:28.554Z"
+    },
+    {
+      "id": "github:5222233299",
+      "title": "[Bug] File inputs have no accessible label — screen readers announce an unnamed control",
+      "rewardUsd": 20,
+      "reasons": [
+        "testnet_or_test_token_reward",
+        "preclaim_or_identity_gate_not_configured"
+      ],
+      "rejectedAt": "2026-08-23T07:41:28.554Z"
+    },
     {
       "id": "github:3055155077",
       "title": "Switch to `ky` from `redaxios`",
@@ -338,26 +423,6 @@
         "preclaim_or_identity_gate_not_configured"
       ],
       "rejectedAt": "2026-08-23T06:03:47.482Z"
-    },
-    {
-      "id": "github:5222233612",
-      "title": "[Refactor] Extract shared useFileUpload hook — three drifted copies of one uploader",
-      "rewardUsd": 60,
-      "reasons": [
-        "testnet_or_test_token_reward",
-        "preclaim_or_identity_gate_not_configured"
-      ],
-      "rejectedAt": "2026-08-23T02:48:57.992Z"
-    },
-    {
-      "id": "github:5222231944",
-      "title": "[Bug] The two FileUpload test suites assert contradictory contracts",
-      "rewardUsd": 40,
-      "reasons": [
-        "testnet_or_test_token_reward",
-        "preclaim_or_identity_gate_not_configured"
-      ],
-      "rejectedAt": "2026-08-23T02:48:57.993Z"
     },
     {
       "id": "github:5222232372",
@@ -487,16 +552,6 @@
         "preclaim_or_identity_gate_not_configured"
       ],
       "rejectedAt": "2026-08-22T17:21:09.031Z"
-    },
-    {
-      "id": "github:5222233299",
-      "title": "[Bug] File inputs have no accessible label — screen readers announce an unnamed control",
-      "rewardUsd": 20,
-      "reasons": [
-        "testnet_or_test_token_reward",
-        "preclaim_or_identity_gate_not_configured"
-      ],
-      "rejectedAt": "2026-08-22T16:53:31.464Z"
     },
     {
       "id": "github:5218571040",
