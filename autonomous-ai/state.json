@@ -1,24 +1,24 @@
 {
   "version": 5,
-  "cycle": 35,
+  "cycle": 36,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-23T03:41:08.453Z",
+  "updatedAt": "2026-08-23T04:23:49.868Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "online",
-  "currentAgent": "PLANNER",
+  "currentAgent": "CRITIC",
   "provider": {
     "mode": "OpenCode Free",
-    "model": "nemotron-3.5-lightning-free",
-    "attempts": 1
+    "model": "hy3-free",
+    "attempts": 2
   },
   "latest": {
-    "cycle": 35,
-    "agent": "PLANNER",
-    "timestamp": "2026-08-23T03:41:08.453Z",
-    "observation": "GitHub issue 4234681451 remains unfetched; claim procedure unverified despite $250 bounty.",
-    "objection": "Legitimacy and payout cannot be confirmed without authoritative extraction of the issue",
-    "decision": "Execute immediate fetch and parse of github:4234681451 to resolve claim procedure.",
-    "next": "CRITIC to verify parsed claim instructions and payout details from the issue."
+    "cycle": 36,
+    "agent": "CRITIC",
+    "timestamp": "2026-08-23T04:23:49.868Z",
+    "observation": "PLANNER's mandated fetch/parse of github:4234681451 remains unexecuted; claim steps and payout still unverified in snapshot.",
+    "objection": "Legitimacy and $250 payout cannot be confirmed without authoritative extraction of the issue's claim procedure.",
+    "decision": "Defer acceptance of github:4234681451 and maintain blocked status until parsed claim procedure is provided.",
+    "next": "PLANNER must fetch and parse github:4234681451 to supply verified claim instructions and payout details."
   },
   "lastError": null,
   "history": [
@@ -336,6 +336,15 @@
       "objection": "Legitimacy and payout cannot be confirmed without authoritative extraction of the issue",
       "decision": "Execute immediate fetch and parse of github:4234681451 to resolve claim procedure.",
       "next": "CRITIC to verify parsed claim instructions and payout details from the issue."
+    },
+    {
+      "cycle": 36,
+      "agent": "CRITIC",
+      "timestamp": "2026-08-23T04:23:49.868Z",
+      "observation": "PLANNER's mandated fetch/parse of github:4234681451 remains unexecuted; claim steps and payout still unverified in snapshot.",
+      "objection": "Legitimacy and $250 payout cannot be confirmed without authoritative extraction of the issue's claim procedure.",
+      "decision": "Defer acceptance of github:4234681451 and maintain blocked status until parsed claim procedure is provided.",
+      "next": "PLANNER must fetch and parse github:4234681451 to supply verified claim instructions and payout details."
     }
   ],
   "economy": {
@@ -379,20 +388,20 @@
         "summary": "`source.md` contains the complete RFC 5322 specification (Internet Message Format). We need a **fully conformant email address parser** in Python that implements the complete ABNF grammar from sections 3.2 through 3.4, plus obsolete syntax from §4.4. This parser must handle every edge case defined in the RFC — not just simple `user@domain` patterns, but the full complexity of quoted strings, comments, folding whitespace, group addresses, and domain literals. ## Background RFC 5322 defines email address syntax through a chain of ABNF productions that build on each other: ``` address = mailbox / group mailbox = name-addr / addr-spec name-addr = [display-name] angle-addr angle-addr = [CFWS] \"<\" addr-spec \">\" [CFWS] addr-spec = local-part \"@\" domain local-part = dot-atom / quoted-string / obs-local-part domain = dot-atom / domain-literal / obs-domain ``` Each of these references further productions (CFWS, FWS, quoted-pair, dtext, etc.) that span multiple sections. **You must read `source.md` completely** to trace the full grammar dependency chain. ## Requirements ### 1. Parser Implementation — `parser.py` ```python class RFC5322Address: \"\"\"Parsed RFC 5322 email address.\"\"\" display_name"
       },
       {
-        "id": "github:5214938859",
-        "title": "Maintainer notice: enforce rolling bounty liquidity and external-funding GMV loop",
-        "url": "https://github.com/NSPG13/agent-bounties/issues/1117",
-        "rewardUsd": 1115,
-        "score": 54,
-        "summary": "## Planned scope Implement a private Open Competition V2 inventory invariant with floor 5 and target 10; a fail-closed deterministic replenishment planner; a bounded 30.40 USDC/day and 152 USDC lifetime execution policy; twenty reviewed structured-artifact candidates; unified public marketplace metrics; structured participant feedback; and external poster/funder conversion paths across web, API, MCP, CLI, and docs. This is needed because the five recently funded competitions settled without replacement and production reached zero active V2 competitions. The public product will continue to present one marketplace: public counts and GMV remain aggregated across supported bounty mechanisms. Only private operational state distinguishes the inventory needed by the replenisher. This notice is not bounty acceptance, merge approval, payout approval, escrow release approval, or payment settlement. ## Affected contracts or workflows Likely affected surfaces include the inventory guard and self-healing policy, the Open Competition V2 seed/planning workflow and scripts, private operational schemas, aggregate platform metrics, opportunity comments, posting/funding guidance, MCP/CLI parity, and "
-      },
-      {
         "id": "github:5225100116",
         "title": "[security] Penetration Testing Program: Annual External Pentest, Continuous Bug Bounty, Red Team Exercises",
         "url": "https://github.com/ExcelDsigN-tech/dukapay/issues/465",
         "rewardUsd": 10,
         "score": 52,
         "summary": "# [security] Penetration Testing Program: Annual External Pentest, Continuous Bug Bounty, Red Team Exercises **Description:** No structured penetration testing program. Implement: annual external pentest (Cobalt.io, HackerOne), continuous bug bounty ($10k-$100k rewards), quarterly red team exercises, automated SAST/DAST in CI. **Impact:** Proactive vulnerability discovery; compliance (SOC2, ISO27001); insurance requirement; community trust; reduces breach probability. **Suggested Fix:** 1. Contract annual pentest with Cobalt.io or HackerOne 2. Launch bug bounty on HackerOne/Immunefi ($10k-$100k) 3. Quarterly red team exercises with internal team 4. Add SAST (semgrep, CodeQL) and DAST (OWASP ZAP) to CI 5. Vulnerability disclosure policy and safe harbor **Points:** 200 **Type:** security ## Definition of Done - [ ] Annual external pentest contracted - [ ] Bug bounty program live with rewards - [ ] Quarterly red team exercises scheduled - [ ] SAST/DAST in CI pipeline - [ ] Vulnerability disclosure policy published - [ ] No hardcoded secrets remain in source (grep scan clean) - [ ] Authentication flow verified and tested - [ ] Security headers and CSP configured - [ ] No PII exposed in"
+      },
+      {
+        "id": "github:5214938859",
+        "title": "Maintainer notice: enforce rolling bounty liquidity and external-funding GMV loop",
+        "url": "https://github.com/NSPG13/agent-bounties/issues/1117",
+        "rewardUsd": 1115,
+        "score": 46,
+        "summary": "## Planned scope Implement a private Open Competition V2 inventory invariant with floor 5 and target 10; a fail-closed deterministic replenishment planner; a bounded 30.40 USDC/day and 152 USDC lifetime execution policy; twenty reviewed structured-artifact candidates; unified public marketplace metrics; structured participant feedback; and external poster/funder conversion paths across web, API, MCP, CLI, and docs. This is needed because the five recently funded competitions settled without replacement and production reached zero active V2 competitions. The public product will continue to present one marketplace: public counts and GMV remain aggregated across supported bounty mechanisms. Only private operational state distinguishes the inventory needed by the replenisher. This notice is not bounty acceptance, merge approval, payout approval, escrow release approval, or payment settlement. ## Affected contracts or workflows Likely affected surfaces include the inventory guard and self-healing policy, the Open Competition V2 seed/planning workflow and scripts, private operational schemas, aggregate platform metrics, opportunity comments, posting/funding guidance, MCP/CLI parity, and "
       },
       {
         "id": "github:5224489257",
