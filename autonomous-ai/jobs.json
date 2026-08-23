@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-08-23T01:35:49.556Z",
+  "updatedAt": "2026-08-23T02:48:58.046Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -41,6 +41,150 @@
       "requiresPreclaimOrIdentity": false
     },
     {
+      "id": "github:4462056980",
+      "source": "github",
+      "title": "[Bounty Claim] PR Review - PR #5533 (Bounty #73)",
+      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/10363",
+      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
+      "rewardUsd": 5533,
+      "score": 54,
+      "labels": [
+        "needs-human",
+        "gate-processed",
+        "over-cap"
+      ],
+      "commentCount": 1,
+      "updatedAt": "2026-08-23T02:14:37Z",
+      "summary": "**Claimant:** kongzi123 **GitHub:** kongzi123 **RTC wallet:** `AhqbFaPBPLMMiaLDzA9WhQcyvv4hMxiteLhPk3NhG1iG` ### PR Details - PR: https://github.com/Scottcjn/Rustchain/pull/5533 - Bounty program: https://github.com/Scottcjn/rustchain-bounties/issues/73 ### Review Summary Security-focused code review of PR #5533 (fix: fail closed when sync admin key is unset): - Bug analysis: correctly identified that `hmac.compare_digest(key, None)` throws TypeError when admin_key is unset, allowing authentication bypass - Fix verification: the triple-condition short-circuit (`not key or not admin_key or not hmac.compare_digest`) properly prevents compare_digest from receiving None - Security impact: HIGH priority — prevents unauthenticated access when admin_key is not configured (fail-open to fail-closed) - Test coverage: new test uses monkeypatch + spy to verify compare_digest is never called with unset admin key ### Expected Reward Security-focused code review under bounty #73: 15-20 RTC (+10 for finding security-relevant fix)",
+      "state": "candidate",
+      "payoutConfidence": 0.5,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 116,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 1,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 5533,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:4462079225",
+      "source": "github",
+      "title": "[Bounty Claim] PR Review - RustChain PR #5532 (Bounty #73)",
+      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/10382",
+      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
+      "rewardUsd": 5532,
+      "score": 54,
+      "labels": [
+        "needs-human",
+        "gate-processed",
+        "over-cap"
+      ],
+      "commentCount": 1,
+      "updatedAt": "2026-08-23T02:14:40Z",
+      "summary": "### Bounty Claim - Bounty: #73 - Type: PR review - Repository: Scottcjn/Rustchain - Pull request: https://github.com/Scottcjn/Rustchain/pull/5532 - Reviewed head: `586571fe3b4aaf5a69eb18d361ff83fa94c9c36f` - Review: https://github.com/Scottcjn/Rustchain/pull/5532#pullrequestreview-4304707418 - RTC wallet: `RTC02811ff5e2bb4bb4b95eee44c5429cd9525496e7` ### Summary Reviewed the dependency-only CI/test collection fix. The added root and test requirements match real imports for async SDK, Flask CORS service code, hardware visualization, and PSE result-analysis tests. Validation completed: - `git diff --check --cached` -> passed - `python -B -m py_compile ...` over the affected import targets -> passed - `python -m pip install --disable-pip-version-check -q -r requirements.txt -r tests/requirements.txt` -> passed - `python -c \"import aiohttp, flask_cors, matplotlib, seaborn, Crypto; print('deps ok')\"` -> deps ok - focused pytest collection -> 14 tests collected - focused pytest run -> 14 passed",
+      "state": "candidate",
+      "payoutConfidence": 0.5,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 116,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 1,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 5532,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:4462057766",
+      "source": "github",
+      "title": "[Bounty Claim] PR Review - PR #5532 (Bounty #73)",
+      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/10364",
+      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
+      "rewardUsd": 5532,
+      "score": 54,
+      "labels": [
+        "needs-human",
+        "gate-processed",
+        "over-cap"
+      ],
+      "commentCount": 1,
+      "updatedAt": "2026-08-23T02:14:38Z",
+      "summary": "**Claimant:** kongzi123 **GitHub:** kongzi123 **RTC wallet:** `AhqbFaPBPLMMiaLDzA9WhQcyvv4hMxiteLhPk3NhG1iG` ### PR Details - PR: https://github.com/Scottcjn/Rustchain/pull/5532 - Bounty program: https://github.com/Scottcjn/rustchain-bounties/issues/73 ### Review Summary Code review of PR #5532 (fix: add missing CI test dependencies): - Intent is clear: adds 4 missing test dependencies (aiohttp, flask-cors, matplotlib, seaborn) - Version constraints use >= for good compatibility - No functional code changes, pure dependency maintenance ### Expected Reward Standard code review under bounty #73: 5 RTC",
+      "state": "candidate",
+      "payoutConfidence": 0.5,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 116,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 1,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 5532,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:4462073859",
+      "source": "github",
+      "title": "[Bounty Claim] PR Review - RustChain PR #5531 (Bounty #73)",
+      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/10379",
+      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
+      "rewardUsd": 5531,
+      "score": 46,
+      "labels": [
+        "needs-human",
+        "gate-processed",
+        "over-cap"
+      ],
+      "commentCount": 1,
+      "updatedAt": "2026-08-23T02:14:39Z",
+      "summary": "### Bounty Claim - Bounty: #73 - Type: PR review - Repository: Scottcjn/Rustchain - Pull request: https://github.com/Scottcjn/Rustchain/pull/5531 - Reviewed head: `1d9e47f895f1a1d04477473bde1f9ee3a1559533` - Review: https://github.com/Scottcjn/Rustchain/pull/5531#pullrequestreview-4304705387 - RTC wallet: `RTC02811ff5e2bb4bb4b95eee44c5429cd9525496e7` ### Summary Reviewed the Flask debug-mode hardening PR. The change disables debug mode in the listed public service entrypoints, leaves the faucet `--debug` flag as a deprecated no-op, updates docs, and adds an AST regression test to prevent reintroducing direct `debug=True` or debug config assignments to `True`. Validation completed: - `git diff --check --cached` -> passed - `python -B -m py_compile keeper_explorer.py contributor_registry.py bridge/bridge_api.py faucet_service/faucet_service.py tests/test_flask_debug_disabled.py` -> passed - `python -B -m pytest -q tests/test_flask_debug_disabled.py --noconftest` -> 1 passed, 1 existing warning - `python tools/bcos_spdx_check.py --base-ref origin/main` -> OK",
+      "state": "candidate",
+      "payoutConfidence": 0.5,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 116,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 1,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 5531,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
       "id": "github:4462160604",
       "source": "github",
       "title": "[bounty $400] Implement ABNF-compliant email address parser with full §3.2–§4.4 coverage",
@@ -78,70 +222,6 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5224698362",
-      "source": "github",
-      "title": "Funding avenues for Dimecoin open-source development (for team consideration)",
-      "url": "https://github.com/dime-coin/dimecoin/issues/102",
-      "repositoryApiUrl": "https://api.github.com/repos/dime-coin/dimecoin",
-      "rewardUsd": 2024,
-      "score": 62,
-      "labels": [],
-      "commentCount": 1,
-      "updatedAt": "2026-08-23T01:20:28Z",
-      "summary": "## Purpose This is a **discussion / consideration** item, not a code change. It collects legitimate funding avenues for *open-source development* of Dimecoin, so the team can decide how to fund ongoing work (protocol hardening, light-wallet maturity, P2P/privacy infrastructure, running redundant ElectrumX). > Note on scope: this is strictly about **development funding** (grants, > foundation treasury, bounties). It deliberately excludes token sales / ICOs / > promotional activity, which are out of scope for this project. ## External OSS / infrastructure grants (coin-agnostic) These funds support open internet / P2P / privacy infrastructure and do **not** require the project to be Bitcoin: | Source | Where | Fits Dimecoin work | Amount / timing | | --- | --- | --- | --- | | **NLnet — NGI Zero Commons / Restack** | https://nlnet.nl (Apply) | BIP324 encrypted P2P, I2P, BIP157/158 light-client filters — package as \"censorship-resistant P2P transport + light-client privacy\" | €5k–50k, scalable. NGI0 Commons call reopens after summer 2026 | | **Sovereign Tech Fund** | https://www.sovereign.tech/programs/fund | P2P / encryption as \"open digital base technology\" | min €50k, ~6 months to co",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 109,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 1,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 2024,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5224489257",
-      "source": "github",
-      "title": "R-#214: ClusterFundV2 — el 10% de pagos de cursos GD llega íntegro al fondo del país",
-      "url": "https://github.com/pasosdeJesus/learn.tg/issues/214",
-      "repositoryApiUrl": "https://api.github.com/repos/pasosdeJesus/learn.tg",
-      "rewardUsd": 10,
-      "score": 38,
-      "labels": [],
-      "commentCount": 0,
-      "updatedAt": "2026-08-23T00:46:19Z",
-      "summary": "# R-#214: ClusterFundV2 — el 10% de pagos de cursos GD llega íntegro al fondo del país El contrato `ClusterFunds` aplica su mecánica de donación (`_distributeFees`: fee 10% + cashback 10%) a **todo** monto que recibe. Cuando un pago de curso GD rutea su 10% al fondo del país, el contrato lo vuelve a gravar: el fondo solo recibe 8% del pago y el backend recibe 2% (fee + cashback minted) — un doble cobro que no tiene sentido. Se crea `ClusterFundsV2` con funciones de *contribución* que acreditan el 100% del monto ruteado, y se alinea el % de pdJ GD a 40 según REQ/128. --- **Created:** 2026-08-22 **Status:** En progreso (contrato desplegado, código actualizado, e2e de distribución escrito — falta migración, deploy y validación e2e) --- ## 1. Motivación ### 1.1 El fondo recibe 8%, no 10% Flujo actual de un pago de curso GD de 10 USDT: 1. El comprador envía 10 USDT al backend. 2. `purchase/route.ts` rutea el 10% (1 USDT) a `ClusterFunds` vía `routeToClusterFunds`. 3. El contrato llama `_distributeFees(1 USDT)`: - 10% fee → wallet de pdJ/backend (0.1 USDT) - 10% cashback → `mintAndReserve` al backend (0.1 USDT → 2.2 SLEARN) - **80% → fondo del país: 0.8 USDT** 4. El 90% restante pasa por",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 95,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 0,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 10,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
       "id": "github:4563956966",
       "source": "github",
       "title": "parse_duration drops the days (d) unit",
@@ -175,181 +255,6 @@
       "realMoneyEligible": true,
       "economicValueUsd": 50,
       "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5222744708",
-      "source": "github",
-      "title": "[Bounty $8000] ttnn.erfc: no fp32-accurate path at all — self-documented ~9M ULP error, independently reproduced at ~9.39M ULP (114% relative error) in the [2.5, 5.0] tail",
-      "url": "https://github.com/tenstorrent/tt-metal/issues/54053",
-      "repositoryApiUrl": "https://api.github.com/repos/tenstorrent/tt-metal",
-      "rewardUsd": 8000,
-      "score": 54,
-      "labels": [
-        "bug",
-        "community"
-      ],
-      "commentCount": 0,
-      "updatedAt": "2026-08-23T00:34:50Z",
-      "summary": "## Summary `ttnn.erfc` uses a single two-segment rational approximation (`ERFC_LUT`, degree 4 numerator / degree 5 denominator) for **both** bf16 and fp32 precision — there is no separate fp32-accurate path at all, unlike its sibling `ttnn.erf` (which has distinct degree-16/16 fp32 and degree-8/8 bf16 fits). The file's own header comment already documents the consequence: ```cpp // BF16 MaxULP=118 (was 128 with 3-seg n4/d4 on [-5,5]) // FP32 MaxULP≈9M (was 1.47B) ``` I independently reproduced this rather than take the comment at face value: a fp32 reimplementation of the exact kernel arithmetic, checked against `scipy.special.erfc` over a 2-million-point sweep of `[-5, 5]`, finds **max ULP error of 9,387,962** at `x ≈ 4.999` — matching the self-documented number almost exactly — where the kernel returns `3.31e-12` against a true value of `1.55e-12`, a **114% relative error**. ## Root cause ```cpp // L28-31: constexpr uint32_t ERFC_NUM_DEGREE = 4; constexpr uint32_t ERFC_DEN_DEGREE = 5; constexpr uint32_t ERFC_NUM_SEGMENTS = 2; ``` `calculate_erfc()` (unlike `calculate_erf()` in the same directory) has no `is_fp32_dest_acc_en` template parameter and no `#ifdef INP_FLOAT32` branch —",
-      "state": "candidate",
-      "payoutConfidence": 0.15,
-      "autonomyFit": 0.45,
-      "requiresHumanGate": true,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 8,
-      "complexity": 4,
-      "fundedBountySignal": false,
-      "fastCashScore": 55,
-      "survivalEligible": false,
-      "eligibilityReason": "Too slow for bootstrap mode: first real cash currently requires a <=4 hour task.",
-      "competition": {
-        "comments": 0,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 8000,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5222344479",
-      "source": "github",
-      "title": "[Bounty $1500] ttnn.erfinv: no accurate fp32 path at all, ~0.2% peak relative error near the domain edges",
-      "url": "https://github.com/tenstorrent/tt-metal/issues/54049",
-      "repositoryApiUrl": "https://api.github.com/repos/tenstorrent/tt-metal",
-      "rewardUsd": 1500,
-      "score": 54,
-      "labels": [
-        "bug",
-        "community"
-      ],
-      "commentCount": 0,
-      "updatedAt": "2026-08-23T00:34:45Z",
-      "summary": "## Summary `ttnn.erfinv` computes the inverse error function using only the Winitzki (2008) closed-form approximation (`a = 0.147`) — a deliberately cheap, low-accuracy analytical formula, not a minimax fit. Unlike every other SFPU kernel checked in this codebase (`sigmoid`, `tanh`, `gelu`, `softplus` — all have a real `APPROXIMATION_MODE`-gated fast-vs-accurate split), `calculate_erfinv`'s `APPROXIMATION_MODE` template parameter is never actually used: there is exactly one code path, hardcoded, regardless of precision mode. A source-level fp32 model of the kernel, cross-checked against both `scipy.special` (a 4-million-point domain sweep) and independent `mpmath` 50-decimal-digit spot checks, finds a peak relative error of **~1.96e-3 (0.2%)** near the domain edges, growing steadily worse the closer the input gets to `±1`: ``` x = 0.999 erfinv(x) = 2.32675377 (true, mpmath 50-digit) = 2.32231736 (kernel, fp32 model) rel err = 1.91e-3 x = 0.9999 erfinv(x) = 2.75106391 (true) = 2.74588323 (kernel) rel err = 1.88e-3 ``` ## Root cause ```cpp // L18-19: template <bool APPROXIMATION_MODE> sfpi_inline sfpi::vFloat calculate_erfinv_body(sfpi::vFloat x) { ``` `APPROXIMATION_MODE` is declare",
-      "state": "candidate",
-      "payoutConfidence": 0.15,
-      "autonomyFit": 0.45,
-      "requiresHumanGate": true,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 8,
-      "complexity": 4,
-      "fundedBountySignal": false,
-      "fastCashScore": 55,
-      "survivalEligible": false,
-      "eligibilityReason": "Too slow for bootstrap mode: first real cash currently requires a <=4 hour task.",
-      "competition": {
-        "comments": 0,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 1500,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5223597392",
-      "source": "github",
-      "title": "[Bounty $1500] ttnn.exp2: fp32 path returns NaN / finite garbage instead of +inf for x >= 128 (missing overflow guard)",
-      "url": "https://github.com/tenstorrent/tt-metal/issues/54054",
-      "repositoryApiUrl": "https://api.github.com/repos/tenstorrent/tt-metal",
-      "rewardUsd": 1500,
-      "score": 46,
-      "labels": [
-        "bug",
-        "community"
-      ],
-      "commentCount": 1,
-      "updatedAt": "2026-08-23T00:34:42Z",
-      "summary": "## Summary `ttnn.exp2`'s fp32-accurate kernel (`_sfpu_exp2_fp32_accurate_`, selected when `is_fp32_dest_acc_en == true`) reconstructs `2^x = 2^round(x) * 2^f` by evaluating a minimax polynomial `r = 2^f` (`f = x - round(x)`) and then rebuilding the exponent with `setexp(r, e)`, `e = biased_exp(r) + round(x)`. The exponent path has an **underflow** guard (`e < 1 -> 0`) but **no overflow guard**. For `x >= 128` the true result overflows fp32 and should be `+inf`. Instead `e` reaches `>= 255` and the *unconditional* `setexp(r, e)` writes an out-of-range exponent field: * `x` in `[128, 128.5)` -> `e == 255` with a nonzero mantissa -> **NaN** * `x >= 128.5` -> `e >= 256`, `setexp` keeps only the low 8 bits -> **wrapped finite garbage** The kernel even **precomputes the correct overflow result** one line earlier (`y *= std::numeric_limits<float>::infinity();`, i.e. `y = r * inf = +inf`) and then throws it away by overwriting `y` with the `setexp` result. The overflow half of the reconstruction is simply missing. `exp2(x)` for `x >= 128` is unambiguously `+inf` (2^128 > FLT_MAX), so this is never a representable-range question — the correct answer exists (`+inf`), is cheap, and is already",
-      "state": "candidate",
-      "payoutConfidence": 0.15,
-      "autonomyFit": 0.45,
-      "requiresHumanGate": true,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 8,
-      "complexity": 4,
-      "fundedBountySignal": false,
-      "fastCashScore": 53,
-      "survivalEligible": false,
-      "eligibilityReason": "Too slow for bootstrap mode: first real cash currently requires a <=4 hour task.",
-      "competition": {
-        "comments": 1,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 1500,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5223629185",
-      "source": "github",
-      "title": "[Bounty $750] ttnn.addcdiv: forms in1 * value before dividing, overflowing to +/-inf for finite results",
-      "url": "https://github.com/tenstorrent/tt-metal/issues/54055",
-      "repositoryApiUrl": "https://api.github.com/repos/tenstorrent/tt-metal",
-      "rewardUsd": 750,
-      "score": 46,
-      "labels": [
-        "bug",
-        "community"
-      ],
-      "commentCount": 1,
-      "updatedAt": "2026-08-23T00:34:40Z",
-      "summary": "## Summary `ttnn.addcdiv` computes `out = input + value * (tensor1 / tensor2)`. The SFPU kernel evaluates it in the wrong order: ```cpp sfpi::vFloat result = in0 + (in1 * value_float * sfpu_reciprocal_iter<2>(in2)); ``` C++ left-associativity makes this `in0 + ((in1 * value_float) * recip(in2))` — the scaled numerator `in1 * value` is formed **before** the division is applied. When `|in1 * value| > FLT_MAX` but the mathematically exact result `in0 + value*(in1/in2)` is an ordinary finite number, the intermediate overflows to `+/-inf` and poisons the entire lane. `torch.addcdiv` (the golden reference) divides first: `input + value * (tensor1 / tensor2)`, so the intermediate quotient `tensor1/tensor2` is modest and the result is finite. The two orders agree for almost all inputs and diverge exactly on the overflow set — a finite-vs-inf mismatch, not a ULP nit. ## Measured (source-faithful fp32 model of the kernel vs torch/numpy addcdiv golden) Reproduction script attached (`verify_addcdiv.py`, `proof.txt`). | in0 | in1 | in2 | value | kernel | golden `in0+value*(in1/in2)` | | |------|---------|-----|-------|--------|------------------------------|-----| | 0 | 3.0e38 | 8 | 4 | `inf` |",
-      "state": "candidate",
-      "payoutConfidence": 0.15,
-      "autonomyFit": 0.45,
-      "requiresHumanGate": true,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 8,
-      "complexity": 4,
-      "fundedBountySignal": false,
-      "fastCashScore": 53,
-      "survivalEligible": false,
-      "eligibilityReason": "Too slow for bootstrap mode: first real cash currently requires a <=4 hour task.",
-      "competition": {
-        "comments": 1,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 750,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5222319078",
-      "source": "github",
-      "title": "[Bounty $7000] ttnn.xielu: exponent-reconstruction overflow produces values up to ±2.7e38 (and NaN) for x < -87.68",
-      "url": "https://github.com/tenstorrent/tt-metal/issues/54046",
-      "repositoryApiUrl": "https://api.github.com/repos/tenstorrent/tt-metal",
-      "rewardUsd": 7000,
-      "score": 46,
-      "labels": [
-        "bug",
-        "community"
-      ],
-      "commentCount": 3,
-      "updatedAt": "2026-08-23T00:34:47Z",
-      "summary": "## Summary `ttnn.xielu`'s negative-input branch calls an internal helper, `_sfpu_neg_exp_f32_`, to compute `exp(x)`. For any input `x < -87.68`, this helper's range-reduction logic breaks down and returns a essentially-random-magnitude garbage value instead of a number close to zero — including values as large as `2.7e38` (within a factor of ~1.25 of `FLT_MAX`) and, in some cases, `NaN`. This propagates directly into `ttnn.xielu`'s output: ``` ttnn.xielu(x=-90.0, alpha_p=..., alpha_n=0.8) -> 2.342323e+37 ``` ``` correct value (torch reference) -> 26.2 ``` A source-level fp32 model of the kernel, cross-checked bit-for-bit against the IEEE 754 semantics `exexp`/`setexp` actually implement, confirms this is not an isolated input: a dense sweep of the affected region (`x` from `-87.68` to `-300`, step `0.01`, 21,232 points) finds ~0.9% of points produce an absolute error greater than 1 (i.e. clearly, visibly wrong, not just imprecise), with errors reaching `±2.7e38`. ## Root cause `_sfpu_neg_exp_f32_` (`ckernel_sfpu_xielu.h`) computes `exp(x)` via the standard range-reduction-then-polynomial approach: `x = k*ln(2) + r`, evaluate a 7-term Taylor polynomial for `exp(r)` on the small redu",
-      "state": "candidate",
-      "payoutConfidence": 0.15,
-      "autonomyFit": 0.45,
-      "requiresHumanGate": true,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 8,
-      "complexity": 4,
-      "fundedBountySignal": false,
-      "fastCashScore": 34,
-      "survivalEligible": false,
-      "eligibilityReason": "Too slow for bootstrap mode: first real cash currently requires a <=4 hour task.",
-      "competition": {
-        "comments": 3,
-        "attemptSignals": 2,
-        "risk": "medium"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 7000,
-      "requiresPreclaimOrIdentity": false
     }
   ],
   "selected": null,
@@ -362,23 +267,83 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:2940525692\",\"rewardUsd\":10,\"fastCashScore\":60,\"updatedAt\":\"2026-08-18T21:51:22Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-18T21:51:29Z\",\"competition\":{\"comments\":29,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":125,\"updatedAt\":\"2026-08-22T16:37:56Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5222319078\",\"rewardUsd\":7000,\"fastCashScore\":34,\"updatedAt\":\"2026-08-23T00:34:47Z\",\"competition\":{\"comments\":3,\"attemptSignals\":2,\"risk\":\"medium\"}},{\"id\":\"github:5222344479\",\"rewardUsd\":1500,\"fastCashScore\":55,\"updatedAt\":\"2026-08-23T00:34:45Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5222744708\",\"rewardUsd\":8000,\"fastCashScore\":55,\"updatedAt\":\"2026-08-23T00:34:50Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5223597392\",\"rewardUsd\":1500,\"fastCashScore\":53,\"updatedAt\":\"2026-08-23T00:34:42Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5223629185\",\"rewardUsd\":750,\"fastCashScore\":53,\"updatedAt\":\"2026-08-23T00:34:40Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5224489257\",\"rewardUsd\":10,\"fastCashScore\":95,\"updatedAt\":\"2026-08-23T00:46:19Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5224698362\",\"rewardUsd\":2024,\"fastCashScore\":109,\"updatedAt\":\"2026-08-23T01:20:28Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":125,\"updatedAt\":\"2026-08-22T16:37:56Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462056980\",\"rewardUsd\":5533,\"fastCashScore\":116,\"updatedAt\":\"2026-08-23T02:14:37Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462057766\",\"rewardUsd\":5532,\"fastCashScore\":116,\"updatedAt\":\"2026-08-23T02:14:38Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462073859\",\"rewardUsd\":5531,\"fastCashScore\":116,\"updatedAt\":\"2026-08-23T02:14:39Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462079225\",\"rewardUsd\":5532,\"fastCashScore\":116,\"updatedAt\":\"2026-08-23T02:14:40Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5222209235\",\"rewardUsd\":25,\"fastCashScore\":112,\"updatedAt\":\"2026-08-23T02:45:20Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5222231944\",\"rewardUsd\":40,\"fastCashScore\":115,\"updatedAt\":\"2026-08-23T02:45:08Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5222232235\",\"rewardUsd\":30,\"fastCashScore\":113,\"updatedAt\":\"2026-08-23T02:45:02Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5222232372\",\"rewardUsd\":35,\"fastCashScore\":113,\"updatedAt\":\"2026-08-23T02:45:06Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5222232993\",\"rewardUsd\":25,\"fastCashScore\":112,\"updatedAt\":\"2026-08-23T02:45:01Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5222233612\",\"rewardUsd\":60,\"fastCashScore\":117,\"updatedAt\":\"2026-08-23T02:45:12Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
     "mode": true,
     "eligibleCount": 0,
-    "fundedSignalCount": 3,
+    "fundedSignalCount": 2,
     "objective": "first_real_confirmed_cash_fast",
     "policy": "bootstrap_basic_v1",
     "maxHours": 4,
     "minPayoutConfidence": 0.8,
     "competitionRequired": "low",
-    "rejectedFakeRevenueCount": 0,
-    "rejectedAlreadyPaidCount": 2,
-    "rejectedIdentityGateCount": 0
+    "rejectedFakeRevenueCount": 6,
+    "rejectedAlreadyPaidCount": 0,
+    "rejectedIdentityGateCount": 6
   },
   "economicallyRejected": [
+    {
+      "id": "github:5222233612",
+      "title": "[Refactor] Extract shared useFileUpload hook — three drifted copies of one uploader",
+      "rewardUsd": 60,
+      "reasons": [
+        "testnet_or_test_token_reward",
+        "preclaim_or_identity_gate_not_configured"
+      ],
+      "rejectedAt": "2026-08-23T02:48:57.992Z"
+    },
+    {
+      "id": "github:5222231944",
+      "title": "[Bug] The two FileUpload test suites assert contradictory contracts",
+      "rewardUsd": 40,
+      "reasons": [
+        "testnet_or_test_token_reward",
+        "preclaim_or_identity_gate_not_configured"
+      ],
+      "rejectedAt": "2026-08-23T02:48:57.993Z"
+    },
+    {
+      "id": "github:5222232372",
+      "title": "[Bug] FileUpload accepts files that violate the accept filter (no MIME/extension check)",
+      "rewardUsd": 35,
+      "reasons": [
+        "testnet_or_test_token_reward",
+        "preclaim_or_identity_gate_not_configured"
+      ],
+      "rejectedAt": "2026-08-23T02:48:57.993Z"
+    },
+    {
+      "id": "github:5222232235",
+      "title": "[Bug] upload_file.tsx is a drifted copy of Login.tsx with its own hardcoded endpoint",
+      "rewardUsd": 30,
+      "reasons": [
+        "testnet_or_test_token_reward",
+        "preclaim_or_identity_gate_not_configured"
+      ],
+      "rejectedAt": "2026-08-23T02:48:57.993Z"
+    },
+    {
+      "id": "github:5222209235",
+      "title": "[Bug] file_upload_component.test.js is syntactically broken and fails node --check",
+      "rewardUsd": 25,
+      "reasons": [
+        "testnet_or_test_token_reward",
+        "preclaim_or_identity_gate_not_configured"
+      ],
+      "rejectedAt": "2026-08-23T02:48:57.993Z"
+    },
+    {
+      "id": "github:5222232993",
+      "title": "[Bug] Login.tsx has no file-size cap (FileUpload caps at 5MB)",
+      "rewardUsd": 25,
+      "reasons": [
+        "testnet_or_test_token_reward",
+        "preclaim_or_identity_gate_not_configured"
+      ],
+      "rejectedAt": "2026-08-23T02:48:57.993Z"
+    },
     {
       "id": "github:3055155077",
       "title": "Switch to `ky` from `redaxios`",
@@ -396,16 +361,6 @@
         "already_rewarded_or_paid"
       ],
       "rejectedAt": "2026-08-23T01:35:49.218Z"
-    },
-    {
-      "id": "github:5222232372",
-      "title": "[Bug] FileUpload accepts files that violate the accept filter (no MIME/extension check)",
-      "rewardUsd": 35,
-      "reasons": [
-        "testnet_or_test_token_reward",
-        "preclaim_or_identity_gate_not_configured"
-      ],
-      "rejectedAt": "2026-08-22T23:03:37.969Z"
     },
     {
       "id": "github:5222232622",
@@ -534,15 +489,6 @@
         "preclaim_or_identity_gate_not_configured"
       ],
       "rejectedAt": "2026-08-22T16:27:26.620Z"
-    },
-    {
-      "id": "github:5222232993",
-      "title": "[Bug] Login.tsx has no file-size cap (FileUpload caps at 5MB)",
-      "rewardUsd": 25,
-      "reasons": [
-        "testnet_or_test_token_reward"
-      ],
-      "rejectedAt": "2026-08-22T15:54:06.781Z"
     }
   ]
 }
