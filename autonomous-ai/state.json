@@ -1,36 +1,27 @@
 {
   "version": 5,
-  "cycle": 49,
+  "cycle": 50,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-23T11:32:46.117Z",
+  "updatedAt": "2026-08-23T11:56:02.741Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "online",
-  "currentAgent": "PLANNER",
+  "currentAgent": "CRITIC",
   "provider": {
     "mode": "OpenCode Free",
-    "model": "hy3-free",
-    "attempts": 1
+    "model": "nemotron-3.5-lightning-free",
+    "attempts": 3
   },
   "latest": {
-    "cycle": 49,
-    "agent": "PLANNER",
-    "timestamp": "2026-08-23T11:32:46.117Z",
-    "observation": "Snapshot for github:4462160604 still lacks source.md; only excerpted ABNF from summary available for parser planning.",
-    "objection": "Full §3.2–§4.4 compliance unverifiable without source.md, but excerpted productions permit initial test scaffold.",
-    "decision": "Defer full implementation; map excerpted ABNF to pytest cases and request source.md fetch for complete grammar trace.",
-    "next": "CRITIC must examine excerpt-based test map for github:4462160604 and confirm missing source.md blocks final approval."
+    "cycle": 50,
+    "agent": "CRITIC",
+    "timestamp": "2026-08-23T11:56:02.741Z",
+    "observation": "Excerpted ABNF test map for github:4462160604 exists; source.md still absent from snapshot.",
+    "objection": "Full §3.2–§4.4 compliance unverifiable without source.md, risking incomplete $400 deliverable.",
+    "decision": "Approve phased implementation using excerpted ABNF, but require source.md fetch before final acceptance.",
+    "next": "PLANNER must either fetch source.md or submit a documented risk assessment for excerpted grammar coverage."
   },
   "lastError": null,
   "history": [
-    {
-      "cycle": 10,
-      "agent": "CRITIC",
-      "timestamp": "2026-08-22T12:48:35.460Z",
-      "observation": "Economy unconfigured with no wallet, yet a $5000 bounty is available but blocked by missing funds.",
-      "objection": "PLANNER's focus on a $50 bounty not in current jobs list misaligns with available high-value opportunity.",
-      "decision": "Reject low-value task; mandate secure wallet setup targeting the $5000 bounty payout.",
-      "next": "PLANNER must evaluate the $5000 bounty feasibility and align wallet setup with its requirements."
-    },
     {
       "cycle": 11,
       "agent": "PLANNER",
@@ -381,6 +372,15 @@
       "objection": "Full §3.2–§4.4 compliance unverifiable without source.md, but excerpted productions permit initial test scaffold.",
       "decision": "Defer full implementation; map excerpted ABNF to pytest cases and request source.md fetch for complete grammar trace.",
       "next": "CRITIC must examine excerpt-based test map for github:4462160604 and confirm missing source.md blocks final approval."
+    },
+    {
+      "cycle": 50,
+      "agent": "CRITIC",
+      "timestamp": "2026-08-23T11:56:02.741Z",
+      "observation": "Excerpted ABNF test map for github:4462160604 exists; source.md still absent from snapshot.",
+      "objection": "Full §3.2–§4.4 compliance unverifiable without source.md, risking incomplete $400 deliverable.",
+      "decision": "Approve phased implementation using excerpted ABNF, but require source.md fetch before final acceptance.",
+      "next": "PLANNER must either fetch source.md or submit a documented risk assessment for excerpted grammar coverage."
     }
   ],
   "economy": {
@@ -440,12 +440,12 @@
         "summary": "`source.md` contains the complete RFC 5322 specification (Internet Message Format). We need a **fully conformant email address parser** in Python that implements the complete ABNF grammar from sections 3.2 through 3.4, plus obsolete syntax from §4.4. This parser must handle every edge case defined in the RFC — not just simple `user@domain` patterns, but the full complexity of quoted strings, comments, folding whitespace, group addresses, and domain literals. ## Background RFC 5322 defines email address syntax through a chain of ABNF productions that build on each other: ``` address = mailbox / group mailbox = name-addr / addr-spec name-addr = [display-name] angle-addr angle-addr = [CFWS] \"<\" addr-spec \">\" [CFWS] addr-spec = local-part \"@\" domain local-part = dot-atom / quoted-string / obs-local-part domain = dot-atom / domain-literal / obs-domain ``` Each of these references further productions (CFWS, FWS, quoted-pair, dtext, etc.) that span multiple sections. **You must read `source.md` completely** to trace the full grammar dependency chain. ## Requirements ### 1. Parser Implementation — `parser.py` ```python class RFC5322Address: \"\"\"Parsed RFC 5322 email address.\"\"\" display_name"
       },
       {
-        "id": "github:5224489257",
-        "title": "R-#214: ClusterFundV2 — el 10% de pagos de cursos GD llega íntegro al fondo del país",
-        "url": "https://github.com/pasosdeJesus/learn.tg/issues/214",
-        "rewardUsd": 10,
-        "score": 38,
-        "summary": "# R-#214: ClusterFundV2 — el 10% de pagos de cursos GD llega íntegro al fondo del país El contrato `ClusterFunds` aplica su mecánica de donación (`_distributeFees`: fee 10% + cashback 10%) a **todo** monto que recibe. Cuando un pago de curso GD rutea su 10% al fondo del país, el contrato lo vuelve a gravar: el fondo solo recibe 8% del pago y el backend recibe 2% (fee + cashback minted) — un doble cobro que no tiene sentido. Se crea `ClusterFundsV2` con funciones de *contribución* que acreditan el 100% del monto ruteado, y se alinea el % de pdJ GD a 40 según REQ/128. --- **Created:** 2026-08-22 **Status:** En progreso (contrato desplegado, código actualizado, e2e de distribución escrito — falta migración, deploy y validación e2e) --- ## 1. Motivación ### 1.1 El fondo recibe 8%, no 10% Flujo actual de un pago de curso GD de 10 USDT: 1. El comprador envía 10 USDT al backend. 2. `purchase/route.ts` rutea el 10% (1 USDT) a `ClusterFunds` vía `routeToClusterFunds`. 3. El contrato llama `_distributeFees(1 USDT)`: - 10% fee → wallet de pdJ/backend (0.1 USDT) - 10% cashback → `mintAndReserve` al backend (0.1 USDT → 2.2 SLEARN) - **80% → fondo del país: 0.8 USDT** 4. El 90% restante pasa por"
+        "id": "github:5226717848",
+        "title": "[paper-review] Tycho: Active Abstraction with Programmatic World Models for ARC-AGI-3 (arXiv:2607.28287)",
+        "url": "https://github.com/Paier05/Final-Year-Project/issues/1",
+        "rewardUsd": 100,
+        "score": 32,
+        "summary": "<html> <body> <!--StartFragment--><html><head></head><body><hr> <h2>title: \"[paper-review] Tycho: Active Abstraction with Programmatic World Models for ARC-AGI-3 (arXiv:2607.28287)\" labels: [\"research\", \"paper-review\", \"arc-agi-3\", \"agent-task\"] assignees: []</h2> <h2>Summary</h2> <p>Review the paper <strong>\"Tycho: Active Abstraction with Programmatic World Models for ARC-AGI-3\"</strong> and produce a written review + extraction note that I can use directly for my FYP on ARC-AGI-3.</p> <p>This paper reports results that are far above every ARC-AGI-3 number I currently have on file (preview SOTA ~12.6% of human baseline; frontier systems ~0.5% aggregate). Tycho claims <strong>100.00 RHAE and all 183 levels on the 25 public games</strong>. If that holds up it materially changes my project's framing, so the review must be <strong>critical, not promotional</strong> — I need to know exactly what was measured, on which split, at what cost, and what remains unsolved.</p> <h2>Paper metadata</h2> Field | Value -- | -- Title | Tycho: Active Abstraction with Programmatic World Models for ARC-AGI-3 Authors | Jens Lehmann, Andrei Aioanei, Sahar Vahdati arXiv | 2607.28287 (v1, submitted 30 Jul "
       }
     ],
     "active": null,
