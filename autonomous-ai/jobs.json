@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-08-23T10:10:03.344Z",
+  "updatedAt": "2026-08-23T10:43:15.169Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -41,17 +41,58 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5226305141",
+      "id": "github:5189454900",
       "source": "github",
-      "title": "[WALLET] VIZION777",
-      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16540",
-      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
-      "rewardUsd": 777,
-      "score": 34,
+      "title": "[BOUNTY · OPEN FOR CONTRIBUTORS] Crea il fumetto visuale “Come funziona MyZubster” — 300 MYZ proposed",
+      "url": "https://github.com/MyZubster-Ecosystem/myzubster/issues/526",
+      "repositoryApiUrl": "https://api.github.com/repos/MyZubster-Ecosystem/myzubster",
+      "rewardUsd": 300,
+      "score": 72,
+      "labels": [
+        "documentation",
+        "good first issue",
+        "bounty",
+        "type:bounty",
+        "status:proposed",
+        "reward:myz",
+        "reward:xmr",
+        "reward:token"
+      ],
+      "commentCount": 4,
+      "updatedAt": "2026-08-23T10:18:02Z",
+      "summary": "# 🎨 Bounty — Crea il fumetto visuale “Come funziona MyZubster” ## Status **OPEN FOR CONTRIBUTORS / PROPOSED** > Questa issue è aperta a contributor visuali, illustratori e designer. Per evitare lavoro duplicato, commenta **`CLAIM`** prima di iniziare indicando alias, workflow (human-made / AI-assisted / mixed) e data prevista di consegna. ## Reward **300 MYZ proposed** — `Discovery Episode` tier. - Asset/accounting unit: **MYZ internal reward/accounting ledger** - Amount: **300 MYZ proposed** - Funding state: **PROPOSED — not yet guaranteed or externally settled** - Review: **manual maintainer verification** La definizione del reward rende il task leggibile e confrontabile, ma non costituisce promessa automatica di pagamento. Il reward può essere registrato solo dopo i gate previsti da `BOUNTIES.md`; qualunque settlement esterno resta separato e richiede verifica indipendente. ## Objective Trasformare il workflow **“Come funziona MyZubster”** in un fumetto/visual guide originale, chiaro, coerente con l’architettura reale del progetto e comprensibile anche a chi non conosce il codice. ## Deliverable minimo Realizzare **4–8 vignette/pagine + cover**, oppure una tavola equivalente ad",
+      "state": "candidate",
+      "payoutConfidence": 0.5,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 112,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 4,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 300,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5226437489",
+      "source": "github",
+      "title": "fix(api): map Multer upload parser errors to 400",
+      "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/12031",
+      "repositoryApiUrl": "https://api.github.com/repos/SecureBananaLabs/bug-bounty",
+      "rewardUsd": 11398,
+      "score": 46,
       "labels": [],
       "commentCount": 0,
-      "updatedAt": "2026-08-23T09:46:33Z",
-      "summary": "## Wallet / Payout Registration GitHub username: VIZION777 RTC wallet name: VIZION777 External bridge network: None Related bounty: https://github.com/Scottcjn/rustchain-bounties/issues/16471 I understand that VIZION777 is my canonical RustChain payout target for future RTC bounty settlements.",
+      "updatedAt": "2026-08-23T10:25:07Z",
+      "summary": "## Bug `POST /api/uploads` uses `upload.single(\"file\")`. When a client sends malformed multipart input such as a file under an unexpected field name (`avatar` instead of `file`), Multer raises a `MulterError` with code `LIMIT_UNEXPECTED_FILE`. The current global error handler treats every such parser error as an unexpected server failure and returns HTTP 500. Malformed multipart input is a client error, so returning 500 is misleading and encourages incorrect retries. ## Expected fix - Recognize Multer parser errors in the shared API error handler. - Return HTTP 400 using the existing `{ success: false, message }` response shape. - Preserve the existing 500 behavior for unrelated unexpected errors. - Add focused regression coverage for an unexpected multipart file field. ## Scope Keep this limited to Multer parser error handling and focused API tests. Do not add file-size policy, MIME filtering, upload authentication, or missing-file handling in this issue. This issue is limited only to the creator of this issue. This means that only the issue author can attempt to solve this issue. If you would like to work on it, please create another issue with the same contents and refer to issu",
       "state": "candidate",
       "payoutConfidence": 0.35,
       "autonomyFit": 1,
@@ -69,7 +110,43 @@
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 777,
+      "economicValueUsd": 11398,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5226422314",
+      "source": "github",
+      "title": "H1 — Dual-Dialect Interop Bridge (Obsidian-native files + Notion-compatible content)",
+      "url": "https://github.com/coderhd/lekhan/issues/78",
+      "repositoryApiUrl": "https://api.github.com/repos/coderhd/lekhan",
+      "rewardUsd": 5000,
+      "score": 54,
+      "labels": [
+        "ready-for-agent",
+        "epic",
+        "h1"
+      ],
+      "commentCount": 0,
+      "updatedAt": "2026-08-23T10:20:36Z",
+      "summary": "## Problem Statement People who think in both tools live a split-brain life today: - **Notion → Obsidian** migrations lose wikilinks (or need a plugin), degrade databases to flat CSVs, append UUIDs to every filename, and break image paths. A \\$5,000 bounty for proper database import has sat open on Obsidian's own importer for 2+ years. - **Obsidian → Notion** is worse: Notion's built-in zip import turns `[[wikilinks]]` into dead plain text, flattens callouts into generic quotes, dumps YAML frontmatter as raw text, renders `![[embeds]]` literally, and caps free imports at 5 MB. - **Copy-paste between them** loses links, callouts, highlights, and metadata both ways. The most common community advice for people who want both worlds is *\"run both tools and maintain two knowledge systems.\"* That is a tax on a large population, paid daily. ## Solution Lekhan becomes the compatibility layer — the Wine of PKM: one knowledge graph that speaks both dialects natively. 1. **Inbound**: import from an Obsidian vault or a Notion workspace; everything resolves to Lekhan Pages, Page links, Page properties, and Tags — with an honest Import report. 2. **Outbound**: one-click export of any Page or whol",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 111,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 5000,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -107,6 +184,40 @@
       },
       "realMoneyEligible": true,
       "economicValueUsd": 400,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5215718715",
+      "source": "github",
+      "title": "Map: Terra's flow to the first rocket launch",
+      "url": "https://github.com/adamico/planetary-factory/issues/25",
+      "repositoryApiUrl": "https://api.github.com/repos/adamico/planetary-factory",
+      "rewardUsd": 26,
+      "score": 48,
+      "labels": [
+        "wayfinder:map"
+      ],
+      "commentCount": 0,
+      "updatedAt": "2026-08-23T10:28:50Z",
+      "summary": "## Destination A written specification for Terra's progression from world spawn to a standing Platform in Terra Orbit: Factorio-named science tiers as the spine, each unlocking a capability that the next tier's production physically requires, delivered to FTB Quests Task Screens by machine; a rung-ownership table naming exactly one mod per capability; the pre-launch logistics cut-and-gate list; and the rocket-part production chain that gates the launch. Lands as an ADR for the spine plus `docs/spec/terra-progression.md` for the beat sheet, with the GDD's delivery sequence amended to place this work before Sapros. Quest authoring (`.snbt`) and manifest edits are a later build map, not this one. ## Notes **Domain**: modpack design. `CONTEXT.md` is the vocabulary; `docs/gdd.md` is the design of record; `docs/adr/` holds the hard-to-reverse decisions. Every session consults `/grilling` and `/domain-modeling`. **Settled before charting** (grilling session, six rounds): - **Factorio progression is the leitmotif.** Science packs are the spine; capability milestones are the reward each tier grants, and the next tier's production requires that capability. One ladder, not two. - **GregTech i",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 100,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 26,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -219,7 +330,7 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:2940525692\",\"rewardUsd\":10,\"fastCashScore\":60,\"updatedAt\":\"2026-08-18T21:51:22Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-18T21:51:29Z\",\"competition\":{\"comments\":29,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":125,\"updatedAt\":\"2026-08-22T16:37:56Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5112736273\",\"rewardUsd\":35,\"fastCashScore\":41,\"updatedAt\":\"2026-08-23T09:42:27Z\",\"competition\":{\"comments\":32,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5224489257\",\"rewardUsd\":10,\"fastCashScore\":95,\"updatedAt\":\"2026-08-23T00:46:19Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226052030\",\"rewardUsd\":33,\"fastCashScore\":72,\"updatedAt\":\"2026-08-23T09:54:49Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226305141\",\"rewardUsd\":777,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T09:46:33Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:2940525692\",\"rewardUsd\":10,\"fastCashScore\":60,\"updatedAt\":\"2026-08-18T21:51:22Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-18T21:51:29Z\",\"competition\":{\"comments\":29,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":125,\"updatedAt\":\"2026-08-22T16:37:56Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5189454900\",\"rewardUsd\":300,\"fastCashScore\":112,\"updatedAt\":\"2026-08-23T10:18:02Z\",\"competition\":{\"comments\":4,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5215718715\",\"rewardUsd\":26,\"fastCashScore\":100,\"updatedAt\":\"2026-08-23T10:28:50Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5222232739\",\"rewardUsd\":15,\"fastCashScore\":108,\"updatedAt\":\"2026-08-23T10:15:05Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5224489257\",\"rewardUsd\":10,\"fastCashScore\":95,\"updatedAt\":\"2026-08-23T00:46:19Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226052030\",\"rewardUsd\":33,\"fastCashScore\":72,\"updatedAt\":\"2026-08-23T09:54:49Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226422314\",\"rewardUsd\":5000,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T10:20:36Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226437489\",\"rewardUsd\":11398,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T10:25:07Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
@@ -231,11 +342,21 @@
     "maxHours": 4,
     "minPayoutConfidence": 0.8,
     "competitionRequired": "low",
-    "rejectedFakeRevenueCount": 0,
-    "rejectedAlreadyPaidCount": 3,
-    "rejectedIdentityGateCount": 0
+    "rejectedFakeRevenueCount": 1,
+    "rejectedAlreadyPaidCount": 2,
+    "rejectedIdentityGateCount": 1
   },
   "economicallyRejected": [
+    {
+      "id": "github:5222232739",
+      "title": "[Docs] README payout instructions say Base — bounties pay test USDC on ARC Testnet",
+      "rewardUsd": 15,
+      "reasons": [
+        "testnet_or_test_token_reward",
+        "preclaim_or_identity_gate_not_configured"
+      ],
+      "rejectedAt": "2026-08-23T10:43:15.113Z"
+    },
     {
       "id": "github:3055155077",
       "title": "Switch to `ky` from `redaxios`",
@@ -243,7 +364,7 @@
       "reasons": [
         "already_rewarded_or_paid"
       ],
-      "rejectedAt": "2026-08-23T10:10:03.300Z"
+      "rejectedAt": "2026-08-23T10:43:15.114Z"
     },
     {
       "id": "github:2940525692",
@@ -252,7 +373,7 @@
       "reasons": [
         "already_rewarded_or_paid"
       ],
-      "rejectedAt": "2026-08-23T10:10:03.300Z"
+      "rejectedAt": "2026-08-23T10:43:15.114Z"
     },
     {
       "id": "github:5112736273",
