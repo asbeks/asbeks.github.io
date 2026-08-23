@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-08-23T15:51:51.933Z",
+  "updatedAt": "2026-08-23T16:20:32.404Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -38,42 +38,6 @@
       },
       "realMoneyEligible": true,
       "economicValueUsd": 250,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5227640203",
-      "source": "github",
-      "title": "[radar] SN open bounty 2026-08-23T15:32",
-      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/554",
-      "repositoryApiUrl": "https://api.github.com/repos/relayhop/sn-monetization-runtime",
-      "rewardUsd": 2026,
-      "score": 56,
-      "labels": [
-        "radar",
-        "sn",
-        "bounty"
-      ],
-      "commentCount": 0,
-      "updatedAt": "2026-08-23T15:32:01Z",
-      "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 20 10000 3 4.3 9274 26606 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY,LOW_COMP Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 118,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 0,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 2026,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -212,17 +176,17 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5227655844",
+      "id": "github:5227728998",
       "source": "github",
-      "title": "実装+実験: exchange compact396入力を導入し2724次元版と比較する",
-      "url": "https://github.com/eletim/napoleon-web/issues/438",
-      "repositoryApiUrl": "https://api.github.com/repos/eletim/napoleon-web",
-      "rewardUsd": 12.975,
-      "score": 30,
+      "title": "Personal email exposed in PR #113 commit metadata — removal request",
+      "url": "https://github.com/shuvonsec/claude-bug-bounty/issues/114",
+      "repositoryApiUrl": "https://api.github.com/repos/shuvonsec/claude-bug-bounty",
+      "rewardUsd": 113,
+      "score": 46,
       "labels": [],
       "commentCount": 0,
-      "updatedAt": "2026-08-23T15:35:35Z",
-      "summary": "Related: #202, #431, #433, #434, #436 Base branch: `feature/issue-202-non-playing-ai` ## 背景 #436 では exchange observation 2671 dims + candidate discard mask 53 dims = 2724 dims を入力とする埋札 combination value modelを学習した。 1,000 unique exchange states / 286,000 samplesまで増やした結果、RuleBasedよりわずかに良い程度でplateauした。 - model margin regret: 4.39 - RuleBased margin regret: 4.59 - pairwise: 0.588 - exact top-action: 0.01 - top5: 0.07 一方、現行 exchange observation 2671 dims は汎用 non-playing encoder由来で、競り履歴を最大長action sequenceとして巨大one-hot展開するなど、ゲームルール上冗長な表現が多い。 競りAIでは compact278 を使っており、これは情報を削るのではなく、ナポレオンの競りの特性 1. より高いbidにしか進まない 2. 4連続PASSで終了する を利用し、競り履歴を `28 bid positions × (unused + 5 players)` の owner table 等で固定長かつ実質losslessに表現している。 exchangeでも同じ思想で、プレイヤーが知っている情報を落とさず、意味の明確な compact input に再設計する。 ## 目的 1. exchange専用 compact state input を正式定義する 2. #436 の同一dataset / 同一split / 同一teacherで compact版を学習する 3. 2724-dim baselineとの比較で、入力表現だけの効果を確認する 4. compact表現でranking/regretが改善するか検証する 5. 改善した場合、今後の埋札・副官AI設計の基礎表現として採用する ## Compact exchange state input 候補discardを除くstate表現は **343 dims** とする。 ### 1. 元々の10枚手札: 53 dims `originalHandMask[53]` - bidding終了時点、kitty pickup前にNapoleonが持っていた10枚 - 53-card binary mask ### 2. kittyで",
+      "updatedAt": "2026-08-23T15:52:48Z",
+      "summary": "Hi Shuvon — thanks for merging PR #113 on claude-bug-bounty. One follow-up: a local git misconfiguration on my end meant the commit in that PR carried the wrong author identity — my personal work email (adcorn@nsa.gov) instead of my intended GitHub identity. The commit that actually landed on main (40919b7) is correctly attributed and fine, but the original pre-merge commit is still reachable via the PR's commit history: https://github.com/shuvonsec/claude-bug-bounty/pull/113/commits/7ef1a2430b02d2bd53f42a83b717b238d79fe9ef I've already filed a request with GitHub Support to have that removed (ticket #4691932), but wanted to reach out directly too in case there's anything you're able to do on your end to help it along, or any way I should route this that would be faster. Appreciate the help — and sorry for the extra back-and-forth on this one. — ftacorn",
       "state": "candidate",
       "payoutConfidence": 0.35,
       "autonomyFit": 1,
@@ -231,7 +195,7 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 96,
+      "fastCashScore": 108,
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
@@ -240,7 +204,41 @@
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 12.975,
+      "economicValueUsd": 113,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5178384521",
+      "source": "github",
+      "title": "Tracking: open work, in dependency order",
+      "url": "https://github.com/kadenstaker/Polyfish/issues/29",
+      "repositoryApiUrl": "https://api.github.com/repos/kadenstaker/Polyfish",
+      "rewardUsd": 38,
+      "score": 40,
+      "labels": [
+        "tracking"
+      ],
+      "commentCount": 3,
+      "updatedAt": "2026-08-23T16:13:28Z",
+      "summary": "Index of every open item filed from the project's planning docs, in the audit's **order of operations**. This is a dependency chain, not a ranking. **Status — Aug 23, 2026, HEAD `197e575`.** The chain's first four steps are done and the instrument-integrity wave that followed them is done too. The training loop executes, the gauge fails loudly, and the plateau gate, knob ramps, tribe metadata, freeze/audit path and run-scoped LR schedule have all been repaired. **The gauge has still never produced a reading**, so every gauge-derived verdict in `hypothesis_driven_improvements.md` — the plateau verdict, EXP_ELO_002's \"success bar not met\" — remains provisional. Step 5 is now unblocked and is the next action. Re-verified at `197e575` before this rewrite: the closed items below are closed in source, and every open item below is still open in source. --- ## Done ### 1 · Blockers — restore the flag contract, make the gauge fail loudly - [x] #1 — P1: `self_play` rejected `--decay-last-iter` / `--anchor-decay-start` - [x] #2 — P2: `arena` rejected `--dump-stats-dir` ### 2 · Reconcile the action-head width - [x] #3 — P3: `action_type` targets 12 wide vs an 11-wide head ### 3 · Make the inst",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 97,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 3,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 38,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -289,7 +287,7 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:2940525692\",\"rewardUsd\":10,\"fastCashScore\":60,\"updatedAt\":\"2026-08-18T21:51:22Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-18T21:51:29Z\",\"competition\":{\"comments\":29,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":125,\"updatedAt\":\"2026-08-22T16:37:56Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5035341701\",\"rewardUsd\":2000,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T15:48:55Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5224460280\",\"rewardUsd\":34750,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T11:11:11Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226777176\",\"rewardUsd\":500,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T12:01:50Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226781397\",\"rewardUsd\":1000,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T12:02:59Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226781536\",\"rewardUsd\":1000,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T12:03:02Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5227640203\",\"rewardUsd\":2026,\"fastCashScore\":118,\"updatedAt\":\"2026-08-23T15:32:01Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5227655844\",\"rewardUsd\":12.975,\"fastCashScore\":96,\"updatedAt\":\"2026-08-23T15:35:35Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-18T21:51:29Z\",\"competition\":{\"comments\":29,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":125,\"updatedAt\":\"2026-08-22T16:37:56Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5035341701\",\"rewardUsd\":2000,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T15:48:55Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5178384521\",\"rewardUsd\":38,\"fastCashScore\":97,\"updatedAt\":\"2026-08-23T16:13:28Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5190343137\",\"rewardUsd\":2000,\"fastCashScore\":106,\"updatedAt\":\"2026-08-23T16:15:53Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5190344158\",\"rewardUsd\":2000,\"fastCashScore\":106,\"updatedAt\":\"2026-08-23T16:14:23Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5224460280\",\"rewardUsd\":34750,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T11:11:11Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226777176\",\"rewardUsd\":500,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T12:01:50Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226781397\",\"rewardUsd\":1000,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T12:02:59Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226781536\",\"rewardUsd\":1000,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T12:03:02Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5227728998\",\"rewardUsd\":113,\"fastCashScore\":108,\"updatedAt\":\"2026-08-23T15:52:48Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
@@ -302,7 +300,7 @@
     "minPayoutConfidence": 0.8,
     "competitionRequired": "low",
     "rejectedFakeRevenueCount": 2,
-    "rejectedAlreadyPaidCount": 2,
+    "rejectedAlreadyPaidCount": 3,
     "rejectedIdentityGateCount": 0
   },
   "economicallyRejected": [
@@ -313,7 +311,7 @@
       "reasons": [
         "testnet_or_test_token_reward"
       ],
-      "rejectedAt": "2026-08-23T15:51:51.887Z"
+      "rejectedAt": "2026-08-23T16:20:32.349Z"
     },
     {
       "id": "github:5226777176",
@@ -322,7 +320,25 @@
       "reasons": [
         "testnet_or_test_token_reward"
       ],
-      "rejectedAt": "2026-08-23T15:51:51.888Z"
+      "rejectedAt": "2026-08-23T16:20:32.349Z"
+    },
+    {
+      "id": "github:5190344158",
+      "title": "Fee-Bump Transaction Pipeline with Automatic Fee Escalation",
+      "rewardUsd": 2000,
+      "reasons": [
+        "already_rewarded_or_paid"
+      ],
+      "rejectedAt": "2026-08-23T16:20:32.349Z"
+    },
+    {
+      "id": "github:5190343137",
+      "title": "Carbon Credit — Beneficiary Receipt Index, Safe Certificate Generation, and Batch Retire-On-Behalf",
+      "rewardUsd": 2000,
+      "reasons": [
+        "already_rewarded_or_paid"
+      ],
+      "rejectedAt": "2026-08-23T16:20:32.349Z"
     },
     {
       "id": "github:3055155077",
@@ -331,7 +347,7 @@
       "reasons": [
         "already_rewarded_or_paid"
       ],
-      "rejectedAt": "2026-08-23T15:51:51.888Z"
+      "rejectedAt": "2026-08-23T16:20:32.349Z"
     },
     {
       "id": "github:2940525692",
