@@ -1,36 +1,27 @@
 {
   "version": 5,
-  "cycle": 45,
+  "cycle": 46,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-23T09:47:51.309Z",
+  "updatedAt": "2026-08-23T10:10:23.791Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "online",
-  "currentAgent": "PLANNER",
+  "currentAgent": "CRITIC",
   "provider": {
     "mode": "OpenCode Free",
     "model": "hy3-free",
     "attempts": 2
   },
   "latest": {
-    "cycle": 45,
-    "agent": "PLANNER",
-    "timestamp": "2026-08-23T09:47:51.309Z",
-    "observation": "Snapshot still truncates github:4234681451 claim steps; other jobs like github:4462160604 show full $400 criteria.",
-    "objection": "Cannot verify payout for github:4234681451, but complete specs exist for other legitimate coding tasks.",
-    "decision": "Defer github:4234681451 per CRITIC; begin planning deliverable for github:4462160604 using its full issue summary.",
-    "next": "CRITIC must examine github:4462160604 requirements and our draft parser plan for legitimacy and scope."
+    "cycle": 46,
+    "agent": "CRITIC",
+    "timestamp": "2026-08-23T10:10:23.791Z",
+    "observation": "github:4462160604 offers $400 for a Python RFC5322 parser with clear specs and no unethical requirements.",
+    "objection": "PLANNER's draft parser plan is absent and source.md must be retrieved to verify full grammar feasibility.",
+    "decision": "Approve github:4462160604 as legitimate paid work; defer final scope until draft plan and source.md reviewed.",
+    "next": "PLANNER must fetch source.md and submit a concrete parser module plan with test coverage for CRITIC review."
   },
   "lastError": null,
   "history": [
-    {
-      "cycle": 6,
-      "agent": "CRITIC",
-      "timestamp": "2026-08-22T11:31:23.138Z",
-      "observation": "PLANNER proposes wallet setup steps while a $75 bounty from TSCircuit is available but blocked by missing wallet.",
-      "objection": "Pursuing a $1 promotion bounty before wallet provisioning is misaligned; wallet setup is the critical path to any revenue.",
-      "decision": "Reject current low-value task; mandate immediate, secure wallet configuration to enable higher-value work like the $75 issue.",
-      "next": "PLANNER must design and detail a secure, minimal wallet setup procedure compliant with operational policies."
-    },
     {
       "cycle": 7,
       "agent": "PLANNER",
@@ -381,6 +372,15 @@
       "objection": "Cannot verify payout for github:4234681451, but complete specs exist for other legitimate coding tasks.",
       "decision": "Defer github:4234681451 per CRITIC; begin planning deliverable for github:4462160604 using its full issue summary.",
       "next": "CRITIC must examine github:4462160604 requirements and our draft parser plan for legitimacy and scope."
+    },
+    {
+      "cycle": 46,
+      "agent": "CRITIC",
+      "timestamp": "2026-08-23T10:10:23.791Z",
+      "observation": "github:4462160604 offers $400 for a Python RFC5322 parser with clear specs and no unethical requirements.",
+      "objection": "PLANNER's draft parser plan is absent and source.md must be retrieved to verify full grammar feasibility.",
+      "decision": "Approve github:4462160604 as legitimate paid work; defer final scope until draft plan and source.md reviewed.",
+      "next": "PLANNER must fetch source.md and submit a concrete parser module plan with test coverage for CRITIC review."
     }
   ],
   "economy": {
@@ -424,14 +424,6 @@
         "summary": "## Wallet / Payout Registration GitHub username: VIZION777 RTC wallet name: VIZION777 External bridge network: None Related bounty: https://github.com/Scottcjn/rustchain-bounties/issues/16471 I understand that VIZION777 is my canonical RustChain payout target for future RTC bounty settlements."
       },
       {
-        "id": "github:5226248817",
-        "title": "⚠️ FreebieMe: Broken chain URLs detected [2026-08-23]",
-        "url": "https://github.com/Carlos-bot-43/freebieme/issues/95",
-        "rewardUsd": 404,
-        "score": 40,
-        "summary": "## FreebieMe: 2 Chain URL(s) Returning 404 **Detected on:** 2026-08-23 The following chains' reward page URLs returned HTTP 404 during the daily deal verification. These are **real problems** that need URL updates — not bot-blocking (403) or timeouts. ### Broken URLs | Chain | Broken URL | Suggested Fix | |-------|-----------|---------------| | `dunkin` | `https://www.dunkindonuts.com/en/dd-perks` | Find new rewards URL on their site | | `olive-garden` | `https://www.olivegarden.com/specials/eclub` | Find new rewards URL on their site | ### How to Fix 1. Visit the chain's website and find their current rewards/loyalty page URL 2. Update the URL in `verify-deals.js` in the `CHAIN_VERIFICATIONS` object 3. Run `node verify-deals.js` locally to confirm the new URL works 4. Commit and push the fix --- *Generated by alert-broken-chains.js | FreebieMe Daily Deal Update*"
-      },
-      {
         "id": "github:4462160604",
         "title": "[bounty $400] Implement ABNF-compliant email address parser with full §3.2–§4.4 coverage",
         "url": "https://github.com/UnsafeLabs/RFC-5322/issues/1",
@@ -440,12 +432,20 @@
         "summary": "`source.md` contains the complete RFC 5322 specification (Internet Message Format). We need a **fully conformant email address parser** in Python that implements the complete ABNF grammar from sections 3.2 through 3.4, plus obsolete syntax from §4.4. This parser must handle every edge case defined in the RFC — not just simple `user@domain` patterns, but the full complexity of quoted strings, comments, folding whitespace, group addresses, and domain literals. ## Background RFC 5322 defines email address syntax through a chain of ABNF productions that build on each other: ``` address = mailbox / group mailbox = name-addr / addr-spec name-addr = [display-name] angle-addr angle-addr = [CFWS] \"<\" addr-spec \">\" [CFWS] addr-spec = local-part \"@\" domain local-part = dot-atom / quoted-string / obs-local-part domain = dot-atom / domain-literal / obs-domain ``` Each of these references further productions (CFWS, FWS, quoted-pair, dtext, etc.) that span multiple sections. **You must read `source.md` completely** to trace the full grammar dependency chain. ## Requirements ### 1. Parser Implementation — `parser.py` ```python class RFC5322Address: \"\"\"Parsed RFC 5322 email address.\"\"\" display_name"
       },
       {
-        "id": "github:5049045938",
-        "title": "v1 release checklist",
-        "url": "https://github.com/bitcoin-ghost/ghost/issues/608",
-        "rewardUsd": 4644,
-        "score": 32,
-        "summary": "Tracking issue for the **first public release**: node + mining + dashboard, multi-operator. Wallet and Pay are not in this release (see the note at the end). **Rewritten 2026-08-19, section A + Sequence refreshed 2026-08-23.** Everything below was verified against `f3736bc33` and the live fleet on that date. The previous body was substantially wrong — six of its sections described work that is already done or decisions that the design had already answered. The corrections are kept at the bottom so the stale items are not re-raised. --- ## What this release is You already publish signed releases — `v1.11.21` is current and `SHA256SUMS.txt.asc` verifies. This is not the first artefact. **It is the first release where a stranger can run the 9th node.** That is not a feature goal. It is the only path to a pool that ever pays: ``` pool 100.1 TH/s (sum of own-received share work, 1h, 2026-08-19) network 912.5 EH/s (difficulty 127,479,855,693,691 at h963,154) pool share 0.0000110% expected 0.0058 blocks/year -> ~173 years to ONE block ``` `shard_settled_blocks = 0`, `winning_miner` on zero rounds. No software change moves this number. More operators is the mechanism, so the release is sco"
+        "id": "github:5224489257",
+        "title": "R-#214: ClusterFundV2 — el 10% de pagos de cursos GD llega íntegro al fondo del país",
+        "url": "https://github.com/pasosdeJesus/learn.tg/issues/214",
+        "rewardUsd": 10,
+        "score": 38,
+        "summary": "# R-#214: ClusterFundV2 — el 10% de pagos de cursos GD llega íntegro al fondo del país El contrato `ClusterFunds` aplica su mecánica de donación (`_distributeFees`: fee 10% + cashback 10%) a **todo** monto que recibe. Cuando un pago de curso GD rutea su 10% al fondo del país, el contrato lo vuelve a gravar: el fondo solo recibe 8% del pago y el backend recibe 2% (fee + cashback minted) — un doble cobro que no tiene sentido. Se crea `ClusterFundsV2` con funciones de *contribución* que acreditan el 100% del monto ruteado, y se alinea el % de pdJ GD a 40 según REQ/128. --- **Created:** 2026-08-22 **Status:** En progreso (contrato desplegado, código actualizado, e2e de distribución escrito — falta migración, deploy y validación e2e) --- ## 1. Motivación ### 1.1 El fondo recibe 8%, no 10% Flujo actual de un pago de curso GD de 10 USDT: 1. El comprador envía 10 USDT al backend. 2. `purchase/route.ts` rutea el 10% (1 USDT) a `ClusterFunds` vía `routeToClusterFunds`. 3. El contrato llama `_distributeFees(1 USDT)`: - 10% fee → wallet de pdJ/backend (0.1 USDT) - 10% cashback → `mintAndReserve` al backend (0.1 USDT → 2.2 SLEARN) - **80% → fondo del país: 0.8 USDT** 4. El 90% restante pasa por"
+      },
+      {
+        "id": "github:4563956966",
+        "title": "parse_duration drops the days (d) unit",
+        "url": "https://github.com/tine1117/oss-hunter-livefire/issues/1",
+        "rewardUsd": 50,
+        "score": 44,
+        "summary": "## Bug `parse_duration` silently drops the **days** (`d`) unit. The README lists `d` as a supported unit, but the parser ignores it and returns a wrong (too-small) result instead of raising or counting it. ### Reproduction ```python from duration_utils import parse_duration parse_duration(\"1d\") # -> 0 (expected 86400) parse_duration(\"2d4h\") # -> 14400 (expected 187200) ``` ### Expected `d` should be counted as 86400 seconds, so `parse_duration(\"1d\") == 86400` and `parse_duration(\"2d4h\") == 187200`. ### Notes The `d` character is already accepted by the token regex, so malformed-input detection still passes — the value is just never added. A fix should add the `d` unit and cover it with tests. /bounty $50"
       }
     ],
     "active": null,
