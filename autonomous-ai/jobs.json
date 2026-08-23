@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-08-23T10:43:15.169Z",
+  "updatedAt": "2026-08-23T11:03:07.467Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -187,19 +187,20 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5215718715",
+      "id": "github:5226565169",
       "source": "github",
-      "title": "Map: Terra's flow to the first rocket launch",
-      "url": "https://github.com/adamico/planetary-factory/issues/25",
-      "repositoryApiUrl": "https://api.github.com/repos/adamico/planetary-factory",
-      "rewardUsd": 26,
-      "score": 48,
+      "title": "Catch assertion-free tests with mutation testing on changed files",
+      "url": "https://github.com/ls1intum/Hephaestus/issues/1498",
+      "repositoryApiUrl": "https://api.github.com/repos/ls1intum/Hephaestus",
+      "rewardUsd": 27,
+      "score": 40,
       "labels": [
-        "wayfinder:map"
+        "size:M",
+        "test"
       ],
       "commentCount": 0,
-      "updatedAt": "2026-08-23T10:28:50Z",
-      "summary": "## Destination A written specification for Terra's progression from world spawn to a standing Platform in Terra Orbit: Factorio-named science tiers as the spine, each unlocking a capability that the next tier's production physically requires, delivered to FTB Quests Task Screens by machine; a rung-ownership table naming exactly one mod per capability; the pre-launch logistics cut-and-gate list; and the rocket-part production chain that gates the launch. Lands as an ADR for the spine plus `docs/spec/terra-progression.md` for the beat sheet, with the GDD's delivery sequence amended to place this work before Sapros. Quest authoring (`.snbt`) and manifest edits are a later build map, not this one. ## Notes **Domain**: modpack design. `CONTEXT.md` is the vocabulary; `docs/gdd.md` is the design of record; `docs/adr/` holds the hard-to-reverse decisions. Every session consults `/grilling` and `/domain-modeling`. **Settled before charting** (grilling session, six rounds): - **Factorio progression is the leitmotif.** Science packs are the spine; capability milestones are the reward each tier grants, and the next tier's production requires that capability. One ladder, not two. - **GregTech i",
+      "updatedAt": "2026-08-23T11:02:30Z",
+      "summary": "Coverage tells you a line executed. It cannot tell you an assertion checked anything. That gap is the specific failure mode of AI-written tests. Thoughtworks Technology Radar Vol 34 (April 2026) places mutation testing in **Trial** and says why: it *\"acts as a reinforcement layer for catching 'perpetually green' tests — those that pass regardless of logic changes due to missing assertions or decoupled mocks.\"* The failure it guards against is measured, not hypothetical. SpecBench ([arXiv:2605.21384](https://arxiv.org/abs/2605.21384), May 2026) documents agents overwriting tests and deleting assertions to satisfy a verifier, with the reward-hacking gap widening roughly 27 percentage points per 10× increase in code size. Independently, weak assertions in LLM-generated tests are documented empirically in [arXiv:2406.18181](https://arxiv.org/abs/2406.18181). We have 1,496 Storybook tests, 932 webapp unit tests and three server test tiers. Nothing currently distinguishes the ones that would still pass if the code under them were wrong. ## Scope Pilot on **one module**, scoped to changed files, on a nightly or PR-scoped tier — never the inner loop. - TypeScript: **StrykerJS** has first-c",
       "state": "candidate",
       "payoutConfidence": 0.35,
       "autonomyFit": 1,
@@ -217,7 +218,7 @@
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 26,
+      "economicValueUsd": 27,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -330,7 +331,7 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:2940525692\",\"rewardUsd\":10,\"fastCashScore\":60,\"updatedAt\":\"2026-08-18T21:51:22Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-18T21:51:29Z\",\"competition\":{\"comments\":29,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":125,\"updatedAt\":\"2026-08-22T16:37:56Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5189454900\",\"rewardUsd\":300,\"fastCashScore\":112,\"updatedAt\":\"2026-08-23T10:18:02Z\",\"competition\":{\"comments\":4,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5215718715\",\"rewardUsd\":26,\"fastCashScore\":100,\"updatedAt\":\"2026-08-23T10:28:50Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5222232739\",\"rewardUsd\":15,\"fastCashScore\":108,\"updatedAt\":\"2026-08-23T10:15:05Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5224489257\",\"rewardUsd\":10,\"fastCashScore\":95,\"updatedAt\":\"2026-08-23T00:46:19Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226052030\",\"rewardUsd\":33,\"fastCashScore\":72,\"updatedAt\":\"2026-08-23T09:54:49Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226422314\",\"rewardUsd\":5000,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T10:20:36Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226437489\",\"rewardUsd\":11398,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T10:25:07Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-18T21:51:29Z\",\"competition\":{\"comments\":29,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":125,\"updatedAt\":\"2026-08-22T16:37:56Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5189454900\",\"rewardUsd\":300,\"fastCashScore\":112,\"updatedAt\":\"2026-08-23T10:18:02Z\",\"competition\":{\"comments\":4,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5222232739\",\"rewardUsd\":15,\"fastCashScore\":108,\"updatedAt\":\"2026-08-23T10:15:05Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5224489257\",\"rewardUsd\":10,\"fastCashScore\":95,\"updatedAt\":\"2026-08-23T00:46:19Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226052030\",\"rewardUsd\":33,\"fastCashScore\":72,\"updatedAt\":\"2026-08-23T09:54:49Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226422314\",\"rewardUsd\":5000,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T10:20:36Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226437489\",\"rewardUsd\":11398,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T10:25:07Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226523324\",\"rewardUsd\":10,\"fastCashScore\":74,\"updatedAt\":\"2026-08-23T10:56:50Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226565169\",\"rewardUsd\":27,\"fastCashScore\":100,\"updatedAt\":\"2026-08-23T11:02:30Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
@@ -343,8 +344,8 @@
     "minPayoutConfidence": 0.8,
     "competitionRequired": "low",
     "rejectedFakeRevenueCount": 1,
-    "rejectedAlreadyPaidCount": 2,
-    "rejectedIdentityGateCount": 1
+    "rejectedAlreadyPaidCount": 1,
+    "rejectedIdentityGateCount": 2
   },
   "economicallyRejected": [
     {
@@ -355,7 +356,7 @@
         "testnet_or_test_token_reward",
         "preclaim_or_identity_gate_not_configured"
       ],
-      "rejectedAt": "2026-08-23T10:43:15.113Z"
+      "rejectedAt": "2026-08-23T11:03:07.364Z"
     },
     {
       "id": "github:3055155077",
@@ -364,7 +365,16 @@
       "reasons": [
         "already_rewarded_or_paid"
       ],
-      "rejectedAt": "2026-08-23T10:43:15.114Z"
+      "rejectedAt": "2026-08-23T11:03:07.364Z"
+    },
+    {
+      "id": "github:5226523324",
+      "title": "[QUEST] Add polli earnings to the CLI",
+      "rewardUsd": 10,
+      "reasons": [
+        "preclaim_or_identity_gate_not_configured"
+      ],
+      "rejectedAt": "2026-08-23T11:03:07.365Z"
     },
     {
       "id": "github:2940525692",
