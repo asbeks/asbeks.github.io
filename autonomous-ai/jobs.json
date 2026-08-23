@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-08-23T04:23:20.725Z",
+  "updatedAt": "2026-08-23T05:02:18.651Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -41,6 +41,40 @@
       "requiresPreclaimOrIdentity": false
     },
     {
+      "id": "github:4616419836",
+      "source": "github",
+      "title": "docs(support): freshen SUPPORT.md — Enhancement template, AI-policy cross-link, response-time note, relative links",
+      "url": "https://github.com/genealogix/glx/issues/1059",
+      "repositoryApiUrl": "https://api.github.com/repos/genealogix/glx",
+      "rewardUsd": 2026,
+      "score": 54,
+      "labels": [
+        "tooling"
+      ],
+      "commentCount": 0,
+      "updatedAt": "2026-08-23T04:39:57Z",
+      "summary": "## Summary `.github/SUPPORT.md` is a solid community-health file, but it has drifted slightly out of sync with the rest of the repo and is missing a few low-effort cross-links. This is a single coherent **SUPPORT.md content pass** bundling four small, independently-verified improvements so they ship in one PR rather than fragmenting the tracker — filing one issue per item would itself be the kind of noise SUPPORT.md exists to prevent. None are correctness or security defects; severity is **low** throughout (item 4 is info). Background: SUPPORT.md's only commit is its original creation (PR #728); the surrounding intake surfaces (`config.yml`, the issue forms, the PR template) have all evolved since. ## 1. Mention the Enhancement template alongside Feature (doc follow-up to #887 / PR #915) The \"Request a feature\" section points only to `feature_request.yml`. The repo also ships `enhancement.yml` (`type: Enhancement`, \"Suggest an improvement to an existing capability\"), added by PR #915 (merged 2026-05-27, closing #887), which updated the forms, labeler, and drift checks but left SUPPORT.md untouched. A reader of SUPPORT.md can't learn that \"improving an existing capability\" has its o",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 111,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 2026,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
       "id": "github:4462160604",
       "source": "github",
       "title": "[bounty $400] Implement ABNF-compliant email address parser with full §3.2–§4.4 coverage",
@@ -78,40 +112,6 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5225100116",
-      "source": "github",
-      "title": "[security] Penetration Testing Program: Annual External Pentest, Continuous Bug Bounty, Red Team Exercises",
-      "url": "https://github.com/ExcelDsigN-tech/dukapay/issues/465",
-      "repositoryApiUrl": "https://api.github.com/repos/ExcelDsigN-tech/dukapay",
-      "rewardUsd": 10,
-      "score": 52,
-      "labels": [
-        "Stellar Wave"
-      ],
-      "commentCount": 0,
-      "updatedAt": "2026-08-23T04:16:07Z",
-      "summary": "# [security] Penetration Testing Program: Annual External Pentest, Continuous Bug Bounty, Red Team Exercises **Description:** No structured penetration testing program. Implement: annual external pentest (Cobalt.io, HackerOne), continuous bug bounty ($10k-$100k rewards), quarterly red team exercises, automated SAST/DAST in CI. **Impact:** Proactive vulnerability discovery; compliance (SOC2, ISO27001); insurance requirement; community trust; reduces breach probability. **Suggested Fix:** 1. Contract annual pentest with Cobalt.io or HackerOne 2. Launch bug bounty on HackerOne/Immunefi ($10k-$100k) 3. Quarterly red team exercises with internal team 4. Add SAST (semgrep, CodeQL) and DAST (OWASP ZAP) to CI 5. Vulnerability disclosure policy and safe harbor **Points:** 200 **Type:** security ## Definition of Done - [ ] Annual external pentest contracted - [ ] Bug bounty program live with rewards - [ ] Quarterly red team exercises scheduled - [ ] SAST/DAST in CI pipeline - [ ] Vulnerability disclosure policy published - [ ] No hardcoded secrets remain in source (grep scan clean) - [ ] Authentication flow verified and tested - [ ] Security headers and CSP configured - [ ] No PII exposed in",
-      "state": "candidate",
-      "payoutConfidence": 0.65,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 108,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 0,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 10,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
       "id": "github:5214938859",
       "source": "github",
       "title": "Maintainer notice: enforce rolling bounty liquidity and external-funding GMV loop",
@@ -120,8 +120,8 @@
       "rewardUsd": 1115,
       "score": 46,
       "labels": [],
-      "commentCount": 7,
-      "updatedAt": "2026-08-23T04:03:16Z",
+      "commentCount": 9,
+      "updatedAt": "2026-08-23T04:38:42Z",
       "summary": "## Planned scope Implement a private Open Competition V2 inventory invariant with floor 5 and target 10; a fail-closed deterministic replenishment planner; a bounded 30.40 USDC/day and 152 USDC lifetime execution policy; twenty reviewed structured-artifact candidates; unified public marketplace metrics; structured participant feedback; and external poster/funder conversion paths across web, API, MCP, CLI, and docs. This is needed because the five recently funded competitions settled without replacement and production reached zero active V2 competitions. The public product will continue to present one marketplace: public counts and GMV remain aggregated across supported bounty mechanisms. Only private operational state distinguishes the inventory needed by the replenisher. This notice is not bounty acceptance, merge approval, payout approval, escrow release approval, or payment settlement. ## Affected contracts or workflows Likely affected surfaces include the inventory guard and self-healing policy, the Open Competition V2 seed/planning workflow and scripts, private operational schemas, aggregate platform metrics, opportunity comments, posting/funding guidance, MCP/CLI parity, and ",
       "state": "candidate",
       "payoutConfidence": 0.5,
@@ -131,16 +131,50 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 107,
+      "fastCashScore": 104,
       "survivalEligible": false,
       "eligibilityReason": "Competition is too high for bootstrap mode.",
       "competition": {
-        "comments": 7,
+        "comments": 9,
         "attemptSignals": 0,
         "risk": "medium"
       },
       "realMoneyEligible": true,
       "economicValueUsd": 1115,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5215718715",
+      "source": "github",
+      "title": "Map: Terra's flow to the first rocket launch",
+      "url": "https://github.com/adamico/planetary-factory/issues/25",
+      "repositoryApiUrl": "https://api.github.com/repos/adamico/planetary-factory",
+      "rewardUsd": 26,
+      "score": 48,
+      "labels": [
+        "wayfinder:map"
+      ],
+      "commentCount": 0,
+      "updatedAt": "2026-08-23T05:00:08Z",
+      "summary": "## Destination A written specification for Terra's progression from world spawn to a standing Platform in Terra Orbit: Factorio-named science tiers as the spine, each unlocking a capability that the next tier's production physically requires, delivered to FTB Quests Task Screens by machine; a rung-ownership table naming exactly one mod per capability; the pre-launch logistics cut-and-gate list; and the rocket-part production chain that gates the launch. Lands as an ADR for the spine plus `docs/spec/terra-progression.md` for the beat sheet, with the GDD's delivery sequence amended to place this work before Sapros. Quest authoring (`.snbt`) and manifest edits are a later build map, not this one. ## Notes **Domain**: modpack design. `CONTEXT.md` is the vocabulary; `docs/gdd.md` is the design of record; `docs/adr/` holds the hard-to-reverse decisions. Every session consults `/grilling` and `/domain-modeling`. **Settled before charting** (grilling session, six rounds): - **Factorio progression is the leitmotif.** Science packs are the spine; capability milestones are the reward each tier grants, and the next tier's production requires that capability. One ladder, not two. - **GregTech i",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 100,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 26,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -221,7 +255,7 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:2940525692\",\"rewardUsd\":10,\"fastCashScore\":60,\"updatedAt\":\"2026-08-18T21:51:22Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-18T21:51:29Z\",\"competition\":{\"comments\":29,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":125,\"updatedAt\":\"2026-08-22T16:37:56Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5214938859\",\"rewardUsd\":1115,\"fastCashScore\":107,\"updatedAt\":\"2026-08-23T04:03:16Z\",\"competition\":{\"comments\":7,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5224489257\",\"rewardUsd\":10,\"fastCashScore\":95,\"updatedAt\":\"2026-08-23T00:46:19Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5225100116\",\"rewardUsd\":10,\"fastCashScore\":108,\"updatedAt\":\"2026-08-23T04:16:07Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:2940525692\",\"rewardUsd\":10,\"fastCashScore\":60,\"updatedAt\":\"2026-08-18T21:51:22Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-18T21:51:29Z\",\"competition\":{\"comments\":29,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":125,\"updatedAt\":\"2026-08-22T16:37:56Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:4616419836\",\"rewardUsd\":2026,\"fastCashScore\":111,\"updatedAt\":\"2026-08-23T04:39:57Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5214938859\",\"rewardUsd\":1115,\"fastCashScore\":104,\"updatedAt\":\"2026-08-23T04:38:42Z\",\"competition\":{\"comments\":9,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5215718715\",\"rewardUsd\":26,\"fastCashScore\":100,\"updatedAt\":\"2026-08-23T05:00:08Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5224489257\",\"rewardUsd\":10,\"fastCashScore\":95,\"updatedAt\":\"2026-08-23T00:46:19Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
@@ -245,7 +279,7 @@
       "reasons": [
         "already_rewarded_or_paid"
       ],
-      "rejectedAt": "2026-08-23T04:23:20.685Z"
+      "rejectedAt": "2026-08-23T05:02:18.601Z"
     },
     {
       "id": "github:2940525692",
@@ -254,7 +288,7 @@
       "reasons": [
         "already_rewarded_or_paid"
       ],
-      "rejectedAt": "2026-08-23T04:23:20.685Z"
+      "rejectedAt": "2026-08-23T05:02:18.601Z"
     },
     {
       "id": "github:5222233612",
