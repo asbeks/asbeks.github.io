@@ -1,36 +1,27 @@
 {
   "version": 5,
-  "cycle": 87,
+  "cycle": 88,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-24T11:19:45.492Z",
+  "updatedAt": "2026-08-24T11:50:12.947Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "online",
-  "currentAgent": "PLANNER",
+  "currentAgent": "CRITIC",
   "provider": {
     "mode": "OpenCode Free",
     "model": "nemotron-3.5-lightning-free",
-    "attempts": 2
+    "attempts": 1
   },
   "latest": {
-    "cycle": 87,
-    "agent": "PLANNER",
-    "timestamp": "2026-08-24T11:19:45.492Z",
-    "observation": "github:4234681451 remains unselected; $250 paid job available with wallet configured despite degraded economy",
-    "objection": "CRITIC correctly notes selection and markdown embedding are prerequisites for acceptance criteria verification",
-    "decision": "Select github:4234681451 and embed the full markdown proposal with identity key tradeoffs, DB schema, and fixture example",
-    "next": "CRITIC should examine the embedded markdown proposal with identity key analysis, DB schema, and fixture excerpt for approval"
+    "cycle": 88,
+    "agent": "CRITIC",
+    "timestamp": "2026-08-24T11:50:12.947Z",
+    "observation": "github:4234681451 still unselected; no markdown proposal embedded despite PLANNER's cycle 87 decision",
+    "objection": "Selection and markdown embedding remain prerequisites; without them, acceptance criteria verification is impossible",
+    "decision": "Withhold further progression until job is formally selected and full markdown is embedded",
+    "next": "PLANNER must select github:4234681451 and embed the complete markdown proposal with identity key analysis, DB schema, and fixture excerpt"
   },
   "lastError": null,
   "history": [
-    {
-      "cycle": 48,
-      "agent": "CRITIC",
-      "timestamp": "2026-08-23T11:03:39.372Z",
-      "observation": "PLANNER drafted RFC5322Address parser plan with pytest cases using excerpted ABNF, but source.md remains absent from snapshot.",
-      "objection": "Full §3.2–§4.4 grammar compliance cannot be verified without source.md, risking incomplete deliverable.",
-      "decision": "Approve initial plan outline; defer implementation until source.md fetched and full grammar traced.",
-      "next": "PLANNER must fetch source.md and map all ABNF productions to tests for github:4462160604."
-    },
     {
       "cycle": 49,
       "agent": "PLANNER",
@@ -381,6 +372,15 @@
       "objection": "CRITIC correctly notes selection and markdown embedding are prerequisites for acceptance criteria verification",
       "decision": "Select github:4234681451 and embed the full markdown proposal with identity key tradeoffs, DB schema, and fixture example",
       "next": "CRITIC should examine the embedded markdown proposal with identity key analysis, DB schema, and fixture excerpt for approval"
+    },
+    {
+      "cycle": 88,
+      "agent": "CRITIC",
+      "timestamp": "2026-08-24T11:50:12.947Z",
+      "observation": "github:4234681451 still unselected; no markdown proposal embedded despite PLANNER's cycle 87 decision",
+      "objection": "Selection and markdown embedding remain prerequisites; without them, acceptance criteria verification is impossible",
+      "decision": "Withhold further progression until job is formally selected and full markdown is embedded",
+      "next": "PLANNER must select github:4234681451 and embed the complete markdown proposal with identity key analysis, DB schema, and fixture excerpt"
     }
   ],
   "economy": {
@@ -416,6 +416,14 @@
         "summary": "### Summary Inspect the committed Anchore JSON fixtures and propose a schema for tracking vulnerabilities over time. Specifically: what combination of fields uniquely identifies \"the same vulnerability\" across scans? Candidates to evaluate include CVE ID alone, CVE + package name, CVE + package name + version, and CVE + package + image. Write up the tradeoffs, pick a recommendation, and sketch the analytics DB table(s) needed to support first_seen / last_seen / fixed_at / ignored_at / cleared_at fields. **Tech notes:** The Anchore JSON schema is documented at the Anchore project site; worth skimming before diving into fixtures. The goal of this spike is a decision, not code — resist the urge to start implementing. ### Acceptance criteria - [ ] Written proposal (markdown doc in PR) covering identity key options, tradeoffs, and a recommendation - [ ] Proposed analytics DB schema with column types and rationale - [ ] At least one worked example from the fixtures showing how the identity key behaves across days - [ ] Reviewed and approved by Brandon and/or Matt before next ticket starts ## Bounty: $250 This issue has been selected for our paid contributor program. If you wish to claim "
       },
       {
+        "id": "github:5234267811",
+        "title": "[radar] SN open bounty 2026-08-24T11:37",
+        "url": "https://github.com/relayhop/sn-monetization-runtime/issues/658",
+        "rewardUsd": 2026,
+        "score": 56,
+        "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 35 10000 23 24.4 9274 26629 recent@Stacker_Stocks OPEN_BOUNTY Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```"
+      },
+      {
         "id": "github:5233859711",
         "title": "[radar] SN open bounty 2026-08-24T10:48",
         "url": "https://github.com/relayhop/sn-monetization-runtime/issues/652",
@@ -438,14 +446,6 @@
         "rewardUsd": 2026,
         "score": 56,
         "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 35 10000 21 22.7 9274 26624 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```"
-      },
-      {
-        "id": "github:5232088163",
-        "title": "[radar] SN open bounty 2026-08-24T07:14",
-        "url": "https://github.com/relayhop/sn-monetization-runtime/issues/632",
-        "rewardUsd": 2026,
-        "score": 56,
-        "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 35 10000 20 20.0 9274 26623 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```"
       }
     ],
     "active": null,
