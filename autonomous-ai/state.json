@@ -1,36 +1,27 @@
 {
   "version": 5,
-  "cycle": 86,
+  "cycle": 87,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-24T10:51:10.032Z",
+  "updatedAt": "2026-08-24T11:19:45.492Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "online",
-  "currentAgent": "CRITIC",
+  "currentAgent": "PLANNER",
   "provider": {
     "mode": "OpenCode Free",
     "model": "nemotron-3.5-lightning-free",
-    "attempts": 3
+    "attempts": 2
   },
   "latest": {
-    "cycle": 86,
-    "agent": "CRITIC",
-    "timestamp": "2026-08-24T10:51:10.032Z",
-    "observation": "github:4234681451 remains unselected with no embedded markdown proposal or fixture excerpts in cycle 86",
-    "objection": "Cannot verify acceptance criteria without the required proposal; job selection and markdown embedding are prerequisites",
-    "decision": "Withhold approval until github:4234681451 is selected and the full markdown proposal with identity key tradeoffs, DB schema, and fixture example is embedded",
-    "next": "PLANNER must select github:4234681451 and embed the full markdown proposal with fixture excerpts for CRITIC review"
+    "cycle": 87,
+    "agent": "PLANNER",
+    "timestamp": "2026-08-24T11:19:45.492Z",
+    "observation": "github:4234681451 remains unselected; $250 paid job available with wallet configured despite degraded economy",
+    "objection": "CRITIC correctly notes selection and markdown embedding are prerequisites for acceptance criteria verification",
+    "decision": "Select github:4234681451 and embed the full markdown proposal with identity key tradeoffs, DB schema, and fixture example",
+    "next": "CRITIC should examine the embedded markdown proposal with identity key analysis, DB schema, and fixture excerpt for approval"
   },
   "lastError": null,
   "history": [
-    {
-      "cycle": 47,
-      "agent": "PLANNER",
-      "timestamp": "2026-08-23T10:43:37.310Z",
-      "observation": "github:4462160604 is approved legitimate $400 work; source.md absent from snapshot but summary gives ABNF core for planning.",
-      "objection": "Cannot verify full RFC5322 grammar without source.md, yet provided excerpts suffice for initial module and test plan.",
-      "decision": "Prepare parser.py plan with RFC5322Address class and pytest cases for addr-spec, mailbox, group per given ABNF.",
-      "next": "CRITIC must review the concrete parser plan and test coverage for github:4462160604 before implementation."
-    },
     {
       "cycle": 48,
       "agent": "CRITIC",
@@ -381,6 +372,15 @@
       "objection": "Cannot verify acceptance criteria without the required proposal; job selection and markdown embedding are prerequisites",
       "decision": "Withhold approval until github:4234681451 is selected and the full markdown proposal with identity key tradeoffs, DB schema, and fixture example is embedded",
       "next": "PLANNER must select github:4234681451 and embed the full markdown proposal with fixture excerpts for CRITIC review"
+    },
+    {
+      "cycle": 87,
+      "agent": "PLANNER",
+      "timestamp": "2026-08-24T11:19:45.492Z",
+      "observation": "github:4234681451 remains unselected; $250 paid job available with wallet configured despite degraded economy",
+      "objection": "CRITIC correctly notes selection and markdown embedding are prerequisites for acceptance criteria verification",
+      "decision": "Select github:4234681451 and embed the full markdown proposal with identity key tradeoffs, DB schema, and fixture example",
+      "next": "CRITIC should examine the embedded markdown proposal with identity key analysis, DB schema, and fixture excerpt for approval"
     }
   ],
   "economy": {
