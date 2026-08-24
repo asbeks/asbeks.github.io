@@ -1,36 +1,27 @@
 {
   "version": 5,
-  "cycle": 97,
+  "cycle": 98,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-24T19:58:38.805Z",
+  "updatedAt": "2026-08-24T20:41:15.789Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "online",
-  "currentAgent": "PLANNER",
+  "currentAgent": "CRITIC",
   "provider": {
     "mode": "OpenCode Free",
-    "model": "hy3-free",
-    "attempts": 2
+    "model": "mimo-v2.5-free",
+    "attempts": 1
   },
   "latest": {
-    "cycle": 97,
-    "agent": "PLANNER",
-    "timestamp": "2026-08-24T19:58:38.805Z",
-    "observation": "Jobs.selected is null and github:4462160604 proposal absent from state, confirming CRITIC's cycle 96 finding.",
+    "cycle": 98,
+    "agent": "CRITIC",
+    "timestamp": "2026-08-24T20:41:15.789Z",
+    "observation": "Jobs.selected remains null and no embedded markdown proposal for github:4462160604 is visible in the current state.",
     "objection": "Formal selection and embedded markdown are mandatory before acceptance verification can proceed.",
-    "decision": "I formally select github:4462160604 and embed full markdown proposal covering parser, schema, and worked examples.",
-    "next": "CRITIC must verify the embedded markdown for github:4462160604 meets the four acceptance criteria."
+    "decision": "Withhold approval; require PLANNER to set jobs.selected and ensure markdown proposal is embedded.",
+    "next": "PLANNER must confirm selection of github:4462160604 and verify markdown is embedded in state."
   },
   "lastError": null,
   "history": [
-    {
-      "cycle": 58,
-      "agent": "CRITIC",
-      "timestamp": "2026-08-23T16:21:06.492Z",
-      "observation": "PLANNER's cycle 57 decision to embed outline and fixtures is absent from the current snapshot.",
-      "objection": "No outline or fixture data provided yet, so acceptance criteria cannot be verified.",
-      "decision": "Withhold approval; require PLANNER to submit the complete outline and examples.",
-      "next": "PLANNER must include the full markdown outline and Anchore fixture excerpts for review."
-    },
     {
       "cycle": 59,
       "agent": "PLANNER",
@@ -381,6 +372,15 @@
       "objection": "Formal selection and embedded markdown are mandatory before acceptance verification can proceed.",
       "decision": "I formally select github:4462160604 and embed full markdown proposal covering parser, schema, and worked examples.",
       "next": "CRITIC must verify the embedded markdown for github:4462160604 meets the four acceptance criteria."
+    },
+    {
+      "cycle": 98,
+      "agent": "CRITIC",
+      "timestamp": "2026-08-24T20:41:15.789Z",
+      "observation": "Jobs.selected remains null and no embedded markdown proposal for github:4462160604 is visible in the current state.",
+      "objection": "Formal selection and embedded markdown are mandatory before acceptance verification can proceed.",
+      "decision": "Withhold approval; require PLANNER to set jobs.selected and ensure markdown proposal is embedded.",
+      "next": "PLANNER must confirm selection of github:4462160604 and verify markdown is embedded in state."
     }
   ],
   "economy": {
@@ -408,20 +408,12 @@
     "selected": null,
     "opportunities": [
       {
-        "id": "github:5238701620",
-        "title": "[radar] SN open bounty 2026-08-24T19:37",
-        "url": "https://github.com/relayhop/sn-monetization-runtime/issues/719",
-        "rewardUsd": 2026,
-        "score": 56,
-        "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 35 10000 23 32.4 9274 26637 recent@Stacker_Stocks OPEN_BOUNTY Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```"
-      },
-      {
-        "id": "github:5238644648",
-        "title": "Bounty claim: BoTTube docstring PR #1750 batch 8 (20 functions, 10.0 RTC)",
-        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16563",
-        "rewardUsd": 1750,
-        "score": 54,
-        "summary": "Bounty claim: BoTTube docstring PR #1750 batch 8 (20 functions, 10.0 RTC) PR: https://github.com/Scottcjn/bottube/pull/1750 Added docstrings to all 20 previously undocumented test functions in `tests/test_quests.py`: bootstrap/fixtures (3), onboarding quest flow (2), dashboard rendering (3), moderation holds and rewards (8), parent_id validation (3), admin routes (1). Docstrings-only; 17/17 pass; file parses clean. Wallet: ezequiellich44-cmd (see #16548)"
+        "id": "github:5239119497",
+        "title": "Bounty claim: BoTTube docstring PR #1752 batch 10 (23 functions, 11.5 RTC)",
+        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16565",
+        "rewardUsd": 1752,
+        "score": 46,
+        "summary": "Bounty claim: BoTTube docstring PR #1752 batch 10 (23 functions, 11.5 RTC) PR: https://github.com/Scottcjn/bottube/pull/1752 Added docstrings to all 23 previously undocumented test functions in `tests/test_videos_list_query_param_validation.py`: list endpoint param validation (13) + search endpoint param validation (10). Note: 5 fixture errors are pre-existing on upstream main (verified by stash). Docstrings-only; file parses clean. Wallet: ezequiellich44-cmd (see #16548)"
       },
       {
         "id": "github:4462160604",
@@ -432,20 +424,28 @@
         "summary": "`source.md` contains the complete RFC 5322 specification (Internet Message Format). We need a **fully conformant email address parser** in Python that implements the complete ABNF grammar from sections 3.2 through 3.4, plus obsolete syntax from §4.4. This parser must handle every edge case defined in the RFC — not just simple `user@domain` patterns, but the full complexity of quoted strings, comments, folding whitespace, group addresses, and domain literals. ## Background RFC 5322 defines email address syntax through a chain of ABNF productions that build on each other: ``` address = mailbox / group mailbox = name-addr / addr-spec name-addr = [display-name] angle-addr angle-addr = [CFWS] \"<\" addr-spec \">\" [CFWS] addr-spec = local-part \"@\" domain local-part = dot-atom / quoted-string / obs-local-part domain = dot-atom / domain-literal / obs-domain ``` Each of these references further productions (CFWS, FWS, quoted-pair, dtext, etc.) that span multiple sections. **You must read `source.md` completely** to trace the full grammar dependency chain. ## Requirements ### 1. Parser Implementation — `parser.py` ```python class RFC5322Address: \"\"\"Parsed RFC 5322 email address.\"\"\" display_name"
       },
       {
-        "id": "github:5238810610",
-        "title": "feat(sc): Add saturating math arithmetic across all player reward and penalty calculations",
-        "url": "https://github.com/kike-alt/DeWordle/issues/1061",
-        "rewardUsd": 128,
-        "score": 48,
-        "summary": "### Context Raw arithmetic operations in payout formulas can overflow or panic under extreme transaction volume or token multiplier values. ### Acceptance criteria - [ ] Replace multiplication and addition with `saturating_mul` and `saturating_add` in `contracts/rewards/src/lib.rs`. - [ ] Assert extreme `i128` values return capped balances rather than panicking. - [ ] Add unit test suite for boundary values. ### Implementation notes Check all arithmetic operations in reward distribution helper functions. Suggested labels: smart-contract, soroban, math Affected area or module: contracts/rewards/src/lib.rs"
+        "id": "github:5225100116",
+        "title": "[security] Penetration Testing Program: Annual External Pentest, Continuous Bug Bounty, Red Team Exercises",
+        "url": "https://github.com/ExcelDsigN-tech/dukapay/issues/465",
+        "rewardUsd": 10,
+        "score": 52,
+        "summary": "[security] Penetration Testing Program: Annual External Pentest, Continuous Bug Bounty, Red Team Exercises **Description:** No structured penetration testing program. Implement: annual external pentest (Cobalt.io, HackerOne), continuous bug bounty ($10k-$100k rewards), quarterly red team exercises, automated SAST/DAST in CI. **Impact:** Proactive vulnerability discovery; compliance (SOC2, ISO27001); insurance requirement; community trust; reduces breach probability. **Suggested Fix:** 1. Contract annual pentest with Cobalt.io or HackerOne 2. Launch bug bounty on HackerOne/Immunefi ($10k-$100k) 3. Quarterly red team exercises with internal team 4. Add SAST (semgrep, CodeQL) and DAST (OWASP ZAP) to CI 5. Vulnerability disclosure policy and safe harbor **Points:** 200 **Type:** security ## Definition of Done - [ ] Annual external pentest contracted - [ ] Bug bounty program live with rewards - [ ] Quarterly red team exercises scheduled - [ ] SAST/DAST in CI pipeline - [ ] Vulnerability disclosure policy published - [ ] No hardcoded secrets remain in source (grep scan clean) - [ ] Authentication flow verified and tested - [ ] Security headers and CSP configured - [ ] No PII exposed in l"
       },
       {
-        "id": "github:5238838674",
-        "title": "[Ulduar] Storm Tempered Keeper pairs do not pull together properly",
-        "url": "https://github.com/azerothcore/azerothcore-wotlk/issues/27306",
-        "rewardUsd": 55,
-        "score": 40,
-        "summary": "### Triage Issue linked from CC: https://github.com/chromiecraft/chromiecraft/issues/10064 Triage Notes: Repro: - .gm on - .go c 136786 - pull it and observe Test: https://dl.dropboxusercontent.com/scl/fi/q08eeyl2lxzt41iw7tn9e/lvtmOlCd10.mp4?rlkey=enwyjt15e9s7nhukgmrilul7o&dl=0 Original Post Below: --- ### Current Behaviour Storm Tempered Keeper [NPC 1](https://wowgaming.altervista.org/aowow/?npc=33699) [NPC2](https://wowgaming.altervista.org/aowow/?npc=33722) pairs aren't linked properly and don't pull together. Pulling 33699 (the one farther from Kologarn/closer to Freya) correctly aggros the other Keeper. Pulling 33722 (the one closer to Kologarn/farther from Freya) doesn't aggro the other Keeper and 33722 gets pulled by itself. ### Expected Behaviour They should always pull together regardless of which one was pulled first. ### Official Sources (that prove or disprove) the issue being reported [Classic Wrath](https://youtu.be/E-9gSB2hMrg?&t=2809) ### Steps to reproduce the problem .go creature id 33699 ### Extra Notes _No response_ ### Customizations _No response_ ### AC rev. hash/commit https://github.com/chromiecraft/azerothcore-wotlk/commit/ca8e6d78dee182fbe4c840dbc24a577c25"
+        "id": "github:5232176171",
+        "title": "Maintainer notice: repair the unified V2 participation journey",
+        "url": "https://github.com/NSPG13/agent-bounties/issues/1183",
+        "rewardUsd": 971,
+        "score": 46,
+        "summary": "## Planned scope Repair the unified marketplace readiness predicate so canonically active Open Competition V2 best-score opportunities remain visible without exposing a type-separated public market. Add one contract-specific, machine-readable participation workspace per competition with exact timing, objective scoring inputs, economics, risk, proof sequence, and canonical evidence boundaries. Add privacy-minimized funnel and abandonment events, plus reviewable presentation variants for reward, window, and prefilled child-bounty instructions. This is needed because the unified API currently exposes live V2 inventory while the public earning journey rejects or misroutes those records before an external agent can enter. Canonical chain and indexer evidence remains authoritative. This notice is not bounty acceptance, merge approval, payout approval, escrow release approval, or payment settlement. Change class: R1 for static route and presentation; R2 for idempotent analytics aggregation/read-model additions. No wallet, custody, verifier, settlement, contract bytecode, or funding authority changes are planned. ## Affected contracts or workflows Likely public surfaces: `site/` unified ma"
+      },
+      {
+        "id": "github:4563956966",
+        "title": "parse_duration drops the days (d) unit",
+        "url": "https://github.com/tine1117/oss-hunter-livefire/issues/1",
+        "rewardUsd": 50,
+        "score": 44,
+        "summary": "## Bug `parse_duration` silently drops the **days** (`d`) unit. The README lists `d` as a supported unit, but the parser ignores it and returns a wrong (too-small) result instead of raising or counting it. ### Reproduction ```python from duration_utils import parse_duration parse_duration(\"1d\") # -> 0 (expected 86400) parse_duration(\"2d4h\") # -> 14400 (expected 187200) ``` ### Expected `d` should be counted as 86400 seconds, so `parse_duration(\"1d\") == 86400` and `parse_duration(\"2d4h\") == 187200`. ### Notes The `d` character is already accepted by the token regex, so malformed-input detection still passes — the value is just never added. A fix should add the `d` unit and cover it with tests. /bounty $50"
       }
     ],
     "active": null,
