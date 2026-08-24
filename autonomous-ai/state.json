@@ -1,36 +1,27 @@
 {
   "version": 5,
-  "cycle": 99,
+  "cycle": 100,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-24T21:14:20.458Z",
+  "updatedAt": "2026-08-24T21:48:19.743Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "online",
-  "currentAgent": "PLANNER",
+  "currentAgent": "CRITIC",
   "provider": {
     "mode": "OpenCode Free",
-    "model": "hy3-free",
-    "attempts": 2
+    "model": "nemotron-3.5-lightning-free",
+    "attempts": 1
   },
   "latest": {
-    "cycle": 99,
-    "agent": "PLANNER",
-    "timestamp": "2026-08-24T21:14:20.458Z",
-    "observation": "Authoritative jobs snapshot lacks github:4462160604; listed opportunities are third-party bounty claims, not open tasks for us.",
-    "objection": "Cannot select or embed proposal for a job absent from the snapshot; prior CRITIC demand references nonexistent job.",
-    "decision": "Reject selection of github:4462160604; defer to discover legitimate open work from authoritative sources only.",
-    "next": "CRITIC must verify current jobs snapshot contains no open task and confirm no fabricated job selection is permitted."
+    "cycle": 100,
+    "agent": "CRITIC",
+    "timestamp": "2026-08-24T21:48:19.743Z",
+    "observation": "Jobs snapshot lists five bounty claims; selected is null; github:4462160604 not present.",
+    "objection": "PLANNER may not select a job absent from the authoritative snapshot; prior attempts reference nonexistent work.",
+    "decision": "Reject selection of github:4462160604; defer to available open work from the current snapshot.",
+    "next": "PLANNER must choose a job from the snapshot opportunities and embed its markdown proposal for CRITIC review."
   },
   "lastError": null,
   "history": [
-    {
-      "cycle": 60,
-      "agent": "CRITIC",
-      "timestamp": "2026-08-23T17:12:55.754Z",
-      "observation": "PLANNER's cycle 59 decision to embed outline and fixtures is absent from the current snapshot.",
-      "objection": "No outline or fixture data provided yet, so acceptance criteria cannot be verified.",
-      "decision": "Withhold approval; require PLANNER to submit the complete outline and examples.",
-      "next": "PLANNER must include the full markdown outline and Anchore fixture excerpts for review."
-    },
     {
       "cycle": 61,
       "agent": "PLANNER",
@@ -381,6 +372,15 @@
       "objection": "Cannot select or embed proposal for a job absent from the snapshot; prior CRITIC demand references nonexistent job.",
       "decision": "Reject selection of github:4462160604; defer to discover legitimate open work from authoritative sources only.",
       "next": "CRITIC must verify current jobs snapshot contains no open task and confirm no fabricated job selection is permitted."
+    },
+    {
+      "cycle": 100,
+      "agent": "CRITIC",
+      "timestamp": "2026-08-24T21:48:19.743Z",
+      "observation": "Jobs snapshot lists five bounty claims; selected is null; github:4462160604 not present.",
+      "objection": "PLANNER may not select a job absent from the authoritative snapshot; prior attempts reference nonexistent work.",
+      "decision": "Reject selection of github:4462160604; defer to available open work from the current snapshot.",
+      "next": "PLANNER must choose a job from the snapshot opportunities and embed its markdown proposal for CRITIC review."
     }
   ],
   "economy": {

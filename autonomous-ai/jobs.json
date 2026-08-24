@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-08-24T21:14:02.594Z",
+  "updatedAt": "2026-08-24T21:48:08.362Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -292,42 +292,6 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:4459678719",
-      "source": "github",
-      "title": "[Bounty Claim] Star + Review Open PR (Bounty #2782) - HCIE2054",
-      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/9962",
-      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
-      "rewardUsd": 2782,
-      "score": 34,
-      "labels": [
-        "needs-human",
-        "gate-processed",
-        "over-cap"
-      ],
-      "commentCount": 2,
-      "updatedAt": "2026-08-24T21:05:15Z",
-      "summary": "## Bounty Claim #2782 - Star + Review Open PR **GitHub Username:** HCIE2054 **Wallet:** RTC02811ff5e2bb4bb4b95eee44c5429cd9525496e7 ### Completed Tasks - Starred RustChain repo - Reviewed 70+ open PRs across RustChain, BoTTube, ram-coffers, and other ecosystem repos - All reviews were APPROVE (LGTM) Thank you!",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 115,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 2,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 2782,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
       "id": "github:4460036431",
       "source": "github",
       "title": "[Bounty Claim] PR Reviews - Massive Batch 150+ PRs (Bounty #73) - HCIE2054",
@@ -401,38 +365,40 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:4409718295",
+      "id": "github:5239698344",
       "source": "github",
-      "title": "Claim: PR Review Bounty #73 — 3 AKIB473 PRs (2026-05-09)",
-      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/8888",
-      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
-      "rewardUsd": 73,
-      "score": 42,
+      "title": "Coverage is measured and never enforced",
+      "url": "https://github.com/dedalo-org/dedalo/issues/48",
+      "repositoryApiUrl": "https://api.github.com/repos/dedalo-org/dedalo",
+      "rewardUsd": 100,
+      "score": 48,
       "labels": [
-        "needs-human",
-        "gate-processed"
+        "infrastructure",
+        "area: money",
+        "needs triage",
+        "needs discussion"
       ],
-      "commentCount": 1,
-      "updatedAt": "2026-08-24T21:04:59Z",
-      "summary": "## Bounty Claim — PR Reviews (Bounty #73) **Wallet:** fengqiankun6-sudo **Reviewed 3 PRs:** 1. PR #8885 — feat: wRTC Visibility Pack - Token list + logo for Solana explorers - Review: APPROVED ✅ - Comment: \"LGTM! Clean wRTC token list entry with logo for Solana explorers. Good addition to the ecosystem.\" - Author: AKIB473 | +60 additions 2. PR #8884 — feat: RTC Reward GitHub Action for automated crypto rewards on PR merges - Review: APPROVED ✅ - Comment: \"LGTM! GitHub Action for automated RTC rewards on PR merges is a great developer experience improvement.\" - Author: AKIB473 | +187 additions 3. PR #8883 — feat: RustChain Telegram bot with balance/miner/epoch/price commands - Review: APPROVED ✅ - Comment: \"LGTM! Telegram bot with balance/miner/epoch/price commands is useful for the community.\" - Author: AKIB473 | +227 additions **Total: 3 PR reviews = ~6-10 RTC claimed** **GitHub:** fengqiankun6-sudo",
+      "commentCount": 0,
+      "updatedAt": "2026-08-24T21:41:11Z",
+      "summary": "`ci.yml` runs `cargo llvm-cov`, uploads the lcov, and prints a summary to the job page. It never fails. So coverage is currently a number somebody could look at, on a project whose README argues at length about the difference between *proved*, *property-tested* and *merely tested*. A metric with no threshold does not hold anything down. ```yaml - name: cargo llvm-cov run: cargo llvm-cov --locked --workspace --all-features --lcov --output-path lcov.info - run: cargo llvm-cov report --summary-only >> \"$GITHUB_STEP_SUMMARY\" ``` ## The wrong fix A single global percentage. It would be satisfied by testing the CLI's table renderer and would say nothing about `money`, and chasing it upward produces tests written for the number rather than for the behaviour. ## The right fix **Per-module floors, highest where money is decided**, mirroring the structure `verification.toml` already imposes: | Module | Floor | Why | | --- | --- | --- | | `money`, `money::treasury`, `payout` | 100% | Already exhaustively proved. A line here that no test reaches is a line the proofs do not cover, and that is a finding. | | `attribution`, `attribution::identity`, `chain::wallet`, `chain::merkle`, `chain::vault`",
       "state": "candidate",
-      "payoutConfidence": 0.5,
+      "payoutConfidence": 0.35,
       "autonomyFit": 1,
       "requiresHumanGate": false,
       "requiresSpecialHardware": false,
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 111,
+      "fastCashScore": 107,
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
-        "comments": 1,
+        "comments": 0,
         "attemptSignals": 0,
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 73,
+      "economicValueUsd": 100,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -481,7 +447,7 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:4409718295\",\"rewardUsd\":73,\"fastCashScore\":111,\"updatedAt\":\"2026-08-24T21:04:59Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4459678719\",\"rewardUsd\":2782,\"fastCashScore\":115,\"updatedAt\":\"2026-08-24T21:05:15Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4460036431\",\"rewardUsd\":150,\"fastCashScore\":115,\"updatedAt\":\"2026-08-24T21:05:16Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4460041460\",\"rewardUsd\":200,\"fastCashScore\":116,\"updatedAt\":\"2026-08-24T21:05:16Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4460048610\",\"rewardUsd\":250,\"fastCashScore\":116,\"updatedAt\":\"2026-08-24T21:05:17Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462048029\",\"rewardUsd\":5533,\"fastCashScore\":116,\"updatedAt\":\"2026-08-24T21:05:22Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462050784\",\"rewardUsd\":5531,\"fastCashScore\":115,\"updatedAt\":\"2026-08-24T21:05:23Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462056980\",\"rewardUsd\":5533,\"fastCashScore\":116,\"updatedAt\":\"2026-08-24T21:05:24Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462057766\",\"rewardUsd\":5532,\"fastCashScore\":116,\"updatedAt\":\"2026-08-24T21:05:25Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462073859\",\"rewardUsd\":5531,\"fastCashScore\":116,\"updatedAt\":\"2026-08-24T21:05:26Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462079225\",\"rewardUsd\":5532,\"fastCashScore\":116,\"updatedAt\":\"2026-08-24T21:05:27Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}}]",
+  "marketSignature": "[{\"id\":\"github:4460036431\",\"rewardUsd\":150,\"fastCashScore\":115,\"updatedAt\":\"2026-08-24T21:05:16Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4460041460\",\"rewardUsd\":200,\"fastCashScore\":116,\"updatedAt\":\"2026-08-24T21:05:16Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4460048610\",\"rewardUsd\":250,\"fastCashScore\":116,\"updatedAt\":\"2026-08-24T21:05:17Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462048029\",\"rewardUsd\":5533,\"fastCashScore\":116,\"updatedAt\":\"2026-08-24T21:05:22Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462050784\",\"rewardUsd\":5531,\"fastCashScore\":115,\"updatedAt\":\"2026-08-24T21:05:23Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462056980\",\"rewardUsd\":5533,\"fastCashScore\":116,\"updatedAt\":\"2026-08-24T21:05:24Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462057766\",\"rewardUsd\":5532,\"fastCashScore\":116,\"updatedAt\":\"2026-08-24T21:05:25Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462073859\",\"rewardUsd\":5531,\"fastCashScore\":116,\"updatedAt\":\"2026-08-24T21:05:26Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462079225\",\"rewardUsd\":5532,\"fastCashScore\":116,\"updatedAt\":\"2026-08-24T21:05:27Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5234075844\",\"rewardUsd\":234,\"fastCashScore\":106,\"updatedAt\":\"2026-08-24T11:50:44Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5239698344\",\"rewardUsd\":100,\"fastCashScore\":107,\"updatedAt\":\"2026-08-24T21:41:11Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
@@ -494,7 +460,7 @@
     "minPayoutConfidence": 0.8,
     "competitionRequired": "low",
     "rejectedFakeRevenueCount": 0,
-    "rejectedAlreadyPaidCount": 0,
+    "rejectedAlreadyPaidCount": 1,
     "rejectedIdentityGateCount": 0
   },
   "economicallyRejected": [
@@ -505,7 +471,7 @@
       "reasons": [
         "already_rewarded_or_paid"
       ],
-      "rejectedAt": "2026-08-24T20:40:56.700Z"
+      "rejectedAt": "2026-08-24T21:48:08.316Z"
     },
     {
       "id": "github:5184937236",
