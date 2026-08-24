@@ -1,24 +1,25 @@
 {
   "version": 11,
-  "updatedAt": "2026-08-24T19:28:53.377Z",
+  "updatedAt": "2026-08-24T19:58:14.121Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
     {
-      "id": "github:5237697498",
+      "id": "github:5238701620",
       "source": "github",
-      "title": "Bounty claim: BoTTube docstring PR #1749 (18 functions, 9.0 RTC)",
-      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16561",
-      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
-      "rewardUsd": 1749,
-      "score": 46,
+      "title": "[radar] SN open bounty 2026-08-24T19:37",
+      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/719",
+      "repositoryApiUrl": "https://api.github.com/repos/relayhop/sn-monetization-runtime",
+      "rewardUsd": 2026,
+      "score": 56,
       "labels": [
-        "maintenance",
-        "awaiting-merge"
+        "radar",
+        "sn",
+        "bounty"
       ],
-      "commentCount": 2,
-      "updatedAt": "2026-08-24T19:09:00Z",
-      "summary": "### Bounty issue link https://github.com/Scottcjn/rustchain-bounties/blob/main/.github/workflows/docstring-gate.yml ### Claim type Other ### Related PR / issue / content link https://github.com/Scottcjn/bottube/pull/1749 ### GitHub username dbquanghuy2004-Quant ### RTC wallet name dbquanghuy2004-Quant ### Related platform identity (optional) _No response_ ### What did you complete? Docstring bounty claim for https://github.com/Scottcjn/bottube/pull/1749 Documented 18 functions in tests/test_upload_api.py. Docstrings only; no runtime or test-logic changes. ### Proof links and evidence - PR: https://github.com/Scottcjn/bottube/pull/1749 - Compile check passes. - Targeted pytest: 34 passed, 5 failed, 1 teardown error, identical on clean upstream main. - GitHub: dbquanghuy2004-Quant - Wallet: dbquanghuy2004-Quant ### Verification checklist - [x] I am not using a product repo issue for this claim. - [x] I provided an RTC wallet name, not an external chain address. - [x] I understand payout is reviewed manually and may be partial or rejected if the proof is weak, duplicated, or out of scope.",
+      "commentCount": 1,
+      "updatedAt": "2026-08-24T19:48:08Z",
+      "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 35 10000 23 32.4 9274 26637 recent@Stacker_Stocks OPEN_BOUNTY Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```",
       "state": "candidate",
       "payoutConfidence": 0.5,
       "autonomyFit": 1,
@@ -27,32 +28,32 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 115,
+      "fastCashScore": 116,
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
-        "comments": 2,
+        "comments": 1,
         "attemptSignals": 0,
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 1749,
+      "economicValueUsd": 2026,
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5237449410",
+      "id": "github:5238644648",
       "source": "github",
-      "title": "Bounty claim: BoTTube docstring PR #1748 batch 7 (31 functions, 15.5 RTC)",
-      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16560",
+      "title": "Bounty claim: BoTTube docstring PR #1750 batch 8 (20 functions, 10.0 RTC)",
+      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16563",
       "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
-      "rewardUsd": 1748,
-      "score": 46,
+      "rewardUsd": 1750,
+      "score": 54,
       "labels": [
         "awaiting-merge"
       ],
-      "commentCount": 2,
-      "updatedAt": "2026-08-24T19:08:59Z",
-      "summary": "Bounty claim: BoTTube docstring PR #1748 batch 7 (31 functions, 15.5 RTC) PR: https://github.com/Scottcjn/bottube/pull/1748 Added docstrings to all 31 previously undocumented test functions in `tests/test_bottube_sdk.py`: fixtures/helper (1), authentication (5), video operations (6), comments (3), votes (6), tips (2), error handling (4), URL construction (3). Docstrings-only; 30/30 tests pass; file parses clean. Wallet: ezequiellich44-cmd (see #16548)",
+      "commentCount": 1,
+      "updatedAt": "2026-08-24T19:30:44Z",
+      "summary": "Bounty claim: BoTTube docstring PR #1750 batch 8 (20 functions, 10.0 RTC) PR: https://github.com/Scottcjn/bottube/pull/1750 Added docstrings to all 20 previously undocumented test functions in `tests/test_quests.py`: bootstrap/fixtures (3), onboarding quest flow (2), dashboard rendering (3), moderation holds and rewards (8), parent_id validation (3), admin routes (1). Docstrings-only; 17/17 pass; file parses clean. Wallet: ezequiellich44-cmd (see #16548)",
       "state": "candidate",
       "payoutConfidence": 0.5,
       "autonomyFit": 1,
@@ -61,50 +62,16 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 115,
+      "fastCashScore": 116,
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
-        "comments": 2,
+        "comments": 1,
         "attemptSignals": 0,
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 1748,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5237310227",
-      "source": "github",
-      "title": "Bounty claim: BoTTube docstring PR #1747 batch 6 (30 functions, 15.0 RTC)",
-      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16559",
-      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
-      "rewardUsd": 1747,
-      "score": 46,
-      "labels": [
-        "awaiting-merge"
-      ],
-      "commentCount": 2,
-      "updatedAt": "2026-08-24T19:08:57Z",
-      "summary": "Bounty claim: BoTTube docstring PR #1747 batch 5 (30 functions, 15.0 RTC) PR: https://github.com/Scottcjn/bottube/pull/1747 Added docstrings to 30 previously undocumented test functions in `tests/test_beef_system.py`: helpers (1), canonical ordering (1), state transitions (6), REST endpoints (14), drama arcs (6), leaderboard (1), input validation (4). Note: `test_admin_kill` fails (403 vs 200) on pristine upstream main too — pre-existing, flagged in the PR description as a possible separate fix. Docstrings-only change; 36/37 pass; file parses clean. Wallet: ezequiellich44-cmd (see #16548)",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 115,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 2,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 1747,
+      "economicValueUsd": 1750,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -145,17 +112,17 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5238488751",
+      "id": "github:5238810610",
       "source": "github",
-      "title": "NPC kill rewards: apply overhit XP bonus and OVER-HIT message",
-      "url": "https://github.com/fatal10110/acis_golang/issues/1876",
-      "repositoryApiUrl": "https://api.github.com/repos/fatal10110/acis_golang",
-      "rewardUsd": 142,
+      "title": "feat(sc): Add saturating math arithmetic across all player reward and penalty calculations",
+      "url": "https://github.com/kike-alt/DeWordle/issues/1061",
+      "repositoryApiUrl": "https://api.github.com/repos/kike-alt/DeWordle",
+      "rewardUsd": 128,
       "score": 48,
       "labels": [],
       "commentCount": 0,
-      "updatedAt": "2026-08-24T19:12:40Z",
-      "summary": "## Gap The live NPC death-reward path grants the base single-attacker XP/SP share, but it has no overhit state check, bonus XP, or `OVER_HIT` client message. `internal/gameserver/data/manager/npcs_rewards.go:142-160` calls `player.KillRewardExpAndSp` at line 147, applies the pet split, then immediately calls `RewardExpAndSp` at line 159. A repository search found no Go overhit implementation. ## Java contract In the solo reward path, `Monster.java:158-163` checks `_overhitState.isValidOverhit(attacker)`, sends `SystemMessageId.OVER_HIT`, and adds `calculateOverhitExp(exp)`. The party path does the same at `Monster.java:229-234`. `OverhitState.java:39-65` records a successful overhit only when the enabled overhit hit deals positive lethal excess damage; `OverhitState.java:82-95` calculates the bonus from excess damage, capped at 25% of normal XP and rounded. `OverhitState.java:102-105` requires the recorded attacker to be the rewarded player. ## Scope Port the missing overhit state/trigger and apply this caller-side contract before the pet XP split: - when the rewarded attacker has valid overhit state, send the `OVER_HIT` system message and add the capped, rounded XP bonus; - retain",
+      "updatedAt": "2026-08-24T19:50:23Z",
+      "summary": "### Context Raw arithmetic operations in payout formulas can overflow or panic under extreme transaction volume or token multiplier values. ### Acceptance criteria - [ ] Replace multiplication and addition with `saturating_mul` and `saturating_add` in `contracts/rewards/src/lib.rs`. - [ ] Assert extreme `i128` values return capped balances rather than panicking. - [ ] Add unit test suite for boundary values. ### Implementation notes Check all arithmetic operations in reward distribution helper functions. Suggested labels: smart-contract, soroban, math Affected area or module: contracts/rewards/src/lib.rs",
       "state": "candidate",
       "payoutConfidence": 0.35,
       "autonomyFit": 1,
@@ -173,25 +140,25 @@
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 142,
+      "economicValueUsd": 128,
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5086436974",
+      "id": "github:5238838674",
       "source": "github",
-      "title": "improve maze-dash: residuals after the day-013 review cycles",
-      "url": "https://github.com/yinggarykairui/factory-hub/issues/45",
-      "repositoryApiUrl": "https://api.github.com/repos/yinggarykairui/factory-hub",
-      "rewardUsd": 309,
+      "title": "[Ulduar] Storm Tempered Keeper pairs do not pull together properly",
+      "url": "https://github.com/azerothcore/azerothcore-wotlk/issues/27306",
+      "repositoryApiUrl": "https://api.github.com/repos/azerothcore/azerothcore-wotlk",
+      "rewardUsd": 55,
       "score": 40,
       "labels": [
-        "building",
-        "size:s",
-        "type:game"
+        "Confirmed",
+        "Instance - Raid - Northrend",
+        "80"
       ],
-      "commentCount": 2,
-      "updatedAt": "2026-08-24T19:17:29Z",
-      "summary": "Follow-up to [#5](https://github.com/yinggarykairui/factory-hub/issues/5) (day 013, `shipped`). These are what three review cycles — a playtester and three independent critics, twice over — turned up and deliberately **did not** close: either the fix is a redesign rather than polish, or the evidence says the obvious fix makes the build worse. Each is reproducible against [`maze-dash@dc576e3`](https://github.com/yinggarykairui/maze-dash/commit/dc576e3). None is a must-pass failure; the ship verified 7/7 with all three critics approving. **Needs a design decision, not a patch** 1. **The strategy that pays is undiscoverable from the screen.** Measured through the real button at human cadence, on fixed seeds: hands-off 1.00 mazes/run, \"avoid the grey and head for the ring\" (what a stranger tries) 1.20, right-hand wall-following **2.60** with no zero-score runs. The headroom is real — 160% — but wall-following is not hinted on screen, is not in the README, and cannot be inferred from the board. Meanwhile the two things the screen *does* suggest are traps: greedy-toward-the-exit measured **0.72, worse than doing nothing (0.78)**, because Manhattan-greedy walks into dead ends on a perfect",
+      "commentCount": 0,
+      "updatedAt": "2026-08-24T19:53:49Z",
+      "summary": "### Triage Issue linked from CC: https://github.com/chromiecraft/chromiecraft/issues/10064 Triage Notes: Repro: - .gm on - .go c 136786 - pull it and observe Test: https://dl.dropboxusercontent.com/scl/fi/q08eeyl2lxzt41iw7tn9e/lvtmOlCd10.mp4?rlkey=enwyjt15e9s7nhukgmrilul7o&dl=0 Original Post Below: --- ### Current Behaviour Storm Tempered Keeper [NPC 1](https://wowgaming.altervista.org/aowow/?npc=33699) [NPC2](https://wowgaming.altervista.org/aowow/?npc=33722) pairs aren't linked properly and don't pull together. Pulling 33699 (the one farther from Kologarn/closer to Freya) correctly aggros the other Keeper. Pulling 33722 (the one closer to Kologarn/farther from Freya) doesn't aggro the other Keeper and 33722 gets pulled by itself. ### Expected Behaviour They should always pull together regardless of which one was pulled first. ### Official Sources (that prove or disprove) the issue being reported [Classic Wrath](https://youtu.be/E-9gSB2hMrg?&t=2809) ### Steps to reproduce the problem .go creature id 33699 ### Extra Notes _No response_ ### Customizations _No response_ ### AC rev. hash/commit https://github.com/chromiecraft/azerothcore-wotlk/commit/ca8e6d78dee182fbe4c840dbc24a577c25",
       "state": "candidate",
       "payoutConfidence": 0.35,
       "autonomyFit": 1,
@@ -200,50 +167,48 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 108,
+      "fastCashScore": 104,
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
-        "comments": 2,
+        "comments": 0,
         "attemptSignals": 0,
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 309,
+      "economicValueUsd": 55,
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5229271933",
+      "id": "github:5238815591",
       "source": "github",
-      "title": "Bounty claim: BoTTube docstring PR #1743 batch 19 (26 functions, 13.0 RTC)",
-      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16549",
-      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
-      "rewardUsd": 1743,
+      "title": "feat(sc): Add token reward pool payout throttling mechanism",
+      "url": "https://github.com/kike-alt/DeWordle/issues/1081",
+      "repositoryApiUrl": "https://api.github.com/repos/kike-alt/DeWordle",
+      "rewardUsd": 24,
       "score": 38,
-      "labels": [
-        "awaiting-merge"
-      ],
-      "commentCount": 11,
-      "updatedAt": "2026-08-24T19:08:55Z",
-      "summary": "Bounty claim: BoTTube docstring PR #1743 (26 functions, 13.0 RTC) PR: https://github.com/Scottcjn/bottube/pull/1743 Added docstrings to 26 previously undocumented test functions/fixtures in `tests/test_debate_framework.py`: helpers (3), TestRateLimiter (4), TestComment (2), TestThreadContext (5), TestDebateBot (8), TestDebateOrchestrator (4). Verified locally: pytest passes 35/35 with the docstrings added; docstrings-only change. Wallet: ezequiellich44-cmd (see #16548)",
+      "labels": [],
+      "commentCount": 0,
+      "updatedAt": "2026-08-24T19:50:56Z",
+      "summary": "### Context Cap total token rewards distributed within a 24-hour ledger window to prevent rapid pool drain during unexpected user spikes. ### Acceptance criteria - [ ] Track `daily_payout_total` in instance storage. - [ ] Cap daily payouts to `MAX_DAILY_PAYOUT_AMOUNT`. - [ ] Return `Err(RewardError::DailyCapExceeded)` when threshold is met. ### Implementation notes Reset accumulator when `current_timestamp - window_start_timestamp >= 86400`. Suggested labels: smart-contract, soroban, tokenomics Affected area or module: contracts/rewards/src/throttle.rs",
       "state": "candidate",
-      "payoutConfidence": 0.5,
+      "payoutConfidence": 0.35,
       "autonomyFit": 1,
       "requiresHumanGate": false,
       "requiresSpecialHardware": false,
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 101,
+      "fastCashScore": 99,
       "survivalEligible": false,
-      "eligibilityReason": "Competition is too high for bootstrap mode.",
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
-        "comments": 11,
+        "comments": 0,
         "attemptSignals": 0,
-        "risk": "medium"
+        "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 1743,
+      "economicValueUsd": 24,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -280,6 +245,43 @@
       "realMoneyEligible": true,
       "economicValueUsd": 50,
       "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5160206463",
+      "source": "github",
+      "title": "[Bounty $1000] ttnn.softplus takes the linear branch at exactly input*beta == threshold (strict < where reference uses <=)",
+      "url": "https://github.com/tenstorrent/tt-metal/issues/53261",
+      "repositoryApiUrl": "https://api.github.com/repos/tenstorrent/tt-metal",
+      "rewardUsd": 1000,
+      "score": 56,
+      "labels": [
+        "op_cat: eltwise",
+        "community",
+        "bounty",
+        "bounty_difficulty/medium"
+      ],
+      "commentCount": 2,
+      "updatedAt": "2026-08-24T19:42:46Z",
+      "summary": "## Summary `ttnn.softplus` takes its linear-fallback branch at exactly `input * beta == threshold`, where PyTorch still evaluates the softplus. The kernel uses a strict `<` where the reference semantics require `<=`, so at the boundary point it returns the raw linear value instead of `log1p(exp(beta*x))/beta`. It is a one-character fix; details below. ## Reference semantics PyTorch documents the linear fallback as a strict inequality: softplus \"reverts to the linear function when `input * beta > threshold`.\" So at exactly `input * beta == threshold`, the true result is `log1p(exp(beta*x)) / beta`, not `x`. ## Current implementation `calculate_softplus_body()` in `tt_metal/hw/ckernels/wormhole_b0/metal/llk_api/llk_sfpu/ckernel_sfpu_softplus.h:103` (byte-identical on Blackhole, same file and line) branches: ```cpp v_if(t < threshold) { // t = input * beta ... evaluate softplus ... } v_else { ... linear fallback: result = input ... } ``` At `t == threshold`, `t < threshold` is false, so control falls to the linear branch and returns `input`. PyTorch, using `>`, still evaluates softplus at that point. The comparison needs to be `t <= threshold`. ## Impact Deterministic, and largest whe",
+      "state": "candidate",
+      "payoutConfidence": 0.8,
+      "autonomyFit": 0,
+      "requiresHumanGate": true,
+      "requiresSpecialHardware": true,
+      "estimatedHoursBand": 30,
+      "complexity": 7,
+      "fundedBountySignal": false,
+      "fastCashScore": 15,
+      "survivalEligible": false,
+      "eligibilityReason": "Too slow for bootstrap mode: first real cash currently requires a <=4 hour task.",
+      "competition": {
+        "comments": 2,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 1000,
+      "requiresPreclaimOrIdentity": false
     }
   ],
   "selected": null,
@@ -292,7 +294,7 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:2940525692\",\"rewardUsd\":10,\"fastCashScore\":60,\"updatedAt\":\"2026-08-18T21:51:22Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-24T13:15:06Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5086436974\",\"rewardUsd\":309,\"fastCashScore\":108,\"updatedAt\":\"2026-08-24T19:17:29Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5160374150\",\"rewardUsd\":160,\"fastCashScore\":85,\"updatedAt\":\"2026-08-24T19:14:58Z\",\"competition\":{\"comments\":21,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:5229271933\",\"rewardUsd\":1743,\"fastCashScore\":101,\"updatedAt\":\"2026-08-24T19:08:55Z\",\"competition\":{\"comments\":11,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5234075844\",\"rewardUsd\":234,\"fastCashScore\":106,\"updatedAt\":\"2026-08-24T11:50:44Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5237310227\",\"rewardUsd\":1747,\"fastCashScore\":115,\"updatedAt\":\"2026-08-24T19:08:57Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5237449410\",\"rewardUsd\":1748,\"fastCashScore\":115,\"updatedAt\":\"2026-08-24T19:08:59Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5237697498\",\"rewardUsd\":1749,\"fastCashScore\":115,\"updatedAt\":\"2026-08-24T19:09:00Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5238488751\",\"rewardUsd\":142,\"fastCashScore\":109,\"updatedAt\":\"2026-08-24T19:12:40Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:2940525692\",\"rewardUsd\":10,\"fastCashScore\":60,\"updatedAt\":\"2026-08-18T21:51:22Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-24T13:15:06Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5160206463\",\"rewardUsd\":1000,\"fastCashScore\":15,\"updatedAt\":\"2026-08-24T19:42:46Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5160374150\",\"rewardUsd\":160,\"fastCashScore\":85,\"updatedAt\":\"2026-08-24T19:14:58Z\",\"competition\":{\"comments\":21,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:5234075844\",\"rewardUsd\":234,\"fastCashScore\":106,\"updatedAt\":\"2026-08-24T11:50:44Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5238644648\",\"rewardUsd\":1750,\"fastCashScore\":116,\"updatedAt\":\"2026-08-24T19:30:44Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5238701620\",\"rewardUsd\":2026,\"fastCashScore\":116,\"updatedAt\":\"2026-08-24T19:48:08Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5238810610\",\"rewardUsd\":128,\"fastCashScore\":109,\"updatedAt\":\"2026-08-24T19:50:23Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5238815591\",\"rewardUsd\":24,\"fastCashScore\":99,\"updatedAt\":\"2026-08-24T19:50:56Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5238838674\",\"rewardUsd\":55,\"fastCashScore\":104,\"updatedAt\":\"2026-08-24T19:53:49Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
@@ -316,7 +318,7 @@
       "reasons": [
         "already_rewarded_or_paid"
       ],
-      "rejectedAt": "2026-08-24T19:28:53.324Z"
+      "rejectedAt": "2026-08-24T19:58:14.013Z"
     },
     {
       "id": "github:3055155077",
@@ -325,7 +327,7 @@
       "reasons": [
         "already_rewarded_or_paid"
       ],
-      "rejectedAt": "2026-08-24T19:28:53.324Z"
+      "rejectedAt": "2026-08-24T19:58:14.014Z"
     },
     {
       "id": "github:5160374150",
@@ -334,7 +336,7 @@
       "reasons": [
         "already_rewarded_or_paid"
       ],
-      "rejectedAt": "2026-08-24T19:28:53.325Z"
+      "rejectedAt": "2026-08-24T19:58:14.014Z"
     },
     {
       "id": "github:2940525692",
@@ -343,7 +345,7 @@
       "reasons": [
         "already_rewarded_or_paid"
       ],
-      "rejectedAt": "2026-08-24T19:28:53.325Z"
+      "rejectedAt": "2026-08-24T19:58:14.014Z"
     },
     {
       "id": "github:4978773842",
