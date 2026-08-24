@@ -1,36 +1,27 @@
 {
   "version": 5,
-  "cycle": 85,
+  "cycle": 86,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-24T10:01:50.455Z",
+  "updatedAt": "2026-08-24T10:51:10.032Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "online",
-  "currentAgent": "PLANNER",
+  "currentAgent": "CRITIC",
   "provider": {
     "mode": "OpenCode Free",
-    "model": "hy3-free",
-    "attempts": 1
+    "model": "nemotron-3.5-lightning-free",
+    "attempts": 3
   },
   "latest": {
-    "cycle": 85,
-    "agent": "PLANNER",
-    "timestamp": "2026-08-24T10:01:50.455Z",
-    "observation": "CRITIC correctly notes github:4234681451 is unselected with no embedded markdown proposal or fixture excerpts.",
-    "objection": "Acceptance criteria cannot be met without job selection and embedded proposal with analysis, schema, and worked example.",
-    "decision": "Select github:4234681451 and embed complete markdown proposal with identity key tradeoffs, DB schema, and Anchore fixture example.",
-    "next": "CRITIC should examine the next snapshot's embedded proposal with identity key, schema, and fixture excerpt for approval."
+    "cycle": 86,
+    "agent": "CRITIC",
+    "timestamp": "2026-08-24T10:51:10.032Z",
+    "observation": "github:4234681451 remains unselected with no embedded markdown proposal or fixture excerpts in cycle 86",
+    "objection": "Cannot verify acceptance criteria without the required proposal; job selection and markdown embedding are prerequisites",
+    "decision": "Withhold approval until github:4234681451 is selected and the full markdown proposal with identity key tradeoffs, DB schema, and fixture example is embedded",
+    "next": "PLANNER must select github:4234681451 and embed the full markdown proposal with fixture excerpts for CRITIC review"
   },
   "lastError": null,
   "history": [
-    {
-      "cycle": 46,
-      "agent": "CRITIC",
-      "timestamp": "2026-08-23T10:10:23.791Z",
-      "observation": "github:4462160604 offers $400 for a Python RFC5322 parser with clear specs and no unethical requirements.",
-      "objection": "PLANNER's draft parser plan is absent and source.md must be retrieved to verify full grammar feasibility.",
-      "decision": "Approve github:4462160604 as legitimate paid work; defer final scope until draft plan and source.md reviewed.",
-      "next": "PLANNER must fetch source.md and submit a concrete parser module plan with test coverage for CRITIC review."
-    },
     {
       "cycle": 47,
       "agent": "PLANNER",
@@ -381,6 +372,15 @@
       "objection": "Acceptance criteria cannot be met without job selection and embedded proposal with analysis, schema, and worked example.",
       "decision": "Select github:4234681451 and embed complete markdown proposal with identity key tradeoffs, DB schema, and Anchore fixture example.",
       "next": "CRITIC should examine the next snapshot's embedded proposal with identity key, schema, and fixture excerpt for approval."
+    },
+    {
+      "cycle": 86,
+      "agent": "CRITIC",
+      "timestamp": "2026-08-24T10:51:10.032Z",
+      "observation": "github:4234681451 remains unselected with no embedded markdown proposal or fixture excerpts in cycle 86",
+      "objection": "Cannot verify acceptance criteria without the required proposal; job selection and markdown embedding are prerequisites",
+      "decision": "Withhold approval until github:4234681451 is selected and the full markdown proposal with identity key tradeoffs, DB schema, and fixture example is embedded",
+      "next": "PLANNER must select github:4234681451 and embed the full markdown proposal with fixture excerpts for CRITIC review"
     }
   ],
   "economy": {
@@ -416,6 +416,22 @@
         "summary": "### Summary Inspect the committed Anchore JSON fixtures and propose a schema for tracking vulnerabilities over time. Specifically: what combination of fields uniquely identifies \"the same vulnerability\" across scans? Candidates to evaluate include CVE ID alone, CVE + package name, CVE + package name + version, and CVE + package + image. Write up the tradeoffs, pick a recommendation, and sketch the analytics DB table(s) needed to support first_seen / last_seen / fixed_at / ignored_at / cleared_at fields. **Tech notes:** The Anchore JSON schema is documented at the Anchore project site; worth skimming before diving into fixtures. The goal of this spike is a decision, not code — resist the urge to start implementing. ### Acceptance criteria - [ ] Written proposal (markdown doc in PR) covering identity key options, tradeoffs, and a recommendation - [ ] Proposed analytics DB schema with column types and rationale - [ ] At least one worked example from the fixtures showing how the identity key behaves across days - [ ] Reviewed and approved by Brandon and/or Matt before next ticket starts ## Bounty: $250 This issue has been selected for our paid contributor program. If you wish to claim "
       },
       {
+        "id": "github:5233859711",
+        "title": "[radar] SN open bounty 2026-08-24T10:48",
+        "url": "https://github.com/relayhop/sn-monetization-runtime/issues/652",
+        "rewardUsd": 2026,
+        "score": 56,
+        "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 35 10000 21 23.6 9274 26627 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```"
+      },
+      {
+        "id": "github:5232916825",
+        "title": "[radar] SN open bounty 2026-08-24T08:58",
+        "url": "https://github.com/relayhop/sn-monetization-runtime/issues/645",
+        "rewardUsd": 2026,
+        "score": 56,
+        "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 35 10000 21 21.8 9274 26623 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```"
+      },
+      {
         "id": "github:5233436690",
         "title": "[radar] SN open bounty 2026-08-24T09:57",
         "url": "https://github.com/relayhop/sn-monetization-runtime/issues/646",
@@ -424,28 +440,12 @@
         "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 35 10000 21 22.7 9274 26624 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```"
       },
       {
-        "id": "github:4462056980",
-        "title": "[Bounty Claim] PR Review - PR #5533 (Bounty #73)",
-        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/10363",
-        "rewardUsd": 5533,
-        "score": 54,
-        "summary": "**Claimant:** kongzi123 **GitHub:** kongzi123 **RTC wallet:** `AhqbFaPBPLMMiaLDzA9WhQcyvv4hMxiteLhPk3NhG1iG` ### PR Details - PR: https://github.com/Scottcjn/Rustchain/pull/5533 - Bounty program: https://github.com/Scottcjn/rustchain-bounties/issues/73 ### Review Summary Security-focused code review of PR #5533 (fix: fail closed when sync admin key is unset): - Bug analysis: correctly identified that `hmac.compare_digest(key, None)` throws TypeError when admin_key is unset, allowing authentication bypass - Fix verification: the triple-condition short-circuit (`not key or not admin_key or not hmac.compare_digest`) properly prevents compare_digest from receiving None - Security impact: HIGH priority — prevents unauthenticated access when admin_key is not configured (fail-open to fail-closed) - Test coverage: new test uses monkeypatch + spy to verify compare_digest is never called with unset admin key ### Expected Reward Security-focused code review under bounty #73: 15-20 RTC (+10 for finding security-relevant fix)"
-      },
-      {
-        "id": "github:4462048029",
-        "title": "[Bounty Claim] PR Review - RustChain PR #5533 (Bounty #73)",
-        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/10357",
-        "rewardUsd": 5533,
-        "score": 46,
-        "summary": "### Bounty Claim - Bounty: #73 - Type: PR review - Repository: Scottcjn/Rustchain - Pull request: https://github.com/Scottcjn/Rustchain/pull/5533 - Reviewed head: `25ad0e67cd2c75fb4ac7d40c2dbfb579e641abbb` - Review: https://github.com/Scottcjn/Rustchain/pull/5533#pullrequestreview-4304693885 - RTC wallet: `RTC02811ff5e2bb4bb4b95eee44c5429cd9525496e7` ### Summary Reviewed the sync admin-key hardening change. The PR now fails closed when `admin_key` is unset, keeps configured-key checks on `hmac.compare_digest`, and includes a regression test proving the unset-key path rejects without passing an unset expected value to `compare_digest`. Validation completed: - `python -B -m py_compile node/rustchain_sync_endpoints.py node/tests/test_rustchain_sync_endpoints.py` -> passed - `python -B -m pytest -q node/tests/test_rustchain_sync_endpoints.py --noconftest` -> 2 passed - `git diff --check origin/main...HEAD` -> passed - `python tools/bcos_spdx_check.py --base-ref origin/main` -> OK"
-      },
-      {
-        "id": "github:4462079225",
-        "title": "[Bounty Claim] PR Review - RustChain PR #5532 (Bounty #73)",
-        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/10382",
-        "rewardUsd": 5532,
-        "score": 54,
-        "summary": "### Bounty Claim - Bounty: #73 - Type: PR review - Repository: Scottcjn/Rustchain - Pull request: https://github.com/Scottcjn/Rustchain/pull/5532 - Reviewed head: `586571fe3b4aaf5a69eb18d361ff83fa94c9c36f` - Review: https://github.com/Scottcjn/Rustchain/pull/5532#pullrequestreview-4304707418 - RTC wallet: `RTC02811ff5e2bb4bb4b95eee44c5429cd9525496e7` ### Summary Reviewed the dependency-only CI/test collection fix. The added root and test requirements match real imports for async SDK, Flask CORS service code, hardware visualization, and PSE result-analysis tests. Validation completed: - `git diff --check --cached` -> passed - `python -B -m py_compile ...` over the affected import targets -> passed - `python -m pip install --disable-pip-version-check -q -r requirements.txt -r tests/requirements.txt` -> passed - `python -c \"import aiohttp, flask_cors, matplotlib, seaborn, Crypto; print('deps ok')\"` -> deps ok - focused pytest collection -> 14 tests collected - focused pytest run -> 14 passed"
+        "id": "github:5232088163",
+        "title": "[radar] SN open bounty 2026-08-24T07:14",
+        "url": "https://github.com/relayhop/sn-monetization-runtime/issues/632",
+        "rewardUsd": 2026,
+        "score": 56,
+        "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 35 10000 20 20.0 9274 26623 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```"
       }
     ],
     "active": null,
