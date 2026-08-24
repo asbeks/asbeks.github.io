@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-08-24T12:29:16.087Z",
+  "updatedAt": "2026-08-24T13:33:17.526Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -110,17 +110,21 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5233119124",
+      "id": "github:5017866496",
       "source": "github",
-      "title": "[Draft ACP] Sound Money Execution Blueprint: Technical Specs for AVAX Deflationary Reform (SM-1 to SM-5)",
-      "url": "https://github.com/avalanche-foundation/ACPs/issues/300",
-      "repositoryApiUrl": "https://api.github.com/repos/avalanche-foundation/ACPs",
-      "rewardUsd": 285,
+      "title": "Wayfinder task: reward calibration — margin→win-prob fitted on ladder corpus, proven by decision-tier verdict",
+      "url": "https://github.com/fil-donadoni/tolaria/issues/1929",
+      "repositoryApiUrl": "https://api.github.com/repos/fil-donadoni/tolaria",
+      "rewardUsd": 500,
       "score": 40,
-      "labels": [],
-      "commentCount": 1,
-      "updatedAt": "2026-08-24T12:22:35Z",
-      "summary": "1. Abstract This document presents a fully executable technical blueprint to transition AVAX from its current structural net-inflation state (~4.91% annual) to a net-deflationary asset within 12-18 months. Based on on-chain data from July 2026: the P-Chain minted 2.81M AVAX in 90 days, while the three-chain fee burn was only 34.2K AVAX. Destruction offset is approximately 1% of new issuance. ACP-125 reduced C-Chain minimum base fee to 1 nAVAX, causing a 96% drop in per-transaction burn. Meanwhile, Avalanche L1s use custom gas tokens, decoupling $3B+ RWA TVL from AVAX value accrual. This proposal contains 5 interlinked modules (SM-1 to SM-5) with precise parameters, reference implementations, and an activation schedule. 2. Motivation 2.1 Burn Elasticity Collapse - Pre-ACP-125: Min base fee = 25 nAVAX - Post-ACP-125: Min base fee = 1 nAVAX, single-transaction burn is 4% of original - Result: Annualized burn is only ~34K AVAX despite 5M+ daily C-Chain transactions 2.2 L1 Value Leakage - Etna upgrade allowed custom gas tokens on L1s - Institutional L1s (BUIDL, Progmat) pay near-zero gas in their own tokens - Result: AVAX captures only ~1 AVAX one-time registration + 1-10 AVAX/month per",
+      "labels": [
+        "ready-for-agent",
+        "wayfinder:task",
+        "area:game-bot"
+      ],
+      "commentCount": 3,
+      "updatedAt": "2026-08-24T13:31:13Z",
+      "summary": "Map: #1892 ## Question Execute attack-order step 3 (research #1894, harness #1924): replace the hand-set linear-clip reward mapping (`rewardFromValue`, `MATERIAL_FULL = 500`, `TERMINAL_BAND = 0.25` in `convex/gre/search.ts`) with a **margin → win-probability mapping calibrated on self-play outcomes**, and prove it with a ladder verdict. This is the highest-leverage change the telemetry identified: 99.5% of real decisions sit inside the current 100-margin-point indifference band (#1893). This is a task ticket — the design is locked (logistic/isotonic fit per `docs/research/mcts-small-budget-strength.md`; A/B discipline per #1895). Steps: 1. **Corpus + noise floor**: launch a `decision`-tier NULL run (`bun run ladder --tier decision`) in an isolated slot (~4–5h). Its JSONL is the calibration corpus (per-game final margins + outcomes are already recorded; extend the record with mid-game margin samples if needed) AND the harness noise-floor measurement (aggregate CI must straddle 50%). 2. **Fit**: margin → P(win) on that corpus (logistic in margin is the default; check calibration curve). Deterministic, in-repo fitting script; fitted constants land as code, not a data file dependency. ",
       "state": "candidate",
       "payoutConfidence": 0.35,
       "autonomyFit": 1,
@@ -129,7 +133,75 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 109,
+      "fastCashScore": 106,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 3,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 500,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5229271933",
+      "source": "github",
+      "title": "Bounty claim: BoTTube docstring PR #1743 batch 19 (26 functions, 13.0 RTC)",
+      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16549",
+      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
+      "rewardUsd": 1743,
+      "score": 38,
+      "labels": [
+        "awaiting-merge"
+      ],
+      "commentCount": 9,
+      "updatedAt": "2026-08-24T13:29:19Z",
+      "summary": "Bounty claim: BoTTube docstring PR #1743 (26 functions, 13.0 RTC) PR: https://github.com/Scottcjn/bottube/pull/1743 Added docstrings to 26 previously undocumented test functions/fixtures in `tests/test_debate_framework.py`: helpers (3), TestRateLimiter (4), TestComment (2), TestThreadContext (5), TestDebateBot (8), TestDebateOrchestrator (4). Verified locally: pytest passes 35/35 with the docstrings added; docstrings-only change. Wallet: ezequiellich44-cmd (see #16548)",
+      "state": "candidate",
+      "payoutConfidence": 0.5,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 104,
+      "survivalEligible": false,
+      "eligibilityReason": "Competition is too high for bootstrap mode.",
+      "competition": {
+        "comments": 9,
+        "attemptSignals": 0,
+        "risk": "medium"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 1743,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5225100116",
+      "source": "github",
+      "title": "[security] Penetration Testing Program: Annual External Pentest, Continuous Bug Bounty, Red Team Exercises",
+      "url": "https://github.com/ExcelDsigN-tech/dukapay/issues/465",
+      "repositoryApiUrl": "https://api.github.com/repos/ExcelDsigN-tech/dukapay",
+      "rewardUsd": 10,
+      "score": 52,
+      "labels": [
+        "Stellar Wave"
+      ],
+      "commentCount": 1,
+      "updatedAt": "2026-08-24T13:25:13Z",
+      "summary": "∩╗┐Γê⌐ΓòùΓöÉ╬ô├¬ΓîÉ╬ô├▓├╣╬ô├╢├ëΓò¼├┤Γö£ΓûôΓö¼Γò¥╬ô├╢┬ú╬ô├╢├▒Γò¼├┤Γö£ΓòóΓö¼├║╬ô├╢┬╝Γö¼Γò¥╬ô├▓┬╝Γö£Γöñ╬ô├╢┬úΓö¼┬╜╬ô├╢┬úΓö£┬╜Γò¼├┤Γö£ΓûôΓö¼Γò¥╬ô├╢┬ú╬ô├╢├▒Γò¼├┤Γö£ΓòóΓö¼├║Γò¼├┤Γö£ΓòùΓö£ΓöñΓò¼├┤Γö£ΓòóΓö¼├║Γò¼├┤Γö£ΓûôΓö£ΓòæΓò¼├┤Γö£ΓûôΓö¼Γò¥╬ô├╢┬ú╬ô├╢├▒Γò¼├┤Γö£ΓòóΓö¼├║Γò¼├┤Γö£ΓûôΓö£ΓöéΓò¼├┤Γö£ΓòóΓö¼├║╬ô├╢┬úΓö¼Γò£╬ô├▓┬╝Γö£Γöñ╬ô├╢┬ú╬ô├╗├┤╬ô├╢┬╝╬ô├▓┬ÑΓò¼├┤Γö£ΓòóΓö¼├║Γò¼├┤Γö£ΓòóΓö£ΓûÆ╬ô├▓┬╝Γö£Γöñ╬ô├╢┬ú╬ô├▓├│╬ô├╢┬╝Γö£ΓòæΓò¼├┤Γö£ΓòóΓö¼Γò¥╬ô├╢┬╝╬ô├▓┬ÑΓò¼├┤Γö£ΓûôΓö¼Γò¥╬ô├╢┬ú╬ô├╢├▒Γò¼├┤Γö£ΓòóΓö¼├║╬ô├╢┬╝Γö¼Γò£Γò¼├┤Γö£ΓòóΓö¼├║╬ô├╢┬úΓö¼Γò£╬ô├▓┬╝Γö£Γöñ╬ô├╢┬ú╬ô├╗├┤╬ô├╢┬╝╬ô├▓┬ÑΓò¼├┤Γö£ΓòóΓö¼├║Γò¼├┤Γö£ΓòóΓö£ΓûÆ╬ô├▓┬╝Γö£Γöñ╬ô├╢┬ú╬ô├▓├│╬ô├╢┬╝Γö£Γòæ╬ô├▓┬╝Γö£Γöñ╬ô├╢┬ú╬ô├▓├╣╬ô├╢┬ú╬ô├╢├▒╬ô├▓┬╝Γö£Γöñ╬ô├╢┬ú╬ô├▓├│╬ô├╢┬╝Γö£Γòæ╬ô├▓┬╝Γö£Γöñ╬ô├╢┬ú╬ô├╗├┤╬ô├╢┬ú╬ô├▓├ª╬ô├▓┬╝Γö£Γöñ╬ô├╢┬ú╬ô├╗├┤╬ô├╢┬╝╬ô├▓┬ÑΓò¼├┤Γö£ΓòóΓö¼├║Γò¼├┤Γö£ΓòóΓö£ΓûÆ╬ô├▓┬╝Γö£Γöñ╬ô├╢┬ú╬ô├▓├│╬ô├╢┬╝Γö£Γòæ╬ô├▓┬╝Γö£Γöñ╬ô├╢┬ú╬ô├╗├┤╬ô├╢┬ú╬ô├╢├⌐╬ô├▓┬╝Γö£Γöñ╬ô├╢┬ú╬ô├▓├│╬ô├╢┬╝Γö£ΓòæΓò¼├┤Γö£ΓòóΓö¼├║╬ô├╢┬╝╬ô├▓┬úΓò¼├┤Γö£ΓûôΓö¼Γò¥╬ô├╢┬ú╬ô├╢├▒Γò¼├┤Γö£ΓòóΓö¼├║Γò¼├┤Γö£ΓòùΓö£ΓöñΓò¼├┤Γö£ΓòóΓö¼Γò¥Γò¼├┤Γö£ΓûôΓö¼├æ╬ô├▓┬╝Γö£Γöñ╬ô├╢┬ú╬ô├▓├│╬ô├╢┬╝Γö£Γòæ╬ô├▓┬╝Γö£Γöñ╬ô├╢┬ú╬ô├▓├│╬ô├╢┬ú╬ô├╗├åΓò¼├┤Γö£ΓûôΓö¼Γò¥╬ô├╢┬ú╬ô├╢├▒Γò¼├┤Γö£ΓòóΓö¼├║Γò¼├┤Γö£ΓûôΓö£ΓöéΓò¼├┤Γö£ΓòóΓö¼Γò¥╬ô├╢┬ú╬ô├▓",
+      "state": "candidate",
+      "payoutConfidence": 0.5,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 100,
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
@@ -138,7 +210,39 @@
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 285,
+      "economicValueUsd": 10,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5235310156",
+      "source": "github",
+      "title": "実装+実験: 副官→kitty→埋札を一体の期待値問題としてjoint teacher化する",
+      "url": "https://github.com/eletim/napoleon-web/issues/444",
+      "repositoryApiUrl": "https://api.github.com/repos/eletim/napoleon-web",
+      "rewardUsd": 12.3,
+      "score": 30,
+      "labels": [],
+      "commentCount": 0,
+      "updatedAt": "2026-08-24T13:31:51Z",
+      "summary": "Related: #202, #433, #438, #440, #442 Base branch: `feature/issue-202-non-playing-ai` ## 背景 #442 で pseudo-fixed exchange teacher を `1000x1 / 200x5 / 100x10` の同一1,000 exchange statesで比較したが、最良100x10でも #438 compact396 baseline を明確には上回らなかった。 - #438 compact396: Pearson 0.409 / pairwise 0.592 / margin regret 4.60 / relative reward regret 12.30 - #442 100x10: Pearson 0.250 / pairwise 0.565 / margin regret 4.59 / relative reward regret 18.98 したがって、単に埋札だけを独立に学習し、hidden deal repeatsを増やすだけでは不足している可能性が高い。 ゲーム構造上は必ず: ```text 競り確定 → 副官指定 → kitty 3枚pickup → 13枚から3枚埋札 → playing ``` の順で進む。 副官指定の価値は、その後に実際に得たkittyを見て適切な埋札を選ぶことまで含めて決まる。よって副官と埋札を完全に独立な教師問題として扱うのではなく、**実行順序は維持したまま、teacher/value設計上は一体の2段階意思決定として扱う**。 ## 目的 1. 副官選択と埋札を2段階のjoint value problemとして正式に定義する 2. 実ゲーム順 `adjutant -> kitty -> exchange` を崩さない 3. 副官候補の価値を「その後の最適/高品質exchangeまで含めた価値」として生成する 4. exchange valueを「選択済み副官 + pickup後13枚 + discard候補」の価値として生成する 5. runtimeで巨大な `53 x 286` joint actionを一発選択する設計にはしない 6. small-scale diagnosticで、このjoint teacherが既存RuleBased副官+埋札より意味のあるsignalを持つか確認する 7. 次の本学習Issueへ進める具体的dataset/model設計を確定する ## 最重要: jointの意味 jointとは「副官と埋札を同時に1 actionとして選ぶ」という意味ではない。 runtime順序は必ず: ```text 1. choosing-adjutantで副官カードを1枚選ぶ 2",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 96,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 12.3,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -222,7 +326,7 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:2940525692\",\"rewardUsd\":10,\"fastCashScore\":60,\"updatedAt\":\"2026-08-18T21:51:22Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-18T21:51:29Z\",\"competition\":{\"comments\":29,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":124,\"updatedAt\":\"2026-08-23T17:46:02Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5153696971\",\"rewardUsd\":100,\"fastCashScore\":104,\"updatedAt\":\"2026-08-24T12:26:04Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5211657071\",\"rewardUsd\":2026,\"fastCashScore\":53,\"updatedAt\":\"2026-08-24T08:20:27Z\",\"competition\":{\"comments\":6,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5232456127\",\"rewardUsd\":179,\"fastCashScore\":111,\"updatedAt\":\"2026-08-24T08:03:47Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5233119124\",\"rewardUsd\":285,\"fastCashScore\":109,\"updatedAt\":\"2026-08-24T12:22:35Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5234075844\",\"rewardUsd\":234,\"fastCashScore\":106,\"updatedAt\":\"2026-08-24T11:50:44Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:2940525692\",\"rewardUsd\":10,\"fastCashScore\":60,\"updatedAt\":\"2026-08-18T21:51:22Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-24T13:15:06Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":124,\"updatedAt\":\"2026-08-23T17:46:02Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5017866496\",\"rewardUsd\":500,\"fastCashScore\":106,\"updatedAt\":\"2026-08-24T13:31:13Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5211657071\",\"rewardUsd\":2026,\"fastCashScore\":53,\"updatedAt\":\"2026-08-24T08:20:27Z\",\"competition\":{\"comments\":6,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5225100116\",\"rewardUsd\":10,\"fastCashScore\":100,\"updatedAt\":\"2026-08-24T13:25:13Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5229271933\",\"rewardUsd\":1743,\"fastCashScore\":104,\"updatedAt\":\"2026-08-24T13:29:19Z\",\"competition\":{\"comments\":9,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5232456127\",\"rewardUsd\":179,\"fastCashScore\":111,\"updatedAt\":\"2026-08-24T08:03:47Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5234075844\",\"rewardUsd\":234,\"fastCashScore\":106,\"updatedAt\":\"2026-08-24T11:50:44Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5234954701\",\"rewardUsd\":750,\"fastCashScore\":108,\"updatedAt\":\"2026-08-24T13:27:26Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5235310156\",\"rewardUsd\":12.3,\"fastCashScore\":96,\"updatedAt\":\"2026-08-24T13:31:51Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
@@ -235,10 +339,19 @@
     "minPayoutConfidence": 0.8,
     "competitionRequired": "low",
     "rejectedFakeRevenueCount": 0,
-    "rejectedAlreadyPaidCount": 3,
-    "rejectedIdentityGateCount": 1
+    "rejectedAlreadyPaidCount": 4,
+    "rejectedIdentityGateCount": 0
   },
   "economicallyRejected": [
+    {
+      "id": "github:5234954701",
+      "title": "calculate_sla's duplicate detection ignores the severity symbol: identical configs across severities make different-severity resubmissions idempotent replays",
+      "rewardUsd": 750,
+      "reasons": [
+        "already_rewarded_or_paid"
+      ],
+      "rejectedAt": "2026-08-24T13:33:17.472Z"
+    },
     {
       "id": "github:5234075844",
       "title": "Wallet-less reward payouts are stranded: processRewardJob marks them FAILED and wallet linking never retries",
@@ -246,16 +359,7 @@
       "reasons": [
         "already_rewarded_or_paid"
       ],
-      "rejectedAt": "2026-08-24T12:29:16.050Z"
-    },
-    {
-      "id": "github:5153696971",
-      "title": "Add cats instances for DBIOAction",
-      "rewardUsd": 100,
-      "reasons": [
-        "preclaim_or_identity_gate_not_configured"
-      ],
-      "rejectedAt": "2026-08-24T12:29:16.050Z"
+      "rejectedAt": "2026-08-24T13:33:17.473Z"
     },
     {
       "id": "github:3055155077",
@@ -264,7 +368,7 @@
       "reasons": [
         "already_rewarded_or_paid"
       ],
-      "rejectedAt": "2026-08-24T12:29:16.050Z"
+      "rejectedAt": "2026-08-24T13:33:17.473Z"
     },
     {
       "id": "github:2940525692",
@@ -272,6 +376,15 @@
       "rewardUsd": 10,
       "reasons": [
         "already_rewarded_or_paid"
+      ],
+      "rejectedAt": "2026-08-24T13:33:17.473Z"
+    },
+    {
+      "id": "github:5153696971",
+      "title": "Add cats instances for DBIOAction",
+      "rewardUsd": 100,
+      "reasons": [
+        "preclaim_or_identity_gate_not_configured"
       ],
       "rejectedAt": "2026-08-24T12:29:16.050Z"
     },
