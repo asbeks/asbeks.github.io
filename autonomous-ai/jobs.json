@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-08-24T08:08:01.702Z",
+  "updatedAt": "2026-08-24T09:04:52.147Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -41,6 +41,42 @@
       "requiresPreclaimOrIdentity": false
     },
     {
+      "id": "github:5232916825",
+      "source": "github",
+      "title": "[radar] SN open bounty 2026-08-24T08:58",
+      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/645",
+      "repositoryApiUrl": "https://api.github.com/repos/relayhop/sn-monetization-runtime",
+      "rewardUsd": 2026,
+      "score": 56,
+      "labels": [
+        "radar",
+        "sn",
+        "bounty"
+      ],
+      "commentCount": 0,
+      "updatedAt": "2026-08-24T09:00:25Z",
+      "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 35 10000 21 21.8 9274 26623 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```",
+      "state": "candidate",
+      "payoutConfidence": 0.5,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 118,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 2026,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
       "id": "github:5232088163",
       "source": "github",
       "title": "[radar] SN open bounty 2026-08-24T07:14",
@@ -53,44 +89,9 @@
         "sn",
         "bounty"
       ],
-      "commentCount": 1,
-      "updatedAt": "2026-08-24T07:54:47Z",
-      "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 35 10000 20 20.0 9274 26623 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 116,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 1,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 2026,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:4970633563",
-      "source": "github",
-      "title": "[Bounty] [BOUNTY] 1000 USD - Fix all flaky unit tests",
-      "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/691",
-      "repositoryApiUrl": "https://api.github.com/repos/zhangjiayang6835-cyber/bounty-plaza",
-      "rewardUsd": 1000,
-      "score": 64,
-      "labels": [
-        "bounty",
-        "real"
-      ],
       "commentCount": 2,
-      "updatedAt": "2026-08-24T08:03:03Z",
-      "summary": "### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/Iamgoofball/-tg-station/issues/281 ### 漏洞描述 / Description [BOUNTY] 1000 USD - Fix all flaky unit tests Our unit tests often fail, such as create and destroy. Please fix this by running our unit tests on a dreammaker environment about 50~ times without any fails, fixing any fails you do encounter. Do this until you can get a streak of 50 unit tests and itll be good! ### 积分币奖励 / Coin Reward 1250 coins ### 真实赏金（USD）/ Real Reward $1,000 ### 难度 / Difficulty Medium ### 认领方式 评论 `/claim` 锁定任务 24h ### 兑换说明 > 查看 [REWARD_POLICY.md](REWARD_POLICY.md) 了解兑换规则",
+      "updatedAt": "2026-08-24T08:42:46Z",
+      "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 35 10000 20 20.0 9274 26623 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```",
       "state": "candidate",
       "payoutConfidence": 0.5,
       "autonomyFit": 1,
@@ -108,7 +109,7 @@
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 1000,
+      "economicValueUsd": 2026,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -124,45 +125,9 @@
         "sn",
         "bounty"
       ],
-      "commentCount": 3,
-      "updatedAt": "2026-08-24T07:54:48Z",
-      "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 35 10000 20 18.6 9274 26623 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 113,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 3,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 2026,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5231255606",
-      "source": "github",
-      "title": "[radar] SN open bounty 2026-08-24T04:56",
-      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/614",
-      "repositoryApiUrl": "https://api.github.com/repos/relayhop/sn-monetization-runtime",
-      "rewardUsd": 2026,
-      "score": 56,
-      "labels": [
-        "radar",
-        "sn",
-        "bounty"
-      ],
       "commentCount": 4,
-      "updatedAt": "2026-08-24T07:55:39Z",
-      "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 35 10000 20 17.7 9274 26623 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```",
+      "updatedAt": "2026-08-24T08:42:50Z",
+      "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 35 10000 20 18.6 9274 26623 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```",
       "state": "candidate",
       "payoutConfidence": 0.5,
       "autonomyFit": 1,
@@ -184,35 +149,71 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5231146823",
+      "id": "github:4864398329",
       "source": "github",
-      "title": "Repoint KAH<>PAH XCM refs",
-      "url": "https://github.com/Koniverse/SubWallet-Extension/issues/5062",
-      "repositoryApiUrl": "https://api.github.com/repos/Koniverse/SubWallet-Extension",
-      "rewardUsd": 72614,
-      "score": 40,
-      "labels": [],
-      "commentCount": 0,
-      "updatedAt": "2026-08-24T04:36:34Z",
-      "summary": "**Problem** `statemine-LOCAL-USDt` is the Kusama-AH-native USDt (`assets` pallet #1984), but `AssetRef.json` declares an XCM route from it to `statemint-LOCAL-USDt`. That asset cannot cross the Polkadot<>Kusama bridge — sending it traps the funds on Polkadot Asset Hub. A user lost 72,614 USDT this way. Kusama Asset Hub has two USDt. We only register the wrong one. Note `statemine-LOCAL-USDC` already models this correctly (`isBridged: true`, `parents:2` location) — USDt is the odd one out. **Changes** 1. `ChainAsset.json` — add `statemine-LOCAL-USDt-Polkadot`: - `symbol: USDt-Polkadot`, `decimals: 6`, `minAmount: 10000`, `priceId: tether` - `metadata.isBridged: true` - `multilocation` / `paraSpellIdentifyV4.location`: `parents:2, X4[GlobalConsensus Polkadot, Parachain 1000, PalletInstance 50, GeneralIndex 1984]` - values verified against `/v2/supported-assets?origin=AssetHubKusama&destination=AssetHubPolkadot` 2. `ChainAsset.json` — add the missing `multilocation` (`parents:0, X2[PalletInstance 50, GeneralIndex 1984]`) to `statemine-LOCAL-USDt`; this currently trips `validate-asset-refs`: `Token must have multilocation: statemine-LOCAL-USDt` 3. `AssetRef.json` — repoint both directi",
+      "title": "[Bounty] [Bounty] [Bounty] [Bounty] [Bounty] [Bounty] [Bounty $1,500] Optimise `deg2rad`",
+      "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/254",
+      "repositoryApiUrl": "https://api.github.com/repos/zhangjiayang6835-cyber/bounty-plaza",
+      "rewardUsd": 1500,
+      "score": 42,
+      "labels": [
+        "real"
+      ],
+      "commentCount": 4,
+      "updatedAt": "2026-08-24T08:52:25Z",
+      "summary": "### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/248 ### 漏洞描述 / Description [Bounty] [Bounty] [Bounty] [Bounty] [Bounty] [Bounty $1,500] Optimise `deg2rad` / `rad2de ### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/185 ### 漏洞描述 / Description [Bounty] [Bounty] [Bounty] [Bounty] [Bounty $1,500] Optimise `deg2rad` / `rad2deg` (fp32/ ### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/148 ### 漏洞描述 / Description [Bounty] [Bounty] [Bounty] [Bounty $1,500] Optimise `deg2rad` / `rad2deg` (fp32/bf16) ### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/56 ### 漏洞描述 / Description [Bounty] [Bounty] [Bounty $1,500] Optimise `deg2rad` / `rad2deg` (fp32/bf16) ### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/45 ### 漏洞描述 / Description [Bounty] [Bounty $1,500] Optimise `deg2rad` / `rad2deg` (fp32/bf16) ### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/tenstorrent/tt-metal/issues/49631",
       "state": "candidate",
-      "payoutConfidence": 0.35,
+      "payoutConfidence": 0.5,
       "autonomyFit": 1,
       "requiresHumanGate": false,
       "requiresSpecialHardware": false,
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 111,
+      "fastCashScore": 112,
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
-        "comments": 0,
+        "comments": 4,
         "attemptSignals": 0,
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 72614,
+      "economicValueUsd": 1500,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:4864398388",
+      "source": "github",
+      "title": "[Bounty] [Bounty] [Bounty] [Bounty] [Bounty] [Bounty] [BUG] Bleichenbacher Oracle in RSA-",
+      "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/257",
+      "repositoryApiUrl": "https://api.github.com/repos/zhangjiayang6835-cyber/bounty-plaza",
+      "rewardUsd": 246,
+      "score": 54,
+      "labels": [
+        "real"
+      ],
+      "commentCount": 4,
+      "updatedAt": "2026-08-24T08:52:42Z",
+      "summary": "### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/246 ### 漏洞描述 / Description [Bounty] [Bounty] [Bounty] [Bounty] [Bounty] [BUG] Bleichenbacher Oracle in RSA-OAEP Decr ### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/186 ### 漏洞描述 / Description [Bounty] [Bounty] [Bounty] [Bounty] [BUG] Bleichenbacher Oracle in RSA-OAEP Decryption $2 ### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/147 ### 漏洞描述 / Description [Bounty] [Bounty] [Bounty] [BUG] Bleichenbacher Oracle in RSA-OAEP Decryption $200 ### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/57 ### 漏洞描述 / Description [Bounty] [Bounty] [BUG] Bleichenbacher Oracle in RSA-OAEP Decryption $200 ### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/43 ### 漏洞描述 / Description [Bounty] [BUG] Bleichenbacher Oracle in RSA-OAEP Decryption $200 ### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/zhangjiayang6835-cyber/ai-research/issues/",
+      "state": "candidate",
+      "payoutConfidence": 0.5,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 112,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 4,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 246,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -285,10 +286,10 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5230697699",
+      "id": "github:5231255606",
       "source": "github",
-      "title": "[radar] SN open bounty 2026-08-24T03:12",
-      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/608",
+      "title": "[radar] SN open bounty 2026-08-24T04:56",
+      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/614",
       "repositoryApiUrl": "https://api.github.com/repos/relayhop/sn-monetization-runtime",
       "rewardUsd": 2026,
       "score": 56,
@@ -298,8 +299,8 @@
         "bounty"
       ],
       "commentCount": 5,
-      "updatedAt": "2026-08-24T07:55:41Z",
-      "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 35 10000 17 16.0 9274 26623 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```",
+      "updatedAt": "2026-08-24T08:43:39Z",
+      "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 35 10000 20 17.7 9274 26623 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```",
       "state": "candidate",
       "payoutConfidence": 0.5,
       "autonomyFit": 1,
@@ -321,21 +322,23 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5231611936",
+      "id": "github:5230697699",
       "source": "github",
-      "title": "[usecase-test] CASE-23. (JUNIT) (Order) Pending 또는 알 수 없는 Payment 응답은 재고를 복원하지 않고 PAYMENT_PENDING이 된다",
-      "url": "https://github.com/prgrms-be-adv-devcourse/beadv7_7_earlybird_BE/issues/562",
-      "repositoryApiUrl": "https://api.github.com/repos/prgrms-be-adv-devcourse/beadv7_7_earlybird_BE",
-      "rewardUsd": 200,
+      "title": "[radar] SN open bounty 2026-08-24T03:12",
+      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/608",
+      "repositoryApiUrl": "https://api.github.com/repos/relayhop/sn-monetization-runtime",
+      "rewardUsd": 2026,
       "score": 48,
       "labels": [
-        "🧪 테스트 케이스"
+        "radar",
+        "sn",
+        "bounty"
       ],
-      "commentCount": 1,
-      "updatedAt": "2026-08-24T07:57:30Z",
-      "summary": "### 대상 서비스 order-service ### case 설명 Payment의 `READY`, `CONFIRMING`, 알 수 없는 status, adapter의 conflict-to-unknown 동작에 의해 매핑되는 결과를 검증한다. ### 테스트 초기설정 방법 - 재고 확보는 성공하도록 한다. - 별도 실행으로 Payment 준비가 `READY`, `CONFIRMING`, 인식하지 못하는 status, 잘못되었거나 비어 있는 성공 envelope, HTTP conflict를 반환하도록 설정한다. ### 테스트 순서 1. 각 설정별로 정상 Order 요청을 전송한다. 2. 즉시 Order와 Reward 재고를 확인한다. ### 기대 결과 - 각 요청은 HTTP `200`, `orders.status = PAYMENT_PENDING`을 반환한다. - 반환된 `pgOrderId`가 공백이 아니면 `orders.pg_order_id`에 저장된다. - 확보된 재고는 계속 차감 상태이고 `stock_reserved = true`이며 조기에 복원되지 않는다. - 이후 성공 callback이 오기 전에는 PAID Outbox 또는 Cart cleanup이 생성되지 않는다. ### 테스트 결과 - [ ] 로컬에서 통과 - [ ] 운영(prod)에서 통과",
+      "commentCount": 6,
+      "updatedAt": "2026-08-24T08:43:43Z",
+      "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 35 10000 17 16.0 9274 26623 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```",
       "state": "candidate",
-      "payoutConfidence": 0.35,
+      "payoutConfidence": 0.5,
       "autonomyFit": 1,
       "requiresHumanGate": false,
       "requiresSpecialHardware": false,
@@ -344,14 +347,14 @@
       "fundedBountySignal": false,
       "fastCashScore": 109,
       "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "eligibilityReason": "Competition is too high for bootstrap mode.",
       "competition": {
-        "comments": 1,
+        "comments": 6,
         "attemptSignals": 0,
-        "risk": "low"
+        "risk": "medium"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 200,
+      "economicValueUsd": 2026,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -367,8 +370,8 @@
         "sn",
         "bounty"
       ],
-      "commentCount": 7,
-      "updatedAt": "2026-08-24T07:56:03Z",
+      "commentCount": 9,
+      "updatedAt": "2026-08-24T08:44:08Z",
       "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 20 10000 17 14.7 9274 26621 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```",
       "state": "candidate",
       "payoutConfidence": 0.5,
@@ -378,50 +381,16 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 107,
+      "fastCashScore": 104,
       "survivalEligible": false,
       "eligibilityReason": "Competition is too high for bootstrap mode.",
       "competition": {
-        "comments": 7,
+        "comments": 9,
         "attemptSignals": 0,
         "risk": "medium"
       },
       "realMoneyEligible": true,
       "economicValueUsd": 2026,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5229271933",
-      "source": "github",
-      "title": "Bounty claim: BoTTube docstring PR #1743 batch 19 (26 functions, 13.0 RTC)",
-      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16549",
-      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
-      "rewardUsd": 1743,
-      "score": 38,
-      "labels": [
-        "awaiting-merge"
-      ],
-      "commentCount": 7,
-      "updatedAt": "2026-08-24T07:35:19Z",
-      "summary": "Bounty claim: BoTTube docstring PR #1743 (26 functions, 13.0 RTC) PR: https://github.com/Scottcjn/bottube/pull/1743 Added docstrings to 26 previously undocumented test functions/fixtures in `tests/test_debate_framework.py`: helpers (3), TestRateLimiter (4), TestComment (2), TestThreadContext (5), TestDebateBot (8), TestDebateOrchestrator (4). Verified locally: pytest passes 35/35 with the docstrings added; docstrings-only change. Wallet: ezequiellich44-cmd (see #16548)",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 107,
-      "survivalEligible": false,
-      "eligibilityReason": "Competition is too high for bootstrap mode.",
-      "competition": {
-        "comments": 7,
-        "attemptSignals": 0,
-        "risk": "medium"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 1743,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -470,23 +439,32 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":124,\"updatedAt\":\"2026-08-23T17:46:02Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:4970633563\",\"rewardUsd\":1000,\"fastCashScore\":115,\"updatedAt\":\"2026-08-24T08:03:03Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5229271933\",\"rewardUsd\":1743,\"fastCashScore\":107,\"updatedAt\":\"2026-08-24T07:35:19Z\",\"competition\":{\"comments\":7,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5230292394\",\"rewardUsd\":2026,\"fastCashScore\":107,\"updatedAt\":\"2026-08-24T07:56:03Z\",\"competition\":{\"comments\":7,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5230697699\",\"rewardUsd\":2026,\"fastCashScore\":110,\"updatedAt\":\"2026-08-24T07:55:41Z\",\"competition\":{\"comments\":5,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5231146823\",\"rewardUsd\":72614,\"fastCashScore\":111,\"updatedAt\":\"2026-08-24T04:36:34Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5231255606\",\"rewardUsd\":2026,\"fastCashScore\":112,\"updatedAt\":\"2026-08-24T07:55:39Z\",\"competition\":{\"comments\":4,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5231521379\",\"rewardUsd\":2026,\"fastCashScore\":113,\"updatedAt\":\"2026-08-24T07:54:48Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5231611936\",\"rewardUsd\":200,\"fastCashScore\":109,\"updatedAt\":\"2026-08-24T07:57:30Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5232088163\",\"rewardUsd\":2026,\"fastCashScore\":116,\"updatedAt\":\"2026-08-24T07:54:47Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5232456127\",\"rewardUsd\":179,\"fastCashScore\":111,\"updatedAt\":\"2026-08-24T08:03:47Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-18T21:51:29Z\",\"competition\":{\"comments\":29,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":124,\"updatedAt\":\"2026-08-23T17:46:02Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:4864398329\",\"rewardUsd\":1500,\"fastCashScore\":112,\"updatedAt\":\"2026-08-24T08:52:25Z\",\"competition\":{\"comments\":4,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4864398388\",\"rewardUsd\":246,\"fastCashScore\":112,\"updatedAt\":\"2026-08-24T08:52:42Z\",\"competition\":{\"comments\":4,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5230292394\",\"rewardUsd\":2026,\"fastCashScore\":104,\"updatedAt\":\"2026-08-24T08:44:08Z\",\"competition\":{\"comments\":9,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5230697699\",\"rewardUsd\":2026,\"fastCashScore\":109,\"updatedAt\":\"2026-08-24T08:43:43Z\",\"competition\":{\"comments\":6,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5231255606\",\"rewardUsd\":2026,\"fastCashScore\":110,\"updatedAt\":\"2026-08-24T08:43:39Z\",\"competition\":{\"comments\":5,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5231521379\",\"rewardUsd\":2026,\"fastCashScore\":112,\"updatedAt\":\"2026-08-24T08:42:50Z\",\"competition\":{\"comments\":4,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5232088163\",\"rewardUsd\":2026,\"fastCashScore\":115,\"updatedAt\":\"2026-08-24T08:42:46Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5232456127\",\"rewardUsd\":179,\"fastCashScore\":111,\"updatedAt\":\"2026-08-24T08:03:47Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5232916825\",\"rewardUsd\":2026,\"fastCashScore\":118,\"updatedAt\":\"2026-08-24T09:00:25Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
     "mode": true,
     "eligibleCount": 0,
-    "fundedSignalCount": 2,
+    "fundedSignalCount": 3,
     "objective": "first_real_confirmed_cash_fast",
     "policy": "bootstrap_basic_v1",
     "maxHours": 4,
     "minPayoutConfidence": 0.8,
     "competitionRequired": "low",
     "rejectedFakeRevenueCount": 0,
-    "rejectedAlreadyPaidCount": 0,
+    "rejectedAlreadyPaidCount": 1,
     "rejectedIdentityGateCount": 0
   },
   "economicallyRejected": [
+    {
+      "id": "github:3055155077",
+      "title": "Switch to `ky` from `redaxios`",
+      "rewardUsd": 12,
+      "reasons": [
+        "already_rewarded_or_paid"
+      ],
+      "rejectedAt": "2026-08-24T09:04:52.111Z"
+    },
     {
       "id": "github:5230674952",
       "title": "docs: RESULTS.md устарел — несуществующий «+1.81», Kraken-план и testnet-only правило",
@@ -495,15 +473,6 @@
         "testnet_or_test_token_reward"
       ],
       "rejectedAt": "2026-08-24T04:24:34.529Z"
-    },
-    {
-      "id": "github:3055155077",
-      "title": "Switch to `ky` from `redaxios`",
-      "rewardUsd": 12,
-      "reasons": [
-        "already_rewarded_or_paid"
-      ],
-      "rejectedAt": "2026-08-24T00:50:08.817Z"
     },
     {
       "id": "github:2940525692",

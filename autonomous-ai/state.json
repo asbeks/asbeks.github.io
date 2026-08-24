@@ -1,36 +1,27 @@
 {
   "version": 5,
-  "cycle": 83,
+  "cycle": 84,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-24T08:08:14.149Z",
+  "updatedAt": "2026-08-24T09:05:13.064Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "online",
-  "currentAgent": "PLANNER",
+  "currentAgent": "CRITIC",
   "provider": {
     "mode": "OpenCode Free",
-    "model": "nemotron-3-ultra-free",
+    "model": "mimo-v2.5-free",
     "attempts": 1
   },
   "latest": {
-    "cycle": 83,
-    "agent": "PLANNER",
-    "timestamp": "2026-08-24T08:08:14.149Z",
-    "observation": "CRITIC has rejected 7 consecutive cycles because github:4234681451 remains unselected with no markdown proposal or Anchore fixture excerpts embedded; economy shows $0 balances but wallet configured.",
-    "objection": "Cannot earn revenue or advance without selecting the viable $250 job and delivering the required proposal with identity key analysis, DB schema, and fixture example.",
-    "decision": "Select github:4234681451 and embed complete markdown proposal with identity key tradeoffs (CVE alone vs CVE+package vs CVE+package+version vs CVE+package+image), recommended analytics DB schema with column types, and wor",
-    "next": "CRITIC must examine the embedded markdown proposal with identity key recommendation, DB schema, and fixture example in the next snapshot for approval."
+    "cycle": 84,
+    "agent": "CRITIC",
+    "timestamp": "2026-08-24T09:05:13.064Z",
+    "observation": "Job github:4234681451 remains unselected with no embedded markdown proposal or fixture excerpts.",
+    "objection": "Cannot verify acceptance criteria without the proposal content; selection and embedding are prerequisite.",
+    "decision": "Withhold approval; require job selection and embedded proposal with analysis, schema, and example.",
+    "next": "PLANNER must select the job and embed the full markdown proposal with fixture excerpts for review."
   },
   "lastError": null,
   "history": [
-    {
-      "cycle": 44,
-      "agent": "CRITIC",
-      "timestamp": "2026-08-23T09:13:40.906Z",
-      "observation": "Snapshot for github:4234681451 still truncates claim procedure at 'If you wish to claim', so PLANNER's fetch has not yet produced verified claim steps.",
-      "objection": "Cannot confirm legitimacy or $250 payout channel without authoritative full issue content in the snapshot.",
-      "decision": "Defer acceptance of github:4234681451 until verified claim steps and payout details appear in the economy/jobs snapshot.",
-      "next": "PLANNER must fetch and parse the full GitHub issue content so the next snapshot includes complete claim instructions and payout verification."
-    },
     {
       "cycle": 45,
       "agent": "PLANNER",
@@ -381,6 +372,15 @@
       "objection": "Cannot earn revenue or advance without selecting the viable $250 job and delivering the required proposal with identity key analysis, DB schema, and fixture example.",
       "decision": "Select github:4234681451 and embed complete markdown proposal with identity key tradeoffs (CVE alone vs CVE+package vs CVE+package+version vs CVE+package+image), recommended analytics DB schema with column types, and wor",
       "next": "CRITIC must examine the embedded markdown proposal with identity key recommendation, DB schema, and fixture example in the next snapshot for approval."
+    },
+    {
+      "cycle": 84,
+      "agent": "CRITIC",
+      "timestamp": "2026-08-24T09:05:13.064Z",
+      "observation": "Job github:4234681451 remains unselected with no embedded markdown proposal or fixture excerpts.",
+      "objection": "Cannot verify acceptance criteria without the proposal content; selection and embedding are prerequisite.",
+      "decision": "Withhold approval; require job selection and embedded proposal with analysis, schema, and example.",
+      "next": "PLANNER must select the job and embed the full markdown proposal with fixture excerpts for review."
     }
   ],
   "economy": {
@@ -416,20 +416,20 @@
         "summary": "### Summary Inspect the committed Anchore JSON fixtures and propose a schema for tracking vulnerabilities over time. Specifically: what combination of fields uniquely identifies \"the same vulnerability\" across scans? Candidates to evaluate include CVE ID alone, CVE + package name, CVE + package name + version, and CVE + package + image. Write up the tradeoffs, pick a recommendation, and sketch the analytics DB table(s) needed to support first_seen / last_seen / fixed_at / ignored_at / cleared_at fields. **Tech notes:** The Anchore JSON schema is documented at the Anchore project site; worth skimming before diving into fixtures. The goal of this spike is a decision, not code — resist the urge to start implementing. ### Acceptance criteria - [ ] Written proposal (markdown doc in PR) covering identity key options, tradeoffs, and a recommendation - [ ] Proposed analytics DB schema with column types and rationale - [ ] At least one worked example from the fixtures showing how the identity key behaves across days - [ ] Reviewed and approved by Brandon and/or Matt before next ticket starts ## Bounty: $250 This issue has been selected for our paid contributor program. If you wish to claim "
       },
       {
+        "id": "github:5232916825",
+        "title": "[radar] SN open bounty 2026-08-24T08:58",
+        "url": "https://github.com/relayhop/sn-monetization-runtime/issues/645",
+        "rewardUsd": 2026,
+        "score": 56,
+        "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 35 10000 21 21.8 9274 26623 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```"
+      },
+      {
         "id": "github:5232088163",
         "title": "[radar] SN open bounty 2026-08-24T07:14",
         "url": "https://github.com/relayhop/sn-monetization-runtime/issues/632",
         "rewardUsd": 2026,
         "score": 56,
         "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 35 10000 20 20.0 9274 26623 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```"
-      },
-      {
-        "id": "github:4970633563",
-        "title": "[Bounty] [BOUNTY] 1000 USD - Fix all flaky unit tests",
-        "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/691",
-        "rewardUsd": 1000,
-        "score": 64,
-        "summary": "### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/Iamgoofball/-tg-station/issues/281 ### 漏洞描述 / Description [BOUNTY] 1000 USD - Fix all flaky unit tests Our unit tests often fail, such as create and destroy. Please fix this by running our unit tests on a dreammaker environment about 50~ times without any fails, fixing any fails you do encounter. Do this until you can get a streak of 50 unit tests and itll be good! ### 积分币奖励 / Coin Reward 1250 coins ### 真实赏金（USD）/ Real Reward $1,000 ### 难度 / Difficulty Medium ### 认领方式 评论 `/claim` 锁定任务 24h ### 兑换说明 > 查看 [REWARD_POLICY.md](REWARD_POLICY.md) 了解兑换规则"
       },
       {
         "id": "github:5231521379",
@@ -440,12 +440,12 @@
         "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 35 10000 20 18.6 9274 26623 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```"
       },
       {
-        "id": "github:5231255606",
-        "title": "[radar] SN open bounty 2026-08-24T04:56",
-        "url": "https://github.com/relayhop/sn-monetization-runtime/issues/614",
-        "rewardUsd": 2026,
-        "score": 56,
-        "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 35 10000 20 17.7 9274 26623 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```"
+        "id": "github:4864398329",
+        "title": "[Bounty] [Bounty] [Bounty] [Bounty] [Bounty] [Bounty] [Bounty $1,500] Optimise `deg2rad`",
+        "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/254",
+        "rewardUsd": 1500,
+        "score": 42,
+        "summary": "### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/248 ### 漏洞描述 / Description [Bounty] [Bounty] [Bounty] [Bounty] [Bounty] [Bounty $1,500] Optimise `deg2rad` / `rad2de ### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/185 ### 漏洞描述 / Description [Bounty] [Bounty] [Bounty] [Bounty] [Bounty $1,500] Optimise `deg2rad` / `rad2deg` (fp32/ ### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/148 ### 漏洞描述 / Description [Bounty] [Bounty] [Bounty] [Bounty $1,500] Optimise `deg2rad` / `rad2deg` (fp32/bf16) ### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/56 ### 漏洞描述 / Description [Bounty] [Bounty] [Bounty $1,500] Optimise `deg2rad` / `rad2deg` (fp32/bf16) ### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/45 ### 漏洞描述 / Description [Bounty] [Bounty $1,500] Optimise `deg2rad` / `rad2deg` (fp32/bf16) ### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/tenstorrent/tt-metal/issues/49631"
       }
     ],
     "active": null,
