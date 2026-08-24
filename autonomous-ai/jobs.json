@@ -1,34 +1,30 @@
 {
   "version": 11,
-  "updatedAt": "2026-08-24T23:10:54.373Z",
+  "updatedAt": "2026-08-24T23:40:08.028Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
     {
-      "id": "github:5239249425",
+      "id": "github:5237670728",
       "source": "github",
-      "title": "[radar] SN open bounty 2026-08-24T20:41",
-      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/721",
-      "repositoryApiUrl": "https://api.github.com/repos/relayhop/sn-monetization-runtime",
-      "rewardUsd": 2026,
-      "score": 56,
-      "labels": [
-        "radar",
-        "sn",
-        "bounty"
-      ],
+      "title": "Add local DAO vote-ending and claim reminder notifications",
+      "url": "https://github.com/Liberdus/web-client-v2/issues/1632",
+      "repositoryApiUrl": "https://api.github.com/repos/Liberdus/web-client-v2",
+      "rewardUsd": 1635,
+      "score": 36,
+      "labels": [],
       "commentCount": 0,
-      "updatedAt": "2026-08-24T23:00:10Z",
-      "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 35 10000 23 33.5 9274 26637 recent@Stacker_Stocks OPEN_BOUNTY Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```",
+      "updatedAt": "2026-08-24T23:32:28Z",
+      "summary": "## Goal Add an account-local DAO reminder that alerts the user when: - a proposal newly enters Voting; - a proposal they voted on reaches its scheduled voting end while metadata still reports Voting; or - a proposal they voted on reaches Accepted, Rejected, or Applied and may have a reward ready to claim. The reminder must use only `GET /dao/proposals/meta` during sign-in. Individual proposal details remain reserved for the normal DAO flow and authoritative eligibility checks. ## Implementation ```text Confirmed vote → store local voting/reminder schedule Sign in → fetch proposal metadata index → combine metadata + local vote history + last DAO view → build notification summary Notification exists → show glowing DAO header icon → route to Claimable first, otherwise Voting → mark notified filters and proposal rows ``` ### Local account state Confirmed tracked votes retain: ```js { votingEndsAt, estimatedClaimEndsAt, reminderExpiresAt, } ``` with: ```js estimatedClaimEndsAt = votingEndsAt + claimDuration; reminderExpiresAt = estimatedClaimEndsAt + DAO_PROPOSAL_DAY_MS; ``` The additional day is notification time only. Fresh proposal details and server validation remain authoritative f",
       "state": "candidate",
-      "payoutConfidence": 0.5,
+      "payoutConfidence": 0.35,
       "autonomyFit": 1,
       "requiresHumanGate": false,
       "requiresSpecialHardware": false,
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 118,
+      "fastCashScore": 111,
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
@@ -37,7 +33,7 @@
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 2026,
+      "economicValueUsd": 1635,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -78,57 +74,17 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5211154647",
+      "id": "github:5240438790",
       "source": "github",
-      "title": "🎯 GORM v2.24.0 Panics When Querying with Complex Joins",
-      "url": "https://github.com/HarrieAlexandrowicz5/gorm/issues/1",
-      "repositoryApiUrl": "https://api.github.com/repos/HarrieAlexandrowicz5/gorm",
-      "rewardUsd": 10,
-      "score": 62,
-      "labels": [
-        "bounty",
-        "opire",
-        "$10"
-      ],
-      "commentCount": 3,
-      "updatedAt": "2026-08-24T22:33:32Z",
-      "summary": "## 📝 Description When attempting to query the database using GORM v2.24.0 with complex joins, the application panics. This issue has been observed in multiple environments and with various database backends (PostgreSQL, MySQL, SQLite). ## 🎯 Acceptance Criteria - [ ] The application should not panic when querying with complex joins. - [ ] The query should return the correct results as expected. - [ ] The panic should be reproducible and consistently occur with the same query. - [ ] The issue should be resolved in GORM v2.24.0 or a subsequent patch release. ## 🛠️ Technical Specifications & Context - The panic occurs when executing a query with multiple joins, including self-joins and joins with subqueries. - The issue is likely related to how GORM handles complex query structures internally. - The panic message typically includes a stack trace pointing to a file in the GORM library, such as `gorm.go` or `query.go`. ## 🧪 Verification & Testing 1. **Reproduce the Issue:** - Create a test case that includes a complex query with multiple joins. - Execute the test case and observe if the application panics. 2. **Verify Fix:** - Apply the proposed fix (if available) or a potential patc",
-      "state": "candidate",
-      "payoutConfidence": 0.7,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 106,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 3,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 10,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5240106933",
-      "source": "github",
-      "title": "[ULDUAR]Flame Leviathan Vehicle Scaling is off",
-      "url": "https://github.com/azerothcore/azerothcore-wotlk/issues/27315",
-      "repositoryApiUrl": "https://api.github.com/repos/azerothcore/azerothcore-wotlk",
-      "rewardUsd": 55,
+      "title": "Supply hard-cap invariant: assert 21M DERO ceiling at coinbase verification",
+      "url": "https://github.com/DEROFDN/derohe/issues/123",
+      "repositoryApiUrl": "https://api.github.com/repos/DEROFDN/derohe",
+      "rewardUsd": 64,
       "score": 40,
-      "labels": [
-        "Confirmed",
-        "Instance - Raid - Northrend",
-        "80"
-      ],
-      "commentCount": 1,
-      "updatedAt": "2026-08-24T22:55:50Z",
-      "summary": "### Triage Issue linked from CC: https://github.com/chromiecraft/chromiecraft/issues/10070 Triage Notes: repro: - Enter Ulduar - Start the gauntlet - Enter a demolisher - observe hp increase from HP before entering - Equip full ICC gear - observe hp increase from earlier increase test: https://dl.dropboxusercontent.com/scl/fi/gabn98eyi2xvhtsrb7c48/wow_mE8NFHIZm2.mp4?rlkey=ze6s041107n6emadjffxy3x1t&dl=0 Original Post Below: --- ### Current Behaviour Flame Leviathan Vehicle Scaling is off - gear is not affecting the vehicles to the extend it should. Currently gear makes the demolisher go from 630k to 642k HP ### Expected Behaviour Vehicle scaling to be much higher. The demolisher in the video has 1.12m HP ### Official Sources (that prove or disprove) the issue being reported https://www.youtube.com/watch?v=JayETXRWISo ### Steps to reproduce the problem Enter Ulduar Start the gauntlet Enter a demolisher - observe hp increase from HP before entering Equip full ICC gear - observe hp increase from earlier increase The increase never comes close to the video ### Extra Notes _No response_ ### Customizations _No response_ ### AC rev. hash/commit https://github.com/chromiecraft/azerothcore-w",
+      "labels": [],
+      "commentCount": 0,
+      "updatedAt": "2026-08-24T23:31:19Z",
+      "summary": "## Summary **Adds a consensus supply hard-cap invariant** asserting DERO's 21M-DERO ceiling at coinbase verification. ## The finding `Verify_Transaction_Coinbase` was an `IsCoinbase()`-only no-op. The 21M hard cap (the Bitcoin-parallel supply ceiling) was **not enforced anywhere in consensus** — the `deroHardCapAtomic` constant in `proof/proof_validation.go` only sanity-checks individual proof amounts, never chain supply. The coinbase mint (`full_reward := base_reward + fees`) had no overflow guard. DERO's emission curve is a pure function of height (`CalcSupply`) that converges to **~20.89M DERO**, so the real curve never approaches the cap — but there is no invariant that would catch a *regression* in `CalcBlockReward` / `BaseReward` / `PREMINE` (a bad `>>` shift, an accidental reward inflation, uint64 wraparound) that would silently mint past the cap. ## The change 1. **`config.MAX_SUPPLY = 21_000_000 * 100_000`** — the hard cap (2.1e12 atomic). 2. **`Verify_Transaction_Coinbase` asserts `CalcSupply(height) <= MAX_SUPPLY`** — every node recomputes the supply identically, so this is deterministic and only trips on a curve regression. Purely a defensive invariant on the real curve",
       "state": "candidate",
       "payoutConfidence": 0.35,
       "autonomyFit": 1,
@@ -137,52 +93,16 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 102,
+      "fastCashScore": 105,
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
-        "comments": 1,
+        "comments": 0,
         "attemptSignals": 0,
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 55,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5240048276",
-      "source": "github",
-      "title": "Repair merge-corruption duplication in SECURITY.md",
-      "url": "https://github.com/FlowwStar/FlowStar/issues/611",
-      "repositoryApiUrl": "https://api.github.com/repos/FlowwStar/FlowStar",
-      "rewardUsd": 94,
-      "score": 38,
-      "labels": [
-        "documentation",
-        "security",
-        "Stellar Wave"
-      ],
-      "commentCount": 6,
-      "updatedAt": "2026-08-24T22:53:39Z",
-      "summary": "**File:** `SECURITY.md` (whole file, ~184 lines) The file still contains two versions of itself concatenated together: two \"Scope\" sections (`## Supported Scope` at line 7 vs `## Scope` at line 108, different wording), two reporting-process sections, two \"Response Timeline\" tables (line 47 vs 139 — may state different SLAs), two severity tables (`## Severity Guide` at 64 vs `## Severity Classification` at 154, different label sets), two \"Safe Harbor\" sections (78 vs 167), two \"Bug Bounty\" sections (94 vs 183). Confirmed still present in the current file as of this issue. **Task:** This is a security-policy document, so precision matters — don't just pick one half. Reconcile the disagreements (timelines, severity labels, contact methods), or flag the conflicts explicitly in the PR description for maintainer review before merging. Produce a single, internally-consistent SECURITY.md.",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 98,
-      "survivalEligible": false,
-      "eligibilityReason": "Competition is too high for bootstrap mode.",
-      "competition": {
-        "comments": 6,
-        "attemptSignals": 0,
-        "risk": "medium"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 94,
+      "economicValueUsd": 64,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -263,7 +183,7 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:2940525692\",\"rewardUsd\":10,\"fastCashScore\":60,\"updatedAt\":\"2026-08-18T21:51:22Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-24T13:15:06Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4227389983\",\"rewardUsd\":10,\"fastCashScore\":95,\"updatedAt\":\"2026-08-24T20:45:59Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5211154647\",\"rewardUsd\":10,\"fastCashScore\":106,\"updatedAt\":\"2026-08-24T22:33:32Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5234075844\",\"rewardUsd\":234,\"fastCashScore\":106,\"updatedAt\":\"2026-08-24T11:50:44Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5239249425\",\"rewardUsd\":2026,\"fastCashScore\":118,\"updatedAt\":\"2026-08-24T23:00:10Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5240048276\",\"rewardUsd\":94,\"fastCashScore\":98,\"updatedAt\":\"2026-08-24T22:53:39Z\",\"competition\":{\"comments\":6,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5240106933\",\"rewardUsd\":55,\"fastCashScore\":102,\"updatedAt\":\"2026-08-24T22:55:50Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:2940525692\",\"rewardUsd\":10,\"fastCashScore\":60,\"updatedAt\":\"2026-08-18T21:51:22Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-24T13:15:06Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4227389983\",\"rewardUsd\":10,\"fastCashScore\":95,\"updatedAt\":\"2026-08-24T20:45:59Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5234075844\",\"rewardUsd\":234,\"fastCashScore\":106,\"updatedAt\":\"2026-08-24T11:50:44Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5237670728\",\"rewardUsd\":1635,\"fastCashScore\":111,\"updatedAt\":\"2026-08-24T23:32:28Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5240438790\",\"rewardUsd\":64,\"fastCashScore\":105,\"updatedAt\":\"2026-08-24T23:31:19Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
@@ -287,7 +207,7 @@
       "reasons": [
         "already_rewarded_or_paid"
       ],
-      "rejectedAt": "2026-08-24T23:10:54.321Z"
+      "rejectedAt": "2026-08-24T23:40:07.973Z"
     },
     {
       "id": "github:3055155077",
@@ -296,7 +216,7 @@
       "reasons": [
         "already_rewarded_or_paid"
       ],
-      "rejectedAt": "2026-08-24T23:10:54.322Z"
+      "rejectedAt": "2026-08-24T23:40:07.973Z"
     },
     {
       "id": "github:2940525692",
@@ -305,7 +225,7 @@
       "reasons": [
         "already_rewarded_or_paid"
       ],
-      "rejectedAt": "2026-08-24T23:10:54.322Z"
+      "rejectedAt": "2026-08-24T23:40:07.973Z"
     },
     {
       "id": "github:5184937236",
