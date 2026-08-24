@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-08-24T17:22:13.017Z",
+  "updatedAt": "2026-08-24T17:57:32.594Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -41,57 +41,20 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:4462056980",
+      "id": "github:5237697498",
       "source": "github",
-      "title": "[Bounty Claim] PR Review - PR #5533 (Bounty #73)",
-      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/10363",
+      "title": "Bounty claim: BoTTube docstring PR #1749 (18 functions, 9.0 RTC)",
+      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16561",
       "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
-      "rewardUsd": 5533,
-      "score": 54,
-      "labels": [
-        "needs-human",
-        "gate-processed",
-        "over-cap"
-      ],
-      "commentCount": 1,
-      "updatedAt": "2026-08-24T17:15:57Z",
-      "summary": "**Claimant:** kongzi123 **GitHub:** kongzi123 **RTC wallet:** `AhqbFaPBPLMMiaLDzA9WhQcyvv4hMxiteLhPk3NhG1iG` ### PR Details - PR: https://github.com/Scottcjn/Rustchain/pull/5533 - Bounty program: https://github.com/Scottcjn/rustchain-bounties/issues/73 ### Review Summary Security-focused code review of PR #5533 (fix: fail closed when sync admin key is unset): - Bug analysis: correctly identified that `hmac.compare_digest(key, None)` throws TypeError when admin_key is unset, allowing authentication bypass - Fix verification: the triple-condition short-circuit (`not key or not admin_key or not hmac.compare_digest`) properly prevents compare_digest from receiving None - Security impact: HIGH priority — prevents unauthenticated access when admin_key is not configured (fail-open to fail-closed) - Test coverage: new test uses monkeypatch + spy to verify compare_digest is never called with unset admin key ### Expected Reward Security-focused code review under bounty #73: 15-20 RTC (+10 for finding security-relevant fix)",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 116,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 1,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 5533,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:4462048029",
-      "source": "github",
-      "title": "[Bounty Claim] PR Review - RustChain PR #5533 (Bounty #73)",
-      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/10357",
-      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
-      "rewardUsd": 5533,
+      "rewardUsd": 1749,
       "score": 46,
       "labels": [
-        "needs-human",
-        "gate-processed",
-        "over-cap"
+        "maintenance",
+        "awaiting-merge"
       ],
       "commentCount": 1,
-      "updatedAt": "2026-08-24T17:15:55Z",
-      "summary": "### Bounty Claim - Bounty: #73 - Type: PR review - Repository: Scottcjn/Rustchain - Pull request: https://github.com/Scottcjn/Rustchain/pull/5533 - Reviewed head: `25ad0e67cd2c75fb4ac7d40c2dbfb579e641abbb` - Review: https://github.com/Scottcjn/Rustchain/pull/5533#pullrequestreview-4304693885 - RTC wallet: `RTC02811ff5e2bb4bb4b95eee44c5429cd9525496e7` ### Summary Reviewed the sync admin-key hardening change. The PR now fails closed when `admin_key` is unset, keeps configured-key checks on `hmac.compare_digest`, and includes a regression test proving the unset-key path rejects without passing an unset expected value to `compare_digest`. Validation completed: - `python -B -m py_compile node/rustchain_sync_endpoints.py node/tests/test_rustchain_sync_endpoints.py` -> passed - `python -B -m pytest -q node/tests/test_rustchain_sync_endpoints.py --noconftest` -> 2 passed - `git diff --check origin/main...HEAD` -> passed - `python tools/bcos_spdx_check.py --base-ref origin/main` -> OK",
+      "updatedAt": "2026-08-24T17:39:53Z",
+      "summary": "### Bounty issue link https://github.com/Scottcjn/rustchain-bounties/blob/main/.github/workflows/docstring-gate.yml ### Claim type Other ### Related PR / issue / content link https://github.com/Scottcjn/bottube/pull/1749 ### GitHub username dbquanghuy2004-Quant ### RTC wallet name dbquanghuy2004-Quant ### Related platform identity (optional) _No response_ ### What did you complete? Docstring bounty claim for https://github.com/Scottcjn/bottube/pull/1749 Documented 18 functions in tests/test_upload_api.py. Docstrings only; no runtime or test-logic changes. ### Proof links and evidence - PR: https://github.com/Scottcjn/bottube/pull/1749 - Compile check passes. - Targeted pytest: 34 passed, 5 failed, 1 teardown error, identical on clean upstream main. - GitHub: dbquanghuy2004-Quant - Wallet: dbquanghuy2004-Quant ### Verification checklist - [x] I am not using a product repo issue for this claim. - [x] I provided an RTC wallet name, not an external chain address. - [x] I understand payout is reviewed manually and may be partial or rejected if the proof is weak, duplicated, or out of scope.",
       "state": "candidate",
       "payoutConfidence": 0.5,
       "autonomyFit": 1,
@@ -109,204 +72,25 @@
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 5533,
+      "economicValueUsd": 1749,
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:4462079225",
+      "id": "github:5237692620",
       "source": "github",
-      "title": "[Bounty Claim] PR Review - RustChain PR #5532 (Bounty #73)",
-      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/10382",
-      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
-      "rewardUsd": 5532,
-      "score": 54,
+      "title": "[radar] SN open bounty 2026-08-24T17:39",
+      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/705",
+      "repositoryApiUrl": "https://api.github.com/repos/relayhop/sn-monetization-runtime",
+      "rewardUsd": 2026,
+      "score": 56,
       "labels": [
-        "needs-human",
-        "gate-processed",
-        "over-cap"
-      ],
-      "commentCount": 1,
-      "updatedAt": "2026-08-24T17:16:01Z",
-      "summary": "### Bounty Claim - Bounty: #73 - Type: PR review - Repository: Scottcjn/Rustchain - Pull request: https://github.com/Scottcjn/Rustchain/pull/5532 - Reviewed head: `586571fe3b4aaf5a69eb18d361ff83fa94c9c36f` - Review: https://github.com/Scottcjn/Rustchain/pull/5532#pullrequestreview-4304707418 - RTC wallet: `RTC02811ff5e2bb4bb4b95eee44c5429cd9525496e7` ### Summary Reviewed the dependency-only CI/test collection fix. The added root and test requirements match real imports for async SDK, Flask CORS service code, hardware visualization, and PSE result-analysis tests. Validation completed: - `git diff --check --cached` -> passed - `python -B -m py_compile ...` over the affected import targets -> passed - `python -m pip install --disable-pip-version-check -q -r requirements.txt -r tests/requirements.txt` -> passed - `python -c \"import aiohttp, flask_cors, matplotlib, seaborn, Crypto; print('deps ok')\"` -> deps ok - focused pytest collection -> 14 tests collected - focused pytest run -> 14 passed",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 116,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 1,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 5532,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:4462057766",
-      "source": "github",
-      "title": "[Bounty Claim] PR Review - PR #5532 (Bounty #73)",
-      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/10364",
-      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
-      "rewardUsd": 5532,
-      "score": 54,
-      "labels": [
-        "needs-human",
-        "gate-processed",
-        "over-cap"
-      ],
-      "commentCount": 1,
-      "updatedAt": "2026-08-24T17:15:58Z",
-      "summary": "**Claimant:** kongzi123 **GitHub:** kongzi123 **RTC wallet:** `AhqbFaPBPLMMiaLDzA9WhQcyvv4hMxiteLhPk3NhG1iG` ### PR Details - PR: https://github.com/Scottcjn/Rustchain/pull/5532 - Bounty program: https://github.com/Scottcjn/rustchain-bounties/issues/73 ### Review Summary Code review of PR #5532 (fix: add missing CI test dependencies): - Intent is clear: adds 4 missing test dependencies (aiohttp, flask-cors, matplotlib, seaborn) - Version constraints use >= for good compatibility - No functional code changes, pure dependency maintenance ### Expected Reward Standard code review under bounty #73: 5 RTC",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 116,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 1,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 5532,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:4462073859",
-      "source": "github",
-      "title": "[Bounty Claim] PR Review - RustChain PR #5531 (Bounty #73)",
-      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/10379",
-      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
-      "rewardUsd": 5531,
-      "score": 46,
-      "labels": [
-        "needs-human",
-        "gate-processed",
-        "over-cap"
-      ],
-      "commentCount": 1,
-      "updatedAt": "2026-08-24T17:15:59Z",
-      "summary": "### Bounty Claim - Bounty: #73 - Type: PR review - Repository: Scottcjn/Rustchain - Pull request: https://github.com/Scottcjn/Rustchain/pull/5531 - Reviewed head: `1d9e47f895f1a1d04477473bde1f9ee3a1559533` - Review: https://github.com/Scottcjn/Rustchain/pull/5531#pullrequestreview-4304705387 - RTC wallet: `RTC02811ff5e2bb4bb4b95eee44c5429cd9525496e7` ### Summary Reviewed the Flask debug-mode hardening PR. The change disables debug mode in the listed public service entrypoints, leaves the faucet `--debug` flag as a deprecated no-op, updates docs, and adds an AST regression test to prevent reintroducing direct `debug=True` or debug config assignments to `True`. Validation completed: - `git diff --check --cached` -> passed - `python -B -m py_compile keeper_explorer.py contributor_registry.py bridge/bridge_api.py faucet_service/faucet_service.py tests/test_flask_debug_disabled.py` -> passed - `python -B -m pytest -q tests/test_flask_debug_disabled.py --noconftest` -> 1 passed, 1 existing warning - `python tools/bcos_spdx_check.py --base-ref origin/main` -> OK",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 116,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 1,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 5531,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:4460048610",
-      "source": "github",
-      "title": "[Bounty Claim] PR Reviews - 250+ PRs Total (Bounty #73) - HCIE2054",
-      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/9999",
-      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
-      "rewardUsd": 250,
-      "score": 34,
-      "labels": [
-        "needs-human",
-        "gate-processed",
-        "over-cap"
-      ],
-      "commentCount": 1,
-      "updatedAt": "2026-08-24T17:15:49Z",
-      "summary": "## Bounty Claim #73 - 250+ PR Reviews **GitHub:** HCIE2054 **Wallet:** RTC0069ce999590624987151e19a8b005555d17794b 250+ PRs reviewed across Rustchain ecosystem. All approved with LGTM. Thank you!",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 116,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 1,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 250,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:4460041460",
-      "source": "github",
-      "title": "[Bounty Claim] PR Reviews - 200+ PRs (Bounty #73) - HCIE2054",
-      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/9997",
-      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
-      "rewardUsd": 200,
-      "score": 34,
-      "labels": [
-        "needs-human",
-        "gate-processed",
-        "over-cap"
-      ],
-      "commentCount": 1,
-      "updatedAt": "2026-08-24T17:15:49Z",
-      "summary": "## Bounty Claim #73 - 200+ PR Reviews **GitHub:** HCIE2054 **Wallet:** RTC0069ce999590624987151e19a8b005555d17794b Massive PR review batch. All open PRs across Rustchain ecosystem reviewed with APPROVE + LGTM. Thank you!",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 116,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 1,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 200,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:4462050784",
-      "source": "github",
-      "title": "[Bounty Claim] PR Review - RustChain PR #5531 (Bounty #73)",
-      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/10359",
-      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
-      "rewardUsd": 5531,
-      "score": 46,
-      "labels": [
-        "needs-human",
-        "gate-processed"
+        "radar",
+        "sn",
+        "bounty"
       ],
       "commentCount": 2,
-      "updatedAt": "2026-08-24T17:15:56Z",
-      "summary": "## PR Review Claim\\n\\nBounty: #73\\nRepository: Scottcjn/Rustchain\\nPull request reviewed: https://github.com/Scottcjn/Rustchain/pull/5531\\nReview: https://github.com/Scottcjn/Rustchain/pull/5531#pullrequestreview-4304695456\\nReviewed head: 1d9e47f895f1a1d04477473bde1f9ee3a1559533\\nResult: Approved\\n\\nValidation performed:\\n- git diff --check origin/main...review-pr-5531 -- keeper_explorer.py contributor_registry.py bridge/bridge_api.py faucet_service/faucet_service.py faucet_service/README.md faucet_service/IMPLEMENTATION_SUMMARY.md tests/test_flask_debug_disabled.py\\n- python -B -m py_compile keeper_explorer.py contributor_registry.py bridge/bridge_api.py faucet_service/faucet_service.py tests/test_flask_debug_disabled.py\\n- Imported tests/test_flask_debug_disabled.py and executed test_public_flask_entrypoints_do_not_enable_debug_mode() directly because pytest was not installed in this local interpreter\\n\\nFinding:\\nNo blocker found. The PR disables Flask debug mode at the listed public entrypoints, makes the faucet debug flag a compatibility no-op after config loading, updates docs that previously recommended debug startup, and adds a focused static regression test for debug=True",
+      "updatedAt": "2026-08-24T17:44:06Z",
+      "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 35 10000 23 30.4 9274 26636 recent@Stacker_Stocks OPEN_BOUNTY Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```",
       "state": "candidate",
       "payoutConfidence": 0.5,
       "autonomyFit": 1,
@@ -324,43 +108,41 @@
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 5531,
+      "economicValueUsd": 2026,
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:4460036431",
+      "id": "github:5237800336",
       "source": "github",
-      "title": "[Bounty Claim] PR Reviews - Massive Batch 150+ PRs (Bounty #73) - HCIE2054",
-      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/9996",
-      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
-      "rewardUsd": 150,
-      "score": 34,
+      "title": "arch(agents): puppeteer's step reward gives an unmeasured step a free pass on cost",
+      "url": "https://github.com/nexus-substrate/nexus-agents/issues/4766",
+      "repositoryApiUrl": "https://api.github.com/repos/nexus-substrate/nexus-agents",
+      "rewardUsd": 4744,
+      "score": 40,
       "labels": [
-        "needs-human",
-        "gate-processed",
-        "over-cap"
+        "bug"
       ],
-      "commentCount": 1,
-      "updatedAt": "2026-08-24T17:15:48Z",
-      "summary": "## Bounty Claim #73 - 150+ PR Reviews **GitHub:** HCIE2054 **Wallet:** RTC0069ce999590624987151e19a8b005555d17794b ### 150+ Rustchain PRs reviewed (all APPROVED with LGTM) All open PRs reviewed across Rustchain, BoTTube, ram-coffers, beacon-skill, grazer-skill, rustchain-mcp, rustchain-monitor, llama-cpp-power8 ecosystem repos. Thank you!",
+      "commentCount": 0,
+      "updatedAt": "2026-08-24T17:50:58Z",
+      "summary": "`computeStepReward` penalises a step by its token cost, so a step whose adapter reported no usage receives **no cost penalty at all** and scores as more efficient than one that reported honestly. The reward prefers the step it knows least about. ```ts // agents/orchestration/puppeteer-helpers.ts:74 const costPenalty = (output.tokensUsed * 0.00001) / config.maxCost; const timePenalty = output.durationMs / config.maxTime; const efficiencyPenalty = (costPenalty + timePenalty) * config.efficiencyWeight; return progressReward - efficiencyPenalty; ``` Since #4744 an unmeasured step carries `tokensUsed: 0` with `tokensMeasured: false`. Only the number reaches `AgentStepOutput`, so the distinction is lost before the reward sees it. The same zero under-accumulates elsewhere: ```ts // agents/orchestration/state-manager.ts:307-308 totalCost: current.totalCost + output.tokensUsed * costPerToken, totalTokens: current.totalTokens + output.tokensUsed, ``` ## Why I did not fix this alongside the SICA case #4765 fixed the equivalent distortion in `SicaVersionManager` by averaging over measured executions only. That works because an average has a defensible answer when some inputs are missing: use t",
       "state": "candidate",
-      "payoutConfidence": 0.5,
+      "payoutConfidence": 0.35,
       "autonomyFit": 1,
       "requiresHumanGate": false,
       "requiresSpecialHardware": false,
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 115,
+      "fastCashScore": 111,
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
-        "comments": 1,
+        "comments": 0,
         "attemptSignals": 0,
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 150,
+      "economicValueUsd": 4744,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -401,38 +183,76 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:4409718295",
+      "id": "github:5214363672",
       "source": "github",
-      "title": "Claim: PR Review Bounty #73 — 3 AKIB473 PRs (2026-05-09)",
-      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/8888",
-      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
-      "rewardUsd": 73,
+      "title": "DashboardShell's active-nav-item highlighting uses exact pathname equality, so nested routes never highlight their parent section",
+      "url": "https://github.com/MergeFi/frontend/issues/220",
+      "repositoryApiUrl": "https://api.github.com/repos/MergeFi/frontend",
+      "rewardUsd": 123,
       "score": 42,
       "labels": [
-        "needs-human",
-        "gate-processed"
+        "bug",
+        "enhancement",
+        "good first issue",
+        "help wanted",
+        "Stellar Wave"
       ],
-      "commentCount": 1,
-      "updatedAt": "2026-08-24T17:15:24Z",
-      "summary": "## Bounty Claim — PR Reviews (Bounty #73) **Wallet:** fengqiankun6-sudo **Reviewed 3 PRs:** 1. PR #8885 — feat: wRTC Visibility Pack - Token list + logo for Solana explorers - Review: APPROVED ✅ - Comment: \"LGTM! Clean wRTC token list entry with logo for Solana explorers. Good addition to the ecosystem.\" - Author: AKIB473 | +60 additions 2. PR #8884 — feat: RTC Reward GitHub Action for automated crypto rewards on PR merges - Review: APPROVED ✅ - Comment: \"LGTM! GitHub Action for automated RTC rewards on PR merges is a great developer experience improvement.\" - Author: AKIB473 | +187 additions 3. PR #8883 — feat: RustChain Telegram bot with balance/miner/epoch/price commands - Review: APPROVED ✅ - Comment: \"LGTM! Telegram bot with balance/miner/epoch/price commands is useful for the community.\" - Author: AKIB473 | +227 additions **Total: 3 PR reviews = ~6-10 RTC claimed** **GitHub:** fengqiankun6-sudo",
+      "commentCount": 4,
+      "updatedAt": "2026-08-24T17:57:14Z",
+      "summary": "`src/components/dashboard/DashboardShell.tsx` determines the active sidebar item with: ```ts const active = pathname === item.href; ``` This is an exact string match. The maintainer/sponsor nav includes items like `{ label: \"Bounty pipeline\", href: \"/issues\", icon: GitPullRequest }` and `{ label: \"Milestones\", href: \"/milestones\", icon: Milestone }`. When a maintainer navigates from the pipeline board into a specific bounty (`/issues/abc123`, reached via `PipelineBoard.tsx`'s own links), `pathname` becomes `/issues/abc123`, which is not `=== \"/issues\"` — so \"Bounty pipeline\" loses its active/highlighted state exactly while the user is drilled into a page that's conceptually still part of that section, with no other sidebar item taking its place. The result is a sidebar that appears to have \"nothing selected\" whenever the user is on any nested route under a top-level nav destination, which is a common and expected navigation state (viewing one bounty out of the pipeline) that this exact-match check doesn't account for. Suggested fix: use a prefix check for non-root items (`pathname === item.href || pathname.startsWith(item.href + \"/\")`) so nested routes keep their parent section hig",
       "state": "candidate",
-      "payoutConfidence": 0.5,
+      "payoutConfidence": 0.35,
       "autonomyFit": 1,
       "requiresHumanGate": false,
       "requiresSpecialHardware": false,
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 111,
+      "fastCashScore": 95,
+      "survivalEligible": false,
+      "eligibilityReason": "Competition is too high for bootstrap mode.",
+      "competition": {
+        "comments": 4,
+        "attemptSignals": 1,
+        "risk": "medium"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 123,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5161425279",
+      "source": "github",
+      "title": "Semantic content invariants: the extractor's enforced check set",
+      "url": "https://github.com/maximsan/brewpath/issues/100",
+      "repositoryApiUrl": "https://api.github.com/repos/maximsan/brewpath",
+      "rewardUsd": 10,
+      "score": 30,
+      "labels": [
+        "enhancement",
+        "ready-for-agent"
+      ],
+      "commentCount": 3,
+      "updatedAt": "2026-08-24T17:56:46Z",
+      "summary": "> *This was generated by AI during triage.* Specifies the invariant set resolved on [#27](https://github.com/maximsan/brewpath/issues/27). Blocked by [#77](https://github.com/maximsan/brewpath/issues/77), which builds the extractor, the `ContentCard` union and the write mechanism this extends. ## Problem Statement A content author can break the course in ways that every existing check passes clean. The extractor's referential integrity asks *does this id resolve?* Three classes of real defect answer yes and are still wrong: - **A reference that resolves but is not true.** Five Espresso dictionary terms pointed at Grind lessons that never mention crema, portafilter, cortado, tamp or channeling. The lessons exist. The pointers resolve. They are simply false. Run today's audit logic against the commit before the audit was written and it flags **25 such pointers**. - **The same content in two places.** Two lessons carried a byte-identical `concept` card — and that was the visible tip of **five overlapping cards** between them, the other four being paraphrase that no byte comparison reaches. - **Collisions in fields nobody promised were unique.** Two collectibles titled *Fermentation*, ",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 90,
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
-        "comments": 1,
+        "comments": 3,
         "attemptSignals": 0,
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 73,
+      "economicValueUsd": 10,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -481,23 +301,32 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":124,\"updatedAt\":\"2026-08-23T17:46:02Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4409718295\",\"rewardUsd\":73,\"fastCashScore\":111,\"updatedAt\":\"2026-08-24T17:15:24Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4460036431\",\"rewardUsd\":150,\"fastCashScore\":115,\"updatedAt\":\"2026-08-24T17:15:48Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4460041460\",\"rewardUsd\":200,\"fastCashScore\":116,\"updatedAt\":\"2026-08-24T17:15:49Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4460048610\",\"rewardUsd\":250,\"fastCashScore\":116,\"updatedAt\":\"2026-08-24T17:15:49Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462048029\",\"rewardUsd\":5533,\"fastCashScore\":116,\"updatedAt\":\"2026-08-24T17:15:55Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462050784\",\"rewardUsd\":5531,\"fastCashScore\":115,\"updatedAt\":\"2026-08-24T17:15:56Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462056980\",\"rewardUsd\":5533,\"fastCashScore\":116,\"updatedAt\":\"2026-08-24T17:15:57Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462057766\",\"rewardUsd\":5532,\"fastCashScore\":116,\"updatedAt\":\"2026-08-24T17:15:58Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462073859\",\"rewardUsd\":5531,\"fastCashScore\":116,\"updatedAt\":\"2026-08-24T17:15:59Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462079225\",\"rewardUsd\":5532,\"fastCashScore\":116,\"updatedAt\":\"2026-08-24T17:16:01Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}}]",
+  "marketSignature": "[{\"id\":\"github:2940525692\",\"rewardUsd\":10,\"fastCashScore\":60,\"updatedAt\":\"2026-08-18T21:51:22Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-24T13:15:06Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":124,\"updatedAt\":\"2026-08-23T17:46:02Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:4978773842\",\"rewardUsd\":200,\"fastCashScore\":108,\"updatedAt\":\"2026-08-24T17:47:33Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5161425279\",\"rewardUsd\":10,\"fastCashScore\":90,\"updatedAt\":\"2026-08-24T17:56:46Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5214363672\",\"rewardUsd\":123,\"fastCashScore\":95,\"updatedAt\":\"2026-08-24T17:57:14Z\",\"competition\":{\"comments\":4,\"attemptSignals\":1,\"risk\":\"medium\"}},{\"id\":\"github:5234075844\",\"rewardUsd\":234,\"fastCashScore\":106,\"updatedAt\":\"2026-08-24T11:50:44Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5237692620\",\"rewardUsd\":2026,\"fastCashScore\":115,\"updatedAt\":\"2026-08-24T17:44:06Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5237697498\",\"rewardUsd\":1749,\"fastCashScore\":116,\"updatedAt\":\"2026-08-24T17:39:53Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5237800336\",\"rewardUsd\":4744,\"fastCashScore\":111,\"updatedAt\":\"2026-08-24T17:50:58Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
     "mode": true,
     "eligibleCount": 0,
-    "fundedSignalCount": 2,
+    "fundedSignalCount": 3,
     "objective": "first_real_confirmed_cash_fast",
     "policy": "bootstrap_basic_v1",
     "maxHours": 4,
     "minPayoutConfidence": 0.8,
     "competitionRequired": "low",
-    "rejectedFakeRevenueCount": 0,
-    "rejectedAlreadyPaidCount": 0,
+    "rejectedFakeRevenueCount": 1,
+    "rejectedAlreadyPaidCount": 3,
     "rejectedIdentityGateCount": 0
   },
   "economicallyRejected": [
+    {
+      "id": "github:4978773842",
+      "title": "[SDK] Add integration tests for order-book module against Stellar Testnet",
+      "rewardUsd": 200,
+      "reasons": [
+        "testnet_or_test_token_reward"
+      ],
+      "rejectedAt": "2026-08-24T17:57:32.541Z"
+    },
     {
       "id": "github:5234075844",
       "title": "Wallet-less reward payouts are stranded: processRewardJob marks them FAILED and wallet linking never retries",
@@ -505,7 +334,7 @@
       "reasons": [
         "already_rewarded_or_paid"
       ],
-      "rejectedAt": "2026-08-24T16:49:15.284Z"
+      "rejectedAt": "2026-08-24T17:57:32.541Z"
     },
     {
       "id": "github:3055155077",
@@ -514,7 +343,7 @@
       "reasons": [
         "already_rewarded_or_paid"
       ],
-      "rejectedAt": "2026-08-24T16:49:15.285Z"
+      "rejectedAt": "2026-08-24T17:57:32.541Z"
     },
     {
       "id": "github:2940525692",
@@ -523,7 +352,7 @@
       "reasons": [
         "already_rewarded_or_paid"
       ],
-      "rejectedAt": "2026-08-24T16:49:15.285Z"
+      "rejectedAt": "2026-08-24T17:57:32.542Z"
     },
     {
       "id": "github:5222233612",
