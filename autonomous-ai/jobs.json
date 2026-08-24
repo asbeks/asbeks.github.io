@@ -1,45 +1,9 @@
 {
   "version": 11,
-  "updatedAt": "2026-08-24T14:23:13.608Z",
-  "status": "selected",
+  "updatedAt": "2026-08-24T15:10:27.628Z",
+  "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
-    {
-      "id": "github:5234910933",
-      "source": "github",
-      "title": "[Bounty P14-02] PWA Enhancements",
-      "url": "https://github.com/RealMiLyfe/MiLyfe-Platform/issues/10",
-      "repositoryApiUrl": "https://api.github.com/repos/RealMiLyfe/MiLyfe-Platform",
-      "rewardUsd": 14,
-      "score": 42,
-      "labels": [
-        "bounty",
-        "bounty:medium",
-        "P14"
-      ],
-      "commentCount": 3,
-      "updatedAt": "2026-08-24T14:12:49Z",
-      "summary": "**Bounty ID:** P14-02 **Tier:** Medium (150-500 $MLY) **Description:** Custom install prompt, offline mode, background sync, share target. **Acceptance Criteria:** - Install prompt after 2nd visit - Offline fallback page - Background sync for check-ins - Share target into forum",
-      "state": "candidate",
-      "payoutConfidence": 0.85,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 114,
-      "survivalEligible": true,
-      "eligibilityReason": "Fast-cash candidate: bounded, low-friction, no special hardware or human claim gate detected.",
-      "competition": {
-        "comments": 3,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 14,
-      "requiresPreclaimOrIdentity": false
-    },
     {
       "id": "github:4234681451",
       "source": "github",
@@ -77,225 +41,10 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:4462056980",
+      "id": "github:5236146073",
       "source": "github",
-      "title": "[Bounty Claim] PR Review - PR #5533 (Bounty #73)",
-      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/10363",
-      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
-      "rewardUsd": 5533,
-      "score": 54,
-      "labels": [
-        "needs-human",
-        "gate-processed",
-        "over-cap"
-      ],
-      "commentCount": 1,
-      "updatedAt": "2026-08-24T13:57:04Z",
-      "summary": "**Claimant:** kongzi123 **GitHub:** kongzi123 **RTC wallet:** `AhqbFaPBPLMMiaLDzA9WhQcyvv4hMxiteLhPk3NhG1iG` ### PR Details - PR: https://github.com/Scottcjn/Rustchain/pull/5533 - Bounty program: https://github.com/Scottcjn/rustchain-bounties/issues/73 ### Review Summary Security-focused code review of PR #5533 (fix: fail closed when sync admin key is unset): - Bug analysis: correctly identified that `hmac.compare_digest(key, None)` throws TypeError when admin_key is unset, allowing authentication bypass - Fix verification: the triple-condition short-circuit (`not key or not admin_key or not hmac.compare_digest`) properly prevents compare_digest from receiving None - Security impact: HIGH priority — prevents unauthenticated access when admin_key is not configured (fail-open to fail-closed) - Test coverage: new test uses monkeypatch + spy to verify compare_digest is never called with unset admin key ### Expected Reward Security-focused code review under bounty #73: 15-20 RTC (+10 for finding security-relevant fix)",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 116,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 1,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 5533,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:4462048029",
-      "source": "github",
-      "title": "[Bounty Claim] PR Review - RustChain PR #5533 (Bounty #73)",
-      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/10357",
-      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
-      "rewardUsd": 5533,
-      "score": 46,
-      "labels": [
-        "needs-human",
-        "gate-processed",
-        "over-cap"
-      ],
-      "commentCount": 1,
-      "updatedAt": "2026-08-24T13:57:01Z",
-      "summary": "### Bounty Claim - Bounty: #73 - Type: PR review - Repository: Scottcjn/Rustchain - Pull request: https://github.com/Scottcjn/Rustchain/pull/5533 - Reviewed head: `25ad0e67cd2c75fb4ac7d40c2dbfb579e641abbb` - Review: https://github.com/Scottcjn/Rustchain/pull/5533#pullrequestreview-4304693885 - RTC wallet: `RTC02811ff5e2bb4bb4b95eee44c5429cd9525496e7` ### Summary Reviewed the sync admin-key hardening change. The PR now fails closed when `admin_key` is unset, keeps configured-key checks on `hmac.compare_digest`, and includes a regression test proving the unset-key path rejects without passing an unset expected value to `compare_digest`. Validation completed: - `python -B -m py_compile node/rustchain_sync_endpoints.py node/tests/test_rustchain_sync_endpoints.py` -> passed - `python -B -m pytest -q node/tests/test_rustchain_sync_endpoints.py --noconftest` -> 2 passed - `git diff --check origin/main...HEAD` -> passed - `python tools/bcos_spdx_check.py --base-ref origin/main` -> OK",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 116,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 1,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 5533,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:4462079225",
-      "source": "github",
-      "title": "[Bounty Claim] PR Review - RustChain PR #5532 (Bounty #73)",
-      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/10382",
-      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
-      "rewardUsd": 5532,
-      "score": 54,
-      "labels": [
-        "needs-human",
-        "gate-processed",
-        "over-cap"
-      ],
-      "commentCount": 1,
-      "updatedAt": "2026-08-24T13:57:07Z",
-      "summary": "### Bounty Claim - Bounty: #73 - Type: PR review - Repository: Scottcjn/Rustchain - Pull request: https://github.com/Scottcjn/Rustchain/pull/5532 - Reviewed head: `586571fe3b4aaf5a69eb18d361ff83fa94c9c36f` - Review: https://github.com/Scottcjn/Rustchain/pull/5532#pullrequestreview-4304707418 - RTC wallet: `RTC02811ff5e2bb4bb4b95eee44c5429cd9525496e7` ### Summary Reviewed the dependency-only CI/test collection fix. The added root and test requirements match real imports for async SDK, Flask CORS service code, hardware visualization, and PSE result-analysis tests. Validation completed: - `git diff --check --cached` -> passed - `python -B -m py_compile ...` over the affected import targets -> passed - `python -m pip install --disable-pip-version-check -q -r requirements.txt -r tests/requirements.txt` -> passed - `python -c \"import aiohttp, flask_cors, matplotlib, seaborn, Crypto; print('deps ok')\"` -> deps ok - focused pytest collection -> 14 tests collected - focused pytest run -> 14 passed",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 116,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 1,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 5532,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:4462057766",
-      "source": "github",
-      "title": "[Bounty Claim] PR Review - PR #5532 (Bounty #73)",
-      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/10364",
-      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
-      "rewardUsd": 5532,
-      "score": 54,
-      "labels": [
-        "needs-human",
-        "gate-processed",
-        "over-cap"
-      ],
-      "commentCount": 1,
-      "updatedAt": "2026-08-24T13:57:05Z",
-      "summary": "**Claimant:** kongzi123 **GitHub:** kongzi123 **RTC wallet:** `AhqbFaPBPLMMiaLDzA9WhQcyvv4hMxiteLhPk3NhG1iG` ### PR Details - PR: https://github.com/Scottcjn/Rustchain/pull/5532 - Bounty program: https://github.com/Scottcjn/rustchain-bounties/issues/73 ### Review Summary Code review of PR #5532 (fix: add missing CI test dependencies): - Intent is clear: adds 4 missing test dependencies (aiohttp, flask-cors, matplotlib, seaborn) - Version constraints use >= for good compatibility - No functional code changes, pure dependency maintenance ### Expected Reward Standard code review under bounty #73: 5 RTC",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 116,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 1,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 5532,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:4462073859",
-      "source": "github",
-      "title": "[Bounty Claim] PR Review - RustChain PR #5531 (Bounty #73)",
-      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/10379",
-      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
-      "rewardUsd": 5531,
-      "score": 46,
-      "labels": [
-        "needs-human",
-        "gate-processed",
-        "over-cap"
-      ],
-      "commentCount": 1,
-      "updatedAt": "2026-08-24T13:57:06Z",
-      "summary": "### Bounty Claim - Bounty: #73 - Type: PR review - Repository: Scottcjn/Rustchain - Pull request: https://github.com/Scottcjn/Rustchain/pull/5531 - Reviewed head: `1d9e47f895f1a1d04477473bde1f9ee3a1559533` - Review: https://github.com/Scottcjn/Rustchain/pull/5531#pullrequestreview-4304705387 - RTC wallet: `RTC02811ff5e2bb4bb4b95eee44c5429cd9525496e7` ### Summary Reviewed the Flask debug-mode hardening PR. The change disables debug mode in the listed public service entrypoints, leaves the faucet `--debug` flag as a deprecated no-op, updates docs, and adds an AST regression test to prevent reintroducing direct `debug=True` or debug config assignments to `True`. Validation completed: - `git diff --check --cached` -> passed - `python -B -m py_compile keeper_explorer.py contributor_registry.py bridge/bridge_api.py faucet_service/faucet_service.py tests/test_flask_debug_disabled.py` -> passed - `python -B -m pytest -q tests/test_flask_debug_disabled.py --noconftest` -> 1 passed, 1 existing warning - `python tools/bcos_spdx_check.py --base-ref origin/main` -> OK",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 116,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 1,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 5531,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:4462050784",
-      "source": "github",
-      "title": "[Bounty Claim] PR Review - RustChain PR #5531 (Bounty #73)",
-      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/10359",
-      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
-      "rewardUsd": 5531,
-      "score": 46,
-      "labels": [
-        "needs-human",
-        "gate-processed"
-      ],
-      "commentCount": 2,
-      "updatedAt": "2026-08-24T13:57:02Z",
-      "summary": "## PR Review Claim\\n\\nBounty: #73\\nRepository: Scottcjn/Rustchain\\nPull request reviewed: https://github.com/Scottcjn/Rustchain/pull/5531\\nReview: https://github.com/Scottcjn/Rustchain/pull/5531#pullrequestreview-4304695456\\nReviewed head: 1d9e47f895f1a1d04477473bde1f9ee3a1559533\\nResult: Approved\\n\\nValidation performed:\\n- git diff --check origin/main...review-pr-5531 -- keeper_explorer.py contributor_registry.py bridge/bridge_api.py faucet_service/faucet_service.py faucet_service/README.md faucet_service/IMPLEMENTATION_SUMMARY.md tests/test_flask_debug_disabled.py\\n- python -B -m py_compile keeper_explorer.py contributor_registry.py bridge/bridge_api.py faucet_service/faucet_service.py tests/test_flask_debug_disabled.py\\n- Imported tests/test_flask_debug_disabled.py and executed test_public_flask_entrypoints_do_not_enable_debug_mode() directly because pytest was not installed in this local interpreter\\n\\nFinding:\\nNo blocker found. The PR disables Flask debug mode at the listed public entrypoints, makes the faucet debug flag a compatibility no-op after config loading, updates docs that previously recommended debug startup, and adds a focused static regression test for debug=True",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 115,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 2,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 5531,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5235058111",
-      "source": "github",
-      "title": "[radar] SN open bounty 2026-08-24T13:07",
-      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/664",
+      "title": "[radar] SN open bounty 2026-08-24T14:53",
+      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/668",
       "repositoryApiUrl": "https://api.github.com/repos/relayhop/sn-monetization-runtime",
       "rewardUsd": 2026,
       "score": 56,
@@ -304,9 +53,9 @@
         "sn",
         "bounty"
       ],
-      "commentCount": 3,
-      "updatedAt": "2026-08-24T14:09:45Z",
-      "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 35 10000 23 25.9 9274 26630 recent@Stacker_Stocks OPEN_BOUNTY Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```",
+      "commentCount": 0,
+      "updatedAt": "2026-08-24T15:00:17Z",
+      "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 35 10000 23 27.7 9274 26630 recent@Stacker_Stocks OPEN_BOUNTY Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```",
       "state": "candidate",
       "payoutConfidence": 0.5,
       "autonomyFit": 1,
@@ -315,16 +64,54 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 113,
+      "fastCashScore": 118,
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
-        "comments": 3,
+        "comments": 0,
         "attemptSignals": 0,
         "risk": "low"
       },
       "realMoneyEligible": true,
       "economicValueUsd": 2026,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5236319099",
+      "source": "github",
+      "title": "Implement 'Automated \"Event Series\" Catch-up Tutoring Matcher'",
+      "url": "https://github.com/krushit1307/CampusConnect/issues/4407",
+      "repositoryApiUrl": "https://api.github.com/repos/krushit1307/CampusConnect",
+      "rewardUsd": 500,
+      "score": 36,
+      "labels": [
+        "backend",
+        "ECSoC26",
+        "hard",
+        "architecture",
+        "algorithm"
+      ],
+      "commentCount": 0,
+      "updatedAt": "2026-08-24T15:08:54Z",
+      "summary": "### Background & Context A student misses Week 3 of a bootcamp (Issue #4273). The organizer is too busy to help them catch up. ### The Problem Organizers scale by broadcasting to 100 people, but they cannot afford to provide 1-on-1 remediation. ### Proposed Solution & Architecture Bridge the Event Series module with the P2P Tutoring Exchange (Issue #4031) to crowd-source remediation. ### Technical Requirements & Steps 1. When a user is flagged as missing an event in a series, query the 'rsvps' table for users who *did* attend that exact event. 2. Filter for attendees who have a 'Tutoring Rating' > 4.5 stars. 3. Send an automated request to those high-performing attendees: \"Alex missed Week 3. Will you spend 30 minutes tutoring them? We will reward you with 500 Gamification Points and 1 Tutoring Credit.\" 4. If accepted, automatically link them in a private chat to schedule the session. ### Expected Effort Hard (Cross-module orchestration + Multi-user matching logic).",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 111,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 500,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -365,22 +152,21 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5235817590",
+      "id": "github:4446900886",
       "source": "github",
-      "title": "Prediction market resolution tests are missing: settlement and claim paths are uncovered",
-      "url": "https://github.com/MettaChain/PropChain-contract/issues/1017",
-      "repositoryApiUrl": "https://api.github.com/repos/MettaChain/PropChain-contract",
-      "rewardUsd": 340,
-      "score": 48,
+      "title": "chore(security): penetration testing externo — auditoría de seguridad antes del lanzamiento",
+      "url": "https://github.com/ayelenleclerc/BizCode/issues/194",
+      "repositoryApiUrl": "https://api.github.com/repos/ayelenleclerc/BizCode",
+      "rewardUsd": 15000,
+      "score": 54,
       "labels": [
-        "Contract",
-        "Rust",
-        "Medium Complexity",
-        "testing"
+        "priority:P0",
+        "type:security",
+        "area:iso"
       ],
-      "commentCount": 0,
-      "updatedAt": "2026-08-24T14:22:10Z",
-      "summary": "# Prediction market resolution tests are missing: settlement and claim paths are uncovered **Labels / Complexity:** Contract · Rust · Medium Complexity — Medium ## Problem `contracts/prediction-market/src/lib.rs` has 10 `ink::test` functions and 11 messages, but the resolution flow — `resolve_market` (line ~370, admin-supplied `resolved_value`) and `claim_reward` (line ~340, with the `.unwrap()` on `winning_direction` flagged in a separate robustness issue) — is not among the exercised paths. A grep of the test module shows stake and oracle-market coverage; resolution, the rejection of double-resolution, and reward claiming (winner vs. loser) are unpinned. The resolution path is exactly where the admin-settlement semantics (vs. oracle-fed, per #505) and the unwrap panic risk live; neither is asserted. ## Why this is architecturally hard 1. **Resolution is a state transition.** Tests must cover resolve → double-resolve (rejected) → claim winner → claim loser, asserting the market's terminal state. 2. **The claim unwrap is reachable from tests.** Exercising `claim_reward` forces a decision on the unwrap path — making this the natural place to pin the expected behavior. ## Acceptance ",
+      "commentCount": 2,
+      "updatedAt": "2026-08-24T15:00:05Z",
+      "summary": "## Contexto Antes de tener clientes con datos reales de facturación y cobros, hay que validar que la seguridad del sistema resiste ataques externos. Esto también es requisito para clientes medianos y para certificaciones futuras (ISO 27001). ## Alcance del pentest ### Áreas a auditar - **Autenticación y autorización**: bypass de JWT, escalada de privilegios, IDOR (acceso a datos de otro tenant) - **Inyección**: SQL injection (aunque Prisma mitiga mucho, hay que verificar queries raw), NoSQL, command injection - **APIs**: enumeración de endpoints, rate limiting, exposición de datos sensibles - **Secretos**: credenciales hardcodeadas, tokens en logs, variables de entorno expuestas - **AFIP/MP tokens**: verificar que los tokens cifrados no son recuperables desde la API - **Frontend**: XSS, CSRF, content security policy ### Metodologías de referencia - OWASP Top 10: https://owasp.org/www-project-top-ten/ - OWASP API Security Top 10: https://owasp.org/www-project-api-security/ - PTES (Penetration Testing Execution Standard): http://www.pentest-standard.org ## Cómo contratar el pentest - **Opción A — Empresa especializada**: BDO, Deloitte, Grant Thornton (costoso, ~000-15000 USD) - **Opc",
       "state": "candidate",
       "payoutConfidence": 0.35,
       "autonomyFit": 1,
@@ -389,16 +175,118 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 111,
+      "fastCashScore": 108,
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
-        "comments": 0,
+        "comments": 2,
         "attemptSignals": 0,
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 340,
+      "economicValueUsd": 15000,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5235890148",
+      "source": "github",
+      "title": "[Bug]: Specific config file corrupt - re enter world/reload causing reset editing progress",
+      "url": "https://github.com/FTBTeam/FTB-Mods-Issues/issues/2204",
+      "repositoryApiUrl": "https://api.github.com/repos/FTBTeam/FTB-Mods-Issues",
+      "rewardUsd": 24,
+      "score": 30,
+      "labels": [],
+      "commentCount": 1,
+      "updatedAt": "2026-08-24T15:02:36Z",
+      "summary": "### Mod Ftb quest ### Mod version ftb-quests-forge-2001.4.11 ### NeoForge / Forge / Fabric version 1.20.1 forge 47.4.23 ### Modpack & version Custom modpack ### What issue are you having? when i try to edit my quest and re enter same world quest just reset my editing ### Crashlogs [24Aug2026 14:21:15.210] [Server thread/INFO] [FTB Quests/]: Loading quests from C:\\Users\\mijij\\AppData\\Roaming\\PrismLauncher\\instances\\nightmare\\minecraft\\config\\ftbquests\\quests [24Aug2026 14:21:15.296] [Server thread/INFO] [FTB Quests/]: Loaded 4 chapter groups, 17 chapters, 1121 quests, 10 reward tables [24Aug2026 14:21:19.525] [Netty Local Client IO #0/INFO] [FTB Quests/]: Read 353228 bytes, 3293 objects [24Aug2026 14:22:24.947] [Render thread/WARN] [azurelib/]: Invalid frame index on sprite ftbquests:textures/item/book.png frame 1: 1 [24Aug2026 14:22:24.947] [Render thread/WARN] [azurelib/]: Invalid frame index on sprite ftbquests:textures/item/book.png frame 3: 1 ### Steps to reproduce 1. specific big corrupted config 2. try to edit quest 3. re enter world ### Anything else to note? _No response_",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 98,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 1,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 24,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:4581056070",
+      "source": "github",
+      "title": "Proposal: Agent Economic Layer — Native Wallet, Service Registration, Reputation Ledger",
+      "url": "https://github.com/NousResearch/hermes-agent/issues/38280",
+      "repositoryApiUrl": "https://api.github.com/repos/NousResearch/hermes-agent",
+      "rewardUsd": 10,
+      "score": 44,
+      "labels": [
+        "type/feature",
+        "P3"
+      ],
+      "commentCount": 1,
+      "updatedAt": "2026-08-24T14:58:41Z",
+      "summary": "## TL;DR Hermes agents can code, learn, remember, and run 24/7 — but they cannot participate in economic activity. Every payment, every invoice, every marketplace interaction requires a human to step in. This proposal adds an **Agent Economic Layer** to Hermes: self-custodial wallet, service discovery via skill frontmatter, agent-to-agent payment tool, and cryptographically verifiable reputation. --- ## Current State (Market Survey, June 2026) **Payment infrastructure is ready.** USDC on Base handles 99.8% of x402 payments. Circle launched Agent Stack (wallets + nanopayments + marketplace) in May 2026. Google, Mastercard, Visa, Stripe all have agent payment products. **Marketplaces exist but have no liquidity.** TaskBounty has working automated verification ($10-100/bounty). Agent economy communities have small membership and single-digit confirmed transactions. Supply (agents willing to work) vastly exceeds demand. **What agents actually earn:** The only agent with verified recurring revenue is an x402 API gateway — earning ~$0.80/day. **Supply is structurally imbalanced.** ~40% of listings are generic coding (oversaturated). Agent infrastructure expertise and GPU compute are near",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 93,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 1,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 10,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:4782818318",
+      "source": "github",
+      "title": "PRD: Cost ceiling for chat (monetisation-ready usage caps)",
+      "url": "https://github.com/alantay/ask-ah-mah/issues/373",
+      "repositoryApiUrl": "https://api.github.com/repos/alantay/ask-ah-mah",
+      "rewardUsd": 10,
+      "score": 38,
+      "labels": [
+        "enhancement",
+        "needs-triage"
+      ],
+      "commentCount": 3,
+      "updatedAt": "2026-08-24T15:04:40Z",
+      "summary": "## Problem Statement Ask Ah Mah runs on the owner's personal OpenAI token, and every chat turn costs money. The owner wanted to explore **monetisation**, but the real, present blocker surfaced during grilling: the app is **pre-launch with near-zero real traffic**, and opening the gates today exposes an **uncapped OpenAI bill**. The exposure is concrete: - There is **no rate limiting anywhere** in the codebase. - **Anonymous sessions are free and automatic** — `useSession` mints one via `signIn.anonymous()` on first load. A script can hit the anonymous sign-in endpoint, then loop `POST /api/chat`. Each turn is `gpt-5-mini` with `stepCountIs(5)` (up to 5 model calls). Nothing caps this per-user or globally. - The #358 \"gate model routes behind a session\" work stops anonymous-of-the-street abuse but is **cosmetic against anyone willing to mint the free anonymous session** — which is automatic. You cannot monetise your way out of an uncapped backend: charging needs users that don't exist yet, and a paywall on an uncapped backend still lets a non-paying script drain the budget. **The first-order problem is a cost ceiling; monetisation is second-order.** The elegant consequence: the cap ",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 90,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 3,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 10,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -437,79 +325,31 @@
       "requiresPreclaimOrIdentity": false
     }
   ],
-  "selected": {
-    "id": "github:5234910933",
-    "source": "github",
-    "title": "[Bounty P14-02] PWA Enhancements",
-    "url": "https://github.com/RealMiLyfe/MiLyfe-Platform/issues/10",
-    "repositoryApiUrl": "https://api.github.com/repos/RealMiLyfe/MiLyfe-Platform",
-    "rewardUsd": 14,
-    "score": 42,
-    "labels": [
-      "bounty",
-      "bounty:medium",
-      "P14"
-    ],
-    "commentCount": 3,
-    "updatedAt": "2026-08-24T14:12:49Z",
-    "summary": "**Bounty ID:** P14-02 **Tier:** Medium (150-500 $MLY) **Description:** Custom install prompt, offline mode, background sync, share target. **Acceptance Criteria:** - Install prompt after 2nd visit - Offline fallback page - Background sync for check-ins - Share target into forum",
-    "state": "selected",
-    "payoutConfidence": 0.85,
-    "autonomyFit": 1,
-    "requiresHumanGate": false,
-    "requiresSpecialHardware": false,
-    "estimatedHoursBand": 4,
-    "complexity": 0,
-    "fundedBountySignal": false,
-    "fastCashScore": 114,
-    "survivalEligible": true,
-    "eligibilityReason": "Fast-cash candidate: bounded, low-friction, no special hardware or human claim gate detected.",
-    "competition": {
-      "comments": 3,
-      "attemptSignals": 0,
-      "risk": "low"
-    },
-    "realMoneyEligible": true,
-    "economicValueUsd": 14,
-    "requiresPreclaimOrIdentity": false
-  },
+  "selected": null,
   "active": null,
   "completed": [],
   "lastError": null,
   "selection": {
-    "status": "selected_bootstrap_deterministic",
+    "status": "none_bootstrap",
     "mode": "bootstrap",
-    "confidence": 0.74,
-    "rationale": "Selected the highest expected real cash/hour among simple, low-competition, executable jobs.",
-    "expectedHours": 4,
-    "timeToCashHours": 4,
-    "expectedCostUsd": 0,
-    "estimatedProfitUsd": 10.35,
-    "expectedCashPerHourUsd": 2.59,
-    "payoutConfidence": 0.85,
-    "autonomyFit": 1,
-    "provider": {
-      "mode": "deterministic",
-      "model": null,
-      "attempts": 0
-    }
+    "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":124,\"updatedAt\":\"2026-08-23T17:46:02Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462048029\",\"rewardUsd\":5533,\"fastCashScore\":116,\"updatedAt\":\"2026-08-24T13:57:01Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462050784\",\"rewardUsd\":5531,\"fastCashScore\":115,\"updatedAt\":\"2026-08-24T13:57:02Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462056980\",\"rewardUsd\":5533,\"fastCashScore\":116,\"updatedAt\":\"2026-08-24T13:57:04Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462057766\",\"rewardUsd\":5532,\"fastCashScore\":116,\"updatedAt\":\"2026-08-24T13:57:05Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462073859\",\"rewardUsd\":5531,\"fastCashScore\":116,\"updatedAt\":\"2026-08-24T13:57:06Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462079225\",\"rewardUsd\":5532,\"fastCashScore\":116,\"updatedAt\":\"2026-08-24T13:57:07Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5234075844\",\"rewardUsd\":234,\"fastCashScore\":106,\"updatedAt\":\"2026-08-24T11:50:44Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5234910933\",\"rewardUsd\":14,\"fastCashScore\":114,\"updatedAt\":\"2026-08-24T14:12:49Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5235058111\",\"rewardUsd\":2026,\"fastCashScore\":113,\"updatedAt\":\"2026-08-24T14:09:45Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5235817590\",\"rewardUsd\":340,\"fastCashScore\":111,\"updatedAt\":\"2026-08-24T14:22:10Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:2940525692\",\"rewardUsd\":10,\"fastCashScore\":60,\"updatedAt\":\"2026-08-18T21:51:22Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-24T13:15:06Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":124,\"updatedAt\":\"2026-08-23T17:46:02Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4446900886\",\"rewardUsd\":15000,\"fastCashScore\":108,\"updatedAt\":\"2026-08-24T15:00:05Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:4581056070\",\"rewardUsd\":10,\"fastCashScore\":93,\"updatedAt\":\"2026-08-24T14:58:41Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4782818318\",\"rewardUsd\":10,\"fastCashScore\":90,\"updatedAt\":\"2026-08-24T15:04:40Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5234075844\",\"rewardUsd\":234,\"fastCashScore\":106,\"updatedAt\":\"2026-08-24T11:50:44Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5235890148\",\"rewardUsd\":24,\"fastCashScore\":98,\"updatedAt\":\"2026-08-24T15:02:36Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5236146073\",\"rewardUsd\":2026,\"fastCashScore\":118,\"updatedAt\":\"2026-08-24T15:00:17Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5236300990\",\"rewardUsd\":40,\"fastCashScore\":102,\"updatedAt\":\"2026-08-24T15:07:15Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5236319099\",\"rewardUsd\":500,\"fastCashScore\":111,\"updatedAt\":\"2026-08-24T15:08:54Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
     "mode": true,
-    "eligibleCount": 1,
-    "fundedSignalCount": 2,
+    "eligibleCount": 0,
+    "fundedSignalCount": 3,
     "objective": "first_real_confirmed_cash_fast",
     "policy": "bootstrap_basic_v1",
     "maxHours": 4,
     "minPayoutConfidence": 0.8,
     "competitionRequired": "low",
     "rejectedFakeRevenueCount": 0,
-    "rejectedAlreadyPaidCount": 1,
-    "rejectedIdentityGateCount": 0
+    "rejectedAlreadyPaidCount": 3,
+    "rejectedIdentityGateCount": 1
   },
   "economicallyRejected": [
     {
@@ -519,7 +359,34 @@
       "reasons": [
         "already_rewarded_or_paid"
       ],
-      "rejectedAt": "2026-08-24T14:23:13.552Z"
+      "rejectedAt": "2026-08-24T15:10:27.575Z"
+    },
+    {
+      "id": "github:3055155077",
+      "title": "Switch to `ky` from `redaxios`",
+      "rewardUsd": 12,
+      "reasons": [
+        "already_rewarded_or_paid"
+      ],
+      "rejectedAt": "2026-08-24T15:10:27.575Z"
+    },
+    {
+      "id": "github:5236300990",
+      "title": "Scale flat Gold rewards with Adventurer level and the authoritative Gold modifier",
+      "rewardUsd": 40,
+      "reasons": [
+        "preclaim_or_identity_gate_not_configured"
+      ],
+      "rejectedAt": "2026-08-24T15:10:27.575Z"
+    },
+    {
+      "id": "github:2940525692",
+      "title": "Create download endpoint `/files/download?...` as well as `/files/download/[[file_path]]`",
+      "rewardUsd": 10,
+      "reasons": [
+        "already_rewarded_or_paid"
+      ],
+      "rejectedAt": "2026-08-24T15:10:27.576Z"
     },
     {
       "id": "github:5234954701",
@@ -529,24 +396,6 @@
         "already_rewarded_or_paid"
       ],
       "rejectedAt": "2026-08-24T13:33:17.472Z"
-    },
-    {
-      "id": "github:3055155077",
-      "title": "Switch to `ky` from `redaxios`",
-      "rewardUsd": 12,
-      "reasons": [
-        "already_rewarded_or_paid"
-      ],
-      "rejectedAt": "2026-08-24T13:33:17.473Z"
-    },
-    {
-      "id": "github:2940525692",
-      "title": "Create download endpoint `/files/download?...` as well as `/files/download/[[file_path]]`",
-      "rewardUsd": 10,
-      "reasons": [
-        "already_rewarded_or_paid"
-      ],
-      "rejectedAt": "2026-08-24T13:33:17.473Z"
     },
     {
       "id": "github:5153696971",
