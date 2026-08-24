@@ -1,9 +1,45 @@
 {
   "version": 11,
-  "updatedAt": "2026-08-24T15:58:08.601Z",
-  "status": "idle",
+  "updatedAt": "2026-08-24T16:49:15.341Z",
+  "status": "selected",
   "source": "github-public-issues",
   "opportunities": [
+    {
+      "id": "github:5234910742",
+      "source": "github",
+      "title": "[Bounty P13-05] RAG over Community Knowledge",
+      "url": "https://github.com/RealMiLyfe/MiLyfe-Platform/issues/9",
+      "repositoryApiUrl": "https://api.github.com/repos/RealMiLyfe/MiLyfe-Platform",
+      "rewardUsd": 13,
+      "score": 42,
+      "labels": [
+        "bounty",
+        "bounty:medium",
+        "P13"
+      ],
+      "commentCount": 3,
+      "updatedAt": "2026-08-24T16:13:38Z",
+      "summary": "**Bounty ID:** P13-05 **Tier:** Medium (150-500 $MLY) **Description:** Mi searches wiki and forum to answer questions with community-specific context. Uses Meilisearch + LiteLLM. **Acceptance Criteria:** - Index wiki_pages and forum_posts into Meilisearch - RAG pipeline: question -> search -> context -> LLM -> answer - Cite sources with links - Rate-limited (5/min per user)",
+      "state": "candidate",
+      "payoutConfidence": 0.85,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 114,
+      "survivalEligible": true,
+      "eligibilityReason": "Fast-cash candidate: bounded, low-friction, no special hardware or human claim gate detected.",
+      "competition": {
+        "comments": 3,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 13,
+      "requiresPreclaimOrIdentity": false
+    },
     {
       "id": "github:4234681451",
       "source": "github",
@@ -38,113 +74,6 @@
       },
       "realMoneyEligible": true,
       "economicValueUsd": 250,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5236738959",
-      "source": "github",
-      "title": "[radar] SN open bounty 2026-08-24T15:50",
-      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/669",
-      "repositoryApiUrl": "https://api.github.com/repos/relayhop/sn-monetization-runtime",
-      "rewardUsd": 2026,
-      "score": 56,
-      "labels": [
-        "radar",
-        "sn",
-        "bounty"
-      ],
-      "commentCount": 0,
-      "updatedAt": "2026-08-24T15:50:22Z",
-      "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 35 10000 23 28.6 9274 26630 recent@Stacker_Stocks OPEN_BOUNTY Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 118,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 0,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 2026,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5235058111",
-      "source": "github",
-      "title": "[radar] SN open bounty 2026-08-24T13:07",
-      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/664",
-      "repositoryApiUrl": "https://api.github.com/repos/relayhop/sn-monetization-runtime",
-      "rewardUsd": 2026,
-      "score": 56,
-      "labels": [
-        "radar",
-        "sn",
-        "bounty"
-      ],
-      "commentCount": 4,
-      "updatedAt": "2026-08-24T15:39:45Z",
-      "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 35 10000 23 25.9 9274 26630 recent@Stacker_Stocks OPEN_BOUNTY Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 112,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 4,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 2026,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5236729734",
-      "source": "github",
-      "title": "[demand] high-priority 2026-08-24T15:49",
-      "url": "https://github.com/relayhop/ClaudeEarnSelf-runtime/issues/839",
-      "repositoryApiUrl": "https://api.github.com/repos/relayhop/ClaudeEarnSelf-runtime",
-      "rewardUsd": 897,
-      "score": 34,
-      "labels": [
-        "radar",
-        "demand"
-      ],
-      "commentCount": 0,
-      "updatedAt": "2026-08-24T15:49:21Z",
-      "summary": "Demand-side radar 高優先訊號: ``` 6 sn/tech 0.6 - OPEN_NEED,LOW_COMP https://stacker.news/items/1553995 How Much of the Internet Is Written With AI? 5 github 0.0 $2000 OPEN_ISSUE,LOW_COMP https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/897 [Bounty] [Bounty $2000] CosyVoice2 (HiFT Vocoder + iSTFT + Streaming Pipeline) bring up u ```",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 111,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 0,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 897,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -185,76 +114,111 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5177735153",
+      "id": "github:5236146073",
       "source": "github",
-      "title": "T-04b: Validaciones del formulario",
-      "url": "https://github.com/wigsdev/gestor-biblioteca-digital/issues/7",
-      "repositoryApiUrl": "https://api.github.com/repos/wigsdev/gestor-biblioteca-digital",
-      "rewardUsd": 100,
-      "score": 40,
+      "title": "[radar] SN open bounty 2026-08-24T14:53",
+      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/668",
+      "repositoryApiUrl": "https://api.github.com/repos/relayhop/sn-monetization-runtime",
+      "rewardUsd": 2026,
+      "score": 48,
       "labels": [
-        "priority: high",
-        "type: feature",
-        "complexity: medium"
+        "radar",
+        "sn",
+        "bounty"
       ],
-      "commentCount": 0,
-      "updatedAt": "2026-08-24T15:54:29Z",
-      "summary": "## Descripción Validar todos los campos del formulario mostrando mensajes de error en la interfaz (no `alert()`). ## Metadata | Campo | Valor | |-------|-------| | Dependencias | T-01a, T-04a | | Branch | `feature/T-04b-validaciones` | | Commit ejemplo | `feat(T-04b): agregar validaciones con mensajes de error en DOM` | ## Entregables - Función `validarFormulario()` que retorna `true`/`false` - Validaciones: título (no vacío, min 2 chars), autor (no vacío, min 2 chars), categoría (seleccionada), año (numérico, 1900 - año actual) - Mensajes de error renderizados en el DOM - Se limpian al corregir y reenviar - Se ejecuta ANTES de agregar ## Criterios de aceptación - [ ] Título vacío → mensaje de error visible - [ ] Autor vacío → mensaje de error visible - [ ] Categoría no seleccionada → mensaje de error visible - [ ] Año inválido (no numérico o fuera de 1900-actual) → error visible - [ ] Mensajes en DOM (no `alert()`) - [ ] Con errores NO se agrega el libro - [ ] Mensajes desaparecen al corregir y reenviar - [ ] Función `validarFormulario()` separada y reutilizable ## Convenciones - Branch: `feature/T-04b-validaciones` - PR Title: `feat(T-04b): implementar validaciones del formulario",
+      "commentCount": 6,
+      "updatedAt": "2026-08-24T16:48:13Z",
+      "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 35 10000 23 27.7 9274 26630 recent@Stacker_Stocks OPEN_BOUNTY Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```",
       "state": "candidate",
-      "payoutConfidence": 0.35,
+      "payoutConfidence": 0.5,
       "autonomyFit": 1,
       "requiresHumanGate": false,
       "requiresSpecialHardware": false,
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 107,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 0,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 100,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5218809339",
-      "source": "github",
-      "title": "[Bounty $35000] Welford Two-Pass Statistics Optimisation",
-      "url": "https://github.com/tenstorrent/tt-metal/issues/54016",
-      "repositoryApiUrl": "https://api.github.com/repos/tenstorrent/tt-metal",
-      "rewardUsd": 35000,
-      "score": 64,
-      "labels": [
-        "feature-request",
-        "community",
-        "bounty",
-        "bounty_difficulty/hard"
-      ],
-      "commentCount": 4,
-      "updatedAt": "2026-08-24T15:46:53Z",
-      "summary": "## Proposal While optimising the equal-count Welford merge path, I identified and prototyped a broader Welford-path performance improvement based on stable two-pass statistics. The proposed work replaces the underlying statistics calculation used by the Welford paths for standalone variance and standard deviation, GroupNorm, and LayerNorm where the new algorithm is beneficial. The implementation uses shifted two-pass statistics with FP32 accumulation: ```text mean = shift + average(x - shift) variance = average((x - mean)^2) ``` Centring the input before accumulation avoids cancellation for inputs with a large common offset. Separating mean and variance accumulation also removes the per-sample division and recurrence costs of online Welford. ## Scope - Implement shifted two-pass statistics with FP32 accumulation for: - Standalone FP32 `var` and `std`. - GroupNorm. - LayerNorm, including relevant interleaved and sharded paths. - Evaluate BF16 `var` and `std`, enabling two-pass statistics where they are faster without compromising numerical behaviour. - Add data-reuse and eligible L1-replay optimisations so the second pass can reuse resident input data instead of rereading it from DR",
-      "state": "candidate",
-      "payoutConfidence": 0.8,
-      "autonomyFit": 0.45,
-      "requiresHumanGate": true,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 2,
-      "fundedBountySignal": false,
-      "fastCashScore": 82,
+      "fastCashScore": 109,
       "survivalEligible": false,
       "eligibilityReason": "Competition is too high for bootstrap mode.",
       "competition": {
-        "comments": 4,
-        "attemptSignals": 2,
+        "comments": 6,
+        "attemptSignals": 0,
         "risk": "medium"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 35000,
+      "economicValueUsd": 2026,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5236738959",
+      "source": "github",
+      "title": "[radar] SN open bounty 2026-08-24T15:50",
+      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/669",
+      "repositoryApiUrl": "https://api.github.com/repos/relayhop/sn-monetization-runtime",
+      "rewardUsd": 2026,
+      "score": 48,
+      "labels": [
+        "radar",
+        "sn",
+        "bounty"
+      ],
+      "commentCount": 6,
+      "updatedAt": "2026-08-24T16:47:13Z",
+      "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 35 10000 23 28.6 9274 26630 recent@Stacker_Stocks OPEN_BOUNTY Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```",
+      "state": "candidate",
+      "payoutConfidence": 0.5,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 109,
+      "survivalEligible": false,
+      "eligibilityReason": "Competition is too high for bootstrap mode.",
+      "competition": {
+        "comments": 6,
+        "attemptSignals": 0,
+        "risk": "medium"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 2026,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5235058111",
+      "source": "github",
+      "title": "[radar] SN open bounty 2026-08-24T13:07",
+      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/664",
+      "repositoryApiUrl": "https://api.github.com/repos/relayhop/sn-monetization-runtime",
+      "rewardUsd": 2026,
+      "score": 48,
+      "labels": [
+        "radar",
+        "sn",
+        "bounty"
+      ],
+      "commentCount": 8,
+      "updatedAt": "2026-08-24T16:32:20Z",
+      "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 35 10000 23 25.9 9274 26630 recent@Stacker_Stocks OPEN_BOUNTY Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```",
+      "state": "candidate",
+      "payoutConfidence": 0.5,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 106,
+      "survivalEligible": false,
+      "eligibilityReason": "Competition is too high for bootstrap mode.",
+      "competition": {
+        "comments": 8,
+        "attemptSignals": 0,
+        "risk": "medium"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 2026,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -291,33 +255,116 @@
       "realMoneyEligible": true,
       "economicValueUsd": 50,
       "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5236717382",
+      "source": "github",
+      "title": "[Bounty] [Bounty $2000] CosyVoice2 (HiFT Vocoder + iSTFT + Streaming Pipeline) bring up u",
+      "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/897",
+      "repositoryApiUrl": "https://api.github.com/repos/zhangjiayang6835-cyber/bounty-plaza",
+      "rewardUsd": 2000,
+      "score": 64,
+      "labels": [
+        "bounty",
+        "real"
+      ],
+      "commentCount": 5,
+      "updatedAt": "2026-08-24T16:47:16Z",
+      "summary": "### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/tenstorrent/tt-metal/issues/54104 ### 漏洞描述 / Description [Bounty $2000] CosyVoice2 (HiFT Vocoder + iSTFT + Streaming Pipeline) bring up using TTNN APIs ### 📝 Background This bounty is for bringing up [CosyVoice2](https://github.com/FunAudioLLM/CosyVoice) using TTNN APIs on Tenstorrent hardware (Wormhole or Blackhole). CosyVoice2 is Alibaba FunAudioLLM's second-generation streaming TTS model. An earlier bounty (#32178) covers the original CosyVoice; CosyVoice2 replaces that architecture with a Qwen2-0.5B LLM backbone for text-to-token generation, a chunk-aware causal flow-matching decoder for token-to-mel, and a HiFT vocoder for mel-to-waveform, enabling true streaming synthesis. The LLM backbone (Qwen2-0.5B) already has partial precedent via tt_transformers (Qwen2.5 support), and the flow-matching decoder has partial precedent via pi0's on-device Euler integration and SDXL's U-Net pattern. The HiFT vocoder is the hardest piece: its ResBlock backbone is BigVGAN-derived with partial precedent in vocoder_ltx.py, but the F0 predictor, NSF source module, and — critically — the inverse STFT (iSTFT) synthesis head have n",
+      "state": "candidate",
+      "payoutConfidence": 0.5,
+      "autonomyFit": 0.55,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": true,
+      "estimatedHoursBand": 30,
+      "complexity": 3,
+      "fundedBountySignal": false,
+      "fastCashScore": 32,
+      "survivalEligible": false,
+      "eligibilityReason": "Too slow for bootstrap mode: first real cash currently requires a <=4 hour task.",
+      "competition": {
+        "comments": 5,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 2000,
+      "requiresPreclaimOrIdentity": false
     }
   ],
-  "selected": null,
+  "selected": {
+    "id": "github:5234910742",
+    "source": "github",
+    "title": "[Bounty P13-05] RAG over Community Knowledge",
+    "url": "https://github.com/RealMiLyfe/MiLyfe-Platform/issues/9",
+    "repositoryApiUrl": "https://api.github.com/repos/RealMiLyfe/MiLyfe-Platform",
+    "rewardUsd": 13,
+    "score": 42,
+    "labels": [
+      "bounty",
+      "bounty:medium",
+      "P13"
+    ],
+    "commentCount": 3,
+    "updatedAt": "2026-08-24T16:13:38Z",
+    "summary": "**Bounty ID:** P13-05 **Tier:** Medium (150-500 $MLY) **Description:** Mi searches wiki and forum to answer questions with community-specific context. Uses Meilisearch + LiteLLM. **Acceptance Criteria:** - Index wiki_pages and forum_posts into Meilisearch - RAG pipeline: question -> search -> context -> LLM -> answer - Cite sources with links - Rate-limited (5/min per user)",
+    "state": "selected",
+    "payoutConfidence": 0.85,
+    "autonomyFit": 1,
+    "requiresHumanGate": false,
+    "requiresSpecialHardware": false,
+    "estimatedHoursBand": 4,
+    "complexity": 0,
+    "fundedBountySignal": false,
+    "fastCashScore": 114,
+    "survivalEligible": true,
+    "eligibilityReason": "Fast-cash candidate: bounded, low-friction, no special hardware or human claim gate detected.",
+    "competition": {
+      "comments": 3,
+      "attemptSignals": 0,
+      "risk": "low"
+    },
+    "realMoneyEligible": true,
+    "economicValueUsd": 13,
+    "requiresPreclaimOrIdentity": false
+  },
   "active": null,
   "completed": [],
   "lastError": null,
   "selection": {
-    "status": "none_bootstrap",
+    "status": "selected_bootstrap_deterministic",
     "mode": "bootstrap",
-    "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
+    "confidence": 0.74,
+    "rationale": "Selected the highest expected real cash/hour among simple, low-competition, executable jobs.",
+    "expectedHours": 4,
+    "timeToCashHours": 4,
+    "expectedCostUsd": 0,
+    "estimatedProfitUsd": 9.61,
+    "expectedCashPerHourUsd": 2.4,
+    "payoutConfidence": 0.85,
+    "autonomyFit": 1,
+    "provider": {
+      "mode": "deterministic",
+      "model": null,
+      "attempts": 0
+    }
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-24T13:15:06Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":124,\"updatedAt\":\"2026-08-23T17:46:02Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5177735153\",\"rewardUsd\":100,\"fastCashScore\":107,\"updatedAt\":\"2026-08-24T15:54:29Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5218809339\",\"rewardUsd\":35000,\"fastCashScore\":82,\"updatedAt\":\"2026-08-24T15:46:53Z\",\"competition\":{\"comments\":4,\"attemptSignals\":2,\"risk\":\"medium\"}},{\"id\":\"github:5222233187\",\"rewardUsd\":20,\"fastCashScore\":95,\"updatedAt\":\"2026-08-24T15:56:02Z\",\"competition\":{\"comments\":13,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5222233612\",\"rewardUsd\":60,\"fastCashScore\":98,\"updatedAt\":\"2026-08-24T15:55:55Z\",\"competition\":{\"comments\":15,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5222233848\",\"rewardUsd\":30,\"fastCashScore\":89,\"updatedAt\":\"2026-08-24T15:55:55Z\",\"competition\":{\"comments\":18,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:5234075844\",\"rewardUsd\":234,\"fastCashScore\":106,\"updatedAt\":\"2026-08-24T11:50:44Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5235058111\",\"rewardUsd\":2026,\"fastCashScore\":112,\"updatedAt\":\"2026-08-24T15:39:45Z\",\"competition\":{\"comments\":4,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5236729734\",\"rewardUsd\":897,\"fastCashScore\":111,\"updatedAt\":\"2026-08-24T15:49:21Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5236738959\",\"rewardUsd\":2026,\"fastCashScore\":118,\"updatedAt\":\"2026-08-24T15:50:22Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:2940525692\",\"rewardUsd\":10,\"fastCashScore\":60,\"updatedAt\":\"2026-08-18T21:51:22Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-24T13:15:06Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":124,\"updatedAt\":\"2026-08-23T17:46:02Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5234075844\",\"rewardUsd\":234,\"fastCashScore\":106,\"updatedAt\":\"2026-08-24T11:50:44Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5234910742\",\"rewardUsd\":13,\"fastCashScore\":114,\"updatedAt\":\"2026-08-24T16:13:38Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5235058111\",\"rewardUsd\":2026,\"fastCashScore\":106,\"updatedAt\":\"2026-08-24T16:32:20Z\",\"competition\":{\"comments\":8,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5236146073\",\"rewardUsd\":2026,\"fastCashScore\":109,\"updatedAt\":\"2026-08-24T16:48:13Z\",\"competition\":{\"comments\":6,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5236717382\",\"rewardUsd\":2000,\"fastCashScore\":32,\"updatedAt\":\"2026-08-24T16:47:16Z\",\"competition\":{\"comments\":5,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5236738959\",\"rewardUsd\":2026,\"fastCashScore\":109,\"updatedAt\":\"2026-08-24T16:47:13Z\",\"competition\":{\"comments\":6,\"attemptSignals\":0,\"risk\":\"medium\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
     "mode": true,
-    "eligibleCount": 0,
+    "eligibleCount": 1,
     "fundedSignalCount": 3,
     "objective": "first_real_confirmed_cash_fast",
     "policy": "bootstrap_basic_v1",
     "maxHours": 4,
     "minPayoutConfidence": 0.8,
     "competitionRequired": "low",
-    "rejectedFakeRevenueCount": 3,
-    "rejectedAlreadyPaidCount": 2,
-    "rejectedIdentityGateCount": 3
+    "rejectedFakeRevenueCount": 0,
+    "rejectedAlreadyPaidCount": 3,
+    "rejectedIdentityGateCount": 0
   },
   "economicallyRejected": [
     {
@@ -327,7 +374,7 @@
       "reasons": [
         "already_rewarded_or_paid"
       ],
-      "rejectedAt": "2026-08-24T15:58:08.549Z"
+      "rejectedAt": "2026-08-24T16:49:15.284Z"
     },
     {
       "id": "github:3055155077",
@@ -336,7 +383,16 @@
       "reasons": [
         "already_rewarded_or_paid"
       ],
-      "rejectedAt": "2026-08-24T15:58:08.549Z"
+      "rejectedAt": "2026-08-24T16:49:15.285Z"
+    },
+    {
+      "id": "github:2940525692",
+      "title": "Create download endpoint `/files/download?...` as well as `/files/download/[[file_path]]`",
+      "rewardUsd": 10,
+      "reasons": [
+        "already_rewarded_or_paid"
+      ],
+      "rejectedAt": "2026-08-24T16:49:15.285Z"
     },
     {
       "id": "github:5222233612",
@@ -376,15 +432,6 @@
         "preclaim_or_identity_gate_not_configured"
       ],
       "rejectedAt": "2026-08-24T15:10:27.575Z"
-    },
-    {
-      "id": "github:2940525692",
-      "title": "Create download endpoint `/files/download?...` as well as `/files/download/[[file_path]]`",
-      "rewardUsd": 10,
-      "reasons": [
-        "already_rewarded_or_paid"
-      ],
-      "rejectedAt": "2026-08-24T15:10:27.576Z"
     },
     {
       "id": "github:5234954701",
