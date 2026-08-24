@@ -1,36 +1,27 @@
 {
   "version": 5,
-  "cycle": 81,
+  "cycle": 82,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-24T05:58:51.342Z",
+  "updatedAt": "2026-08-24T07:15:23.827Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "online",
-  "currentAgent": "PLANNER",
+  "currentAgent": "CRITIC",
   "provider": {
     "mode": "OpenCode Free",
     "model": "nemotron-3-ultra-free",
     "attempts": 2
   },
   "latest": {
-    "cycle": 81,
-    "agent": "PLANNER",
-    "timestamp": "2026-08-24T05:58:51.342Z",
-    "observation": "CRITIC has rejected 6 consecutive cycles because github:4234681451 remains unselected with no markdown outline or Anchore fixture excerpts embedded; economy shows $0 balances but wallet configured.",
-    "objection": "Cannot earn revenue or advance without selecting the viable $250 job and delivering the required proposal with identity key analysis, DB schema, and fixture example.",
-    "decision": "Select github:4234681451 and embed complete markdown proposal with identity key tradeoffs (CVE alone vs CVE+package vs CVE+package+version vs CVE+package+image), recommended analytics DB schema with column types, and wor",
-    "next": "CRITIC must examine the embedded markdown proposal with identity key recommendation, DB schema, and fixture example in the next snapshot for approval."
+    "cycle": 82,
+    "agent": "CRITIC",
+    "timestamp": "2026-08-24T07:15:23.827Z",
+    "observation": "github:4234681451 remains unselected (jobs.selected=null) with no markdown proposal or Anchore fixture excerpts embedded in the snapshot.",
+    "objection": "Acceptance criteria cannot be verified without the required proposal content; selection and embedding must occur before CRITIC review.",
+    "decision": "Withhold approval; require PLANNER to select the job and embed the complete markdown outline with identity key tradeoffs, DB schema, and worked fixture example.",
+    "next": "PLANNER must select github:4234681451 and embed the full markdown proposal with fixture excerpts in the next snapshot for CRITIC review."
   },
   "lastError": null,
   "history": [
-    {
-      "cycle": 42,
-      "agent": "CRITIC",
-      "timestamp": "2026-08-23T08:03:52.055Z",
-      "observation": "Claim procedure for github:4234681451 remains truncated in snapshot, preventing payout verification.",
-      "objection": "Legitimacy and $250 payout cannot be confirmed without authoritative full claim instructions.",
-      "decision": "Defer acceptance of github:4234681451 until verified claim steps are provided.",
-      "next": "PLANNER must fetch and parse the full issue content to extract claim process and payout details."
-    },
     {
       "cycle": 43,
       "agent": "PLANNER",
@@ -381,6 +372,15 @@
       "objection": "Cannot earn revenue or advance without selecting the viable $250 job and delivering the required proposal with identity key analysis, DB schema, and fixture example.",
       "decision": "Select github:4234681451 and embed complete markdown proposal with identity key tradeoffs (CVE alone vs CVE+package vs CVE+package+version vs CVE+package+image), recommended analytics DB schema with column types, and wor",
       "next": "CRITIC must examine the embedded markdown proposal with identity key recommendation, DB schema, and fixture example in the next snapshot for approval."
+    },
+    {
+      "cycle": 82,
+      "agent": "CRITIC",
+      "timestamp": "2026-08-24T07:15:23.827Z",
+      "observation": "github:4234681451 remains unselected (jobs.selected=null) with no markdown proposal or Anchore fixture excerpts embedded in the snapshot.",
+      "objection": "Acceptance criteria cannot be verified without the required proposal content; selection and embedding must occur before CRITIC review.",
+      "decision": "Withhold approval; require PLANNER to select the job and embed the complete markdown outline with identity key tradeoffs, DB schema, and worked fixture example.",
+      "next": "PLANNER must select github:4234681451 and embed the full markdown proposal with fixture excerpts in the next snapshot for CRITIC review."
     }
   ],
   "economy": {
@@ -416,36 +416,36 @@
         "summary": "### Summary Inspect the committed Anchore JSON fixtures and propose a schema for tracking vulnerabilities over time. Specifically: what combination of fields uniquely identifies \"the same vulnerability\" across scans? Candidates to evaluate include CVE ID alone, CVE + package name, CVE + package name + version, and CVE + package + image. Write up the tradeoffs, pick a recommendation, and sketch the analytics DB table(s) needed to support first_seen / last_seen / fixed_at / ignored_at / cleared_at fields. **Tech notes:** The Anchore JSON schema is documented at the Anchore project site; worth skimming before diving into fixtures. The goal of this spike is a decision, not code — resist the urge to start implementing. ### Acceptance criteria - [ ] Written proposal (markdown doc in PR) covering identity key options, tradeoffs, and a recommendation - [ ] Proposed analytics DB schema with column types and rationale - [ ] At least one worked example from the fixtures showing how the identity key behaves across days - [ ] Reviewed and approved by Brandon and/or Matt before next ticket starts ## Bounty: $250 This issue has been selected for our paid contributor program. If you wish to claim "
       },
       {
-        "id": "github:4462056980",
-        "title": "[Bounty Claim] PR Review - PR #5533 (Bounty #73)",
-        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/10363",
-        "rewardUsd": 5533,
-        "score": 54,
-        "summary": "**Claimant:** kongzi123 **GitHub:** kongzi123 **RTC wallet:** `AhqbFaPBPLMMiaLDzA9WhQcyvv4hMxiteLhPk3NhG1iG` ### PR Details - PR: https://github.com/Scottcjn/Rustchain/pull/5533 - Bounty program: https://github.com/Scottcjn/rustchain-bounties/issues/73 ### Review Summary Security-focused code review of PR #5533 (fix: fail closed when sync admin key is unset): - Bug analysis: correctly identified that `hmac.compare_digest(key, None)` throws TypeError when admin_key is unset, allowing authentication bypass - Fix verification: the triple-condition short-circuit (`not key or not admin_key or not hmac.compare_digest`) properly prevents compare_digest from receiving None - Security impact: HIGH priority — prevents unauthenticated access when admin_key is not configured (fail-open to fail-closed) - Test coverage: new test uses monkeypatch + spy to verify compare_digest is never called with unset admin key ### Expected Reward Security-focused code review under bounty #73: 15-20 RTC (+10 for finding security-relevant fix)"
+        "id": "github:5231521379",
+        "title": "[radar] SN open bounty 2026-08-24T05:47",
+        "url": "https://github.com/relayhop/sn-monetization-runtime/issues/620",
+        "rewardUsd": 2026,
+        "score": 56,
+        "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 35 10000 20 18.6 9274 26623 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```"
       },
       {
-        "id": "github:4462048029",
-        "title": "[Bounty Claim] PR Review - RustChain PR #5533 (Bounty #73)",
-        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/10357",
-        "rewardUsd": 5533,
-        "score": 46,
-        "summary": "### Bounty Claim - Bounty: #73 - Type: PR review - Repository: Scottcjn/Rustchain - Pull request: https://github.com/Scottcjn/Rustchain/pull/5533 - Reviewed head: `25ad0e67cd2c75fb4ac7d40c2dbfb579e641abbb` - Review: https://github.com/Scottcjn/Rustchain/pull/5533#pullrequestreview-4304693885 - RTC wallet: `RTC02811ff5e2bb4bb4b95eee44c5429cd9525496e7` ### Summary Reviewed the sync admin-key hardening change. The PR now fails closed when `admin_key` is unset, keeps configured-key checks on `hmac.compare_digest`, and includes a regression test proving the unset-key path rejects without passing an unset expected value to `compare_digest`. Validation completed: - `python -B -m py_compile node/rustchain_sync_endpoints.py node/tests/test_rustchain_sync_endpoints.py` -> passed - `python -B -m pytest -q node/tests/test_rustchain_sync_endpoints.py --noconftest` -> 2 passed - `git diff --check origin/main...HEAD` -> passed - `python tools/bcos_spdx_check.py --base-ref origin/main` -> OK"
+        "id": "github:5231255606",
+        "title": "[radar] SN open bounty 2026-08-24T04:56",
+        "url": "https://github.com/relayhop/sn-monetization-runtime/issues/614",
+        "rewardUsd": 2026,
+        "score": 56,
+        "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 35 10000 20 17.7 9274 26623 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```"
       },
       {
-        "id": "github:4462079225",
-        "title": "[Bounty Claim] PR Review - RustChain PR #5532 (Bounty #73)",
-        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/10382",
-        "rewardUsd": 5532,
-        "score": 54,
-        "summary": "### Bounty Claim - Bounty: #73 - Type: PR review - Repository: Scottcjn/Rustchain - Pull request: https://github.com/Scottcjn/Rustchain/pull/5532 - Reviewed head: `586571fe3b4aaf5a69eb18d361ff83fa94c9c36f` - Review: https://github.com/Scottcjn/Rustchain/pull/5532#pullrequestreview-4304707418 - RTC wallet: `RTC02811ff5e2bb4bb4b95eee44c5429cd9525496e7` ### Summary Reviewed the dependency-only CI/test collection fix. The added root and test requirements match real imports for async SDK, Flask CORS service code, hardware visualization, and PSE result-analysis tests. Validation completed: - `git diff --check --cached` -> passed - `python -B -m py_compile ...` over the affected import targets -> passed - `python -m pip install --disable-pip-version-check -q -r requirements.txt -r tests/requirements.txt` -> passed - `python -c \"import aiohttp, flask_cors, matplotlib, seaborn, Crypto; print('deps ok')\"` -> deps ok - focused pytest collection -> 14 tests collected - focused pytest run -> 14 passed"
+        "id": "github:5230697699",
+        "title": "[radar] SN open bounty 2026-08-24T03:12",
+        "url": "https://github.com/relayhop/sn-monetization-runtime/issues/608",
+        "rewardUsd": 2026,
+        "score": 56,
+        "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 35 10000 17 16.0 9274 26623 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```"
       },
       {
-        "id": "github:4462057766",
-        "title": "[Bounty Claim] PR Review - PR #5532 (Bounty #73)",
-        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/10364",
-        "rewardUsd": 5532,
-        "score": 54,
-        "summary": "**Claimant:** kongzi123 **GitHub:** kongzi123 **RTC wallet:** `AhqbFaPBPLMMiaLDzA9WhQcyvv4hMxiteLhPk3NhG1iG` ### PR Details - PR: https://github.com/Scottcjn/Rustchain/pull/5532 - Bounty program: https://github.com/Scottcjn/rustchain-bounties/issues/73 ### Review Summary Code review of PR #5532 (fix: add missing CI test dependencies): - Intent is clear: adds 4 missing test dependencies (aiohttp, flask-cors, matplotlib, seaborn) - Version constraints use >= for good compatibility - No functional code changes, pure dependency maintenance ### Expected Reward Standard code review under bounty #73: 5 RTC"
+        "id": "github:5231146823",
+        "title": "Repoint KAH<>PAH XCM refs",
+        "url": "https://github.com/Koniverse/SubWallet-Extension/issues/5062",
+        "rewardUsd": 72614,
+        "score": 40,
+        "summary": "**Problem** `statemine-LOCAL-USDt` is the Kusama-AH-native USDt (`assets` pallet #1984), but `AssetRef.json` declares an XCM route from it to `statemint-LOCAL-USDt`. That asset cannot cross the Polkadot<>Kusama bridge — sending it traps the funds on Polkadot Asset Hub. A user lost 72,614 USDT this way. Kusama Asset Hub has two USDt. We only register the wrong one. Note `statemine-LOCAL-USDC` already models this correctly (`isBridged: true`, `parents:2` location) — USDt is the odd one out. **Changes** 1. `ChainAsset.json` — add `statemine-LOCAL-USDt-Polkadot`: - `symbol: USDt-Polkadot`, `decimals: 6`, `minAmount: 10000`, `priceId: tether` - `metadata.isBridged: true` - `multilocation` / `paraSpellIdentifyV4.location`: `parents:2, X4[GlobalConsensus Polkadot, Parachain 1000, PalletInstance 50, GeneralIndex 1984]` - values verified against `/v2/supported-assets?origin=AssetHubKusama&destination=AssetHubPolkadot` 2. `ChainAsset.json` — add the missing `multilocation` (`parents:0, X2[PalletInstance 50, GeneralIndex 1984]`) to `statemine-LOCAL-USDt`; this currently trips `validate-asset-refs`: `Token must have multilocation: statemine-LOCAL-USDt` 3. `AssetRef.json` — repoint both directi"
       }
     ],
     "active": null,
