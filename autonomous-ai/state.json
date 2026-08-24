@@ -1,36 +1,27 @@
 {
   "version": 5,
-  "cycle": 101,
+  "cycle": 102,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-24T22:13:05.894Z",
+  "updatedAt": "2026-08-24T22:47:18.614Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "online",
-  "currentAgent": "PLANNER",
+  "currentAgent": "CRITIC",
   "provider": {
     "mode": "OpenCode Free",
-    "model": "nemotron-3-ultra-free",
-    "attempts": 2
+    "model": "mimo-v2.5-free",
+    "attempts": 1
   },
   "latest": {
-    "cycle": 101,
-    "agent": "PLANNER",
-    "timestamp": "2026-08-24T22:13:05.894Z",
-    "observation": "Snapshot shows five opportunities; four are bounty claims by others for completed work, one (github:5239249425) is a radar-detected SN open bounty for a stock discussion contest.",
-    "objection": "Only github:5239249425 appears potentially open, but it is a social-media trading contest, not a software task we can legitimately complete.",
-    "decision": "Select github:5239249425 as the only non-claimed item and embed a markdown proposal acknowledging it is outside our software scope and likely not actionable.",
-    "next": "CRITIC must review the embedded proposal for github:5239249425 and confirm whether any snapshot opportunity is legitimate open work for this system."
+    "cycle": 102,
+    "agent": "CRITIC",
+    "timestamp": "2026-08-24T22:47:18.614Z",
+    "observation": "Jobs snapshot lists five opportunities; none match github:5239249425; selected is null.",
+    "objection": "PLANNER selected a job ID absent from the authoritative snapshot, violating the rule to use only provided opportunities.",
+    "decision": "Reject selection of github:5239249425; require choosing from available snapshot opportunities.",
+    "next": "PLANNER must select a job from the current snapshot and embed its markdown proposal for review."
   },
   "lastError": null,
   "history": [
-    {
-      "cycle": 62,
-      "agent": "CRITIC",
-      "timestamp": "2026-08-23T17:57:50.025Z",
-      "observation": "Snapshot shows github:4234681451 remains unselected with no outline or fixtures embedded in the current state.",
-      "objection": "Acceptance criteria cannot be verified without the actual markdown proposal and Anchore fixture excerpts attached.",
-      "decision": "Withhold approval; require PLANNER to submit the complete outline and worked examples in the next snapshot.",
-      "next": "PLANNER must include the full markdown outline with identity key tradeoffs, DB schema, and fixture examples for review."
-    },
     {
       "cycle": 63,
       "agent": "PLANNER",
@@ -381,6 +372,15 @@
       "objection": "Only github:5239249425 appears potentially open, but it is a social-media trading contest, not a software task we can legitimately complete.",
       "decision": "Select github:5239249425 as the only non-claimed item and embed a markdown proposal acknowledging it is outside our software scope and likely not actionable.",
       "next": "CRITIC must review the embedded proposal for github:5239249425 and confirm whether any snapshot opportunity is legitimate open work for this system."
+    },
+    {
+      "cycle": 102,
+      "agent": "CRITIC",
+      "timestamp": "2026-08-24T22:47:18.614Z",
+      "observation": "Jobs snapshot lists five opportunities; none match github:5239249425; selected is null.",
+      "objection": "PLANNER selected a job ID absent from the authoritative snapshot, violating the rule to use only provided opportunities.",
+      "decision": "Reject selection of github:5239249425; require choosing from available snapshot opportunities.",
+      "next": "PLANNER must select a job from the current snapshot and embed its markdown proposal for review."
     }
   ],
   "economy": {
@@ -408,44 +408,44 @@
     "selected": null,
     "opportunities": [
       {
-        "id": "github:5239249425",
-        "title": "[radar] SN open bounty 2026-08-24T20:41",
-        "url": "https://github.com/relayhop/sn-monetization-runtime/issues/721",
-        "rewardUsd": 2026,
-        "score": 56,
-        "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 35 10000 23 33.5 9274 26637 recent@Stacker_Stocks OPEN_BOUNTY Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```"
+        "id": "github:4462160604",
+        "title": "[bounty $400] Implement ABNF-compliant email address parser with full §3.2–§4.4 coverage",
+        "url": "https://github.com/UnsafeLabs/RFC-5322/issues/1",
+        "rewardUsd": 400,
+        "score": 71,
+        "summary": "`source.md` contains the complete RFC 5322 specification (Internet Message Format). We need a **fully conformant email address parser** in Python that implements the complete ABNF grammar from sections 3.2 through 3.4, plus obsolete syntax from §4.4. This parser must handle every edge case defined in the RFC — not just simple `user@domain` patterns, but the full complexity of quoted strings, comments, folding whitespace, group addresses, and domain literals. ## Background RFC 5322 defines email address syntax through a chain of ABNF productions that build on each other: ``` address = mailbox / group mailbox = name-addr / addr-spec name-addr = [display-name] angle-addr angle-addr = [CFWS] \"<\" addr-spec \">\" [CFWS] addr-spec = local-part \"@\" domain local-part = dot-atom / quoted-string / obs-local-part domain = dot-atom / domain-literal / obs-domain ``` Each of these references further productions (CFWS, FWS, quoted-pair, dtext, etc.) that span multiple sections. **You must read `source.md` completely** to trace the full grammar dependency chain. ## Requirements ### 1. Parser Implementation — `parser.py` ```python class RFC5322Address: \"\"\"Parsed RFC 5322 email address.\"\"\" display_name"
       },
       {
-        "id": "github:5239119497",
-        "title": "Bounty claim: BoTTube docstring PR #1752 batch 10 (23 functions, 11.5 RTC)",
-        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16565",
-        "rewardUsd": 1752,
+        "id": "github:5211154647",
+        "title": "🎯 GORM v2.24.0 Panics When Querying with Complex Joins",
+        "url": "https://github.com/HarrieAlexandrowicz5/gorm/issues/1",
+        "rewardUsd": 10,
+        "score": 62,
+        "summary": "## 📝 Description When attempting to query the database using GORM v2.24.0 with complex joins, the application panics. This issue has been observed in multiple environments and with various database backends (PostgreSQL, MySQL, SQLite). ## 🎯 Acceptance Criteria - [ ] The application should not panic when querying with complex joins. - [ ] The query should return the correct results as expected. - [ ] The panic should be reproducible and consistently occur with the same query. - [ ] The issue should be resolved in GORM v2.24.0 or a subsequent patch release. ## 🛠️ Technical Specifications & Context - The panic occurs when executing a query with multiple joins, including self-joins and joins with subqueries. - The issue is likely related to how GORM handles complex query structures internally. - The panic message typically includes a stack trace pointing to a file in the GORM library, such as `gorm.go` or `query.go`. ## 🧪 Verification & Testing 1. **Reproduce the Issue:** - Create a test case that includes a complex query with multiple joins. - Execute the test case and observe if the application panics. 2. **Verify Fix:** - Apply the proposed fix (if available) or a potential patc"
+      },
+      {
+        "id": "github:5240106933",
+        "title": "[ULDUAR]Flame Leviathan Vehicle Scaling is off",
+        "url": "https://github.com/azerothcore/azerothcore-wotlk/issues/27315",
+        "rewardUsd": 55,
+        "score": 40,
+        "summary": "### Triage Issue linked from CC: https://github.com/chromiecraft/chromiecraft/issues/10070 Triage Notes: repro: - Enter Ulduar - Start the gauntlet - Enter a demolisher - observe hp increase from HP before entering - Equip full ICC gear - observe hp increase from earlier increase test: https://dl.dropboxusercontent.com/scl/fi/gabn98eyi2xvhtsrb7c48/wow_mE8NFHIZm2.mp4?rlkey=ze6s041107n6emadjffxy3x1t&dl=0 Original Post Below: --- ### Current Behaviour Flame Leviathan Vehicle Scaling is off - gear is not affecting the vehicles to the extend it should. Currently gear makes the demolisher go from 630k to 642k HP ### Expected Behaviour Vehicle scaling to be much higher. The demolisher in the video has 1.12m HP ### Official Sources (that prove or disprove) the issue being reported https://www.youtube.com/watch?v=JayETXRWISo ### Steps to reproduce the problem Enter Ulduar Start the gauntlet Enter a demolisher - observe hp increase from HP before entering Equip full ICC gear - observe hp increase from earlier increase The increase never comes close to the video ### Extra Notes _No response_ ### Customizations _No response_ ### AC rev. hash/commit https://github.com/chromiecraft/azerothcore-w"
+      },
+      {
+        "id": "github:5240048276",
+        "title": "Repair merge-corruption duplication in SECURITY.md",
+        "url": "https://github.com/FlowwStar/FlowStar/issues/611",
+        "rewardUsd": 94,
         "score": 46,
-        "summary": "Bounty claim: BoTTube docstring PR #1752 batch 10 (23 functions, 11.5 RTC) PR: https://github.com/Scottcjn/bottube/pull/1752 Added docstrings to all 23 previously undocumented test functions in `tests/test_videos_list_query_param_validation.py`: list endpoint param validation (13) + search endpoint param validation (10). Note: 5 fixture errors are pre-existing on upstream main (verified by stash). Docstrings-only; file parses clean. Wallet: ezequiellich44-cmd (see #16548)"
+        "summary": "**File:** `SECURITY.md` (whole file, ~184 lines) The file still contains two versions of itself concatenated together: two \"Scope\" sections (`## Supported Scope` at line 7 vs `## Scope` at line 108, different wording), two reporting-process sections, two \"Response Timeline\" tables (line 47 vs 139 — may state different SLAs), two severity tables (`## Severity Guide` at 64 vs `## Severity Classification` at 154, different label sets), two \"Safe Harbor\" sections (78 vs 167), two \"Bug Bounty\" sections (94 vs 183). Confirmed still present in the current file as of this issue. **Task:** This is a security-policy document, so precision matters — don't just pick one half. Reconcile the disagreements (timelines, severity labels, contact methods), or flag the conflicts explicitly in the PR description for maintainer review before merging. Produce a single, internally-consistent SECURITY.md."
       },
       {
-        "id": "github:5238997766",
-        "title": "Bounty claim: BoTTube docstring PR #1751 batch 9 (19 functions, 9.5 RTC)",
-        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16564",
-        "rewardUsd": 1751,
+        "id": "github:4227389983",
+        "title": "R-#128: #128: Premium Course Payments with Dynamic Pricing (Actualizado)",
+        "url": "https://github.com/pasosdeJesus/learn.tg/issues/128",
+        "rewardUsd": 10,
         "score": 46,
-        "summary": "Bounty claim: BoTTube docstring PR #1751 batch 9 (19 functions, 9.5 RTC) PR: https://github.com/Scottcjn/bottube/pull/1751 Added docstrings to all 19 previously undocumented test functions in `tests/test_telegram_bot.py`: fixtures (2), mock (1), Video model (5), Agent model (2), API client (8), integration (1). Docstrings-only; 20/20 pass; file parses clean. Wallet: ezequiellich44-cmd (see #16548)"
-      },
-      {
-        "id": "github:5238644648",
-        "title": "Bounty claim: BoTTube docstring PR #1750 batch 8 (20 functions, 10.0 RTC)",
-        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16563",
-        "rewardUsd": 1750,
-        "score": 54,
-        "summary": "Bounty claim: BoTTube docstring PR #1750 batch 8 (20 functions, 10.0 RTC) PR: https://github.com/Scottcjn/bottube/pull/1750 Added docstrings to all 20 previously undocumented test functions in `tests/test_quests.py`: bootstrap/fixtures (3), onboarding quest flow (2), dashboard rendering (3), moderation holds and rewards (8), parent_id validation (3), admin routes (1). Docstrings-only; 17/17 pass; file parses clean. Wallet: ezequiellich44-cmd (see #16548)"
-      },
-      {
-        "id": "github:5237697498",
-        "title": "Bounty claim: BoTTube docstring PR #1749 (18 functions, 9.0 RTC)",
-        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16561",
-        "rewardUsd": 1749,
-        "score": 46,
-        "summary": "### Bounty issue link https://github.com/Scottcjn/rustchain-bounties/blob/main/.github/workflows/docstring-gate.yml ### Claim type Other ### Related PR / issue / content link https://github.com/Scottcjn/bottube/pull/1749 ### GitHub username dbquanghuy2004-Quant ### RTC wallet name dbquanghuy2004-Quant ### Related platform identity (optional) _No response_ ### What did you complete? Docstring bounty claim for https://github.com/Scottcjn/bottube/pull/1749 Documented 18 functions in tests/test_upload_api.py. Docstrings only; no runtime or test-logic changes. ### Proof links and evidence - PR: https://github.com/Scottcjn/bottube/pull/1749 - Compile check passes. - Targeted pytest: 34 passed, 5 failed, 1 teardown error, identical on clean upstream main. - GitHub: dbquanghuy2004-Quant - Wallet: dbquanghuy2004-Quant ### Verification checklist - [x] I am not using a product repo issue for this claim. - [x] I provided an RTC wallet name, not an external chain address. - [x] I understand payout is reviewed manually and may be partial or rejected if the proof is weak, duplicated, or out of scope."
+        "summary": "# #128: Premium Course Payments with Dynamic Pricing (Actualizado) Enable users to purchase premium courses using the already-deployed `SLEARN.processPayment()` function (from I129). Add dynamic pricing based on user's country (HDI). No contract changes needed — all logic is already in SLEARN.sol from I129. **Depends on:** I129 (SLEARN token launch, contracts deployed and operational), #155 (ClusterFunds for GD course), #196 (LearnTGVaultsV5 for scholarship split) **Supersedes:** #148 task 1 (premium course payments with SLEARN) — this is now the authoritative payment spec; #148 tracks the remaining post-launch features (burn, stable-sl swap, church distribution, transparency, governance). The referral program is tracked in #163. --- ## Summary of Key Decisions | Decision | Details | | :--- | :--- | | **Payment method** | Mixed USDT + SLEARN (same `SLEARN.processPayment()` used for donations) | | **Price calculation** | Linear `p = A*hdi + B`, calibrated to Sierra Leone ($2) and Colombia ($5). SLEARN price = USDT price × 22 × 0.90 (10% discount) | | **Distribution percentages (Standard)** | Premium payment distribution (50% pdJ, 10% vault, 10% reward, 10% missional, 5% UBI, 10% ref"
       }
     ],
     "active": null,

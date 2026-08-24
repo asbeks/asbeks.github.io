@@ -1,250 +1,9 @@
 {
   "version": 11,
-  "updatedAt": "2026-08-24T22:11:58.781Z",
+  "updatedAt": "2026-08-24T22:46:57.591Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
-    {
-      "id": "github:5239249425",
-      "source": "github",
-      "title": "[radar] SN open bounty 2026-08-24T20:41",
-      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/721",
-      "repositoryApiUrl": "https://api.github.com/repos/relayhop/sn-monetization-runtime",
-      "rewardUsd": 2026,
-      "score": 56,
-      "labels": [
-        "radar",
-        "sn",
-        "bounty"
-      ],
-      "commentCount": 0,
-      "updatedAt": "2026-08-24T22:00:27Z",
-      "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 35 10000 23 33.5 9274 26637 recent@Stacker_Stocks OPEN_BOUNTY Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 118,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 0,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 2026,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5239119497",
-      "source": "github",
-      "title": "Bounty claim: BoTTube docstring PR #1752 batch 10 (23 functions, 11.5 RTC)",
-      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16565",
-      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
-      "rewardUsd": 1752,
-      "score": 46,
-      "labels": [
-        "awaiting-merge"
-      ],
-      "commentCount": 2,
-      "updatedAt": "2026-08-24T21:52:01Z",
-      "summary": "Bounty claim: BoTTube docstring PR #1752 batch 10 (23 functions, 11.5 RTC) PR: https://github.com/Scottcjn/bottube/pull/1752 Added docstrings to all 23 previously undocumented test functions in `tests/test_videos_list_query_param_validation.py`: list endpoint param validation (13) + search endpoint param validation (10). Note: 5 fixture errors are pre-existing on upstream main (verified by stash). Docstrings-only; file parses clean. Wallet: ezequiellich44-cmd (see #16548)",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 115,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 2,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 1752,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5238997766",
-      "source": "github",
-      "title": "Bounty claim: BoTTube docstring PR #1751 batch 9 (19 functions, 9.5 RTC)",
-      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16564",
-      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
-      "rewardUsd": 1751,
-      "score": 46,
-      "labels": [
-        "awaiting-merge"
-      ],
-      "commentCount": 2,
-      "updatedAt": "2026-08-24T21:51:58Z",
-      "summary": "Bounty claim: BoTTube docstring PR #1751 batch 9 (19 functions, 9.5 RTC) PR: https://github.com/Scottcjn/bottube/pull/1751 Added docstrings to all 19 previously undocumented test functions in `tests/test_telegram_bot.py`: fixtures (2), mock (1), Video model (5), Agent model (2), API client (8), integration (1). Docstrings-only; 20/20 pass; file parses clean. Wallet: ezequiellich44-cmd (see #16548)",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 115,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 2,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 1751,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5238644648",
-      "source": "github",
-      "title": "Bounty claim: BoTTube docstring PR #1750 batch 8 (20 functions, 10.0 RTC)",
-      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16563",
-      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
-      "rewardUsd": 1750,
-      "score": 54,
-      "labels": [
-        "awaiting-merge"
-      ],
-      "commentCount": 2,
-      "updatedAt": "2026-08-24T21:51:57Z",
-      "summary": "Bounty claim: BoTTube docstring PR #1750 batch 8 (20 functions, 10.0 RTC) PR: https://github.com/Scottcjn/bottube/pull/1750 Added docstrings to all 20 previously undocumented test functions in `tests/test_quests.py`: bootstrap/fixtures (3), onboarding quest flow (2), dashboard rendering (3), moderation holds and rewards (8), parent_id validation (3), admin routes (1). Docstrings-only; 17/17 pass; file parses clean. Wallet: ezequiellich44-cmd (see #16548)",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 115,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 2,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 1750,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5237697498",
-      "source": "github",
-      "title": "Bounty claim: BoTTube docstring PR #1749 (18 functions, 9.0 RTC)",
-      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16561",
-      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
-      "rewardUsd": 1749,
-      "score": 46,
-      "labels": [
-        "maintenance",
-        "awaiting-merge"
-      ],
-      "commentCount": 3,
-      "updatedAt": "2026-08-24T21:51:54Z",
-      "summary": "### Bounty issue link https://github.com/Scottcjn/rustchain-bounties/blob/main/.github/workflows/docstring-gate.yml ### Claim type Other ### Related PR / issue / content link https://github.com/Scottcjn/bottube/pull/1749 ### GitHub username dbquanghuy2004-Quant ### RTC wallet name dbquanghuy2004-Quant ### Related platform identity (optional) _No response_ ### What did you complete? Docstring bounty claim for https://github.com/Scottcjn/bottube/pull/1749 Documented 18 functions in tests/test_upload_api.py. Docstrings only; no runtime or test-logic changes. ### Proof links and evidence - PR: https://github.com/Scottcjn/bottube/pull/1749 - Compile check passes. - Targeted pytest: 34 passed, 5 failed, 1 teardown error, identical on clean upstream main. - GitHub: dbquanghuy2004-Quant - Wallet: dbquanghuy2004-Quant ### Verification checklist - [x] I am not using a product repo issue for this claim. - [x] I provided an RTC wallet name, not an external chain address. - [x] I understand payout is reviewed manually and may be partial or rejected if the proof is weak, duplicated, or out of scope.",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 113,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 3,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 1749,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5237449410",
-      "source": "github",
-      "title": "Bounty claim: BoTTube docstring PR #1748 batch 7 (31 functions, 15.5 RTC)",
-      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16560",
-      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
-      "rewardUsd": 1748,
-      "score": 46,
-      "labels": [
-        "awaiting-merge"
-      ],
-      "commentCount": 3,
-      "updatedAt": "2026-08-24T21:51:52Z",
-      "summary": "Bounty claim: BoTTube docstring PR #1748 batch 7 (31 functions, 15.5 RTC) PR: https://github.com/Scottcjn/bottube/pull/1748 Added docstrings to all 31 previously undocumented test functions in `tests/test_bottube_sdk.py`: fixtures/helper (1), authentication (5), video operations (6), comments (3), votes (6), tips (2), error handling (4), URL construction (3). Docstrings-only; 30/30 tests pass; file parses clean. Wallet: ezequiellich44-cmd (see #16548)",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 113,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 3,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 1748,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5237310227",
-      "source": "github",
-      "title": "Bounty claim: BoTTube docstring PR #1747 batch 6 (30 functions, 15.0 RTC)",
-      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16559",
-      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
-      "rewardUsd": 1747,
-      "score": 46,
-      "labels": [
-        "awaiting-merge"
-      ],
-      "commentCount": 3,
-      "updatedAt": "2026-08-24T21:51:49Z",
-      "summary": "Bounty claim: BoTTube docstring PR #1747 batch 5 (30 functions, 15.0 RTC) PR: https://github.com/Scottcjn/bottube/pull/1747 Added docstrings to 30 previously undocumented test functions in `tests/test_beef_system.py`: helpers (1), canonical ordering (1), state transitions (6), REST endpoints (14), drama arcs (6), leaderboard (1), input validation (4). Note: `test_admin_kill` fails (403 vs 200) on pristine upstream main too — pre-existing, flagged in the PR description as a possible separate fix. Docstrings-only change; 36/37 pass; file parses clean. Wallet: ezequiellich44-cmd (see #16548)",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 113,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 3,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 1747,
-      "requiresPreclaimOrIdentity": false
-    },
     {
       "id": "github:4462160604",
       "source": "github",
@@ -283,57 +42,23 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5203651239",
+      "id": "github:5211154647",
       "source": "github",
-      "title": "Move contracts/batch-rewards/cross.rs into the crate and wire it",
-      "url": "https://github.com/stellarspend/stellarspend-contracts/issues/1110",
-      "repositoryApiUrl": "https://api.github.com/repos/stellarspend/stellarspend-contracts",
-      "rewardUsd": 200,
-      "score": 48,
+      "title": "🎯 GORM v2.24.0 Panics When Querying with Complex Joins",
+      "url": "https://github.com/HarrieAlexandrowicz5/gorm/issues/1",
+      "repositoryApiUrl": "https://api.github.com/repos/HarrieAlexandrowicz5/gorm",
+      "rewardUsd": 10,
+      "score": 62,
       "labels": [
-        "Stellar Wave",
-        "Third Campaign"
-      ],
-      "commentCount": 1,
-      "updatedAt": "2026-08-24T22:05:41Z",
-      "summary": "Description Priority P2 Type / Area refactor, soroban, contracts, batch-rewards Suggested Complexity Medium Summary contracts/batch-rewards/cross.rs contains a complete MultisigEvents implementation, full multisig state management, approval recording, and a DelegationContract with all security annotations — but it sits outside contracts/batch-rewards/src/ and is not declared in the crate's lib.rs. None of this code is compiled. The file's content (multisig approval tracking, delegation allowance) belongs in dedicated crates, not in batch-rewards. Problem contracts/batch-rewards/cross.rs is 200+ lines of real, well-annotated Rust (including [SEC-DEL-*] security comments) that has never been compiled because it lives outside the src/ directory and is never declared with mod cross in contracts/batch-rewards/src/lib.rs. On inspection the content is actually two separate contracts concatenated: a multisig helper and a full DelegationContract. Both already have dedicated crates in the workspace (contracts/multisig/ and contracts/delegation/). This file needs to be reconciled — its content either merged into those crates or removed if already implemented there. Scope In Scope Audit contra",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 109,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 1,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 200,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:4982965060",
-      "source": "github",
-      "title": "nft-reward storage: Storage::operator_key helper is missing",
-      "url": "https://github.com/Samuel1-ona/Hunty-contract/issues/617",
-      "repositoryApiUrl": "https://api.github.com/repos/Samuel1-ona/Hunty-contract",
-      "rewardUsd": 439,
-      "score": 40,
-      "labels": [
-        "bug",
-        "Stellar Wave"
+        "bounty",
+        "opire",
+        "$10"
       ],
       "commentCount": 3,
-      "updatedAt": "2026-08-24T21:56:06Z",
-      "summary": "``` contracts/nft-reward/src/storage.rs:439/445/451: error[E0599]: no function or associated item named `operator_key` ``` The NFT operator/approval system (issue #382, #370) calls a `Storage::operator_key(...)` constructor that was never written. Implement it — presumably `(OPERATOR_KEY, owner, operator)` — and cover approve/revoke/is-approved with tests. --- _Filed from a full-repository audit (`cargo check --workspace`, dependency + CI + hygiene sweep) at commit `29f2dcf`._",
+      "updatedAt": "2026-08-24T22:33:32Z",
+      "summary": "## 📝 Description When attempting to query the database using GORM v2.24.0 with complex joins, the application panics. This issue has been observed in multiple environments and with various database backends (PostgreSQL, MySQL, SQLite). ## 🎯 Acceptance Criteria - [ ] The application should not panic when querying with complex joins. - [ ] The query should return the correct results as expected. - [ ] The panic should be reproducible and consistently occur with the same query. - [ ] The issue should be resolved in GORM v2.24.0 or a subsequent patch release. ## 🛠️ Technical Specifications & Context - The panic occurs when executing a query with multiple joins, including self-joins and joins with subqueries. - The issue is likely related to how GORM handles complex query structures internally. - The panic message typically includes a stack trace pointing to a file in the GORM library, such as `gorm.go` or `query.go`. ## 🧪 Verification & Testing 1. **Reproduce the Issue:** - Create a test case that includes a complex query with multiple joins. - Execute the test case and observe if the application panics. 2. **Verify Fix:** - Apply the proposed fix (if available) or a potential patc",
       "state": "candidate",
-      "payoutConfidence": 0.35,
+      "payoutConfidence": 0.7,
       "autonomyFit": 1,
       "requiresHumanGate": false,
       "requiresSpecialHardware": false,
@@ -349,7 +74,111 @@
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 439,
+      "economicValueUsd": 10,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5240106933",
+      "source": "github",
+      "title": "[ULDUAR]Flame Leviathan Vehicle Scaling is off",
+      "url": "https://github.com/azerothcore/azerothcore-wotlk/issues/27315",
+      "repositoryApiUrl": "https://api.github.com/repos/azerothcore/azerothcore-wotlk",
+      "rewardUsd": 55,
+      "score": 40,
+      "labels": [
+        "Confirmed",
+        "Instance - Raid - Northrend",
+        "80"
+      ],
+      "commentCount": 0,
+      "updatedAt": "2026-08-24T22:36:14Z",
+      "summary": "### Triage Issue linked from CC: https://github.com/chromiecraft/chromiecraft/issues/10070 Triage Notes: repro: - Enter Ulduar - Start the gauntlet - Enter a demolisher - observe hp increase from HP before entering - Equip full ICC gear - observe hp increase from earlier increase test: https://dl.dropboxusercontent.com/scl/fi/gabn98eyi2xvhtsrb7c48/wow_mE8NFHIZm2.mp4?rlkey=ze6s041107n6emadjffxy3x1t&dl=0 Original Post Below: --- ### Current Behaviour Flame Leviathan Vehicle Scaling is off - gear is not affecting the vehicles to the extend it should. Currently gear makes the demolisher go from 630k to 642k HP ### Expected Behaviour Vehicle scaling to be much higher. The demolisher in the video has 1.12m HP ### Official Sources (that prove or disprove) the issue being reported https://www.youtube.com/watch?v=JayETXRWISo ### Steps to reproduce the problem Enter Ulduar Start the gauntlet Enter a demolisher - observe hp increase from HP before entering Equip full ICC gear - observe hp increase from earlier increase The increase never comes close to the video ### Extra Notes _No response_ ### Customizations _No response_ ### AC rev. hash/commit https://github.com/chromiecraft/azerothcore-w",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 104,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 55,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5240048276",
+      "source": "github",
+      "title": "Repair merge-corruption duplication in SECURITY.md",
+      "url": "https://github.com/FlowwStar/FlowStar/issues/611",
+      "repositoryApiUrl": "https://api.github.com/repos/FlowwStar/FlowStar",
+      "rewardUsd": 94,
+      "score": 46,
+      "labels": [
+        "documentation",
+        "security",
+        "Stellar Wave"
+      ],
+      "commentCount": 3,
+      "updatedAt": "2026-08-24T22:43:40Z",
+      "summary": "**File:** `SECURITY.md` (whole file, ~184 lines) The file still contains two versions of itself concatenated together: two \"Scope\" sections (`## Supported Scope` at line 7 vs `## Scope` at line 108, different wording), two reporting-process sections, two \"Response Timeline\" tables (line 47 vs 139 — may state different SLAs), two severity tables (`## Severity Guide` at 64 vs `## Severity Classification` at 154, different label sets), two \"Safe Harbor\" sections (78 vs 167), two \"Bug Bounty\" sections (94 vs 183). Confirmed still present in the current file as of this issue. **Task:** This is a security-policy document, so precision matters — don't just pick one half. Reconcile the disagreements (timelines, severity labels, contact methods), or flag the conflicts explicitly in the PR description for maintainer review before merging. Produce a single, internally-consistent SECURITY.md.",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 103,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 3,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 94,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:4227389983",
+      "source": "github",
+      "title": "R-#128: #128: Premium Course Payments with Dynamic Pricing (Actualizado)",
+      "url": "https://github.com/pasosdeJesus/learn.tg/issues/128",
+      "repositoryApiUrl": "https://api.github.com/repos/pasosdeJesus/learn.tg",
+      "rewardUsd": 10,
+      "score": 46,
+      "labels": [],
+      "commentCount": 0,
+      "updatedAt": "2026-08-24T20:45:59Z",
+      "summary": "# #128: Premium Course Payments with Dynamic Pricing (Actualizado) Enable users to purchase premium courses using the already-deployed `SLEARN.processPayment()` function (from I129). Add dynamic pricing based on user's country (HDI). No contract changes needed — all logic is already in SLEARN.sol from I129. **Depends on:** I129 (SLEARN token launch, contracts deployed and operational), #155 (ClusterFunds for GD course), #196 (LearnTGVaultsV5 for scholarship split) **Supersedes:** #148 task 1 (premium course payments with SLEARN) — this is now the authoritative payment spec; #148 tracks the remaining post-launch features (burn, stable-sl swap, church distribution, transparency, governance). The referral program is tracked in #163. --- ## Summary of Key Decisions | Decision | Details | | :--- | :--- | | **Payment method** | Mixed USDT + SLEARN (same `SLEARN.processPayment()` used for donations) | | **Price calculation** | Linear `p = A*hdi + B`, calibrated to Sierra Leone ($2) and Colombia ($5). SLEARN price = USDT price × 22 × 0.90 (10% discount) | | **Distribution percentages (Standard)** | Premium payment distribution (50% pdJ, 10% vault, 10% reward, 10% missional, 5% UBI, 10% ref",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 95,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 10,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -398,7 +227,7 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-24T13:15:06Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:4982965060\",\"rewardUsd\":439,\"fastCashScore\":106,\"updatedAt\":\"2026-08-24T21:56:06Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5203651239\",\"rewardUsd\":200,\"fastCashScore\":109,\"updatedAt\":\"2026-08-24T22:05:41Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5234075844\",\"rewardUsd\":234,\"fastCashScore\":106,\"updatedAt\":\"2026-08-24T11:50:44Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5237310227\",\"rewardUsd\":1747,\"fastCashScore\":113,\"updatedAt\":\"2026-08-24T21:51:49Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5237449410\",\"rewardUsd\":1748,\"fastCashScore\":113,\"updatedAt\":\"2026-08-24T21:51:52Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5237697498\",\"rewardUsd\":1749,\"fastCashScore\":113,\"updatedAt\":\"2026-08-24T21:51:54Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5238644648\",\"rewardUsd\":1750,\"fastCashScore\":115,\"updatedAt\":\"2026-08-24T21:51:57Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5238997766\",\"rewardUsd\":1751,\"fastCashScore\":115,\"updatedAt\":\"2026-08-24T21:51:58Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5239119497\",\"rewardUsd\":1752,\"fastCashScore\":115,\"updatedAt\":\"2026-08-24T21:52:01Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5239249425\",\"rewardUsd\":2026,\"fastCashScore\":118,\"updatedAt\":\"2026-08-24T22:00:27Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:2940525692\",\"rewardUsd\":10,\"fastCashScore\":60,\"updatedAt\":\"2026-08-18T21:51:22Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-24T13:15:06Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4227389983\",\"rewardUsd\":10,\"fastCashScore\":95,\"updatedAt\":\"2026-08-24T20:45:59Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5211154647\",\"rewardUsd\":10,\"fastCashScore\":106,\"updatedAt\":\"2026-08-24T22:33:32Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5234075844\",\"rewardUsd\":234,\"fastCashScore\":106,\"updatedAt\":\"2026-08-24T11:50:44Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5240048276\",\"rewardUsd\":94,\"fastCashScore\":103,\"updatedAt\":\"2026-08-24T22:43:40Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5240106933\",\"rewardUsd\":55,\"fastCashScore\":104,\"updatedAt\":\"2026-08-24T22:36:14Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
@@ -411,7 +240,7 @@
     "minPayoutConfidence": 0.8,
     "competitionRequired": "low",
     "rejectedFakeRevenueCount": 0,
-    "rejectedAlreadyPaidCount": 2,
+    "rejectedAlreadyPaidCount": 3,
     "rejectedIdentityGateCount": 0
   },
   "economicallyRejected": [
@@ -422,7 +251,7 @@
       "reasons": [
         "already_rewarded_or_paid"
       ],
-      "rejectedAt": "2026-08-24T22:11:58.730Z"
+      "rejectedAt": "2026-08-24T22:46:57.551Z"
     },
     {
       "id": "github:3055155077",
@@ -431,16 +260,7 @@
       "reasons": [
         "already_rewarded_or_paid"
       ],
-      "rejectedAt": "2026-08-24T22:11:58.730Z"
-    },
-    {
-      "id": "github:5184937236",
-      "title": "Earn by few clicks shipping/shopping",
-      "rewardUsd": 100,
-      "reasons": [
-        "preclaim_or_identity_gate_not_configured"
-      ],
-      "rejectedAt": "2026-08-24T20:40:56.700Z"
+      "rejectedAt": "2026-08-24T22:46:57.551Z"
     },
     {
       "id": "github:2940525692",
@@ -448,6 +268,15 @@
       "rewardUsd": 10,
       "reasons": [
         "already_rewarded_or_paid"
+      ],
+      "rejectedAt": "2026-08-24T22:46:57.551Z"
+    },
+    {
+      "id": "github:5184937236",
+      "title": "Earn by few clicks shipping/shopping",
+      "rewardUsd": 100,
+      "reasons": [
+        "preclaim_or_identity_gate_not_configured"
       ],
       "rejectedAt": "2026-08-24T20:40:56.700Z"
     },
