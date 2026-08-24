@@ -1,9 +1,112 @@
 {
   "version": 11,
-  "updatedAt": "2026-08-24T18:53:03.480Z",
+  "updatedAt": "2026-08-24T19:28:53.377Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
+    {
+      "id": "github:5237697498",
+      "source": "github",
+      "title": "Bounty claim: BoTTube docstring PR #1749 (18 functions, 9.0 RTC)",
+      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16561",
+      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
+      "rewardUsd": 1749,
+      "score": 46,
+      "labels": [
+        "maintenance",
+        "awaiting-merge"
+      ],
+      "commentCount": 2,
+      "updatedAt": "2026-08-24T19:09:00Z",
+      "summary": "### Bounty issue link https://github.com/Scottcjn/rustchain-bounties/blob/main/.github/workflows/docstring-gate.yml ### Claim type Other ### Related PR / issue / content link https://github.com/Scottcjn/bottube/pull/1749 ### GitHub username dbquanghuy2004-Quant ### RTC wallet name dbquanghuy2004-Quant ### Related platform identity (optional) _No response_ ### What did you complete? Docstring bounty claim for https://github.com/Scottcjn/bottube/pull/1749 Documented 18 functions in tests/test_upload_api.py. Docstrings only; no runtime or test-logic changes. ### Proof links and evidence - PR: https://github.com/Scottcjn/bottube/pull/1749 - Compile check passes. - Targeted pytest: 34 passed, 5 failed, 1 teardown error, identical on clean upstream main. - GitHub: dbquanghuy2004-Quant - Wallet: dbquanghuy2004-Quant ### Verification checklist - [x] I am not using a product repo issue for this claim. - [x] I provided an RTC wallet name, not an external chain address. - [x] I understand payout is reviewed manually and may be partial or rejected if the proof is weak, duplicated, or out of scope.",
+      "state": "candidate",
+      "payoutConfidence": 0.5,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 115,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 2,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 1749,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5237449410",
+      "source": "github",
+      "title": "Bounty claim: BoTTube docstring PR #1748 batch 7 (31 functions, 15.5 RTC)",
+      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16560",
+      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
+      "rewardUsd": 1748,
+      "score": 46,
+      "labels": [
+        "awaiting-merge"
+      ],
+      "commentCount": 2,
+      "updatedAt": "2026-08-24T19:08:59Z",
+      "summary": "Bounty claim: BoTTube docstring PR #1748 batch 7 (31 functions, 15.5 RTC) PR: https://github.com/Scottcjn/bottube/pull/1748 Added docstrings to all 31 previously undocumented test functions in `tests/test_bottube_sdk.py`: fixtures/helper (1), authentication (5), video operations (6), comments (3), votes (6), tips (2), error handling (4), URL construction (3). Docstrings-only; 30/30 tests pass; file parses clean. Wallet: ezequiellich44-cmd (see #16548)",
+      "state": "candidate",
+      "payoutConfidence": 0.5,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 115,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 2,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 1748,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5237310227",
+      "source": "github",
+      "title": "Bounty claim: BoTTube docstring PR #1747 batch 6 (30 functions, 15.0 RTC)",
+      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16559",
+      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
+      "rewardUsd": 1747,
+      "score": 46,
+      "labels": [
+        "awaiting-merge"
+      ],
+      "commentCount": 2,
+      "updatedAt": "2026-08-24T19:08:57Z",
+      "summary": "Bounty claim: BoTTube docstring PR #1747 batch 5 (30 functions, 15.0 RTC) PR: https://github.com/Scottcjn/bottube/pull/1747 Added docstrings to 30 previously undocumented test functions in `tests/test_beef_system.py`: helpers (1), canonical ordering (1), state transitions (6), REST endpoints (14), drama arcs (6), leaderboard (1), input validation (4). Note: `test_admin_kill` fails (403 vs 200) on pristine upstream main too — pre-existing, flagged in the PR description as a possible separate fix. Docstrings-only change; 36/37 pass; file parses clean. Wallet: ezequiellich44-cmd (see #16548)",
+      "state": "candidate",
+      "payoutConfidence": 0.5,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 115,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 2,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 1747,
+      "requiresPreclaimOrIdentity": false
+    },
     {
       "id": "github:4462160604",
       "source": "github",
@@ -42,17 +145,17 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5232176171",
+      "id": "github:5238488751",
       "source": "github",
-      "title": "Maintainer notice: repair the unified V2 participation journey",
-      "url": "https://github.com/NSPG13/agent-bounties/issues/1183",
-      "repositoryApiUrl": "https://api.github.com/repos/NSPG13/agent-bounties",
-      "rewardUsd": 971,
-      "score": 46,
+      "title": "NPC kill rewards: apply overhit XP bonus and OVER-HIT message",
+      "url": "https://github.com/fatal10110/acis_golang/issues/1876",
+      "repositoryApiUrl": "https://api.github.com/repos/fatal10110/acis_golang",
+      "rewardUsd": 142,
+      "score": 48,
       "labels": [],
-      "commentCount": 8,
-      "updatedAt": "2026-08-24T18:45:06Z",
-      "summary": "## Planned scope Repair the unified marketplace readiness predicate so canonically active Open Competition V2 best-score opportunities remain visible without exposing a type-separated public market. Add one contract-specific, machine-readable participation workspace per competition with exact timing, objective scoring inputs, economics, risk, proof sequence, and canonical evidence boundaries. Add privacy-minimized funnel and abandonment events, plus reviewable presentation variants for reward, window, and prefilled child-bounty instructions. This is needed because the unified API currently exposes live V2 inventory while the public earning journey rejects or misroutes those records before an external agent can enter. Canonical chain and indexer evidence remains authoritative. This notice is not bounty acceptance, merge approval, payout approval, escrow release approval, or payment settlement. Change class: R1 for static route and presentation; R2 for idempotent analytics aggregation/read-model additions. No wallet, custody, verifier, settlement, contract bytecode, or funding authority changes are planned. ## Affected contracts or workflows Likely public surfaces: `site/` unified ma",
+      "commentCount": 0,
+      "updatedAt": "2026-08-24T19:12:40Z",
+      "summary": "## Gap The live NPC death-reward path grants the base single-attacker XP/SP share, but it has no overhit state check, bonus XP, or `OVER_HIT` client message. `internal/gameserver/data/manager/npcs_rewards.go:142-160` calls `player.KillRewardExpAndSp` at line 147, applies the pet split, then immediately calls `RewardExpAndSp` at line 159. A repository search found no Go overhit implementation. ## Java contract In the solo reward path, `Monster.java:158-163` checks `_overhitState.isValidOverhit(attacker)`, sends `SystemMessageId.OVER_HIT`, and adds `calculateOverhitExp(exp)`. The party path does the same at `Monster.java:229-234`. `OverhitState.java:39-65` records a successful overhit only when the enabled overhit hit deals positive lethal excess damage; `OverhitState.java:82-95` calculates the bonus from excess damage, capped at 25% of normal XP and rounded. `OverhitState.java:102-105` requires the recorded attacker to be the rewarded player. ## Scope Port the missing overhit state/trigger and apply this caller-side contract before the pet XP split: - when the rewarded attacker has valid overhit state, send the `OVER_HIT` system message and add the capped, rounded XP bonus; - retain",
       "state": "candidate",
       "payoutConfidence": 0.35,
       "autonomyFit": 1,
@@ -61,16 +164,86 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 99,
+      "fastCashScore": 109,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 142,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5086436974",
+      "source": "github",
+      "title": "improve maze-dash: residuals after the day-013 review cycles",
+      "url": "https://github.com/yinggarykairui/factory-hub/issues/45",
+      "repositoryApiUrl": "https://api.github.com/repos/yinggarykairui/factory-hub",
+      "rewardUsd": 309,
+      "score": 40,
+      "labels": [
+        "building",
+        "size:s",
+        "type:game"
+      ],
+      "commentCount": 2,
+      "updatedAt": "2026-08-24T19:17:29Z",
+      "summary": "Follow-up to [#5](https://github.com/yinggarykairui/factory-hub/issues/5) (day 013, `shipped`). These are what three review cycles — a playtester and three independent critics, twice over — turned up and deliberately **did not** close: either the fix is a redesign rather than polish, or the evidence says the obvious fix makes the build worse. Each is reproducible against [`maze-dash@dc576e3`](https://github.com/yinggarykairui/maze-dash/commit/dc576e3). None is a must-pass failure; the ship verified 7/7 with all three critics approving. **Needs a design decision, not a patch** 1. **The strategy that pays is undiscoverable from the screen.** Measured through the real button at human cadence, on fixed seeds: hands-off 1.00 mazes/run, \"avoid the grey and head for the ring\" (what a stranger tries) 1.20, right-hand wall-following **2.60** with no zero-score runs. The headroom is real — 160% — but wall-following is not hinted on screen, is not in the README, and cannot be inferred from the board. Meanwhile the two things the screen *does* suggest are traps: greedy-toward-the-exit measured **0.72, worse than doing nothing (0.78)**, because Manhattan-greedy walks into dead ends on a perfect",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 108,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 2,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 309,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5229271933",
+      "source": "github",
+      "title": "Bounty claim: BoTTube docstring PR #1743 batch 19 (26 functions, 13.0 RTC)",
+      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16549",
+      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
+      "rewardUsd": 1743,
+      "score": 38,
+      "labels": [
+        "awaiting-merge"
+      ],
+      "commentCount": 11,
+      "updatedAt": "2026-08-24T19:08:55Z",
+      "summary": "Bounty claim: BoTTube docstring PR #1743 (26 functions, 13.0 RTC) PR: https://github.com/Scottcjn/bottube/pull/1743 Added docstrings to 26 previously undocumented test functions/fixtures in `tests/test_debate_framework.py`: helpers (3), TestRateLimiter (4), TestComment (2), TestThreadContext (5), TestDebateBot (8), TestDebateOrchestrator (4). Verified locally: pytest passes 35/35 with the docstrings added; docstrings-only change. Wallet: ezequiellich44-cmd (see #16548)",
+      "state": "candidate",
+      "payoutConfidence": 0.5,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 101,
       "survivalEligible": false,
       "eligibilityReason": "Competition is too high for bootstrap mode.",
       "competition": {
-        "comments": 8,
+        "comments": 11,
         "attemptSignals": 0,
         "risk": "medium"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 971,
+      "economicValueUsd": 1743,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -107,40 +280,6 @@
       "realMoneyEligible": true,
       "economicValueUsd": 50,
       "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5145024887",
-      "source": "github",
-      "title": "Assemble, validate, and hand off the playable Stage 1 vertical slice",
-      "url": "https://github.com/magicalfeyfenny/blade-of-desires/issues/20",
-      "repositoryApiUrl": "https://api.github.com/repos/magicalfeyfenny/blade-of-desires",
-      "rewardUsd": 98,
-      "score": 48,
-      "labels": [
-        "enhancement"
-      ],
-      "commentCount": 0,
-      "updatedAt": "2026-08-24T18:45:56Z",
-      "summary": "## Summary Assemble, validate, and hand off the complete playable Stage 1 vertical slice, **Lost Forest of Aurei**, from the finished atomic roadmap units. This issue owns final wiring, cross-system verification, robustness, and Fenny's test handoff only. It must not invent alternate engines, content owners, pipelines, save systems, UI flows, or production assets. ## Acceptance criteria ### Complete application path - A fresh launch reaches the Blade-original press-start/title flow without developer-only setup. - New Run supports Maynii, Ciela, and Kolar plus exactly `easy`, `normal`, and `hard`. - Display names remain content and `extra` remains a stage identity. - All nine ship/difficulty combinations start through one canonical run transaction and enter the same content-driven Stage 1 route. - The normal path is title -> setup -> opening scene -> Stage 1 -> World Tree midboss -> Asahi -> river exit -> results -> high-score/replay decision -> stable destination. - Pause, options/accessibility, backlog, Continue, game-over, practice, and replay flows work at declared points and return stably. - Abort, restart, Continue, death, dialogue skip, replay exit, room transition, and title",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 16,
-      "complexity": 5,
-      "fundedBountySignal": false,
-      "fastCashScore": 62,
-      "survivalEligible": false,
-      "eligibilityReason": "Too slow for bootstrap mode: first real cash currently requires a <=4 hour task.",
-      "competition": {
-        "comments": 0,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 98,
-      "requiresPreclaimOrIdentity": false
     }
   ],
   "selected": null,
@@ -153,7 +292,7 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:2940525692\",\"rewardUsd\":10,\"fastCashScore\":60,\"updatedAt\":\"2026-08-18T21:51:22Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-24T13:15:06Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5145024887\",\"rewardUsd\":98,\"fastCashScore\":62,\"updatedAt\":\"2026-08-24T18:45:56Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5232176171\",\"rewardUsd\":971,\"fastCashScore\":99,\"updatedAt\":\"2026-08-24T18:45:06Z\",\"competition\":{\"comments\":8,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5234075844\",\"rewardUsd\":234,\"fastCashScore\":106,\"updatedAt\":\"2026-08-24T11:50:44Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:2940525692\",\"rewardUsd\":10,\"fastCashScore\":60,\"updatedAt\":\"2026-08-18T21:51:22Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-24T13:15:06Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5086436974\",\"rewardUsd\":309,\"fastCashScore\":108,\"updatedAt\":\"2026-08-24T19:17:29Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5160374150\",\"rewardUsd\":160,\"fastCashScore\":85,\"updatedAt\":\"2026-08-24T19:14:58Z\",\"competition\":{\"comments\":21,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:5229271933\",\"rewardUsd\":1743,\"fastCashScore\":101,\"updatedAt\":\"2026-08-24T19:08:55Z\",\"competition\":{\"comments\":11,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5234075844\",\"rewardUsd\":234,\"fastCashScore\":106,\"updatedAt\":\"2026-08-24T11:50:44Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5237310227\",\"rewardUsd\":1747,\"fastCashScore\":115,\"updatedAt\":\"2026-08-24T19:08:57Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5237449410\",\"rewardUsd\":1748,\"fastCashScore\":115,\"updatedAt\":\"2026-08-24T19:08:59Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5237697498\",\"rewardUsd\":1749,\"fastCashScore\":115,\"updatedAt\":\"2026-08-24T19:09:00Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5238488751\",\"rewardUsd\":142,\"fastCashScore\":109,\"updatedAt\":\"2026-08-24T19:12:40Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
@@ -166,7 +305,7 @@
     "minPayoutConfidence": 0.8,
     "competitionRequired": "low",
     "rejectedFakeRevenueCount": 0,
-    "rejectedAlreadyPaidCount": 3,
+    "rejectedAlreadyPaidCount": 4,
     "rejectedIdentityGateCount": 0
   },
   "economicallyRejected": [
@@ -177,7 +316,7 @@
       "reasons": [
         "already_rewarded_or_paid"
       ],
-      "rejectedAt": "2026-08-24T18:53:03.426Z"
+      "rejectedAt": "2026-08-24T19:28:53.324Z"
     },
     {
       "id": "github:3055155077",
@@ -186,7 +325,16 @@
       "reasons": [
         "already_rewarded_or_paid"
       ],
-      "rejectedAt": "2026-08-24T18:53:03.426Z"
+      "rejectedAt": "2026-08-24T19:28:53.324Z"
+    },
+    {
+      "id": "github:5160374150",
+      "title": "[BOUNTY ROUND] Content Round — articles, video, Hackaday.io, X, BoTTube, referrals (1,000 RTC pool, closes 2026-09-30)",
+      "rewardUsd": 160,
+      "reasons": [
+        "already_rewarded_or_paid"
+      ],
+      "rejectedAt": "2026-08-24T19:28:53.325Z"
     },
     {
       "id": "github:2940525692",
@@ -195,7 +343,7 @@
       "reasons": [
         "already_rewarded_or_paid"
       ],
-      "rejectedAt": "2026-08-24T18:53:03.427Z"
+      "rejectedAt": "2026-08-24T19:28:53.325Z"
     },
     {
       "id": "github:4978773842",
@@ -298,15 +446,6 @@
         "testnet_or_test_token_reward"
       ],
       "rejectedAt": "2026-08-23T21:59:56.246Z"
-    },
-    {
-      "id": "github:5160374150",
-      "title": "[BOUNTY ROUND] Content Round — articles, video, Hackaday.io, X, BoTTube, referrals (1,000 RTC pool, closes 2026-09-30)",
-      "rewardUsd": 160,
-      "reasons": [
-        "already_rewarded_or_paid"
-      ],
-      "rejectedAt": "2026-08-23T21:41:25.280Z"
     },
     {
       "id": "github:5228403108",
