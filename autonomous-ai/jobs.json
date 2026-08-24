@@ -1,9 +1,45 @@
 {
   "version": 11,
-  "updatedAt": "2026-08-24T22:46:57.591Z",
+  "updatedAt": "2026-08-24T23:10:54.373Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
+    {
+      "id": "github:5239249425",
+      "source": "github",
+      "title": "[radar] SN open bounty 2026-08-24T20:41",
+      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/721",
+      "repositoryApiUrl": "https://api.github.com/repos/relayhop/sn-monetization-runtime",
+      "rewardUsd": 2026,
+      "score": 56,
+      "labels": [
+        "radar",
+        "sn",
+        "bounty"
+      ],
+      "commentCount": 0,
+      "updatedAt": "2026-08-24T23:00:10Z",
+      "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 35 10000 23 33.5 9274 26637 recent@Stacker_Stocks OPEN_BOUNTY Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```",
+      "state": "candidate",
+      "payoutConfidence": 0.5,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 118,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 2026,
+      "requiresPreclaimOrIdentity": false
+    },
     {
       "id": "github:4462160604",
       "source": "github",
@@ -90,8 +126,8 @@
         "Instance - Raid - Northrend",
         "80"
       ],
-      "commentCount": 0,
-      "updatedAt": "2026-08-24T22:36:14Z",
+      "commentCount": 1,
+      "updatedAt": "2026-08-24T22:55:50Z",
       "summary": "### Triage Issue linked from CC: https://github.com/chromiecraft/chromiecraft/issues/10070 Triage Notes: repro: - Enter Ulduar - Start the gauntlet - Enter a demolisher - observe hp increase from HP before entering - Equip full ICC gear - observe hp increase from earlier increase test: https://dl.dropboxusercontent.com/scl/fi/gabn98eyi2xvhtsrb7c48/wow_mE8NFHIZm2.mp4?rlkey=ze6s041107n6emadjffxy3x1t&dl=0 Original Post Below: --- ### Current Behaviour Flame Leviathan Vehicle Scaling is off - gear is not affecting the vehicles to the extend it should. Currently gear makes the demolisher go from 630k to 642k HP ### Expected Behaviour Vehicle scaling to be much higher. The demolisher in the video has 1.12m HP ### Official Sources (that prove or disprove) the issue being reported https://www.youtube.com/watch?v=JayETXRWISo ### Steps to reproduce the problem Enter Ulduar Start the gauntlet Enter a demolisher - observe hp increase from HP before entering Equip full ICC gear - observe hp increase from earlier increase The increase never comes close to the video ### Extra Notes _No response_ ### Customizations _No response_ ### AC rev. hash/commit https://github.com/chromiecraft/azerothcore-w",
       "state": "candidate",
       "payoutConfidence": 0.35,
@@ -101,11 +137,11 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 104,
+      "fastCashScore": 102,
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
-        "comments": 0,
+        "comments": 1,
         "attemptSignals": 0,
         "risk": "low"
       },
@@ -120,14 +156,14 @@
       "url": "https://github.com/FlowwStar/FlowStar/issues/611",
       "repositoryApiUrl": "https://api.github.com/repos/FlowwStar/FlowStar",
       "rewardUsd": 94,
-      "score": 46,
+      "score": 38,
       "labels": [
         "documentation",
         "security",
         "Stellar Wave"
       ],
-      "commentCount": 3,
-      "updatedAt": "2026-08-24T22:43:40Z",
+      "commentCount": 6,
+      "updatedAt": "2026-08-24T22:53:39Z",
       "summary": "**File:** `SECURITY.md` (whole file, ~184 lines) The file still contains two versions of itself concatenated together: two \"Scope\" sections (`## Supported Scope` at line 7 vs `## Scope` at line 108, different wording), two reporting-process sections, two \"Response Timeline\" tables (line 47 vs 139 — may state different SLAs), two severity tables (`## Severity Guide` at 64 vs `## Severity Classification` at 154, different label sets), two \"Safe Harbor\" sections (78 vs 167), two \"Bug Bounty\" sections (94 vs 183). Confirmed still present in the current file as of this issue. **Task:** This is a security-policy document, so precision matters — don't just pick one half. Reconcile the disagreements (timelines, severity labels, contact methods), or flag the conflicts explicitly in the PR description for maintainer review before merging. Produce a single, internally-consistent SECURITY.md.",
       "state": "candidate",
       "payoutConfidence": 0.35,
@@ -137,13 +173,13 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 103,
+      "fastCashScore": 98,
       "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "eligibilityReason": "Competition is too high for bootstrap mode.",
       "competition": {
-        "comments": 3,
+        "comments": 6,
         "attemptSignals": 0,
-        "risk": "low"
+        "risk": "medium"
       },
       "realMoneyEligible": true,
       "economicValueUsd": 94,
@@ -227,7 +263,7 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:2940525692\",\"rewardUsd\":10,\"fastCashScore\":60,\"updatedAt\":\"2026-08-18T21:51:22Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-24T13:15:06Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4227389983\",\"rewardUsd\":10,\"fastCashScore\":95,\"updatedAt\":\"2026-08-24T20:45:59Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5211154647\",\"rewardUsd\":10,\"fastCashScore\":106,\"updatedAt\":\"2026-08-24T22:33:32Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5234075844\",\"rewardUsd\":234,\"fastCashScore\":106,\"updatedAt\":\"2026-08-24T11:50:44Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5240048276\",\"rewardUsd\":94,\"fastCashScore\":103,\"updatedAt\":\"2026-08-24T22:43:40Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5240106933\",\"rewardUsd\":55,\"fastCashScore\":104,\"updatedAt\":\"2026-08-24T22:36:14Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:2940525692\",\"rewardUsd\":10,\"fastCashScore\":60,\"updatedAt\":\"2026-08-18T21:51:22Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-24T13:15:06Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4227389983\",\"rewardUsd\":10,\"fastCashScore\":95,\"updatedAt\":\"2026-08-24T20:45:59Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":111,\"updatedAt\":\"2026-08-20T01:22:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-22T07:44:17Z\",\"competition\":{\"comments\":42,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5211154647\",\"rewardUsd\":10,\"fastCashScore\":106,\"updatedAt\":\"2026-08-24T22:33:32Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5234075844\",\"rewardUsd\":234,\"fastCashScore\":106,\"updatedAt\":\"2026-08-24T11:50:44Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5239249425\",\"rewardUsd\":2026,\"fastCashScore\":118,\"updatedAt\":\"2026-08-24T23:00:10Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5240048276\",\"rewardUsd\":94,\"fastCashScore\":98,\"updatedAt\":\"2026-08-24T22:53:39Z\",\"competition\":{\"comments\":6,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5240106933\",\"rewardUsd\":55,\"fastCashScore\":102,\"updatedAt\":\"2026-08-24T22:55:50Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
@@ -251,7 +287,7 @@
       "reasons": [
         "already_rewarded_or_paid"
       ],
-      "rejectedAt": "2026-08-24T22:46:57.551Z"
+      "rejectedAt": "2026-08-24T23:10:54.321Z"
     },
     {
       "id": "github:3055155077",
@@ -260,7 +296,7 @@
       "reasons": [
         "already_rewarded_or_paid"
       ],
-      "rejectedAt": "2026-08-24T22:46:57.551Z"
+      "rejectedAt": "2026-08-24T23:10:54.322Z"
     },
     {
       "id": "github:2940525692",
@@ -269,7 +305,7 @@
       "reasons": [
         "already_rewarded_or_paid"
       ],
-      "rejectedAt": "2026-08-24T22:46:57.551Z"
+      "rejectedAt": "2026-08-24T23:10:54.322Z"
     },
     {
       "id": "github:5184937236",

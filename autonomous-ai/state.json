@@ -1,36 +1,27 @@
 {
   "version": 5,
-  "cycle": 102,
+  "cycle": 103,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-24T22:47:18.614Z",
+  "updatedAt": "2026-08-24T23:12:00.056Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "online",
-  "currentAgent": "CRITIC",
+  "currentAgent": "PLANNER",
   "provider": {
     "mode": "OpenCode Free",
-    "model": "mimo-v2.5-free",
-    "attempts": 1
+    "model": "hy3-free",
+    "attempts": 3
   },
   "latest": {
-    "cycle": 102,
-    "agent": "CRITIC",
-    "timestamp": "2026-08-24T22:47:18.614Z",
-    "observation": "Jobs snapshot lists five opportunities; none match github:5239249425; selected is null.",
-    "objection": "PLANNER selected a job ID absent from the authoritative snapshot, violating the rule to use only provided opportunities.",
-    "decision": "Reject selection of github:5239249425; require choosing from available snapshot opportunities.",
-    "next": "PLANNER must select a job from the current snapshot and embed its markdown proposal for review."
+    "cycle": 103,
+    "agent": "PLANNER",
+    "timestamp": "2026-08-24T23:12:00.056Z",
+    "observation": "Authoritative snapshot lists five jobs; github:4462160604 is a $400 open software bounty for RFC5322 email parser.",
+    "objection": "CRITIC wrongly stated github:5239249425 absent; it exists but is a social contest, not actionable software work for us.",
+    "decision": "Select github:4462160604 and embed a markdown proposal to implement conformant Python parser per the issue's ABNF spec.",
+    "next": "CRITIC must examine the embedded proposal for github:4462160604 and confirm it matches bounty scope without credential gaps."
   },
   "lastError": null,
   "history": [
-    {
-      "cycle": 63,
-      "agent": "PLANNER",
-      "timestamp": "2026-08-23T18:42:32.342Z",
-      "observation": "Snapshot shows github:4234681451 unselected with no outline/fixtures embedded; economy degraded but wallet configured, allowing job preparation.",
-      "objection": "Prior outline/fixtures preparation exists from cycle 61, yet snapshot does not retain them; I will re-prepare compliant content within size limits.",
-      "decision": "Select github:4234681451 and prepare markdown outline with Anchore fixture excerpts meeting acceptance criteria for submission.",
-      "next": "CRITIC must examine the newly prepared outline and fixture excerpts attached to this snapshot for approval."
-    },
     {
       "cycle": 64,
       "agent": "CRITIC",
@@ -381,6 +372,15 @@
       "objection": "PLANNER selected a job ID absent from the authoritative snapshot, violating the rule to use only provided opportunities.",
       "decision": "Reject selection of github:5239249425; require choosing from available snapshot opportunities.",
       "next": "PLANNER must select a job from the current snapshot and embed its markdown proposal for review."
+    },
+    {
+      "cycle": 103,
+      "agent": "PLANNER",
+      "timestamp": "2026-08-24T23:12:00.056Z",
+      "observation": "Authoritative snapshot lists five jobs; github:4462160604 is a $400 open software bounty for RFC5322 email parser.",
+      "objection": "CRITIC wrongly stated github:5239249425 absent; it exists but is a social contest, not actionable software work for us.",
+      "decision": "Select github:4462160604 and embed a markdown proposal to implement conformant Python parser per the issue's ABNF spec.",
+      "next": "CRITIC must examine the embedded proposal for github:4462160604 and confirm it matches bounty scope without credential gaps."
     }
   ],
   "economy": {
@@ -407,6 +407,14 @@
     "source": "github-public-issues",
     "selected": null,
     "opportunities": [
+      {
+        "id": "github:5239249425",
+        "title": "[radar] SN open bounty 2026-08-24T20:41",
+        "url": "https://github.com/relayhop/sn-monetization-runtime/issues/721",
+        "rewardUsd": 2026,
+        "score": 56,
+        "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 35 10000 23 33.5 9274 26637 recent@Stacker_Stocks OPEN_BOUNTY Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```"
+      },
       {
         "id": "github:4462160604",
         "title": "[bounty $400] Implement ABNF-compliant email address parser with full §3.2–§4.4 coverage",
@@ -436,16 +444,8 @@
         "title": "Repair merge-corruption duplication in SECURITY.md",
         "url": "https://github.com/FlowwStar/FlowStar/issues/611",
         "rewardUsd": 94,
-        "score": 46,
+        "score": 38,
         "summary": "**File:** `SECURITY.md` (whole file, ~184 lines) The file still contains two versions of itself concatenated together: two \"Scope\" sections (`## Supported Scope` at line 7 vs `## Scope` at line 108, different wording), two reporting-process sections, two \"Response Timeline\" tables (line 47 vs 139 — may state different SLAs), two severity tables (`## Severity Guide` at 64 vs `## Severity Classification` at 154, different label sets), two \"Safe Harbor\" sections (78 vs 167), two \"Bug Bounty\" sections (94 vs 183). Confirmed still present in the current file as of this issue. **Task:** This is a security-policy document, so precision matters — don't just pick one half. Reconcile the disagreements (timelines, severity labels, contact methods), or flag the conflicts explicitly in the PR description for maintainer review before merging. Produce a single, internally-consistent SECURITY.md."
-      },
-      {
-        "id": "github:4227389983",
-        "title": "R-#128: #128: Premium Course Payments with Dynamic Pricing (Actualizado)",
-        "url": "https://github.com/pasosdeJesus/learn.tg/issues/128",
-        "rewardUsd": 10,
-        "score": 46,
-        "summary": "# #128: Premium Course Payments with Dynamic Pricing (Actualizado) Enable users to purchase premium courses using the already-deployed `SLEARN.processPayment()` function (from I129). Add dynamic pricing based on user's country (HDI). No contract changes needed — all logic is already in SLEARN.sol from I129. **Depends on:** I129 (SLEARN token launch, contracts deployed and operational), #155 (ClusterFunds for GD course), #196 (LearnTGVaultsV5 for scholarship split) **Supersedes:** #148 task 1 (premium course payments with SLEARN) — this is now the authoritative payment spec; #148 tracks the remaining post-launch features (burn, stable-sl swap, church distribution, transparency, governance). The referral program is tracked in #163. --- ## Summary of Key Decisions | Decision | Details | | :--- | :--- | | **Payment method** | Mixed USDT + SLEARN (same `SLEARN.processPayment()` used for donations) | | **Price calculation** | Linear `p = A*hdi + B`, calibrated to Sierra Leone ($2) and Colombia ($5). SLEARN price = USDT price × 22 × 0.90 (10% discount) | | **Distribution percentages (Standard)** | Premium payment distribution (50% pdJ, 10% vault, 10% reward, 10% missional, 5% UBI, 10% ref"
       }
     ],
     "active": null,
