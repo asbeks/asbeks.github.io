@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-08-25T07:23:43.761Z",
+  "updatedAt": "2026-08-25T08:07:54.019Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -50,6 +50,70 @@
       "requiresPreclaimOrIdentity": false
     },
     {
+      "id": "github:5243368615",
+      "source": "github",
+      "title": "[CLAIM] Bounty #16517 — NES 1,117,248 cycles/token reproduced on MAME 0.277",
+      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16574",
+      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
+      "rewardUsd": 16517,
+      "score": 46,
+      "labels": [],
+      "commentCount": 0,
+      "updatedAt": "2026-08-25T07:48:01Z",
+      "summary": "## Bounty #16517 claim — NES MAME 0.277 reproduction (5 RTC tier) ### 1. Figure and source commit - Figure: NES dense + power-of-two normalizer, **1,117,248 mean cycles/token** - Source commit: `2de04401cd7de09d9c44712d3eb4b2dd7190518c` - Model checkpoint: `runs/fac/dense_pow2_s1.npz` (`nnz=52,246/102,400`) - Host: Windows x86-64, Intel Core i7-9750H ### 2. Emulator and version Official **MAME 0.277** 64-bit Windows binary, `nes` driver. The executable reported `0.277 (mame0277)`. ### 3. Re-runnable harness - Upstream harness: `tools/nes_bench.py` + `tools/run_nn.py` at the source commit above - Windows portability patch and tests: https://github.com/Scottcjn/elya-nes/pull/2 - Patch commit: https://github.com/AInoAKARI/elya-nes/commit/821b49eb9d46d595279905c2d2f2281464caa407 The run used the repository's write tap at `$0300`. The checkpoint was repacked with `NES_SM_NORM=pow2`, `NES_AV_SHIFT=2`, `NES_T=20`, `NES_STREAM_BANKS=7`, and `NES_SEED_TOK=1`; `train/verify_pack.py` reported `max|dW| = 0` over all 102,400 ternary weights. ### 4. Raw cycle counts ```text pos 0 1085835 pos 1 1089993 pos 2 1093262 pos 3 1096755 pos 4 1099496 pos 5 1104046 pos 6 1107009 pos 7 1109736 pos 8 11135",
+      "state": "candidate",
+      "payoutConfidence": 0.5,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 118,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 16517,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5243520032",
+      "source": "github",
+      "title": "Redemption dashboard/pricing failures don't gate retry — same silent-swallow gap as #559, still open",
+      "url": "https://github.com/Battle-Cattle/BCUK-Bot-4/issues/562",
+      "repositoryApiUrl": "https://api.github.com/repos/Battle-Cattle/BCUK-Bot-4",
+      "rewardUsd": 559,
+      "score": 40,
+      "labels": [],
+      "commentCount": 0,
+      "updatedAt": "2026-08-25T08:07:15Z",
+      "summary": "## Summary Found during review of #560 (the fix for #559). `handleRedemption` in `src/twitch/eventsub/twitchEventSubHandler.ts` now only marks a redemption as successfully handled (`markRedemptionHandled`) once the whole effect chain completes without throwing — but two of those effects are designed to *never* throw, so their failures are silently absorbed and the redemption still gets marked \"handled\": - `recordAndPushDashboardEvent` wraps `recordStreamerEvent` (the DB write) and the dashboard SSE push in its own try/catch and only logs on failure — by design, documented on the function itself, and shared by every EventSub handler (follow/sub/resub/giftsub/raid/redemption), not just redemptions. - `applyRedemptionPricing(streamerId, event.reward.id)` is fire-and-forget (`.catch(...)` instead of `await`) — also by design, to avoid adding Twitch Helix latency to the redemption-handling path. Net effect: if the dashboard DB write or the dynamic-pricing update fails (e.g. a transient DB error, a Twitch Helix hiccup), that failure is logged and swallowed, `handleRedemption` proceeds to the overlay step, and — assuming the overlay step succeeds — the redemption is marked \"handled\" via `",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 111,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 559,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
       "id": "github:4462160604",
       "source": "github",
       "title": "[bounty $400] Implement ABNF-compliant email address parser with full §3.2–§4.4 coverage",
@@ -87,35 +151,74 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5005925746",
+      "id": "github:5243371871",
       "source": "github",
-      "title": "[Zero Income Engine] Mission Control",
-      "url": "https://github.com/YS-OH-CORE/ai-observer-notes/issues/9",
-      "repositoryApiUrl": "https://api.github.com/repos/YS-OH-CORE/ai-observer-notes",
-      "rewardUsd": 4265,
+      "title": "🎯 Bug: `discover_log_levels` rejected as unknown YAML field in `limits_config`",
+      "url": "https://github.com/daonhienngo/loki/issues/1",
+      "repositoryApiUrl": "https://api.github.com/repos/daonhienngo/loki",
+      "rewardUsd": 10,
       "score": 54,
-      "labels": [],
-      "commentCount": 2,
-      "updatedAt": "2026-08-25T07:08:31Z",
-      "summary": "# Zero Income Engine Mission Control - Updated: 2026-08-25T07:08:26.851Z - Run: 117 - Terminal goal: **verified money** - Status: **MARKET_GAP_RESEARCH** - Mission lock: **RUN_UNTIL_MONEY_OR_EXPLICIT_USER_PAUSE** - Operator-fit lock: **QUIET_REPEATABLE_AI_OPERATED_INCOME** - Public identity lock: **HIDDEN_PROJECT_ALIAS_ONLY_NO_FACE_NO_VOICE_NO_PERSONAL_BRAND** - Money evidence: $0.00 received / $0.00 receivable / 0 paid use(s) ## Primary target ### [Paid tool market: reviews scraper](https://apify.com/store) - Route: product-market - Combined score: 65.4 - Economic score: 45.9 - Operator-fit score: 89.1 - Route role: recurring-income - Human friction: low-after-publish - Identity surface: project alias and product listing; private payout identity only if required - Hidden-compatible: yes - Cash signal: $0.00 - Gate: INSPECT_PAID_PRODUCT_GAPS - Probability class: unknown-until-gap-proof - Next executable action: Inspect the ten most-used paid products for repeated complaints, missing outputs, unreliable runs, and expensive pricing. Build only after one objective gap is evidenced; publish under a project identity and keep support asynchronous and minimal. **Evidence** - 410946 30-day",
+      "labels": [
+        "bounty",
+        "bountyhub",
+        "$10"
+      ],
+      "commentCount": 1,
+      "updatedAt": "2026-08-25T08:00:18Z",
+      "summary": "## 📝 Description When attempting to configure `discover_log_levels` under the `limits_config` section of the Loki configuration file, Loki fails to start and rejects the property with an unmarshal error (e.g., `yaml: unmarshal errors: line X: field discover_log_levels not found in type validation.plainLimits`). The limit property is either missing the appropriate YAML struct tags, missing from the `Limits` / `plainLimits` struct definitions, or not registered in the limits configuration mapping, preventing operators from defining log level discovery limits globally or per tenant. ## 🎯 Acceptance Criteria - [ ] `discover_log_levels` is a valid, recognized YAML field under the `limits_config` block. - [ ] Parsing valid YAML containing `discover_log_levels: true` or `discover_log_levels: false` does not throw an unknown field error during configuration unmarshaling (including strict YAML unmarshaling). - [ ] The field supports default values, per-tenant overrides via the runtime configuration/overrides manager, and corresponding command-line flag bindings (e.g., `-limits.discover-log-levels`). - [ ] Helper methods on the `Overrides` / `Limits` interface (e.g., `DiscoverLogLevels(ten",
       "state": "candidate",
-      "payoutConfidence": 0.35,
+      "payoutConfidence": 0.7,
       "autonomyFit": 1,
       "requiresHumanGate": false,
       "requiresSpecialHardware": false,
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 108,
+      "fastCashScore": 109,
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
-        "comments": 2,
+        "comments": 1,
         "attemptSignals": 0,
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 4265,
+      "economicValueUsd": 10,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5237697498",
+      "source": "github",
+      "title": "Bounty claim: BoTTube docstring PR #1749 (18 functions, 9.0 RTC)",
+      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16561",
+      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
+      "rewardUsd": 1749,
+      "score": 38,
+      "labels": [
+        "maintenance",
+        "awaiting-merge"
+      ],
+      "commentCount": 7,
+      "updatedAt": "2026-08-25T08:04:02Z",
+      "summary": "### Bounty issue link https://github.com/Scottcjn/rustchain-bounties/blob/main/.github/workflows/docstring-gate.yml ### Claim type Other ### Related PR / issue / content link https://github.com/Scottcjn/bottube/pull/1749 ### GitHub username dbquanghuy2004-Quant ### RTC wallet name dbquanghuy2004-Quant ### Related platform identity (optional) _No response_ ### What did you complete? Docstring bounty claim for https://github.com/Scottcjn/bottube/pull/1749 Documented 18 functions in tests/test_upload_api.py. Docstrings only; no runtime or test-logic changes. ### Proof links and evidence - PR: https://github.com/Scottcjn/bottube/pull/1749 - Compile check passes. - Targeted pytest: 34 passed, 5 failed, 1 teardown error, identical on clean upstream main. - GitHub: dbquanghuy2004-Quant - Wallet: dbquanghuy2004-Quant ### Verification checklist - [x] I am not using a product repo issue for this claim. - [x] I provided an RTC wallet name, not an external chain address. - [x] I understand payout is reviewed manually and may be partial or rejected if the proof is weak, duplicated, or out of scope.",
+      "state": "candidate",
+      "payoutConfidence": 0.5,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 107,
+      "survivalEligible": false,
+      "eligibilityReason": "Competition is too high for bootstrap mode.",
+      "competition": {
+        "comments": 7,
+        "attemptSignals": 0,
+        "risk": "medium"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 1749,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -153,183 +256,67 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5226664248",
+      "id": "github:5243263356",
       "source": "github",
-      "title": "[radar] SN open bounty 2026-08-23T11:30",
-      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/550",
-      "repositoryApiUrl": "https://api.github.com/repos/relayhop/sn-monetization-runtime",
-      "rewardUsd": 2026,
-      "score": 48,
-      "labels": [
-        "radar",
-        "sn",
-        "bounty"
-      ],
-      "commentCount": 9,
-      "updatedAt": "2026-08-25T07:02:31Z",
-      "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 0 10000 0 0.3 9274 26598 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY,LOW_COMP,FRESH Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```",
+      "title": "Tron USDT egress fee inflated ~17x (≈$4 → ≈$72): simulated-swap TRX price accepts a dust-pool fill",
+      "url": "https://github.com/chainflip-io/chainflip-backend/issues/6814",
+      "repositoryApiUrl": "https://api.github.com/repos/chainflip-io/chainflip-backend",
+      "rewardUsd": 71.61,
+      "score": 40,
+      "labels": [],
+      "commentCount": 0,
+      "updatedAt": "2026-08-25T07:37:29Z",
+      "summary": "## Summary The protocol-level **egress fee for USDT on Tron is currently \\~17x too high**: **\\~71.61 USDT**, against a real on-chain broadcast cost of **10.7757 TRX (~$3.68)**. The TRX-denominated gas model is fine (\\~12.668 TRX vs 10.776 TRX actually burned, +17.6%). The inflation happens entirely in the **TRX → USDT price conversion**, which for TRX is sourced from a rolled-back 20-USDC simulated swap against Chainflip's own TRX/USDC pool. That pool is currently dust, so the probe returns a price of **~$5.65/TRX against a market price of \\~$0.3416** — and the only guard on that value is `.filter(|v| *v > 0)`. ## Impact - Users swapping to USDT on Tron are overcharged \\~$68 per swap. On the swap below the egress fee was **2.45% of the output**. - Fill-or-kill does not protect against it (see \"Secondary finding\"). - Tron **ingress** is hit by the same path: `ingress_fees.Tron.USDT` ≈ **63.52 USDT**. - Any asset lacking a Chainlink feed and egressing a non-gas asset is exposed to the same failure mode. ## Reproduction (live, mainnet) ```bash curl -s https://mainnet-archive.chainflip.io -H 'content-type: application/json' \\ -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"cf_environment\",\"param",
       "state": "candidate",
-      "payoutConfidence": 0.5,
+      "payoutConfidence": 0.35,
       "autonomyFit": 1,
       "requiresHumanGate": false,
       "requiresSpecialHardware": false,
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 104,
+      "fastCashScore": 105,
       "survivalEligible": false,
-      "eligibilityReason": "Competition is too high for bootstrap mode.",
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
-        "comments": 9,
+        "comments": 0,
         "attemptSignals": 0,
-        "risk": "medium"
+        "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 2026,
+      "economicValueUsd": 71.61,
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5227158139",
+      "id": "github:4867664300",
       "source": "github",
-      "title": "[radar] SN open bounty 2026-08-23T13:40",
-      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/552",
-      "repositoryApiUrl": "https://api.github.com/repos/relayhop/sn-monetization-runtime",
-      "rewardUsd": 2026,
-      "score": 48,
-      "labels": [
-        "radar",
-        "sn",
-        "bounty"
-      ],
-      "commentCount": 10,
-      "updatedAt": "2026-08-25T07:02:06Z",
-      "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 0 10000 1 2.4 9274 26599 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY,LOW_COMP Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```",
+      "title": "[REVIEW] key-management: add KMS grant sprawl and rotation drift gates",
+      "url": "https://github.com/UnitOneAI/SecuritySkills/issues/3021",
+      "repositoryApiUrl": "https://api.github.com/repos/UnitOneAI/SecuritySkills",
+      "rewardUsd": 25,
+      "score": 46,
+      "labels": [],
+      "commentCount": 1,
+      "updatedAt": "2026-08-25T07:36:30Z",
+      "summary": "# [REVIEW] key-management: add KMS grant sprawl and rotation drift gates ## Skill Being Reviewed **Skill name:** `key-management` **Skill path:** `skills/cloud-security/key-management/` ## False Positive Analysis The skill should not treat every active KMS grant or older key as a violation. Long-lived keys and grants can be valid for envelope encryption, legacy decrypt windows, migration cutovers, and managed-service integrations when ownership, scope, rotation plan, and last-use evidence are documented. Benign example: ```text key=prod-orders-kms rotation=enabled active_grant=analytics-export-role operations=Decrypt only constraints=encryptionContextEquals app=orders last_used=2026-07-10 owner=data-platform expiry=2026-08-01 ``` That is controlled temporary access, not grant sprawl by itself. ## Coverage Gaps A key-management review can miss real exposure if it checks only whether rotation is enabled and ignores grant drift. Missed variant 1: a migration role keeps `Decrypt` access after the cutover, so stale workloads can still read protected data. Missed variant 2: key rotation is enabled, but dependent grants and aliases still route old principals into new key material without ",
       "state": "candidate",
-      "payoutConfidence": 0.5,
+      "payoutConfidence": 0.35,
       "autonomyFit": 1,
       "requiresHumanGate": false,
       "requiresSpecialHardware": false,
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 103,
+      "fastCashScore": 98,
       "survivalEligible": false,
-      "eligibilityReason": "Competition is too high for bootstrap mode.",
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
-        "comments": 10,
+        "comments": 1,
         "attemptSignals": 0,
-        "risk": "medium"
+        "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 2026,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5227381871",
-      "source": "github",
-      "title": "[radar] SN open bounty 2026-08-23T14:33",
-      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/553",
-      "repositoryApiUrl": "https://api.github.com/repos/relayhop/sn-monetization-runtime",
-      "rewardUsd": 2026,
-      "score": 48,
-      "labels": [
-        "radar",
-        "sn",
-        "bounty"
-      ],
-      "commentCount": 12,
-      "updatedAt": "2026-08-25T07:02:28Z",
-      "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 0 10000 2 3.3 9274 26606 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY,LOW_COMP Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 100,
-      "survivalEligible": false,
-      "eligibilityReason": "Competition is too high for bootstrap mode.",
-      "competition": {
-        "comments": 12,
-        "attemptSignals": 0,
-        "risk": "medium"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 2026,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5243148579",
-      "source": "github",
-      "title": "🎯 Prevent Duplicate Search Qualifiers and Invalid Query Generation in `search_issues`",
-      "url": "https://github.com/alcaldoalgenus/mcp-server/issues/1",
-      "repositoryApiUrl": "https://api.github.com/repos/alcaldoalgenus/mcp-server",
-      "rewardUsd": 10,
-      "score": 54,
-      "labels": [
-        "bounty",
-        "bountyhub",
-        "$10"
-      ],
-      "commentCount": 2,
-      "updatedAt": "2026-08-25T07:22:28Z",
-      "summary": "## 📝 Description When invoking the `search_issues` MCP tool, query construction currently appends default or parameter-driven qualifiers (such as `repo:`, `is:issue`, `is:pr`, `state:open`, or `type:`) to the target search query string without checking whether the user-supplied query already contains them. This leads to redundant, conflicting, or malformed queries (e.g., `is:issue repo:owner/repo is:issue repo:owner/repo state:open is:open`) sent to the backend provider API (such as GitHub/GitLab). As a result, the upstream API may return HTTP 422 Unprocessable Entity, unexpected zero-result sets, or degraded search accuracy. ## 🎯 Acceptance Criteria - [ ] The `search_issues` tool inspects the incoming `query` parameter for existing search qualifiers before appending parameter-derived qualifiers (e.g., `repo:`, `org:`, `is:`, `type:`, `state:`, `author:`, `assignee:`). - [ ] User-provided qualifiers inside the search string take precedence over or are harmonized with tool parameters to prevent duplicate key-value qualifier pairs. - [ ] Conflicting qualifiers (e.g., query specifies `is:closed` while input parameters specify `state: \"open\"`) are resolved deterministically without a",
-      "state": "candidate",
-      "payoutConfidence": 0.7,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 99,
-      "survivalEligible": false,
-      "eligibilityReason": "Competition is too high for bootstrap mode.",
-      "competition": {
-        "comments": 2,
-        "attemptSignals": 1,
-        "risk": "medium"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 10,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5227640203",
-      "source": "github",
-      "title": "[radar] SN open bounty 2026-08-23T15:32",
-      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/554",
-      "repositoryApiUrl": "https://api.github.com/repos/relayhop/sn-monetization-runtime",
-      "rewardUsd": 2026,
-      "score": 48,
-      "labels": [
-        "radar",
-        "sn",
-        "bounty"
-      ],
-      "commentCount": 14,
-      "updatedAt": "2026-08-25T07:02:35Z",
-      "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 20 10000 3 4.3 9274 26606 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY,LOW_COMP Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 97,
-      "survivalEligible": false,
-      "eligibilityReason": "Competition is too high for bootstrap mode.",
-      "competition": {
-        "comments": 14,
-        "attemptSignals": 0,
-        "risk": "medium"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 2026,
+      "economicValueUsd": 25,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -344,8 +331,8 @@
         "💎 Bounty",
         "$50"
       ],
-      "commentCount": 45,
-      "updatedAt": "2026-08-25T07:11:55Z",
+      "commentCount": 46,
+      "updatedAt": "2026-08-25T07:38:13Z",
       "summary": "## Bug `parse_duration` silently drops the **days** (`d`) unit. The README lists `d` as a supported unit, but the parser ignores it and returns a wrong (too-small) result instead of raising or counting it. ### Reproduction ```python from duration_utils import parse_duration parse_duration(\"1d\") # -> 0 (expected 86400) parse_duration(\"2d4h\") # -> 14400 (expected 187200) ``` ### Expected `d` should be counted as 86400 seconds, so `parse_duration(\"1d\") == 86400` and `parse_duration(\"2d4h\") == 187200`. ### Notes The `d` character is already accepted by the token regex, so malformed-input detection still passes — the value is just never added. A fix should add the `d` unit and cover it with tests. /bounty $50",
       "state": "candidate",
       "payoutConfidence": 0.92,
@@ -359,7 +346,7 @@
       "survivalEligible": false,
       "eligibilityReason": "Competition is too high for bootstrap mode.",
       "competition": {
-        "comments": 45,
+        "comments": 46,
         "attemptSignals": 4,
         "risk": "high"
       },
@@ -378,7 +365,7 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-24T13:15:06Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":110,\"updatedAt\":\"2026-08-25T01:35:34Z\",\"competition\":{\"comments\":19,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-25T07:11:55Z\",\"competition\":{\"comments\":45,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:4975260101\",\"rewardUsd\":780,\"fastCashScore\":119,\"updatedAt\":\"2026-08-25T05:07:59Z\",\"competition\":{\"comments\":18,\"attemptSignals\":1,\"risk\":\"high\"}},{\"id\":\"github:5005925746\",\"rewardUsd\":4265,\"fastCashScore\":108,\"updatedAt\":\"2026-08-25T07:08:31Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5147529298\",\"rewardUsd\":2026,\"fastCashScore\":106,\"updatedAt\":\"2026-08-25T06:07:58Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226664248\",\"rewardUsd\":2026,\"fastCashScore\":104,\"updatedAt\":\"2026-08-25T07:02:31Z\",\"competition\":{\"comments\":9,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5227158139\",\"rewardUsd\":2026,\"fastCashScore\":103,\"updatedAt\":\"2026-08-25T07:02:06Z\",\"competition\":{\"comments\":10,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5227381871\",\"rewardUsd\":2026,\"fastCashScore\":100,\"updatedAt\":\"2026-08-25T07:02:28Z\",\"competition\":{\"comments\":12,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5227640203\",\"rewardUsd\":2026,\"fastCashScore\":97,\"updatedAt\":\"2026-08-25T07:02:35Z\",\"competition\":{\"comments\":14,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5234075844\",\"rewardUsd\":234,\"fastCashScore\":106,\"updatedAt\":\"2026-08-24T11:50:44Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5242324505\",\"rewardUsd\":100,\"fastCashScore\":107,\"updatedAt\":\"2026-08-25T05:18:37Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5243148579\",\"rewardUsd\":10,\"fastCashScore\":99,\"updatedAt\":\"2026-08-25T07:22:28Z\",\"competition\":{\"comments\":2,\"attemptSignals\":1,\"risk\":\"medium\"}}]",
+  "marketSignature": "[{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-24T13:15:06Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":110,\"updatedAt\":\"2026-08-25T01:35:34Z\",\"competition\":{\"comments\":19,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-25T07:38:13Z\",\"competition\":{\"comments\":46,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:4867664300\",\"rewardUsd\":25,\"fastCashScore\":98,\"updatedAt\":\"2026-08-25T07:36:30Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4975260101\",\"rewardUsd\":780,\"fastCashScore\":119,\"updatedAt\":\"2026-08-25T05:07:59Z\",\"competition\":{\"comments\":18,\"attemptSignals\":1,\"risk\":\"high\"}},{\"id\":\"github:5147529298\",\"rewardUsd\":2026,\"fastCashScore\":106,\"updatedAt\":\"2026-08-25T06:07:58Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5234075844\",\"rewardUsd\":234,\"fastCashScore\":106,\"updatedAt\":\"2026-08-24T11:50:44Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5237697498\",\"rewardUsd\":1749,\"fastCashScore\":107,\"updatedAt\":\"2026-08-25T08:04:02Z\",\"competition\":{\"comments\":7,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5242324505\",\"rewardUsd\":100,\"fastCashScore\":107,\"updatedAt\":\"2026-08-25T05:18:37Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5243263356\",\"rewardUsd\":71.61,\"fastCashScore\":105,\"updatedAt\":\"2026-08-25T07:37:29Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5243368615\",\"rewardUsd\":16517,\"fastCashScore\":118,\"updatedAt\":\"2026-08-25T07:48:01Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5243371871\",\"rewardUsd\":10,\"fastCashScore\":109,\"updatedAt\":\"2026-08-25T08:00:18Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5243520032\",\"rewardUsd\":559,\"fastCashScore\":111,\"updatedAt\":\"2026-08-25T08:07:15Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
@@ -402,7 +389,7 @@
       "reasons": [
         "testnet_or_test_token_reward"
       ],
-      "rejectedAt": "2026-08-25T07:23:43.705Z"
+      "rejectedAt": "2026-08-25T08:07:53.974Z"
     },
     {
       "id": "github:5234075844",
@@ -411,7 +398,7 @@
       "reasons": [
         "already_rewarded_or_paid"
       ],
-      "rejectedAt": "2026-08-25T07:23:43.705Z"
+      "rejectedAt": "2026-08-25T08:07:53.974Z"
     },
     {
       "id": "github:3055155077",
@@ -420,7 +407,7 @@
       "reasons": [
         "already_rewarded_or_paid"
       ],
-      "rejectedAt": "2026-08-25T07:23:43.705Z"
+      "rejectedAt": "2026-08-25T08:07:53.974Z"
     },
     {
       "id": "github:5242378953",
