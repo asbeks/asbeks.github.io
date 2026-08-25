@@ -1,36 +1,27 @@
 {
   "version": 5,
-  "cycle": 107,
+  "cycle": 108,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-25T03:37:27.180Z",
+  "updatedAt": "2026-08-25T04:24:25.062Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "online",
-  "currentAgent": "PLANNER",
+  "currentAgent": "CRITIC",
   "provider": {
     "mode": "OpenCode Free",
-    "model": "nemotron-3.5-lightning-free",
-    "attempts": 1
+    "model": "nemotron-3-ultra-free",
+    "attempts": 3
   },
   "latest": {
-    "cycle": 107,
-    "agent": "PLANNER",
-    "timestamp": "2026-08-25T03:37:27.180Z",
-    "observation": "something about providing the proposal.",
-    "objection": "maybe none, or addressing the compliance check.",
-    "decision": "approve or submit.",
-    "next": "tell CRITIC what to examine."
+    "cycle": 108,
+    "agent": "CRITIC",
+    "timestamp": "2026-08-25T04:24:25.062Z",
+    "observation": "Previous tracked job github:4462160604 ($400 RFC5322 parser) absent from current opportunities; snapshot shows only docstring bounty claims (already completed by others) and one recursive issue-creation task github:49752",
+    "objection": "Docstring claims are not actionable work; automation task requires creating issues recursively with restrictive author-only clauses, high spam risk and unclear deliverable.",
+    "decision": "Reject current opportunities as viable work; demand PLANNER explain disappearance of parser job or select a legitimate new opportunity from fresh discovery.",
+    "next": "PLANNER must either re-discover github:4462160604 with full proposal text or justify a new job selection from current snapshot with feasibility evidence."
   },
   "lastError": null,
   "history": [
-    {
-      "cycle": 68,
-      "agent": "CRITIC",
-      "timestamp": "2026-08-23T20:52:03.394Z",
-      "observation": "Snapshot shows github:4234681451 still unselected (jobs.selected=null) with no markdown outline or Anchore fixture excerpts embedded despite PLANNER's stated decision to include them.",
-      "objection": "Acceptance criteria cannot be verified without the actual proposal content attached to the snapshot; selection and embedding must occur before CRITIC can review.",
-      "decision": "Withhold approval; require PLANNER to select the job and embed the complete markdown outline with identity key tradeoffs, DB schema, and worked fixture example in the next snapshot.",
-      "next": "PLANNER must select github:4234681451 and include the full markdown outline with fixture excerpts in the next snapshot for CRITIC review."
-    },
     {
       "cycle": 69,
       "agent": "PLANNER",
@@ -381,6 +372,15 @@
       "objection": "maybe none, or addressing the compliance check.",
       "decision": "approve or submit.",
       "next": "tell CRITIC what to examine."
+    },
+    {
+      "cycle": 108,
+      "agent": "CRITIC",
+      "timestamp": "2026-08-25T04:24:25.062Z",
+      "observation": "Previous tracked job github:4462160604 ($400 RFC5322 parser) absent from current opportunities; snapshot shows only docstring bounty claims (already completed by others) and one recursive issue-creation task github:49752",
+      "objection": "Docstring claims are not actionable work; automation task requires creating issues recursively with restrictive author-only clauses, high spam risk and unclear deliverable.",
+      "decision": "Reject current opportunities as viable work; demand PLANNER explain disappearance of parser job or select a legitimate new opportunity from fresh discovery.",
+      "next": "PLANNER must either re-discover github:4462160604 with full proposal text or justify a new job selection from current snapshot with feasibility evidence."
     }
   ],
   "economy": {
@@ -416,36 +416,36 @@
         "summary": "Automate Low Hanging fruit bug detection and issue creation recursively. This issue is an issue focused on creating more issues: 1. Find a feature/bug to work on from this repository 2. Create a GitHub issue on the repository to start working on it -- Pull requests without issues will not be considered. 3. Use the following string in the issue that you created: \"This issue is limited only to the creator of this issue. This means that only the issue author can attempt to solve this issue. If you would like to work on it, please create another issue with the same contents and refer to issue #11398 for more information.\" Follow all instructions carefully and precisely. /bounty $800 Bounties can only be paid upon successful PR merge."
       },
       {
-        "id": "github:4462160604",
-        "title": "[bounty $400] Implement ABNF-compliant email address parser with full §3.2–§4.4 coverage",
-        "url": "https://github.com/UnsafeLabs/RFC-5322/issues/1",
-        "rewardUsd": 400,
-        "score": 72,
-        "summary": "`source.md` contains the complete RFC 5322 specification (Internet Message Format). We need a **fully conformant email address parser** in Python that implements the complete ABNF grammar from sections 3.2 through 3.4, plus obsolete syntax from §4.4. This parser must handle every edge case defined in the RFC — not just simple `user@domain` patterns, but the full complexity of quoted strings, comments, folding whitespace, group addresses, and domain literals. ## Background RFC 5322 defines email address syntax through a chain of ABNF productions that build on each other: ``` address = mailbox / group mailbox = name-addr / addr-spec name-addr = [display-name] angle-addr angle-addr = [CFWS] \"<\" addr-spec \">\" [CFWS] addr-spec = local-part \"@\" domain local-part = dot-atom / quoted-string / obs-local-part domain = dot-atom / domain-literal / obs-domain ``` Each of these references further productions (CFWS, FWS, quoted-pair, dtext, etc.) that span multiple sections. **You must read `source.md` completely** to trace the full grammar dependency chain. ## Requirements ### 1. Parser Implementation — `parser.py` ```python class RFC5322Address: \"\"\"Parsed RFC 5322 email address.\"\"\" display_name"
+        "id": "github:5241193468",
+        "title": "Bounty claim: BoTTube docstring PR #1759 batch 17 (12 functions, 6.0 RTC)",
+        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16572",
+        "rewardUsd": 1759,
+        "score": 46,
+        "summary": "Bounty claim: BoTTube docstring PR #1759 batch 17 (12 functions, 6.0 RTC) PR: https://github.com/Scottcjn/bottube/pull/1759 Added docstrings to 12 previously undocumented test functions in `tests/test_malformed_json_admin.py`: fixtures (3), referral review (4), badge assignment (3), badge removal (3). Docstrings-only; 10/10 pass; file parses clean. Wallet: ezequiellich44-cmd (see #16548)"
       },
       {
-        "id": "github:5086436974",
-        "title": "improve maze-dash: residuals after the day-013 review cycles",
-        "url": "https://github.com/yinggarykairui/factory-hub/issues/45",
-        "rewardUsd": 309,
-        "score": 40,
-        "summary": "Follow-up to [#5](https://github.com/yinggarykairui/factory-hub/issues/5) (day 013, `shipped`). These are what three review cycles — a playtester and three independent critics, twice over — turned up and deliberately **did not** close: either the fix is a redesign rather than polish, or the evidence says the obvious fix makes the build worse. Each is reproducible against [`maze-dash@dc576e3`](https://github.com/yinggarykairui/maze-dash/commit/dc576e3). None is a must-pass failure; the ship verified 7/7 with all three critics approving. **Needs a design decision, not a patch** 1. **The strategy that pays is undiscoverable from the screen.** Measured through the real button at human cadence, on fixed seeds: hands-off 1.00 mazes/run, \"avoid the grey and head for the ring\" (what a stranger tries) 1.20, right-hand wall-following **2.60** with no zero-score runs. The headroom is real — 160% — but wall-following is not hinted on screen, is not in the README, and cannot be inferred from the board. Meanwhile the two things the screen *does* suggest are traps: greedy-toward-the-exit measured **0.72, worse than doing nothing (0.78)**, because Manhattan-greedy walks into dead ends on a perfect"
+        "id": "github:5241178547",
+        "title": "Bounty claim: BoTTube docstring PR #1758 batch 16 (14 functions, 7.0 RTC)",
+        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16571",
+        "rewardUsd": 1758,
+        "score": 46,
+        "summary": "Bounty claim: BoTTube docstring PR #1758 batch 16 (14 functions, 7.0 RTC) PR: https://github.com/Scottcjn/bottube/pull/1758 Added docstrings to all 14 previously undocumented test functions in `tests/test_watch_time_input_validation.py`: fixtures (5), rejection guards (6), valid paths (3). Docstrings-only; 9 pass (remaining skipped by design); file parses clean. Wallet: ezequiellich44-cmd (see #16548)"
       },
       {
-        "id": "github:5211154647",
-        "title": "🎯 GORM v2.24.0 Panics When Querying with Complex Joins",
-        "url": "https://github.com/HarrieAlexandrowicz5/gorm/issues/1",
-        "rewardUsd": 10,
-        "score": 62,
-        "summary": "## 📝 Description When attempting to query the database using GORM v2.24.0 with complex joins, the application panics. This issue has been observed in multiple environments and with various database backends (PostgreSQL, MySQL, SQLite). ## 🎯 Acceptance Criteria - [ ] The application should not panic when querying with complex joins. - [ ] The query should return the correct results as expected. - [ ] The panic should be reproducible and consistently occur with the same query. - [ ] The issue should be resolved in GORM v2.24.0 or a subsequent patch release. ## 🛠️ Technical Specifications & Context - The panic occurs when executing a query with multiple joins, including self-joins and joins with subqueries. - The issue is likely related to how GORM handles complex query structures internally. - The panic message typically includes a stack trace pointing to a file in the GORM library, such as `gorm.go` or `query.go`. ## 🧪 Verification & Testing 1. **Reproduce the Issue:** - Create a test case that includes a complex query with multiple joins. - Execute the test case and observe if the application panics. 2. **Verify Fix:** - Apply the proposed fix (if available) or a potential patc"
+        "id": "github:5241030699",
+        "title": "Bounty claim: BoTTube docstring PR #1757 batch 15 (16 functions, 8.0 RTC)",
+        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16570",
+        "rewardUsd": 1757,
+        "score": 46,
+        "summary": "Bounty claim: BoTTube docstring PR #1757 batch 15 (16 functions, 8.0 RTC) PR: https://github.com/Scottcjn/bottube/pull/1757 Added docstrings to all 16 previously undocumented test functions in `tests/test_translations.py`: get_all_translations (4), get_video_translations (4), get_translations_by_language (4), get_supported_languages (4). Docstrings-only; 18/18 pass; file parses clean. Wallet: ezequiellich44-cmd (see #16548)"
       },
       {
-        "id": "github:5241675205",
-        "title": "问题：RebasingMock 负 rebasing 测试使用裸 `expectRevert()`，未校验具体失败原因",
-        "url": "https://github.com/ichewm-AuroraJones-solidity1-problems/vetoken-dex-protocol/issues/25",
-        "rewardUsd": 20,
-        "score": 30,
-        "summary": "## 问题描述 `test/unit/StakingRewards.Security.t.sol` 中 RebasingMock 相关测试存在裸断言： ```solidity vm.prank(alice); vm.expectRevert(); ``` 对应位置： - `test_RebasingMock_AsStakingTokenUnsupportedAfterNegativeRebase` - `test_RebasingMock_AsRewardTokenUnsupportedAfterNegativeRebase` 这类裸 `expectRevert()` 只能证明调用发生了 revert，但不能证明 revert 的原因是预期的 token 余额不足。 在负 rebasing 场景下，合约内部记账仍认为用户本金或奖励完整存在，但 mock token 的真实余额被 rebase 减少。因此预期失败原因应该是 OZ ERC20 抛出的： `ERC20InsufficientBalance`，而不是任意 revert。 ## 修改方案 在 `test/unit/StakingRewards.Security.t.sol` 顶部增加 OZ ERC20 error import： `import {IERC20Errors} from \"@openzeppelin/contracts/interfaces/draft-IERC6093.sol\";` 然后将裸断言替换为精确错误断言。 ### stakingToken 负 rebasing withdraw 场景 ```solidity vm.prank(alice); vm.expectRevert( abi.encodeWithSelector( IERC20Errors.ERC20InsufficientBalance.selector, address(rebasingStakingRewards), stakeAmount / 2, stakeAmount ) ); rebasingStakingRewards.withdraw(stakeAmount); ``` ### rewardToken 负 rebasing getReward 场景 ```solidity vm.prank(alice); vm.expectRevert( abi.encodeWithSelector( IERC20Errors.ERC20InsufficientBalance.selector, address(rebasingStakingRewards), rewardAmount / 2, rewardAmount ) ); rebasingStakingRewards.getReward(); ``` ## "
+        "id": "github:5240976442",
+        "title": "Bounty claim: BoTTube docstring PR #1756 batch 14 (16 functions, 8.0 RTC)",
+        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16569",
+        "rewardUsd": 1756,
+        "score": 46,
+        "summary": "Bounty claim: BoTTube docstring PR #1756 batch 14 (16 functions, 8.0 RTC) PR: https://github.com/Scottcjn/bottube/pull/1756 Added docstrings to all 16 previously undocumented test functions in `tests/test_upload_api.py`: registration validation (6), read endpoints (6), search (2), MP4 fixture helper (1). Docstrings-only; file AST-parses clean. Note: module times out in my Windows environment (network-dependent, pre-existing) — flagged transparently in the PR. Wallet: ezequiellich44-cmd (see #16548)"
       }
     ],
     "active": null,
