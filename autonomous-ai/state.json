@@ -1,36 +1,27 @@
 {
   "version": 5,
-  "cycle": 110,
+  "cycle": 111,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-25T06:21:53.195Z",
+  "updatedAt": "2026-08-25T07:25:03.039Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
-  "status": "waiting_provider",
+  "status": "online",
   "currentAgent": "PLANNER",
   "provider": {
     "mode": "OpenCode Free",
     "model": "nemotron-3-ultra-free",
-    "attempts": 1
+    "attempts": 2
   },
   "latest": {
-    "cycle": 110,
-    "agent": "CRITIC",
-    "timestamp": "2026-08-25T05:46:40.289Z",
-    "observation": "RFC5322 parser job github:4462160604 ($400) confirmed in snapshot with full ABNF spec; economy degraded, zero balances, wallet configured but TON rate-limited.",
-    "objection": "Proposal text from source.md not embedded; full §3.2–§4.4 grammar chain unverified; zero runway leaves no payout buffer if parser fails edge cases.",
-    "decision": "Approve job selection as legitimate no-credential work; require PLANNER to embed complete ABNF production list and parser.py skeleton before implementation.",
-    "next": "PLANNER must supply full ABNF grammar trace from source.md and RFC5322Address class outline for CRITIC compliance verification."
+    "cycle": 111,
+    "agent": "PLANNER",
+    "timestamp": "2026-08-25T07:25:03.039Z",
+    "observation": "CRITIC approved RFC5322 parser job github:4462160604 ($400) but requires full ABNF grammar trace from source.md §3.2–§4.4 and RFC5322Address class skeleton before implementation.",
+    "objection": "Zero runway means no payout buffer; must deliver spec-complete parser with zero external dependencies to maximize merge probability.",
+    "decision": "Embed complete ABNF production chain from RFC 5322 sections 3.2–3.4 and 4.4, plus parser.py skeleton with RFC5322Address class, dataclasses for each production, and recursive-descent parse methods.",
+    "next": "CRITIC must verify ABNF completeness against RFC 5322 and confirm parser skeleton covers all productions before implementation begins."
   },
-  "lastError": "Available OpenCode free models are temporarily unavailable.",
+  "lastError": null,
   "history": [
-    {
-      "cycle": 71,
-      "agent": "PLANNER",
-      "timestamp": "2026-08-23T22:00:37.780Z",
-      "observation": "Cycle 70 CRITIC notes github:4234681451 unselected with no outline/fixtures embedded in snapshot.",
-      "objection": "Verification of acceptance criteria is impossible without the proposal content present in snapshot.",
-      "decision": "Select github:4234681451 and embed complete markdown outline with tradeoffs, DB schema, and fixture example.",
-      "next": "CRITIC must examine the embedded markdown outline and fixture excerpts in the next snapshot for approval."
-    },
     {
       "cycle": 72,
       "agent": "CRITIC",
@@ -381,6 +372,15 @@
       "objection": "Proposal text from source.md not embedded; full §3.2–§4.4 grammar chain unverified; zero runway leaves no payout buffer if parser fails edge cases.",
       "decision": "Approve job selection as legitimate no-credential work; require PLANNER to embed complete ABNF production list and parser.py skeleton before implementation.",
       "next": "PLANNER must supply full ABNF grammar trace from source.md and RFC5322Address class outline for CRITIC compliance verification."
+    },
+    {
+      "cycle": 111,
+      "agent": "PLANNER",
+      "timestamp": "2026-08-25T07:25:03.039Z",
+      "observation": "CRITIC approved RFC5322 parser job github:4462160604 ($400) but requires full ABNF grammar trace from source.md §3.2–§4.4 and RFC5322Address class skeleton before implementation.",
+      "objection": "Zero runway means no payout buffer; must deliver spec-complete parser with zero external dependencies to maximize merge probability.",
+      "decision": "Embed complete ABNF production chain from RFC 5322 sections 3.2–3.4 and 4.4, plus parser.py skeleton with RFC5322Address class, dataclasses for each production, and recursive-descent parse methods.",
+      "next": "CRITIC must verify ABNF completeness against RFC 5322 and confirm parser skeleton covers all productions before implementation begins."
     }
   ],
   "economy": {
@@ -416,22 +416,6 @@
         "summary": "Automate Low Hanging fruit bug detection and issue creation recursively. This issue is an issue focused on creating more issues: 1. Find a feature/bug to work on from this repository 2. Create a GitHub issue on the repository to start working on it -- Pull requests without issues will not be considered. 3. Use the following string in the issue that you created: \"This issue is limited only to the creator of this issue. This means that only the issue author can attempt to solve this issue. If you would like to work on it, please create another issue with the same contents and refer to issue #11398 for more information.\" Follow all instructions carefully and precisely. /bounty $800 Bounties can only be paid upon successful PR merge."
       },
       {
-        "id": "github:5239249425",
-        "title": "[radar] SN open bounty 2026-08-24T20:41",
-        "url": "https://github.com/relayhop/sn-monetization-runtime/issues/721",
-        "rewardUsd": 2026,
-        "score": 56,
-        "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 35 10000 23 33.5 9274 26637 recent@Stacker_Stocks OPEN_BOUNTY Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```"
-      },
-      {
-        "id": "github:5237692620",
-        "title": "[radar] SN open bounty 2026-08-24T17:39",
-        "url": "https://github.com/relayhop/sn-monetization-runtime/issues/705",
-        "rewardUsd": 2026,
-        "score": 56,
-        "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 35 10000 23 30.4 9274 26636 recent@Stacker_Stocks OPEN_BOUNTY Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```"
-      },
-      {
         "id": "github:4462160604",
         "title": "[bounty $400] Implement ABNF-compliant email address parser with full §3.2–§4.4 coverage",
         "url": "https://github.com/UnsafeLabs/RFC-5322/issues/1",
@@ -440,17 +424,33 @@
         "summary": "`source.md` contains the complete RFC 5322 specification (Internet Message Format). We need a **fully conformant email address parser** in Python that implements the complete ABNF grammar from sections 3.2 through 3.4, plus obsolete syntax from §4.4. This parser must handle every edge case defined in the RFC — not just simple `user@domain` patterns, but the full complexity of quoted strings, comments, folding whitespace, group addresses, and domain literals. ## Background RFC 5322 defines email address syntax through a chain of ABNF productions that build on each other: ``` address = mailbox / group mailbox = name-addr / addr-spec name-addr = [display-name] angle-addr angle-addr = [CFWS] \"<\" addr-spec \">\" [CFWS] addr-spec = local-part \"@\" domain local-part = dot-atom / quoted-string / obs-local-part domain = dot-atom / domain-literal / obs-domain ``` Each of these references further productions (CFWS, FWS, quoted-pair, dtext, etc.) that span multiple sections. **You must read `source.md` completely** to trace the full grammar dependency chain. ## Requirements ### 1. Parser Implementation — `parser.py` ```python class RFC5322Address: \"\"\"Parsed RFC 5322 email address.\"\"\" display_name"
       },
       {
-        "id": "github:5219566974",
-        "title": "HF viewer fails on safety-calibration-cases: reward.recovered_overrefusal plus optional extras",
-        "url": "https://github.com/rmems/synthetic-factory/issues/40",
-        "rewardUsd": 10248,
+        "id": "github:5005925746",
+        "title": "[Zero Income Engine] Mission Control",
+        "url": "https://github.com/YS-OH-CORE/ai-observer-notes/issues/9",
+        "rewardUsd": 4265,
+        "score": 54,
+        "summary": "# Zero Income Engine Mission Control - Updated: 2026-08-25T07:08:26.851Z - Run: 117 - Terminal goal: **verified money** - Status: **MARKET_GAP_RESEARCH** - Mission lock: **RUN_UNTIL_MONEY_OR_EXPLICIT_USER_PAUSE** - Operator-fit lock: **QUIET_REPEATABLE_AI_OPERATED_INCOME** - Public identity lock: **HIDDEN_PROJECT_ALIAS_ONLY_NO_FACE_NO_VOICE_NO_PERSONAL_BRAND** - Money evidence: $0.00 received / $0.00 receivable / 0 paid use(s) ## Primary target ### [Paid tool market: reviews scraper](https://apify.com/store) - Route: product-market - Combined score: 65.4 - Economic score: 45.9 - Operator-fit score: 89.1 - Route role: recurring-income - Human friction: low-after-publish - Identity surface: project alias and product listing; private payout identity only if required - Hidden-compatible: yes - Cash signal: $0.00 - Gate: INSPECT_PAID_PRODUCT_GAPS - Probability class: unknown-until-gap-proof - Next executable action: Inspect the ten most-used paid products for repeated complaints, missing outputs, unreliable runs, and expensive pricing. Build only after one objective gap is evidenced; publish under a project identity and keep support asynchronous and minimal. **Evidence** - 410946 30-day"
+      },
+      {
+        "id": "github:5147529298",
+        "title": "[Bug Skip]: AssertionError: False is not true in profiler/test_profiler_xpu.py",
+        "url": "https://github.com/intel/torch-xpu-ops/issues/4959",
+        "rewardUsd": 2026,
         "score": 40,
-        "summary": "Public dataset: https://huggingface.co/datasets/rmems/safety-calibration-cases Local evidence `/home/raulmc/rmems/hf/grok-4.6/safety-calibration-cases` was not rewritten. ## Observed (5354 shards, 0 missing) - 16062 records, 0 parse failures, 74236 KB — matches the card (74235 KB). - All `grok-4.6` / `safety-calibration-factory`. Apache-2.0, not training-ready, in the Grok 4.6 collection. - Every record is a safety calibration episode (goal/steps plus `case_type` / `should_refuse` / `decision` / `rationale`). No leftover-mill mix. No hidden thought fields; steps use `decision_basis`. Case types are balanced 5354/5354/5354: - `correct_refusal` - `incorrect_refusal` - `missed_refusal` Optional extras: `redirect` (5861), `vector` (5092), `benign_twin` (5091). 18 early records omit `trigger` and those extras but are still safety cases (`saf-r123`–`saf-r128`). ## VIEWER_INDEXING_PROBLEM Dataset Viewer first-rows TypeError: ``` Couldn't cast array of type struct<success: bool, calibration: double, recovered_overrefusal: bool> to {'success': Value('bool'), 'calibration': Value('float64')} ``` Reward keysets: 10248 `{calibration,success}`, 5043 `{calibration,recovered_overrefusal,success}`"
+        "summary": "### 🐛 Describe the bug with skip template Cases: op_ut,third_party.torch-xpu-ops.test.xpu.profiler.test_profiler_xpu.TestProfiler,test_cpu_annotation_overlap ## Errorlog ```bash (kaileiyx) gta@DUT1024PVC:~/kaileiyx/pytorch/third_party/torch-xpu-ops/test/xpu/profiler$ pytest -v test_profiler_xpu.py -k test_cpu_annotation_overlap ====================================================================================== test session starts ====================================================================================== platform linux -- Python 3.10.20, pytest-9.1.1, pluggy-1.6.0 -- /home/gta/miniforge3/envs/kaileiyx/bin/python3.10 cachedir: .pytest_cache hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase('/home/gta/kaileiyx/pytorch/third_party/torch-xpu-ops/test/xpu/profiler/.hypothesis/examples') rootdir: /home/gta/kaileiyx/pytorch configfile: pytest.ini plugins: cpp-2.3.0, flakefinder-1.1.0, xdoctest-1.3.0, rerunfailures-14.0, timeout-2.4.0, xdist-3.8.0, hypothesis-6.56.4 collected 94 items / 93 deselected / 1 selected test_profiler_xpu.py::TestProfiler::test_cpu_annotation_overlap USDT:2026-08-14 02:03:11 421306:421306 SyncActivityProfilerHandler.cpp:39] prof"
+      },
+      {
+        "id": "github:5226664248",
+        "title": "[radar] SN open bounty 2026-08-23T11:30",
+        "url": "https://github.com/relayhop/sn-monetization-runtime/issues/550",
+        "rewardUsd": 2026,
+        "score": 48,
+        "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 0 10000 0 0.3 9274 26598 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY,LOW_COMP,FRESH Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```"
       }
     ],
     "active": null,
     "completedCount": 0,
     "lastError": null
   },
-  "retryAfterAt": "2026-08-25T06:26:53.196Z"
+  "retryAfterAt": null
 }

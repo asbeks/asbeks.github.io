@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-08-25T06:20:20.144Z",
+  "updatedAt": "2026-08-25T07:23:43.761Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -50,78 +50,6 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5239249425",
-      "source": "github",
-      "title": "[radar] SN open bounty 2026-08-24T20:41",
-      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/721",
-      "repositoryApiUrl": "https://api.github.com/repos/relayhop/sn-monetization-runtime",
-      "rewardUsd": 2026,
-      "score": 56,
-      "labels": [
-        "radar",
-        "sn",
-        "bounty"
-      ],
-      "commentCount": 3,
-      "updatedAt": "2026-08-25T06:01:52Z",
-      "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 35 10000 23 33.5 9274 26637 recent@Stacker_Stocks OPEN_BOUNTY Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 113,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 3,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 2026,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5237692620",
-      "source": "github",
-      "title": "[radar] SN open bounty 2026-08-24T17:39",
-      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/705",
-      "repositoryApiUrl": "https://api.github.com/repos/relayhop/sn-monetization-runtime",
-      "rewardUsd": 2026,
-      "score": 56,
-      "labels": [
-        "radar",
-        "sn",
-        "bounty"
-      ],
-      "commentCount": 5,
-      "updatedAt": "2026-08-25T06:01:32Z",
-      "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 35 10000 23 30.4 9274 26636 recent@Stacker_Stocks OPEN_BOUNTY Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 110,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 5,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 2026,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
       "id": "github:4462160604",
       "source": "github",
       "title": "[bounty $400] Implement ABNF-compliant email address parser with full §3.2–§4.4 coverage",
@@ -159,21 +87,17 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5219566974",
+      "id": "github:5005925746",
       "source": "github",
-      "title": "HF viewer fails on safety-calibration-cases: reward.recovered_overrefusal plus optional extras",
-      "url": "https://github.com/rmems/synthetic-factory/issues/40",
-      "repositoryApiUrl": "https://api.github.com/repos/rmems/synthetic-factory",
-      "rewardUsd": 10248,
-      "score": 40,
-      "labels": [
-        "schema",
-        "dataset-card",
-        "huggingface"
-      ],
+      "title": "[Zero Income Engine] Mission Control",
+      "url": "https://github.com/YS-OH-CORE/ai-observer-notes/issues/9",
+      "repositoryApiUrl": "https://api.github.com/repos/YS-OH-CORE/ai-observer-notes",
+      "rewardUsd": 4265,
+      "score": 54,
+      "labels": [],
       "commentCount": 2,
-      "updatedAt": "2026-08-25T06:15:40Z",
-      "summary": "Public dataset: https://huggingface.co/datasets/rmems/safety-calibration-cases Local evidence `/home/raulmc/rmems/hf/grok-4.6/safety-calibration-cases` was not rewritten. ## Observed (5354 shards, 0 missing) - 16062 records, 0 parse failures, 74236 KB — matches the card (74235 KB). - All `grok-4.6` / `safety-calibration-factory`. Apache-2.0, not training-ready, in the Grok 4.6 collection. - Every record is a safety calibration episode (goal/steps plus `case_type` / `should_refuse` / `decision` / `rationale`). No leftover-mill mix. No hidden thought fields; steps use `decision_basis`. Case types are balanced 5354/5354/5354: - `correct_refusal` - `incorrect_refusal` - `missed_refusal` Optional extras: `redirect` (5861), `vector` (5092), `benign_twin` (5091). 18 early records omit `trigger` and those extras but are still safety cases (`saf-r123`–`saf-r128`). ## VIEWER_INDEXING_PROBLEM Dataset Viewer first-rows TypeError: ``` Couldn't cast array of type struct<success: bool, calibration: double, recovered_overrefusal: bool> to {'success': Value('bool'), 'calibration': Value('float64')} ``` Reward keysets: 10248 `{calibration,success}`, 5043 `{calibration,recovered_overrefusal,success}`",
+      "updatedAt": "2026-08-25T07:08:31Z",
+      "summary": "# Zero Income Engine Mission Control - Updated: 2026-08-25T07:08:26.851Z - Run: 117 - Terminal goal: **verified money** - Status: **MARKET_GAP_RESEARCH** - Mission lock: **RUN_UNTIL_MONEY_OR_EXPLICIT_USER_PAUSE** - Operator-fit lock: **QUIET_REPEATABLE_AI_OPERATED_INCOME** - Public identity lock: **HIDDEN_PROJECT_ALIAS_ONLY_NO_FACE_NO_VOICE_NO_PERSONAL_BRAND** - Money evidence: $0.00 received / $0.00 receivable / 0 paid use(s) ## Primary target ### [Paid tool market: reviews scraper](https://apify.com/store) - Route: product-market - Combined score: 65.4 - Economic score: 45.9 - Operator-fit score: 89.1 - Route role: recurring-income - Human friction: low-after-publish - Identity surface: project alias and product listing; private payout identity only if required - Hidden-compatible: yes - Cash signal: $0.00 - Gate: INSPECT_PAID_PRODUCT_GAPS - Probability class: unknown-until-gap-proof - Next executable action: Inspect the ten most-used paid products for repeated complaints, missing outputs, unreliable runs, and expensive pricing. Build only after one objective gap is evidenced; publish under a project identity and keep support asynchronous and minimal. **Evidence** - 410946 30-day",
       "state": "candidate",
       "payoutConfidence": 0.35,
       "autonomyFit": 1,
@@ -191,80 +115,7 @@
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 10248,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5242644011",
-      "source": "github",
-      "title": "Add SocialEcho — AI social media workspace",
-      "url": "https://github.com/dporkka/awesome-business-tools/issues/2",
-      "repositoryApiUrl": "https://api.github.com/repos/dporkka/awesome-business-tools",
-      "rewardUsd": 100,
-      "score": 48,
-      "labels": [],
-      "commentCount": 0,
-      "updatedAt": "2026-08-25T06:09:21Z",
-      "summary": "## Product - **Name:** SocialEcho - **Website:** https://www.socialecho.net/ - **Company:** SAASBASE PTE. LTD. - **Category:** SaaS / Business Operations - **Pricing:** Freemium; free plan is $0 forever, Basic starts at $15/month, and a 7-day free trial is available without a credit card ## What it does SocialEcho is an AI-powered social media workspace for businesses, creators, agencies, and teams. It brings publishing, engagement, social listening, analytics, AI-assisted content, and workflow automation together across Facebook, Instagram, TikTok, TikTok Shop, X, YouTube, LinkedIn, Telegram, Pinterest, Reddit, and Threads. ## Why it fits this directory SocialEcho gives startups, small businesses, agencies, and teams one operational workspace for managing social channels and measuring results. - Privacy: https://www.socialecho.net/privacy - Terms: https://www.socialecho.net/terms ## Disclosure I am affiliated with SocialEcho and am submitting it for an honest editorial review. I am not requesting paid placement, reciprocal linking, dofollow treatment, or special ranking. <br/> <hr/> <details><summary>This repo is using Opire - what does it mean? 👇</summary><br/>💵 Everyone can ad",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 107,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 0,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 100,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5242228649",
-      "source": "github",
-      "title": "[FEAT]: Peer Study Bounty Board & Q&A Solution Upvoting System",
-      "url": "https://github.com/nishit546/OpenPrep-AI/issues/1726",
-      "repositoryApiUrl": "https://api.github.com/repos/nishit546/OpenPrep-AI",
-      "rewardUsd": 50,
-      "score": 62,
-      "labels": [
-        "enhancement",
-        "frontend",
-        "backend",
-        "low-priority",
-        "ECSoC26",
-        "ECSoC26-L2",
-        "gamification",
-        "community"
-      ],
-      "commentCount": 2,
-      "updatedAt": "2026-08-25T06:04:18Z",
-      "summary": "## Summary & Motivation When students encounter difficult questions that AI explanations don't fully clarify, peer explanations often provide the missing intuitive breakthrough. Rewarding helpful classmates creates a thriving collaborative learning community. This feature introduces a **Peer Study Bounty Board & Solution Upvoting System**. --- ## Technical Scope & Architecture ### Backend Architecture 1. **Bounty & Upvoting Engine (`backend/services/bountyService.js`)**: - Allows students to post challenging questions with an attached XP bounty (e.g. 50 XP to 500 XP). - Community answers can be upvoted/downvoted. - The question author can accept the best answer, which automatically transfers the XP bounty and awards a \"Verified Solution\" badge. 2. **Database Schema Enhancements**: - `Bounties` table (questionId, bountyXP, status, winnerId). - `BountySolutions` table (bountyId, authorId, content, upvotesCount, isAccepted). 3. **REST Endpoints**: - `POST /api/bounties` - Creates a new question bounty. - `POST /api/bounties/:id/solutions` - Submits a community solution. - `POST /api/bounties/:id/accept/:solutionId` - Accepts solution and disburses XP bounty. ### Frontend Architecture ",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 107,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 2,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 50,
+      "economicValueUsd": 4265,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -302,10 +153,10 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5237268452",
+      "id": "github:5226664248",
       "source": "github",
-      "title": "[radar] SN open bounty 2026-08-24T16:50",
-      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/685",
+      "title": "[radar] SN open bounty 2026-08-23T11:30",
+      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/550",
       "repositoryApiUrl": "https://api.github.com/repos/relayhop/sn-monetization-runtime",
       "rewardUsd": 2026,
       "score": 48,
@@ -315,8 +166,8 @@
         "bounty"
       ],
       "commentCount": 9,
-      "updatedAt": "2026-08-25T06:01:16Z",
-      "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 35 10000 23 29.6 9274 26635 recent@Stacker_Stocks OPEN_BOUNTY Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```",
+      "updatedAt": "2026-08-25T07:02:31Z",
+      "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 0 10000 0 0.3 9274 26598 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY,LOW_COMP,FRESH Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```",
       "state": "candidate",
       "payoutConfidence": 0.5,
       "autonomyFit": 1,
@@ -338,6 +189,150 @@
       "requiresPreclaimOrIdentity": false
     },
     {
+      "id": "github:5227158139",
+      "source": "github",
+      "title": "[radar] SN open bounty 2026-08-23T13:40",
+      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/552",
+      "repositoryApiUrl": "https://api.github.com/repos/relayhop/sn-monetization-runtime",
+      "rewardUsd": 2026,
+      "score": 48,
+      "labels": [
+        "radar",
+        "sn",
+        "bounty"
+      ],
+      "commentCount": 10,
+      "updatedAt": "2026-08-25T07:02:06Z",
+      "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 0 10000 1 2.4 9274 26599 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY,LOW_COMP Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```",
+      "state": "candidate",
+      "payoutConfidence": 0.5,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 103,
+      "survivalEligible": false,
+      "eligibilityReason": "Competition is too high for bootstrap mode.",
+      "competition": {
+        "comments": 10,
+        "attemptSignals": 0,
+        "risk": "medium"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 2026,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5227381871",
+      "source": "github",
+      "title": "[radar] SN open bounty 2026-08-23T14:33",
+      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/553",
+      "repositoryApiUrl": "https://api.github.com/repos/relayhop/sn-monetization-runtime",
+      "rewardUsd": 2026,
+      "score": 48,
+      "labels": [
+        "radar",
+        "sn",
+        "bounty"
+      ],
+      "commentCount": 12,
+      "updatedAt": "2026-08-25T07:02:28Z",
+      "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 0 10000 2 3.3 9274 26606 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY,LOW_COMP Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```",
+      "state": "candidate",
+      "payoutConfidence": 0.5,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 100,
+      "survivalEligible": false,
+      "eligibilityReason": "Competition is too high for bootstrap mode.",
+      "competition": {
+        "comments": 12,
+        "attemptSignals": 0,
+        "risk": "medium"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 2026,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5243148579",
+      "source": "github",
+      "title": "🎯 Prevent Duplicate Search Qualifiers and Invalid Query Generation in `search_issues`",
+      "url": "https://github.com/alcaldoalgenus/mcp-server/issues/1",
+      "repositoryApiUrl": "https://api.github.com/repos/alcaldoalgenus/mcp-server",
+      "rewardUsd": 10,
+      "score": 54,
+      "labels": [
+        "bounty",
+        "bountyhub",
+        "$10"
+      ],
+      "commentCount": 2,
+      "updatedAt": "2026-08-25T07:22:28Z",
+      "summary": "## 📝 Description When invoking the `search_issues` MCP tool, query construction currently appends default or parameter-driven qualifiers (such as `repo:`, `is:issue`, `is:pr`, `state:open`, or `type:`) to the target search query string without checking whether the user-supplied query already contains them. This leads to redundant, conflicting, or malformed queries (e.g., `is:issue repo:owner/repo is:issue repo:owner/repo state:open is:open`) sent to the backend provider API (such as GitHub/GitLab). As a result, the upstream API may return HTTP 422 Unprocessable Entity, unexpected zero-result sets, or degraded search accuracy. ## 🎯 Acceptance Criteria - [ ] The `search_issues` tool inspects the incoming `query` parameter for existing search qualifiers before appending parameter-derived qualifiers (e.g., `repo:`, `org:`, `is:`, `type:`, `state:`, `author:`, `assignee:`). - [ ] User-provided qualifiers inside the search string take precedence over or are harmonized with tool parameters to prevent duplicate key-value qualifier pairs. - [ ] Conflicting qualifiers (e.g., query specifies `is:closed` while input parameters specify `state: \"open\"`) are resolved deterministically without a",
+      "state": "candidate",
+      "payoutConfidence": 0.7,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 99,
+      "survivalEligible": false,
+      "eligibilityReason": "Competition is too high for bootstrap mode.",
+      "competition": {
+        "comments": 2,
+        "attemptSignals": 1,
+        "risk": "medium"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 10,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5227640203",
+      "source": "github",
+      "title": "[radar] SN open bounty 2026-08-23T15:32",
+      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/554",
+      "repositoryApiUrl": "https://api.github.com/repos/relayhop/sn-monetization-runtime",
+      "rewardUsd": 2026,
+      "score": 48,
+      "labels": [
+        "radar",
+        "sn",
+        "bounty"
+      ],
+      "commentCount": 14,
+      "updatedAt": "2026-08-25T07:02:35Z",
+      "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 20 10000 3 4.3 9274 26606 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY,LOW_COMP Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```",
+      "state": "candidate",
+      "payoutConfidence": 0.5,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 97,
+      "survivalEligible": false,
+      "eligibilityReason": "Competition is too high for bootstrap mode.",
+      "competition": {
+        "comments": 14,
+        "attemptSignals": 0,
+        "risk": "medium"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 2026,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
       "id": "github:4563956966",
       "source": "github",
       "title": "parse_duration drops the days (d) unit",
@@ -349,8 +344,8 @@
         "💎 Bounty",
         "$50"
       ],
-      "commentCount": 44,
-      "updatedAt": "2026-08-25T04:09:46Z",
+      "commentCount": 45,
+      "updatedAt": "2026-08-25T07:11:55Z",
       "summary": "## Bug `parse_duration` silently drops the **days** (`d`) unit. The README lists `d` as a supported unit, but the parser ignores it and returns a wrong (too-small) result instead of raising or counting it. ### Reproduction ```python from duration_utils import parse_duration parse_duration(\"1d\") # -> 0 (expected 86400) parse_duration(\"2d4h\") # -> 14400 (expected 187200) ``` ### Expected `d` should be counted as 86400 seconds, so `parse_duration(\"1d\") == 86400` and `parse_duration(\"2d4h\") == 187200`. ### Notes The `d` character is already accepted by the token regex, so malformed-input detection still passes — the value is just never added. A fix should add the `d` unit and cover it with tests. /bounty $50",
       "state": "candidate",
       "payoutConfidence": 0.92,
@@ -364,7 +359,7 @@
       "survivalEligible": false,
       "eligibilityReason": "Competition is too high for bootstrap mode.",
       "competition": {
-        "comments": 44,
+        "comments": 45,
         "attemptSignals": 4,
         "risk": "high"
       },
@@ -383,7 +378,7 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-24T13:15:06Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":110,\"updatedAt\":\"2026-08-25T01:35:34Z\",\"competition\":{\"comments\":19,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-25T04:09:46Z\",\"competition\":{\"comments\":44,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:4975260101\",\"rewardUsd\":780,\"fastCashScore\":119,\"updatedAt\":\"2026-08-25T05:07:59Z\",\"competition\":{\"comments\":18,\"attemptSignals\":1,\"risk\":\"high\"}},{\"id\":\"github:5147529298\",\"rewardUsd\":2026,\"fastCashScore\":106,\"updatedAt\":\"2026-08-25T06:07:58Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5219566974\",\"rewardUsd\":10248,\"fastCashScore\":108,\"updatedAt\":\"2026-08-25T06:15:40Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5234075844\",\"rewardUsd\":234,\"fastCashScore\":106,\"updatedAt\":\"2026-08-24T11:50:44Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5237268452\",\"rewardUsd\":2026,\"fastCashScore\":104,\"updatedAt\":\"2026-08-25T06:01:16Z\",\"competition\":{\"comments\":9,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5237692620\",\"rewardUsd\":2026,\"fastCashScore\":110,\"updatedAt\":\"2026-08-25T06:01:32Z\",\"competition\":{\"comments\":5,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5239249425\",\"rewardUsd\":2026,\"fastCashScore\":113,\"updatedAt\":\"2026-08-25T06:01:52Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5242228649\",\"rewardUsd\":50,\"fastCashScore\":107,\"updatedAt\":\"2026-08-25T06:04:18Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5242324505\",\"rewardUsd\":100,\"fastCashScore\":107,\"updatedAt\":\"2026-08-25T05:18:37Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5242644011\",\"rewardUsd\":100,\"fastCashScore\":107,\"updatedAt\":\"2026-08-25T06:09:21Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-24T13:15:06Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":110,\"updatedAt\":\"2026-08-25T01:35:34Z\",\"competition\":{\"comments\":19,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-25T07:11:55Z\",\"competition\":{\"comments\":45,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:4975260101\",\"rewardUsd\":780,\"fastCashScore\":119,\"updatedAt\":\"2026-08-25T05:07:59Z\",\"competition\":{\"comments\":18,\"attemptSignals\":1,\"risk\":\"high\"}},{\"id\":\"github:5005925746\",\"rewardUsd\":4265,\"fastCashScore\":108,\"updatedAt\":\"2026-08-25T07:08:31Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5147529298\",\"rewardUsd\":2026,\"fastCashScore\":106,\"updatedAt\":\"2026-08-25T06:07:58Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5226664248\",\"rewardUsd\":2026,\"fastCashScore\":104,\"updatedAt\":\"2026-08-25T07:02:31Z\",\"competition\":{\"comments\":9,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5227158139\",\"rewardUsd\":2026,\"fastCashScore\":103,\"updatedAt\":\"2026-08-25T07:02:06Z\",\"competition\":{\"comments\":10,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5227381871\",\"rewardUsd\":2026,\"fastCashScore\":100,\"updatedAt\":\"2026-08-25T07:02:28Z\",\"competition\":{\"comments\":12,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5227640203\",\"rewardUsd\":2026,\"fastCashScore\":97,\"updatedAt\":\"2026-08-25T07:02:35Z\",\"competition\":{\"comments\":14,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5234075844\",\"rewardUsd\":234,\"fastCashScore\":106,\"updatedAt\":\"2026-08-24T11:50:44Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5242324505\",\"rewardUsd\":100,\"fastCashScore\":107,\"updatedAt\":\"2026-08-25T05:18:37Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5243148579\",\"rewardUsd\":10,\"fastCashScore\":99,\"updatedAt\":\"2026-08-25T07:22:28Z\",\"competition\":{\"comments\":2,\"attemptSignals\":1,\"risk\":\"medium\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
@@ -407,7 +402,7 @@
       "reasons": [
         "testnet_or_test_token_reward"
       ],
-      "rejectedAt": "2026-08-25T06:20:20.109Z"
+      "rejectedAt": "2026-08-25T07:23:43.705Z"
     },
     {
       "id": "github:5234075844",
@@ -416,7 +411,7 @@
       "reasons": [
         "already_rewarded_or_paid"
       ],
-      "rejectedAt": "2026-08-25T06:20:20.110Z"
+      "rejectedAt": "2026-08-25T07:23:43.705Z"
     },
     {
       "id": "github:3055155077",
@@ -425,7 +420,7 @@
       "reasons": [
         "already_rewarded_or_paid"
       ],
-      "rejectedAt": "2026-08-25T06:20:20.110Z"
+      "rejectedAt": "2026-08-25T07:23:43.705Z"
     },
     {
       "id": "github:5242378953",
