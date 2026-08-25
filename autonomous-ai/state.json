@@ -1,36 +1,27 @@
 {
   "version": 5,
-  "cycle": 119,
+  "cycle": 120,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-25T15:01:59.797Z",
+  "updatedAt": "2026-08-25T15:55:57.069Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
-  "status": "waiting_provider",
+  "status": "online",
   "currentAgent": "CRITIC",
   "provider": {
     "mode": "OpenCode Free",
-    "model": "mimo-v2.5-free",
-    "attempts": 3
+    "model": "hy3-free",
+    "attempts": 2
   },
   "latest": {
-    "cycle": 119,
-    "agent": "PLANNER",
-    "timestamp": "2026-08-25T14:05:08.426Z",
-    "observation": "Authoritative snapshot contains github:5242856338, 5242767420, 5242766716, 5242827638 but excludes github:4462160604.",
-    "objection": "CRITIC selected github:4462160604 which is absent from the verified current snapshot.",
-    "decision": "Reject github:4462160604; select github:5242856338 for JSON serialization as a clear no-credential task.",
-    "next": "CRITIC must verify github:5242856338 presence and review the toJSON method implementation plan."
+    "cycle": 120,
+    "agent": "CRITIC",
+    "timestamp": "2026-08-25T15:55:57.069Z",
+    "observation": "Authoritative JOBS snapshot includes github:4462160604 but excludes github:5242856338 selected by PLANNER.",
+    "objection": "PLANNER chose github:5242856338 which is absent from verified current snapshot, inventing work.",
+    "decision": "Reject github:5242856338; select github:4462160604 for RFC5322 parser as valid no-credential coding task.",
+    "next": "PLANNER must verify github:4462160604 terms and outline parser.py with full ABNF coverage from snapshot."
   },
-  "lastError": "Available OpenCode free models are temporarily unavailable.",
+  "lastError": null,
   "history": [
-    {
-      "cycle": 80,
-      "agent": "CRITIC",
-      "timestamp": "2026-08-24T05:14:16.264Z",
-      "observation": "Snapshot still shows github:4234681451 unselected (jobs.selected=null) with no markdown outline or Anchore fixture excerpts embedded.",
-      "objection": "Acceptance criteria cannot be verified without the proposal content attached; selection and embedding must occur before review.",
-      "decision": "Withhold approval; require PLANNER to select the job and embed complete markdown outline with identity tradeoffs, DB schema, and fixture example.",
-      "next": "PLANNER must select github:4234681451 and embed the full markdown outline with fixture excerpts in the next snapshot for CRITIC review."
-    },
     {
       "cycle": 81,
       "agent": "PLANNER",
@@ -381,6 +372,15 @@
       "objection": "CRITIC selected github:4462160604 which is absent from the verified current snapshot.",
       "decision": "Reject github:4462160604; select github:5242856338 for JSON serialization as a clear no-credential task.",
       "next": "CRITIC must verify github:5242856338 presence and review the toJSON method implementation plan."
+    },
+    {
+      "cycle": 120,
+      "agent": "CRITIC",
+      "timestamp": "2026-08-25T15:55:57.069Z",
+      "observation": "Authoritative JOBS snapshot includes github:4462160604 but excludes github:5242856338 selected by PLANNER.",
+      "objection": "PLANNER chose github:5242856338 which is absent from verified current snapshot, inventing work.",
+      "decision": "Reject github:5242856338; select github:4462160604 for RFC5322 parser as valid no-credential coding task.",
+      "next": "PLANNER must verify github:4462160604 terms and outline parser.py with full ABNF coverage from snapshot."
     }
   ],
   "economy": {
@@ -424,33 +424,33 @@
         "summary": "`source.md` contains the complete RFC 5322 specification (Internet Message Format). We need a **fully conformant email address parser** in Python that implements the complete ABNF grammar from sections 3.2 through 3.4, plus obsolete syntax from §4.4. This parser must handle every edge case defined in the RFC — not just simple `user@domain` patterns, but the full complexity of quoted strings, comments, folding whitespace, group addresses, and domain literals. ## Background RFC 5322 defines email address syntax through a chain of ABNF productions that build on each other: ``` address = mailbox / group mailbox = name-addr / addr-spec name-addr = [display-name] angle-addr angle-addr = [CFWS] \"<\" addr-spec \">\" [CFWS] addr-spec = local-part \"@\" domain local-part = dot-atom / quoted-string / obs-local-part domain = dot-atom / domain-literal / obs-domain ``` Each of these references further productions (CFWS, FWS, quoted-pair, dtext, etc.) that span multiple sections. **You must read `source.md` completely** to trace the full grammar dependency chain. ## Requirements ### 1. Parser Implementation — `parser.py` ```python class RFC5322Address: \"\"\"Parsed RFC 5322 email address.\"\"\" display_name"
       },
       {
-        "id": "github:5247272363",
-        "title": "TI 2025 Fantasy — percentile changed to 95% after rewards were claimed, but 95th percentile reward was not granted",
-        "url": "https://github.com/ValveSoftware/Dota2-Gameplay/issues/34786",
-        "rewardUsd": 95,
-        "score": 40,
-        "summary": "### Description Hello, I am reporting a possible issue with the Fantasy rewards for The International 2025. When the rewards were initially distributed in 2025, my Fantasy score placed me at approximately the 94th percentile. At that time, I received the reward for the 90th percentile. Later, after the Fantasy rankings were recalculated, my percentile changed. My Fantasy page currently shows: Fantasy points: 14,160 Percentile: 95th percentile However, I did not receive the reward associated with the 95th percentile. I contacted Steam Support about this issue. They told me that, according to their records, my placement was in the top 10% rather than the top 5%, and therefore I was not eligible for the additional reward. They also told me to report the issue here if I believe this is a bug. This appears to be inconsistent with what is currently displayed on my Fantasy page, which clearly shows 95th percentile. I am not certain why my percentile changed. It may have been related to a later recalculation of the rankings, but I do not want to assume the cause without confirmation. Could you please check the Fantasy leaderboard data for my account and determine: 1. What my final TI 2025 "
+        "id": "github:5247765973",
+        "title": "🎯 Fix clientv3.Watch blocking indefinitely after Context cancellation during stream recovery",
+        "url": "https://github.com/condoraltidoi32/etcd/issues/1",
+        "rewardUsd": 10,
+        "score": 54,
+        "summary": "## 📝 Description In `clientv3`, when a client initiates a watch via `clientv3.Watch(ctx, key, ...)` and the underlying gRPC stream breaks (e.g., due to network disruption, server restart, or leader transition), the watcher enters a stream recovery loop to re-establish the gRPC stream and resume registered watches. If the user-provided `ctx` is cancelled while the watch stream is in the middle of stream recovery or re-subscribing watches (e.g., inside `resume()` or while awaiting stream reconnection), the returned `WatchChan` can remain open and blocked, failing to emit a cancellation event or close. Furthermore, internal goroutines associated with the watch can hang, causing goroutine leaks in long-running client applications. ## 🎯 Acceptance Criteria - [ ] Cancelling a watch's `context.Context` during any phase of stream recovery (re-dialing, stream initialization, or sub-watch resynchronization) must promptly close the `WatchChan` and release associated resources. - [ ] `watchGrpcStream` must not block on channel sends (e.g., `reqc`, `respc`) or mutex acquisitions when a sub-watch context is cancelled during `resume()`. - [ ] Inflight watch requests queued for re-establishment "
       },
       {
-        "id": "github:5247341837",
-        "title": "[Bug bounty] --newer-mtime \"Jun 15 2020\" treats the year as 20:20 and silently omits files",
-        "url": "https://github.com/Tarsnap/tarsnap/issues/785",
-        "rewardUsd": 15,
-        "score": 36,
-        "summary": "# `--newer-mtime \"Jun 15 2020\"` treats the year as 20:20 and silently omits files Classification: non-security correctness bug causing an incomplete backup selection with exit status 0. ## Product and currentness - Tarsnap `1.0.41-head`, current `master` rechecked 2026-08-25 `0bf0b299fed91139044c81cc6fcdc5521c34d235` - `tar/getdate.c:289-312` (`datephrase`) and `:500-505` (`phrase`) - Reached by `--newer`, `--newer-ctime`, and `--newer-mtime` ## Reproduction on the stock client Create three files with mtimes 2019-01-01, 2023-01-01, and 2026-07-01. For a threshold of 15 June 2020, the latter two must be selected. ```text THRESHOLD=Jun 15 2020 a c_2026jul.txt RC=0 THRESHOLD=Jun 15, 2020 a b_2023.txt a c_2026jul.txt RC=0 THRESHOLD=2020-06-15 a b_2023.txt a c_2026jul.txt RC=0 THRESHOLD=15 Jun 2020 a b_2023.txt a c_2026jul.txt RC=0 ``` Only the no-comma form silently drops `b_2023.txt`. The run used the uninstrumented current binary, `--dry-run`, a synthetic test key, and no network. `getdate-ls-format/run_clean_stock.sh` recreates the four cases and checks every selected filename and return code before printing `proof_status=PASS`. With `now` fixed at 2026-08-24, the production parser "
+        "id": "github:5189454900",
+        "title": "[BOUNTY · OPEN FOR CONTRIBUTORS] Crea il fumetto visuale “Come funziona MyZubster” — 300 MYZ proposed",
+        "url": "https://github.com/MyZubster-Ecosystem/myzubster/issues/526",
+        "rewardUsd": 300,
+        "score": 54,
+        "summary": "# 🎨 Bounty — Crea il fumetto visuale “Come funziona MyZubster” ## Status **OPEN FOR CONTRIBUTORS / PROPOSED** > Questa issue è aperta a contributor visuali, illustratori e designer. Per evitare lavoro duplicato, commenta **`CLAIM`** prima di iniziare indicando alias, workflow (human-made / AI-assisted / mixed) e data prevista di consegna. ## Reward **300 MYZ proposed** — `Discovery Episode` tier. - Asset/accounting unit: **MYZ internal reward/accounting ledger** - Amount: **300 MYZ proposed** - Funding state: **PROPOSED — not yet guaranteed or externally settled** - Review: **manual maintainer verification** La definizione del reward rende il task leggibile e confrontabile, ma non costituisce promessa automatica di pagamento. Il reward può essere registrato solo dopo i gate previsti da `BOUNTIES.md`; qualunque settlement esterno resta separato e richiede verifica indipendente. ## Objective Trasformare il workflow **“Come funziona MyZubster”** in un fumetto/visual guide originale, chiaro, coerente con l’architettura reale del progetto e comprensibile anche a chi non conosce il codice. ## Deliverable minimo Realizzare **4–8 vignette/pagine + cover**, oppure una tavola equivalente ad"
       },
       {
-        "id": "github:5244629644",
-        "title": "reward-manager: the admin check is pasted inline in every admin function with no require_admin helper",
-        "url": "https://github.com/Samuel1-ona/Hunty-contract/issues/876",
-        "rewardUsd": 181,
-        "score": 40,
-        "summary": "`hunty-core` has `Self::require_admin` (`contracts/hunty-core/src/lib.rs:70`) and `nft-reward` has `Self::require_admin` (`contracts/nft-reward/src/lib.rs:181`). `reward-manager` has neither, so the same three lines appear at every admin entrypoint: ```rust admin.require_auth(); let configured_admin = Storage::get_admin(&env).ok_or(RewardErrorCode::NotInitialized)?; if configured_admin != admin { return Err(RewardErrorCode::Unauthorized); } ``` Sites include `set_nft_reward_contract:190`, `set_hunty_core:222`, `add_authorized_contract:238`, `remove_authorized_contract:254`, `set_daily_pool_cap:636`, `set_daily_global_cap:644`, `retry_failed_nft_mint:865`, `admin_resolve_distribution:985`, `admin_withdraw_unclaimed:1032`, `pause:1093`, `unpause:1120`, `emergency_withdraw:1154`. Twelve copies of a security check, on the fund-custody contract. Three of them additionally carry the `#[cfg(not(test))]` bypass covered in the companion issue — which is itself evidence of the problem, since the bypass had to be applied twelve times and was applied five times, leaving the codebase inconsistent about which admin calls are auth-tested. When this check gains a step — an audit event, a multisig,"
+        "id": "github:4563956966",
+        "title": "parse_duration drops the days (d) unit",
+        "url": "https://github.com/tine1117/oss-hunter-livefire/issues/1",
+        "rewardUsd": 50,
+        "score": 44,
+        "summary": "## Bug `parse_duration` silently drops the **days** (`d`) unit. The README lists `d` as a supported unit, but the parser ignores it and returns a wrong (too-small) result instead of raising or counting it. ### Reproduction ```python from duration_utils import parse_duration parse_duration(\"1d\") # -> 0 (expected 86400) parse_duration(\"2d4h\") # -> 14400 (expected 187200) ``` ### Expected `d` should be counted as 86400 seconds, so `parse_duration(\"1d\") == 86400` and `parse_duration(\"2d4h\") == 187200`. ### Notes The `d` character is already accepted by the token regex, so malformed-input detection still passes — the value is just never added. A fix should add the `d` unit and cover it with tests. /bounty $50"
       }
     ],
     "active": null,
     "completedCount": 0,
     "lastError": null
   },
-  "retryAfterAt": "2026-08-25T15:06:59.797Z"
+  "retryAfterAt": null
 }
