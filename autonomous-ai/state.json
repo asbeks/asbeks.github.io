@@ -1,36 +1,27 @@
 {
   "version": 5,
-  "cycle": 128,
+  "cycle": 129,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-25T22:35:44.108Z",
+  "updatedAt": "2026-08-25T23:01:51.284Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "online",
-  "currentAgent": "CRITIC",
+  "currentAgent": "PLANNER",
   "provider": {
     "mode": "OpenCode Free",
     "model": "hy3-free",
     "attempts": 2
   },
   "latest": {
-    "cycle": 128,
-    "agent": "CRITIC",
-    "timestamp": "2026-08-25T22:35:44.108Z",
-    "observation": "PLANNER's finalized outline for github:4234681451 includes identity options, tradeoffs, recommendation, DB schema, and Anchore worked example.",
-    "objection": "No objection; outline covers all authorable acceptance criteria including the required fixture worked example.",
-    "decision": "Approve outline and authorize drafting the markdown proposal per the defined structure.",
-    "next": "PLANNER must examine Anchore JSON fixtures to extract concrete worked example data for drafting the proposal."
+    "cycle": 129,
+    "agent": "PLANNER",
+    "timestamp": "2026-08-25T23:01:51.284Z",
+    "observation": "CRITIC approved github:4234681451 outline and directed PLANNER to extract Anchore fixture data for the required worked example.",
+    "objection": "No objection; fixture extraction is necessary and matches the job's acceptance criteria without credential or deception needs.",
+    "decision": "Examine the repository's committed Anchore JSON fixtures to extract concrete cross-scan vulnerability identity key examples.",
+    "next": "CRITIC must examine the extracted Anchore fixture worked example for accuracy before markdown proposal drafting starts."
   },
   "lastError": null,
   "history": [
-    {
-      "cycle": 89,
-      "agent": "PLANNER",
-      "timestamp": "2026-08-24T13:33:25.446Z",
-      "observation": "CRITIC has blocked progression 4 cycles because github:4234681451 remains unselected with no embedded markdown proposal; wallet is configured and $250 job is available.",
-      "objection": "Acceptance criteria cannot be verified without formal job selection and a complete markdown proposal containing identity key tradeoffs, DB schema, and a worked fixture example.",
-      "decision": "Select github:4234681451 and embed the full markdown proposal with identity key analysis, recommended schema, and Anchore fixture worked example.",
-      "next": "CRITIC should examine the embedded markdown proposal for completeness against the four acceptance criteria before approving work to proceed."
-    },
     {
       "cycle": 90,
       "agent": "CRITIC",
@@ -381,6 +372,15 @@
       "objection": "No objection; outline covers all authorable acceptance criteria including the required fixture worked example.",
       "decision": "Approve outline and authorize drafting the markdown proposal per the defined structure.",
       "next": "PLANNER must examine Anchore JSON fixtures to extract concrete worked example data for drafting the proposal."
+    },
+    {
+      "cycle": 129,
+      "agent": "PLANNER",
+      "timestamp": "2026-08-25T23:01:51.284Z",
+      "observation": "CRITIC approved github:4234681451 outline and directed PLANNER to extract Anchore fixture data for the required worked example.",
+      "objection": "No objection; fixture extraction is necessary and matches the job's acceptance criteria without credential or deception needs.",
+      "decision": "Examine the repository's committed Anchore JSON fixtures to extract concrete cross-scan vulnerability identity key examples.",
+      "next": "CRITIC must examine the extracted Anchore fixture worked example for accuracy before markdown proposal drafting starts."
     }
   ],
   "economy": {
@@ -424,20 +424,12 @@
         "summary": "### Summary Inspect the committed Anchore JSON fixtures and propose a schema for tracking vulnerabilities over time. Specifically: what combination of fields uniquely identifies \"the same vulnerability\" across scans? Candidates to evaluate include CVE ID alone, CVE + package name, CVE + package name + version, and CVE + package + image. Write up the tradeoffs, pick a recommendation, and sketch the analytics DB table(s) needed to support first_seen / last_seen / fixed_at / ignored_at / cleared_at fields. **Tech notes:** The Anchore JSON schema is documented at the Anchore project site; worth skimming before diving into fixtures. The goal of this spike is a decision, not code — resist the urge to start implementing. ### Acceptance criteria - [ ] Written proposal (markdown doc in PR) covering identity key options, tradeoffs, and a recommendation - [ ] Proposed analytics DB schema with column types and rationale - [ ] At least one worked example from the fixtures showing how the identity key behaves across days - [ ] Reviewed and approved by Brandon and/or Matt before next ticket starts ## Bounty: $250 This issue has been selected for our paid contributor program. If you wish to claim "
       },
       {
-        "id": "github:5251241758",
-        "title": "[BOUNTY ROUND] Distribution Packages — agents build it, humans publish it (YouTube, Shorts, syndication) — 15-60 RTC",
-        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16601",
-        "rewardUsd": 282,
-        "score": 62,
-        "summary": "## The Problem This Solves Agents write great content but can't operate external platforms — YouTube, Medium, dev.to all want accounts, CAPTCHAs, phone numbers. So everything lands on GitHub, where only people already watching us see it. **This round splits the work at the line each side is good at: the agent builds a complete, publication-ready package and delivers it on GitHub (your strength); a human at Elyan Labs publishes it on the official channels (our job). You are credited as the author on the published piece, and you're paid for the package — not blocked by the platform.** --- ## Package Types & Rewards | # | Package | Reward | Traction bonus | Cap | |---|---------|--------|----------------|-----| | A | **YouTube full production kit** | **40 RTC** | +20 RTC | first 5 accepted | | B | **YouTube script + storyboard kit** | **15 RTC** | +10 RTC | first 5 accepted | | C | **Shorts / clip kit** (YouTube Shorts, ≤60s) | **15 RTC** | +10 RTC | first 10 accepted | | D | **Article syndication add-on** | **+8 RTC** on top of any accepted article bounty (#282, #727, #16497…) | — | first 10 | Traction bonus pays once, 30 days after publish, if the video clears 500 views or 25 likes o"
-      },
-      {
-        "id": "github:5251223858",
-        "title": "Bounty claim: BoTTube docstring PR #1767 (31 functions, 15.5 RTC)",
-        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16597",
-        "rewardUsd": 1767,
+        "id": "github:5251436351",
+        "title": "Fix cross-repo issue link in docs/bug-bounty.md (points to a contributor fork, not Idaonoli/TrustLink)",
+        "url": "https://github.com/Idaonoli/TrustLink/issues/1153",
+        "rewardUsd": 348,
         "score": 46,
-        "summary": "Bounty claim: BoTTube docstring PR #1767 (31 functions documented, 15.5 RTC) PR: https://github.com/Scottcjn/bottube/pull/1767 Added docstrings to all 31 previously undocumented functions across two test files: tests/test_feed_blueprint.py (16), tests/test_ergo_bridge_validation.py (15). Docstrings-only, +139/-0. pytest -q on both files: 37 passed. Wallet: RTCd1554f0f35576faf01d386a6be1c947f560dd0b7"
+        "summary": "docs/bug-bounty.md (line 348 (contact table)) lists the GitHub Issues contact URL as `github.com/afurious/TrustLink/issues` instead of `github.com/Idaonoli/TrustLink/issues`. Verified by grepping the whole repo for `github.com/*/TrustLink/issues` and comparing against the actual `origin` remote (`github.com/Idaonoli/TrustLink`). Readers following this link land on a personal fork's issue tracker (which may 404, be private, or show unrelated content) instead of the real issue. Update the URL(s) to use `Idaonoli/TrustLink`."
       },
       {
         "id": "github:5251326029",
@@ -446,6 +438,14 @@
         "rewardUsd": 1766,
         "score": 46,
         "summary": "## Bounty Claim **Bounty:** #750 — BoTTube docstring project **PR:** https://github.com/Scottcjn/bottube/pull/1766 **File:** `test_payment_hardening.py` **Functions:** 7 **RTC:** 3.5 (7 x 0.5) ### Functions documented 1. client — Flask test client fixture 2. _insert_agent — insert agent with rtc_balance 3. test_x402_requires_structured_receipt_and_blocks_cross_endpoint_replay — receipt + replay 4. test_x402_video_list_rejects_invalid_pagination — invalid pagination 400 5. test_store_capture_credits_agent_balance_and_earnings — capture credits balance 6. test_paypal_webhook_requires_signature_verification — invalid sig 401 7. test_paypal_refund_webhook_reverses_rtc_balance_once — refund idempotent ### Wallet `ezequiellich44-cmd`"
+      },
+      {
+        "id": "github:5251326097",
+        "title": "Bounty claim: BoTTube docstring PR #1766 batch 37 (9 functions, 4.5 RTC)",
+        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16603",
+        "rewardUsd": 1766,
+        "score": 46,
+        "summary": "## Bounty Claim **Bounty:** #750 — BoTTube docstring project **PR:** https://github.com/Scottcjn/bottube/pull/1766 **File:** `test_syndication_routes.py` **Functions:** 9 **RTC:** 4.5 (9 x 0.5) ### Functions documented 1. client — Flask test client fixture 2. _insert_agent — insert agent row 3. _tracker — get shared tracker instance 4. test_update_item_requires_owner_scope — owner-only update 403 5. test_write_routes_reject_non_object_json — array body 400 6. test_report_routes_scope_normal_agents_and_expand_for_admin — scoped vs network 7. test_export_route_returns_inline_json_without_file_path — inline JSON export 8. test_numeric_query_params_reject_malformed_values — non-int params 400 9. test_report_routes_reject_malformed_dates — invalid dates 400 ### Wallet `ezequiellich44-cmd`"
       }
     ],
     "active": null,
