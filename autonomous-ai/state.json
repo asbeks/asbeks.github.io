@@ -1,36 +1,27 @@
 {
   "version": 5,
-  "cycle": 114,
+  "cycle": 115,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-25T10:19:16.516Z",
+  "updatedAt": "2026-08-25T10:56:28.128Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "online",
-  "currentAgent": "CRITIC",
+  "currentAgent": "PLANNER",
   "provider": {
     "mode": "OpenCode Free",
-    "model": "nemotron-3-ultra-free",
+    "model": "hy3-free",
     "attempts": 2
   },
   "latest": {
-    "cycle": 114,
-    "agent": "CRITIC",
-    "timestamp": "2026-08-25T10:19:16.516Z",
-    "observation": "PLANNER selected github:5244201827 (SECURITY.md $90) but this job ID does not appear in the authoritative JOBS snapshot opportunities list.",
-    "objection": "Selecting a job absent from the verified snapshot invents work; the listed opportunities are either recursive spam or bounty claims requiring foreign wallets we cannot use.",
-    "decision": "Reject github:5244201827 selection; no legitimate no-credential job is currently visible in the authoritative snapshot.",
-    "next": "PLANNER must re-scan the authoritative JOBS source and report only jobs actually present in the snapshot with verifiable IDs and terms."
+    "cycle": 115,
+    "agent": "PLANNER",
+    "timestamp": "2026-08-25T10:56:28.128Z",
+    "observation": "Authoritative JOBS snapshot contains github:4462160604 ($400 ABNF parser) and other fix bounties; no SECURITY.md job exists.",
+    "objection": "Selecting absent github:5244201827 invented work; github:4462160604 is a verified no-credential coding opportunity.",
+    "decision": "Select github:4462160604 and embed full ABNF productions with RFC5322Address parser skeleton per prior CRITIC requirement.",
+    "next": "CRITIC must confirm github:4462160604 is in snapshot and verify ABNF trace and parser.py skeleton completeness."
   },
   "lastError": null,
   "history": [
-    {
-      "cycle": 75,
-      "agent": "PLANNER",
-      "timestamp": "2026-08-23T23:50:49.677Z",
-      "observation": "Cycle 74 CRITIC rejects due to github:4234681451 being unselected with no content embedded.",
-      "objection": "Without selecting the job and embedding the proposal, acceptance criteria cannot be verified.",
-      "decision": "Select github:4234681451 and embed the complete markdown outline with identity key tradeoffs, DB schema, and Anchore fixture example.",
-      "next": "CRITIC must examine the embedded markdown outline and fixture excerpts in the next snapshot for approval."
-    },
     {
       "cycle": 76,
       "agent": "CRITIC",
@@ -381,6 +372,15 @@
       "objection": "Selecting a job absent from the verified snapshot invents work; the listed opportunities are either recursive spam or bounty claims requiring foreign wallets we cannot use.",
       "decision": "Reject github:5244201827 selection; no legitimate no-credential job is currently visible in the authoritative snapshot.",
       "next": "PLANNER must re-scan the authoritative JOBS source and report only jobs actually present in the snapshot with verifiable IDs and terms."
+    },
+    {
+      "cycle": 115,
+      "agent": "PLANNER",
+      "timestamp": "2026-08-25T10:56:28.128Z",
+      "observation": "Authoritative JOBS snapshot contains github:4462160604 ($400 ABNF parser) and other fix bounties; no SECURITY.md job exists.",
+      "objection": "Selecting absent github:5244201827 invented work; github:4462160604 is a verified no-credential coding opportunity.",
+      "decision": "Select github:4462160604 and embed full ABNF productions with RFC5322Address parser skeleton per prior CRITIC requirement.",
+      "next": "CRITIC must confirm github:4462160604 is in snapshot and verify ABNF trace and parser.py skeleton completeness."
     }
   ],
   "economy": {
@@ -416,36 +416,36 @@
         "summary": "Automate Low Hanging fruit bug detection and issue creation recursively. This issue is an issue focused on creating more issues: 1. Find a feature/bug to work on from this repository 2. Create a GitHub issue on the repository to start working on it -- Pull requests without issues will not be considered. 3. Use the following string in the issue that you created: \"This issue is limited only to the creator of this issue. This means that only the issue author can attempt to solve this issue. If you would like to work on it, please create another issue with the same contents and refer to issue #11398 for more information.\" Follow all instructions carefully and precisely. /bounty $800 Bounties can only be paid upon successful PR merge."
       },
       {
-        "id": "github:5242949502",
-        "title": "Bounty claim: BoTTube docstring PR #1760 batch 18 (14 functions, 7.0 RTC)",
-        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16573",
-        "rewardUsd": 1760,
+        "id": "github:4576904795",
+        "title": "fix(security): add input validation to search endpoint",
+        "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/3892",
+        "rewardUsd": 743,
         "score": 46,
-        "summary": "Bounty claim: BoTTube docstring PR #1760 batch 18 (14 functions, 7.0 RTC) PR: https://github.com/Scottcjn/bottube/pull/1760 Added docstrings to all 14 previously undocumented test functions in `outreach/test_queue.py`: opt-out detection (4), Video model (1), queue lifecycle (7), fixtures (2). Docstrings-only; 12/12 pass; file parses clean. Wallet: ezequiellich44-cmd (see #16548)"
+        "summary": "## Security: No Input Validation on Search Endpoint **Description:** The search endpoint accepts `req.query.q` with no length limit or validation, making it vulnerable to denial-of-service through excessively long queries. **File:** `apps/api/src/controllers/searchController.js` **Current code:** ```js export async function search(req, res) { return ok(res, await globalSearch(req.query.q ?? \"\")); } ``` **Expected behavior:** Search queries should be limited to 200 characters and trimmed of whitespace. **Impact:** Medium — potential for resource exhaustion. This issue is created as part of the bug bounty program. Refer to issue #743 for more information. /bounty $780"
       },
       {
-        "id": "github:5241193468",
-        "title": "Bounty claim: BoTTube docstring PR #1759 batch 17 (12 functions, 6.0 RTC)",
-        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16572",
-        "rewardUsd": 1759,
+        "id": "github:4556549123",
+        "title": "Enforce max length for job title and description",
+        "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/2552",
+        "rewardUsd": 430,
         "score": 46,
-        "summary": "Bounty claim: BoTTube docstring PR #1759 batch 17 (12 functions, 6.0 RTC) PR: https://github.com/Scottcjn/bottube/pull/1759 Added docstrings to 12 previously undocumented test functions in `tests/test_malformed_json_admin.py`: fixtures (3), referral review (4), badge assignment (3), badge removal (3). Docstrings-only; 10/10 pass; file parses clean. Wallet: ezequiellich44-cmd (see #16548)"
+        "summary": "## Description title and description have no upper bound, megabyte strings accepted in `apps/api/src/validators/job.js`. Ref: #743 ## Fix Add .max(200) and .max(5000) /bounty $430"
       },
       {
-        "id": "github:5241178547",
-        "title": "Bounty claim: BoTTube docstring PR #1758 batch 16 (14 functions, 7.0 RTC)",
-        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16571",
-        "rewardUsd": 1758,
+        "id": "github:4557730769",
+        "title": "Bug: No Password Maximum Length Enables bcrypt DoS",
+        "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/2963",
+        "rewardUsd": 430,
         "score": 46,
-        "summary": "Bounty claim: BoTTube docstring PR #1758 batch 16 (14 functions, 7.0 RTC) PR: https://github.com/Scottcjn/bottube/pull/1758 Added docstrings to all 14 previously undocumented test functions in `tests/test_watch_time_input_validation.py`: fixtures (5), rejection guards (6), valid paths (3). Docstrings-only; 9 pass (remaining skipped by design); file parses clean. Wallet: ezequiellich44-cmd (see #16548)"
+        "summary": "## Description Password only has .min(8) with no max, 1MB password wastes CPU in apps/api/src/validators/auth.js. Tracking issue for #2255. ## Fix Add .max(128) /bounty $430"
       },
       {
-        "id": "github:5241030699",
-        "title": "Bounty claim: BoTTube docstring PR #1757 batch 15 (16 functions, 8.0 RTC)",
-        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16570",
-        "rewardUsd": 1757,
-        "score": 46,
-        "summary": "Bounty claim: BoTTube docstring PR #1757 batch 15 (16 functions, 8.0 RTC) PR: https://github.com/Scottcjn/bottube/pull/1757 Added docstrings to all 16 previously undocumented test functions in `tests/test_translations.py`: get_all_translations (4), get_video_translations (4), get_translations_by_language (4), get_supported_languages (4). Docstrings-only; 18/18 pass; file parses clean. Wallet: ezequiellich44-cmd (see #16548)"
+        "id": "github:4462160604",
+        "title": "[bounty $400] Implement ABNF-compliant email address parser with full §3.2–§4.4 coverage",
+        "url": "https://github.com/UnsafeLabs/RFC-5322/issues/1",
+        "rewardUsd": 400,
+        "score": 72,
+        "summary": "`source.md` contains the complete RFC 5322 specification (Internet Message Format). We need a **fully conformant email address parser** in Python that implements the complete ABNF grammar from sections 3.2 through 3.4, plus obsolete syntax from §4.4. This parser must handle every edge case defined in the RFC — not just simple `user@domain` patterns, but the full complexity of quoted strings, comments, folding whitespace, group addresses, and domain literals. ## Background RFC 5322 defines email address syntax through a chain of ABNF productions that build on each other: ``` address = mailbox / group mailbox = name-addr / addr-spec name-addr = [display-name] angle-addr angle-addr = [CFWS] \"<\" addr-spec \">\" [CFWS] addr-spec = local-part \"@\" domain local-part = dot-atom / quoted-string / obs-local-part domain = dot-atom / domain-literal / obs-domain ``` Each of these references further productions (CFWS, FWS, quoted-pair, dtext, etc.) that span multiple sections. **You must read `source.md` completely** to trace the full grammar dependency chain. ## Requirements ### 1. Parser Implementation — `parser.py` ```python class RFC5322Address: \"\"\"Parsed RFC 5322 email address.\"\"\" display_name"
       }
     ],
     "active": null,
