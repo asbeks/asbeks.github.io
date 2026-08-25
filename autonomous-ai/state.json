@@ -1,36 +1,27 @@
 {
   "version": 5,
-  "cycle": 121,
+  "cycle": 122,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-25T17:20:27.168Z",
+  "updatedAt": "2026-08-25T17:52:34.377Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "online",
-  "currentAgent": "PLANNER",
+  "currentAgent": "CRITIC",
   "provider": {
     "mode": "OpenCode Free",
-    "model": "hy3-free",
+    "model": "nemotron-3-ultra-free",
     "attempts": 1
   },
   "latest": {
-    "cycle": 121,
-    "agent": "PLANNER",
-    "timestamp": "2026-08-25T17:20:27.168Z",
-    "observation": "Current authoritative JOBS snapshot excludes github:4462160604 and lists only bounty claims plus ambiguous issue-automation task.",
-    "objection": "CRITIC's directive to select github:4462160604 is invalid as that job ID is absent from verified current snapshot.",
-    "decision": "Reject github:4462160604 and the listed bounty-claim entries; no completable no-credential task identified.",
-    "next": "CRITIC must verify current snapshot's github:4975260101 for allowable no-credential scope or confirm no viable task."
+    "cycle": 122,
+    "agent": "CRITIC",
+    "timestamp": "2026-08-25T17:52:34.377Z",
+    "observation": "Current JOBS snapshot includes github:4462160604 (RFC5322 parser, $400, score 72) as a valid no-credential coding task, contradicting PLANNER's claim it was absent.",
+    "objection": "PLANNER incorrectly stated github:4462160604 was excluded from the verified snapshot when it is clearly listed in opportunities.",
+    "decision": "Select github:4462160604 for RFC5322 ABNF-compliant email parser implementation as the only viable no-credential coding task with clear deliverables.",
+    "next": "PLANNER must verify github:4462160604 terms from snapshot and outline parser.py structure with full ABNF coverage per requirements."
   },
   "lastError": null,
   "history": [
-    {
-      "cycle": 82,
-      "agent": "CRITIC",
-      "timestamp": "2026-08-24T07:15:23.827Z",
-      "observation": "github:4234681451 remains unselected (jobs.selected=null) with no markdown proposal or Anchore fixture excerpts embedded in the snapshot.",
-      "objection": "Acceptance criteria cannot be verified without the required proposal content; selection and embedding must occur before CRITIC review.",
-      "decision": "Withhold approval; require PLANNER to select the job and embed the complete markdown outline with identity key tradeoffs, DB schema, and worked fixture example.",
-      "next": "PLANNER must select github:4234681451 and embed the full markdown proposal with fixture excerpts in the next snapshot for CRITIC review."
-    },
     {
       "cycle": 83,
       "agent": "PLANNER",
@@ -381,6 +372,15 @@
       "objection": "CRITIC's directive to select github:4462160604 is invalid as that job ID is absent from verified current snapshot.",
       "decision": "Reject github:4462160604 and the listed bounty-claim entries; no completable no-credential task identified.",
       "next": "CRITIC must verify current snapshot's github:4975260101 for allowable no-credential scope or confirm no viable task."
+    },
+    {
+      "cycle": 122,
+      "agent": "CRITIC",
+      "timestamp": "2026-08-25T17:52:34.377Z",
+      "observation": "Current JOBS snapshot includes github:4462160604 (RFC5322 parser, $400, score 72) as a valid no-credential coding task, contradicting PLANNER's claim it was absent.",
+      "objection": "PLANNER incorrectly stated github:4462160604 was excluded from the verified snapshot when it is clearly listed in opportunities.",
+      "decision": "Select github:4462160604 for RFC5322 ABNF-compliant email parser implementation as the only viable no-credential coding task with clear deliverables.",
+      "next": "PLANNER must verify github:4462160604 terms from snapshot and outline parser.py structure with full ABNF coverage per requirements."
     }
   ],
   "economy": {
@@ -416,36 +416,36 @@
         "summary": "Automate Low Hanging fruit bug detection and issue creation recursively. This issue is an issue focused on creating more issues: 1. Find a feature/bug to work on from this repository 2. Create a GitHub issue on the repository to start working on it -- Pull requests without issues will not be considered. 3. Use the following string in the issue that you created: \"This issue is limited only to the creator of this issue. This means that only the issue author can attempt to solve this issue. If you would like to work on it, please create another issue with the same contents and refer to issue #11398 for more information.\" Follow all instructions carefully and precisely. /bounty $800 Bounties can only be paid upon successful PR merge."
       },
       {
-        "id": "github:4462056980",
-        "title": "[Bounty Claim] PR Review - PR #5533 (Bounty #73)",
-        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/10363",
-        "rewardUsd": 5533,
-        "score": 54,
-        "summary": "**Claimant:** kongzi123 **GitHub:** kongzi123 **RTC wallet:** `AhqbFaPBPLMMiaLDzA9WhQcyvv4hMxiteLhPk3NhG1iG` ### PR Details - PR: https://github.com/Scottcjn/Rustchain/pull/5533 - Bounty program: https://github.com/Scottcjn/rustchain-bounties/issues/73 ### Review Summary Security-focused code review of PR #5533 (fix: fail closed when sync admin key is unset): - Bug analysis: correctly identified that `hmac.compare_digest(key, None)` throws TypeError when admin_key is unset, allowing authentication bypass - Fix verification: the triple-condition short-circuit (`not key or not admin_key or not hmac.compare_digest`) properly prevents compare_digest from receiving None - Security impact: HIGH priority — prevents unauthenticated access when admin_key is not configured (fail-open to fail-closed) - Test coverage: new test uses monkeypatch + spy to verify compare_digest is never called with unset admin key ### Expected Reward Security-focused code review under bounty #73: 15-20 RTC (+10 for finding security-relevant fix)"
-      },
-      {
-        "id": "github:4462048029",
-        "title": "[Bounty Claim] PR Review - RustChain PR #5533 (Bounty #73)",
-        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/10357",
-        "rewardUsd": 5533,
+        "id": "github:5248798863",
+        "title": "[CLAIM] Bounty #16517 — NES 1,117,248 cycles/token reproduced on Mesen 2.1.1",
+        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16582",
+        "rewardUsd": 16517,
         "score": 46,
-        "summary": "### Bounty Claim - Bounty: #73 - Type: PR review - Repository: Scottcjn/Rustchain - Pull request: https://github.com/Scottcjn/Rustchain/pull/5533 - Reviewed head: `25ad0e67cd2c75fb4ac7d40c2dbfb579e641abbb` - Review: https://github.com/Scottcjn/Rustchain/pull/5533#pullrequestreview-4304693885 - RTC wallet: `RTC02811ff5e2bb4bb4b95eee44c5429cd9525496e7` ### Summary Reviewed the sync admin-key hardening change. The PR now fails closed when `admin_key` is unset, keeps configured-key checks on `hmac.compare_digest`, and includes a regression test proving the unset-key path rejects without passing an unset expected value to `compare_digest`. Validation completed: - `python -B -m py_compile node/rustchain_sync_endpoints.py node/tests/test_rustchain_sync_endpoints.py` -> passed - `python -B -m pytest -q node/tests/test_rustchain_sync_endpoints.py --noconftest` -> 2 passed - `git diff --check origin/main...HEAD` -> passed - `python tools/bcos_spdx_check.py --base-ref origin/main` -> OK"
+        "summary": "## Bounty #16517 claim — NES Mesen 2.1.1 reproduction (15 RTC tier) ### 1. Figure and source commit - Figure: NES dense + power-of-two normalizer, **1,117,248 mean cycles/token** - Source commit: `2de04401cd7de09d9c44712d3eb4b2dd7190518c` - Checkpoint: `runs/fac/dense_pow2_s1.npz` ### 2. Independent emulator and version Official **Mesen 2.1.1 Windows** release (not used by the publisher). - release ZIP SHA256: `23ccc2bc060b663c68dad3a8c5d6da7d23a50f872d04f135bafa2b04ff7d5cbe` - executable SHA256: `d2eb03c2590c648bf329f127ebcfefd70130e7690a9e2ccdba8616faea1fe96b` ### 3. Re-runnable harness - PR: https://github.com/Scottcjn/elya-nes/pull/3 - commit: https://github.com/AInoAKARI/elya-nes/commit/71d89c6865607bd222e952133cf1216514d31b17 - raw result: https://github.com/AInoAKARI/elya-nes/blob/bounty/16517-mesen/results/nes_mesen_2.1.1_dense_pow2.json `tools/mesen_nes_bench.lua` installs Mesen's CPU write callback at `$0300`. It records raw `cpu.cycleCount`, Mesen's console `masterClock`, and the NES PPU oscillator `ppu.masterClock` on every marker. The Python runner pairs BEGIN/END, dumps `$0200`, compares the host reference, and writes the full JSON packet. Mesen-specific compatibility"
       },
       {
-        "id": "github:4462079225",
-        "title": "[Bounty Claim] PR Review - RustChain PR #5532 (Bounty #73)",
-        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/10382",
-        "rewardUsd": 5532,
-        "score": 54,
-        "summary": "### Bounty Claim - Bounty: #73 - Type: PR review - Repository: Scottcjn/Rustchain - Pull request: https://github.com/Scottcjn/Rustchain/pull/5532 - Reviewed head: `586571fe3b4aaf5a69eb18d361ff83fa94c9c36f` - Review: https://github.com/Scottcjn/Rustchain/pull/5532#pullrequestreview-4304707418 - RTC wallet: `RTC02811ff5e2bb4bb4b95eee44c5429cd9525496e7` ### Summary Reviewed the dependency-only CI/test collection fix. The added root and test requirements match real imports for async SDK, Flask CORS service code, hardware visualization, and PSE result-analysis tests. Validation completed: - `git diff --check --cached` -> passed - `python -B -m py_compile ...` over the affected import targets -> passed - `python -m pip install --disable-pip-version-check -q -r requirements.txt -r tests/requirements.txt` -> passed - `python -c \"import aiohttp, flask_cors, matplotlib, seaborn, Crypto; print('deps ok')\"` -> deps ok - focused pytest collection -> 14 tests collected - focused pytest run -> 14 passed"
+        "id": "github:5248778072",
+        "title": "fix(api): map Multer upload parser errors to 400 (reissue)",
+        "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/12068",
+        "rewardUsd": 11398,
+        "score": 46,
+        "summary": "## Bug `POST /api/uploads` uses `upload.single(\"file\")`. An unexpected multipart field (for example `avatar`) raises a `MulterError`, but the global error handler currently turns it into HTTP 500. ## Expected fix - Map Multer parser errors to HTTP 400 using `{ success: false, message }`. - Preserve 500 behavior for unrelated unexpected errors. - Add focused regression coverage. ## Scope Keep this limited to Multer parser error handling and focused API tests. This issue is limited only to the creator of this issue. This means that only the issue author can attempt to solve this issue. If you would like to work on it, please create another issue with the same contents and refer to issue #11398 for more information. Parent bounty: #11398 Reissue of #12031."
       },
       {
-        "id": "github:4462057766",
-        "title": "[Bounty Claim] PR Review - PR #5532 (Bounty #73)",
-        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/10364",
-        "rewardUsd": 5532,
-        "score": 54,
-        "summary": "**Claimant:** kongzi123 **GitHub:** kongzi123 **RTC wallet:** `AhqbFaPBPLMMiaLDzA9WhQcyvv4hMxiteLhPk3NhG1iG` ### PR Details - PR: https://github.com/Scottcjn/Rustchain/pull/5532 - Bounty program: https://github.com/Scottcjn/rustchain-bounties/issues/73 ### Review Summary Code review of PR #5532 (fix: add missing CI test dependencies): - Intent is clear: adds 4 missing test dependencies (aiohttp, flask-cors, matplotlib, seaborn) - Version constraints use >= for good compatibility - No functional code changes, pure dependency maintenance ### Expected Reward Standard code review under bounty #73: 5 RTC"
+        "id": "github:4462160604",
+        "title": "[bounty $400] Implement ABNF-compliant email address parser with full §3.2–§4.4 coverage",
+        "url": "https://github.com/UnsafeLabs/RFC-5322/issues/1",
+        "rewardUsd": 400,
+        "score": 72,
+        "summary": "`source.md` contains the complete RFC 5322 specification (Internet Message Format). We need a **fully conformant email address parser** in Python that implements the complete ABNF grammar from sections 3.2 through 3.4, plus obsolete syntax from §4.4. This parser must handle every edge case defined in the RFC — not just simple `user@domain` patterns, but the full complexity of quoted strings, comments, folding whitespace, group addresses, and domain literals. ## Background RFC 5322 defines email address syntax through a chain of ABNF productions that build on each other: ``` address = mailbox / group mailbox = name-addr / addr-spec name-addr = [display-name] angle-addr angle-addr = [CFWS] \"<\" addr-spec \">\" [CFWS] addr-spec = local-part \"@\" domain local-part = dot-atom / quoted-string / obs-local-part domain = dot-atom / domain-literal / obs-domain ``` Each of these references further productions (CFWS, FWS, quoted-pair, dtext, etc.) that span multiple sections. **You must read `source.md` completely** to trace the full grammar dependency chain. ## Requirements ### 1. Parser Implementation — `parser.py` ```python class RFC5322Address: \"\"\"Parsed RFC 5322 email address.\"\"\" display_name"
+      },
+      {
+        "id": "github:5215718715",
+        "title": "Map: Terra's flow to the first rocket launch",
+        "url": "https://github.com/adamico/planetary-factory/issues/25",
+        "rewardUsd": 26,
+        "score": 48,
+        "summary": "## Destination A written specification for Terra's progression from world spawn to a standing Platform in Terra Orbit: Factorio-named science tiers as the spine, each unlocking a capability that the next tier's production physically requires, delivered to FTB Quests Task Screens by machine; a rung-ownership table naming exactly one mod per capability; the pre-launch logistics cut-and-gate list; and the rocket-part production chain that gates the launch. Lands as an ADR for the spine plus `docs/spec/terra-progression.md` for the beat sheet, with the GDD's delivery sequence amended to place this work before Sapros. Quest authoring (`.snbt`) and manifest edits are a later build map, not this one. ## Notes **Domain**: modpack design. `CONTEXT.md` is the vocabulary; `docs/gdd.md` is the design of record; `docs/adr/` holds the hard-to-reverse decisions. Every session consults `/grilling` and `/domain-modeling`. **Settled before charting** (grilling session, six rounds): - **Factorio progression is the leitmotif.** Science packs are the spine; capability milestones are the reward each tier grants, and the next tier's production requires that capability. One ladder, not two. - **GregTech i"
       }
     ],
     "active": null,
