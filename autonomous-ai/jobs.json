@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-08-25T23:01:29.558Z",
+  "updatedAt": "2026-08-25T23:34:11.809Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -56,14 +56,14 @@
       "url": "https://github.com/HHS/simpler-grants-gov/issues/9504",
       "repositoryApiUrl": "https://api.github.com/repos/HHS/simpler-grants-gov",
       "rewardUsd": 250,
-      "score": 80,
+      "score": 72,
       "labels": [
         "help wanted",
         "bounty:M",
         "status: open bounty"
       ],
-      "commentCount": 5,
-      "updatedAt": "2026-08-25T22:32:35Z",
+      "commentCount": 6,
+      "updatedAt": "2026-08-25T23:02:25Z",
       "summary": "### Summary Inspect the committed Anchore JSON fixtures and propose a schema for tracking vulnerabilities over time. Specifically: what combination of fields uniquely identifies \"the same vulnerability\" across scans? Candidates to evaluate include CVE ID alone, CVE + package name, CVE + package name + version, and CVE + package + image. Write up the tradeoffs, pick a recommendation, and sketch the analytics DB table(s) needed to support first_seen / last_seen / fixed_at / ignored_at / cleared_at fields. **Tech notes:** The Anchore JSON schema is documented at the Anchore project site; worth skimming before diving into fixtures. The goal of this spike is a decision, not code — resist the urge to start implementing. ### Acceptance criteria - [ ] Written proposal (markdown doc in PR) covering identity key options, tradeoffs, and a recommendation - [ ] Proposed analytics DB schema with column types and rationale - [ ] At least one worked example from the fixtures showing how the identity key behaves across days - [ ] Reviewed and approved by Brandon and/or Matt before next ticket starts ## Bounty: $250 This issue has been selected for our paid contributor program. If you wish to claim ",
       "state": "candidate",
       "payoutConfidence": 0.7,
@@ -73,153 +73,16 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 119,
+      "fastCashScore": 118,
       "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "eligibilityReason": "Competition is too high for bootstrap mode.",
       "competition": {
-        "comments": 5,
+        "comments": 6,
         "attemptSignals": 0,
-        "risk": "low"
+        "risk": "medium"
       },
       "realMoneyEligible": true,
       "economicValueUsd": 250,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5251436351",
-      "source": "github",
-      "title": "Fix cross-repo issue link in docs/bug-bounty.md (points to a contributor fork, not Idaonoli/TrustLink)",
-      "url": "https://github.com/Idaonoli/TrustLink/issues/1153",
-      "repositoryApiUrl": "https://api.github.com/repos/Idaonoli/TrustLink",
-      "rewardUsd": 348,
-      "score": 46,
-      "labels": [
-        "bug",
-        "documentation"
-      ],
-      "commentCount": 0,
-      "updatedAt": "2026-08-25T22:47:28Z",
-      "summary": "docs/bug-bounty.md (line 348 (contact table)) lists the GitHub Issues contact URL as `github.com/afurious/TrustLink/issues` instead of `github.com/Idaonoli/TrustLink/issues`. Verified by grepping the whole repo for `github.com/*/TrustLink/issues` and comparing against the actual `origin` remote (`github.com/Idaonoli/TrustLink`). Readers following this link land on a personal fork's issue tracker (which may 404, be private, or show unrelated content) instead of the real issue. Update the URL(s) to use `Idaonoli/TrustLink`.",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 118,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 0,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 348,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5251326029",
-      "source": "github",
-      "title": "Bounty claim: BoTTube docstring PR #1766 batch 36 (7 functions, 3.5 RTC)",
-      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16602",
-      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
-      "rewardUsd": 1766,
-      "score": 46,
-      "labels": [
-        "awaiting-merge"
-      ],
-      "commentCount": 1,
-      "updatedAt": "2026-08-25T22:31:55Z",
-      "summary": "## Bounty Claim **Bounty:** #750 — BoTTube docstring project **PR:** https://github.com/Scottcjn/bottube/pull/1766 **File:** `test_payment_hardening.py` **Functions:** 7 **RTC:** 3.5 (7 x 0.5) ### Functions documented 1. client — Flask test client fixture 2. _insert_agent — insert agent with rtc_balance 3. test_x402_requires_structured_receipt_and_blocks_cross_endpoint_replay — receipt + replay 4. test_x402_video_list_rejects_invalid_pagination — invalid pagination 400 5. test_store_capture_credits_agent_balance_and_earnings — capture credits balance 6. test_paypal_webhook_requires_signature_verification — invalid sig 401 7. test_paypal_refund_webhook_reverses_rtc_balance_once — refund idempotent ### Wallet `ezequiellich44-cmd`",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 116,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 1,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 1766,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5251326097",
-      "source": "github",
-      "title": "Bounty claim: BoTTube docstring PR #1766 batch 37 (9 functions, 4.5 RTC)",
-      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16603",
-      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
-      "rewardUsd": 1766,
-      "score": 46,
-      "labels": [
-        "awaiting-merge"
-      ],
-      "commentCount": 1,
-      "updatedAt": "2026-08-25T22:31:54Z",
-      "summary": "## Bounty Claim **Bounty:** #750 — BoTTube docstring project **PR:** https://github.com/Scottcjn/bottube/pull/1766 **File:** `test_syndication_routes.py` **Functions:** 9 **RTC:** 4.5 (9 x 0.5) ### Functions documented 1. client — Flask test client fixture 2. _insert_agent — insert agent row 3. _tracker — get shared tracker instance 4. test_update_item_requires_owner_scope — owner-only update 403 5. test_write_routes_reject_non_object_json — array body 400 6. test_report_routes_scope_normal_agents_and_expand_for_admin — scoped vs network 7. test_export_route_returns_inline_json_without_file_path — inline JSON export 8. test_numeric_query_params_reject_malformed_values — non-int params 400 9. test_report_routes_reject_malformed_dates — invalid dates 400 ### Wallet `ezequiellich44-cmd`",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 116,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 1,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 1766,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5251475819",
-      "source": "github",
-      "title": "🌐 AI 官方内容追踪报告 2026-08-26",
-      "url": "https://github.com/junlinzhao327-oss/big_model_radar/issues/452",
-      "repositoryApiUrl": "https://api.github.com/repos/junlinzhao327-oss/big_model_radar",
-      "rewardUsd": 2026,
-      "score": 46,
-      "labels": [
-        "web"
-      ],
-      "commentCount": 0,
-      "updatedAt": "2026-08-25T22:53:33Z",
-      "summary": "# AI 官方内容追踪报告 2026-08-26 > 今日更新 | 新增内容: 31 篇 | 生成时间: 2026-08-25 22:49 UTC 数据来源: - Anthropic: [anthropic.com](https://www.anthropic.com) — 新增 0 篇（sitemap 共 436 条） - OpenAI: [openai.com](https://openai.com) — 新增 31 篇（sitemap 共 922 条） --- # AI 官方内容追踪报告：2026-08-26 增量快报 **数据源**：Anthropic（claude.com / anthropic.com）、OpenAI（openai.com）官方网页 **分析日期**：2026年8月26日 **抓取范围**：2026-08-25 至 2026-08-26 新增内容 --- ## 一、今日速览 今日 OpenAI 以罕见的密度完成了一次集中发布——共 31 条新内容，主题高度收敛于**网络安全防御、Codex 安全工具链、隐私与供应链安全**，其战略意图几乎溢于言表：**OpenAI 正以 Daybreak 为核心，将自身从“通用模型提供商”升级为“AI 驱动的网络防御基础设施”**。核心亮点包括：以 “Daybreak” 为代号的网络防御平台获得 5 篇以上联动发文，形成完整的叙事矩阵；“Codex Security” 进入研究预览，并配套发布沙箱构建、安全运行指南与产品边界说明；两个全新代号 “Jalapeno” 和 “Aardvark” 首次出现，可能指向新的模型迭代码或隐藏产品线。Anthropic 今日无增量更新，其缺席本身即构成一种值得关注的节奏信号。 ## 二、方法说明 本次抓取结果中的 OpenAI 条目**均未包含正文内容**，仅有 URL 标题与分类标签。因此，本报告的逐条分析基于标题语义、URL 结构、发布数量、主题聚簇模式及行业背景进行的**有依据推断**，并在每一条中尽量保留可验证的原始链接。建议读者通过链接跳转原文以核对最终细节。 ## 三、Anthropic / Claude 内容精选 **今日更新数量：0 篇**。 Anthropic 在本次抓取窗口内没有任何新内容进入增量池。这未必代表其无内部动态，但至少说明其对外公开的发布节奏完全不在 8 月 25 日这个时间点上。考虑到 OpenAI 同一天发出近 31 条内容，Anthropic 的静默显得格外强烈——它可能正在为某个即将到来的大版本发布蓄力，也可能已将资源集中到少而精的深度技术报告方向，而非高频的新闻矩阵。 建议后续持续跟踪以下 Anhtropic 常见更新入口： - 官网首页：https://www.anthropic.com - Claude 产品页：ht",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 111,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 0,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 2026,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -234,7 +97,7 @@
         "Epic"
       ],
       "commentCount": 0,
-      "updatedAt": "2026-08-25T22:58:04Z",
+      "updatedAt": "2026-08-25T23:26:50Z",
       "summary": "## Outcome Enable makers to start and resolve configured quests from event commands without writing quest-system scripts. ## Included Stories - #599 — Start Quest command. - #600 — Finish Quest command, including the currently described failure and reward behaviors. ## Shared Requirements - Quests use stable references to project data rather than free-form identifiers. - Commands expose only lifecycle transitions supported by the PSDK quest system. - Supported commands can be saved and reopened without changing their meaning. - Missing quests and invalid lifecycle transitions are reported explicitly. - Starting, completing, failing, and distributing rewards remain distinct product behaviors even if some share an interface pattern. ## Out of Scope - Creating or editing quest definitions from the Event Builder. - Redesigning the PSDK quest system. - Advanced quest objectives, tracking interfaces, or plugin-defined lifecycle states. ## Epic Exit Criteria - [ ] Every quest transition included in the 3.0 MVP is represented by a linked, testable story. - [ ] Included commands can be created, configured, serialized, reopened, and removed from an event graph. - [ ] Invalid quest references",
       "state": "candidate",
       "payoutConfidence": 0.35,
@@ -363,6 +226,38 @@
       "requiresPreclaimOrIdentity": false
     },
     {
+      "id": "github:5251591378",
+      "source": "github",
+      "title": "Naming Incosistencies",
+      "url": "https://github.com/ljtpetersen/hgss_archipelago/issues/5",
+      "repositoryApiUrl": "https://api.github.com/repos/ljtpetersen/hgss_archipelago",
+      "rewardUsd": 24,
+      "score": 30,
+      "labels": [],
+      "commentCount": 0,
+      "updatedAt": "2026-08-25T23:28:48Z",
+      "summary": "This is a list of naming inconsistencies that @UselessWater3 will iron out 1. Sometimes Diglett's Cave is referred to as Diglett's Tunnel (in other locations) 2. Some locations use the wrong apostrophe (not ``'``) 3. Some Dragon's Den locations are called ``Dragons Den`` erronously 4. Fly Unlocks should follow the \"City - Fly Unlock\" pattern established in other apworlds 5. Fly Unlock for National Park to Fly Unlock Pokeathlondome (also items!) 6. Inconsistent: @Ecruteak Dowsing Machine House/Gift 7. All Gym locations to \"X City Gym - Locationname\". Currently it's \"X Gym - Locationname\". To be in line with PT and other one. 8. \"Dragon's Den Shrine - Badge from Clair\" and \"Dragon's Den Gift from Clair\" is inconsistent. Or is one actually outside? 9. Elm's Lab Locations need to be in New Bark Town. 10. Elms Lab -> Elm's Lab. Essentially search for anything that is ``s `` and then you can find missing plural apostrophes. 11. Chucks Wife -> Chuck's Wife 12. {\"@Ecruteak Dance Theater\"}, -> needs City 13. Oaks Lab -> Oak's Lab 14. Mr. Pokemons House -> Route 30 - Mr. Pokemon's House - ... 15. Olivine S.S. Aqua Port/National Dex from Prof. Oak\" is inconsistent. I think all should be \"Oliv",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 99,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 24,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
       "id": "github:5242872784",
       "source": "github",
       "title": "SC-29: Spectator Live Micro-Tipping and Stream Bounties Escrow",
@@ -377,8 +272,8 @@
         "contracts",
         "contribution-ready"
       ],
-      "commentCount": 1,
-      "updatedAt": "2026-08-25T22:53:07Z",
+      "commentCount": 2,
+      "updatedAt": "2026-08-25T23:23:53Z",
       "summary": "### Context & Description Spectators watching high-stakes games want to tip players or place bounties (e.g. \"50 XLM if White wins with a Queen sacrifice\"). The contract needs an escrow mechanism allowing spectators to deposit tips and claimable bounties linked to a `game_id`. **Location:** `contracts/game_contract/src/lib.rs` ### Requirements 1. Implement `send_tip(game_id: BytesN<32>, recipient: Address, amount: i128)`. 2. Implement `create_bounty(game_id: BytesN<32>, condition_hash: BytesN<32>, amount: i128, expiry_ledger: u32)`. 3. Implement `claim_bounty(bounty_id: u64, proof: Bytes, recipient: Address)` with arbiter verification. 4. Implement `refund_expired_bounty(bounty_id: u64)`. ### Acceptance Criteria - [ ] Instant tips transfer tokens directly from spectator to player without holding. - [ ] Bounties hold tokens in contract escrow until claimed with valid proof or expired. - [ ] Expired bounties can be reclaimed by creator. - [ ] Unit tests cover tip dispatch, bounty creation, claiming, and expiry refund. ### What to be done 1. Create `Bounty` storage structure and ID generator. 2. Implement `send_tip`, `create_bounty`, `claim_bounty`, and `refund_expired_bounty`. 3. Emit",
       "state": "candidate",
       "payoutConfidence": 0.35,
@@ -388,11 +283,49 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 99,
+      "fastCashScore": 98,
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
-        "comments": 1,
+        "comments": 2,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 32,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5242876199",
+      "source": "github",
+      "title": "SC-35: Seasonal Leaderboard Rewards Accumulator and Distribution Vault",
+      "url": "https://github.com/OpenKnight-Foundation/KnightVerse/issues/985",
+      "repositoryApiUrl": "https://api.github.com/repos/OpenKnight-Foundation/KnightVerse",
+      "rewardUsd": 32,
+      "score": 48,
+      "labels": [
+        "enhancement",
+        "Rust",
+        "Stellar Wave",
+        "contracts",
+        "contribution-ready"
+      ],
+      "commentCount": 3,
+      "updatedAt": "2026-08-25T23:22:07Z",
+      "summary": "### Context & Description Every month, top 100 ranked players on KnightVerse receive seasonal rewards from a dedicated reward pool funded by platform fees and sponsors. We need a contract to lock seasonal reward funds and distribute them via Merkle root proofs or verified rank lists. **Location:** `contracts/game_contract/src/lib.rs` ### Requirements 1. Implement `fund_season_pool(season_id: u32, token: Address, amount: i128)`. 2. Implement `finalize_season(season_id: u32, merkle_root: BytesN<32>)` callable by Governance/Admin. 3. Implement `claim_season_reward(season_id: u32, rank: u32, amount: i128, merkle_proof: Vec<BytesN<32>>)`. 4. Track claimed status with bitmask or boolean mapping to prevent double claims. ### Acceptance Criteria - [ ] Users with valid Merkle proofs claim their exact allocated prize amount. - [ ] Duplicate claims with the same proof are rejected with `Error::AlreadyClaimed`. - [ ] Unclaimed funds after 90 days can be rolled over to next season pool by governance vote. - [ ] Unit tests demonstrate Merkle tree generation and on-chain verification. ### What to be done 1. Create `SeasonPool` storage struct and `claimed_rewards` map. 2. Implement Merkle proof ve",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 96,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 3,
         "attemptSignals": 0,
         "risk": "low"
       },
@@ -446,7 +379,7 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-24T13:15:06Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:3327219516\",\"rewardUsd\":600,\"fastCashScore\":111,\"updatedAt\":\"2026-08-25T22:58:04Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":119,\"updatedAt\":\"2026-08-25T22:32:35Z\",\"competition\":{\"comments\":5,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4318279838\",\"rewardUsd\":200,\"fastCashScore\":102,\"updatedAt\":\"2026-08-25T22:48:10Z\",\"competition\":{\"comments\":6,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":110,\"updatedAt\":\"2026-08-25T01:35:34Z\",\"competition\":{\"comments\":19,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-25T07:38:13Z\",\"competition\":{\"comments\":46,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:4975260101\",\"rewardUsd\":780,\"fastCashScore\":119,\"updatedAt\":\"2026-08-25T05:07:59Z\",\"competition\":{\"comments\":18,\"attemptSignals\":1,\"risk\":\"high\"}},{\"id\":\"github:5242872784\",\"rewardUsd\":32,\"fastCashScore\":99,\"updatedAt\":\"2026-08-25T22:53:07Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5251220929\",\"rewardUsd\":100,\"fastCashScore\":107,\"updatedAt\":\"2026-08-25T22:16:45Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5251326029\",\"rewardUsd\":1766,\"fastCashScore\":116,\"updatedAt\":\"2026-08-25T22:31:55Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5251326097\",\"rewardUsd\":1766,\"fastCashScore\":116,\"updatedAt\":\"2026-08-25T22:31:54Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5251436351\",\"rewardUsd\":348,\"fastCashScore\":118,\"updatedAt\":\"2026-08-25T22:47:28Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5251475819\",\"rewardUsd\":2026,\"fastCashScore\":111,\"updatedAt\":\"2026-08-25T22:53:33Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-24T13:15:06Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:3327219516\",\"rewardUsd\":600,\"fastCashScore\":111,\"updatedAt\":\"2026-08-25T23:26:50Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":118,\"updatedAt\":\"2026-08-25T23:02:25Z\",\"competition\":{\"comments\":6,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4318279838\",\"rewardUsd\":200,\"fastCashScore\":102,\"updatedAt\":\"2026-08-25T22:48:10Z\",\"competition\":{\"comments\":6,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":110,\"updatedAt\":\"2026-08-25T01:35:34Z\",\"competition\":{\"comments\":19,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-25T07:38:13Z\",\"competition\":{\"comments\":46,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:4975260101\",\"rewardUsd\":780,\"fastCashScore\":119,\"updatedAt\":\"2026-08-25T05:07:59Z\",\"competition\":{\"comments\":18,\"attemptSignals\":1,\"risk\":\"high\"}},{\"id\":\"github:5242872784\",\"rewardUsd\":32,\"fastCashScore\":98,\"updatedAt\":\"2026-08-25T23:23:53Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5242876199\",\"rewardUsd\":32,\"fastCashScore\":96,\"updatedAt\":\"2026-08-25T23:22:07Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5251220929\",\"rewardUsd\":100,\"fastCashScore\":107,\"updatedAt\":\"2026-08-25T22:16:45Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5251591378\",\"rewardUsd\":24,\"fastCashScore\":99,\"updatedAt\":\"2026-08-25T23:28:48Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
@@ -470,7 +403,7 @@
       "reasons": [
         "already_rewarded_or_paid"
       ],
-      "rejectedAt": "2026-08-25T23:01:29.498Z"
+      "rejectedAt": "2026-08-25T23:34:11.767Z"
     },
     {
       "id": "github:5247007690",
