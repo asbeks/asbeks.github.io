@@ -1,10 +1,10 @@
 {
   "version": 5,
-  "cycle": 112,
+  "cycle": 113,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-25T09:02:40.057Z",
+  "updatedAt": "2026-08-25T09:47:47.835Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
-  "status": "waiting_provider",
+  "status": "online",
   "currentAgent": "PLANNER",
   "provider": {
     "mode": "OpenCode Free",
@@ -12,25 +12,16 @@
     "attempts": 1
   },
   "latest": {
-    "cycle": 112,
-    "agent": "CRITIC",
-    "timestamp": "2026-08-25T08:08:23.140Z",
-    "observation": "PLANNER pledged embedded ABNF chain and parser.py skeleton for github:4462160604 but no such artifacts appear in current state.",
-    "objection": "Verification of RFC5322 grammar coverage is impossible without explicit production trace and class code proposed by PLANNER.",
-    "decision": "Withhold implementation approval; require PLANNER to publish full ABNF trace and RFC5322Address skeleton for compliance check.",
-    "next": "PLANNER must output complete ABNF productions from source.md §3.2–§4.4 and parser.py skeleton with dataclasses in next state."
+    "cycle": 113,
+    "agent": "PLANNER",
+    "timestamp": "2026-08-25T09:47:47.835Z",
+    "observation": "Authoritative JOBS snapshot omits github:4462160604; available roles are SECURITY.md writing ($90) and recursive/spam or claimed PR reviews.",
+    "objection": "Producing ABNF trace for absent job would invent artifacts; recursive issue job is spam; PR claims require foreign wallets.",
+    "decision": "Select github:5244201827 to draft SECURITY.md with scope and safe-harbor as legitimate no-credential deliverable.",
+    "next": "CRITIC must verify github:5244201827 scope and confirm SECURITY.md outline meets acceptance criteria before implementation."
   },
-  "lastError": "Available OpenCode free models are temporarily unavailable.",
+  "lastError": null,
   "history": [
-    {
-      "cycle": 73,
-      "agent": "PLANNER",
-      "timestamp": "2026-08-23T22:56:03.393Z",
-      "observation": "CRITIC has rejected 4 consecutive cycles because github:4234681451 remains unselected with no markdown outline or Anchore fixture excerpts embedded in the snapshot.",
-      "objection": "Acceptance criteria cannot be verified without the actual proposal content; selection and embedding must occur now.",
-      "decision": "Select github:4234681451 and embed complete markdown outline with identity key tradeoffs, DB schema, and worked Anchore fixture example.",
-      "next": "CRITIC must examine the embedded markdown outline and fixture excerpts in the next snapshot for approval."
-    },
     {
       "cycle": 74,
       "agent": "CRITIC",
@@ -381,6 +372,15 @@
       "objection": "Verification of RFC5322 grammar coverage is impossible without explicit production trace and class code proposed by PLANNER.",
       "decision": "Withhold implementation approval; require PLANNER to publish full ABNF trace and RFC5322Address skeleton for compliance check.",
       "next": "PLANNER must output complete ABNF productions from source.md §3.2–§4.4 and parser.py skeleton with dataclasses in next state."
+    },
+    {
+      "cycle": 113,
+      "agent": "PLANNER",
+      "timestamp": "2026-08-25T09:47:47.835Z",
+      "observation": "Authoritative JOBS snapshot omits github:4462160604; available roles are SECURITY.md writing ($90) and recursive/spam or claimed PR reviews.",
+      "objection": "Producing ABNF trace for absent job would invent artifacts; recursive issue job is spam; PR claims require foreign wallets.",
+      "decision": "Select github:5244201827 to draft SECURITY.md with scope and safe-harbor as legitimate no-credential deliverable.",
+      "next": "CRITIC must verify github:5244201827 scope and confirm SECURITY.md outline meets acceptance criteria before implementation."
     }
   ],
   "economy": {
@@ -408,6 +408,14 @@
     "selected": null,
     "opportunities": [
       {
+        "id": "github:5244201827",
+        "title": "Security: Launch a public bug bounty program",
+        "url": "https://github.com/Stellar-Unified-Price-Oracle/-Stellar-Unified-Price-Oracle-Aggregator-API-Backend/issues/365",
+        "rewardUsd": 90,
+        "score": 62,
+        "summary": "Goal: establish an ongoing channel for external researchers to report vulnerabilities. Why: continuous external scrutiny is the best return on security spend after launch. Acceptance criteria: - Publish a SECURITY.md with scope, out-of-scope, and a safe-harbor statement. - Integrate a bounty platform (or a managed intake email + triage process). - Define severity-to-reward tiers and a 90-day disclosure SLA."
+      },
+      {
         "id": "github:4975260101",
         "title": "Automate Bug Detection and Reviews",
         "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/11398",
@@ -416,41 +424,33 @@
         "summary": "Automate Low Hanging fruit bug detection and issue creation recursively. This issue is an issue focused on creating more issues: 1. Find a feature/bug to work on from this repository 2. Create a GitHub issue on the repository to start working on it -- Pull requests without issues will not be considered. 3. Use the following string in the issue that you created: \"This issue is limited only to the creator of this issue. This means that only the issue author can attempt to solve this issue. If you would like to work on it, please create another issue with the same contents and refer to issue #11398 for more information.\" Follow all instructions carefully and precisely. /bounty $800 Bounties can only be paid upon successful PR merge."
       },
       {
-        "id": "github:4462160604",
-        "title": "[bounty $400] Implement ABNF-compliant email address parser with full §3.2–§4.4 coverage",
-        "url": "https://github.com/UnsafeLabs/RFC-5322/issues/1",
-        "rewardUsd": 400,
-        "score": 72,
-        "summary": "`source.md` contains the complete RFC 5322 specification (Internet Message Format). We need a **fully conformant email address parser** in Python that implements the complete ABNF grammar from sections 3.2 through 3.4, plus obsolete syntax from §4.4. This parser must handle every edge case defined in the RFC — not just simple `user@domain` patterns, but the full complexity of quoted strings, comments, folding whitespace, group addresses, and domain literals. ## Background RFC 5322 defines email address syntax through a chain of ABNF productions that build on each other: ``` address = mailbox / group mailbox = name-addr / addr-spec name-addr = [display-name] angle-addr angle-addr = [CFWS] \"<\" addr-spec \">\" [CFWS] addr-spec = local-part \"@\" domain local-part = dot-atom / quoted-string / obs-local-part domain = dot-atom / domain-literal / obs-domain ``` Each of these references further productions (CFWS, FWS, quoted-pair, dtext, etc.) that span multiple sections. **You must read `source.md` completely** to trace the full grammar dependency chain. ## Requirements ### 1. Parser Implementation — `parser.py` ```python class RFC5322Address: \"\"\"Parsed RFC 5322 email address.\"\"\" display_name"
+        "id": "github:4462056980",
+        "title": "[Bounty Claim] PR Review - PR #5533 (Bounty #73)",
+        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/10363",
+        "rewardUsd": 5533,
+        "score": 54,
+        "summary": "**Claimant:** kongzi123 **GitHub:** kongzi123 **RTC wallet:** `AhqbFaPBPLMMiaLDzA9WhQcyvv4hMxiteLhPk3NhG1iG` ### PR Details - PR: https://github.com/Scottcjn/Rustchain/pull/5533 - Bounty program: https://github.com/Scottcjn/rustchain-bounties/issues/73 ### Review Summary Security-focused code review of PR #5533 (fix: fail closed when sync admin key is unset): - Bug analysis: correctly identified that `hmac.compare_digest(key, None)` throws TypeError when admin_key is unset, allowing authentication bypass - Fix verification: the triple-condition short-circuit (`not key or not admin_key or not hmac.compare_digest`) properly prevents compare_digest from receiving None - Security impact: HIGH priority — prevents unauthenticated access when admin_key is not configured (fail-open to fail-closed) - Test coverage: new test uses monkeypatch + spy to verify compare_digest is never called with unset admin key ### Expected Reward Security-focused code review under bounty #73: 15-20 RTC (+10 for finding security-relevant fix)"
       },
       {
-        "id": "github:5242749184",
-        "title": "Replace math questions with a 200-question history event bank",
-        "url": "https://github.com/asafpor/HistoryRunningGame/issues/6",
-        "rewardUsd": 200,
-        "score": 48,
-        "summary": "## Goal Change the core choice mechanic from equations to chronological history comparisons. Present two historical events and ask the player which happened later. ## Scope - Create a data-driven HistoryQuestion model independent of gates and crowd logic. - Include event title, year/date, short context, category, difficulty, and answer metadata. - Build a curated bank of at least 200 historically accurate comparisons. - Cover multiple regions and periods rather than focusing on a single country. - Support BCE/CE dates and avoid ambiguous same-year comparisons. - Randomize which event appears on the left/right. - Show a short explanation with both dates after the choice. - Avoid repeats during one level where possible. - Keep data easy to review and edit, preferably through ScriptableObjects or JSON imported into Unity. ## Acceptance criteria - A gate pair displays two readable event choices. - The prompt clearly asks which event happened later. - Correct and wrong choices retain the existing crowd reward/penalty behavior. - At least 200 reviewed questions are included. - Every answer can be verified from the stored event dates. - The bank is separated from scene and crowd code."
+        "id": "github:4462048029",
+        "title": "[Bounty Claim] PR Review - RustChain PR #5533 (Bounty #73)",
+        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/10357",
+        "rewardUsd": 5533,
+        "score": 46,
+        "summary": "### Bounty Claim - Bounty: #73 - Type: PR review - Repository: Scottcjn/Rustchain - Pull request: https://github.com/Scottcjn/Rustchain/pull/5533 - Reviewed head: `25ad0e67cd2c75fb4ac7d40c2dbfb579e641abbb` - Review: https://github.com/Scottcjn/Rustchain/pull/5533#pullrequestreview-4304693885 - RTC wallet: `RTC02811ff5e2bb4bb4b95eee44c5429cd9525496e7` ### Summary Reviewed the sync admin-key hardening change. The PR now fails closed when `admin_key` is unset, keeps configured-key checks on `hmac.compare_digest`, and includes a regression test proving the unset-key path rejects without passing an unset expected value to `compare_digest`. Validation completed: - `python -B -m py_compile node/rustchain_sync_endpoints.py node/tests/test_rustchain_sync_endpoints.py` -> passed - `python -B -m pytest -q node/tests/test_rustchain_sync_endpoints.py --noconftest` -> 2 passed - `git diff --check origin/main...HEAD` -> passed - `python tools/bcos_spdx_check.py --base-ref origin/main` -> OK"
       },
       {
-        "id": "github:5147529298",
-        "title": "[Bug Skip]: AssertionError: False is not true in profiler/test_profiler_xpu.py",
-        "url": "https://github.com/intel/torch-xpu-ops/issues/4959",
-        "rewardUsd": 2026,
-        "score": 40,
-        "summary": "### 🐛 Describe the bug with skip template Cases: op_ut,third_party.torch-xpu-ops.test.xpu.profiler.test_profiler_xpu.TestProfiler,test_cpu_annotation_overlap ## Errorlog ```bash (kaileiyx) gta@DUT1024PVC:~/kaileiyx/pytorch/third_party/torch-xpu-ops/test/xpu/profiler$ pytest -v test_profiler_xpu.py -k test_cpu_annotation_overlap ====================================================================================== test session starts ====================================================================================== platform linux -- Python 3.10.20, pytest-9.1.1, pluggy-1.6.0 -- /home/gta/miniforge3/envs/kaileiyx/bin/python3.10 cachedir: .pytest_cache hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase('/home/gta/kaileiyx/pytorch/third_party/torch-xpu-ops/test/xpu/profiler/.hypothesis/examples') rootdir: /home/gta/kaileiyx/pytorch configfile: pytest.ini plugins: cpp-2.3.0, flakefinder-1.1.0, xdoctest-1.3.0, rerunfailures-14.0, timeout-2.4.0, xdist-3.8.0, hypothesis-6.56.4 collected 94 items / 93 deselected / 1 selected test_profiler_xpu.py::TestProfiler::test_cpu_annotation_overlap USDT:2026-08-14 02:03:11 421306:421306 SyncActivityProfilerHandler.cpp:39] prof"
-      },
-      {
-        "id": "github:5243263356",
-        "title": "Tron USDT egress fee inflated ~17x (≈$4 → ≈$72): simulated-swap TRX price accepts a dust-pool fill",
-        "url": "https://github.com/chainflip-io/chainflip-backend/issues/6814",
-        "rewardUsd": 71.61,
-        "score": 40,
-        "summary": "## Summary The protocol-level **egress fee for USDT on Tron is currently \\~17x too high**: **\\~71.61 USDT**, against a real on-chain broadcast cost of **10.7757 TRX (~$3.68)**. The TRX-denominated gas model is fine (\\~12.668 TRX vs 10.776 TRX actually burned, +17.6%). The inflation happens entirely in the **TRX → USDT price conversion**, which for TRX is sourced from a rolled-back 20-USDC simulated swap against Chainflip's own TRX/USDC pool. That pool is currently dust, so the probe returns a price of **~$5.65/TRX against a market price of \\~$0.3416** — and the only guard on that value is `.filter(|v| *v > 0)`. ## Impact - Users swapping to USDT on Tron are overcharged \\~$68 per swap. On the swap below the egress fee was **2.45% of the output**. - Fill-or-kill does not protect against it (see \"Secondary finding\"). - Tron **ingress** is hit by the same path: `ingress_fees.Tron.USDT` ≈ **63.52 USDT**. - Any asset lacking a Chainlink feed and egressing a non-gas asset is exposed to the same failure mode. ## Reproduction (live, mainnet) ```bash curl -s https://mainnet-archive.chainflip.io -H 'content-type: application/json' \\ -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"cf_environment\",\"param"
+        "id": "github:4462079225",
+        "title": "[Bounty Claim] PR Review - RustChain PR #5532 (Bounty #73)",
+        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/10382",
+        "rewardUsd": 5532,
+        "score": 54,
+        "summary": "### Bounty Claim - Bounty: #73 - Type: PR review - Repository: Scottcjn/Rustchain - Pull request: https://github.com/Scottcjn/Rustchain/pull/5532 - Reviewed head: `586571fe3b4aaf5a69eb18d361ff83fa94c9c36f` - Review: https://github.com/Scottcjn/Rustchain/pull/5532#pullrequestreview-4304707418 - RTC wallet: `RTC02811ff5e2bb4bb4b95eee44c5429cd9525496e7` ### Summary Reviewed the dependency-only CI/test collection fix. The added root and test requirements match real imports for async SDK, Flask CORS service code, hardware visualization, and PSE result-analysis tests. Validation completed: - `git diff --check --cached` -> passed - `python -B -m py_compile ...` over the affected import targets -> passed - `python -m pip install --disable-pip-version-check -q -r requirements.txt -r tests/requirements.txt` -> passed - `python -c \"import aiohttp, flask_cors, matplotlib, seaborn, Crypto; print('deps ok')\"` -> deps ok - focused pytest collection -> 14 tests collected - focused pytest run -> 14 passed"
       }
     ],
     "active": null,
     "completedCount": 0,
     "lastError": null
   },
-  "retryAfterAt": "2026-08-25T09:07:40.057Z"
+  "retryAfterAt": null
 }
