@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-08-25T23:34:11.809Z",
+  "updatedAt": "2026-08-25T23:57:44.318Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -50,6 +50,42 @@
       "requiresPreclaimOrIdentity": false
     },
     {
+      "id": "github:5251436351",
+      "source": "github",
+      "title": "Fix cross-repo issue link in docs/bug-bounty.md (points to a contributor fork, not Idaonoli/TrustLink)",
+      "url": "https://github.com/Haroldwonder/TrustLink/issues/1153",
+      "repositoryApiUrl": "https://api.github.com/repos/Haroldwonder/TrustLink",
+      "rewardUsd": 348,
+      "score": 46,
+      "labels": [
+        "bug",
+        "documentation",
+        "Stellar Wave"
+      ],
+      "commentCount": 0,
+      "updatedAt": "2026-08-25T23:48:00Z",
+      "summary": "docs/bug-bounty.md (line 348 (contact table)) lists the GitHub Issues contact URL as `github.com/afurious/TrustLink/issues` instead of `github.com/Idaonoli/TrustLink/issues`. Verified by grepping the whole repo for `github.com/*/TrustLink/issues` and comparing against the actual `origin` remote (`github.com/Idaonoli/TrustLink`). Readers following this link land on a personal fork's issue tracker (which may 404, be private, or show unrelated content) instead of the real issue. Update the URL(s) to use `Idaonoli/TrustLink`.",
+      "state": "candidate",
+      "payoutConfidence": 0.5,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 118,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 348,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
       "id": "github:4234681451",
       "source": "github",
       "title": "Propose vulnerability identity key and lifecycle schema",
@@ -83,40 +119,6 @@
       },
       "realMoneyEligible": true,
       "economicValueUsd": 250,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:3327219516",
-      "source": "github",
-      "title": "📁 Quest Commands",
-      "url": "https://github.com/PokemonWorkshop/PokemonStudio/issues/601",
-      "repositoryApiUrl": "https://api.github.com/repos/PokemonWorkshop/PokemonStudio",
-      "rewardUsd": 600,
-      "score": 48,
-      "labels": [
-        "Epic"
-      ],
-      "commentCount": 0,
-      "updatedAt": "2026-08-25T23:26:50Z",
-      "summary": "## Outcome Enable makers to start and resolve configured quests from event commands without writing quest-system scripts. ## Included Stories - #599 — Start Quest command. - #600 — Finish Quest command, including the currently described failure and reward behaviors. ## Shared Requirements - Quests use stable references to project data rather than free-form identifiers. - Commands expose only lifecycle transitions supported by the PSDK quest system. - Supported commands can be saved and reopened without changing their meaning. - Missing quests and invalid lifecycle transitions are reported explicitly. - Starting, completing, failing, and distributing rewards remain distinct product behaviors even if some share an interface pattern. ## Out of Scope - Creating or editing quest definitions from the Event Builder. - Redesigning the PSDK quest system. - Advanced quest objectives, tracking interfaces, or plugin-defined lifecycle states. ## Epic Exit Criteria - [ ] Every quest transition included in the 3.0 MVP is represented by a linked, testable story. - [ ] Included commands can be created, configured, serialized, reopened, and removed from an event graph. - [ ] Invalid quest references",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 111,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 0,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 600,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -154,6 +156,40 @@
       },
       "realMoneyEligible": true,
       "economicValueUsd": 400,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5250439961",
+      "source": "github",
+      "title": "We harvest at the first unit and capture ~23% of every plant's yield, on every crop",
+      "url": "https://github.com/robsartin/robriculture/issues/129",
+      "repositoryApiUrl": "https://api.github.com/repos/robsartin/robriculture",
+      "rewardUsd": 8995,
+      "score": 40,
+      "labels": [
+        "ready"
+      ],
+      "commentCount": 1,
+      "updatedAt": "2026-08-25T23:43:15Z",
+      "summary": "## We harvest at the first unit, capturing ~23% of every plant's yield Chasing why TOMATO underperformed in #127 turned up something bigger and crop-independent. Instrumented full 719-turn games with the shipped champion, one crop forced each time: | crop | harvests | units sold | units/harvest | `max_yield` | capture | |---|---|---|---|---|---| | MELON | 86 | 120 | 1.40 | 6 | **23%** | | TOMATO | 124 | 126 | 1.02 | 4 | **25%** | | STRAWBERRY | 261 | 228 | 0.87 | 4 | **22%** | **Every crop captures roughly a quarter of what a plant can yield**, and the ratio is nearly identical across three crops with different yields, intervals and growth curves. That consistency is what makes this look structural rather than crop-specific. ## Suspected mechanism `_harvest_ready` fires as soon as **any** yield exists: ```python def _harvest_ready(tile, day: int) -> bool: \"\"\"True when a standing plant holds yield and has reached first-yield age.\"\"\" crop = tile.get(\"crop\") c = economy.CROPS.get(crop) if not c or tile.get(\"yield_units\", 0) <= 0: return False return day - tile.get(\"planted_day\", day) >= c[\"first\"] ``` `yield_units > 0` is the only quantity test. If a plant accumulates toward `max_yiel",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 109,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 1,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 8995,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -226,38 +262,6 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5251591378",
-      "source": "github",
-      "title": "Naming Incosistencies",
-      "url": "https://github.com/ljtpetersen/hgss_archipelago/issues/5",
-      "repositoryApiUrl": "https://api.github.com/repos/ljtpetersen/hgss_archipelago",
-      "rewardUsd": 24,
-      "score": 30,
-      "labels": [],
-      "commentCount": 0,
-      "updatedAt": "2026-08-25T23:28:48Z",
-      "summary": "This is a list of naming inconsistencies that @UselessWater3 will iron out 1. Sometimes Diglett's Cave is referred to as Diglett's Tunnel (in other locations) 2. Some locations use the wrong apostrophe (not ``'``) 3. Some Dragon's Den locations are called ``Dragons Den`` erronously 4. Fly Unlocks should follow the \"City - Fly Unlock\" pattern established in other apworlds 5. Fly Unlock for National Park to Fly Unlock Pokeathlondome (also items!) 6. Inconsistent: @Ecruteak Dowsing Machine House/Gift 7. All Gym locations to \"X City Gym - Locationname\". Currently it's \"X Gym - Locationname\". To be in line with PT and other one. 8. \"Dragon's Den Shrine - Badge from Clair\" and \"Dragon's Den Gift from Clair\" is inconsistent. Or is one actually outside? 9. Elm's Lab Locations need to be in New Bark Town. 10. Elms Lab -> Elm's Lab. Essentially search for anything that is ``s `` and then you can find missing plural apostrophes. 11. Chucks Wife -> Chuck's Wife 12. {\"@Ecruteak Dance Theater\"}, -> needs City 13. Oaks Lab -> Oak's Lab 14. Mr. Pokemons House -> Route 30 - Mr. Pokemon's House - ... 15. Olivine S.S. Aqua Port/National Dex from Prof. Oak\" is inconsistent. I think all should be \"Oliv",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 99,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 0,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 24,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
       "id": "github:5242872784",
       "source": "github",
       "title": "SC-29: Spectator Live Micro-Tipping and Stream Bounties Escrow",
@@ -296,23 +300,54 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5242876199",
+      "id": "github:4594227386",
       "source": "github",
-      "title": "SC-35: Seasonal Leaderboard Rewards Accumulator and Distribution Vault",
-      "url": "https://github.com/OpenKnight-Foundation/KnightVerse/issues/985",
-      "repositoryApiUrl": "https://api.github.com/repos/OpenKnight-Foundation/KnightVerse",
-      "rewardUsd": 32,
-      "score": 48,
+      "title": "Bounty issue template omits required /bounty marker",
+      "url": "https://github.com/xevrion-v2/agent-playground/issues/687",
+      "repositoryApiUrl": "https://api.github.com/repos/xevrion-v2/agent-playground",
+      "rewardUsd": 50,
+      "score": 42,
+      "labels": [],
+      "commentCount": 9,
+      "updatedAt": "2026-08-25T23:49:26Z",
+      "summary": "/bounty $50 References #33. ## Problem The `Bounty task` issue template asks for a bounty amount as plain text: ```md ## Bounty Amount $50 ``` But the bounty program instructions in #33 require new bounty issues to include the machine-readable slash marker `/bounty $[amount]`. Issues created from the template can therefore omit the marker that contributors and automation use to identify reward-backed work. ## Expected behavior The template should default to the same `/bounty $50` marker used by the seeded bounty issues and the program instructions. ## Acceptance criteria - Update `.github/ISSUE_TEMPLATE/bounty_task.md` so the default bounty amount uses `/bounty $50`. - Keep the change focused on the issue template and required AI agent metadata. - Verify the template contains exactly one `/bounty $50` default marker.",
+      "state": "candidate",
+      "payoutConfidence": 0.65,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 95,
+      "survivalEligible": false,
+      "eligibilityReason": "Competition is too high for bootstrap mode.",
+      "competition": {
+        "comments": 9,
+        "attemptSignals": 1,
+        "risk": "medium"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 50,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5003699379",
+      "source": "github",
+      "title": "Reward for completing the core dictionary: a fake 90s Wordnetic commercial",
+      "url": "https://github.com/denzmilk/wordtide/issues/329",
+      "repositoryApiUrl": "https://api.github.com/repos/denzmilk/wordtide",
+      "rewardUsd": 90,
+      "score": 40,
       "labels": [
-        "enhancement",
-        "Rust",
-        "Stellar Wave",
-        "contracts",
-        "contribution-ready"
+        "type:feature",
+        "needs-signoff",
+        "phase-a",
+        "blocked"
       ],
-      "commentCount": 3,
-      "updatedAt": "2026-08-25T23:22:07Z",
-      "summary": "### Context & Description Every month, top 100 ranked players on KnightVerse receive seasonal rewards from a dedicated reward pool funded by platform fees and sponsors. We need a contract to lock seasonal reward funds and distribute them via Merkle root proofs or verified rank lists. **Location:** `contracts/game_contract/src/lib.rs` ### Requirements 1. Implement `fund_season_pool(season_id: u32, token: Address, amount: i128)`. 2. Implement `finalize_season(season_id: u32, merkle_root: BytesN<32>)` callable by Governance/Admin. 3. Implement `claim_season_reward(season_id: u32, rank: u32, amount: i128, merkle_proof: Vec<BytesN<32>>)`. 4. Track claimed status with bitmask or boolean mapping to prevent double claims. ### Acceptance Criteria - [ ] Users with valid Merkle proofs claim their exact allocated prize amount. - [ ] Duplicate claims with the same proof are rejected with `Error::AlreadyClaimed`. - [ ] Unclaimed funds after 90 days can be rolled over to next season pool by governance vote. - [ ] Unit tests demonstrate Merkle tree generation and on-chain verification. ### What to be done 1. Create `SeasonPool` storage struct and `claimed_rewards` map. 2. Implement Merkle proof ve",
+      "commentCount": 14,
+      "updatedAt": "2026-08-25T23:52:35Z",
+      "summary": "## Context / why Chris: a reward for **capturing every word in the core dictionary** — the whole thing, excluding slang and adult words. The reward is a **fake 90s TV commercial for Wordnetic, with a catchy jingle**: the game advertising itself, in period, as the payoff for finishing it. It is the only 100% in the game, and the first reward that is a *thing to watch* rather than a cosmetic to equip. ## The number Measured against the current corpus: **25,986 words** — `DICT` (26,097, the curated generation set) minus the 111 adult words inside it. By length: 3→1,214 · 4→3,003 · 5→4,541 · 6→5,833 · 7→6,067 · 8→5,328. That is a *very* long tail. At the bot-measured ~26 words per casual run (~35 skilled), with no repeats, it is on the order of a thousand flawless runs — realistically several thousand. **This needs a decision from Chris before the reward is built**, because it sets what \"completion\" means: - **(a) The full 25,986** — a genuine lifetime trophy almost nobody reaches. The commercial becomes folklore. - **(b) Per-length completion** — finishing all 3-letter words (1,214) is achievable and could pay out its own reward, with the full set as the grand prize. Fits the existing",
       "state": "candidate",
       "payoutConfidence": 0.35,
       "autonomyFit": 1,
@@ -321,16 +356,16 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 96,
+      "fastCashScore": 86,
       "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "eligibilityReason": "Competition is too high for bootstrap mode.",
       "competition": {
-        "comments": 3,
+        "comments": 14,
         "attemptSignals": 0,
-        "risk": "low"
+        "risk": "medium"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 32,
+      "economicValueUsd": 90,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -379,7 +414,7 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-24T13:15:06Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:3327219516\",\"rewardUsd\":600,\"fastCashScore\":111,\"updatedAt\":\"2026-08-25T23:26:50Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":118,\"updatedAt\":\"2026-08-25T23:02:25Z\",\"competition\":{\"comments\":6,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4318279838\",\"rewardUsd\":200,\"fastCashScore\":102,\"updatedAt\":\"2026-08-25T22:48:10Z\",\"competition\":{\"comments\":6,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":110,\"updatedAt\":\"2026-08-25T01:35:34Z\",\"competition\":{\"comments\":19,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-25T07:38:13Z\",\"competition\":{\"comments\":46,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:4975260101\",\"rewardUsd\":780,\"fastCashScore\":119,\"updatedAt\":\"2026-08-25T05:07:59Z\",\"competition\":{\"comments\":18,\"attemptSignals\":1,\"risk\":\"high\"}},{\"id\":\"github:5242872784\",\"rewardUsd\":32,\"fastCashScore\":98,\"updatedAt\":\"2026-08-25T23:23:53Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5242876199\",\"rewardUsd\":32,\"fastCashScore\":96,\"updatedAt\":\"2026-08-25T23:22:07Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5251220929\",\"rewardUsd\":100,\"fastCashScore\":107,\"updatedAt\":\"2026-08-25T22:16:45Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5251591378\",\"rewardUsd\":24,\"fastCashScore\":99,\"updatedAt\":\"2026-08-25T23:28:48Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-24T13:15:06Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":118,\"updatedAt\":\"2026-08-25T23:02:25Z\",\"competition\":{\"comments\":6,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4318279838\",\"rewardUsd\":200,\"fastCashScore\":102,\"updatedAt\":\"2026-08-25T22:48:10Z\",\"competition\":{\"comments\":6,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":110,\"updatedAt\":\"2026-08-25T01:35:34Z\",\"competition\":{\"comments\":19,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-25T07:38:13Z\",\"competition\":{\"comments\":46,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:4594227386\",\"rewardUsd\":50,\"fastCashScore\":95,\"updatedAt\":\"2026-08-25T23:49:26Z\",\"competition\":{\"comments\":9,\"attemptSignals\":1,\"risk\":\"medium\"}},{\"id\":\"github:4975260101\",\"rewardUsd\":780,\"fastCashScore\":119,\"updatedAt\":\"2026-08-25T05:07:59Z\",\"competition\":{\"comments\":18,\"attemptSignals\":1,\"risk\":\"high\"}},{\"id\":\"github:5003699379\",\"rewardUsd\":90,\"fastCashScore\":86,\"updatedAt\":\"2026-08-25T23:52:35Z\",\"competition\":{\"comments\":14,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5242872784\",\"rewardUsd\":32,\"fastCashScore\":98,\"updatedAt\":\"2026-08-25T23:23:53Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5250439961\",\"rewardUsd\":8995,\"fastCashScore\":109,\"updatedAt\":\"2026-08-25T23:43:15Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5251220929\",\"rewardUsd\":100,\"fastCashScore\":107,\"updatedAt\":\"2026-08-25T22:16:45Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5251241758\",\"rewardUsd\":282,\"fastCashScore\":112,\"updatedAt\":\"2026-08-25T23:53:38Z\",\"competition\":{\"comments\":4,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5251436351\",\"rewardUsd\":348,\"fastCashScore\":118,\"updatedAt\":\"2026-08-25T23:48:00Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
@@ -392,10 +427,19 @@
     "minPayoutConfidence": 0.8,
     "competitionRequired": "low",
     "rejectedFakeRevenueCount": 0,
-    "rejectedAlreadyPaidCount": 1,
+    "rejectedAlreadyPaidCount": 2,
     "rejectedIdentityGateCount": 0
   },
   "economicallyRejected": [
+    {
+      "id": "github:5251241758",
+      "title": "[BOUNTY ROUND] Distribution Packages — agents build it, humans publish it (YouTube, Shorts, syndication) — 15-60 RTC",
+      "rewardUsd": 282,
+      "reasons": [
+        "already_rewarded_or_paid"
+      ],
+      "rejectedAt": "2026-08-25T23:57:44.268Z"
+    },
     {
       "id": "github:3055155077",
       "title": "Switch to `ky` from `redaxios`",
@@ -403,7 +447,7 @@
       "reasons": [
         "already_rewarded_or_paid"
       ],
-      "rejectedAt": "2026-08-25T23:34:11.767Z"
+      "rejectedAt": "2026-08-25T23:57:44.269Z"
     },
     {
       "id": "github:5247007690",
