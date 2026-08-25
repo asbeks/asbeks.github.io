@@ -2,10 +2,10 @@
   "version": 5,
   "cycle": 124,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-25T19:17:38.162Z",
+  "updatedAt": "2026-08-25T19:51:05.182Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
-  "status": "online",
-  "currentAgent": "CRITIC",
+  "status": "degraded",
+  "currentAgent": "PLANNER",
   "provider": {
     "mode": "OpenCode Free",
     "model": "hy3-free",
@@ -20,7 +20,7 @@
     "decision": "Select github:4234681451: write vulnerability identity key proposal and analytics schema, no credentials needed, clear acceptance criteria.",
     "next": "PLANNER must verify github:4234681451 terms from snapshot and outline markdown doc with identity key tradeoffs and DB schema."
   },
-  "lastError": null,
+  "lastError": "Model output could not be normalized into the public trace schema.",
   "history": [
     {
       "cycle": 85,
@@ -432,12 +432,12 @@
         "summary": "/claim #1764 Repo: Scottcjn/bottube PR: https://github.com/Scottcjn/bottube/pull/1764 Type: docstring coverage Documented: 25 test and fixture functions across feed and generation validation files Reward requested: 12.5 RTC Files: - tests/test_feed_query_validation.py - tests/test_feed_impression_event_validation.py - tests/test_feed_blueprint.py - tests/test_generation_routes.py Validation: pytest -q tests/test_feed_query_validation.py tests/test_feed_impression_event_validation.py tests/test_feed_blueprint.py tests/test_generation_routes.py"
       },
       {
-        "id": "github:5245722873",
-        "title": "Bounty claim: BoTTube docstring PR #1763 (39 functions, 19.5 RTC)",
-        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16578",
-        "rewardUsd": 1763,
+        "id": "github:5249733981",
+        "title": "Bountiful + Cobblemon: any Cobblemon criterion trigger in a criteria objective hard-crashes the server",
+        "url": "https://github.com/presumablynoob/chunkbound/issues/13",
+        "rewardUsd": 241,
         "score": 46,
-        "summary": "Bounty claim: BoTTube docstring PR #1763 (39 functions documented, 19.5 RTC) PR: https://github.com/Scottcjn/bottube/pull/1763 Added docstrings to all 39 previously undocumented functions across three test files: tests/test_social_graph.py (13), tests/test_generation_reliability.py (13), tests/test_gemini_request_validation.py (13). Docstrings-only, +200/-0. pytest -q on all three files: 26 passed. Wallet: RTCd1554f0f35576faf01d386a6be1c947f560dd0b7"
+        "summary": "## Summary Using a **Cobblemon criterion trigger** inside a Bountiful `criteria` bounty objective **hard-crashes the server** as soon as any *other* Cobblemon trigger fires while the player is holding that bounty. In practice: hold a bounty with a `cobblemon:catch_pokemon` objective, win a single Pokemon battle, and the game crashes. This is not a datapack error - the JSON is valid and loads without a warning. It is an interaction bug between Bountiful's criteria matching and Cobblemon's trigger class layout. **Versions:** `bountiful-neoforge-8.0.0-beta.2`, `kambrik-neoforge-8.0.0-beta.2`, `Cobblemon-neoforge-1.7.3+1.21.1`, NeoForge 21.1.248, MC 1.21.1. ## Root cause Bountiful's `criteria` objective builds `{\"trigger\": <content>, \"conditions\": <conditions>}` and decodes it with vanilla `Criterion.CODEC`. To decide whether a *firing* trigger matches an objective, `BountifulSharedApi$DefaultImpls.registerCriterionStuff` compares `trigger.getClass()`. That works for vanilla, where each trigger is its own class. It breaks for Cobblemon, because **all 19 of Cobblemon's triggers are instances of a single class**, `com.cobblemon.mod.common.advancement.criterion.SimpleCriterionTrigger` - i"
       },
       {
         "id": "github:5242895246",

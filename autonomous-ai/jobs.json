@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-08-25T19:17:02.345Z",
+  "updatedAt": "2026-08-25T19:50:27.818Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -120,37 +120,35 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5245722873",
+      "id": "github:5249733981",
       "source": "github",
-      "title": "Bounty claim: BoTTube docstring PR #1763 (39 functions, 19.5 RTC)",
-      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16578",
-      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
-      "rewardUsd": 1763,
+      "title": "Bountiful + Cobblemon: any Cobblemon criterion trigger in a criteria objective hard-crashes the server",
+      "url": "https://github.com/presumablynoob/chunkbound/issues/13",
+      "repositoryApiUrl": "https://api.github.com/repos/presumablynoob/chunkbound",
+      "rewardUsd": 241,
       "score": 46,
-      "labels": [
-        "awaiting-merge"
-      ],
-      "commentCount": 4,
-      "updatedAt": "2026-08-25T19:08:02Z",
-      "summary": "Bounty claim: BoTTube docstring PR #1763 (39 functions documented, 19.5 RTC) PR: https://github.com/Scottcjn/bottube/pull/1763 Added docstrings to all 39 previously undocumented functions across three test files: tests/test_social_graph.py (13), tests/test_generation_reliability.py (13), tests/test_gemini_request_validation.py (13). Docstrings-only, +200/-0. pytest -q on all three files: 26 passed. Wallet: RTCd1554f0f35576faf01d386a6be1c947f560dd0b7",
+      "labels": [],
+      "commentCount": 0,
+      "updatedAt": "2026-08-25T19:30:50Z",
+      "summary": "## Summary Using a **Cobblemon criterion trigger** inside a Bountiful `criteria` bounty objective **hard-crashes the server** as soon as any *other* Cobblemon trigger fires while the player is holding that bounty. In practice: hold a bounty with a `cobblemon:catch_pokemon` objective, win a single Pokemon battle, and the game crashes. This is not a datapack error - the JSON is valid and loads without a warning. It is an interaction bug between Bountiful's criteria matching and Cobblemon's trigger class layout. **Versions:** `bountiful-neoforge-8.0.0-beta.2`, `kambrik-neoforge-8.0.0-beta.2`, `Cobblemon-neoforge-1.7.3+1.21.1`, NeoForge 21.1.248, MC 1.21.1. ## Root cause Bountiful's `criteria` objective builds `{\"trigger\": <content>, \"conditions\": <conditions>}` and decodes it with vanilla `Criterion.CODEC`. To decide whether a *firing* trigger matches an objective, `BountifulSharedApi$DefaultImpls.registerCriterionStuff` compares `trigger.getClass()`. That works for vanilla, where each trigger is its own class. It breaks for Cobblemon, because **all 19 of Cobblemon's triggers are instances of a single class**, `com.cobblemon.mod.common.advancement.criterion.SimpleCriterionTrigger` - i",
       "state": "candidate",
-      "payoutConfidence": 0.5,
+      "payoutConfidence": 0.35,
       "autonomyFit": 1,
       "requiresHumanGate": false,
       "requiresSpecialHardware": false,
-      "estimatedHoursBand": 8,
+      "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 112,
+      "fastCashScore": 111,
       "survivalEligible": false,
-      "eligibilityReason": "Too slow for bootstrap mode: first real cash currently requires a <=4 hour task.",
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
-        "comments": 4,
+        "comments": 0,
         "attemptSignals": 0,
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 1763,
+      "economicValueUsd": 241,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -223,207 +221,38 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5242949502",
+      "id": "github:3963671543",
       "source": "github",
-      "title": "Bounty claim: BoTTube docstring PR #1760 batch 18 (14 functions, 7.0 RTC)",
-      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16573",
-      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
-      "rewardUsd": 1760,
-      "score": 38,
+      "title": "Contract Initialization & Configuration Management",
+      "url": "https://github.com/samieazubike/predictx-contract/issues/29",
+      "repositoryApiUrl": "https://api.github.com/repos/samieazubike/predictx-contract",
+      "rewardUsd": 32,
+      "score": 40,
       "labels": [
-        "awaiting-merge"
+        "Stellar Wave",
+        "contract"
       ],
-      "commentCount": 6,
-      "updatedAt": "2026-08-25T19:08:01Z",
-      "summary": "Bounty claim: BoTTube docstring PR #1760 batch 18 (14 functions, 7.0 RTC) PR: https://github.com/Scottcjn/bottube/pull/1760 Added docstrings to all 14 previously undocumented test functions in `outreach/test_queue.py`: opt-out detection (4), Video model (1), queue lifecycle (7), fixtures (2). Docstrings-only; 12/12 pass; file parses clean. Wallet: ezequiellich44-cmd (see #16548)",
+      "commentCount": 9,
+      "updatedAt": "2026-08-25T19:43:13Z",
+      "summary": "# Issue #28: Contract Initialization & Configuration Management **Labels:** `feature`, `infrastructure`, `high-priority` **Complexity:** Medium (150 points) **Milestone:** Phase 1 - MVP **Depends on:** #1, #2 --- ## Description Implement the initialization and runtime configuration system for all PredictX contracts. Each contract needs a one-time initialization function that sets up admin addresses, token references, cross-contract addresses, and configurable parameters. Additionally, certain parameters (fee percentages, voting window duration, thresholds) should be updateable by admins without redeployment. ### Why This Matters - Contracts are useless until initialized — this is the first function called after deployment - Cross-contract references (VotingOracle ↔ PredictionMarket) must be set correctly - Configurable parameters enable tuning without redeployment - Initialization order matters — getting it wrong bricks the system - Re-initialization must be prevented (security critical) --- ## Requirements and Context ### Initialization Parameters #### PredictionMarket ```rust pub fn initialize( env: Env, admin: Address, token_address: Address, treasury_address: Address, platform_",
       "state": "candidate",
-      "payoutConfidence": 0.5,
+      "payoutConfidence": 0.35,
       "autonomyFit": 1,
       "requiresHumanGate": false,
       "requiresSpecialHardware": false,
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 109,
+      "fastCashScore": 87,
       "survivalEligible": false,
       "eligibilityReason": "Competition is too high for bootstrap mode.",
       "competition": {
-        "comments": 6,
+        "comments": 9,
         "attemptSignals": 0,
         "risk": "medium"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 1760,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5241193468",
-      "source": "github",
-      "title": "Bounty claim: BoTTube docstring PR #1759 batch 17 (12 functions, 6.0 RTC)",
-      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16572",
-      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
-      "rewardUsd": 1759,
-      "score": 38,
-      "labels": [
-        "awaiting-merge"
-      ],
-      "commentCount": 8,
-      "updatedAt": "2026-08-25T19:07:59Z",
-      "summary": "Bounty claim: BoTTube docstring PR #1759 batch 17 (12 functions, 6.0 RTC) PR: https://github.com/Scottcjn/bottube/pull/1759 Added docstrings to 12 previously undocumented test functions in `tests/test_malformed_json_admin.py`: fixtures (3), referral review (4), badge assignment (3), badge removal (3). Docstrings-only; 10/10 pass; file parses clean. Wallet: ezequiellich44-cmd (see #16548)",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 106,
-      "survivalEligible": false,
-      "eligibilityReason": "Competition is too high for bootstrap mode.",
-      "competition": {
-        "comments": 8,
-        "attemptSignals": 0,
-        "risk": "medium"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 1759,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5241178547",
-      "source": "github",
-      "title": "Bounty claim: BoTTube docstring PR #1758 batch 16 (14 functions, 7.0 RTC)",
-      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16571",
-      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
-      "rewardUsd": 1758,
-      "score": 38,
-      "labels": [
-        "awaiting-merge"
-      ],
-      "commentCount": 8,
-      "updatedAt": "2026-08-25T19:07:58Z",
-      "summary": "Bounty claim: BoTTube docstring PR #1758 batch 16 (14 functions, 7.0 RTC) PR: https://github.com/Scottcjn/bottube/pull/1758 Added docstrings to all 14 previously undocumented test functions in `tests/test_watch_time_input_validation.py`: fixtures (5), rejection guards (6), valid paths (3). Docstrings-only; 9 pass (remaining skipped by design); file parses clean. Wallet: ezequiellich44-cmd (see #16548)",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 106,
-      "survivalEligible": false,
-      "eligibilityReason": "Competition is too high for bootstrap mode.",
-      "competition": {
-        "comments": 8,
-        "attemptSignals": 0,
-        "risk": "medium"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 1758,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5241030699",
-      "source": "github",
-      "title": "Bounty claim: BoTTube docstring PR #1757 batch 15 (16 functions, 8.0 RTC)",
-      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16570",
-      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
-      "rewardUsd": 1757,
-      "score": 38,
-      "labels": [
-        "awaiting-merge"
-      ],
-      "commentCount": 8,
-      "updatedAt": "2026-08-25T19:07:56Z",
-      "summary": "Bounty claim: BoTTube docstring PR #1757 batch 15 (16 functions, 8.0 RTC) PR: https://github.com/Scottcjn/bottube/pull/1757 Added docstrings to all 16 previously undocumented test functions in `tests/test_translations.py`: get_all_translations (4), get_video_translations (4), get_translations_by_language (4), get_supported_languages (4). Docstrings-only; 18/18 pass; file parses clean. Wallet: ezequiellich44-cmd (see #16548)",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 106,
-      "survivalEligible": false,
-      "eligibilityReason": "Competition is too high for bootstrap mode.",
-      "competition": {
-        "comments": 8,
-        "attemptSignals": 0,
-        "risk": "medium"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 1757,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5240976442",
-      "source": "github",
-      "title": "Bounty claim: BoTTube docstring PR #1756 batch 14 (16 functions, 8.0 RTC)",
-      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16569",
-      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
-      "rewardUsd": 1756,
-      "score": 38,
-      "labels": [
-        "awaiting-merge"
-      ],
-      "commentCount": 8,
-      "updatedAt": "2026-08-25T19:07:54Z",
-      "summary": "Bounty claim: BoTTube docstring PR #1756 batch 14 (16 functions, 8.0 RTC) PR: https://github.com/Scottcjn/bottube/pull/1756 Added docstrings to all 16 previously undocumented test functions in `tests/test_upload_api.py`: registration validation (6), read endpoints (6), search (2), MP4 fixture helper (1). Docstrings-only; file AST-parses clean. Note: module times out in my Windows environment (network-dependent, pre-existing) — flagged transparently in the PR. Wallet: ezequiellich44-cmd (see #16548)",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 106,
-      "survivalEligible": false,
-      "eligibilityReason": "Competition is too high for bootstrap mode.",
-      "competition": {
-        "comments": 8,
-        "attemptSignals": 0,
-        "risk": "medium"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 1756,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5240941359",
-      "source": "github",
-      "title": "Bounty claim: BoTTube docstring PR #1755 batch 13 (17 functions, 8.5 RTC)",
-      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16568",
-      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
-      "rewardUsd": 1755,
-      "score": 38,
-      "labels": [
-        "awaiting-merge"
-      ],
-      "commentCount": 8,
-      "updatedAt": "2026-08-25T19:07:52Z",
-      "summary": "Bounty claim: BoTTube docstring PR #1755 batch 13 (17 functions, 8.5 RTC) PR: https://github.com/Scottcjn/bottube/pull/1755 Added docstrings to all 17 previously undocumented test functions in `tests/test_usdc_amount_validation.py`: fixtures (3), zero-write rejection guards across tips/payouts/deposits/premium/verify (9), positive paths (2). Docstrings-only; 20/20 pass; file parses clean. Wallet: ezequiellich44-cmd (see #16548)",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 106,
-      "survivalEligible": false,
-      "eligibilityReason": "Competition is too high for bootstrap mode.",
-      "competition": {
-        "comments": 8,
-        "attemptSignals": 0,
-        "risk": "medium"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 1755,
+      "economicValueUsd": 32,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -472,20 +301,20 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":124,\"updatedAt\":\"2026-08-25T18:03:13Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":110,\"updatedAt\":\"2026-08-25T01:35:34Z\",\"competition\":{\"comments\":19,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-25T07:38:13Z\",\"competition\":{\"comments\":46,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:4975260101\",\"rewardUsd\":780,\"fastCashScore\":119,\"updatedAt\":\"2026-08-25T05:07:59Z\",\"competition\":{\"comments\":18,\"attemptSignals\":1,\"risk\":\"high\"}},{\"id\":\"github:5240941359\",\"rewardUsd\":1755,\"fastCashScore\":106,\"updatedAt\":\"2026-08-25T19:07:52Z\",\"competition\":{\"comments\":8,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5240976442\",\"rewardUsd\":1756,\"fastCashScore\":106,\"updatedAt\":\"2026-08-25T19:07:54Z\",\"competition\":{\"comments\":8,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5241030699\",\"rewardUsd\":1757,\"fastCashScore\":106,\"updatedAt\":\"2026-08-25T19:07:56Z\",\"competition\":{\"comments\":8,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5241178547\",\"rewardUsd\":1758,\"fastCashScore\":106,\"updatedAt\":\"2026-08-25T19:07:58Z\",\"competition\":{\"comments\":8,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5241193468\",\"rewardUsd\":1759,\"fastCashScore\":106,\"updatedAt\":\"2026-08-25T19:07:59Z\",\"competition\":{\"comments\":8,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5242895246\",\"rewardUsd\":95,\"fastCashScore\":111,\"updatedAt\":\"2026-08-25T19:16:31Z\",\"competition\":{\"comments\":1,\"attemptSignals\":1,\"risk\":\"medium\"}},{\"id\":\"github:5242949502\",\"rewardUsd\":1760,\"fastCashScore\":109,\"updatedAt\":\"2026-08-25T19:08:01Z\",\"competition\":{\"comments\":6,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5245722873\",\"rewardUsd\":1763,\"fastCashScore\":112,\"updatedAt\":\"2026-08-25T19:08:02Z\",\"competition\":{\"comments\":4,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5248100751\",\"rewardUsd\":1764,\"fastCashScore\":115,\"updatedAt\":\"2026-08-25T19:08:04Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-24T13:15:06Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:3963671543\",\"rewardUsd\":32,\"fastCashScore\":87,\"updatedAt\":\"2026-08-25T19:43:13Z\",\"competition\":{\"comments\":9,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":124,\"updatedAt\":\"2026-08-25T18:03:13Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":110,\"updatedAt\":\"2026-08-25T01:35:34Z\",\"competition\":{\"comments\":19,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-25T07:38:13Z\",\"competition\":{\"comments\":46,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:4975260101\",\"rewardUsd\":780,\"fastCashScore\":119,\"updatedAt\":\"2026-08-25T05:07:59Z\",\"competition\":{\"comments\":18,\"attemptSignals\":1,\"risk\":\"high\"}},{\"id\":\"github:5242895246\",\"rewardUsd\":95,\"fastCashScore\":111,\"updatedAt\":\"2026-08-25T19:16:31Z\",\"competition\":{\"comments\":1,\"attemptSignals\":1,\"risk\":\"medium\"}},{\"id\":\"github:5248100751\",\"rewardUsd\":1764,\"fastCashScore\":115,\"updatedAt\":\"2026-08-25T19:08:04Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5249733981\",\"rewardUsd\":241,\"fastCashScore\":111,\"updatedAt\":\"2026-08-25T19:30:50Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
     "mode": true,
     "eligibleCount": 0,
-    "fundedSignalCount": 3,
+    "fundedSignalCount": 4,
     "objective": "first_real_confirmed_cash_fast",
     "policy": "bootstrap_basic_v1",
     "maxHours": 4,
     "minPayoutConfidence": 0.8,
     "competitionRequired": "low",
     "rejectedFakeRevenueCount": 0,
-    "rejectedAlreadyPaidCount": 0,
+    "rejectedAlreadyPaidCount": 1,
     "rejectedIdentityGateCount": 0
   },
   "economicallyRejected": [
@@ -496,7 +325,7 @@
       "reasons": [
         "already_rewarded_or_paid"
       ],
-      "rejectedAt": "2026-08-25T18:35:15.413Z"
+      "rejectedAt": "2026-08-25T19:50:27.774Z"
     },
     {
       "id": "github:5247007690",
