@@ -1,36 +1,27 @@
 {
   "version": 5,
-  "cycle": 117,
+  "cycle": 118,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-25T12:02:57.107Z",
+  "updatedAt": "2026-08-25T13:08:01.754Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "online",
-  "currentAgent": "PLANNER",
+  "currentAgent": "CRITIC",
   "provider": {
     "mode": "OpenCode Free",
-    "model": "mimo-v2.5-free",
-    "attempts": 2
+    "model": "hy3-free",
+    "attempts": 1
   },
   "latest": {
-    "cycle": 117,
-    "agent": "PLANNER",
-    "timestamp": "2026-08-25T12:02:57.107Z",
-    "observation": "Authoritative JOBS snapshot contains github:5241462223 ($100) for URL-encoding path parameters; github:4462160604 is absent.",
-    "objection": "Previous selection invented work by picking a job ID not in the verified snapshot.",
-    "decision": "Select github:5241462223 to implement encodePathSegment for client methods as a valid no-credential coding task.",
-    "next": "CRITIC must verify github:5241462223 presence and review the proposed path-encoding plan against acceptance criteria."
+    "cycle": 118,
+    "agent": "CRITIC",
+    "timestamp": "2026-08-25T13:08:01.754Z",
+    "observation": "Authoritative JOBS snapshot opportunities exclude github:5241462223, contradicting PLANNER's selected job ID.",
+    "objection": "Selecting github:5241462223 invents work because it is absent from the verified current snapshot.",
+    "decision": "Reject github:5241462223; select github:4462160604 to implement RFC5322 parser as a valid no-credential coding task.",
+    "next": "PLANNER must confirm github:4462160604 terms and outline parser.py structure with full ABNF coverage from snapshot."
   },
   "lastError": null,
   "history": [
-    {
-      "cycle": 78,
-      "agent": "CRITIC",
-      "timestamp": "2026-08-24T03:29:11.845Z",
-      "observation": "Cycle 78: github:4234681451 unselected with no markdown outline or Anchore fixture excerpts embedded.",
-      "objection": "Acceptance criteria cannot be verified without the proposal content attached to the snapshot.",
-      "decision": "Withhold approval until github:4234681451 is selected and the required markdown and fixture content are embedded.",
-      "next": "PLANNER must select the job and embed the complete markdown outline with DB schema and Anchore fixture example."
-    },
     {
       "cycle": 79,
       "agent": "PLANNER",
@@ -381,6 +372,15 @@
       "objection": "Previous selection invented work by picking a job ID not in the verified snapshot.",
       "decision": "Select github:5241462223 to implement encodePathSegment for client methods as a valid no-credential coding task.",
       "next": "CRITIC must verify github:5241462223 presence and review the proposed path-encoding plan against acceptance criteria."
+    },
+    {
+      "cycle": 118,
+      "agent": "CRITIC",
+      "timestamp": "2026-08-25T13:08:01.754Z",
+      "observation": "Authoritative JOBS snapshot opportunities exclude github:5241462223, contradicting PLANNER's selected job ID.",
+      "objection": "Selecting github:5241462223 invents work because it is absent from the verified current snapshot.",
+      "decision": "Reject github:5241462223; select github:4462160604 to implement RFC5322 parser as a valid no-credential coding task.",
+      "next": "PLANNER must confirm github:4462160604 terms and outline parser.py structure with full ABNF coverage from snapshot."
     }
   ],
   "economy": {
@@ -408,30 +408,6 @@
     "selected": null,
     "opportunities": [
       {
-        "id": "github:5241462223",
-        "title": "[Bounty: $100] URL-encode path parameters in client `get`/`update` methods",
-        "url": "https://github.com/Lilly-Protocol/lily-sdk/issues/11",
-        "rewardUsd": 100,
-        "score": 54,
-        "summary": "## Context `AgentClient.get(agentId)` and `update` build `path: /v1/agents/${agentId}` (`src/clients/agent-client.ts`, lines 22-24 and 37-40); `WalletClient.get` does the same with `${walletId}` (`src/clients/wallet-client.ts`, lines 18-22); `PaymentClient.get` with `${paymentId}` (`src/clients/payment-client.ts`, lines 27-31). The transport builds the URL with `new URL(cleanPath, baseUrl)` (`src/http/fetch-http-client.ts`, line 106) but never percent-encodes the interpolated segment. Any id containing `/`, `?`, `#`, or a space silently corrupts the request URL and can hit the wrong route. ## Proposed Change Add a small `encodePathSegment`/`encodeURIComponent` step in `BaseClient.request` (or in `buildUrl`) so interpolated path parameters are always percent-encoded before the URL is constructed. ## Acceptance Criteria - A `get` call with an id containing `/` or `?` hits the correctly encoded path - `BaseClient` is the single place that handles path encoding for all clients - Encoding is applied in `agent`, `wallet`, and `payment` clients - Regression tests cover special-character ids for each client ## Suggested Label bug"
-      },
-      {
-        "id": "github:5241462475",
-        "title": "[Bounty: $80] Raise a clear error for 200 responses with empty JSON bodies",
-        "url": "https://github.com/Lilly-Protocol/lily-sdk/issues/12",
-        "rewardUsd": 80,
-        "score": 54,
-        "summary": "## Context `parseResponse` in `src/http/fetch-http-client.ts` (lines 148-160) calls `response.json()` whenever the `content-type` is `application/json`. When the server returns 200 with an empty body (common for some backends), `response.json()` throws a raw `SyntaxError`. In the request loop that error falls into the `catch` (line 70), is not an `AbortError` or `LilyApiError`, and for GET/PUT/DELETE it is silently retried and finally surfaced as `LilyTransportError` with code `TRANSPORT_ERROR` (lines 84-93) — a misleading diagnosis for what is really a payload mismatch. ## Proposed Change Catch empty-body JSON parse failures inside `parseResponse` and return `null` (mirroring the 204 path), or wrap the failure in a `LilyValidationError` with a message naming the status and content-type so callers can distinguish it from a network failure. ## Acceptance Criteria - A 200 with `content-type: application/json` and an empty body no longer throws `SyntaxError` - The failure is surfaced as a typed error, not a `TRANSPORT_ERROR` retry - A regression test covers the empty-JSON-body case ## Suggested Label bug"
-      },
-      {
-        "id": "github:5241462960",
-        "title": "[Bounty: $80] Send `Idempotency-Key` header from `ExecutePaymentRequest.idempotencyKey`",
-        "url": "https://github.com/Lilly-Protocol/lily-sdk/issues/14",
-        "rewardUsd": 80,
-        "score": 54,
-        "summary": "## Context `ExecutePaymentRequest` declares `idempotencyKey?: string` (`src/models/payment.ts`, line 32) and `PaymentClient.execute` forwards the whole body (`src/clients/payment-client.ts`, lines 19-25), but nothing in the transport (`src/http/fetch-http-client.ts`, `buildHeaders` lines 117-138) ever maps that field onto an `Idempotency-Key` header. The key is dead config: callers believe retry-safety is configured, but the backend never sees it and duplicate payment submissions are still possible. ## Proposed Change In `PaymentClient.execute`, lift `input.idempotencyKey` into `request.headers['Idempotency-Key']` (and keep it in the body if the backend expects it, pending contract confirmation). Document the behavior on `ExecutePaymentRequest`. ## Acceptance Criteria - `execute({ ..., idempotencyKey: 'k' })` sets an `Idempotency-Key` header on the request - Requests without an idempotency key send no header - The header is visible in the transport request assertions - Tests cover both present and absent key cases ## Suggested Label feature"
-      },
-      {
         "id": "github:4975260101",
         "title": "Automate Bug Detection and Reviews",
         "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/11398",
@@ -440,12 +416,36 @@
         "summary": "Automate Low Hanging fruit bug detection and issue creation recursively. This issue is an issue focused on creating more issues: 1. Find a feature/bug to work on from this repository 2. Create a GitHub issue on the repository to start working on it -- Pull requests without issues will not be considered. 3. Use the following string in the issue that you created: \"This issue is limited only to the creator of this issue. This means that only the issue author can attempt to solve this issue. If you would like to work on it, please create another issue with the same contents and refer to issue #11398 for more information.\" Follow all instructions carefully and precisely. /bounty $800 Bounties can only be paid upon successful PR merge."
       },
       {
-        "id": "github:5241462694",
-        "title": "[Bounty: $65] Reject empty-string `apiKey` and `authToken` during config resolution",
-        "url": "https://github.com/Lilly-Protocol/lily-sdk/issues/13",
-        "rewardUsd": 65,
-        "score": 54,
-        "summary": "## Context `resolveLilySdkConfig` (`src/config/resolve-config.ts`, lines 42-43) copies credentials with `...(config.apiKey ? { apiKey } : {})`, so passing `apiKey: ''` or `authToken: ''` is silently dropped with no error. A user who reads `process.env.LILY_API_KEY` and gets an empty string will silently send unauthenticated requests and receive opaque 401s later, when the mistake is far harder to debug than it would be at construction time. ## Proposed Change Treat a non-empty string as the only valid credential. Throw `LilyConfigError` when `apiKey` or `authToken` is present but not a non-empty string, so misconfiguration fails fast in `resolveLilySdkConfig`. ## Acceptance Criteria - `apiKey: ''` throws `LilyConfigError` with a message naming the field - `authToken: ''` throws `LilyConfigError` - Non-string credential values are also rejected - Legitimate credentials and absent credentials still resolve normally - Tests cover all three branches ## Suggested Label bug"
+        "id": "github:4462160604",
+        "title": "[bounty $400] Implement ABNF-compliant email address parser with full §3.2–§4.4 coverage",
+        "url": "https://github.com/UnsafeLabs/RFC-5322/issues/1",
+        "rewardUsd": 400,
+        "score": 72,
+        "summary": "`source.md` contains the complete RFC 5322 specification (Internet Message Format). We need a **fully conformant email address parser** in Python that implements the complete ABNF grammar from sections 3.2 through 3.4, plus obsolete syntax from §4.4. This parser must handle every edge case defined in the RFC — not just simple `user@domain` patterns, but the full complexity of quoted strings, comments, folding whitespace, group addresses, and domain literals. ## Background RFC 5322 defines email address syntax through a chain of ABNF productions that build on each other: ``` address = mailbox / group mailbox = name-addr / addr-spec name-addr = [display-name] angle-addr angle-addr = [CFWS] \"<\" addr-spec \">\" [CFWS] addr-spec = local-part \"@\" domain local-part = dot-atom / quoted-string / obs-local-part domain = dot-atom / domain-literal / obs-domain ``` Each of these references further productions (CFWS, FWS, quoted-pair, dtext, etc.) that span multiple sections. **You must read `source.md` completely** to trace the full grammar dependency chain. ## Requirements ### 1. Parser Implementation — `parser.py` ```python class RFC5322Address: \"\"\"Parsed RFC 5322 email address.\"\"\" display_name"
+      },
+      {
+        "id": "github:4054189538",
+        "title": "[Feature] Reduce block registration steps",
+        "url": "https://github.com/o2sdev/openselfservice/issues/769",
+        "rewardUsd": 100,
+        "score": 40,
+        "summary": "**Is your feature request related to a problem? Please describe.** Adding a new block currently requires manual edits to 5 different files: 1. `apps/api-harmonization/package.json` - add dependency 2. `apps/frontend/package.json` - add dependency 3. `apps/api-harmonization/src/app.module.ts` - register module 4. `apps/api-harmonization/src/modules/page/page.model.ts` - add to Blocks union type 5. `apps/frontend/src/blocks/renderBlocks.tsx` - add to registry/switch This creates friction and increases the chance of errors when adding new blocks. **Describe the solution you'd like** Reduce the number of manual steps required to register a block. Possible approaches: - Auto-generate `renderBlocks.tsx` from a central registry file or block discovery - Auto-generate `page.model.ts` Blocks union from registered blocks - Create a single `blocks.config.ts` that drives all registrations - Extend the Turbo generator to handle registration steps automatically The solution should work with the approach where blocks can be installable NPM packages. **Additional context (if applicable)** - Phase: 3 — Configuration & Registration DX - Original priority: Medium effort, High impact - Need to verify "
+      },
+      {
+        "id": "github:5225100116",
+        "title": "[security] Penetration Testing Program: Annual External Pentest, Continuous Bug Bounty, Red Team Exercises",
+        "url": "https://github.com/ExcelDsigN-tech/dukapay/issues/465",
+        "rewardUsd": 10,
+        "score": 52,
+        "summary": "[security] Penetration Testing Program: Annual External Pentest, Continuous Bug Bounty, Red Team Exercises **Description:** No structured penetration testing program. Implement annual external pentest, continuous bug bounty, quarterly red team exercises, automated SAST/DAST in CI. **Impact:** Proactive vulnerability discovery; compliance (SOC2, ISO27001); insurance requirement; community trust. **Suggested Fix:** 1. Contract annual pentest with Cobalt.io or HackerOne 2. Launch bug bounty program (10k-100k USD rewards) 3. Quarterly red team exercises 4. Add SAST (semgrep, CodeQL) and DAST (OWASP ZAP) to CI 5. Vulnerability disclosure policy and safe harbor **Points:** 200 **Type:** security ## Definition of Done - [ ] Annual external pentest contracted - [ ] Bug bounty program live with rewards - [ ] Quarterly red team exercises scheduled - [ ] SAST/DAST in CI pipeline - [ ] Vulnerability disclosure policy published - [ ] No hardcoded secrets remain in source (grep scan clean) - [ ] Authentication flow verified and tested - [ ] Security headers and CSP configured - [ ] No PII exposed in logs or error messages - [ ] All necessary CI checks passed --- 📋 **Before working on this issue"
+      },
+      {
+        "id": "github:5228730979",
+        "title": "ledgerstate: Mithril bootstrap omits historical pparams required by reward rollover",
+        "url": "https://github.com/blinklabs-io/dingo/issues/3355",
+        "rewardUsd": 1397,
+        "score": 48,
+        "summary": "## Summary A Mithril ledger-state import seeds historical Mark/Set/Go reward inputs but persists protocol parameters only for the snapshot state's current epoch. The first complete reward round that needs a historical performance epoch then fails with `missing pparams for reward performance epoch N`. Epoch rollover restarts indefinitely and the node stops following the chain. This reproduced independently on preview and mainnet. The same control flow is present on current `main` at `557e602a`. ## Preview reproduction - Dingo `9c8119ce87e139738e20193f4ec70e1dc2e80b7e` - Fresh database - Mithril v2 bootstrap - Preview snapshot state in epoch 1397 The import successfully seeded all three reward-input epochs and then imported protocol parameters: ```text seeded reward inputs for an imported epoch epoch=1397 snapshot=mark pools=724 delegators=79743 seeded reward inputs for an imported epoch epoch=1396 snapshot=set pools=723 delegators=79737 seeded reward inputs for an imported epoch epoch=1395 snapshot=go pools=743 delegators=79744 importing protocol parameters checkpoint saved phase=pparams ``` At the next boundary: ```text handling epoch transition previous_epoch=1397 new_epoch=1398 b"
       }
     ],
     "active": null,
