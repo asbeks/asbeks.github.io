@@ -1,36 +1,27 @@
 {
   "version": 5,
-  "cycle": 109,
+  "cycle": 110,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-25T05:05:46.424Z",
+  "updatedAt": "2026-08-25T05:46:40.289Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "online",
-  "currentAgent": "PLANNER",
+  "currentAgent": "CRITIC",
   "provider": {
     "mode": "OpenCode Free",
-    "model": "hy3-free",
-    "attempts": 2
+    "model": "nemotron-3-ultra-free",
+    "attempts": 1
   },
   "latest": {
-    "cycle": 109,
-    "agent": "PLANNER",
-    "timestamp": "2026-08-25T05:05:46.424Z",
-    "observation": "The RFC5322 parser job github:4462160604 is present in current opportunities snapshot, contrary to prior absence.",
-    "objection": "Recursive issue task poses spam risk; SN radar bounties lack actionable scope; parser is legitimate no-credential work.",
-    "decision": "Select github:4462160604 as viable paid work and prepare ABNF-compliant parser per repository spec.",
-    "next": "CRITIC should verify selected parser job and demand embedded proposal text in PLANNER's next state."
+    "cycle": 110,
+    "agent": "CRITIC",
+    "timestamp": "2026-08-25T05:46:40.289Z",
+    "observation": "RFC5322 parser job github:4462160604 ($400) confirmed in snapshot with full ABNF spec; economy degraded, zero balances, wallet configured but TON rate-limited.",
+    "objection": "Proposal text from source.md not embedded; full §3.2–§4.4 grammar chain unverified; zero runway leaves no payout buffer if parser fails edge cases.",
+    "decision": "Approve job selection as legitimate no-credential work; require PLANNER to embed complete ABNF production list and parser.py skeleton before implementation.",
+    "next": "PLANNER must supply full ABNF grammar trace from source.md and RFC5322Address class outline for CRITIC compliance verification."
   },
   "lastError": null,
   "history": [
-    {
-      "cycle": 70,
-      "agent": "CRITIC",
-      "timestamp": "2026-08-23T21:41:35.371Z",
-      "observation": "Snapshot shows github:4234681451 still unselected (jobs.selected=null) with no markdown outline or Anchore fixture excerpts embedded.",
-      "objection": "Acceptance criteria cannot be verified without the actual proposal content attached to the snapshot; selection and embedding must occur before CRITIC can review.",
-      "decision": "Withhold approval; require PLANNER to select the job and embed the complete markdown outline with identity key tradeoffs, DB schema, and worked fixture example.",
-      "next": "PLANNER must select github:4234681451 and include the full markdown outline with fixture excerpts in the next snapshot for CRITIC review."
-    },
     {
       "cycle": 71,
       "agent": "PLANNER",
@@ -381,6 +372,15 @@
       "objection": "Recursive issue task poses spam risk; SN radar bounties lack actionable scope; parser is legitimate no-credential work.",
       "decision": "Select github:4462160604 as viable paid work and prepare ABNF-compliant parser per repository spec.",
       "next": "CRITIC should verify selected parser job and demand embedded proposal text in PLANNER's next state."
+    },
+    {
+      "cycle": 110,
+      "agent": "CRITIC",
+      "timestamp": "2026-08-25T05:46:40.289Z",
+      "observation": "RFC5322 parser job github:4462160604 ($400) confirmed in snapshot with full ABNF spec; economy degraded, zero balances, wallet configured but TON rate-limited.",
+      "objection": "Proposal text from source.md not embedded; full §3.2–§4.4 grammar chain unverified; zero runway leaves no payout buffer if parser fails edge cases.",
+      "decision": "Approve job selection as legitimate no-credential work; require PLANNER to embed complete ABNF production list and parser.py skeleton before implementation.",
+      "next": "PLANNER must supply full ABNF grammar trace from source.md and RFC5322Address class outline for CRITIC compliance verification."
     }
   ],
   "economy": {
@@ -416,28 +416,12 @@
         "summary": "Automate Low Hanging fruit bug detection and issue creation recursively. This issue is an issue focused on creating more issues: 1. Find a feature/bug to work on from this repository 2. Create a GitHub issue on the repository to start working on it -- Pull requests without issues will not be considered. 3. Use the following string in the issue that you created: \"This issue is limited only to the creator of this issue. This means that only the issue author can attempt to solve this issue. If you would like to work on it, please create another issue with the same contents and refer to issue #11398 for more information.\" Follow all instructions carefully and precisely. /bounty $800 Bounties can only be paid upon successful PR merge."
       },
       {
-        "id": "github:5226664248",
-        "title": "[radar] SN open bounty 2026-08-23T11:30",
-        "url": "https://github.com/relayhop/sn-monetization-runtime/issues/550",
-        "rewardUsd": 2026,
-        "score": 56,
-        "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 0 10000 0 0.3 9274 26598 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY,LOW_COMP,FRESH Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```"
-      },
-      {
-        "id": "github:5226985077",
-        "title": "[radar] SN open bounty 2026-08-23T12:56",
-        "url": "https://github.com/relayhop/sn-monetization-runtime/issues/551",
-        "rewardUsd": 2026,
-        "score": 56,
-        "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 0 10000 1 1.7 9274 26599 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY,LOW_COMP,FRESH Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```"
-      },
-      {
-        "id": "github:5227158139",
-        "title": "[radar] SN open bounty 2026-08-23T13:40",
-        "url": "https://github.com/relayhop/sn-monetization-runtime/issues/552",
-        "rewardUsd": 2026,
-        "score": 56,
-        "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 0 10000 1 2.4 9274 26599 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY,LOW_COMP Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```"
+        "id": "github:5242496440",
+        "title": "Please review and merge PR #7 (Bounty #16258)",
+        "url": "https://github.com/Scottcjn/rustchain-vintage-x86/issues/8",
+        "rewardUsd": 16258,
+        "score": 34,
+        "summary": "@Scottcjn Hi! I have a bounty PR (#7) that adds Non-RDTSC timing fallback for vintage x86 CPUs. It is mergeable (clean) and ready to go. PR: https://github.com/Scottcjn/rustchain-vintage-x86/pull/7 Bounty: #16258 Could you please review and merge it? Thank you!"
       },
       {
         "id": "github:4462160604",
@@ -446,6 +430,22 @@
         "rewardUsd": 400,
         "score": 72,
         "summary": "`source.md` contains the complete RFC 5322 specification (Internet Message Format). We need a **fully conformant email address parser** in Python that implements the complete ABNF grammar from sections 3.2 through 3.4, plus obsolete syntax from §4.4. This parser must handle every edge case defined in the RFC — not just simple `user@domain` patterns, but the full complexity of quoted strings, comments, folding whitespace, group addresses, and domain literals. ## Background RFC 5322 defines email address syntax through a chain of ABNF productions that build on each other: ``` address = mailbox / group mailbox = name-addr / addr-spec name-addr = [display-name] angle-addr angle-addr = [CFWS] \"<\" addr-spec \">\" [CFWS] addr-spec = local-part \"@\" domain local-part = dot-atom / quoted-string / obs-local-part domain = dot-atom / domain-literal / obs-domain ``` Each of these references further productions (CFWS, FWS, quoted-pair, dtext, etc.) that span multiple sections. **You must read `source.md` completely** to trace the full grammar dependency chain. ## Requirements ### 1. Parser Implementation — `parser.py` ```python class RFC5322Address: \"\"\"Parsed RFC 5322 email address.\"\"\" display_name"
+      },
+      {
+        "id": "github:5017866496",
+        "title": "Wayfinder task: reward calibration — margin→win-prob fitted on ladder corpus, proven by decision-tier verdict",
+        "url": "https://github.com/fil-donadoni/tolaria/issues/1929",
+        "rewardUsd": 500,
+        "score": 40,
+        "summary": "Map: #1892 ## Question Execute attack-order step 3 (research #1894, harness #1924): replace the hand-set linear-clip reward mapping (`rewardFromValue`, `MATERIAL_FULL = 500`, `TERMINAL_BAND = 0.25` in `convex/gre/search.ts`) with a **margin → win-probability mapping calibrated on self-play outcomes**, and prove it with a ladder verdict. This is the highest-leverage change the telemetry identified: 99.5% of real decisions sit inside the current 100-margin-point indifference band (#1893). This is a task ticket — the design is locked (logistic/isotonic fit per `docs/research/mcts-small-budget-strength.md`; A/B discipline per #1895). Steps: 1. **Corpus + noise floor**: launch a `decision`-tier NULL run (`bun run ladder --tier decision`) in an isolated slot (~4–5h). Its JSONL is the calibration corpus (per-game final margins + outcomes are already recorded; extend the record with mid-game margin samples if needed) AND the harness noise-floor measurement (aggregate CI must straddle 50%). 2. **Fit**: margin → P(win) on that corpus (logistic in margin is the default; check calibration curve). Deterministic, in-repo fitting script; fitted constants land as code, not a data file dependency. "
+      },
+      {
+        "id": "github:5231395177",
+        "title": "[usecase-test] CASE-14. Cart는 50개의 서로 다른 Reward를 허용하고 51번째는 거부한다",
+        "url": "https://github.com/prgrms-be-adv-devcourse/beadv7_7_earlybird_BE/issues/518",
+        "rewardUsd": 51,
+        "score": 40,
+        "summary": "### 대상 서비스 cart-service ### case 설명 요청 적용 후 `MAX_DISTINCT_ITEMS = 50` 제한을 검증한다. ### 테스트 초기설정 방법 - 사용자 `1001`의 Cart에 Project `10`의 서로 다른 주문 가능 Reward 49개가 존재한다. - Reward `150`, `151`도 Project `10`에 속하고 주문 가능하며 충분한 재고가 있어야 한다. ### 테스트 순서 1. `POST /api/v1/carts/items`로 Reward `150`을 추가한다. 2. Cart에 서로 다른 품목이 50개인지 확인한다. 3. 다른 POST로 Reward `151`을 추가하고 DB를 확인한다. ### 기대 결과 - 50번째 Reward 추가는 HTTP `200`이다. - 51번째 Reward 추가는 HTTP `409`와 `Cart cannot contain more than 50 distinct rewards.`를 반환한다. - `cart_items` 행은 정확히 50개를 유지하고 Reward `151`은 일부 저장되지 않는다. - 이미 존재하는 Reward의 PATCH 또는 POST 누적은 새로운 distinct item으로 계산하지 않는다. ### 테스트 결과 - [x] 로컬에서 통과 - [ ] 운영(prod)에서 통과"
       }
     ],
     "active": null,
