@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-08-25T08:07:54.019Z",
+  "updatedAt": "2026-08-25T09:00:15.582Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -50,70 +50,6 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5243368615",
-      "source": "github",
-      "title": "[CLAIM] Bounty #16517 — NES 1,117,248 cycles/token reproduced on MAME 0.277",
-      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16574",
-      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
-      "rewardUsd": 16517,
-      "score": 46,
-      "labels": [],
-      "commentCount": 0,
-      "updatedAt": "2026-08-25T07:48:01Z",
-      "summary": "## Bounty #16517 claim — NES MAME 0.277 reproduction (5 RTC tier) ### 1. Figure and source commit - Figure: NES dense + power-of-two normalizer, **1,117,248 mean cycles/token** - Source commit: `2de04401cd7de09d9c44712d3eb4b2dd7190518c` - Model checkpoint: `runs/fac/dense_pow2_s1.npz` (`nnz=52,246/102,400`) - Host: Windows x86-64, Intel Core i7-9750H ### 2. Emulator and version Official **MAME 0.277** 64-bit Windows binary, `nes` driver. The executable reported `0.277 (mame0277)`. ### 3. Re-runnable harness - Upstream harness: `tools/nes_bench.py` + `tools/run_nn.py` at the source commit above - Windows portability patch and tests: https://github.com/Scottcjn/elya-nes/pull/2 - Patch commit: https://github.com/AInoAKARI/elya-nes/commit/821b49eb9d46d595279905c2d2f2281464caa407 The run used the repository's write tap at `$0300`. The checkpoint was repacked with `NES_SM_NORM=pow2`, `NES_AV_SHIFT=2`, `NES_T=20`, `NES_STREAM_BANKS=7`, and `NES_SEED_TOK=1`; `train/verify_pack.py` reported `max|dW| = 0` over all 102,400 ternary weights. ### 4. Raw cycle counts ```text pos 0 1085835 pos 1 1089993 pos 2 1093262 pos 3 1096755 pos 4 1099496 pos 5 1104046 pos 6 1107009 pos 7 1109736 pos 8 11135",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 118,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 0,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 16517,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5243520032",
-      "source": "github",
-      "title": "Redemption dashboard/pricing failures don't gate retry — same silent-swallow gap as #559, still open",
-      "url": "https://github.com/Battle-Cattle/BCUK-Bot-4/issues/562",
-      "repositoryApiUrl": "https://api.github.com/repos/Battle-Cattle/BCUK-Bot-4",
-      "rewardUsd": 559,
-      "score": 40,
-      "labels": [],
-      "commentCount": 0,
-      "updatedAt": "2026-08-25T08:07:15Z",
-      "summary": "## Summary Found during review of #560 (the fix for #559). `handleRedemption` in `src/twitch/eventsub/twitchEventSubHandler.ts` now only marks a redemption as successfully handled (`markRedemptionHandled`) once the whole effect chain completes without throwing — but two of those effects are designed to *never* throw, so their failures are silently absorbed and the redemption still gets marked \"handled\": - `recordAndPushDashboardEvent` wraps `recordStreamerEvent` (the DB write) and the dashboard SSE push in its own try/catch and only logs on failure — by design, documented on the function itself, and shared by every EventSub handler (follow/sub/resub/giftsub/raid/redemption), not just redemptions. - `applyRedemptionPricing(streamerId, event.reward.id)` is fire-and-forget (`.catch(...)` instead of `await`) — also by design, to avoid adding Twitch Helix latency to the redemption-handling path. Net effect: if the dashboard DB write or the dynamic-pricing update fails (e.g. a transient DB error, a Twitch Helix hiccup), that failure is logged and swallowed, `handleRedemption` proceeds to the overlay step, and — assuming the overlay step succeeds — the redemption is marked \"handled\" via `",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 111,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 0,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 559,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
       "id": "github:4462160604",
       "source": "github",
       "title": "[bounty $400] Implement ABNF-compliant email address parser with full §3.2–§4.4 coverage",
@@ -151,23 +87,22 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5243371871",
+      "id": "github:5242749184",
       "source": "github",
-      "title": "🎯 Bug: `discover_log_levels` rejected as unknown YAML field in `limits_config`",
-      "url": "https://github.com/daonhienngo/loki/issues/1",
-      "repositoryApiUrl": "https://api.github.com/repos/daonhienngo/loki",
-      "rewardUsd": 10,
-      "score": 54,
+      "title": "Replace math questions with a 200-question history event bank",
+      "url": "https://github.com/asafpor/HistoryRunningGame/issues/6",
+      "repositoryApiUrl": "https://api.github.com/repos/asafpor/HistoryRunningGame",
+      "rewardUsd": 200,
+      "score": 48,
       "labels": [
-        "bounty",
-        "bountyhub",
-        "$10"
+        "phase: production",
+        "area: ui-ux"
       ],
       "commentCount": 1,
-      "updatedAt": "2026-08-25T08:00:18Z",
-      "summary": "## 📝 Description When attempting to configure `discover_log_levels` under the `limits_config` section of the Loki configuration file, Loki fails to start and rejects the property with an unmarshal error (e.g., `yaml: unmarshal errors: line X: field discover_log_levels not found in type validation.plainLimits`). The limit property is either missing the appropriate YAML struct tags, missing from the `Limits` / `plainLimits` struct definitions, or not registered in the limits configuration mapping, preventing operators from defining log level discovery limits globally or per tenant. ## 🎯 Acceptance Criteria - [ ] `discover_log_levels` is a valid, recognized YAML field under the `limits_config` block. - [ ] Parsing valid YAML containing `discover_log_levels: true` or `discover_log_levels: false` does not throw an unknown field error during configuration unmarshaling (including strict YAML unmarshaling). - [ ] The field supports default values, per-tenant overrides via the runtime configuration/overrides manager, and corresponding command-line flag bindings (e.g., `-limits.discover-log-levels`). - [ ] Helper methods on the `Overrides` / `Limits` interface (e.g., `DiscoverLogLevels(ten",
+      "updatedAt": "2026-08-25T08:49:22Z",
+      "summary": "## Goal Change the core choice mechanic from equations to chronological history comparisons. Present two historical events and ask the player which happened later. ## Scope - Create a data-driven HistoryQuestion model independent of gates and crowd logic. - Include event title, year/date, short context, category, difficulty, and answer metadata. - Build a curated bank of at least 200 historically accurate comparisons. - Cover multiple regions and periods rather than focusing on a single country. - Support BCE/CE dates and avoid ambiguous same-year comparisons. - Randomize which event appears on the left/right. - Show a short explanation with both dates after the choice. - Avoid repeats during one level where possible. - Keep data easy to review and edit, preferably through ScriptableObjects or JSON imported into Unity. ## Acceptance criteria - A gate pair displays two readable event choices. - The prompt clearly asks which event happened later. - Correct and wrong choices retain the existing crowd reward/penalty behavior. - At least 200 reviewed questions are included. - Every answer can be verified from the stored event dates. - The bank is separated from scene and crowd code.",
       "state": "candidate",
-      "payoutConfidence": 0.7,
+      "payoutConfidence": 0.35,
       "autonomyFit": 1,
       "requiresHumanGate": false,
       "requiresSpecialHardware": false,
@@ -183,42 +118,7 @@
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 10,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5237697498",
-      "source": "github",
-      "title": "Bounty claim: BoTTube docstring PR #1749 (18 functions, 9.0 RTC)",
-      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16561",
-      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
-      "rewardUsd": 1749,
-      "score": 38,
-      "labels": [
-        "maintenance",
-        "awaiting-merge"
-      ],
-      "commentCount": 7,
-      "updatedAt": "2026-08-25T08:04:02Z",
-      "summary": "### Bounty issue link https://github.com/Scottcjn/rustchain-bounties/blob/main/.github/workflows/docstring-gate.yml ### Claim type Other ### Related PR / issue / content link https://github.com/Scottcjn/bottube/pull/1749 ### GitHub username dbquanghuy2004-Quant ### RTC wallet name dbquanghuy2004-Quant ### Related platform identity (optional) _No response_ ### What did you complete? Docstring bounty claim for https://github.com/Scottcjn/bottube/pull/1749 Documented 18 functions in tests/test_upload_api.py. Docstrings only; no runtime or test-logic changes. ### Proof links and evidence - PR: https://github.com/Scottcjn/bottube/pull/1749 - Compile check passes. - Targeted pytest: 34 passed, 5 failed, 1 teardown error, identical on clean upstream main. - GitHub: dbquanghuy2004-Quant - Wallet: dbquanghuy2004-Quant ### Verification checklist - [x] I am not using a product repo issue for this claim. - [x] I provided an RTC wallet name, not an external chain address. - [x] I understand payout is reviewed manually and may be partial or rejected if the proof is weak, duplicated, or out of scope.",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 107,
-      "survivalEligible": false,
-      "eligibilityReason": "Competition is too high for bootstrap mode.",
-      "competition": {
-        "comments": 7,
-        "attemptSignals": 0,
-        "risk": "medium"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 1749,
+      "economicValueUsd": 200,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -230,10 +130,11 @@
       "rewardUsd": 2026,
       "score": 40,
       "labels": [
-        "skipped"
+        "skipped",
+        "skipped_bmg"
       ],
       "commentCount": 3,
-      "updatedAt": "2026-08-25T06:07:58Z",
+      "updatedAt": "2026-08-25T08:12:00Z",
       "summary": "### 🐛 Describe the bug with skip template Cases: op_ut,third_party.torch-xpu-ops.test.xpu.profiler.test_profiler_xpu.TestProfiler,test_cpu_annotation_overlap ## Errorlog ```bash (kaileiyx) gta@DUT1024PVC:~/kaileiyx/pytorch/third_party/torch-xpu-ops/test/xpu/profiler$ pytest -v test_profiler_xpu.py -k test_cpu_annotation_overlap ====================================================================================== test session starts ====================================================================================== platform linux -- Python 3.10.20, pytest-9.1.1, pluggy-1.6.0 -- /home/gta/miniforge3/envs/kaileiyx/bin/python3.10 cachedir: .pytest_cache hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase('/home/gta/kaileiyx/pytorch/third_party/torch-xpu-ops/test/xpu/profiler/.hypothesis/examples') rootdir: /home/gta/kaileiyx/pytorch configfile: pytest.ini plugins: cpp-2.3.0, flakefinder-1.1.0, xdoctest-1.3.0, rerunfailures-14.0, timeout-2.4.0, xdist-3.8.0, hypothesis-6.56.4 collected 94 items / 93 deselected / 1 selected test_profiler_xpu.py::TestProfiler::test_cpu_annotation_overlap USDT:2026-08-14 02:03:11 421306:421306 SyncActivityProfilerHandler.cpp:39] prof",
       "state": "candidate",
       "payoutConfidence": 0.35,
@@ -288,17 +189,85 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:4867664300",
+      "id": "github:5092383647",
       "source": "github",
-      "title": "[REVIEW] key-management: add KMS grant sprawl and rotation drift gates",
-      "url": "https://github.com/UnitOneAI/SecuritySkills/issues/3021",
-      "repositoryApiUrl": "https://api.github.com/repos/UnitOneAI/SecuritySkills",
-      "rewardUsd": 25,
-      "score": 46,
+      "title": "[TRACKING] Maintenance queue — what is waiting on a maintainer",
+      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16403",
+      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
+      "rewardUsd": 47,
+      "score": 54,
       "labels": [],
+      "commentCount": 0,
+      "updatedAt": "2026-08-25T08:10:17Z",
+      "summary": "# Maintenance sweep — 2026-08-25 Maintainer identities treated as 'us': scottcjn, sophiaeagent-beep (+ bots) - **BALL_IN_OUR_COURT**: 44 - **NEVER_ANSWERED**: 33 - **MOVED_RECENTLY**: 142 ## BALL_IN_OUR_COURT (44) | waiting | repo | # | author | last spoke | title | |---:|---|---:|---|---|---| | 25d | bounty-concierge | [47](https://github.com/Scottcjn/bounty-concierge/pull/47) | @Scottcjn | @leanworld7-netizen | Update reference rate to $0.15 and wRTC chain to Solana | | 25d | bounty-concierge | [46](https://github.com/Scottcjn/bounty-concierge/pull/46) | @Scottcjn | @leanworld7-netizen | Fix install path: working build backend, GitHub install docs, drop cla | | 22d | bottube | [1619](https://github.com/Scottcjn/bottube/pull/1619) | @leanworld7-netizen | @qiann0512-gif | fix(i18n): localize homepage body strings for all supported languages | | 21d | rustchain-mcp | [268](https://github.com/Scottcjn/rustchain-mcp/pull/268) | @laurentketterle-hub | @laurentketterle-hub | docs: enhance streaming/long-running tool behavior docs + test stubs | | 21d | Rustchain | [8181](https://github.com/Scottcjn/Rustchain/pull/8181) | @rebel117 | @FlintLeng | fix(utxo): wrap mempool_clear_expired in ",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 103,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 47,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5215718715",
+      "source": "github",
+      "title": "Map: Terra's flow to the first rocket launch",
+      "url": "https://github.com/adamico/planetary-factory/issues/25",
+      "repositoryApiUrl": "https://api.github.com/repos/adamico/planetary-factory",
+      "rewardUsd": 26,
+      "score": 48,
+      "labels": [
+        "wayfinder:map"
+      ],
+      "commentCount": 0,
+      "updatedAt": "2026-08-25T08:56:57Z",
+      "summary": "## Destination A written specification for Terra's progression from world spawn to a standing Platform in Terra Orbit: Factorio-named science tiers as the spine, each unlocking a capability that the next tier's production physically requires, delivered to FTB Quests Task Screens by machine; a rung-ownership table naming exactly one mod per capability; the pre-launch logistics cut-and-gate list; and the rocket-part production chain that gates the launch. Lands as an ADR for the spine plus `docs/spec/terra-progression.md` for the beat sheet, with the GDD's delivery sequence amended to place this work before Sapros. Quest authoring (`.snbt`) and manifest edits are a later build map, not this one. ## Notes **Domain**: modpack design. `CONTEXT.md` is the vocabulary; `docs/gdd.md` is the design of record; `docs/adr/` holds the hard-to-reverse decisions. Every session consults `/grilling` and `/domain-modeling`. **Settled before charting** (grilling session, six rounds): - **Factorio progression is the leitmotif.** Science packs are the spine; capability milestones are the reward each tier grants, and the next tier's production requires that capability. One ladder, not two. - **GregTech i",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 100,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 26,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5215729866",
+      "source": "github",
+      "title": "Write the Terra beat sheet",
+      "url": "https://github.com/adamico/planetary-factory/issues/34",
+      "repositoryApiUrl": "https://api.github.com/repos/adamico/planetary-factory",
+      "rewardUsd": 25,
+      "score": 40,
+      "labels": [
+        "wayfinder:grilling"
+      ],
       "commentCount": 1,
-      "updatedAt": "2026-08-25T07:36:30Z",
-      "summary": "# [REVIEW] key-management: add KMS grant sprawl and rotation drift gates ## Skill Being Reviewed **Skill name:** `key-management` **Skill path:** `skills/cloud-security/key-management/` ## False Positive Analysis The skill should not treat every active KMS grant or older key as a violation. Long-lived keys and grants can be valid for envelope encryption, legacy decrypt windows, migration cutovers, and managed-service integrations when ownership, scope, rotation plan, and last-use evidence are documented. Benign example: ```text key=prod-orders-kms rotation=enabled active_grant=analytics-export-role operations=Decrypt only constraints=encryptionContextEquals app=orders last_used=2026-07-10 owner=data-platform expiry=2026-08-01 ``` That is controlled temporary access, not grant sprawl by itself. ## Coverage Gaps A key-management review can miss real exposure if it checks only whether rotation is enabled and ignores grant drift. Missed variant 1: a migration role keeps `Decrypt` access after the cutover, so stale workloads can still read protected data. Missed variant 2: key rotation is enabled, but dependent grants and aliases still route old principals into new key material without ",
+      "updatedAt": "2026-08-25T08:57:12Z",
+      "summary": "Part of #25 ## Question `docs/spec/terra-progression.md`: the beat-by-beat arc from world spawn to a standing Platform in Terra Orbit, against a **20–25 hour** target for a Factorio-literate, GregTech-naive player following the book. (Was 15–20h; #26 added a fourth science rung for oil, and oil earns a chapter.) Covers, per rung — `automation`, `logistic`, `chemical`, `production`: - The capability the rung grants and the production the next rung needs it for. - The chapter's quest beats, and which items are hand-fed vs machine-fed (the automation rule: hand-crafted implies small; large implies automated). - **What the rung's gate consumes to open the next rung.** Deliberately mechanism-neutral: #45 decides whether the gate is an FTB Quests Task Screen or a Researchd Research Lab, and this spec must not pre-commit its answer. Plus the arc-level pieces: - The first twenty minutes, and the Personal Assembler's recipe set — the bootstrap components that leave the crafting grid before any machine exists to make them (GDD §5). In scope to specify; building it stays GDD delivery step 11. If the arc turns out not to need it, that is a finding. - **The oil chapter.** #39 put oil on rung 4 ",
       "state": "candidate",
       "payoutConfidence": 0.35,
       "autonomyFit": 1,
@@ -365,7 +334,7 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-24T13:15:06Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":110,\"updatedAt\":\"2026-08-25T01:35:34Z\",\"competition\":{\"comments\":19,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-25T07:38:13Z\",\"competition\":{\"comments\":46,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:4867664300\",\"rewardUsd\":25,\"fastCashScore\":98,\"updatedAt\":\"2026-08-25T07:36:30Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4975260101\",\"rewardUsd\":780,\"fastCashScore\":119,\"updatedAt\":\"2026-08-25T05:07:59Z\",\"competition\":{\"comments\":18,\"attemptSignals\":1,\"risk\":\"high\"}},{\"id\":\"github:5147529298\",\"rewardUsd\":2026,\"fastCashScore\":106,\"updatedAt\":\"2026-08-25T06:07:58Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5234075844\",\"rewardUsd\":234,\"fastCashScore\":106,\"updatedAt\":\"2026-08-24T11:50:44Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5237697498\",\"rewardUsd\":1749,\"fastCashScore\":107,\"updatedAt\":\"2026-08-25T08:04:02Z\",\"competition\":{\"comments\":7,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5242324505\",\"rewardUsd\":100,\"fastCashScore\":107,\"updatedAt\":\"2026-08-25T05:18:37Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5243263356\",\"rewardUsd\":71.61,\"fastCashScore\":105,\"updatedAt\":\"2026-08-25T07:37:29Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5243368615\",\"rewardUsd\":16517,\"fastCashScore\":118,\"updatedAt\":\"2026-08-25T07:48:01Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5243371871\",\"rewardUsd\":10,\"fastCashScore\":109,\"updatedAt\":\"2026-08-25T08:00:18Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5243520032\",\"rewardUsd\":559,\"fastCashScore\":111,\"updatedAt\":\"2026-08-25T08:07:15Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-24T13:15:06Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":110,\"updatedAt\":\"2026-08-25T01:35:34Z\",\"competition\":{\"comments\":19,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-25T07:38:13Z\",\"competition\":{\"comments\":46,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:4866244202\",\"rewardUsd\":100,\"fastCashScore\":92,\"updatedAt\":\"2026-08-25T08:09:38Z\",\"competition\":{\"comments\":10,\"attemptSignals\":2,\"risk\":\"medium\"}},{\"id\":\"github:4975260101\",\"rewardUsd\":780,\"fastCashScore\":119,\"updatedAt\":\"2026-08-25T05:07:59Z\",\"competition\":{\"comments\":18,\"attemptSignals\":1,\"risk\":\"high\"}},{\"id\":\"github:5092383647\",\"rewardUsd\":47,\"fastCashScore\":103,\"updatedAt\":\"2026-08-25T08:10:17Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5147529298\",\"rewardUsd\":2026,\"fastCashScore\":106,\"updatedAt\":\"2026-08-25T08:12:00Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5215718715\",\"rewardUsd\":26,\"fastCashScore\":100,\"updatedAt\":\"2026-08-25T08:56:57Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5215729866\",\"rewardUsd\":25,\"fastCashScore\":98,\"updatedAt\":\"2026-08-25T08:57:12Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5234075844\",\"rewardUsd\":234,\"fastCashScore\":106,\"updatedAt\":\"2026-08-24T11:50:44Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5242324505\",\"rewardUsd\":100,\"fastCashScore\":107,\"updatedAt\":\"2026-08-25T05:18:37Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5242749184\",\"rewardUsd\":200,\"fastCashScore\":109,\"updatedAt\":\"2026-08-25T08:49:22Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5243263356\",\"rewardUsd\":71.61,\"fastCashScore\":105,\"updatedAt\":\"2026-08-25T07:37:29Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
@@ -379,7 +348,7 @@
     "competitionRequired": "low",
     "rejectedFakeRevenueCount": 1,
     "rejectedAlreadyPaidCount": 2,
-    "rejectedIdentityGateCount": 0
+    "rejectedIdentityGateCount": 1
   },
   "economicallyRejected": [
     {
@@ -389,7 +358,7 @@
       "reasons": [
         "testnet_or_test_token_reward"
       ],
-      "rejectedAt": "2026-08-25T08:07:53.974Z"
+      "rejectedAt": "2026-08-25T09:00:15.528Z"
     },
     {
       "id": "github:5234075844",
@@ -398,7 +367,7 @@
       "reasons": [
         "already_rewarded_or_paid"
       ],
-      "rejectedAt": "2026-08-25T08:07:53.974Z"
+      "rejectedAt": "2026-08-25T09:00:15.528Z"
     },
     {
       "id": "github:3055155077",
@@ -407,7 +376,16 @@
       "reasons": [
         "already_rewarded_or_paid"
       ],
-      "rejectedAt": "2026-08-25T08:07:53.974Z"
+      "rejectedAt": "2026-08-25T09:00:15.528Z"
+    },
+    {
+      "id": "github:4866244202",
+      "title": "[100 MRG] Stripe PaymentIntent funding rail for project escrow",
+      "rewardUsd": 100,
+      "reasons": [
+        "preclaim_or_identity_gate_not_configured"
+      ],
+      "rejectedAt": "2026-08-25T09:00:15.528Z"
     },
     {
       "id": "github:5242378953",
