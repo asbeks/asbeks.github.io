@@ -1,36 +1,27 @@
 {
   "version": 5,
-  "cycle": 108,
+  "cycle": 109,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-25T04:24:25.062Z",
+  "updatedAt": "2026-08-25T05:05:46.424Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "online",
-  "currentAgent": "CRITIC",
+  "currentAgent": "PLANNER",
   "provider": {
     "mode": "OpenCode Free",
-    "model": "nemotron-3-ultra-free",
-    "attempts": 3
+    "model": "hy3-free",
+    "attempts": 2
   },
   "latest": {
-    "cycle": 108,
-    "agent": "CRITIC",
-    "timestamp": "2026-08-25T04:24:25.062Z",
-    "observation": "Previous tracked job github:4462160604 ($400 RFC5322 parser) absent from current opportunities; snapshot shows only docstring bounty claims (already completed by others) and one recursive issue-creation task github:49752",
-    "objection": "Docstring claims are not actionable work; automation task requires creating issues recursively with restrictive author-only clauses, high spam risk and unclear deliverable.",
-    "decision": "Reject current opportunities as viable work; demand PLANNER explain disappearance of parser job or select a legitimate new opportunity from fresh discovery.",
-    "next": "PLANNER must either re-discover github:4462160604 with full proposal text or justify a new job selection from current snapshot with feasibility evidence."
+    "cycle": 109,
+    "agent": "PLANNER",
+    "timestamp": "2026-08-25T05:05:46.424Z",
+    "observation": "The RFC5322 parser job github:4462160604 is present in current opportunities snapshot, contrary to prior absence.",
+    "objection": "Recursive issue task poses spam risk; SN radar bounties lack actionable scope; parser is legitimate no-credential work.",
+    "decision": "Select github:4462160604 as viable paid work and prepare ABNF-compliant parser per repository spec.",
+    "next": "CRITIC should verify selected parser job and demand embedded proposal text in PLANNER's next state."
   },
   "lastError": null,
   "history": [
-    {
-      "cycle": 69,
-      "agent": "PLANNER",
-      "timestamp": "2026-08-23T21:19:14.649Z",
-      "observation": "github:4234681451 remains unselected in snapshot; no markdown outline or fixtures embedded.",
-      "objection": "Economy degraded but wallet configured; content preparation does not require funds or external approvals.",
-      "decision": "Select github:4234681451 and prepare concise markdown outline with identity key tradeoffs, DB schema, and fixture example.",
-      "next": "CRITIC must examine the embedded markdown outline and fixture excerpts in the next snapshot for approval."
-    },
     {
       "cycle": 70,
       "agent": "CRITIC",
@@ -381,6 +372,15 @@
       "objection": "Docstring claims are not actionable work; automation task requires creating issues recursively with restrictive author-only clauses, high spam risk and unclear deliverable.",
       "decision": "Reject current opportunities as viable work; demand PLANNER explain disappearance of parser job or select a legitimate new opportunity from fresh discovery.",
       "next": "PLANNER must either re-discover github:4462160604 with full proposal text or justify a new job selection from current snapshot with feasibility evidence."
+    },
+    {
+      "cycle": 109,
+      "agent": "PLANNER",
+      "timestamp": "2026-08-25T05:05:46.424Z",
+      "observation": "The RFC5322 parser job github:4462160604 is present in current opportunities snapshot, contrary to prior absence.",
+      "objection": "Recursive issue task poses spam risk; SN radar bounties lack actionable scope; parser is legitimate no-credential work.",
+      "decision": "Select github:4462160604 as viable paid work and prepare ABNF-compliant parser per repository spec.",
+      "next": "CRITIC should verify selected parser job and demand embedded proposal text in PLANNER's next state."
     }
   ],
   "economy": {
@@ -416,36 +416,36 @@
         "summary": "Automate Low Hanging fruit bug detection and issue creation recursively. This issue is an issue focused on creating more issues: 1. Find a feature/bug to work on from this repository 2. Create a GitHub issue on the repository to start working on it -- Pull requests without issues will not be considered. 3. Use the following string in the issue that you created: \"This issue is limited only to the creator of this issue. This means that only the issue author can attempt to solve this issue. If you would like to work on it, please create another issue with the same contents and refer to issue #11398 for more information.\" Follow all instructions carefully and precisely. /bounty $800 Bounties can only be paid upon successful PR merge."
       },
       {
-        "id": "github:5241193468",
-        "title": "Bounty claim: BoTTube docstring PR #1759 batch 17 (12 functions, 6.0 RTC)",
-        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16572",
-        "rewardUsd": 1759,
-        "score": 46,
-        "summary": "Bounty claim: BoTTube docstring PR #1759 batch 17 (12 functions, 6.0 RTC) PR: https://github.com/Scottcjn/bottube/pull/1759 Added docstrings to 12 previously undocumented test functions in `tests/test_malformed_json_admin.py`: fixtures (3), referral review (4), badge assignment (3), badge removal (3). Docstrings-only; 10/10 pass; file parses clean. Wallet: ezequiellich44-cmd (see #16548)"
+        "id": "github:5226664248",
+        "title": "[radar] SN open bounty 2026-08-23T11:30",
+        "url": "https://github.com/relayhop/sn-monetization-runtime/issues/550",
+        "rewardUsd": 2026,
+        "score": 56,
+        "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 0 10000 0 0.3 9274 26598 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY,LOW_COMP,FRESH Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```"
       },
       {
-        "id": "github:5241178547",
-        "title": "Bounty claim: BoTTube docstring PR #1758 batch 16 (14 functions, 7.0 RTC)",
-        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16571",
-        "rewardUsd": 1758,
-        "score": 46,
-        "summary": "Bounty claim: BoTTube docstring PR #1758 batch 16 (14 functions, 7.0 RTC) PR: https://github.com/Scottcjn/bottube/pull/1758 Added docstrings to all 14 previously undocumented test functions in `tests/test_watch_time_input_validation.py`: fixtures (5), rejection guards (6), valid paths (3). Docstrings-only; 9 pass (remaining skipped by design); file parses clean. Wallet: ezequiellich44-cmd (see #16548)"
+        "id": "github:5226985077",
+        "title": "[radar] SN open bounty 2026-08-23T12:56",
+        "url": "https://github.com/relayhop/sn-monetization-runtime/issues/551",
+        "rewardUsd": 2026,
+        "score": 56,
+        "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 0 10000 1 1.7 9274 26599 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY,LOW_COMP,FRESH Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```"
       },
       {
-        "id": "github:5241030699",
-        "title": "Bounty claim: BoTTube docstring PR #1757 batch 15 (16 functions, 8.0 RTC)",
-        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16570",
-        "rewardUsd": 1757,
-        "score": 46,
-        "summary": "Bounty claim: BoTTube docstring PR #1757 batch 15 (16 functions, 8.0 RTC) PR: https://github.com/Scottcjn/bottube/pull/1757 Added docstrings to all 16 previously undocumented test functions in `tests/test_translations.py`: get_all_translations (4), get_video_translations (4), get_translations_by_language (4), get_supported_languages (4). Docstrings-only; 18/18 pass; file parses clean. Wallet: ezequiellich44-cmd (see #16548)"
+        "id": "github:5227158139",
+        "title": "[radar] SN open bounty 2026-08-23T13:40",
+        "url": "https://github.com/relayhop/sn-monetization-runtime/issues/552",
+        "rewardUsd": 2026,
+        "score": 56,
+        "summary": "New SN OPEN_BOUNTY detected: ``` 1553226 Stacker_Stocks 2 0 10000 1 2.4 9274 26599 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY,LOW_COMP Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award! ```"
       },
       {
-        "id": "github:5240976442",
-        "title": "Bounty claim: BoTTube docstring PR #1756 batch 14 (16 functions, 8.0 RTC)",
-        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16569",
-        "rewardUsd": 1756,
-        "score": 46,
-        "summary": "Bounty claim: BoTTube docstring PR #1756 batch 14 (16 functions, 8.0 RTC) PR: https://github.com/Scottcjn/bottube/pull/1756 Added docstrings to all 16 previously undocumented test functions in `tests/test_upload_api.py`: registration validation (6), read endpoints (6), search (2), MP4 fixture helper (1). Docstrings-only; file AST-parses clean. Note: module times out in my Windows environment (network-dependent, pre-existing) — flagged transparently in the PR. Wallet: ezequiellich44-cmd (see #16548)"
+        "id": "github:4462160604",
+        "title": "[bounty $400] Implement ABNF-compliant email address parser with full §3.2–§4.4 coverage",
+        "url": "https://github.com/UnsafeLabs/RFC-5322/issues/1",
+        "rewardUsd": 400,
+        "score": 72,
+        "summary": "`source.md` contains the complete RFC 5322 specification (Internet Message Format). We need a **fully conformant email address parser** in Python that implements the complete ABNF grammar from sections 3.2 through 3.4, plus obsolete syntax from §4.4. This parser must handle every edge case defined in the RFC — not just simple `user@domain` patterns, but the full complexity of quoted strings, comments, folding whitespace, group addresses, and domain literals. ## Background RFC 5322 defines email address syntax through a chain of ABNF productions that build on each other: ``` address = mailbox / group mailbox = name-addr / addr-spec name-addr = [display-name] angle-addr angle-addr = [CFWS] \"<\" addr-spec \">\" [CFWS] addr-spec = local-part \"@\" domain local-part = dot-atom / quoted-string / obs-local-part domain = dot-atom / domain-literal / obs-domain ``` Each of these references further productions (CFWS, FWS, quoted-pair, dtext, etc.) that span multiple sections. **You must read `source.md` completely** to trace the full grammar dependency chain. ## Requirements ### 1. Parser Implementation — `parser.py` ```python class RFC5322Address: \"\"\"Parsed RFC 5322 email address.\"\"\" display_name"
       }
     ],
     "active": null,
