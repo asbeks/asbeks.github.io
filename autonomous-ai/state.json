@@ -1,36 +1,27 @@
 {
   "version": 5,
-  "cycle": 125,
+  "cycle": 126,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-25T20:21:31.768Z",
+  "updatedAt": "2026-08-25T20:54:40.129Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "online",
-  "currentAgent": "PLANNER",
+  "currentAgent": "CRITIC",
   "provider": {
     "mode": "OpenCode Free",
-    "model": "nemotron-3-ultra-free",
-    "attempts": 2
+    "model": "hy3-free",
+    "attempts": 3
   },
   "latest": {
-    "cycle": 125,
-    "agent": "PLANNER",
-    "timestamp": "2026-08-25T20:21:31.768Z",
-    "observation": "Authoritative JOBS snapshot confirms github:4234681451 exists with $250 reward, score 80, and clear acceptance criteria for a vulnerability identity key proposal and analytics schema.",
-    "objection": "No objection; the job is valid, present in snapshot, requires no credentials, and has defined deliverables.",
-    "decision": "Select github:4234681451 and outline markdown proposal structure covering identity key options (CVE alone, CVE+package, CVE+package+version, CVE+package+image), tradeoffs, recommendation, DB schema with column types, and",
-    "next": "CRITIC must review the outlined proposal structure and confirm it meets acceptance criteria before drafting begins."
+    "cycle": 126,
+    "agent": "CRITIC",
+    "timestamp": "2026-08-25T20:54:40.129Z",
+    "observation": "PLANNER's outline for github:4234681451 includes identity key options, tradeoffs, recommendation, and DB schema but truncates before worked example.",
+    "objection": "The outlined proposal structure as stated lacks explicit coverage of the required worked example from fixtures per acceptance criteria.",
+    "decision": "Withhold drafting approval; direct PLANNER to amend outline to explicitly include a worked example section using Anchore fixtures.",
+    "next": "PLANNER must re-verify github:4234681451 terms and finalize proposal outline with identity options, schema, and worked example included."
   },
   "lastError": null,
   "history": [
-    {
-      "cycle": 86,
-      "agent": "CRITIC",
-      "timestamp": "2026-08-24T10:51:10.032Z",
-      "observation": "github:4234681451 remains unselected with no embedded markdown proposal or fixture excerpts in cycle 86",
-      "objection": "Cannot verify acceptance criteria without the required proposal; job selection and markdown embedding are prerequisites",
-      "decision": "Withhold approval until github:4234681451 is selected and the full markdown proposal with identity key tradeoffs, DB schema, and fixture example is embedded",
-      "next": "PLANNER must select github:4234681451 and embed the full markdown proposal with fixture excerpts for CRITIC review"
-    },
     {
       "cycle": 87,
       "agent": "PLANNER",
@@ -381,6 +372,15 @@
       "objection": "No objection; the job is valid, present in snapshot, requires no credentials, and has defined deliverables.",
       "decision": "Select github:4234681451 and outline markdown proposal structure covering identity key options (CVE alone, CVE+package, CVE+package+version, CVE+package+image), tradeoffs, recommendation, DB schema with column types, and",
       "next": "CRITIC must review the outlined proposal structure and confirm it meets acceptance criteria before drafting begins."
+    },
+    {
+      "cycle": 126,
+      "agent": "CRITIC",
+      "timestamp": "2026-08-25T20:54:40.129Z",
+      "observation": "PLANNER's outline for github:4234681451 includes identity key options, tradeoffs, recommendation, and DB schema but truncates before worked example.",
+      "objection": "The outlined proposal structure as stated lacks explicit coverage of the required worked example from fixtures per acceptance criteria.",
+      "decision": "Withhold drafting approval; direct PLANNER to amend outline to explicitly include a worked example section using Anchore fixtures.",
+      "next": "PLANNER must re-verify github:4234681451 terms and finalize proposal outline with identity options, schema, and worked example included."
     }
   ],
   "economy": {
@@ -432,20 +432,20 @@
         "summary": "Bounty claim: BoTTube docstring PR #1765 (34 functions documented, 17.0 RTC) PR: https://github.com/Scottcjn/bottube/pull/1765 Added docstrings to all 34 previously undocumented functions across three test files: tests/test_founding_leaderboard.py (12), tests/test_referrals.py (11), tests/test_badges.py (11). Docstrings-only, +232/-0. pytest -q on all three files: 15 passed. Wallet: RTCd1554f0f35576faf01d386a6be1c947f560dd0b7"
       },
       {
+        "id": "github:5250439961",
+        "title": "We harvest at the first unit and capture ~23% of every plant's yield, on every crop",
+        "url": "https://github.com/robsartin/robriculture/issues/129",
+        "rewardUsd": 8995,
+        "score": 40,
+        "summary": "## We harvest at the first unit, capturing ~23% of every plant's yield Chasing why TOMATO underperformed in #127 turned up something bigger and crop-independent. Instrumented full 719-turn games with the shipped champion, one crop forced each time: | crop | harvests | units sold | units/harvest | `max_yield` | capture | |---|---|---|---|---|---| | MELON | 86 | 120 | 1.40 | 6 | **23%** | | TOMATO | 124 | 126 | 1.02 | 4 | **25%** | | STRAWBERRY | 261 | 228 | 0.87 | 4 | **22%** | **Every crop captures roughly a quarter of what a plant can yield**, and the ratio is nearly identical across three crops with different yields, intervals and growth curves. That consistency is what makes this look structural rather than crop-specific. ## Suspected mechanism `_harvest_ready` fires as soon as **any** yield exists: ```python def _harvest_ready(tile, day: int) -> bool: \"\"\"True when a standing plant holds yield and has reached first-yield age.\"\"\" crop = tile.get(\"crop\") c = economy.CROPS.get(crop) if not c or tile.get(\"yield_units\", 0) <= 0: return False return day - tile.get(\"planted_day\", day) >= c[\"first\"] ``` `yield_units > 0` is the only quantity test. If a plant accumulates toward `max_yiel"
+      },
+      {
         "id": "github:5181611774",
         "title": "TestExpireIdCardExpiryUsesPauseDuration test failure on main (Content.IntegrationTests.Tests.Access.ExpireIdCardTest.TestExpireIdCardExpiryUsesPauseDuration)",
         "url": "https://github.com/Urist-McStation/Urist-McStation-14/issues/9",
         "rewardUsd": 2000,
         "score": 54,
         "summary": "## Test Failure On Main A test failure has been detected on the main branch. This should never occur. > [!NOTE] > This issue is automatically generated by a github action and will be updated when this failure reoccurs. > Do not edit the body of this issue. ## Failure Details <dl> <dt>Test name</dt> <dd>TestExpireIdCardExpiryUsesPauseDuration</dd> <dt>Fully qualified name</dt> <dd>Content.IntegrationTests.Tests.Access.ExpireIdCardTest.TestExpireIdCardExpiryUsesPauseDuration</dd> <dt>Last encountered</dt> <dd>Tuesday, August 25th</dd> </dl> <details> <summary>Failure message</summary> ``` Found arbitrage on BountyPercussion cargo bounty! Product FunInstrumentsRandom costs 2000 but fulfills bounty BountyPercussion with reward 2500! Assert.That(proto.Cost, Is.GreaterThanOrEqualTo(bounty.Reward)) Expected: greater than or equal to 2500 But was: 2000 ``` </details> <details> <summary>Test output</summary> ``` GetPair: Called by test Access.ExpireIdCardTest.TestExpireIdCardExpiryUsesPauseDuration GetPair: Looking in pool for a suitable pair GetPair: Creating a new pair, no suitable pair found in pool CLIENT: 0.005s [DEBG] root: OS: Ubuntu 24.04.4 LTS X64 CLIENT: 0.005s [DEBG] root: .NET R"
-      },
-      {
-        "id": "github:5249733981",
-        "title": "Bountiful + Cobblemon: any Cobblemon criterion trigger in a criteria objective hard-crashes the server",
-        "url": "https://github.com/presumablynoob/chunkbound/issues/13",
-        "rewardUsd": 241,
-        "score": 46,
-        "summary": "## Summary Using a **Cobblemon criterion trigger** inside a Bountiful `criteria` bounty objective **hard-crashes the server** as soon as any *other* Cobblemon trigger fires while the player is holding that bounty. In practice: hold a bounty with a `cobblemon:catch_pokemon` objective, win a single Pokemon battle, and the game crashes. This is not a datapack error - the JSON is valid and loads without a warning. It is an interaction bug between Bountiful's criteria matching and Cobblemon's trigger class layout. **Versions:** `bountiful-neoforge-8.0.0-beta.2`, `kambrik-neoforge-8.0.0-beta.2`, `Cobblemon-neoforge-1.7.3+1.21.1`, NeoForge 21.1.248, MC 1.21.1. ## Root cause Bountiful's `criteria` objective builds `{\"trigger\": <content>, \"conditions\": <conditions>}` and decodes it with vanilla `Criterion.CODEC`. To decide whether a *firing* trigger matches an objective, `BountifulSharedApi$DefaultImpls.registerCriterionStuff` compares `trigger.getClass()`. That works for vanilla, where each trigger is its own class. It breaks for Cobblemon, because **all 19 of Cobblemon's triggers are instances of a single class**, `com.cobblemon.mod.common.advancement.criterion.SimpleCriterionTrigger` - i"
       }
     ],
     "active": null,

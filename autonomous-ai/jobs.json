@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-08-25T20:19:52.045Z",
+  "updatedAt": "2026-08-25T20:53:26.534Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -120,6 +120,40 @@
       "requiresPreclaimOrIdentity": false
     },
     {
+      "id": "github:5250439961",
+      "source": "github",
+      "title": "We harvest at the first unit and capture ~23% of every plant's yield, on every crop",
+      "url": "https://github.com/robsartin/robriculture/issues/129",
+      "repositoryApiUrl": "https://api.github.com/repos/robsartin/robriculture",
+      "rewardUsd": 8995,
+      "score": 40,
+      "labels": [
+        "ready"
+      ],
+      "commentCount": 0,
+      "updatedAt": "2026-08-25T20:41:20Z",
+      "summary": "## We harvest at the first unit, capturing ~23% of every plant's yield Chasing why TOMATO underperformed in #127 turned up something bigger and crop-independent. Instrumented full 719-turn games with the shipped champion, one crop forced each time: | crop | harvests | units sold | units/harvest | `max_yield` | capture | |---|---|---|---|---|---| | MELON | 86 | 120 | 1.40 | 6 | **23%** | | TOMATO | 124 | 126 | 1.02 | 4 | **25%** | | STRAWBERRY | 261 | 228 | 0.87 | 4 | **22%** | **Every crop captures roughly a quarter of what a plant can yield**, and the ratio is nearly identical across three crops with different yields, intervals and growth curves. That consistency is what makes this look structural rather than crop-specific. ## Suspected mechanism `_harvest_ready` fires as soon as **any** yield exists: ```python def _harvest_ready(tile, day: int) -> bool: \"\"\"True when a standing plant holds yield and has reached first-yield age.\"\"\" crop = tile.get(\"crop\") c = economy.CROPS.get(crop) if not c or tile.get(\"yield_units\", 0) <= 0: return False return day - tile.get(\"planted_day\", day) >= c[\"first\"] ``` `yield_units > 0` is the only quantity test. If a plant accumulates toward `max_yiel",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 111,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 8995,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
       "id": "github:5181611774",
       "source": "github",
       "title": "TestExpireIdCardExpiryUsesPauseDuration test failure on main (Content.IntegrationTests.Tests.Access.ExpireIdCardTest.TestExpireIdCardExpiryUsesPauseDuration)",
@@ -151,38 +185,6 @@
       },
       "realMoneyEligible": true,
       "economicValueUsd": 2000,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5249733981",
-      "source": "github",
-      "title": "Bountiful + Cobblemon: any Cobblemon criterion trigger in a criteria objective hard-crashes the server",
-      "url": "https://github.com/presumablynoob/chunkbound/issues/13",
-      "repositoryApiUrl": "https://api.github.com/repos/presumablynoob/chunkbound",
-      "rewardUsd": 241,
-      "score": 46,
-      "labels": [],
-      "commentCount": 0,
-      "updatedAt": "2026-08-25T19:30:50Z",
-      "summary": "## Summary Using a **Cobblemon criterion trigger** inside a Bountiful `criteria` bounty objective **hard-crashes the server** as soon as any *other* Cobblemon trigger fires while the player is holding that bounty. In practice: hold a bounty with a `cobblemon:catch_pokemon` objective, win a single Pokemon battle, and the game crashes. This is not a datapack error - the JSON is valid and loads without a warning. It is an interaction bug between Bountiful's criteria matching and Cobblemon's trigger class layout. **Versions:** `bountiful-neoforge-8.0.0-beta.2`, `kambrik-neoforge-8.0.0-beta.2`, `Cobblemon-neoforge-1.7.3+1.21.1`, NeoForge 21.1.248, MC 1.21.1. ## Root cause Bountiful's `criteria` objective builds `{\"trigger\": <content>, \"conditions\": <conditions>}` and decodes it with vanilla `Criterion.CODEC`. To decide whether a *firing* trigger matches an objective, `BountifulSharedApi$DefaultImpls.registerCriterionStuff` compares `trigger.getClass()`. That works for vanilla, where each trigger is its own class. It breaks for Cobblemon, because **all 19 of Cobblemon's triggers are instances of a single class**, `com.cobblemon.mod.common.advancement.criterion.SimpleCriterionTrigger` - i",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 111,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 0,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 241,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -223,17 +225,87 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5250212918",
+      "id": "github:5250322143",
       "source": "github",
-      "title": "Money printer: shift progression driven by client args, deposit refunded without charge, item reward rolls before distance gate",
-      "url": "https://github.com/Qbox-project/qbx_garbagejob/issues/34",
-      "repositoryApiUrl": "https://api.github.com/repos/Qbox-project/qbx_garbagejob",
-      "rewardUsd": 65,
-      "score": 36,
+      "title": "[Bug bounty] content: 48 findings in four days — a full-lifecycle Monk plugin hunt with a headless MCP harness",
+      "url": "https://github.com/monk-io/monk-plugin/issues/352",
+      "repositoryApiUrl": "https://api.github.com/repos/monk-io/monk-plugin",
+      "rewardUsd": 48,
+      "score": 46,
       "labels": [],
       "commentCount": 0,
-      "updatedAt": "2026-08-25T20:17:18Z",
-      "summary": "## Security report (responsible disclosure) ### Shift progression driven by client args; deposit refunded without charge; item reward rolls before distance gate **Affected:** `server/main.lua` — nextStop callback :54-86, newShift :19/:34, payslip :126-139, item roll :65-68 ```lua lib.callback.register('garbagejob:server:nextStop', function(source, currentStop, currentStopNum, currLocation) ... local currStopCoords = sharedConfig.locations.trashcan[currentStop].coords local distance = #(currLocation - currStopCoords.xyz) -- ← both values client-chosen ``` Three flaws collapse the entire job loop to seconds of standing still: 1. **Progression driven by client args** — the real stop sequence lives server-side (`routes[citizenId].stops`) but the handler never compares `currentStop`/`currentStopNum` against it. The ≤20m check validates position only against whatever trashcan index the *client picked* — walk one trashcan and increment `currentStopNum` 1→N to complete a whole route instantly. 2. **Deposit refunded though never charged** — `newShift(true)` skips the bank check (`canPay(player) or continue`), records `depositPay = sharedConfig.truckPrice` unconditionally, and nothing links ",
+      "updatedAt": "2026-08-25T20:28:39Z",
+      "summary": "### Bounty eligibility - [x] I signed up at monk.io with this GitHub account (azygoss) and it's linked to my Monk account - [x] The findings described came from using the product (running monk-agent 0.1.58 + monkd v3.21.3 end-to-end on Ubuntu 24.04) - [x] I starred monk-io/monk-plugin ### Submission type Content about a real Monk plugin run (blog-style engineering write-up) ### Link https://gist.github.com/azygoss/b3eafe2af87c9248457d2b171342a3b6 ### What it covers The write-up documents my full bounty run: four days (Aug 19–22), 48 issues filed (#299–#346), concentrated in the deep-dive areas — secrets (13 findings), cluster lifecycle (9), deploy (8), ingress/TLS (6). It covers: - the headless setup (sign-in via phone-assisted PKCE OAuth on a browserless VPS, custom MCP OAuth client against the agent's authorization server, automated dashboard-approval flow); - the methodology (custom Python MCP client over Streamable HTTP, ground truth via podman/curl/monkd DB, parameter-matrix probing, lifecycle transitions); - the recurring bug classes, with highlights: silent false successes across tool families ([#299](https://github.com/monk-io/monk-plugin/issues/299), [#301](https://github.",
+      "state": "candidate",
+      "payoutConfidence": 0.5,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 8,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 110,
+      "survivalEligible": false,
+      "eligibilityReason": "Too slow for bootstrap mode: first real cash currently requires a <=4 hour task.",
+      "competition": {
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 48,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5244591649",
+      "source": "github",
+      "title": "hunty-core: Monitoring::record_large_withdrawal is dead code suppressed with #[allow(dead_code)]",
+      "url": "https://github.com/Samuel1-ona/Hunty-contract/issues/828",
+      "repositoryApiUrl": "https://api.github.com/repos/Samuel1-ona/Hunty-contract",
+      "rewardUsd": 1060,
+      "score": 48,
+      "labels": [
+        "bug",
+        "Stellar Wave"
+      ],
+      "commentCount": 1,
+      "updatedAt": "2026-08-25T20:49:34Z",
+      "summary": "`contracts/hunty-core/src/monitoring.rs:45-50`: ```rust #[allow(dead_code)] pub fn record_large_withdrawal(env: &Env, amount: i128) { if amount > 1_000_000_000 { Self::raise_alert(env, \"large_withdrawal\"); } } ``` Two problems: 1. **It is never called in `hunty-core`.** The `#[allow(dead_code)]` silences the warning that would tell you so. Suppressing the diagnostic is not the same as resolving it, and it defeats the `-D warnings` clippy gate the repo already runs in CI. 2. **The threshold is an unexplained literal.** `1_000_000_000` stroops is 100 XLM. Nothing says so — not the constant name, not a comment. `reward-manager` uses `MIN_FUNDING_AMOUNT` / `MAX_FUNDING_AMOUNT` named constants for exactly this kind of value; this module does not. Note `hunty-core` has no withdrawal path at all, so the function is in the wrong crate to begin with — `reward-manager` is where withdrawals happen, and its byte-identical copy of this module *does* call it (`contracts/reward-manager/src/lib.rs:1060`). **Fix** Delete `record_large_withdrawal` from the `hunty-core` copy and remove the `#[allow]`. In the `reward-manager` copy, replace the literal with a named, documented, admin-configurable thres",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 109,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 1,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 1060,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5244622499",
+      "source": "github",
+      "title": "reward-manager: refund_pool does not update total_deposited or emit an event",
+      "url": "https://github.com/Samuel1-ona/Hunty-contract/issues/867",
+      "repositoryApiUrl": "https://api.github.com/repos/Samuel1-ona/Hunty-contract",
+      "rewardUsd": 558,
+      "score": 48,
+      "labels": [
+        "bug",
+        "Stellar Wave"
+      ],
+      "commentCount": 4,
+      "updatedAt": "2026-08-25T20:35:58Z",
+      "summary": "`contracts/reward-manager/src/lib.rs:558-590` zeroes the balance and appends an audit entry, but: 1. **No event is emitted.** Every other value-moving operation publishes one — `POOL_CRT`, `POOL_FND`, `ADM_WDR`, `RewardsDistributedEvent`. A refund moves the entire pool balance and is invisible to indexers. Off-chain accounting reconstructed from events will show the pool as still funded, forever. 2. **`total_deposited` is left stale.** `get_reward_pool:591` returns `total_deposited` alongside `balance`, so after a refund the pool reports having received N XLM and holding 0, with no `total_refunded` to explain the difference. `total_distributed` is untouched too, so the accounting identity `deposited == balance + distributed + refunded` cannot be checked by anyone. 3. **The audit entry mislabels the operation** as `PoolOperation::Withdraw`, the same variant `admin_withdraw_unclaimed:1080` uses. A creator refund and an admin withdrawal are different events with different authorization and different meaning; the audit log cannot distinguish them. **Fix** Add a `RewardPoolRefundedEvent`, track `total_refunded` in storage, and add a `PoolOperation::Refund` variant. Document the accounti",
       "state": "candidate",
       "payoutConfidence": 0.35,
       "autonomyFit": 1,
@@ -246,12 +318,12 @@
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
-        "comments": 0,
+        "comments": 4,
         "attemptSignals": 0,
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 65,
+      "economicValueUsd": 558,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -289,6 +361,41 @@
       },
       "realMoneyEligible": true,
       "economicValueUsd": 100,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5244629644",
+      "source": "github",
+      "title": "reward-manager: the admin check is pasted inline in every admin function with no require_admin helper",
+      "url": "https://github.com/Samuel1-ona/Hunty-contract/issues/876",
+      "repositoryApiUrl": "https://api.github.com/repos/Samuel1-ona/Hunty-contract",
+      "rewardUsd": 181,
+      "score": 40,
+      "labels": [
+        "enhancement",
+        "Stellar Wave"
+      ],
+      "commentCount": 7,
+      "updatedAt": "2026-08-25T20:49:28Z",
+      "summary": "`hunty-core` has `Self::require_admin` (`contracts/hunty-core/src/lib.rs:70`) and `nft-reward` has `Self::require_admin` (`contracts/nft-reward/src/lib.rs:181`). `reward-manager` has neither, so the same three lines appear at every admin entrypoint: ```rust admin.require_auth(); let configured_admin = Storage::get_admin(&env).ok_or(RewardErrorCode::NotInitialized)?; if configured_admin != admin { return Err(RewardErrorCode::Unauthorized); } ``` Sites include `set_nft_reward_contract:190`, `set_hunty_core:222`, `add_authorized_contract:238`, `remove_authorized_contract:254`, `set_daily_pool_cap:636`, `set_daily_global_cap:644`, `retry_failed_nft_mint:865`, `admin_resolve_distribution:985`, `admin_withdraw_unclaimed:1032`, `pause:1093`, `unpause:1120`, `emergency_withdraw:1154`. Twelve copies of a security check, on the fund-custody contract. Three of them additionally carry the `#[cfg(not(test))]` bypass covered in the companion issue — which is itself evidence of the problem, since the bypass had to be applied twelve times and was applied five times, leaving the codebase inconsistent about which admin calls are auth-tested. When this check gains a step — an audit event, a multisig,",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 100,
+      "survivalEligible": false,
+      "eligibilityReason": "Competition is too high for bootstrap mode.",
+      "competition": {
+        "comments": 7,
+        "attemptSignals": 0,
+        "risk": "medium"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 181,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -337,7 +444,7 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-24T13:15:06Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:3904246891\",\"rewardUsd\":100,\"fastCashScore\":102,\"updatedAt\":\"2026-08-25T20:04:56Z\",\"competition\":{\"comments\":13,\"attemptSignals\":1,\"risk\":\"medium\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":124,\"updatedAt\":\"2026-08-25T18:03:13Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":110,\"updatedAt\":\"2026-08-25T01:35:34Z\",\"competition\":{\"comments\":19,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-25T07:38:13Z\",\"competition\":{\"comments\":46,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:4975260101\",\"rewardUsd\":780,\"fastCashScore\":119,\"updatedAt\":\"2026-08-25T05:07:59Z\",\"competition\":{\"comments\":18,\"attemptSignals\":1,\"risk\":\"high\"}},{\"id\":\"github:5181611774\",\"rewardUsd\":2000,\"fastCashScore\":111,\"updatedAt\":\"2026-08-25T20:08:36Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5249733981\",\"rewardUsd\":241,\"fastCashScore\":111,\"updatedAt\":\"2026-08-25T19:30:50Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5250199830\",\"rewardUsd\":1765,\"fastCashScore\":116,\"updatedAt\":\"2026-08-25T20:16:09Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5250212918\",\"rewardUsd\":65,\"fastCashScore\":105,\"updatedAt\":\"2026-08-25T20:17:18Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-24T13:15:06Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:3904246891\",\"rewardUsd\":100,\"fastCashScore\":102,\"updatedAt\":\"2026-08-25T20:04:56Z\",\"competition\":{\"comments\":13,\"attemptSignals\":1,\"risk\":\"medium\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":124,\"updatedAt\":\"2026-08-25T18:03:13Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":110,\"updatedAt\":\"2026-08-25T01:35:34Z\",\"competition\":{\"comments\":19,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-25T07:38:13Z\",\"competition\":{\"comments\":46,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:4975260101\",\"rewardUsd\":780,\"fastCashScore\":119,\"updatedAt\":\"2026-08-25T05:07:59Z\",\"competition\":{\"comments\":18,\"attemptSignals\":1,\"risk\":\"high\"}},{\"id\":\"github:5181611774\",\"rewardUsd\":2000,\"fastCashScore\":111,\"updatedAt\":\"2026-08-25T20:08:36Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5244591649\",\"rewardUsd\":1060,\"fastCashScore\":109,\"updatedAt\":\"2026-08-25T20:49:34Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5244622499\",\"rewardUsd\":558,\"fastCashScore\":105,\"updatedAt\":\"2026-08-25T20:35:58Z\",\"competition\":{\"comments\":4,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5244629644\",\"rewardUsd\":181,\"fastCashScore\":100,\"updatedAt\":\"2026-08-25T20:49:28Z\",\"competition\":{\"comments\":7,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5250199830\",\"rewardUsd\":1765,\"fastCashScore\":116,\"updatedAt\":\"2026-08-25T20:16:09Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5250322143\",\"rewardUsd\":48,\"fastCashScore\":110,\"updatedAt\":\"2026-08-25T20:28:39Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5250439961\",\"rewardUsd\":8995,\"fastCashScore\":111,\"updatedAt\":\"2026-08-25T20:41:20Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
@@ -361,7 +468,7 @@
       "reasons": [
         "already_rewarded_or_paid"
       ],
-      "rejectedAt": "2026-08-25T20:19:51.994Z"
+      "rejectedAt": "2026-08-25T20:53:26.478Z"
     },
     {
       "id": "github:5247007690",
