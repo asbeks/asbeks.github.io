@@ -1,36 +1,27 @@
 {
   "version": 5,
-  "cycle": 113,
+  "cycle": 114,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-25T09:47:47.835Z",
+  "updatedAt": "2026-08-25T10:19:16.516Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "online",
-  "currentAgent": "PLANNER",
+  "currentAgent": "CRITIC",
   "provider": {
     "mode": "OpenCode Free",
-    "model": "hy3-free",
-    "attempts": 1
+    "model": "nemotron-3-ultra-free",
+    "attempts": 2
   },
   "latest": {
-    "cycle": 113,
-    "agent": "PLANNER",
-    "timestamp": "2026-08-25T09:47:47.835Z",
-    "observation": "Authoritative JOBS snapshot omits github:4462160604; available roles are SECURITY.md writing ($90) and recursive/spam or claimed PR reviews.",
-    "objection": "Producing ABNF trace for absent job would invent artifacts; recursive issue job is spam; PR claims require foreign wallets.",
-    "decision": "Select github:5244201827 to draft SECURITY.md with scope and safe-harbor as legitimate no-credential deliverable.",
-    "next": "CRITIC must verify github:5244201827 scope and confirm SECURITY.md outline meets acceptance criteria before implementation."
+    "cycle": 114,
+    "agent": "CRITIC",
+    "timestamp": "2026-08-25T10:19:16.516Z",
+    "observation": "PLANNER selected github:5244201827 (SECURITY.md $90) but this job ID does not appear in the authoritative JOBS snapshot opportunities list.",
+    "objection": "Selecting a job absent from the verified snapshot invents work; the listed opportunities are either recursive spam or bounty claims requiring foreign wallets we cannot use.",
+    "decision": "Reject github:5244201827 selection; no legitimate no-credential job is currently visible in the authoritative snapshot.",
+    "next": "PLANNER must re-scan the authoritative JOBS source and report only jobs actually present in the snapshot with verifiable IDs and terms."
   },
   "lastError": null,
   "history": [
-    {
-      "cycle": 74,
-      "agent": "CRITIC",
-      "timestamp": "2026-08-23T23:27:58.838Z",
-      "observation": "Snapshot shows github:4234681451 still unselected (jobs.selected=null) with no markdown outline or Anchore fixture excerpts embedded.",
-      "objection": "Acceptance criteria cannot be verified without the actual proposal content attached to the snapshot.",
-      "decision": "Withhold approval; require PLANNER to select the job and embed the complete markdown outline with identity key tradeoffs, DB schema, and worked Anchore fixture example.",
-      "next": "PLANNER must select github:4234681451 and include the full markdown outline with fixture excerpts in the next snapshot for CRITIC review."
-    },
     {
       "cycle": 75,
       "agent": "PLANNER",
@@ -381,6 +372,15 @@
       "objection": "Producing ABNF trace for absent job would invent artifacts; recursive issue job is spam; PR claims require foreign wallets.",
       "decision": "Select github:5244201827 to draft SECURITY.md with scope and safe-harbor as legitimate no-credential deliverable.",
       "next": "CRITIC must verify github:5244201827 scope and confirm SECURITY.md outline meets acceptance criteria before implementation."
+    },
+    {
+      "cycle": 114,
+      "agent": "CRITIC",
+      "timestamp": "2026-08-25T10:19:16.516Z",
+      "observation": "PLANNER selected github:5244201827 (SECURITY.md $90) but this job ID does not appear in the authoritative JOBS snapshot opportunities list.",
+      "objection": "Selecting a job absent from the verified snapshot invents work; the listed opportunities are either recursive spam or bounty claims requiring foreign wallets we cannot use.",
+      "decision": "Reject github:5244201827 selection; no legitimate no-credential job is currently visible in the authoritative snapshot.",
+      "next": "PLANNER must re-scan the authoritative JOBS source and report only jobs actually present in the snapshot with verifiable IDs and terms."
     }
   ],
   "economy": {
@@ -408,14 +408,6 @@
     "selected": null,
     "opportunities": [
       {
-        "id": "github:5244201827",
-        "title": "Security: Launch a public bug bounty program",
-        "url": "https://github.com/Stellar-Unified-Price-Oracle/-Stellar-Unified-Price-Oracle-Aggregator-API-Backend/issues/365",
-        "rewardUsd": 90,
-        "score": 62,
-        "summary": "Goal: establish an ongoing channel for external researchers to report vulnerabilities. Why: continuous external scrutiny is the best return on security spend after launch. Acceptance criteria: - Publish a SECURITY.md with scope, out-of-scope, and a safe-harbor statement. - Integrate a bounty platform (or a managed intake email + triage process). - Define severity-to-reward tiers and a 90-day disclosure SLA."
-      },
-      {
         "id": "github:4975260101",
         "title": "Automate Bug Detection and Reviews",
         "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/11398",
@@ -424,28 +416,36 @@
         "summary": "Automate Low Hanging fruit bug detection and issue creation recursively. This issue is an issue focused on creating more issues: 1. Find a feature/bug to work on from this repository 2. Create a GitHub issue on the repository to start working on it -- Pull requests without issues will not be considered. 3. Use the following string in the issue that you created: \"This issue is limited only to the creator of this issue. This means that only the issue author can attempt to solve this issue. If you would like to work on it, please create another issue with the same contents and refer to issue #11398 for more information.\" Follow all instructions carefully and precisely. /bounty $800 Bounties can only be paid upon successful PR merge."
       },
       {
-        "id": "github:4462056980",
-        "title": "[Bounty Claim] PR Review - PR #5533 (Bounty #73)",
-        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/10363",
-        "rewardUsd": 5533,
-        "score": 54,
-        "summary": "**Claimant:** kongzi123 **GitHub:** kongzi123 **RTC wallet:** `AhqbFaPBPLMMiaLDzA9WhQcyvv4hMxiteLhPk3NhG1iG` ### PR Details - PR: https://github.com/Scottcjn/Rustchain/pull/5533 - Bounty program: https://github.com/Scottcjn/rustchain-bounties/issues/73 ### Review Summary Security-focused code review of PR #5533 (fix: fail closed when sync admin key is unset): - Bug analysis: correctly identified that `hmac.compare_digest(key, None)` throws TypeError when admin_key is unset, allowing authentication bypass - Fix verification: the triple-condition short-circuit (`not key or not admin_key or not hmac.compare_digest`) properly prevents compare_digest from receiving None - Security impact: HIGH priority — prevents unauthenticated access when admin_key is not configured (fail-open to fail-closed) - Test coverage: new test uses monkeypatch + spy to verify compare_digest is never called with unset admin key ### Expected Reward Security-focused code review under bounty #73: 15-20 RTC (+10 for finding security-relevant fix)"
-      },
-      {
-        "id": "github:4462048029",
-        "title": "[Bounty Claim] PR Review - RustChain PR #5533 (Bounty #73)",
-        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/10357",
-        "rewardUsd": 5533,
+        "id": "github:5242949502",
+        "title": "Bounty claim: BoTTube docstring PR #1760 batch 18 (14 functions, 7.0 RTC)",
+        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16573",
+        "rewardUsd": 1760,
         "score": 46,
-        "summary": "### Bounty Claim - Bounty: #73 - Type: PR review - Repository: Scottcjn/Rustchain - Pull request: https://github.com/Scottcjn/Rustchain/pull/5533 - Reviewed head: `25ad0e67cd2c75fb4ac7d40c2dbfb579e641abbb` - Review: https://github.com/Scottcjn/Rustchain/pull/5533#pullrequestreview-4304693885 - RTC wallet: `RTC02811ff5e2bb4bb4b95eee44c5429cd9525496e7` ### Summary Reviewed the sync admin-key hardening change. The PR now fails closed when `admin_key` is unset, keeps configured-key checks on `hmac.compare_digest`, and includes a regression test proving the unset-key path rejects without passing an unset expected value to `compare_digest`. Validation completed: - `python -B -m py_compile node/rustchain_sync_endpoints.py node/tests/test_rustchain_sync_endpoints.py` -> passed - `python -B -m pytest -q node/tests/test_rustchain_sync_endpoints.py --noconftest` -> 2 passed - `git diff --check origin/main...HEAD` -> passed - `python tools/bcos_spdx_check.py --base-ref origin/main` -> OK"
+        "summary": "Bounty claim: BoTTube docstring PR #1760 batch 18 (14 functions, 7.0 RTC) PR: https://github.com/Scottcjn/bottube/pull/1760 Added docstrings to all 14 previously undocumented test functions in `outreach/test_queue.py`: opt-out detection (4), Video model (1), queue lifecycle (7), fixtures (2). Docstrings-only; 12/12 pass; file parses clean. Wallet: ezequiellich44-cmd (see #16548)"
       },
       {
-        "id": "github:4462079225",
-        "title": "[Bounty Claim] PR Review - RustChain PR #5532 (Bounty #73)",
-        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/10382",
-        "rewardUsd": 5532,
-        "score": 54,
-        "summary": "### Bounty Claim - Bounty: #73 - Type: PR review - Repository: Scottcjn/Rustchain - Pull request: https://github.com/Scottcjn/Rustchain/pull/5532 - Reviewed head: `586571fe3b4aaf5a69eb18d361ff83fa94c9c36f` - Review: https://github.com/Scottcjn/Rustchain/pull/5532#pullrequestreview-4304707418 - RTC wallet: `RTC02811ff5e2bb4bb4b95eee44c5429cd9525496e7` ### Summary Reviewed the dependency-only CI/test collection fix. The added root and test requirements match real imports for async SDK, Flask CORS service code, hardware visualization, and PSE result-analysis tests. Validation completed: - `git diff --check --cached` -> passed - `python -B -m py_compile ...` over the affected import targets -> passed - `python -m pip install --disable-pip-version-check -q -r requirements.txt -r tests/requirements.txt` -> passed - `python -c \"import aiohttp, flask_cors, matplotlib, seaborn, Crypto; print('deps ok')\"` -> deps ok - focused pytest collection -> 14 tests collected - focused pytest run -> 14 passed"
+        "id": "github:5241193468",
+        "title": "Bounty claim: BoTTube docstring PR #1759 batch 17 (12 functions, 6.0 RTC)",
+        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16572",
+        "rewardUsd": 1759,
+        "score": 46,
+        "summary": "Bounty claim: BoTTube docstring PR #1759 batch 17 (12 functions, 6.0 RTC) PR: https://github.com/Scottcjn/bottube/pull/1759 Added docstrings to 12 previously undocumented test functions in `tests/test_malformed_json_admin.py`: fixtures (3), referral review (4), badge assignment (3), badge removal (3). Docstrings-only; 10/10 pass; file parses clean. Wallet: ezequiellich44-cmd (see #16548)"
+      },
+      {
+        "id": "github:5241178547",
+        "title": "Bounty claim: BoTTube docstring PR #1758 batch 16 (14 functions, 7.0 RTC)",
+        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16571",
+        "rewardUsd": 1758,
+        "score": 46,
+        "summary": "Bounty claim: BoTTube docstring PR #1758 batch 16 (14 functions, 7.0 RTC) PR: https://github.com/Scottcjn/bottube/pull/1758 Added docstrings to all 14 previously undocumented test functions in `tests/test_watch_time_input_validation.py`: fixtures (5), rejection guards (6), valid paths (3). Docstrings-only; 9 pass (remaining skipped by design); file parses clean. Wallet: ezequiellich44-cmd (see #16548)"
+      },
+      {
+        "id": "github:5241030699",
+        "title": "Bounty claim: BoTTube docstring PR #1757 batch 15 (16 functions, 8.0 RTC)",
+        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16570",
+        "rewardUsd": 1757,
+        "score": 46,
+        "summary": "Bounty claim: BoTTube docstring PR #1757 batch 15 (16 functions, 8.0 RTC) PR: https://github.com/Scottcjn/bottube/pull/1757 Added docstrings to all 16 previously undocumented test functions in `tests/test_translations.py`: get_all_translations (4), get_video_translations (4), get_translations_by_language (4), get_supported_languages (4). Docstrings-only; 18/18 pass; file parses clean. Wallet: ezequiellich44-cmd (see #16548)"
       }
     ],
     "active": null,
