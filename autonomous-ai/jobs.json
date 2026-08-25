@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-08-25T15:55:36.374Z",
+  "updatedAt": "2026-08-25T16:45:15.097Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -50,6 +50,107 @@
       "requiresPreclaimOrIdentity": false
     },
     {
+      "id": "github:5248100751",
+      "source": "github",
+      "title": "Bounty claim: BoTTube docstring PR #1764 batch 19 (25 functions, 12.5 RTC)",
+      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16580",
+      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
+      "rewardUsd": 1764,
+      "score": 54,
+      "labels": [
+        "awaiting-merge"
+      ],
+      "commentCount": 1,
+      "updatedAt": "2026-08-25T16:19:06Z",
+      "summary": "/claim #1764 Repo: Scottcjn/bottube PR: https://github.com/Scottcjn/bottube/pull/1764 Type: docstring coverage Documented: 25 test and fixture functions across feed and generation validation files Reward requested: 12.5 RTC Files: - tests/test_feed_query_validation.py - tests/test_feed_impression_event_validation.py - tests/test_feed_blueprint.py - tests/test_generation_routes.py Validation: pytest -q tests/test_feed_query_validation.py tests/test_feed_impression_event_validation.py tests/test_feed_blueprint.py tests/test_generation_routes.py",
+      "state": "candidate",
+      "payoutConfidence": 0.5,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 8,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 116,
+      "survivalEligible": false,
+      "eligibilityReason": "Too slow for bootstrap mode: first real cash currently requires a <=4 hour task.",
+      "competition": {
+        "comments": 1,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 1764,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5248261835",
+      "source": "github",
+      "title": "fix(orchestration): the episode reward re-multiplies the steps #4895 excluded",
+      "url": "https://github.com/nexus-substrate/nexus-agents/issues/4916",
+      "repositoryApiUrl": "https://api.github.com/repos/nexus-substrate/nexus-agents",
+      "rewardUsd": 4895,
+      "score": 48,
+      "labels": [],
+      "commentCount": 0,
+      "updatedAt": "2026-08-25T16:37:32Z",
+      "summary": "Found by an adversarial review of my own same-day merges. #4895 excluded unmeasured steps from the reward mean, and both consumers of that mean re-multiply the excluded steps back in. ## The finding `calculatePuppeteerMetrics` now averages over SCORED steps only (`puppeteer-helpers.ts:211-215`), and reports coverage as `scoredSteps` alongside it. That part is right. Both consumers multiply by `totalSteps`: - `learning-integration.ts:193` — `const finalReward = result.metrics.avgReward * result.totalSteps;` - `learning-integration.ts:277` — `let reward = result.metrics.avgReward * result.totalSteps;` That product was the reward SUM before #4895, when the mean covered every step. It no longer is. The scored mean is extrapolated across the very steps exclusion removed, so the policy is handed back the reward contribution of steps that reported no usage — the exact distortion #4766 set out to delete, reassembled one layer up. **Concretely:** 4 steps, 3 scored averaging 0.8, 1 unmeasured. True reward sum 2.4. Reported: `0.8 x 4 = 3.2`. `scoredSteps` sits unread on the same object. Recorded but not consumed. ## The empty case is worse Every step unmeasured gives `scored.length === 0`, so",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 111,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 4895,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5247901654",
+      "source": "github",
+      "title": "Feature build tracker: the v1 cut, and what it still needs",
+      "url": "https://github.com/maximsan/brewpath/issues/368",
+      "repositoryApiUrl": "https://api.github.com/repos/maximsan/brewpath",
+      "rewardUsd": 230,
+      "score": 40,
+      "labels": [
+        "feature-build",
+        "tracker"
+      ],
+      "commentCount": 0,
+      "updatedAt": "2026-08-25T16:38:41Z",
+      "summary": "**Scope comes from `prototype/v1 Readiness Audit.html`** — the design's own ship/defer ruling, June 2026, reconciled Aug 2026. It cuts v1 to **~32 of the prototype's ~64 screens**. This tracker holds what v1 still needs. **How to use it.** One line per screen or mechanic. A line links its ticket, or says `no ticket` — that is the backlog, visible instead of implied. Tick when a merged PR ships it. `gh issue list --label feature-build` is this effort's view. Sibling trackers: **design** → #365 · **content** → #369. --- ## The v1 cut — what is still missing The audit's own groupings. The app has roughly 17 of the ~32 v1 screens. ### Coffee Dictionary (audit: 6 screens) — the drills are the gap - [ ] **Flashcards** — #97 (spec'd; blocked on the Saved shelf) - [ ] **Guess the term** + **setup** — #98 (spec'd, buildable now) - [ ] **Term of the Day** — #96 (`stale-spec` — re-ground first) ### Foundations purchase (audit: 4 screens with Studio + Saved) - [ ] **Paywall · Foundations** — #89 - [ ] **Purchase welcome** — `no ticket` - [ ] **Purchases** (restore / manage) — `no ticket` - [ ] Paywall at the end of onboarding — #242 - [ ] Entitlement as a swappable seam — #176 (the audit says ",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 111,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 230,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
       "id": "github:4462160604",
       "source": "github",
       "title": "[bounty $400] Implement ABNF-compliant email address parser with full §3.2–§4.4 coverage",
@@ -87,62 +188,17 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5247765973",
+      "id": "github:5242836725",
       "source": "github",
-      "title": "🎯 Fix clientv3.Watch blocking indefinitely after Context cancellation during stream recovery",
-      "url": "https://github.com/condoraltidoi32/etcd/issues/1",
-      "repositoryApiUrl": "https://api.github.com/repos/condoraltidoi32/etcd",
-      "rewardUsd": 10,
-      "score": 54,
-      "labels": [
-        "bounty",
-        "bountyhub",
-        "$10"
-      ],
-      "commentCount": 2,
-      "updatedAt": "2026-08-25T15:54:59Z",
-      "summary": "## 📝 Description In `clientv3`, when a client initiates a watch via `clientv3.Watch(ctx, key, ...)` and the underlying gRPC stream breaks (e.g., due to network disruption, server restart, or leader transition), the watcher enters a stream recovery loop to re-establish the gRPC stream and resume registered watches. If the user-provided `ctx` is cancelled while the watch stream is in the middle of stream recovery or re-subscribing watches (e.g., inside `resume()` or while awaiting stream reconnection), the returned `WatchChan` can remain open and blocked, failing to emit a cancellation event or close. Furthermore, internal goroutines associated with the watch can hang, causing goroutine leaks in long-running client applications. ## 🎯 Acceptance Criteria - [ ] Cancelling a watch's `context.Context` during any phase of stream recovery (re-dialing, stream initialization, or sub-watch resynchronization) must promptly close the `WatchChan` and release associated resources. - [ ] `watchGrpcStream` must not block on channel sends (e.g., `reqc`, `respc`) or mutex acquisitions when a sub-watch context is cancelled during `resume()`. - [ ] Inflight watch requests queued for re-establishment ",
-      "state": "candidate",
-      "payoutConfidence": 0.7,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 99,
-      "survivalEligible": false,
-      "eligibilityReason": "Competition is too high for bootstrap mode.",
-      "competition": {
-        "comments": 2,
-        "attemptSignals": 1,
-        "risk": "medium"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 10,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5189454900",
-      "source": "github",
-      "title": "[BOUNTY · OPEN FOR CONTRIBUTORS] Crea il fumetto visuale “Come funziona MyZubster” — 300 MYZ proposed",
-      "url": "https://github.com/MyZubster-Ecosystem/myzubster/issues/526",
-      "repositoryApiUrl": "https://api.github.com/repos/MyZubster-Ecosystem/myzubster",
-      "rewardUsd": 300,
-      "score": 54,
-      "labels": [
-        "documentation",
-        "good first issue",
-        "bounty",
-        "type:bounty",
-        "status:proposed",
-        "reward:myz",
-        "reward:xmr",
-        "reward:token"
-      ],
-      "commentCount": 24,
-      "updatedAt": "2026-08-25T15:54:46Z",
-      "summary": "# 🎨 Bounty — Crea il fumetto visuale “Come funziona MyZubster” ## Status **OPEN FOR CONTRIBUTORS / PROPOSED** > Questa issue è aperta a contributor visuali, illustratori e designer. Per evitare lavoro duplicato, commenta **`CLAIM`** prima di iniziare indicando alias, workflow (human-made / AI-assisted / mixed) e data prevista di consegna. ## Reward **300 MYZ proposed** — `Discovery Episode` tier. - Asset/accounting unit: **MYZ internal reward/accounting ledger** - Amount: **300 MYZ proposed** - Funding state: **PROPOSED — not yet guaranteed or externally settled** - Review: **manual maintainer verification** La definizione del reward rende il task leggibile e confrontabile, ma non costituisce promessa automatica di pagamento. Il reward può essere registrato solo dopo i gate previsti da `BOUNTIES.md`; qualunque settlement esterno resta separato e richiede verifica indipendente. ## Objective Trasformare il workflow **“Come funziona MyZubster”** in un fumetto/visual guide originale, chiaro, coerente con l’architettura reale del progetto e comprensibile anche a chi non conosce il codice. ## Deliverable minimo Realizzare **4–8 vignette/pagine + cover**, oppure una tavola equivalente ad",
+      "title": "[Bounty: $90] Add a test asserting the SDK works when only an apiKey is configured",
+      "url": "https://github.com/Lilly-Protocol/lily-sdk/issues/121",
+      "repositoryApiUrl": "https://api.github.com/repos/Lilly-Protocol/lily-sdk",
+      "rewardUsd": 90,
+      "score": 46,
+      "labels": [],
+      "commentCount": 3,
+      "updatedAt": "2026-08-25T16:15:01Z",
+      "summary": "## Context The fetch transport supports both `x-api-key` and `Bearer` auth, and `resolveLilySdkConfig` allows either. `client-behavior.test.ts` covers the 401 mapping and auth header presence, but there is no explicit matrix test that the correct header is sent for each single-credential configuration and that an absent credential sends neither. ## Proposed Change Add a parameterized test over the four auth configurations (apiKey only, authToken only, both, neither) asserting the exact headers forwarded to a mock `fetch`, and that neither header is sent when no credential is configured.",
       "state": "candidate",
       "payoutConfidence": 0.5,
       "autonomyFit": 1,
@@ -151,16 +207,116 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 83,
+      "fastCashScore": 109,
       "survivalEligible": false,
-      "eligibilityReason": "Competition is too high for bootstrap mode.",
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
-        "comments": 24,
+        "comments": 3,
         "attemptSignals": 0,
-        "risk": "high"
+        "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 300,
+      "economicValueUsd": 90,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5241852208",
+      "source": "github",
+      "title": "harbor: an external agent and a verifier that refuses to invent a reward",
+      "url": "https://github.com/mangit955/nap/issues/111",
+      "repositoryApiUrl": "https://api.github.com/repos/mangit955/nap",
+      "rewardUsd": 101,
+      "score": 40,
+      "labels": [
+        "wayfinder:task"
+      ],
+      "commentCount": 0,
+      "updatedAt": "2026-08-25T16:37:17Z",
+      "summary": "Part of #101. Last, and deliberately so — it is the piece that buys the least. An external `BaseAgent` (host-side, via `BaseEnvironment`) shelling out to a `napbench-trial` entrypoint, plus a verifier that re-emits a report this repo already wrote. Harbor's container is built and near-vestigial; what it buys is fan-out, a job layout and a registry, not isolation. **Done when** - No check, gate, score or attribution logic has moved into Harbor. - The verifier calls `rewardFor` and writes **nothing**, exiting non-zero, when it returns `undefined`. - `report.json` — status, error kind, per-check results, trajectory — is written to the job dir on every trial, measured or not. - The Python lives somewhere with a stated gate story: `test/architecture.ts`, Biome, lefthook and CI cover none of it today, and `CLAUDE.md` records what shipping outside a gate cost last time. - An ADR records Harbor-as-orchestrator and why the container is nearly empty.",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 107,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 101,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5242911258",
+      "source": "github",
+      "title": "[Bounty: $30] Freeze the entire resolved config object, not just the retry policy",
+      "url": "https://github.com/Lilly-Protocol/lily-sdk/issues/122",
+      "repositoryApiUrl": "https://api.github.com/repos/Lilly-Protocol/lily-sdk",
+      "rewardUsd": 30,
+      "score": 46,
+      "labels": [],
+      "commentCount": 1,
+      "updatedAt": "2026-08-25T16:15:02Z",
+      "summary": "## Context Issue #45 tracks deep-freezing the resolved retry policy. The rest of `ResolvedLilySdkConfig` (timeouts, auth, headers) is still mutable, so a consumer holding a reference can mutate SDK behavior after construction, producing hard-to-debug inconsistencies. ## Proposed Change Extend the deep-freeze to the whole resolved config (recursively freeze `resolved.base`, `resolved.headers`, and `resolved.retry`), and add a test asserting mutation attempts throw in strict mode or are silently ignored and the frozen snapshot remains stable.",
+      "state": "candidate",
+      "payoutConfidence": 0.5,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 106,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 1,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 30,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5225100116",
+      "source": "github",
+      "title": "[security] Penetration Testing Program: Annual External Pentest, Continuous Bug Bounty, Red Team Exercises",
+      "url": "https://github.com/ExcelDsigN-tech/dukapay/issues/465",
+      "repositoryApiUrl": "https://api.github.com/repos/ExcelDsigN-tech/dukapay",
+      "rewardUsd": 10,
+      "score": 52,
+      "labels": [
+        "Stellar Wave"
+      ],
+      "commentCount": 5,
+      "updatedAt": "2026-08-25T16:21:11Z",
+      "summary": "[security] Penetration Testing Program: Annual External Pentest, Continuous Bug Bounty, Red Team Exercises **Description:** No structured penetration testing program. Implement annual external pentest, continuous bug bounty, quarterly red team exercises, automated SAST/DAST in CI. **Impact:** Proactive vulnerability discovery; compliance (SOC2, ISO27001); insurance requirement; community trust. **Suggested Fix:** 1. Contract annual pentest with Cobalt.io or HackerOne 2. Launch bug bounty program (10k-100k USD rewards) 3. Quarterly red team exercises 4. Add SAST (semgrep, CodeQL) and DAST (OWASP ZAP) to CI 5. Vulnerability disclosure policy and safe harbor **Points:** 200 **Type:** security ## Definition of Done - [ ] Annual external pentest contracted - [ ] Bug bounty program live with rewards - [ ] Quarterly red team exercises scheduled - [ ] SAST/DAST in CI pipeline - [ ] Vulnerability disclosure policy published - [ ] No hardcoded secrets remain in source (grep scan clean) - [ ] Authentication flow verified and tested - [ ] Security headers and CSP configured - [ ] No PII exposed in logs or error messages - [ ] All necessary CI checks passed --- 📋 **Before working on this issue",
+      "state": "candidate",
+      "payoutConfidence": 0.65,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 101,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 5,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 10,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -197,40 +353,6 @@
       "realMoneyEligible": true,
       "economicValueUsd": 50,
       "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:4644823208",
-      "source": "github",
-      "title": "[BOUNTY: 10 RTC] Proof-of-Antiquity Explainer — Diagram, Infographic, or 60s Video",
-      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/13954",
-      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
-      "rewardUsd": 10,
-      "score": 44,
-      "labels": [
-        "bounty"
-      ],
-      "commentCount": 29,
-      "updatedAt": "2026-08-25T15:54:03Z",
-      "summary": "## Make Proof-of-Antiquity click in 60 seconds — 10 RTC Create an **original visual explainer** of how RustChain works: Proof-of-Antiquity (vintage hardware earns more), the 6-check hardware fingerprint, and why VMs earn ~nothing. Aimed at a smart newcomer. ### Format (pick one) - Infographic / diagram (PNG/SVG) - 60-second video (animation, screen-record, or talking-head) - A clear annotated flowchart ### Must cover - 1 CPU = 1 vote, weighted by hardware antiquity - The fingerprint/anti-emulation idea (real hardware vs VM) - Where to start (`pip install clawrtc`) ### How to claim Comment with the asset (or a link — YouTube/imgur/a PR adding it to `docs/`) + your wallet/handle. Must be **your original work**, accurate, and genuinely clear. ### Reward **10 RTC.** Best ones may get featured on rustchain.org and pinned — extra reach for you. <!-- machine-readable bounty spec --> ```bounty-spec # auto-backfilled; maintainer may refine paid: true reward_rtc: 10 per: one-time cap: 1 submit: [comment, email] not_in_repo: true ```",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 66,
-      "survivalEligible": false,
-      "eligibilityReason": "Competition is too high for bootstrap mode.",
-      "competition": {
-        "comments": 29,
-        "attemptSignals": 0,
-        "risk": "high"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 10,
-      "requiresPreclaimOrIdentity": false
     }
   ],
   "selected": null,
@@ -243,7 +365,7 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-24T13:15:06Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":110,\"updatedAt\":\"2026-08-25T01:35:34Z\",\"competition\":{\"comments\":19,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-25T07:38:13Z\",\"competition\":{\"comments\":46,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:4644823208\",\"rewardUsd\":10,\"fastCashScore\":66,\"updatedAt\":\"2026-08-25T15:54:03Z\",\"competition\":{\"comments\":29,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4896090777\",\"rewardUsd\":404,\"fastCashScore\":106,\"updatedAt\":\"2026-08-25T15:53:27Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4975260101\",\"rewardUsd\":780,\"fastCashScore\":119,\"updatedAt\":\"2026-08-25T05:07:59Z\",\"competition\":{\"comments\":18,\"attemptSignals\":1,\"risk\":\"high\"}},{\"id\":\"github:5189454900\",\"rewardUsd\":300,\"fastCashScore\":83,\"updatedAt\":\"2026-08-25T15:54:46Z\",\"competition\":{\"comments\":24,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:5247567072\",\"rewardUsd\":50000,\"fastCashScore\":89,\"updatedAt\":\"2026-08-25T15:55:12Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5247765973\",\"rewardUsd\":10,\"fastCashScore\":99,\"updatedAt\":\"2026-08-25T15:54:59Z\",\"competition\":{\"comments\":2,\"attemptSignals\":1,\"risk\":\"medium\"}}]",
+  "marketSignature": "[{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-24T13:15:06Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":110,\"updatedAt\":\"2026-08-25T01:35:34Z\",\"competition\":{\"comments\":19,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-25T07:38:13Z\",\"competition\":{\"comments\":46,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:4975260101\",\"rewardUsd\":780,\"fastCashScore\":119,\"updatedAt\":\"2026-08-25T05:07:59Z\",\"competition\":{\"comments\":18,\"attemptSignals\":1,\"risk\":\"high\"}},{\"id\":\"github:5225100116\",\"rewardUsd\":10,\"fastCashScore\":101,\"updatedAt\":\"2026-08-25T16:21:11Z\",\"competition\":{\"comments\":5,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5241852208\",\"rewardUsd\":101,\"fastCashScore\":107,\"updatedAt\":\"2026-08-25T16:37:17Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5242836725\",\"rewardUsd\":90,\"fastCashScore\":109,\"updatedAt\":\"2026-08-25T16:15:01Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5242911258\",\"rewardUsd\":30,\"fastCashScore\":106,\"updatedAt\":\"2026-08-25T16:15:02Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5247901654\",\"rewardUsd\":230,\"fastCashScore\":111,\"updatedAt\":\"2026-08-25T16:38:41Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5248100751\",\"rewardUsd\":1764,\"fastCashScore\":116,\"updatedAt\":\"2026-08-25T16:19:06Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5248261835\",\"rewardUsd\":4895,\"fastCashScore\":111,\"updatedAt\":\"2026-08-25T16:37:32Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5248302376\",\"rewardUsd\":100,\"fastCashScore\":106,\"updatedAt\":\"2026-08-25T16:42:27Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5248303259\",\"rewardUsd\":100,\"fastCashScore\":107,\"updatedAt\":\"2026-08-25T16:42:32Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
@@ -256,23 +378,41 @@
     "minPayoutConfidence": 0.8,
     "competitionRequired": "low",
     "rejectedFakeRevenueCount": 0,
-    "rejectedAlreadyPaidCount": 2,
-    "rejectedIdentityGateCount": 1
+    "rejectedAlreadyPaidCount": 1,
+    "rejectedIdentityGateCount": 2
   },
   "economicallyRejected": [
     {
-      "id": "github:4896090777",
-      "title": "Distinguish live vs mock-data fallback across all Server Component fetchers",
-      "rewardUsd": 404,
+      "id": "github:5248303259",
+      "title": "[Lesson] TEST: MCP tool verification lesson",
+      "rewardUsd": 100,
       "reasons": [
-        "already_rewarded_or_paid"
+        "preclaim_or_identity_gate_not_configured"
       ],
-      "rejectedAt": "2026-08-25T15:55:36.324Z"
+      "rejectedAt": "2026-08-25T16:45:15.053Z"
+    },
+    {
+      "id": "github:5248302376",
+      "title": "[Intake] MCP tools full test - verify intake endpoint works via HTTP",
+      "rewardUsd": 100,
+      "reasons": [
+        "preclaim_or_identity_gate_not_configured"
+      ],
+      "rejectedAt": "2026-08-25T16:45:15.053Z"
     },
     {
       "id": "github:3055155077",
       "title": "Switch to `ky` from `redaxios`",
       "rewardUsd": 12,
+      "reasons": [
+        "already_rewarded_or_paid"
+      ],
+      "rejectedAt": "2026-08-25T16:45:15.053Z"
+    },
+    {
+      "id": "github:4896090777",
+      "title": "Distinguish live vs mock-data fallback across all Server Component fetchers",
+      "rewardUsd": 404,
       "reasons": [
         "already_rewarded_or_paid"
       ],

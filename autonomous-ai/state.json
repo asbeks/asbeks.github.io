@@ -2,10 +2,10 @@
   "version": 5,
   "cycle": 120,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-25T15:55:57.069Z",
+  "updatedAt": "2026-08-25T16:46:31.038Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
-  "status": "online",
-  "currentAgent": "CRITIC",
+  "status": "waiting_provider",
+  "currentAgent": "PLANNER",
   "provider": {
     "mode": "OpenCode Free",
     "model": "hy3-free",
@@ -20,7 +20,7 @@
     "decision": "Reject github:5242856338; select github:4462160604 for RFC5322 parser as valid no-credential coding task.",
     "next": "PLANNER must verify github:4462160604 terms and outline parser.py with full ABNF coverage from snapshot."
   },
-  "lastError": null,
+  "lastError": "Available OpenCode free models are temporarily unavailable.",
   "history": [
     {
       "cycle": 81,
@@ -416,41 +416,41 @@
         "summary": "Automate Low Hanging fruit bug detection and issue creation recursively. This issue is an issue focused on creating more issues: 1. Find a feature/bug to work on from this repository 2. Create a GitHub issue on the repository to start working on it -- Pull requests without issues will not be considered. 3. Use the following string in the issue that you created: \"This issue is limited only to the creator of this issue. This means that only the issue author can attempt to solve this issue. If you would like to work on it, please create another issue with the same contents and refer to issue #11398 for more information.\" Follow all instructions carefully and precisely. /bounty $800 Bounties can only be paid upon successful PR merge."
       },
       {
+        "id": "github:5248100751",
+        "title": "Bounty claim: BoTTube docstring PR #1764 batch 19 (25 functions, 12.5 RTC)",
+        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16580",
+        "rewardUsd": 1764,
+        "score": 54,
+        "summary": "/claim #1764 Repo: Scottcjn/bottube PR: https://github.com/Scottcjn/bottube/pull/1764 Type: docstring coverage Documented: 25 test and fixture functions across feed and generation validation files Reward requested: 12.5 RTC Files: - tests/test_feed_query_validation.py - tests/test_feed_impression_event_validation.py - tests/test_feed_blueprint.py - tests/test_generation_routes.py Validation: pytest -q tests/test_feed_query_validation.py tests/test_feed_impression_event_validation.py tests/test_feed_blueprint.py tests/test_generation_routes.py"
+      },
+      {
+        "id": "github:5248261835",
+        "title": "fix(orchestration): the episode reward re-multiplies the steps #4895 excluded",
+        "url": "https://github.com/nexus-substrate/nexus-agents/issues/4916",
+        "rewardUsd": 4895,
+        "score": 48,
+        "summary": "Found by an adversarial review of my own same-day merges. #4895 excluded unmeasured steps from the reward mean, and both consumers of that mean re-multiply the excluded steps back in. ## The finding `calculatePuppeteerMetrics` now averages over SCORED steps only (`puppeteer-helpers.ts:211-215`), and reports coverage as `scoredSteps` alongside it. That part is right. Both consumers multiply by `totalSteps`: - `learning-integration.ts:193` — `const finalReward = result.metrics.avgReward * result.totalSteps;` - `learning-integration.ts:277` — `let reward = result.metrics.avgReward * result.totalSteps;` That product was the reward SUM before #4895, when the mean covered every step. It no longer is. The scored mean is extrapolated across the very steps exclusion removed, so the policy is handed back the reward contribution of steps that reported no usage — the exact distortion #4766 set out to delete, reassembled one layer up. **Concretely:** 4 steps, 3 scored averaging 0.8, 1 unmeasured. True reward sum 2.4. Reported: `0.8 x 4 = 3.2`. `scoredSteps` sits unread on the same object. Recorded but not consumed. ## The empty case is worse Every step unmeasured gives `scored.length === 0`, so"
+      },
+      {
+        "id": "github:5247901654",
+        "title": "Feature build tracker: the v1 cut, and what it still needs",
+        "url": "https://github.com/maximsan/brewpath/issues/368",
+        "rewardUsd": 230,
+        "score": 40,
+        "summary": "**Scope comes from `prototype/v1 Readiness Audit.html`** — the design's own ship/defer ruling, June 2026, reconciled Aug 2026. It cuts v1 to **~32 of the prototype's ~64 screens**. This tracker holds what v1 still needs. **How to use it.** One line per screen or mechanic. A line links its ticket, or says `no ticket` — that is the backlog, visible instead of implied. Tick when a merged PR ships it. `gh issue list --label feature-build` is this effort's view. Sibling trackers: **design** → #365 · **content** → #369. --- ## The v1 cut — what is still missing The audit's own groupings. The app has roughly 17 of the ~32 v1 screens. ### Coffee Dictionary (audit: 6 screens) — the drills are the gap - [ ] **Flashcards** — #97 (spec'd; blocked on the Saved shelf) - [ ] **Guess the term** + **setup** — #98 (spec'd, buildable now) - [ ] **Term of the Day** — #96 (`stale-spec` — re-ground first) ### Foundations purchase (audit: 4 screens with Studio + Saved) - [ ] **Paywall · Foundations** — #89 - [ ] **Purchase welcome** — `no ticket` - [ ] **Purchases** (restore / manage) — `no ticket` - [ ] Paywall at the end of onboarding — #242 - [ ] Entitlement as a swappable seam — #176 (the audit says "
+      },
+      {
         "id": "github:4462160604",
         "title": "[bounty $400] Implement ABNF-compliant email address parser with full §3.2–§4.4 coverage",
         "url": "https://github.com/UnsafeLabs/RFC-5322/issues/1",
         "rewardUsd": 400,
         "score": 72,
         "summary": "`source.md` contains the complete RFC 5322 specification (Internet Message Format). We need a **fully conformant email address parser** in Python that implements the complete ABNF grammar from sections 3.2 through 3.4, plus obsolete syntax from §4.4. This parser must handle every edge case defined in the RFC — not just simple `user@domain` patterns, but the full complexity of quoted strings, comments, folding whitespace, group addresses, and domain literals. ## Background RFC 5322 defines email address syntax through a chain of ABNF productions that build on each other: ``` address = mailbox / group mailbox = name-addr / addr-spec name-addr = [display-name] angle-addr angle-addr = [CFWS] \"<\" addr-spec \">\" [CFWS] addr-spec = local-part \"@\" domain local-part = dot-atom / quoted-string / obs-local-part domain = dot-atom / domain-literal / obs-domain ``` Each of these references further productions (CFWS, FWS, quoted-pair, dtext, etc.) that span multiple sections. **You must read `source.md` completely** to trace the full grammar dependency chain. ## Requirements ### 1. Parser Implementation — `parser.py` ```python class RFC5322Address: \"\"\"Parsed RFC 5322 email address.\"\"\" display_name"
-      },
-      {
-        "id": "github:5247765973",
-        "title": "🎯 Fix clientv3.Watch blocking indefinitely after Context cancellation during stream recovery",
-        "url": "https://github.com/condoraltidoi32/etcd/issues/1",
-        "rewardUsd": 10,
-        "score": 54,
-        "summary": "## 📝 Description In `clientv3`, when a client initiates a watch via `clientv3.Watch(ctx, key, ...)` and the underlying gRPC stream breaks (e.g., due to network disruption, server restart, or leader transition), the watcher enters a stream recovery loop to re-establish the gRPC stream and resume registered watches. If the user-provided `ctx` is cancelled while the watch stream is in the middle of stream recovery or re-subscribing watches (e.g., inside `resume()` or while awaiting stream reconnection), the returned `WatchChan` can remain open and blocked, failing to emit a cancellation event or close. Furthermore, internal goroutines associated with the watch can hang, causing goroutine leaks in long-running client applications. ## 🎯 Acceptance Criteria - [ ] Cancelling a watch's `context.Context` during any phase of stream recovery (re-dialing, stream initialization, or sub-watch resynchronization) must promptly close the `WatchChan` and release associated resources. - [ ] `watchGrpcStream` must not block on channel sends (e.g., `reqc`, `respc`) or mutex acquisitions when a sub-watch context is cancelled during `resume()`. - [ ] Inflight watch requests queued for re-establishment "
-      },
-      {
-        "id": "github:5189454900",
-        "title": "[BOUNTY · OPEN FOR CONTRIBUTORS] Crea il fumetto visuale “Come funziona MyZubster” — 300 MYZ proposed",
-        "url": "https://github.com/MyZubster-Ecosystem/myzubster/issues/526",
-        "rewardUsd": 300,
-        "score": 54,
-        "summary": "# 🎨 Bounty — Crea il fumetto visuale “Come funziona MyZubster” ## Status **OPEN FOR CONTRIBUTORS / PROPOSED** > Questa issue è aperta a contributor visuali, illustratori e designer. Per evitare lavoro duplicato, commenta **`CLAIM`** prima di iniziare indicando alias, workflow (human-made / AI-assisted / mixed) e data prevista di consegna. ## Reward **300 MYZ proposed** — `Discovery Episode` tier. - Asset/accounting unit: **MYZ internal reward/accounting ledger** - Amount: **300 MYZ proposed** - Funding state: **PROPOSED — not yet guaranteed or externally settled** - Review: **manual maintainer verification** La definizione del reward rende il task leggibile e confrontabile, ma non costituisce promessa automatica di pagamento. Il reward può essere registrato solo dopo i gate previsti da `BOUNTIES.md`; qualunque settlement esterno resta separato e richiede verifica indipendente. ## Objective Trasformare il workflow **“Come funziona MyZubster”** in un fumetto/visual guide originale, chiaro, coerente con l’architettura reale del progetto e comprensibile anche a chi non conosce il codice. ## Deliverable minimo Realizzare **4–8 vignette/pagine + cover**, oppure una tavola equivalente ad"
-      },
-      {
-        "id": "github:4563956966",
-        "title": "parse_duration drops the days (d) unit",
-        "url": "https://github.com/tine1117/oss-hunter-livefire/issues/1",
-        "rewardUsd": 50,
-        "score": 44,
-        "summary": "## Bug `parse_duration` silently drops the **days** (`d`) unit. The README lists `d` as a supported unit, but the parser ignores it and returns a wrong (too-small) result instead of raising or counting it. ### Reproduction ```python from duration_utils import parse_duration parse_duration(\"1d\") # -> 0 (expected 86400) parse_duration(\"2d4h\") # -> 14400 (expected 187200) ``` ### Expected `d` should be counted as 86400 seconds, so `parse_duration(\"1d\") == 86400` and `parse_duration(\"2d4h\") == 187200`. ### Notes The `d` character is already accepted by the token regex, so malformed-input detection still passes — the value is just never added. A fix should add the `d` unit and cover it with tests. /bounty $50"
       }
     ],
     "active": null,
     "completedCount": 0,
     "lastError": null
   },
-  "retryAfterAt": null
+  "retryAfterAt": "2026-08-25T16:51:31.038Z"
 }
