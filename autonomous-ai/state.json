@@ -2,10 +2,10 @@
   "version": 5,
   "cycle": 106,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-25T01:48:14.185Z",
+  "updatedAt": "2026-08-25T02:49:00.127Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
-  "status": "online",
-  "currentAgent": "CRITIC",
+  "status": "degraded",
+  "currentAgent": "PLANNER",
   "provider": {
     "mode": "OpenCode Free",
     "model": "hy3-free",
@@ -20,7 +20,7 @@
     "decision": "Approve job selection scope; defer compliance approval until actual proposal text is supplied in snapshot.",
     "next": "PLANNER must embed full markdown proposal and parser.py outline in next state for CRITIC verification."
   },
-  "lastError": null,
+  "lastError": "Model output could not be normalized into the public trace schema.",
   "history": [
     {
       "cycle": 67,
@@ -416,36 +416,36 @@
         "summary": "Automate Low Hanging fruit bug detection and issue creation recursively. This issue is an issue focused on creating more issues: 1. Find a feature/bug to work on from this repository 2. Create a GitHub issue on the repository to start working on it -- Pull requests without issues will not be considered. 3. Use the following string in the issue that you created: \"This issue is limited only to the creator of this issue. This means that only the issue author can attempt to solve this issue. If you would like to work on it, please create another issue with the same contents and refer to issue #11398 for more information.\" Follow all instructions carefully and precisely. /bounty $800 Bounties can only be paid upon successful PR merge."
       },
       {
-        "id": "github:5190118729",
-        "title": "[BOUNTY][TOR] Optional Tor transport + trusted endpoint failover",
-        "url": "https://github.com/MyZubster-Ecosystem/MyZubster-App/issues/96",
-        "rewardUsd": 200,
-        "score": 72,
-        "summary": "## 🧅 Goal Add an optional Tor transport mode to the MyZubster App for privacy-preserving access to approved MyZubster Gateway onion endpoints. ## Deliverables - Explicit opt-in Tor transport setting; normal HTTPS remains the default. - Configurable list of trusted Gateway endpoints rather than a single hard-coded onion address. - Endpoint health/failover behavior with clear user-visible connection state. - No downgrade from authentication, authorization or Gateway jurisdiction capability decisions. - Prevent sensitive tokens/credentials from appearing in diagnostics or logs. - Timeout/retry behavior suitable for higher-latency Tor connections. - Tests for Tor unavailable, endpoint unavailable, failover and return to direct HTTPS mode. - Documentation explaining privacy properties and limitations without claiming perfect anonymity. ## Acceptance criteria - [ ] Tor is opt-in and can be disabled cleanly. - [ ] No deep-link/QR/API path bypasses security or jurisdiction gates. - [ ] Failure does not silently route credentials to an untrusted endpoint. - [ ] CI/mobile tests pass. ## 🏆 Proposed reward **200 MYZ — REWARD PENDING / NON-PAYABLE** Payment remains conditional on MyZubsterGat"
+        "id": "github:4462056980",
+        "title": "[Bounty Claim] PR Review - PR #5533 (Bounty #73)",
+        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/10363",
+        "rewardUsd": 5533,
+        "score": 54,
+        "summary": "**Claimant:** kongzi123 **GitHub:** kongzi123 **RTC wallet:** `AhqbFaPBPLMMiaLDzA9WhQcyvv4hMxiteLhPk3NhG1iG` ### PR Details - PR: https://github.com/Scottcjn/Rustchain/pull/5533 - Bounty program: https://github.com/Scottcjn/rustchain-bounties/issues/73 ### Review Summary Security-focused code review of PR #5533 (fix: fail closed when sync admin key is unset): - Bug analysis: correctly identified that `hmac.compare_digest(key, None)` throws TypeError when admin_key is unset, allowing authentication bypass - Fix verification: the triple-condition short-circuit (`not key or not admin_key or not hmac.compare_digest`) properly prevents compare_digest from receiving None - Security impact: HIGH priority — prevents unauthenticated access when admin_key is not configured (fail-open to fail-closed) - Test coverage: new test uses monkeypatch + spy to verify compare_digest is never called with unset admin key ### Expected Reward Security-focused code review under bounty #73: 15-20 RTC (+10 for finding security-relevant fix)"
       },
       {
-        "id": "github:4462160604",
-        "title": "[bounty $400] Implement ABNF-compliant email address parser with full §3.2–§4.4 coverage",
-        "url": "https://github.com/UnsafeLabs/RFC-5322/issues/1",
-        "rewardUsd": 400,
-        "score": 72,
-        "summary": "`source.md` contains the complete RFC 5322 specification (Internet Message Format). We need a **fully conformant email address parser** in Python that implements the complete ABNF grammar from sections 3.2 through 3.4, plus obsolete syntax from §4.4. This parser must handle every edge case defined in the RFC — not just simple `user@domain` patterns, but the full complexity of quoted strings, comments, folding whitespace, group addresses, and domain literals. ## Background RFC 5322 defines email address syntax through a chain of ABNF productions that build on each other: ``` address = mailbox / group mailbox = name-addr / addr-spec name-addr = [display-name] angle-addr angle-addr = [CFWS] \"<\" addr-spec \">\" [CFWS] addr-spec = local-part \"@\" domain local-part = dot-atom / quoted-string / obs-local-part domain = dot-atom / domain-literal / obs-domain ``` Each of these references further productions (CFWS, FWS, quoted-pair, dtext, etc.) that span multiple sections. **You must read `source.md` completely** to trace the full grammar dependency chain. ## Requirements ### 1. Parser Implementation — `parser.py` ```python class RFC5322Address: \"\"\"Parsed RFC 5322 email address.\"\"\" display_name"
+        "id": "github:4462048029",
+        "title": "[Bounty Claim] PR Review - RustChain PR #5533 (Bounty #73)",
+        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/10357",
+        "rewardUsd": 5533,
+        "score": 46,
+        "summary": "### Bounty Claim - Bounty: #73 - Type: PR review - Repository: Scottcjn/Rustchain - Pull request: https://github.com/Scottcjn/Rustchain/pull/5533 - Reviewed head: `25ad0e67cd2c75fb4ac7d40c2dbfb579e641abbb` - Review: https://github.com/Scottcjn/Rustchain/pull/5533#pullrequestreview-4304693885 - RTC wallet: `RTC02811ff5e2bb4bb4b95eee44c5429cd9525496e7` ### Summary Reviewed the sync admin-key hardening change. The PR now fails closed when `admin_key` is unset, keeps configured-key checks on `hmac.compare_digest`, and includes a regression test proving the unset-key path rejects without passing an unset expected value to `compare_digest`. Validation completed: - `python -B -m py_compile node/rustchain_sync_endpoints.py node/tests/test_rustchain_sync_endpoints.py` -> passed - `python -B -m pytest -q node/tests/test_rustchain_sync_endpoints.py --noconftest` -> 2 passed - `git diff --check origin/main...HEAD` -> passed - `python tools/bcos_spdx_check.py --base-ref origin/main` -> OK"
       },
       {
-        "id": "github:5189454900",
-        "title": "[BOUNTY · OPEN FOR CONTRIBUTORS] Crea il fumetto visuale “Come funziona MyZubster” — 300 MYZ proposed",
-        "url": "https://github.com/MyZubster-Ecosystem/myzubster/issues/526",
-        "rewardUsd": 300,
-        "score": 64,
-        "summary": "# 🎨 Bounty — Crea il fumetto visuale “Come funziona MyZubster” ## Status **OPEN FOR CONTRIBUTORS / PROPOSED** > Questa issue è aperta a contributor visuali, illustratori e designer. Per evitare lavoro duplicato, commenta **`CLAIM`** prima di iniziare indicando alias, workflow (human-made / AI-assisted / mixed) e data prevista di consegna. ## Reward **300 MYZ proposed** — `Discovery Episode` tier. - Asset/accounting unit: **MYZ internal reward/accounting ledger** - Amount: **300 MYZ proposed** - Funding state: **PROPOSED — not yet guaranteed or externally settled** - Review: **manual maintainer verification** La definizione del reward rende il task leggibile e confrontabile, ma non costituisce promessa automatica di pagamento. Il reward può essere registrato solo dopo i gate previsti da `BOUNTIES.md`; qualunque settlement esterno resta separato e richiede verifica indipendente. ## Objective Trasformare il workflow **“Come funziona MyZubster”** in un fumetto/visual guide originale, chiaro, coerente con l’architettura reale del progetto e comprensibile anche a chi non conosce il codice. ## Deliverable minimo Realizzare **4–8 vignette/pagine + cover**, oppure una tavola equivalente ad"
+        "id": "github:4462079225",
+        "title": "[Bounty Claim] PR Review - RustChain PR #5532 (Bounty #73)",
+        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/10382",
+        "rewardUsd": 5532,
+        "score": 54,
+        "summary": "### Bounty Claim - Bounty: #73 - Type: PR review - Repository: Scottcjn/Rustchain - Pull request: https://github.com/Scottcjn/Rustchain/pull/5532 - Reviewed head: `586571fe3b4aaf5a69eb18d361ff83fa94c9c36f` - Review: https://github.com/Scottcjn/Rustchain/pull/5532#pullrequestreview-4304707418 - RTC wallet: `RTC02811ff5e2bb4bb4b95eee44c5429cd9525496e7` ### Summary Reviewed the dependency-only CI/test collection fix. The added root and test requirements match real imports for async SDK, Flask CORS service code, hardware visualization, and PSE result-analysis tests. Validation completed: - `git diff --check --cached` -> passed - `python -B -m py_compile ...` over the affected import targets -> passed - `python -m pip install --disable-pip-version-check -q -r requirements.txt -r tests/requirements.txt` -> passed - `python -c \"import aiohttp, flask_cors, matplotlib, seaborn, Crypto; print('deps ok')\"` -> deps ok - focused pytest collection -> 14 tests collected - focused pytest run -> 14 passed"
       },
       {
-        "id": "github:5211154647",
-        "title": "🎯 GORM v2.24.0 Panics When Querying with Complex Joins",
-        "url": "https://github.com/HarrieAlexandrowicz5/gorm/issues/1",
-        "rewardUsd": 10,
-        "score": 62,
-        "summary": "## 📝 Description When attempting to query the database using GORM v2.24.0 with complex joins, the application panics. This issue has been observed in multiple environments and with various database backends (PostgreSQL, MySQL, SQLite). ## 🎯 Acceptance Criteria - [ ] The application should not panic when querying with complex joins. - [ ] The query should return the correct results as expected. - [ ] The panic should be reproducible and consistently occur with the same query. - [ ] The issue should be resolved in GORM v2.24.0 or a subsequent patch release. ## 🛠️ Technical Specifications & Context - The panic occurs when executing a query with multiple joins, including self-joins and joins with subqueries. - The issue is likely related to how GORM handles complex query structures internally. - The panic message typically includes a stack trace pointing to a file in the GORM library, such as `gorm.go` or `query.go`. ## 🧪 Verification & Testing 1. **Reproduce the Issue:** - Create a test case that includes a complex query with multiple joins. - Execute the test case and observe if the application panics. 2. **Verify Fix:** - Apply the proposed fix (if available) or a potential patc"
+        "id": "github:4462057766",
+        "title": "[Bounty Claim] PR Review - PR #5532 (Bounty #73)",
+        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/10364",
+        "rewardUsd": 5532,
+        "score": 54,
+        "summary": "**Claimant:** kongzi123 **GitHub:** kongzi123 **RTC wallet:** `AhqbFaPBPLMMiaLDzA9WhQcyvv4hMxiteLhPk3NhG1iG` ### PR Details - PR: https://github.com/Scottcjn/Rustchain/pull/5532 - Bounty program: https://github.com/Scottcjn/rustchain-bounties/issues/73 ### Review Summary Code review of PR #5532 (fix: add missing CI test dependencies): - Intent is clear: adds 4 missing test dependencies (aiohttp, flask-cors, matplotlib, seaborn) - Version constraints use >= for good compatibility - No functional code changes, pure dependency maintenance ### Expected Reward Standard code review under bounty #73: 5 RTC"
       }
     ],
     "active": null,
