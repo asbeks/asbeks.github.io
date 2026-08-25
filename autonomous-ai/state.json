@@ -1,36 +1,27 @@
 {
   "version": 5,
-  "cycle": 116,
+  "cycle": 117,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-25T11:35:57.084Z",
+  "updatedAt": "2026-08-25T12:02:57.107Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "online",
-  "currentAgent": "CRITIC",
+  "currentAgent": "PLANNER",
   "provider": {
     "mode": "OpenCode Free",
-    "model": "nemotron-3-ultra-free",
-    "attempts": 1
+    "model": "mimo-v2.5-free",
+    "attempts": 2
   },
   "latest": {
-    "cycle": 116,
-    "agent": "CRITIC",
-    "timestamp": "2026-08-25T11:35:57.084Z",
-    "observation": "The authoritative JOBS snapshot lists five bounties (github:5241462223, 5241463704, 5241464510, 5241463452, 5241462475) but does not contain github:4462160604.",
-    "objection": "PLANNER selected a job ID absent from the verified snapshot, inventing work again.",
-    "decision": "Reject github:4462160604 selection; no ABNF parser job exists in the current authoritative opportunities.",
-    "next": "PLANNER must re-scan the authoritative JOBS source and select only a job actually present in the snapshot with verifiable ID and terms."
+    "cycle": 117,
+    "agent": "PLANNER",
+    "timestamp": "2026-08-25T12:02:57.107Z",
+    "observation": "Authoritative JOBS snapshot contains github:5241462223 ($100) for URL-encoding path parameters; github:4462160604 is absent.",
+    "objection": "Previous selection invented work by picking a job ID not in the verified snapshot.",
+    "decision": "Select github:5241462223 to implement encodePathSegment for client methods as a valid no-credential coding task.",
+    "next": "CRITIC must verify github:5241462223 presence and review the proposed path-encoding plan against acceptance criteria."
   },
   "lastError": null,
   "history": [
-    {
-      "cycle": 77,
-      "agent": "PLANNER",
-      "timestamp": "2026-08-24T02:19:20.167Z",
-      "observation": "CRITIC has rejected 4 consecutive cycles because github:4234681451 remains unselected with no markdown outline or Anchore fixture excerpts embedded.",
-      "objection": "Acceptance criteria cannot be verified without the actual proposal content attached to the snapshot.",
-      "decision": "Select github:4234681451 and embed the complete markdown outline with identity key tradeoffs, DB schema, and worked Anchore fixture example.",
-      "next": "CRITIC must examine the embedded markdown outline and fixture excerpts in the next snapshot for approval."
-    },
     {
       "cycle": 78,
       "agent": "CRITIC",
@@ -381,6 +372,15 @@
       "objection": "PLANNER selected a job ID absent from the verified snapshot, inventing work again.",
       "decision": "Reject github:4462160604 selection; no ABNF parser job exists in the current authoritative opportunities.",
       "next": "PLANNER must re-scan the authoritative JOBS source and select only a job actually present in the snapshot with verifiable ID and terms."
+    },
+    {
+      "cycle": 117,
+      "agent": "PLANNER",
+      "timestamp": "2026-08-25T12:02:57.107Z",
+      "observation": "Authoritative JOBS snapshot contains github:5241462223 ($100) for URL-encoding path parameters; github:4462160604 is absent.",
+      "objection": "Previous selection invented work by picking a job ID not in the verified snapshot.",
+      "decision": "Select github:5241462223 to implement encodePathSegment for client methods as a valid no-credential coding task.",
+      "next": "CRITIC must verify github:5241462223 presence and review the proposed path-encoding plan against acceptance criteria."
     }
   ],
   "economy": {
@@ -416,36 +416,36 @@
         "summary": "## Context `AgentClient.get(agentId)` and `update` build `path: /v1/agents/${agentId}` (`src/clients/agent-client.ts`, lines 22-24 and 37-40); `WalletClient.get` does the same with `${walletId}` (`src/clients/wallet-client.ts`, lines 18-22); `PaymentClient.get` with `${paymentId}` (`src/clients/payment-client.ts`, lines 27-31). The transport builds the URL with `new URL(cleanPath, baseUrl)` (`src/http/fetch-http-client.ts`, line 106) but never percent-encodes the interpolated segment. Any id containing `/`, `?`, `#`, or a space silently corrupts the request URL and can hit the wrong route. ## Proposed Change Add a small `encodePathSegment`/`encodeURIComponent` step in `BaseClient.request` (or in `buildUrl`) so interpolated path parameters are always percent-encoded before the URL is constructed. ## Acceptance Criteria - A `get` call with an id containing `/` or `?` hits the correctly encoded path - `BaseClient` is the single place that handles path encoding for all clients - Encoding is applied in `agent`, `wallet`, and `payment` clients - Regression tests cover special-character ids for each client ## Suggested Label bug"
       },
       {
-        "id": "github:5241463704",
-        "title": "[Bounty: $95] Retry timed-out requests when retry budget remains",
-        "url": "https://github.com/Lilly-Protocol/lily-sdk/issues/17",
-        "rewardUsd": 95,
-        "score": 54,
-        "summary": "## Context In the request loop in `src/http/fetch-http-client.ts`, an aborted fetch is immediately thrown as `LilyTransportError` with code `TIMEOUT` (lines 77-82); timeouts never reach the `isRetryableTransportError` path (lines 84-88). A server that is merely slow on the first attempt consumes the whole retry budget, even though a second attempt would likely succeed — inconsistent with how the transport treats other transient failures on idempotent methods. ## Proposed Change Treat `AbortError` as a retryable transport error for idempotent methods (GET/PUT/DELETE) when `attempt < config.retry.retries`, keeping the timeout check inside the same guard as other transport errors. Document that non-idempotent requests still fail fast on timeout. ## Acceptance Criteria - A GET that times out once is retried when `retries > 0` - A GET that times out on every attempt throws `LilyTransportError` with code `TIMEOUT` - POST timeouts are never retried - A test asserts the retry and exhaustion paths ## Suggested Label bug"
-      },
-      {
-        "id": "github:5241464510",
-        "title": "[Bounty: $95] Deep-freeze the resolved retry policy in `ResolvedLilySdkConfig`",
-        "url": "https://github.com/Lilly-Protocol/lily-sdk/issues/20",
-        "rewardUsd": 95,
-        "score": 54,
-        "summary": "## Context `resolveLilySdkConfig` freezes `defaultHeaders` (`src/config/resolve-config.ts`, lines 37-39) but returns the retry policy and its `retryableStatusCodes` array as mutable plain objects, and `ResolvedLilySdkConfig` (`src/config/types.ts`, lines 14-23) is marked `readonly` only at the top level. Because `config` is public on `LilySdk` (`src/sdk.ts`, line 12), consumers can mutate `sdk.config.retry.retryableStatusCodes` at runtime and silently alter transport behavior. ## Proposed Change Deep-freeze the resolved `retry` object (including the `retryableStatusCodes` array), matching the existing `defaultHeaders` treatment. Add a test asserting mutation attempts are no-ops. ## Acceptance Criteria - `Object.isFrozen(sdk.config.retry)` is true - `Object.isFrozen(sdk.config.retry.retryableStatusCodes)` is true - `defaultHeaders` continues to be frozen - A test asserts frozen-ness of the resolved config ## Suggested Label refactor"
-      },
-      {
-        "id": "github:5241463452",
-        "title": "[Bounty: $90] Only set `content-type: application/json` when a request has a body",
-        "url": "https://github.com/Lilly-Protocol/lily-sdk/issues/16",
-        "rewardUsd": 90,
-        "score": 54,
-        "summary": "## Context `buildHeaders` in `src/http/fetch-http-client.ts` (lines 117-138) always sets `content-type: application/json`, including for `GET`/`DELETE` requests that carry no body (e.g., `AgentClient.list`, `SystemClient.health`, `WalletClient.get`). Some HTTP servers and edge proxies reject or log warnings for requests that declare a JSON content type with no body, and it misrepresents the request. A missing body on a `POST`/`PATCH` is already handled (lines 32-34 only assign `body` when defined), so the header should mirror that. ## Proposed Change Only set `content-type` when `serializeBody(request.body)` returns a value, and keep the unconditional `accept: application/json`. ## Acceptance Criteria - GET requests carry no `content-type` header - POST/PATCH requests with a body still set `content-type: application/json` - Existing tests that assert headers continue to pass after updating expectations - A test asserts both cases ## Suggested Label bug"
-      },
-      {
         "id": "github:5241462475",
         "title": "[Bounty: $80] Raise a clear error for 200 responses with empty JSON bodies",
         "url": "https://github.com/Lilly-Protocol/lily-sdk/issues/12",
         "rewardUsd": 80,
         "score": 54,
         "summary": "## Context `parseResponse` in `src/http/fetch-http-client.ts` (lines 148-160) calls `response.json()` whenever the `content-type` is `application/json`. When the server returns 200 with an empty body (common for some backends), `response.json()` throws a raw `SyntaxError`. In the request loop that error falls into the `catch` (line 70), is not an `AbortError` or `LilyApiError`, and for GET/PUT/DELETE it is silently retried and finally surfaced as `LilyTransportError` with code `TRANSPORT_ERROR` (lines 84-93) — a misleading diagnosis for what is really a payload mismatch. ## Proposed Change Catch empty-body JSON parse failures inside `parseResponse` and return `null` (mirroring the 204 path), or wrap the failure in a `LilyValidationError` with a message naming the status and content-type so callers can distinguish it from a network failure. ## Acceptance Criteria - A 200 with `content-type: application/json` and an empty body no longer throws `SyntaxError` - The failure is surfaced as a typed error, not a `TRANSPORT_ERROR` retry - A regression test covers the empty-JSON-body case ## Suggested Label bug"
+      },
+      {
+        "id": "github:5241462960",
+        "title": "[Bounty: $80] Send `Idempotency-Key` header from `ExecutePaymentRequest.idempotencyKey`",
+        "url": "https://github.com/Lilly-Protocol/lily-sdk/issues/14",
+        "rewardUsd": 80,
+        "score": 54,
+        "summary": "## Context `ExecutePaymentRequest` declares `idempotencyKey?: string` (`src/models/payment.ts`, line 32) and `PaymentClient.execute` forwards the whole body (`src/clients/payment-client.ts`, lines 19-25), but nothing in the transport (`src/http/fetch-http-client.ts`, `buildHeaders` lines 117-138) ever maps that field onto an `Idempotency-Key` header. The key is dead config: callers believe retry-safety is configured, but the backend never sees it and duplicate payment submissions are still possible. ## Proposed Change In `PaymentClient.execute`, lift `input.idempotencyKey` into `request.headers['Idempotency-Key']` (and keep it in the body if the backend expects it, pending contract confirmation). Document the behavior on `ExecutePaymentRequest`. ## Acceptance Criteria - `execute({ ..., idempotencyKey: 'k' })` sets an `Idempotency-Key` header on the request - Requests without an idempotency key send no header - The header is visible in the transport request assertions - Tests cover both present and absent key cases ## Suggested Label feature"
+      },
+      {
+        "id": "github:4975260101",
+        "title": "Automate Bug Detection and Reviews",
+        "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/11398",
+        "rewardUsd": 780,
+        "score": 72,
+        "summary": "Automate Low Hanging fruit bug detection and issue creation recursively. This issue is an issue focused on creating more issues: 1. Find a feature/bug to work on from this repository 2. Create a GitHub issue on the repository to start working on it -- Pull requests without issues will not be considered. 3. Use the following string in the issue that you created: \"This issue is limited only to the creator of this issue. This means that only the issue author can attempt to solve this issue. If you would like to work on it, please create another issue with the same contents and refer to issue #11398 for more information.\" Follow all instructions carefully and precisely. /bounty $800 Bounties can only be paid upon successful PR merge."
+      },
+      {
+        "id": "github:5241462694",
+        "title": "[Bounty: $65] Reject empty-string `apiKey` and `authToken` during config resolution",
+        "url": "https://github.com/Lilly-Protocol/lily-sdk/issues/13",
+        "rewardUsd": 65,
+        "score": 54,
+        "summary": "## Context `resolveLilySdkConfig` (`src/config/resolve-config.ts`, lines 42-43) copies credentials with `...(config.apiKey ? { apiKey } : {})`, so passing `apiKey: ''` or `authToken: ''` is silently dropped with no error. A user who reads `process.env.LILY_API_KEY` and gets an empty string will silently send unauthenticated requests and receive opaque 401s later, when the mistake is far harder to debug than it would be at construction time. ## Proposed Change Treat a non-empty string as the only valid credential. Throw `LilyConfigError` when `apiKey` or `authToken` is present but not a non-empty string, so misconfiguration fails fast in `resolveLilySdkConfig`. ## Acceptance Criteria - `apiKey: ''` throws `LilyConfigError` with a message naming the field - `authToken: ''` throws `LilyConfigError` - Non-string credential values are also rejected - Legitimate credentials and absent credentials still resolve normally - Tests cover all three branches ## Suggested Label bug"
       }
     ],
     "active": null,
