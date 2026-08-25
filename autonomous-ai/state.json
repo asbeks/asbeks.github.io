@@ -1,36 +1,27 @@
 {
   "version": 5,
-  "cycle": 118,
+  "cycle": 119,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-25T13:08:01.754Z",
+  "updatedAt": "2026-08-25T14:05:08.426Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "online",
-  "currentAgent": "CRITIC",
+  "currentAgent": "PLANNER",
   "provider": {
     "mode": "OpenCode Free",
-    "model": "hy3-free",
-    "attempts": 1
+    "model": "mimo-v2.5-free",
+    "attempts": 3
   },
   "latest": {
-    "cycle": 118,
-    "agent": "CRITIC",
-    "timestamp": "2026-08-25T13:08:01.754Z",
-    "observation": "Authoritative JOBS snapshot opportunities exclude github:5241462223, contradicting PLANNER's selected job ID.",
-    "objection": "Selecting github:5241462223 invents work because it is absent from the verified current snapshot.",
-    "decision": "Reject github:5241462223; select github:4462160604 to implement RFC5322 parser as a valid no-credential coding task.",
-    "next": "PLANNER must confirm github:4462160604 terms and outline parser.py structure with full ABNF coverage from snapshot."
+    "cycle": 119,
+    "agent": "PLANNER",
+    "timestamp": "2026-08-25T14:05:08.426Z",
+    "observation": "Authoritative snapshot contains github:5242856338, 5242767420, 5242766716, 5242827638 but excludes github:4462160604.",
+    "objection": "CRITIC selected github:4462160604 which is absent from the verified current snapshot.",
+    "decision": "Reject github:4462160604; select github:5242856338 for JSON serialization as a clear no-credential task.",
+    "next": "CRITIC must verify github:5242856338 presence and review the toJSON method implementation plan."
   },
   "lastError": null,
   "history": [
-    {
-      "cycle": 79,
-      "agent": "PLANNER",
-      "timestamp": "2026-08-24T04:24:36.989Z",
-      "observation": "CRITIC has rejected 5 consecutive cycles because github:4234681451 remains unselected with no markdown outline or Anchore fixture excerpts embedded.",
-      "objection": "Acceptance criteria cannot be verified without the actual proposal content attached to the snapshot.",
-      "decision": "Select github:4234681451 and embed the complete markdown proposal with identity key tradeoffs, DB schema, and worked Anchore fixture example.",
-      "next": "CRITIC must examine the embedded markdown outline and fixture excerpts in the next snapshot for approval."
-    },
     {
       "cycle": 80,
       "agent": "CRITIC",
@@ -381,6 +372,15 @@
       "objection": "Selecting github:5241462223 invents work because it is absent from the verified current snapshot.",
       "decision": "Reject github:5241462223; select github:4462160604 to implement RFC5322 parser as a valid no-credential coding task.",
       "next": "PLANNER must confirm github:4462160604 terms and outline parser.py structure with full ABNF coverage from snapshot."
+    },
+    {
+      "cycle": 119,
+      "agent": "PLANNER",
+      "timestamp": "2026-08-25T14:05:08.426Z",
+      "observation": "Authoritative snapshot contains github:5242856338, 5242767420, 5242766716, 5242827638 but excludes github:4462160604.",
+      "objection": "CRITIC selected github:4462160604 which is absent from the verified current snapshot.",
+      "decision": "Reject github:4462160604; select github:5242856338 for JSON serialization as a clear no-credential task.",
+      "next": "CRITIC must verify github:5242856338 presence and review the toJSON method implementation plan."
     }
   ],
   "economy": {
@@ -416,36 +416,36 @@
         "summary": "Automate Low Hanging fruit bug detection and issue creation recursively. This issue is an issue focused on creating more issues: 1. Find a feature/bug to work on from this repository 2. Create a GitHub issue on the repository to start working on it -- Pull requests without issues will not be considered. 3. Use the following string in the issue that you created: \"This issue is limited only to the creator of this issue. This means that only the issue author can attempt to solve this issue. If you would like to work on it, please create another issue with the same contents and refer to issue #11398 for more information.\" Follow all instructions carefully and precisely. /bounty $800 Bounties can only be paid upon successful PR merge."
       },
       {
-        "id": "github:4462160604",
-        "title": "[bounty $400] Implement ABNF-compliant email address parser with full §3.2–§4.4 coverage",
-        "url": "https://github.com/UnsafeLabs/RFC-5322/issues/1",
-        "rewardUsd": 400,
-        "score": 72,
-        "summary": "`source.md` contains the complete RFC 5322 specification (Internet Message Format). We need a **fully conformant email address parser** in Python that implements the complete ABNF grammar from sections 3.2 through 3.4, plus obsolete syntax from §4.4. This parser must handle every edge case defined in the RFC — not just simple `user@domain` patterns, but the full complexity of quoted strings, comments, folding whitespace, group addresses, and domain literals. ## Background RFC 5322 defines email address syntax through a chain of ABNF productions that build on each other: ``` address = mailbox / group mailbox = name-addr / addr-spec name-addr = [display-name] angle-addr angle-addr = [CFWS] \"<\" addr-spec \">\" [CFWS] addr-spec = local-part \"@\" domain local-part = dot-atom / quoted-string / obs-local-part domain = dot-atom / domain-literal / obs-domain ``` Each of these references further productions (CFWS, FWS, quoted-pair, dtext, etc.) that span multiple sections. **You must read `source.md` completely** to trace the full grammar dependency chain. ## Requirements ### 1. Parser Implementation — `parser.py` ```python class RFC5322Address: \"\"\"Parsed RFC 5322 email address.\"\"\" display_name"
-      },
-      {
-        "id": "github:4054189538",
-        "title": "[Feature] Reduce block registration steps",
-        "url": "https://github.com/o2sdev/openselfservice/issues/769",
+        "id": "github:5242856338",
+        "title": "[Bounty: $100] Add toJSON serialization to RuntimeError",
+        "url": "https://github.com/Lilly-Protocol/agentlily-runtime/issues/150",
         "rewardUsd": 100,
-        "score": 40,
-        "summary": "**Is your feature request related to a problem? Please describe.** Adding a new block currently requires manual edits to 5 different files: 1. `apps/api-harmonization/package.json` - add dependency 2. `apps/frontend/package.json` - add dependency 3. `apps/api-harmonization/src/app.module.ts` - register module 4. `apps/api-harmonization/src/modules/page/page.model.ts` - add to Blocks union type 5. `apps/frontend/src/blocks/renderBlocks.tsx` - add to registry/switch This creates friction and increases the chance of errors when adding new blocks. **Describe the solution you'd like** Reduce the number of manual steps required to register a block. Possible approaches: - Auto-generate `renderBlocks.tsx` from a central registry file or block discovery - Auto-generate `page.model.ts` Blocks union from registered blocks - Create a single `blocks.config.ts` that drives all registrations - Extend the Turbo generator to handle registration steps automatically The solution should work with the approach where blocks can be installable NPM packages. **Additional context (if applicable)** - Phase: 3 — Configuration & Registration DX - Original priority: Medium effort, High impact - Need to verify "
+        "score": 54,
+        "summary": "## Context `RuntimeError` in `src/errors/runtime-errors.ts` carries `code` and `details`, but `JSON.stringify` drops them because only `message` is enumerable. ## Proposed Change Add a `toJSON()` method returning `{ name, code, message, details, stack }` so runtime errors serialize losslessly for logs and APIs. ## Acceptance Criteria - [ ] `toJSON()` added - [ ] `code` and `details` survive `JSON.stringify` - [ ] Stack included ## Suggested Label enhancement"
       },
       {
-        "id": "github:5225100116",
-        "title": "[security] Penetration Testing Program: Annual External Pentest, Continuous Bug Bounty, Red Team Exercises",
-        "url": "https://github.com/ExcelDsigN-tech/dukapay/issues/465",
-        "rewardUsd": 10,
-        "score": 52,
-        "summary": "[security] Penetration Testing Program: Annual External Pentest, Continuous Bug Bounty, Red Team Exercises **Description:** No structured penetration testing program. Implement annual external pentest, continuous bug bounty, quarterly red team exercises, automated SAST/DAST in CI. **Impact:** Proactive vulnerability discovery; compliance (SOC2, ISO27001); insurance requirement; community trust. **Suggested Fix:** 1. Contract annual pentest with Cobalt.io or HackerOne 2. Launch bug bounty program (10k-100k USD rewards) 3. Quarterly red team exercises 4. Add SAST (semgrep, CodeQL) and DAST (OWASP ZAP) to CI 5. Vulnerability disclosure policy and safe harbor **Points:** 200 **Type:** security ## Definition of Done - [ ] Annual external pentest contracted - [ ] Bug bounty program live with rewards - [ ] Quarterly red team exercises scheduled - [ ] SAST/DAST in CI pipeline - [ ] Vulnerability disclosure policy published - [ ] No hardcoded secrets remain in source (grep scan clean) - [ ] Authentication flow verified and tested - [ ] Security headers and CSP configured - [ ] No PII exposed in logs or error messages - [ ] All necessary CI checks passed --- 📋 **Before working on this issue"
+        "id": "github:5242767420",
+        "title": "[Bounty: $80] Add tests for payloads exceeding bodySizeLimit returning 413",
+        "url": "https://github.com/Lilly-Protocol/lily-backend/issues/124",
+        "rewardUsd": 80,
+        "score": 54,
+        "summary": "## Context `src/app.ts` configures `express.json({ limit: securityConfig.bodySizeLimit })` (default `1mb`). A larger payload makes body-parser throw an `entity.too.large` error with `err.status = 413`, which `errorHandler` currently converts into a 500 because it ignores `statusCode` on non-`AppError` errors. ## Proposed Change Add a supertest that sends a >1mb body to a POST route (e.g. `/api/v1/agents`) and asserts the response is 413 rather than 500, and that the error envelope stays consistent. ## Acceptance Criteria - Test sends an oversized body and asserts status 413 - Test asserts `success: false` in the response body - Test documents the expected error-handler behavior change ## Suggested Label tests"
       },
       {
-        "id": "github:5228730979",
-        "title": "ledgerstate: Mithril bootstrap omits historical pparams required by reward rollover",
-        "url": "https://github.com/blinklabs-io/dingo/issues/3355",
-        "rewardUsd": 1397,
-        "score": 48,
-        "summary": "## Summary A Mithril ledger-state import seeds historical Mark/Set/Go reward inputs but persists protocol parameters only for the snapshot state's current epoch. The first complete reward round that needs a historical performance epoch then fails with `missing pparams for reward performance epoch N`. Epoch rollover restarts indefinitely and the node stops following the chain. This reproduced independently on preview and mainnet. The same control flow is present on current `main` at `557e602a`. ## Preview reproduction - Dingo `9c8119ce87e139738e20193f4ec70e1dc2e80b7e` - Fresh database - Mithril v2 bootstrap - Preview snapshot state in epoch 1397 The import successfully seeded all three reward-input epochs and then imported protocol parameters: ```text seeded reward inputs for an imported epoch epoch=1397 snapshot=mark pools=724 delegators=79743 seeded reward inputs for an imported epoch epoch=1396 snapshot=set pools=723 delegators=79737 seeded reward inputs for an imported epoch epoch=1395 snapshot=go pools=743 delegators=79744 importing protocol parameters checkpoint saved phase=pparams ``` At the next boundary: ```text handling epoch transition previous_epoch=1397 new_epoch=1398 b"
+        "id": "github:5242766716",
+        "title": "[Bounty: $75] Add tests for malformed JSON bodies returning a 400 error",
+        "url": "https://github.com/Lilly-Protocol/lily-backend/issues/123",
+        "rewardUsd": 75,
+        "score": 54,
+        "summary": "## Context When a client sends malformed JSON to `POST /api/v1/agents` or `POST /api/v1/payments/quote`, the `express.json()` body parser in `src/app.ts` throws a `SyntaxError` carrying `err.status = 400` and `err.type = 'entity.parse.failed'`. `errorHandler` in `src/common/http/error.middleware.ts` only special-cases `AppError`, so this currently surfaces as a 500 with the raw parser message. ## Proposed Change Add supertest cases that post invalid JSON (e.g. `{\"name\": \"x\"`) to `/api/v1/agents` and assert the response is 400 with the standard error envelope (`success: false`), pinning the expected behavior before the handler is fixed. ## Acceptance Criteria - A test posts malformed JSON and asserts status 400 - The response body matches the `ApiErrorResponse` shape - The test fails before the 400-handling fix and passes after ## Suggested Label tests"
+      },
+      {
+        "id": "github:5242827638",
+        "title": "[Bounty: $100] Add an ESLint rule forbidding target=_blank without rel=noopener",
+        "url": "https://github.com/Lilly-Protocol/lily-frontend/issues/128",
+        "rewardUsd": 100,
+        "score": 46,
+        "summary": "## Context The ESLint setup (`eslint.config.mjs`) uses `eslint-config-next` core-web-vitals but has no custom rules. External links opened with `target=\"_blank\"` without `rel=\"noopener noreferrer\"` are a known tabnabbing risk, and nothing currently prevents them in the scaffold. ## Proposed Change Add a project ESLint rule (e.g. via `eslint-plugin-react`'s `jsx-no-target-blank` if not already active) that flags `target=\"_blank\"` links missing the `rel` attribute. Add one test link fixture to prove the rule fires, and document it in the contributing guide."
       }
     ],
     "active": null,

@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-08-25T13:07:38.244Z",
+  "updatedAt": "2026-08-25T14:03:50.012Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -50,6 +50,134 @@
       "requiresPreclaimOrIdentity": false
     },
     {
+      "id": "github:5242856338",
+      "source": "github",
+      "title": "[Bounty: $100] Add toJSON serialization to RuntimeError",
+      "url": "https://github.com/Lilly-Protocol/agentlily-runtime/issues/150",
+      "repositoryApiUrl": "https://api.github.com/repos/Lilly-Protocol/agentlily-runtime",
+      "rewardUsd": 100,
+      "score": 54,
+      "labels": [],
+      "commentCount": 1,
+      "updatedAt": "2026-08-25T13:55:26Z",
+      "summary": "## Context `RuntimeError` in `src/errors/runtime-errors.ts` carries `code` and `details`, but `JSON.stringify` drops them because only `message` is enumerable. ## Proposed Change Add a `toJSON()` method returning `{ name, code, message, details, stack }` so runtime errors serialize losslessly for logs and APIs. ## Acceptance Criteria - [ ] `toJSON()` added - [ ] `code` and `details` survive `JSON.stringify` - [ ] Stack included ## Suggested Label enhancement",
+      "state": "candidate",
+      "payoutConfidence": 0.65,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 119,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 1,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 100,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5242767420",
+      "source": "github",
+      "title": "[Bounty: $80] Add tests for payloads exceeding bodySizeLimit returning 413",
+      "url": "https://github.com/Lilly-Protocol/lily-backend/issues/124",
+      "repositoryApiUrl": "https://api.github.com/repos/Lilly-Protocol/lily-backend",
+      "rewardUsd": 80,
+      "score": 54,
+      "labels": [],
+      "commentCount": 1,
+      "updatedAt": "2026-08-25T13:51:15Z",
+      "summary": "## Context `src/app.ts` configures `express.json({ limit: securityConfig.bodySizeLimit })` (default `1mb`). A larger payload makes body-parser throw an `entity.too.large` error with `err.status = 413`, which `errorHandler` currently converts into a 500 because it ignores `statusCode` on non-`AppError` errors. ## Proposed Change Add a supertest that sends a >1mb body to a POST route (e.g. `/api/v1/agents`) and asserts the response is 413 rather than 500, and that the error envelope stays consistent. ## Acceptance Criteria - Test sends an oversized body and asserts status 413 - Test asserts `success: false` in the response body - Test documents the expected error-handler behavior change ## Suggested Label tests",
+      "state": "candidate",
+      "payoutConfidence": 0.65,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 118,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 1,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 80,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5242766716",
+      "source": "github",
+      "title": "[Bounty: $75] Add tests for malformed JSON bodies returning a 400 error",
+      "url": "https://github.com/Lilly-Protocol/lily-backend/issues/123",
+      "repositoryApiUrl": "https://api.github.com/repos/Lilly-Protocol/lily-backend",
+      "rewardUsd": 75,
+      "score": 54,
+      "labels": [],
+      "commentCount": 1,
+      "updatedAt": "2026-08-25T13:55:10Z",
+      "summary": "## Context When a client sends malformed JSON to `POST /api/v1/agents` or `POST /api/v1/payments/quote`, the `express.json()` body parser in `src/app.ts` throws a `SyntaxError` carrying `err.status = 400` and `err.type = 'entity.parse.failed'`. `errorHandler` in `src/common/http/error.middleware.ts` only special-cases `AppError`, so this currently surfaces as a 500 with the raw parser message. ## Proposed Change Add supertest cases that post invalid JSON (e.g. `{\"name\": \"x\"`) to `/api/v1/agents` and assert the response is 400 with the standard error envelope (`success: false`), pinning the expected behavior before the handler is fixed. ## Acceptance Criteria - A test posts malformed JSON and asserts status 400 - The response body matches the `ApiErrorResponse` shape - The test fails before the 400-handling fix and passes after ## Suggested Label tests",
+      "state": "candidate",
+      "payoutConfidence": 0.65,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 118,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 1,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 75,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5242827638",
+      "source": "github",
+      "title": "[Bounty: $100] Add an ESLint rule forbidding target=_blank without rel=noopener",
+      "url": "https://github.com/Lilly-Protocol/lily-frontend/issues/128",
+      "repositoryApiUrl": "https://api.github.com/repos/Lilly-Protocol/lily-frontend",
+      "rewardUsd": 100,
+      "score": 46,
+      "labels": [],
+      "commentCount": 1,
+      "updatedAt": "2026-08-25T13:53:15Z",
+      "summary": "## Context The ESLint setup (`eslint.config.mjs`) uses `eslint-config-next` core-web-vitals but has no custom rules. External links opened with `target=\"_blank\"` without `rel=\"noopener noreferrer\"` are a known tabnabbing risk, and nothing currently prevents them in the scaffold. ## Proposed Change Add a project ESLint rule (e.g. via `eslint-plugin-react`'s `jsx-no-target-blank` if not already active) that flags `target=\"_blank\"` links missing the `rel` attribute. Add one test link fixture to prove the rule fires, and document it in the contributing guide.",
+      "state": "candidate",
+      "payoutConfidence": 0.5,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 113,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 1,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 100,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
       "id": "github:4462160604",
       "source": "github",
       "title": "[bounty $400] Implement ABNF-compliant email address parser with full §3.2–§4.4 coverage",
@@ -87,21 +215,19 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:4054189538",
+      "id": "github:5242913171",
       "source": "github",
-      "title": "[Feature] Reduce block registration steps",
-      "url": "https://github.com/o2sdev/openselfservice/issues/769",
-      "repositoryApiUrl": "https://api.github.com/repos/o2sdev/openselfservice",
-      "rewardUsd": 100,
-      "score": 40,
-      "labels": [
-        "enhancement"
-      ],
-      "commentCount": 0,
-      "updatedAt": "2026-08-25T13:02:14Z",
-      "summary": "**Is your feature request related to a problem? Please describe.** Adding a new block currently requires manual edits to 5 different files: 1. `apps/api-harmonization/package.json` - add dependency 2. `apps/frontend/package.json` - add dependency 3. `apps/api-harmonization/src/app.module.ts` - register module 4. `apps/api-harmonization/src/modules/page/page.model.ts` - add to Blocks union type 5. `apps/frontend/src/blocks/renderBlocks.tsx` - add to registry/switch This creates friction and increases the chance of errors when adding new blocks. **Describe the solution you'd like** Reduce the number of manual steps required to register a block. Possible approaches: - Auto-generate `renderBlocks.tsx` from a central registry file or block discovery - Auto-generate `page.model.ts` Blocks union from registered blocks - Create a single `blocks.config.ts` that drives all registrations - Extend the Turbo generator to handle registration steps automatically The solution should work with the approach where blocks can be installable NPM packages. **Additional context (if applicable)** - Phase: 3 — Configuration & Registration DX - Original priority: Medium effort, High impact - Need to verify ",
+      "title": "[Bounty: $35] Freeze the entire resolved config object, not just the retry policy",
+      "url": "https://github.com/Lilly-Protocol/lily-sdk/issues/123",
+      "repositoryApiUrl": "https://api.github.com/repos/Lilly-Protocol/lily-sdk",
+      "rewardUsd": 35,
+      "score": 46,
+      "labels": [],
+      "commentCount": 1,
+      "updatedAt": "2026-08-25T14:00:24Z",
+      "summary": "## Context Issue #45 tracks deep-freezing the resolved retry policy. The rest of `ResolvedLilySdkConfig` (timeouts, auth, headers) is still mutable, so a consumer holding a reference can mutate SDK behavior after construction, producing hard-to-debug inconsistencies. ## Proposed Change Extend the deep-freeze to the whole resolved config (recursively freeze `resolved.base`, `resolved.headers`, and `resolved.retry`), and add a test asserting mutation attempts throw in strict mode or are silently ignored and the frozen snapshot remains stable.",
       "state": "candidate",
-      "payoutConfidence": 0.35,
+      "payoutConfidence": 0.5,
       "autonomyFit": 1,
       "requiresHumanGate": false,
       "requiresSpecialHardware": false,
@@ -112,80 +238,12 @@
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
-        "comments": 0,
+        "comments": 1,
         "attemptSignals": 0,
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 100,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5225100116",
-      "source": "github",
-      "title": "[security] Penetration Testing Program: Annual External Pentest, Continuous Bug Bounty, Red Team Exercises",
-      "url": "https://github.com/ExcelDsigN-tech/dukapay/issues/465",
-      "repositoryApiUrl": "https://api.github.com/repos/ExcelDsigN-tech/dukapay",
-      "rewardUsd": 10,
-      "score": 52,
-      "labels": [
-        "Stellar Wave"
-      ],
-      "commentCount": 5,
-      "updatedAt": "2026-08-25T12:59:29Z",
-      "summary": "[security] Penetration Testing Program: Annual External Pentest, Continuous Bug Bounty, Red Team Exercises **Description:** No structured penetration testing program. Implement annual external pentest, continuous bug bounty, quarterly red team exercises, automated SAST/DAST in CI. **Impact:** Proactive vulnerability discovery; compliance (SOC2, ISO27001); insurance requirement; community trust. **Suggested Fix:** 1. Contract annual pentest with Cobalt.io or HackerOne 2. Launch bug bounty program (10k-100k USD rewards) 3. Quarterly red team exercises 4. Add SAST (semgrep, CodeQL) and DAST (OWASP ZAP) to CI 5. Vulnerability disclosure policy and safe harbor **Points:** 200 **Type:** security ## Definition of Done - [ ] Annual external pentest contracted - [ ] Bug bounty program live with rewards - [ ] Quarterly red team exercises scheduled - [ ] SAST/DAST in CI pipeline - [ ] Vulnerability disclosure policy published - [ ] No hardcoded secrets remain in source (grep scan clean) - [ ] Authentication flow verified and tested - [ ] Security headers and CSP configured - [ ] No PII exposed in logs or error messages - [ ] All necessary CI checks passed --- 📋 **Before working on this issue",
-      "state": "candidate",
-      "payoutConfidence": 0.65,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 101,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 5,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 10,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5228730979",
-      "source": "github",
-      "title": "ledgerstate: Mithril bootstrap omits historical pparams required by reward rollover",
-      "url": "https://github.com/blinklabs-io/dingo/issues/3355",
-      "repositoryApiUrl": "https://api.github.com/repos/blinklabs-io/dingo",
-      "rewardUsd": 1397,
-      "score": 48,
-      "labels": [
-        "bug"
-      ],
-      "commentCount": 2,
-      "updatedAt": "2026-08-25T13:06:38Z",
-      "summary": "## Summary A Mithril ledger-state import seeds historical Mark/Set/Go reward inputs but persists protocol parameters only for the snapshot state's current epoch. The first complete reward round that needs a historical performance epoch then fails with `missing pparams for reward performance epoch N`. Epoch rollover restarts indefinitely and the node stops following the chain. This reproduced independently on preview and mainnet. The same control flow is present on current `main` at `557e602a`. ## Preview reproduction - Dingo `9c8119ce87e139738e20193f4ec70e1dc2e80b7e` - Fresh database - Mithril v2 bootstrap - Preview snapshot state in epoch 1397 The import successfully seeded all three reward-input epochs and then imported protocol parameters: ```text seeded reward inputs for an imported epoch epoch=1397 snapshot=mark pools=724 delegators=79743 seeded reward inputs for an imported epoch epoch=1396 snapshot=set pools=723 delegators=79737 seeded reward inputs for an imported epoch epoch=1395 snapshot=go pools=743 delegators=79744 importing protocol parameters checkpoint saved phase=pparams ``` At the next boundary: ```text handling epoch transition previous_epoch=1397 new_epoch=1398 b",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 2,
-      "fundedBountySignal": false,
-      "fastCashScore": 100,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 2,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 1397,
+      "economicValueUsd": 35,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -266,7 +324,7 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-24T13:15:06Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4054189538\",\"rewardUsd\":100,\"fastCashScore\":107,\"updatedAt\":\"2026-08-25T13:02:14Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":110,\"updatedAt\":\"2026-08-25T01:35:34Z\",\"competition\":{\"comments\":19,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-25T07:38:13Z\",\"competition\":{\"comments\":46,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:4975260101\",\"rewardUsd\":780,\"fastCashScore\":119,\"updatedAt\":\"2026-08-25T05:07:59Z\",\"competition\":{\"comments\":18,\"attemptSignals\":1,\"risk\":\"high\"}},{\"id\":\"github:5225100116\",\"rewardUsd\":10,\"fastCashScore\":101,\"updatedAt\":\"2026-08-25T12:59:29Z\",\"competition\":{\"comments\":5,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5228730979\",\"rewardUsd\":1397,\"fastCashScore\":100,\"updatedAt\":\"2026-08-25T13:06:38Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5242324505\",\"rewardUsd\":100,\"fastCashScore\":107,\"updatedAt\":\"2026-08-25T12:48:13Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5244898380\",\"rewardUsd\":20,\"fastCashScore\":98,\"updatedAt\":\"2026-08-25T10:38:25Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-24T13:15:06Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":110,\"updatedAt\":\"2026-08-25T01:35:34Z\",\"competition\":{\"comments\":19,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-25T07:38:13Z\",\"competition\":{\"comments\":46,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:4975260101\",\"rewardUsd\":780,\"fastCashScore\":119,\"updatedAt\":\"2026-08-25T05:07:59Z\",\"competition\":{\"comments\":18,\"attemptSignals\":1,\"risk\":\"high\"}},{\"id\":\"github:5242766716\",\"rewardUsd\":75,\"fastCashScore\":118,\"updatedAt\":\"2026-08-25T13:55:10Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5242767420\",\"rewardUsd\":80,\"fastCashScore\":118,\"updatedAt\":\"2026-08-25T13:51:15Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5242827638\",\"rewardUsd\":100,\"fastCashScore\":113,\"updatedAt\":\"2026-08-25T13:53:15Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5242856338\",\"rewardUsd\":100,\"fastCashScore\":119,\"updatedAt\":\"2026-08-25T13:55:26Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5242913171\",\"rewardUsd\":35,\"fastCashScore\":107,\"updatedAt\":\"2026-08-25T14:00:24Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5244898380\",\"rewardUsd\":20,\"fastCashScore\":98,\"updatedAt\":\"2026-08-25T10:38:25Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
@@ -278,26 +336,26 @@
     "maxHours": 4,
     "minPayoutConfidence": 0.8,
     "competitionRequired": "low",
-    "rejectedFakeRevenueCount": 1,
+    "rejectedFakeRevenueCount": 0,
     "rejectedAlreadyPaidCount": 1,
     "rejectedIdentityGateCount": 0
   },
   "economicallyRejected": [
-    {
-      "id": "github:5242324505",
-      "title": "test(eth-cli): live Sepolia alpha→beta 100 USDT acceptance test (L29 operator-driven)",
-      "rewardUsd": 100,
-      "reasons": [
-        "testnet_or_test_token_reward"
-      ],
-      "rejectedAt": "2026-08-25T13:07:38.192Z"
-    },
     {
       "id": "github:3055155077",
       "title": "Switch to `ky` from `redaxios`",
       "rewardUsd": 12,
       "reasons": [
         "already_rewarded_or_paid"
+      ],
+      "rejectedAt": "2026-08-25T14:03:49.959Z"
+    },
+    {
+      "id": "github:5242324505",
+      "title": "test(eth-cli): live Sepolia alpha→beta 100 USDT acceptance test (L29 operator-driven)",
+      "rewardUsd": 100,
+      "reasons": [
+        "testnet_or_test_token_reward"
       ],
       "rejectedAt": "2026-08-25T13:07:38.192Z"
     },
