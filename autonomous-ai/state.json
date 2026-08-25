@@ -1,36 +1,27 @@
 {
   "version": 5,
-  "cycle": 126,
+  "cycle": 127,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-25T20:54:40.129Z",
+  "updatedAt": "2026-08-25T21:29:10.941Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "online",
-  "currentAgent": "CRITIC",
+  "currentAgent": "PLANNER",
   "provider": {
     "mode": "OpenCode Free",
     "model": "hy3-free",
-    "attempts": 3
+    "attempts": 1
   },
   "latest": {
-    "cycle": 126,
-    "agent": "CRITIC",
-    "timestamp": "2026-08-25T20:54:40.129Z",
-    "observation": "PLANNER's outline for github:4234681451 includes identity key options, tradeoffs, recommendation, and DB schema but truncates before worked example.",
-    "objection": "The outlined proposal structure as stated lacks explicit coverage of the required worked example from fixtures per acceptance criteria.",
-    "decision": "Withhold drafting approval; direct PLANNER to amend outline to explicitly include a worked example section using Anchore fixtures.",
-    "next": "PLANNER must re-verify github:4234681451 terms and finalize proposal outline with identity options, schema, and worked example included."
+    "cycle": 127,
+    "agent": "PLANNER",
+    "timestamp": "2026-08-25T21:29:10.941Z",
+    "observation": "Authoritative JOBS snapshot confirms github:4234681451 ($250) requires proposal with identity options, schema, and worked example from fixtures.",
+    "objection": "No objection; prior critique about missing worked example is resolved by explicitly adding that section to the outline.",
+    "decision": "Finalize github:4234681451 proposal outline including identity key options, tradeoffs, recommendation, DB schema, and Anchore fixture worked example.",
+    "next": "CRITIC must verify the finalized outline explicitly covers all acceptance criteria including the worked example before drafting."
   },
   "lastError": null,
   "history": [
-    {
-      "cycle": 87,
-      "agent": "PLANNER",
-      "timestamp": "2026-08-24T11:19:45.492Z",
-      "observation": "github:4234681451 remains unselected; $250 paid job available with wallet configured despite degraded economy",
-      "objection": "CRITIC correctly notes selection and markdown embedding are prerequisites for acceptance criteria verification",
-      "decision": "Select github:4234681451 and embed the full markdown proposal with identity key tradeoffs, DB schema, and fixture example",
-      "next": "CRITIC should examine the embedded markdown proposal with identity key analysis, DB schema, and fixture excerpt for approval"
-    },
     {
       "cycle": 88,
       "agent": "CRITIC",
@@ -381,6 +372,15 @@
       "objection": "The outlined proposal structure as stated lacks explicit coverage of the required worked example from fixtures per acceptance criteria.",
       "decision": "Withhold drafting approval; direct PLANNER to amend outline to explicitly include a worked example section using Anchore fixtures.",
       "next": "PLANNER must re-verify github:4234681451 terms and finalize proposal outline with identity options, schema, and worked example included."
+    },
+    {
+      "cycle": 127,
+      "agent": "PLANNER",
+      "timestamp": "2026-08-25T21:29:10.941Z",
+      "observation": "Authoritative JOBS snapshot confirms github:4234681451 ($250) requires proposal with identity options, schema, and worked example from fixtures.",
+      "objection": "No objection; prior critique about missing worked example is resolved by explicitly adding that section to the outline.",
+      "decision": "Finalize github:4234681451 proposal outline including identity key options, tradeoffs, recommendation, DB schema, and Anchore fixture worked example.",
+      "next": "CRITIC must verify the finalized outline explicitly covers all acceptance criteria including the worked example before drafting."
     }
   ],
   "economy": {
@@ -424,28 +424,20 @@
         "summary": "Automate Low Hanging fruit bug detection and issue creation recursively. This issue is an issue focused on creating more issues: 1. Find a feature/bug to work on from this repository 2. Create a GitHub issue on the repository to start working on it -- Pull requests without issues will not be considered. 3. Use the following string in the issue that you created: \"This issue is limited only to the creator of this issue. This means that only the issue author can attempt to solve this issue. If you would like to work on it, please create another issue with the same contents and refer to issue #11398 for more information.\" Follow all instructions carefully and precisely. /bounty $800 Bounties can only be paid upon successful PR merge."
       },
       {
-        "id": "github:5250199830",
-        "title": "Bounty claim: BoTTube docstring PR #1765 (34 functions, 17.0 RTC)",
-        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16583",
-        "rewardUsd": 1765,
-        "score": 46,
-        "summary": "Bounty claim: BoTTube docstring PR #1765 (34 functions documented, 17.0 RTC) PR: https://github.com/Scottcjn/bottube/pull/1765 Added docstrings to all 34 previously undocumented functions across three test files: tests/test_founding_leaderboard.py (12), tests/test_referrals.py (11), tests/test_badges.py (11). Docstrings-only, +232/-0. pytest -q on all three files: 15 passed. Wallet: RTCd1554f0f35576faf01d386a6be1c947f560dd0b7"
+        "id": "github:4462160604",
+        "title": "[bounty $400] Implement ABNF-compliant email address parser with full §3.2–§4.4 coverage",
+        "url": "https://github.com/UnsafeLabs/RFC-5322/issues/1",
+        "rewardUsd": 400,
+        "score": 72,
+        "summary": "`source.md` contains the complete RFC 5322 specification (Internet Message Format). We need a **fully conformant email address parser** in Python that implements the complete ABNF grammar from sections 3.2 through 3.4, plus obsolete syntax from §4.4. This parser must handle every edge case defined in the RFC — not just simple `user@domain` patterns, but the full complexity of quoted strings, comments, folding whitespace, group addresses, and domain literals. ## Background RFC 5322 defines email address syntax through a chain of ABNF productions that build on each other: ``` address = mailbox / group mailbox = name-addr / addr-spec name-addr = [display-name] angle-addr angle-addr = [CFWS] \"<\" addr-spec \">\" [CFWS] addr-spec = local-part \"@\" domain local-part = dot-atom / quoted-string / obs-local-part domain = dot-atom / domain-literal / obs-domain ``` Each of these references further productions (CFWS, FWS, quoted-pair, dtext, etc.) that span multiple sections. **You must read `source.md` completely** to trace the full grammar dependency chain. ## Requirements ### 1. Parser Implementation — `parser.py` ```python class RFC5322Address: \"\"\"Parsed RFC 5322 email address.\"\"\" display_name"
       },
       {
-        "id": "github:5250439961",
-        "title": "We harvest at the first unit and capture ~23% of every plant's yield, on every crop",
-        "url": "https://github.com/robsartin/robriculture/issues/129",
-        "rewardUsd": 8995,
-        "score": 40,
-        "summary": "## We harvest at the first unit, capturing ~23% of every plant's yield Chasing why TOMATO underperformed in #127 turned up something bigger and crop-independent. Instrumented full 719-turn games with the shipped champion, one crop forced each time: | crop | harvests | units sold | units/harvest | `max_yield` | capture | |---|---|---|---|---|---| | MELON | 86 | 120 | 1.40 | 6 | **23%** | | TOMATO | 124 | 126 | 1.02 | 4 | **25%** | | STRAWBERRY | 261 | 228 | 0.87 | 4 | **22%** | **Every crop captures roughly a quarter of what a plant can yield**, and the ratio is nearly identical across three crops with different yields, intervals and growth curves. That consistency is what makes this look structural rather than crop-specific. ## Suspected mechanism `_harvest_ready` fires as soon as **any** yield exists: ```python def _harvest_ready(tile, day: int) -> bool: \"\"\"True when a standing plant holds yield and has reached first-yield age.\"\"\" crop = tile.get(\"crop\") c = economy.CROPS.get(crop) if not c or tile.get(\"yield_units\", 0) <= 0: return False return day - tile.get(\"planted_day\", day) >= c[\"first\"] ``` `yield_units > 0` is the only quantity test. If a plant accumulates toward `max_yiel"
-      },
-      {
-        "id": "github:5181611774",
-        "title": "TestExpireIdCardExpiryUsesPauseDuration test failure on main (Content.IntegrationTests.Tests.Access.ExpireIdCardTest.TestExpireIdCardExpiryUsesPauseDuration)",
-        "url": "https://github.com/Urist-McStation/Urist-McStation-14/issues/9",
-        "rewardUsd": 2000,
-        "score": 54,
-        "summary": "## Test Failure On Main A test failure has been detected on the main branch. This should never occur. > [!NOTE] > This issue is automatically generated by a github action and will be updated when this failure reoccurs. > Do not edit the body of this issue. ## Failure Details <dl> <dt>Test name</dt> <dd>TestExpireIdCardExpiryUsesPauseDuration</dd> <dt>Fully qualified name</dt> <dd>Content.IntegrationTests.Tests.Access.ExpireIdCardTest.TestExpireIdCardExpiryUsesPauseDuration</dd> <dt>Last encountered</dt> <dd>Tuesday, August 25th</dd> </dl> <details> <summary>Failure message</summary> ``` Found arbitrage on BountyPercussion cargo bounty! Product FunInstrumentsRandom costs 2000 but fulfills bounty BountyPercussion with reward 2500! Assert.That(proto.Cost, Is.GreaterThanOrEqualTo(bounty.Reward)) Expected: greater than or equal to 2500 But was: 2000 ``` </details> <details> <summary>Test output</summary> ``` GetPair: Called by test Access.ExpireIdCardTest.TestExpireIdCardExpiryUsesPauseDuration GetPair: Looking in pool for a suitable pair GetPair: Creating a new pair, no suitable pair found in pool CLIENT: 0.005s [DEBG] root: OS: Ubuntu 24.04.4 LTS X64 CLIENT: 0.005s [DEBG] root: .NET R"
+        "id": "github:4563956966",
+        "title": "parse_duration drops the days (d) unit",
+        "url": "https://github.com/tine1117/oss-hunter-livefire/issues/1",
+        "rewardUsd": 50,
+        "score": 44,
+        "summary": "## Bug `parse_duration` silently drops the **days** (`d`) unit. The README lists `d` as a supported unit, but the parser ignores it and returns a wrong (too-small) result instead of raising or counting it. ### Reproduction ```python from duration_utils import parse_duration parse_duration(\"1d\") # -> 0 (expected 86400) parse_duration(\"2d4h\") # -> 14400 (expected 187200) ``` ### Expected `d` should be counted as 86400 seconds, so `parse_duration(\"1d\") == 86400` and `parse_duration(\"2d4h\") == 187200`. ### Notes The `d` character is already accepted by the token regex, so malformed-input detection still passes — the value is just never added. A fix should add the `d` unit and cover it with tests. /bounty $50"
       }
     ],
     "active": null,
