@@ -1,36 +1,27 @@
 {
   "version": 5,
-  "cycle": 138,
+  "cycle": 139,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-26T07:58:51.735Z",
+  "updatedAt": "2026-08-26T08:55:29.460Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "online",
-  "currentAgent": "CRITIC",
+  "currentAgent": "PLANNER",
   "provider": {
     "mode": "OpenCode Free",
-    "model": "nemotron-3-ultra-free",
-    "attempts": 2
+    "model": "mimo-v2.5-free",
+    "attempts": 1
   },
   "latest": {
-    "cycle": 138,
-    "agent": "CRITIC",
-    "timestamp": "2026-08-26T07:58:51.735Z",
-    "observation": "Job github:4975260101 ($780) requires recursive bug detection, issue creation with exclusive authorship clause, and PR merges for payout; repo is a bug-bounty platform itself, making scope ambiguous.",
-    "objection": "Autonomous execution infeasible: vague bug definition, multi-step human-gated workflow, exclusive authorship restriction, and payment contingent on maintainer merge of unspecified fixes.",
-    "decision": "Reject github:4975260101 as too speculative; prioritize concrete, well-scoped jobs like github:5254592115 ($100, kill-bounty doc test) or github:5253558268 ($10 CLI fix) with clear acceptance criteria.",
-    "next": "PLANNER evaluate github:5254592115 and github:5253558268 for immediate autonomous execution with defined testable deliverables."
+    "cycle": 139,
+    "agent": "PLANNER",
+    "timestamp": "2026-08-26T08:55:29.460Z",
+    "observation": "Economy degraded with zero revenue; github:5253558268 ($10 CLI fix) has clear acceptance criteria in opportunities.",
+    "objection": "Low reward of $10 may limit impact, but task is well-scoped and autonomous.",
+    "decision": "Evaluate github:5253558268 for immediate autonomous execution as the smallest useful next move.",
+    "next": "CRITIC must assess feasibility and prepare testable deliverables for the CLI fix job."
   },
   "lastError": null,
   "history": [
-    {
-      "cycle": 99,
-      "agent": "PLANNER",
-      "timestamp": "2026-08-24T21:14:20.458Z",
-      "observation": "Authoritative jobs snapshot lacks github:4462160604; listed opportunities are third-party bounty claims, not open tasks for us.",
-      "objection": "Cannot select or embed proposal for a job absent from the snapshot; prior CRITIC demand references nonexistent job.",
-      "decision": "Reject selection of github:4462160604; defer to discover legitimate open work from authoritative sources only.",
-      "next": "CRITIC must verify current jobs snapshot contains no open task and confirm no fabricated job selection is permitted."
-    },
     {
       "cycle": 100,
       "agent": "CRITIC",
@@ -381,6 +372,15 @@
       "objection": "Autonomous execution infeasible: vague bug definition, multi-step human-gated workflow, exclusive authorship restriction, and payment contingent on maintainer merge of unspecified fixes.",
       "decision": "Reject github:4975260101 as too speculative; prioritize concrete, well-scoped jobs like github:5254592115 ($100, kill-bounty doc test) or github:5253558268 ($10 CLI fix) with clear acceptance criteria.",
       "next": "PLANNER evaluate github:5254592115 and github:5253558268 for immediate autonomous execution with defined testable deliverables."
+    },
+    {
+      "cycle": 139,
+      "agent": "PLANNER",
+      "timestamp": "2026-08-26T08:55:29.460Z",
+      "observation": "Economy degraded with zero revenue; github:5253558268 ($10 CLI fix) has clear acceptance criteria in opportunities.",
+      "objection": "Low reward of $10 may limit impact, but task is well-scoped and autonomous.",
+      "decision": "Evaluate github:5253558268 for immediate autonomous execution as the smallest useful next move.",
+      "next": "CRITIC must assess feasibility and prepare testable deliverables for the CLI fix job."
     }
   ],
   "economy": {
@@ -408,14 +408,6 @@
     "selected": null,
     "opportunities": [
       {
-        "id": "github:5254592115",
-        "title": "[一般][test] 📜 `docs/kill-bounty.md` 的 SUPERSEDED 標頭**沒有閘** —— 出貨數字一改，標頭就開始說謊",
-        "url": "https://github.com/adms/GGD/issues/774",
-        "rewardUsd": 100,
-        "score": 62,
-        "summary": "**Objective** #735 給 `docs/kill-bounty.md` 掛上 SUPERSEDED 標頭，逐條寫出「doc 說什麼 / 出貨其實是什麼」。⚠️ 而那個標頭本身是**散文**：`GOLD_REWARDS.killBounty` 哪天從 100 改成別的，標頭就變成第三守則說的那種「被散文守著、過了保存期限而沒有任何東西變紅」的宣稱。 **Scope** - 新增 `packages/shared/src/ops/killBountyDocSuperseded.test.ts`：**讀 doc 的標頭**，把它宣稱的現行值與**出貨的常數**逐項比對。 - ⛔ 不抄字面值：從 `GOLD_REWARDS` / `DeathSystem` 推導。 **Files / modules likely affected** - 新檔 `packages/shared/src/ops/killBountyDocSuperseded.test.ts` - （只讀）`docs/kill-bounty.md` · `packages/shared/src/sim/economy/progression.ts` · `packages/shared/src/sim/systems/DeathSystem.ts` **Implementation constraints** - 體驗層（文件閘）：**≤ 80 行**、一次突變。 - ⛔ 不可以把出貨數字抄進測試（第〇·四守則：那是第四個住處）。 **Acceptance criteria** 1. 把 `GOLD_REWARDS.killBounty` 從 100 改成 150 ⇒ **紅**，訊息指名 doc 標頭那一行過期。 2. doc 標頭照著改 ⇒ 綠。 **Test / verification criteria** - `npx vitest run packages/shared/src/ops/killBountyDocSuperseded.test.ts`；突變如上。 **[思考策略]** 第三守則（註解會說謊）＋「閘不是判準」：一份被散文守著的宣稱活過它的保存期限，而**沒有任何東西變紅**。 **[解決模板]** 產生器/文件 ↔ 出貨常數的 `--check` 式對帳閘（⛔ 不抄字面值）。 **Dependencies** #735 **Non-goals** ⛔ 不重寫 doc 本文（原文一字未刪是刻意的）。 **Known risks** doc 標頭是人寫的自然語言 ⇒ 解析要挑**一個穩定的錨**（例：一張逐項表格），⛔ 不要做全文比對。"
-      },
-      {
         "id": "github:4975260101",
         "title": "Automate Bug Detection and Reviews",
         "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/11398",
@@ -432,20 +424,28 @@
         "summary": "### Summary Inspect the committed Anchore JSON fixtures and propose a schema for tracking vulnerabilities over time. Specifically: what combination of fields uniquely identifies \"the same vulnerability\" across scans? Candidates to evaluate include CVE ID alone, CVE + package name, CVE + package name + version, and CVE + package + image. Write up the tradeoffs, pick a recommendation, and sketch the analytics DB table(s) needed to support first_seen / last_seen / fixed_at / ignored_at / cleared_at fields. **Tech notes:** The Anchore JSON schema is documented at the Anchore project site; worth skimming before diving into fixtures. The goal of this spike is a decision, not code — resist the urge to start implementing. ### Acceptance criteria - [ ] Written proposal (markdown doc in PR) covering identity key options, tradeoffs, and a recommendation - [ ] Proposed analytics DB schema with column types and rationale - [ ] At least one worked example from the fixtures showing how the identity key behaves across days - [ ] Reviewed and approved by Brandon and/or Matt before next ticket starts ## Bounty: $250 This issue has been selected for our paid contributor program. If you wish to claim "
       },
       {
-        "id": "github:5254195444",
-        "title": "Bounty claim: BoTTube docstring PR #1766 batch 42 (9 functions, 4.5 RTC)",
-        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16612",
-        "rewardUsd": 1766,
-        "score": 46,
-        "summary": "## Bounty Claim **Bounty:** #750 — BoTTube docstring project **PR:** https://github.com/Scottcjn/bottube/pull/1766 **File:** `test_badges.py` **RTC rate:** 0.5 per function ### Functions documented client/_insert_agent/_lookup_agent/_insert_video/_create_referral_code/_activate_referred_human/_activate_referred_agent helpers (7); badge assignment renders+removable; candidates follow thresholds (2) ### Wallet `ezequiellich44-cmd`"
+        "id": "github:5252747529",
+        "title": "Epic: Malibu App UX, repair, and watchdog recovery",
+        "url": "https://github.com/Augustas11/macprovider/issues/1184",
+        "rewardUsd": 1000,
+        "score": 48,
+        "summary": "## Purpose Track Malibu.app provider-facing UX, install/repair flows, watchdog recovery behavior, confusing status text, crashes, and release communication separately from the fleet ledger. This issue owns what the app says and does. The fleet ledger issue owns provider-state truth and one-bucket classification. ## Operating Rule Issue #1184 is the continuing control issue for Malibu.app advancement. Every future Malibu.app PR that changes, fixes, improves, or releases provider-facing app behavior should link this issue and add an anchor row here with: - PR number - theme - what changed - remaining follow-up or release gate Do not let Malibu.app work live only in scattered PR bodies. ## Privacy Rule Do not put provider names, hostnames, full provider ids, payout details, or other provider-identifying details in GitHub issues. Use anonymous incident labels here and keep identifying mappings in private operator notes. ## Scope - Malibu.app dashboard/menu/onboarding wording. - Repair Provider Software CTA behavior and failure states. - App crash or diagnostics export failure investigation. - DMG/new Malibu.app install confusion when CLI/watchdog did not land. - Old watchdog still acti"
       },
       {
-        "id": "github:5254195327",
-        "title": "Bounty claim: BoTTube docstring PR #1766 batch 41 (8 functions, 4.0 RTC)",
-        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16611",
-        "rewardUsd": 1766,
-        "score": 46,
-        "summary": "## Bounty Claim **Bounty:** #750 — BoTTube docstring project **PR:** https://github.com/Scottcjn/bottube/pull/1766 **File:** `test_agent_public_visibility.py` **RTC rate:** 0.5 per function ### Functions documented client/_insert_agent/_insert_video/_render_context fixtures (4); agents page hides banned/removed; profile API hides; channel page hides; RSS feeds hide (4) ### Wallet `ezequiellich44-cmd`"
+        "id": "github:5213991032",
+        "title": "Drainer contract + counterfeit USDT factory on BSC (46 victims, 5.65M USDT)",
+        "url": "https://github.com/scamsniffer/scam-database/issues/789",
+        "rewardUsd": 13102.80834,
+        "score": 40,
+        "summary": "SUPPLEMENT to my earlier report: full laundering chain, 61 scammer addresses. 2026-06-01 17:08:30 UTC, 13,102.80834 USDT (BEP-20) taken from my wallet 0x5e008016e858b1fa76d5ec8d6a2a95d02b97c44e (VICTIM - do not flag). Police report KUSP 12228, Moscow. I am 71, on chemotherapy and temporarily blind at the time; the money was for eye surgery. MECHANISM. On a Zoom screen-share I was induced to sign an UNLIMITED ERC-20 approval (2^256-1) to drainer 0x5df85325b2b65f90ed14e6ef80e152310d54cddb. The operator then called selector 0x5af1a80d on it FROM HIS OWN ADDRESS 0x905f70c9c772c1d63f42bf1cc84dc1445313260d, paying gas himself - I never sent anything. Batch tooling, deployed 2026-03-26, two months BEFORE I was contacted. The approval is STILL ACTIVE. CONCEALMENT. 65 seconds later I received 13,201 units of a counterfeit \"Tether USD\"/\"USDT\" spelled with a Greek Tau, identical on screen, so I thought my funds were safe for 3 weeks. A second counterfeit uses Cyrillic e and Armenian S. Both are EIP-1167 clones of one factory template. SCALE. 4,000 drainer operations from public chain data: 46 victims, 5,651,466.35 USDT, 2026-07-02 to 2026-08-18; my own case predates that window. Largest losse"
+      },
+      {
+        "id": "github:5253558268",
+        "title": "🎯 Fail with descriptive error instead of silently sending unauthenticated API requests when keyring access fails",
+        "url": "https://github.com/condoraltidoi32/cli/issues/1",
+        "rewardUsd": 10,
+        "score": 54,
+        "summary": "## 📝 Description When executing `gh api` commands, `cli` attempts to resolve authentication tokens for the target host via the configured credential store (such as the system keyring, environment variables, or config files). If credential retrieval from the system keyring fails due to an operational or system error (e.g., locked keychain, missing D-Bus session, OS permission denied, corrupted secret store), the error is swallowed and treated as if no credentials exist. Consequently, `gh api` silently proceeds with an unauthenticated HTTP request. This results in misleading downstream API errors—such as `HTTP 404 Not Found` for private resources or `HTTP 403 API rate limit exceeded`—masking the underlying keyring issue and complicating debugging. ## 🎯 Acceptance Criteria - [ ] Credential resolution distinguishes between a missing token (`ErrNotFound`) and an operational keyring failure (e.g., D-Bus disconnected, keychain locked, access denied). - [ ] If keyring access returns an operational failure during token resolution for `gh api`, the command must abort immediately and return a non-zero exit code. - [ ] The CLI outputs a clear, actionable error message to `stderr` explaining "
       }
     ],
     "active": null,
