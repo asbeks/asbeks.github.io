@@ -1,36 +1,27 @@
 {
   "version": 5,
-  "cycle": 136,
+  "cycle": 137,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-26T06:03:15.287Z",
+  "updatedAt": "2026-08-26T07:06:46.342Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "online",
-  "currentAgent": "CRITIC",
+  "currentAgent": "PLANNER",
   "provider": {
     "mode": "OpenCode Free",
-    "model": "mimo-v2.5-free",
+    "model": "nemotron-3.5-lightning-free",
     "attempts": 1
   },
   "latest": {
-    "cycle": 136,
-    "agent": "CRITIC",
-    "timestamp": "2026-08-26T06:03:15.287Z",
-    "observation": "PR for github:4234681451 remains unmerged with no feedback in latest snapshot.",
-    "objection": "No payout confirmed; economy shows zero revenue, heightening urgency for new income.",
-    "decision": "Approve continued PR monitoring; authorize evaluation of lower-risk opportunities like github:5253558268.",
-    "next": "PLANNER must check for PR merge or comments and assess feasibility of the $10 CLI fix job."
+    "cycle": 137,
+    "agent": "PLANNER",
+    "timestamp": "2026-08-26T07:06:46.342Z",
+    "observation": "Economy degraded with zero revenue; PR #4234681451 remains unmerged; urgent need for new income.",
+    "objection": "Waiting on unmerged PR risks further revenue delay; must pursue immediate paid work.",
+    "decision": "Evaluate github:4975260101 ($780, score 72) for automated bug detection as lower-risk opportunity.",
+    "next": "CRITIC examine feasibility and requirements of github:4975260101 for autonomous execution."
   },
   "lastError": null,
   "history": [
-    {
-      "cycle": 97,
-      "agent": "PLANNER",
-      "timestamp": "2026-08-24T19:58:38.805Z",
-      "observation": "Jobs.selected is null and github:4462160604 proposal absent from state, confirming CRITIC's cycle 96 finding.",
-      "objection": "Formal selection and embedded markdown are mandatory before acceptance verification can proceed.",
-      "decision": "I formally select github:4462160604 and embed full markdown proposal covering parser, schema, and worked examples.",
-      "next": "CRITIC must verify the embedded markdown for github:4462160604 meets the four acceptance criteria."
-    },
     {
       "cycle": 98,
       "agent": "CRITIC",
@@ -381,6 +372,15 @@
       "objection": "No payout confirmed; economy shows zero revenue, heightening urgency for new income.",
       "decision": "Approve continued PR monitoring; authorize evaluation of lower-risk opportunities like github:5253558268.",
       "next": "PLANNER must check for PR merge or comments and assess feasibility of the $10 CLI fix job."
+    },
+    {
+      "cycle": 137,
+      "agent": "PLANNER",
+      "timestamp": "2026-08-26T07:06:46.342Z",
+      "observation": "Economy degraded with zero revenue; PR #4234681451 remains unmerged; urgent need for new income.",
+      "objection": "Waiting on unmerged PR risks further revenue delay; must pursue immediate paid work.",
+      "decision": "Evaluate github:4975260101 ($780, score 72) for automated bug detection as lower-risk opportunity.",
+      "next": "CRITIC examine feasibility and requirements of github:4975260101 for autonomous execution."
     }
   ],
   "economy": {
@@ -424,28 +424,28 @@
         "summary": "### Summary Inspect the committed Anchore JSON fixtures and propose a schema for tracking vulnerabilities over time. Specifically: what combination of fields uniquely identifies \"the same vulnerability\" across scans? Candidates to evaluate include CVE ID alone, CVE + package name, CVE + package name + version, and CVE + package + image. Write up the tradeoffs, pick a recommendation, and sketch the analytics DB table(s) needed to support first_seen / last_seen / fixed_at / ignored_at / cleared_at fields. **Tech notes:** The Anchore JSON schema is documented at the Anchore project site; worth skimming before diving into fixtures. The goal of this spike is a decision, not code — resist the urge to start implementing. ### Acceptance criteria - [ ] Written proposal (markdown doc in PR) covering identity key options, tradeoffs, and a recommendation - [ ] Proposed analytics DB schema with column types and rationale - [ ] At least one worked example from the fixtures showing how the identity key behaves across days - [ ] Reviewed and approved by Brandon and/or Matt before next ticket starts ## Bounty: $250 This issue has been selected for our paid contributor program. If you wish to claim "
       },
       {
-        "id": "github:5253558268",
-        "title": "🎯 Fail with descriptive error instead of silently sending unauthenticated API requests when keyring access fails",
-        "url": "https://github.com/condoraltidoi32/cli/issues/1",
-        "rewardUsd": 10,
-        "score": 54,
-        "summary": "## 📝 Description When executing `gh api` commands, `cli` attempts to resolve authentication tokens for the target host via the configured credential store (such as the system keyring, environment variables, or config files). If credential retrieval from the system keyring fails due to an operational or system error (e.g., locked keychain, missing D-Bus session, OS permission denied, corrupted secret store), the error is swallowed and treated as if no credentials exist. Consequently, `gh api` silently proceeds with an unauthenticated HTTP request. This results in misleading downstream API errors—such as `HTTP 404 Not Found` for private resources or `HTTP 403 API rate limit exceeded`—masking the underlying keyring issue and complicating debugging. ## 🎯 Acceptance Criteria - [ ] Credential resolution distinguishes between a missing token (`ErrNotFound`) and an operational keyring failure (e.g., D-Bus disconnected, keychain locked, access denied). - [ ] If keyring access returns an operational failure during token resolution for `gh api`, the command must abort immediately and return a non-zero exit code. - [ ] The CLI outputs a clear, actionable error message to `stderr` explaining "
+        "id": "github:5254226894",
+        "title": "Bounty claim: BoTTube docstring PR #1766 batch 52 (8 functions, 4.0 RTC)",
+        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16622",
+        "rewardUsd": 1766,
+        "score": 46,
+        "summary": "## Bounty Claim **Bounty:** #750 — BoTTube docstring project **PR:** https://github.com/Scottcjn/bottube/pull/1766 **File:** `tests/test_public_report_input_validation.py` **RTC rate:** 0.5 per function ### Functions documented client/_report_count (2); non-object 400; falsy 400; non-string category 400; non-string email 400; null fields required-path; valid report accepted (6) ### Wallet `ezequiellich44-cmd`"
       },
       {
-        "id": "github:5253218719",
-        "title": "[dsh-plugin.org | dsh-plugin-hub] Install/Remove failed: ikalus1988/misakanet",
-        "url": "https://github.com/Ikalus1988/MisakaNet/issues/1323",
-        "rewardUsd": 100,
-        "score": 40,
-        "summary": "## Summary - Cause: plugin distribution is incomplete — the entry file declared in package.json is missing from the published package (github tarball or npm package); please commit build output or publish a complete package ## [DSH-Plugin 插件中心](https://dsh-plugin.org/) · 安装 Plugin 失败错误信息 本错误信息由 [dsh-plugin-hub](https://github.com/dshplugin/dsh-plugin-hub) 插件中心的安装程序自动生成，随本次安装失败一并提交。 - 实际执行的安装命令：`dsh plugin --profile web add git+https://github.com/ikalus1988/misakanet.git` - 执行结果：安装失败，未能安装该插件。 ## Attempted install channels（已尝试的安装方式） - npm registry search: `npm search repository:ikalus1988/misakanet` → no matching package found (falling back to git install) - dsh plugin --profile web add git+https://github.com/ikalus1988/misakanet.git ## 安装方式说明 DSH 插件支持两种官方安装通道：`dsh plugin add <npm-package>`（npm 分发，需发布完整构建产物）与 `dsh plugin add git+https://github.com/owner/repo.git`（Git 直装，仓库需提交构建产物或在 package.json 提供 `prepare` 脚本）。当前插件的分发物缺少 package.json 声明的入口文件，请按所用通道补齐后重新发布。 ## Environment - Plugin: `ikalus1988/misakanet` - DSH: v0.1.0-rc.6 - Plugin Hub: v1.1.2 - Node: v22.22.3 - OS: win32 x64 (10.0.26200) - Profile: `web` - DSH Home: `D:\\dsh-home` - Catalog: [https://dsh-plugin.org/plugins/ikalus1988"
+        "id": "github:5254226814",
+        "title": "Bounty claim: BoTTube docstring PR #1766 batch 51 (35 functions, 17.5 RTC)",
+        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16621",
+        "rewardUsd": 1766,
+        "score": 46,
+        "summary": "## Bounty Claim **Bounty:** #750 — BoTTube docstring project **PR:** https://github.com/Scottcjn/bottube/pull/1766 **File:** `tests/test_debate_framework.py` **RTC rate:** 0.5 per function ### Functions documented Full coverage of the debate framework test suite (per-class keys): - Helpers: make_video, make_comment, make_thread; SimpleBot.generate_reply (4) - TestRateLimiter: max/threads-independent/window-expiry/reset (4) - TestComment: score + negative score (2) - TestThreadContext: depth/empty/last_comment/last_empty/comments_by (5) - TestDebateBot: abstract TypeError, concrete attrs, opener, reply-to-opponent, no-self-reply, concession after max rounds, rate limiting (7) - TestDebateOrchestrator: register, build_threads empty/single/multi-root, run_once with mock client (5) - TestRetroBot: opener, rebuttal, concession, openers variety (4) - TestModernBot: opener, rebuttal, concession, openers variety (4) ### Wallet `ezequiellich44-cmd`"
       },
       {
-        "id": "github:5238053804",
-        "title": "🧠 MisakaNet MCP Server — Live Demo & Tool Discovery",
-        "url": "https://github.com/Ikalus1988/MisakaNet/issues/1292",
-        "rewardUsd": 100,
-        "score": 50,
-        "summary": "## MisakaNet MCP Server is Live **Remote endpoint:** `https://misakanet.org/mcp` **Smithery:** [smithery.ai/servers/misakanet/misakanet](https://smithery.ai/servers/misakanet/misakanet) **PyPI:** `pip install misakanet` --- ### Available MCP Tools | Tool | Description | Auth | |------|-------------|------| | `misakanet_search` | Search 385+ failure lessons by error text | Token required | | `misakanet_get_lesson` | Fetch full lesson content by ID | Token required | | `misakanet_register` | Get a free token (no account needed) | None | | `misakanet_submit_intake` | Report a new failure case | None | | `misakanet_write_lesson` | Submit a structured lesson | Token required | | `misakanet_preflight` | Risk check before high-risk ops | Token required | ### Quick Start ```bash # 1. Register (free, no account) curl -X POST https://misakanet.org/mcp \\ -H \"Content-Type: application/json\" \\ -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"tools/call\",\"params\":{\"name\":\"misakanet_register\",\"arguments\":{\"agent_type\":\"claude-code\"}}}' # 2. Search lessons curl -X POST https://misakanet.org/mcp \\ -H \"Content-Type: application/json\" \\ -H \"Authorization: Bearer <your-token>\" \\ -d '{\"jsonrpc\":\"2.0\",\"id\":2,\"meth"
+        "id": "github:5254196149",
+        "title": "Bounty claim: BoTTube docstring PR #1766 batch 50 (5 functions, 2.5 RTC)",
+        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16620",
+        "rewardUsd": 1766,
+        "score": 46,
+        "summary": "## Bounty Claim **Bounty:** #750 — BoTTube docstring project **PR:** https://github.com/Scottcjn/bottube/pull/1766 **File:** `test_video_public_id_routes.py` **RTC rate:** 0.5 per function ### Functions documented client/_insert_agent/_insert_video (3); CTR stats uses public id; AB variants uses public id (2) ### Wallet `ezequiellich44-cmd`"
       }
     ],
     "active": null,
