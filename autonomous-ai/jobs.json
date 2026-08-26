@@ -1,43 +1,9 @@
 {
   "version": 11,
-  "updatedAt": "2026-08-26T16:49:04.328Z",
+  "updatedAt": "2026-08-26T18:46:25.274Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
-    {
-      "id": "github:5259253790",
-      "source": "github",
-      "title": "Split bounty escrow lifecycle tests into independently reviewable suites",
-      "url": "https://github.com/Jagadeeshftw/grainlify/issues/1711",
-      "repositoryApiUrl": "https://api.github.com/repos/Jagadeeshftw/grainlify",
-      "rewardUsd": 1847,
-      "score": 54,
-      "labels": [
-        "Stellar Wave"
-      ],
-      "commentCount": 2,
-      "updatedAt": "2026-08-26T16:48:27Z",
-      "summary": "**Area:** Testing maintainability · **Estimated effort:** 8–12 h ## Problem `contracts/bounty_escrow/contracts/escrow/src/test.rs` is 1,847 lines and many specialized test files sit beside it with overlapping fixtures. ## Design decision required Choose the smallest fixture layer that can be shared without hiding per-test setup or state assumptions. ## Requirements - Preserve test order independence - retain adversarial and invariant cases - do not mark failing tests ignored. ## Acceptance criteria - [ ] Lifecycle, permissions, token math, and upgrade tests can be run separately, and the complete suite has the same or greater assertions. ## Out of scope - Unrelated refactors, dependency upgrades, or behavior changes outside the stated scope. - Closing, deleting, or weakening existing tests to make the change pass. ## Verification ```bash cargo test --manifest-path contracts/bounty_escrow/Cargo.toml -p escrow -- --list cargo test --manifest-path contracts/bounty_escrow/Cargo.toml -p escrow ``` ## PR requirements - Explain the before/after behavior and include the evidence requested above. - Add regression tests for the changed behavior and report relevant build, test, lint, and arti",
-      "state": "candidate",
-      "payoutConfidence": 0.65,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 121,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 2,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 1847,
-      "requiresPreclaimOrIdentity": false
-    },
     {
       "id": "github:4975260101",
       "source": "github",
@@ -84,76 +50,41 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:4234681451",
+      "id": "github:5235943270",
       "source": "github",
-      "title": "Propose vulnerability identity key and lifecycle schema",
-      "url": "https://github.com/HHS/simpler-grants-gov/issues/9504",
-      "repositoryApiUrl": "https://api.github.com/repos/HHS/simpler-grants-gov",
-      "rewardUsd": 250,
-      "score": 72,
+      "title": "DEX competition rewards mint governance tokens with no escrow: claim_competition_reward inflates total_supply for free",
+      "url": "https://github.com/MettaChain/PropChain-contract/issues/1022",
+      "repositoryApiUrl": "https://api.github.com/repos/MettaChain/PropChain-contract",
+      "rewardUsd": 876,
+      "score": 48,
       "labels": [
-        "help wanted",
-        "bounty:M",
-        "status: open bounty"
+        "bug",
+        "Contract",
+        "Rust",
+        "High Complexity",
+        "Stellar Wave"
       ],
-      "commentCount": 6,
-      "updatedAt": "2026-08-25T23:02:25Z",
-      "summary": "### Summary Inspect the committed Anchore JSON fixtures and propose a schema for tracking vulnerabilities over time. Specifically: what combination of fields uniquely identifies \"the same vulnerability\" across scans? Candidates to evaluate include CVE ID alone, CVE + package name, CVE + package name + version, and CVE + package + image. Write up the tradeoffs, pick a recommendation, and sketch the analytics DB table(s) needed to support first_seen / last_seen / fixed_at / ignored_at / cleared_at fields. **Tech notes:** The Anchore JSON schema is documented at the Anchore project site; worth skimming before diving into fixtures. The goal of this spike is a decision, not code — resist the urge to start implementing. ### Acceptance criteria - [ ] Written proposal (markdown doc in PR) covering identity key options, tradeoffs, and a recommendation - [ ] Proposed analytics DB schema with column types and rationale - [ ] At least one worked example from the fixtures showing how the identity key behaves across days - [ ] Reviewed and approved by Brandon and/or Matt before next ticket starts ## Bounty: $250 This issue has been selected for our paid contributor program. If you wish to claim ",
+      "commentCount": 5,
+      "updatedAt": "2026-08-26T18:46:10Z",
+      "summary": "# DEX competition rewards mint governance tokens with no escrow: claim_competition_reward inflates total_supply for free **Labels / Complexity:** Contract · Rust · High Complexity — High ## Problem `contracts/dex/src/lib.rs` `claim_competition_reward` (line 876) credits the winner's `governance_balances` and inflates `governance_config.total_supply` by the reward — with no value ever escrowed. `create_trading_competition` (line 819) records `reward_amount` as a plain u128 field; the DEX crate has zero `payable` messages and zero `transferred_value` reads (a grep returns nothing), so the `reward_amount` is never funded. When a trader claims, lines 929-933 do: ```rust self.governance_balances.insert(caller, &balance.saturating_add(reward)); self.governance_config.total_supply = self.governance_config.total_supply.saturating_add(reward); ``` Governance tokens are minted from nothing — the same fabricated-accounting pattern as the fees-treasury issue, here inflating a token's total supply. Any code that values governance tokens against `total_supply`, or that treats `governance_balances` as spendable, is reading fabricated state. The same mint pattern repeats at line 1523-1526. ## Root",
       "state": "candidate",
-      "payoutConfidence": 0.7,
+      "payoutConfidence": 0.35,
       "autonomyFit": 1,
       "requiresHumanGate": false,
       "requiresSpecialHardware": false,
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 118,
+      "fastCashScore": 103,
       "survivalEligible": false,
-      "eligibilityReason": "Competition is too high for bootstrap mode.",
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
-        "comments": 6,
+        "comments": 5,
         "attemptSignals": 0,
-        "risk": "medium"
+        "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 250,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:4318279838",
-      "source": "github",
-      "title": "Add unit tests for `src.services.service_utils`",
-      "url": "https://github.com/HHS/simpler-grants-gov/issues/9814",
-      "repositoryApiUrl": "https://api.github.com/repos/HHS/simpler-grants-gov",
-      "rewardUsd": 200,
-      "score": 72,
-      "labels": [
-        "help wanted",
-        "api",
-        "bounty:M",
-        "status: open bounty"
-      ],
-      "commentCount": 6,
-      "updatedAt": "2026-08-25T22:48:10Z",
-      "summary": "### Summary Add unit tests for `src.services.service_utils`, the shared utility module that powers sorting and search-filter translation across multiple v1 services. The module has two public helpers (`apply_sorting` and `_add_search_filters`) but has no direct test file — coverage is only incidental through integration tests. ## Background & Context `api/src/services/service_utils.py` exposes `apply_sorting(stmt, model, sort_order)` which translates sort orders into SQLAlchemy `asc()`/`desc()` calls. `_add_search_filters` maps the project's search filter types onto an OpenSearch query builder. The sorting helper is pure SQLAlchemy statement construction — no database required. The filter helper requires a mock `SearchQueryBuilder` but does not require running OpenSearch. Rule reference: `documentation/rules/api-services.md` (\"Extract Shared Logic to Utility Files\") and `documentation/rules/cross-domain.md` (CCP-3). ## Getting Started - File under test: `api/src/services/service_utils.py` - New test file: `api/tests/src/services/test_service_utils.py` - Types: `src.pagination.pagination_models.SortDirection`, `src.search.search_models.{Str,Bool,Int,Date}SearchFilter` - Local setup:",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 8,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 102,
-      "survivalEligible": false,
-      "eligibilityReason": "Too slow for bootstrap mode: first real cash currently requires a <=4 hour task.",
-      "competition": {
-        "comments": 6,
-        "attemptSignals": 0,
-        "risk": "medium"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 200,
+      "economicValueUsd": 876,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -191,43 +122,6 @@
       },
       "realMoneyEligible": true,
       "economicValueUsd": 400,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5241347225",
-      "source": "github",
-      "title": "🦀 [CONTRACT] Optimize Storage Layout & Decouple Large Payload Structs into Sub-Keys",
-      "url": "https://github.com/SoroLabs/SoroTask/issues/1035",
-      "repositoryApiUrl": "https://api.github.com/repos/SoroLabs/SoroTask",
-      "rewardUsd": 64,
-      "score": 42,
-      "labels": [
-        "advanced",
-        "contract",
-        "Stellar Wave",
-        "Performance"
-      ],
-      "commentCount": 2,
-      "updatedAt": "2026-08-26T16:48:27Z",
-      "summary": "## Summary Currently, all task metadata, bytecode arguments, execution history, and state flags are packed into a single monolithic `Task` struct stored under a single `DataKey::Task(u64)`. ## Failure Mode & Production Risk Every read/write operation (even updating a simple execution counter or status enum) deserializes the entire payload bytes, hitting Soroban CPU and read-byte gas limits and driving up transaction costs. ## Required Implementation 1. Split `Task` storage into normalized keys: - `DataKey::TaskMeta(u64)`: Status, interval, next_run, owner, bounty. - `DataKey::TaskPayload(u64)`: Target contract, function symbol, arguments byte vector. - `DataKey::TaskStats(u64)`: Run count, failure count, last_execution_ledger. 2. Update execution routines to only load `TaskPayload` when dispatching the cross-contract call. ## Acceptance Criteria - [ ] Storage reads in `check_task_ready` consume <30% of previous CPU instructions. - [ ] Benchmarks showing significant gas reduction on task status updates.",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 2,
-      "fundedBountySignal": false,
-      "fastCashScore": 94,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 2,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 64,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -276,7 +170,7 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-24T13:15:06Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":118,\"updatedAt\":\"2026-08-25T23:02:25Z\",\"competition\":{\"comments\":6,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4318279838\",\"rewardUsd\":200,\"fastCashScore\":102,\"updatedAt\":\"2026-08-25T22:48:10Z\",\"competition\":{\"comments\":6,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":99,\"updatedAt\":\"2026-08-26T05:58:16Z\",\"competition\":{\"comments\":21,\"attemptSignals\":3,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-25T07:38:13Z\",\"competition\":{\"comments\":46,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:4975260101\",\"rewardUsd\":780,\"fastCashScore\":119,\"updatedAt\":\"2026-08-25T05:07:59Z\",\"competition\":{\"comments\":18,\"attemptSignals\":1,\"risk\":\"high\"}},{\"id\":\"github:5190110718\",\"rewardUsd\":400,\"fastCashScore\":124,\"updatedAt\":\"2026-08-26T16:43:26Z\",\"competition\":{\"comments\":1,\"attemptSignals\":1,\"risk\":\"medium\"}},{\"id\":\"github:5241347225\",\"rewardUsd\":64,\"fastCashScore\":94,\"updatedAt\":\"2026-08-26T16:48:27Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5259253790\",\"rewardUsd\":1847,\"fastCashScore\":121,\"updatedAt\":\"2026-08-26T16:48:27Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-24T13:15:06Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":99,\"updatedAt\":\"2026-08-26T05:58:16Z\",\"competition\":{\"comments\":21,\"attemptSignals\":3,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-25T07:38:13Z\",\"competition\":{\"comments\":46,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:4975260101\",\"rewardUsd\":780,\"fastCashScore\":119,\"updatedAt\":\"2026-08-25T05:07:59Z\",\"competition\":{\"comments\":18,\"attemptSignals\":1,\"risk\":\"high\"}},{\"id\":\"github:5235943270\",\"rewardUsd\":876,\"fastCashScore\":103,\"updatedAt\":\"2026-08-26T18:46:10Z\",\"competition\":{\"comments\":5,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
@@ -290,24 +184,24 @@
     "competitionRequired": "low",
     "rejectedFakeRevenueCount": 0,
     "rejectedAlreadyPaidCount": 1,
-    "rejectedIdentityGateCount": 1
+    "rejectedIdentityGateCount": 0
   },
   "economicallyRejected": [
-    {
-      "id": "github:5190110718",
-      "title": "[BOUNTY][GLOBAL] Implement universal jurisdiction registry & capability engine",
-      "rewardUsd": 400,
-      "reasons": [
-        "preclaim_or_identity_gate_not_configured"
-      ],
-      "rejectedAt": "2026-08-26T16:49:03.990Z"
-    },
     {
       "id": "github:3055155077",
       "title": "Switch to `ky` from `redaxios`",
       "rewardUsd": 12,
       "reasons": [
         "already_rewarded_or_paid"
+      ],
+      "rejectedAt": "2026-08-26T18:46:25.231Z"
+    },
+    {
+      "id": "github:5190110718",
+      "title": "[BOUNTY][GLOBAL] Implement universal jurisdiction registry & capability engine",
+      "rewardUsd": 400,
+      "reasons": [
+        "preclaim_or_identity_gate_not_configured"
       ],
       "rejectedAt": "2026-08-26T16:49:03.990Z"
     },
