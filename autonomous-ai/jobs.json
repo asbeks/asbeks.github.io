@@ -1,45 +1,9 @@
 {
   "version": 11,
-  "updatedAt": "2026-08-26T12:05:34.359Z",
+  "updatedAt": "2026-08-26T13:14:48.605Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
-    {
-      "id": "github:5248997266",
-      "source": "github",
-      "title": "`distribute()`'s per-beneficiary share math doesn't use the overflow-safe `proportional_share` helper it already uses for the keeper bounty",
-      "url": "https://github.com/SoroWill/sorowill-contracts/issues/190",
-      "repositoryApiUrl": "https://api.github.com/repos/SoroWill/sorowill-contracts",
-      "rewardUsd": 2553,
-      "score": 54,
-      "labels": [
-        "High",
-        "Stellar Wave",
-        "security"
-      ],
-      "commentCount": 1,
-      "updatedAt": "2026-08-26T11:40:15Z",
-      "summary": "`proportional_share` (lib.rs ~2553-2560) exists specifically to compute `floor(total * basis_points / 10_000)` without ever forming the potentially-overflowing `total * basis_points` intermediate — its own doc comment explains this is safe independently of the workspace's `overflow-checks = true` release setting. `distribute()` uses it for the keeper-bounty calculation (`bounty_amount = proportional_share(total, will.keeper_bounty_bps)`, line ~2586) but its actual beneficiary-payout loop computes the far more common and security-critical share directly as `let portion = remaining * (bp as i128) / 10_000;` (line ~2620), bypassing the safer helper entirely. The one code path in the whole contract whose overflow behaviour matters most — the amount that gets transferred out to real beneficiaries — is the one path that doesn't use the overflow-hardened calculation the codebase already wrote and relies on elsewhere in the same function. ## Acceptance criteria - [ ] Replace `distribute()`'s `remaining * (bp as i128) / 10_000` beneficiary-payout calculation with the `proportional_share` helper already used for the keeper bounty - [ ] Add a regression/fuzz test with large balances confirmin",
-      "state": "candidate",
-      "payoutConfidence": 0.65,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 123,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 1,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 2553,
-      "requiresPreclaimOrIdentity": false
-    },
     {
       "id": "github:4975260101",
       "source": "github",
@@ -122,62 +86,26 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5213991032",
+      "id": "github:5257341199",
       "source": "github",
-      "title": "Drainer contract + counterfeit USDT factory on BSC (46 victims, 5.65M USDT)",
-      "url": "https://github.com/scamsniffer/scam-database/issues/789",
-      "repositoryApiUrl": "https://api.github.com/repos/scamsniffer/scam-database",
-      "rewardUsd": 13102.80834,
-      "score": 40,
-      "labels": [],
-      "commentCount": 1,
-      "updatedAt": "2026-08-26T06:46:38Z",
-      "summary": "SUPPLEMENT to my earlier report: full laundering chain, 61 scammer addresses. 2026-06-01 17:08:30 UTC, 13,102.80834 USDT (BEP-20) taken from my wallet 0x5e008016e858b1fa76d5ec8d6a2a95d02b97c44e (VICTIM - do not flag). Police report KUSP 12228, Moscow. I am 71, on chemotherapy and temporarily blind at the time; the money was for eye surgery. MECHANISM. On a Zoom screen-share I was induced to sign an UNLIMITED ERC-20 approval (2^256-1) to drainer 0x5df85325b2b65f90ed14e6ef80e152310d54cddb. The operator then called selector 0x5af1a80d on it FROM HIS OWN ADDRESS 0x905f70c9c772c1d63f42bf1cc84dc1445313260d, paying gas himself - I never sent anything. Batch tooling, deployed 2026-03-26, two months BEFORE I was contacted. The approval is STILL ACTIVE. CONCEALMENT. 65 seconds later I received 13,201 units of a counterfeit \"Tether USD\"/\"USDT\" spelled with a Greek Tau, identical on screen, so I thought my funds were safe for 3 weeks. A second counterfeit uses Cyrillic e and Armenian S. Both are EIP-1167 clones of one factory template. SCALE. 4,000 drainer operations from public chain data: 46 victims, 5,651,466.35 USDT, 2026-07-02 to 2026-08-18; my own case predates that window. Largest losse",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 109,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 1,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 13102.80834,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5248993376",
-      "source": "github",
-      "title": "`HashedBeneficiary.percentage` is interpreted on a 0-100 scale in `reveal_and_claim` but validated on the contract's 0-10,000 basis-point scale everywhere else",
-      "url": "https://github.com/SoroWill/sorowill-contracts/issues/183",
-      "repositoryApiUrl": "https://api.github.com/repos/SoroWill/sorowill-contracts",
-      "rewardUsd": 128,
+      "title": "Add explicit test for `get_contributor_active_bounty` with no active bounty",
+      "url": "https://github.com/mergemint-mint/mergemint-contracts/issues/745",
+      "repositoryApiUrl": "https://api.github.com/repos/mergemint-mint/mergemint-contracts",
+      "rewardUsd": 161,
       "score": 54,
-      "labels": [
-        "High",
-        "Stellar Wave",
-        "security"
-      ],
+      "labels": [],
       "commentCount": 0,
-      "updatedAt": "2026-08-26T11:37:44Z",
-      "summary": "`reveal_and_claim` computes the payout as `will.balance * (hb.percentage as i128) / 100` — i.e. it treats `percentage` as a raw 0-100 value (50 means 50%). But `assert_valid_percentages`, which gates `add_hashed_beneficiary`, adds `hb.percentage` directly into the same running total as `Allocation::Percentage`'s basis-point values and compares the sum against `10_000` — the basis-point convention used by every other percentage field in the contract (`Beneficiary.allocation`'s `Percentage(bp)`, `MAX_KEEPER_BOUNTY_BPS`, etc.). An owner who follows the codebase's dominant basis-point convention and passes e.g. `percentage: 5000` intending \"50%\" would pass validation (5,000 ≤ 10,000, assuming a will with no other percentage beneficiaries per the sibling bug in `add_hashed_beneficiary`) but `reveal_and_claim` would then compute `balance * 5000 / 100` — 50x the intended payout, either reverting the transfer or, depending on balance and other flows, paying out far more than intended. ## Acceptance criteria - [ ] Standardize `HashedBeneficiary.percentage` on the same basis-point (0-10,000) scale used everywhere else, fixing either `reveal_and_claim`'s payout formula or `assert_valid_percen",
+      "updatedAt": "2026-08-26T13:07:20Z",
+      "summary": "**Description** Add explicit test for `get_contributor_active_bounty` with no active bounty. **Requirements and context** - `get_contributor_active_bounty` (`src/contract/queries.rs:161`) should be explicitly tested for a contributor with `None` as their result. - Match the existing coding and error-handling conventions in the surrounding module. - Keep the change scoped to what is described here. **Suggested execution** ``` git checkout -b test/no-active-bounty-query ``` **Implement changes** - Add a test for a freshly-registered contributor with no bounty claimed. **Test and commit** - Add the test to `src/test.rs`. - Include the relevant test/command output confirming the fix in the PR description. **Example commit message** `test: cover get_contributor_active_bounty with no active bounty` **Guidelines** Follow the branch naming, formatting/lint, and PR process described in [CONTRIBUTING.md](https://github.com/mergemint-mint/mergemint-contracts/blob/main/CONTRIBUTING.md). Open the PR against `mergemint-mint/mergemint-contracts` and link this issue with GitHub's closing keyword (e.g. `Closes #<this-issue-number>`).",
       "state": "candidate",
-      "payoutConfidence": 0.35,
+      "payoutConfidence": 0.5,
       "autonomyFit": 1,
       "requiresHumanGate": false,
       "requiresSpecialHardware": false,
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 109,
+      "fastCashScore": 117,
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
@@ -186,7 +114,39 @@
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 128,
+      "economicValueUsd": 161,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5257338191",
+      "source": "github",
+      "title": "Reduce redundant storage reads across `mutations.rs`",
+      "url": "https://github.com/mergemint-mint/mergemint-contracts/issues/744",
+      "repositoryApiUrl": "https://api.github.com/repos/mergemint-mint/mergemint-contracts",
+      "rewardUsd": 90,
+      "score": 54,
+      "labels": [],
+      "commentCount": 0,
+      "updatedAt": "2026-08-26T13:07:19Z",
+      "summary": "**Description** Reduce redundant storage reads across `mutations.rs`. **Requirements and context** - Several mutations in `src/contract/mutations.rs` read the same `Bounty` from storage more than once within a single call (the pattern already fixed once for `create_bounty` in issue #90). - Match the existing coding and error-handling conventions in the surrounding module. - Keep the change scoped to what is described here. **Suggested execution** ``` git checkout -b perf/mutations-storage-reads ``` **Implement changes** - Audit each mutation for repeated `storage().get(...)` calls on the same key and cache the value in a local binding. **Test and commit** - Add a storage read-count assertion test (mirroring the existing `create_bounty` one) for each mutation touched. - Include the relevant test/command output confirming the fix in the PR description. **Example commit message** `refactor: cache repeated storage reads in mutations` **Guidelines** Follow the branch naming, formatting/lint, and PR process described in [CONTRIBUTING.md](https://github.com/mergemint-mint/mergemint-contracts/blob/main/CONTRIBUTING.md). Open the PR against `mergemint-mint/mergemint-contracts` and link this",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 107,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 90,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -296,35 +256,99 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5251591378",
+      "id": "github:5257215465",
       "source": "github",
-      "title": "Naming Incosistencies",
-      "url": "https://github.com/ljtpetersen/hgss_archipelago/issues/5",
-      "repositoryApiUrl": "https://api.github.com/repos/ljtpetersen/hgss_archipelago",
-      "rewardUsd": 24,
-      "score": 30,
+      "title": "Add a query returning a contributor's full bounty history, not just the active one",
+      "url": "https://github.com/mergemint-mint/mergemint-contracts/issues/642",
+      "repositoryApiUrl": "https://api.github.com/repos/mergemint-mint/mergemint-contracts",
+      "rewardUsd": 161,
+      "score": 54,
       "labels": [],
-      "commentCount": 3,
-      "updatedAt": "2026-08-26T11:43:12Z",
-      "summary": "This is a list of naming inconsistencies that @UselessWater3 will iron out 1. Sometimes Diglett's Cave is referred to as Diglett's Tunnel (in other locations) 2. Some locations use the wrong apostrophe (not ``'``) 3. Some Dragon's Den locations are called ``Dragons Den`` erronously 4. Fly Unlocks should follow the \"City - Fly Unlock\" pattern established in other apworlds 5. Fly Unlock for National Park to Fly Unlock Pokeathlondome (also items!) 6. Inconsistent: @Ecruteak Dowsing Machine House/Gift 7. All Gym locations to \"X City Gym - Locationname\". Currently it's \"X Gym - Locationname\". To be in line with PT and other one. 8. \"Dragon's Den Shrine - Badge from Clair\" and \"Dragon's Den Gift from Clair\" is inconsistent. Or is one actually outside? 9. Elm's Lab Locations need to be in New Bark Town. 10. Elms Lab -> Elm's Lab. Essentially search for anything that is ``s `` and then you can find missing plural apostrophes. 11. Chucks Wife -> Chuck's Wife 12. {\"@Ecruteak Dance Theater\"}, -> needs City 13. Oaks Lab -> Oak's Lab 14. Mr. Pokemons House -> Route 30 - Mr. Pokemon's House - ... 15. Olivine S.S. Aqua Port/National Dex from Prof. Oak\" is inconsistent. I think all should be \"Oliv",
+      "commentCount": 0,
+      "updatedAt": "2026-08-26T13:13:35Z",
+      "summary": "**Description** This issue tracks: Add a query returning a contributor's full bounty history, not just the active one. `get_contributor_active_bounty` (`src/contract/queries.rs:161`) only surfaces the current active bounty; contributors have no way to query completed/past bounties via the contract. Concretely: Add `get_contributor_bounty_history(env, address) -> Vec<BountyId>` backed by a new storage index maintained on status transitions. The change should be small enough to land as a single, focused pull request rather than a broad refactor. **Requirements and context** - `get_contributor_active_bounty` (`src/contract/queries.rs:161`) only surfaces the current active bounty; contributors have no way to query completed/past bounties via the contract. - Read the surrounding module before changing anything, and match its existing naming, error-handling, and structural conventions rather than introducing a new pattern. - Keep the change scoped to what's described here — no unrelated refactors, formatting-only diffs, or dependency bumps in the same PR. - Cover the change with the contract's test suite in `src/test.rs` (`cargo test`) before opening the PR. **Suggested execution** ``` g",
       "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
+      "payoutConfidence": 0.5,
+      "autonomyFit": 0.45,
+      "requiresHumanGate": true,
       "requiresSpecialHardware": false,
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 95,
+      "fastCashScore": 98,
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
-        "comments": 3,
+        "comments": 0,
         "attemptSignals": 0,
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 24,
+      "economicValueUsd": 161,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5257209056",
+      "source": "github",
+      "title": "Add a dedicated error variant for `expire_bounty` called before the deadline",
+      "url": "https://github.com/mergemint-mint/mergemint-contracts/issues/637",
+      "repositoryApiUrl": "https://api.github.com/repos/mergemint-mint/mergemint-contracts",
+      "rewardUsd": 776,
+      "score": 54,
+      "labels": [],
+      "commentCount": 0,
+      "updatedAt": "2026-08-26T13:13:04Z",
+      "summary": "**Description** This issue tracks: Add a dedicated error variant for `expire_bounty` called before the deadline. `expire_bounty` (`src/contract/mutations.rs:776`) should return a specific `TooEarly`-style error rather than a generic one when called before the bounty's deadline has passed. Concretely: Add the new variant to `src/errors.rs` and wire it into `expire_bounty`. The change should be small enough to land as a single, focused pull request rather than a broad refactor. **Requirements and context** - `expire_bounty` (`src/contract/mutations.rs:776`) should return a specific `TooEarly`-style error rather than a generic one when called before the bounty's deadline has passed. - Read the surrounding module before changing anything, and match its existing naming, error-handling, and structural conventions rather than introducing a new pattern. - Keep the change scoped to what's described here — no unrelated refactors, formatting-only diffs, or dependency bumps in the same PR. - Cover the change with the contract's test suite in `src/test.rs` (`cargo test`) before opening the PR. **Suggested execution** ``` git checkout -b fix/expire-bounty-too-early ``` **Implement changes** - Ad",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 0.45,
+      "requiresHumanGate": true,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 92,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 776,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5257209665",
+      "source": "github",
+      "title": "Add regression test asserting `complete_bounty` updates status and reward atomically",
+      "url": "https://github.com/mergemint-mint/mergemint-contracts/issues/638",
+      "repositoryApiUrl": "https://api.github.com/repos/mergemint-mint/mergemint-contracts",
+      "rewardUsd": 420,
+      "score": 62,
+      "labels": [],
+      "commentCount": 0,
+      "updatedAt": "2026-08-26T13:13:13Z",
+      "summary": "**Description** This issue tracks: Add regression test asserting `complete_bounty` updates status and reward atomically. `complete_bounty` (`src/contract/mutations.rs:420`) should update bounty status and trigger the reward transfer as one atomic unit; there's no test asserting a failed transfer leaves the status unchanged. Concretely: Simulate a failing token transfer in a test double and assert the bounty status is not advanced. The change should be small enough to land as a single, focused pull request rather than a broad refactor. **Requirements and context** - `complete_bounty` (`src/contract/mutations.rs:420`) should update bounty status and trigger the reward transfer as one atomic unit; there's no test asserting a failed transfer leaves the status unchanged. - Read the surrounding module before changing anything, and match its existing naming, error-handling, and structural conventions rather than introducing a new pattern. - Keep the change scoped to what's described here — no unrelated refactors, formatting-only diffs, or dependency bumps in the same PR. - Cover the change with the contract's test suite in `src/test.rs` (`cargo test`) before opening the PR. **Suggested ex",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 0.45,
+      "requiresHumanGate": true,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 92,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 420,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -373,7 +397,7 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-24T13:15:06Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":118,\"updatedAt\":\"2026-08-25T23:02:25Z\",\"competition\":{\"comments\":6,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4318279838\",\"rewardUsd\":200,\"fastCashScore\":102,\"updatedAt\":\"2026-08-25T22:48:10Z\",\"competition\":{\"comments\":6,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":99,\"updatedAt\":\"2026-08-26T05:58:16Z\",\"competition\":{\"comments\":21,\"attemptSignals\":3,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-25T07:38:13Z\",\"competition\":{\"comments\":46,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:4975260101\",\"rewardUsd\":780,\"fastCashScore\":119,\"updatedAt\":\"2026-08-25T05:07:59Z\",\"competition\":{\"comments\":18,\"attemptSignals\":1,\"risk\":\"high\"}},{\"id\":\"github:5203493059\",\"rewardUsd\":200,\"fastCashScore\":105,\"updatedAt\":\"2026-08-26T11:42:57Z\",\"competition\":{\"comments\":4,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5213991032\",\"rewardUsd\":13102.80834,\"fastCashScore\":109,\"updatedAt\":\"2026-08-26T06:46:38Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5243263356\",\"rewardUsd\":71.61,\"fastCashScore\":102,\"updatedAt\":\"2026-08-26T11:08:05Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5248993376\",\"rewardUsd\":128,\"fastCashScore\":109,\"updatedAt\":\"2026-08-26T11:37:44Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5248997266\",\"rewardUsd\":2553,\"fastCashScore\":123,\"updatedAt\":\"2026-08-26T11:40:15Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5251591378\",\"rewardUsd\":24,\"fastCashScore\":95,\"updatedAt\":\"2026-08-26T11:43:12Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-24T13:15:06Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":118,\"updatedAt\":\"2026-08-25T23:02:25Z\",\"competition\":{\"comments\":6,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4318279838\",\"rewardUsd\":200,\"fastCashScore\":102,\"updatedAt\":\"2026-08-25T22:48:10Z\",\"competition\":{\"comments\":6,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":99,\"updatedAt\":\"2026-08-26T05:58:16Z\",\"competition\":{\"comments\":21,\"attemptSignals\":3,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-25T07:38:13Z\",\"competition\":{\"comments\":46,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:4975260101\",\"rewardUsd\":780,\"fastCashScore\":119,\"updatedAt\":\"2026-08-25T05:07:59Z\",\"competition\":{\"comments\":18,\"attemptSignals\":1,\"risk\":\"high\"}},{\"id\":\"github:5243263356\",\"rewardUsd\":71.61,\"fastCashScore\":102,\"updatedAt\":\"2026-08-26T11:08:05Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5257200618\",\"rewardUsd\":249,\"fastCashScore\":98,\"updatedAt\":\"2026-08-26T13:12:18Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5257209056\",\"rewardUsd\":776,\"fastCashScore\":92,\"updatedAt\":\"2026-08-26T13:13:04Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5257209665\",\"rewardUsd\":420,\"fastCashScore\":92,\"updatedAt\":\"2026-08-26T13:13:13Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5257215465\",\"rewardUsd\":161,\"fastCashScore\":98,\"updatedAt\":\"2026-08-26T13:13:35Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5257338191\",\"rewardUsd\":90,\"fastCashScore\":107,\"updatedAt\":\"2026-08-26T13:07:19Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5257341199\",\"rewardUsd\":161,\"fastCashScore\":117,\"updatedAt\":\"2026-08-26T13:07:20Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
@@ -386,23 +410,32 @@
     "minPayoutConfidence": 0.8,
     "competitionRequired": "low",
     "rejectedFakeRevenueCount": 0,
-    "rejectedAlreadyPaidCount": 2,
-    "rejectedIdentityGateCount": 0
+    "rejectedAlreadyPaidCount": 1,
+    "rejectedIdentityGateCount": 1
   },
   "economicallyRejected": [
-    {
-      "id": "github:5203493059",
-      "title": "Move contracts/batch-rewards/cross.rs into the crate and wire it",
-      "rewardUsd": 200,
-      "reasons": [
-        "already_rewarded_or_paid"
-      ],
-      "rejectedAt": "2026-08-26T12:05:34.314Z"
-    },
     {
       "id": "github:3055155077",
       "title": "Switch to `ky` from `redaxios`",
       "rewardUsd": 12,
+      "reasons": [
+        "already_rewarded_or_paid"
+      ],
+      "rejectedAt": "2026-08-26T13:14:48.558Z"
+    },
+    {
+      "id": "github:5257200618",
+      "title": "Add idempotency guard to `claim_bounty` for an already-claimed bounty",
+      "rewardUsd": 249,
+      "reasons": [
+        "preclaim_or_identity_gate_not_configured"
+      ],
+      "rejectedAt": "2026-08-26T13:14:48.559Z"
+    },
+    {
+      "id": "github:5203493059",
+      "title": "Move contracts/batch-rewards/cross.rs into the crate and wire it",
+      "rewardUsd": 200,
       "reasons": [
         "already_rewarded_or_paid"
       ],
