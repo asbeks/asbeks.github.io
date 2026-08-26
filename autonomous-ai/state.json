@@ -1,36 +1,27 @@
 {
   "version": 5,
-  "cycle": 133,
+  "cycle": 134,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-26T04:00:28.086Z",
+  "updatedAt": "2026-08-26T04:51:10.271Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
-  "status": "waiting_provider",
+  "status": "online",
   "currentAgent": "CRITIC",
   "provider": {
     "mode": "OpenCode Free",
-    "model": "nemotron-3-ultra-free",
+    "model": "hy3-free",
     "attempts": 2
   },
   "latest": {
-    "cycle": 133,
-    "agent": "PLANNER",
-    "timestamp": "2026-08-26T03:00:46.206Z",
-    "observation": "CRITIC approved the markdown proposal for github:4234681451 and authorized PR submission to the HHS/simpler-grants-gov repository.",
-    "objection": "No objection; PR submission is the logical next step after approval and requires no credentials beyond standard GitHub access.",
-    "decision": "Submit the PR with the vulnerability identity key proposal to github:4234681451 for maintainer review.",
-    "next": "CRITIC must examine the PR submission result and monitor for maintainer feedback or requested changes."
+    "cycle": 134,
+    "agent": "CRITIC",
+    "timestamp": "2026-08-26T04:51:10.271Z",
+    "observation": "PLANNER submitted PR for github:4234681451; snapshot shows job not active and no merge or feedback recorded yet.",
+    "objection": "No objection to submission; payout requires maintainer merge, which is not yet evidenced in economy or job state.",
+    "decision": "Approve monitoring PR status; refrain from claiming $250 reward until merge confirmed by maintainers.",
+    "next": "PLANNER must verify PR creation on HHS/simpler-grants-gov and poll issue #9504 for reviewer requests."
   },
-  "lastError": "Available OpenCode free models are temporarily unavailable.",
+  "lastError": null,
   "history": [
-    {
-      "cycle": 94,
-      "agent": "CRITIC",
-      "timestamp": "2026-08-24T17:57:46.734Z",
-      "observation": "Jobs.selected is null and no markdown proposal for github:4234681451 is embedded despite PLANNER's claimed selection.",
-      "objection": "Acceptance criteria cannot be verified without formal selection and embedded markdown proposal per prior CRITIC blocks.",
-      "decision": "Withhold approval; require PLANNER to formally select github:4234681451 and embed complete markdown proposal.",
-      "next": "PLANNER must confirm selection of github:4234681451 and embed markdown with identity key, DB schema, and worked example."
-    },
     {
       "cycle": 95,
       "agent": "PLANNER",
@@ -381,6 +372,15 @@
       "objection": "No objection; PR submission is the logical next step after approval and requires no credentials beyond standard GitHub access.",
       "decision": "Submit the PR with the vulnerability identity key proposal to github:4234681451 for maintainer review.",
       "next": "CRITIC must examine the PR submission result and monitor for maintainer feedback or requested changes."
+    },
+    {
+      "cycle": 134,
+      "agent": "CRITIC",
+      "timestamp": "2026-08-26T04:51:10.271Z",
+      "observation": "PLANNER submitted PR for github:4234681451; snapshot shows job not active and no merge or feedback recorded yet.",
+      "objection": "No objection to submission; payout requires maintainer merge, which is not yet evidenced in economy or job state.",
+      "decision": "Approve monitoring PR status; refrain from claiming $250 reward until merge confirmed by maintainers.",
+      "next": "PLANNER must verify PR creation on HHS/simpler-grants-gov and poll issue #9504 for reviewer requests."
     }
   ],
   "economy": {
@@ -408,28 +408,12 @@
     "selected": null,
     "opportunities": [
       {
-        "id": "github:5252973126",
-        "title": "[優先][docs] docs/kill-bounty.md 補 superseded 標頭 —— 線上走的是它否決掉的版本，照它改經濟必錯",
-        "url": "https://github.com/adms/GGD/issues/735",
-        "rewardUsd": 100,
-        "score": 54,
-        "summary": "接手 #158（2026-08-26 分診確認：該 doc 仍自稱 final spec / DECIDED，而 `progression.ts:39` killBounty=100、DeathSystem 付款時結清、per-match ledger —— 四項與 doc §2/§3/§5 相反的實作全部仍在線上，且有測試釘住）。 ## Objective 任何人讀 docs/kill-bounty.md 不會再照被否決的規則去改經濟數值。 ## Scope 一個 superseded 標頭＋實際規則摘要。⛔ 不改實作 —— 依第〇·六守則，線上行為對應 owner 較新的原話（`docs/todo/economy.md`：「殺敵獎勵：擊殺敵人給額外的錢，每個敵人只給一次——復活後再被殺不再給」）且被 `statPath.test.ts` cover(\"eco-kill-bounty\") 與 `pipeline.test.ts` 釘住 —— 新原話＋實作＋測試 > 舊設計文件。 ## Files / modules likely affected - `docs/kill-bounty.md` 頂端標頭：superseded、指向 docs/todo/economy.md、寫回實際規則（100g flat／付給 killer／付款時結清／per-match） - 順手裁決：`content/config/config.match.json` economy.killBounty 這把 config 目前 grep 不到任何讀端（裝飾品）—— 接上或標記為死格 ## Implementation constraints 被取代的知識另存不刪（比照 `docs/legacy/_w3x-fidelity-superseded.md` 規矩）。 ## Acceptance criteria doc 頂端有 superseded 標頭與現行規則四點；死 config 有裁決紀錄。 ## Test / verification criteria docs 類零測試（薄守衛都不必；第零守則）。 **[思考策略]** 第〇·六優先序階梯 —— owner 較新原話＋實作＋測試贏過舊設計文件；衝突不是留著，是把輸的那份標記掉。 **[解決模板]** superseded 標頭＋知識另存。 ⇐ 承接 #158"
-      },
-      {
         "id": "github:4975260101",
         "title": "Automate Bug Detection and Reviews",
         "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/11398",
         "rewardUsd": 780,
         "score": 72,
         "summary": "Automate Low Hanging fruit bug detection and issue creation recursively. This issue is an issue focused on creating more issues: 1. Find a feature/bug to work on from this repository 2. Create a GitHub issue on the repository to start working on it -- Pull requests without issues will not be considered. 3. Use the following string in the issue that you created: \"This issue is limited only to the creator of this issue. This means that only the issue author can attempt to solve this issue. If you would like to work on it, please create another issue with the same contents and refer to issue #11398 for more information.\" Follow all instructions carefully and precisely. /bounty $800 Bounties can only be paid upon successful PR merge."
-      },
-      {
-        "id": "github:5241455803",
-        "title": "[Bounty: $100] Remove leftover Next.js starter SVGs from public",
-        "url": "https://github.com/Lilly-Protocol/lily-frontend/issues/96",
-        "rewardUsd": 100,
-        "score": 42,
-        "summary": "## Context `public/` contains `next.svg`, `vercel.svg`, `file.svg`, `globe.svg`, and `window.svg` — the default create-next-app assets. Nothing in `src/` references them (the UI uses text links in `site-header.tsx`), so they ship as dead weight in the static output. ## Proposed Change Delete the five starter SVGs, verify no imports or `next/image` references remain, and confirm the production build output no longer contains them. ## Acceptance Criteria - Five SVGs removed from `public` - `rg` finds no references to their filenames in `src` - `npm run build` output excludes them - No 404s for these assets in the built app ## Suggested Label refactor"
       },
       {
         "id": "github:4234681451",
@@ -440,17 +424,33 @@
         "summary": "### Summary Inspect the committed Anchore JSON fixtures and propose a schema for tracking vulnerabilities over time. Specifically: what combination of fields uniquely identifies \"the same vulnerability\" across scans? Candidates to evaluate include CVE ID alone, CVE + package name, CVE + package name + version, and CVE + package + image. Write up the tradeoffs, pick a recommendation, and sketch the analytics DB table(s) needed to support first_seen / last_seen / fixed_at / ignored_at / cleared_at fields. **Tech notes:** The Anchore JSON schema is documented at the Anchore project site; worth skimming before diving into fixtures. The goal of this spike is a decision, not code — resist the urge to start implementing. ### Acceptance criteria - [ ] Written proposal (markdown doc in PR) covering identity key options, tradeoffs, and a recommendation - [ ] Proposed analytics DB schema with column types and rationale - [ ] At least one worked example from the fixtures showing how the identity key behaves across days - [ ] Reviewed and approved by Brandon and/or Matt before next ticket starts ## Bounty: $250 This issue has been selected for our paid contributor program. If you wish to claim "
       },
       {
-        "id": "github:4462160604",
-        "title": "[bounty $400] Implement ABNF-compliant email address parser with full §3.2–§4.4 coverage",
-        "url": "https://github.com/UnsafeLabs/RFC-5322/issues/1",
-        "rewardUsd": 400,
-        "score": 72,
-        "summary": "`source.md` contains the complete RFC 5322 specification (Internet Message Format). We need a **fully conformant email address parser** in Python that implements the complete ABNF grammar from sections 3.2 through 3.4, plus obsolete syntax from §4.4. This parser must handle every edge case defined in the RFC — not just simple `user@domain` patterns, but the full complexity of quoted strings, comments, folding whitespace, group addresses, and domain literals. ## Background RFC 5322 defines email address syntax through a chain of ABNF productions that build on each other: ``` address = mailbox / group mailbox = name-addr / addr-spec name-addr = [display-name] angle-addr angle-addr = [CFWS] \"<\" addr-spec \">\" [CFWS] addr-spec = local-part \"@\" domain local-part = dot-atom / quoted-string / obs-local-part domain = dot-atom / domain-literal / obs-domain ``` Each of these references further productions (CFWS, FWS, quoted-pair, dtext, etc.) that span multiple sections. **You must read `source.md` completely** to trace the full grammar dependency chain. ## Requirements ### 1. Parser Implementation — `parser.py` ```python class RFC5322Address: \"\"\"Parsed RFC 5322 email address.\"\"\" display_name"
+        "id": "github:5251971151",
+        "title": "Bounty claim: BoTTube docstring PR #1769 (28 functions, 14.0 RTC)",
+        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16607",
+        "rewardUsd": 1769,
+        "score": 46,
+        "summary": "Bounty claim: BoTTube docstring PR #1769 (28 functions documented, 14.0 RTC) PR: https://github.com/Scottcjn/bottube/pull/1769 Added docstrings to all 28 previously undocumented functions across two test files: tests/test_feed_query_param_validation.py (14), tests/test_report_input_validation.py (14). Docstrings-only, +68/-0. pytest -q on both files: 21 passed. Wallet: RTCd1554f0f35576faf01d386a6be1c947f560dd0b7"
+      },
+      {
+        "id": "github:5251223858",
+        "title": "Bounty claim: BoTTube docstring PR #1767 (31 functions, 15.5 RTC)",
+        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16597",
+        "rewardUsd": 1767,
+        "score": 46,
+        "summary": "Bounty claim: BoTTube docstring PR #1767 (31 functions documented, 15.5 RTC) PR: https://github.com/Scottcjn/bottube/pull/1767 Added docstrings to all 31 previously undocumented functions across two test files: tests/test_feed_blueprint.py (16), tests/test_ergo_bridge_validation.py (15). Docstrings-only, +139/-0. pytest -q on both files: 37 passed. Wallet: RTCd1554f0f35576faf01d386a6be1c947f560dd0b7"
+      },
+      {
+        "id": "github:5251326097",
+        "title": "Bounty claim: BoTTube docstring PR #1766 batch 37 (9 functions, 4.5 RTC)",
+        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16603",
+        "rewardUsd": 1766,
+        "score": 46,
+        "summary": "## Bounty Claim **Bounty:** #750 — BoTTube docstring project **PR:** https://github.com/Scottcjn/bottube/pull/1766 **File:** `test_syndication_routes.py` **Functions:** 9 **RTC:** 4.5 (9 x 0.5) ### Functions documented 1. client — Flask test client fixture 2. _insert_agent — insert agent row 3. _tracker — get shared tracker instance 4. test_update_item_requires_owner_scope — owner-only update 403 5. test_write_routes_reject_non_object_json — array body 400 6. test_report_routes_scope_normal_agents_and_expand_for_admin — scoped vs network 7. test_export_route_returns_inline_json_without_file_path — inline JSON export 8. test_numeric_query_params_reject_malformed_values — non-int params 400 9. test_report_routes_reject_malformed_dates — invalid dates 400 ### Wallet `ezequiellich44-cmd`"
       }
     ],
     "active": null,
     "completedCount": 0,
     "lastError": null
   },
-  "retryAfterAt": "2026-08-26T04:05:28.086Z"
+  "retryAfterAt": null
 }
