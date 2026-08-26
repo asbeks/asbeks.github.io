@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-08-26T18:46:25.274Z",
+  "updatedAt": "2026-08-26T21:18:07.399Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -50,23 +50,19 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5235943270",
+      "id": "github:5261529911",
       "source": "github",
-      "title": "DEX competition rewards mint governance tokens with no escrow: claim_competition_reward inflates total_supply for free",
-      "url": "https://github.com/MettaChain/PropChain-contract/issues/1022",
-      "repositoryApiUrl": "https://api.github.com/repos/MettaChain/PropChain-contract",
-      "rewardUsd": 876,
+      "title": "Add mutual_insurance_pool() where stakers collectively cover each other's principal loss",
+      "url": "https://github.com/Rickyy1017/Stellar-Defi-Vault/issues/366",
+      "repositoryApiUrl": "https://api.github.com/repos/Rickyy1017/Stellar-Defi-Vault",
+      "rewardUsd": 200,
       "score": 48,
       "labels": [
-        "bug",
-        "Contract",
-        "Rust",
-        "High Complexity",
-        "Stellar Wave"
+        "enhancement"
       ],
-      "commentCount": 5,
-      "updatedAt": "2026-08-26T18:46:10Z",
-      "summary": "# DEX competition rewards mint governance tokens with no escrow: claim_competition_reward inflates total_supply for free **Labels / Complexity:** Contract · Rust · High Complexity — High ## Problem `contracts/dex/src/lib.rs` `claim_competition_reward` (line 876) credits the winner's `governance_balances` and inflates `governance_config.total_supply` by the reward — with no value ever escrowed. `create_trading_competition` (line 819) records `reward_amount` as a plain u128 field; the DEX crate has zero `payable` messages and zero `transferred_value` reads (a grep returns nothing), so the `reward_amount` is never funded. When a trader claims, lines 929-933 do: ```rust self.governance_balances.insert(caller, &balance.saturating_add(reward)); self.governance_config.total_supply = self.governance_config.total_supply.saturating_add(reward); ``` Governance tokens are minted from nothing — the same fabricated-accounting pattern as the fees-treasury issue, here inflating a token's total supply. Any code that values governance tokens against `total_supply`, or that treats `governance_balances` as spendable, is reading fabricated state. The same mint pattern repeats at line 1523-1526. ## Root",
+      "commentCount": 0,
+      "updatedAt": "2026-08-26T21:15:47Z",
+      "summary": "## Summary Distinct from Issue #190 (purchased insurance from admin fund). Add a peer mutual insurance pool where stakers contribute a small percentage of rewards to a shared fund that covers principal loss for any member who suffers a verified loss event declared by governance vote. ## Acceptance Criteria - [ ] `set_mutual_insurance_contribution_bps(admin, bps: u32)` — % of each reward auto-contributed (max 200 bps) - [ ] `MutualInsuranceFund` balance tracked separately in instance storage - [ ] `pay_reward` deducts contribution before paying user — routes to `MutualInsuranceFund` - [ ] `get_mutual_insurance_fund() -> i128` read-only query - [ ] `propose_insurance_claim(user, amount: i128, reason: soroban_sdk::String)` — member files a claim - [ ] `InsuranceClaim` struct: `{ claimant, amount, reason, votes_approve: i128, votes_reject: i128, resolved: bool }` - [ ] `vote_insurance_claim(voter, claim_id: u32, approve: bool)` — stake-weighted vote; 72h voting window - [ ] `resolve_insurance_claim(claim_id: u32)` — pays from fund if majority approve - [ ] Tests: contribution deducted from reward, claim filed and voted on, approval pays from fund, rejection denies claim, fund balance d",
       "state": "candidate",
       "payoutConfidence": 0.35,
       "autonomyFit": 1,
@@ -75,7 +71,110 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 103,
+      "fastCashScore": 111,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 200,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5254195444",
+      "source": "github",
+      "title": "Bounty claim: BoTTube docstring PR #1766 batch 42 (9 functions, 4.5 RTC)",
+      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16612",
+      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
+      "rewardUsd": 1766,
+      "score": 38,
+      "labels": [
+        "awaiting-merge"
+      ],
+      "commentCount": 6,
+      "updatedAt": "2026-08-26T20:25:40Z",
+      "summary": "## Bounty Claim **Bounty:** #750 — BoTTube docstring project **PR:** https://github.com/Scottcjn/bottube/pull/1766 **File:** `test_badges.py` **RTC rate:** 0.5 per function ### Functions documented client/_insert_agent/_lookup_agent/_insert_video/_create_referral_code/_activate_referred_human/_activate_referred_agent helpers (7); badge assignment renders+removable; candidates follow thresholds (2) ### Wallet `ezequiellich44-cmd`",
+      "state": "candidate",
+      "payoutConfidence": 0.5,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 109,
+      "survivalEligible": false,
+      "eligibilityReason": "Competition is too high for bootstrap mode.",
+      "competition": {
+        "comments": 6,
+        "attemptSignals": 0,
+        "risk": "medium"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 1766,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5254195327",
+      "source": "github",
+      "title": "Bounty claim: BoTTube docstring PR #1766 batch 41 (8 functions, 4.0 RTC)",
+      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16611",
+      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
+      "rewardUsd": 1766,
+      "score": 38,
+      "labels": [
+        "awaiting-merge"
+      ],
+      "commentCount": 6,
+      "updatedAt": "2026-08-26T20:25:38Z",
+      "summary": "## Bounty Claim **Bounty:** #750 — BoTTube docstring project **PR:** https://github.com/Scottcjn/bottube/pull/1766 **File:** `test_agent_public_visibility.py` **RTC rate:** 0.5 per function ### Functions documented client/_insert_agent/_insert_video/_render_context fixtures (4); agents page hides banned/removed; profile API hides; channel page hides; RSS feeds hide (4) ### Wallet `ezequiellich44-cmd`",
+      "state": "candidate",
+      "payoutConfidence": 0.5,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 109,
+      "survivalEligible": false,
+      "eligibilityReason": "Competition is too high for bootstrap mode.",
+      "competition": {
+        "comments": 6,
+        "attemptSignals": 0,
+        "risk": "medium"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 1766,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:4997255555",
+      "source": "github",
+      "title": "Add reward_top_up_allowlist() restricting which addresses can add reward tokens",
+      "url": "https://github.com/Rickyy1017/Stellar-Defi-Vault/issues/321",
+      "repositoryApiUrl": "https://api.github.com/repos/Rickyy1017/Stellar-Defi-Vault",
+      "rewardUsd": 128,
+      "score": 48,
+      "labels": [
+        "enhancement",
+        "Stellar Wave"
+      ],
+      "commentCount": 5,
+      "updatedAt": "2026-08-26T21:14:07Z",
+      "summary": "## Summary Currently any address can transfer reward tokens to the contract address directly, potentially confusing accounting. Add an allowlist restricting which addresses are permitted to officially top up the reward reserve via a dedicated function, keeping reward accounting clean and auditable. ## Acceptance Criteria - [ ] `add_reward_supplier(admin, supplier: Address)` — whitelist a reward supplier - [ ] `remove_reward_supplier(admin, supplier: Address)` — remove from whitelist - [ ] `is_reward_supplier(supplier: Address) -> bool` read-only query - [ ] `supply_rewards(supplier, amount: i128)` — only whitelisted suppliers can call - [ ] Transfers `amount` reward tokens from supplier to contract - [ ] `RewardSupplied` counter incremented: `total_rewards_supplied` lifetime tracker - [ ] `get_total_rewards_supplied() -> i128` read-only query - [ ] `rewards_supplied` event: `(supplier, amount, new_balance, ledger)` - [ ] Admin is automatically a reward supplier — cannot be removed - [ ] Tests: whitelisted supplier adds rewards, non-whitelisted rejected, admin always can supply, event emitted correctly ## Notes - Does not prevent direct token transfers to contract address — only con",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 101,
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
@@ -84,7 +183,7 @@
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 876,
+      "economicValueUsd": 128,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -170,7 +269,7 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-24T13:15:06Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":99,\"updatedAt\":\"2026-08-26T05:58:16Z\",\"competition\":{\"comments\":21,\"attemptSignals\":3,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-25T07:38:13Z\",\"competition\":{\"comments\":46,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:4975260101\",\"rewardUsd\":780,\"fastCashScore\":119,\"updatedAt\":\"2026-08-25T05:07:59Z\",\"competition\":{\"comments\":18,\"attemptSignals\":1,\"risk\":\"high\"}},{\"id\":\"github:5235943270\",\"rewardUsd\":876,\"fastCashScore\":103,\"updatedAt\":\"2026-08-26T18:46:10Z\",\"competition\":{\"comments\":5,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-24T13:15:06Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":99,\"updatedAt\":\"2026-08-26T05:58:16Z\",\"competition\":{\"comments\":21,\"attemptSignals\":3,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-25T07:38:13Z\",\"competition\":{\"comments\":46,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:4975260101\",\"rewardUsd\":780,\"fastCashScore\":119,\"updatedAt\":\"2026-08-25T05:07:59Z\",\"competition\":{\"comments\":18,\"attemptSignals\":1,\"risk\":\"high\"}},{\"id\":\"github:4997255555\",\"rewardUsd\":128,\"fastCashScore\":101,\"updatedAt\":\"2026-08-26T21:14:07Z\",\"competition\":{\"comments\":5,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5254195327\",\"rewardUsd\":1766,\"fastCashScore\":109,\"updatedAt\":\"2026-08-26T20:25:38Z\",\"competition\":{\"comments\":6,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5254195444\",\"rewardUsd\":1766,\"fastCashScore\":109,\"updatedAt\":\"2026-08-26T20:25:40Z\",\"competition\":{\"comments\":6,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5261523249\",\"rewardUsd\":128,\"fastCashScore\":109,\"updatedAt\":\"2026-08-26T21:14:53Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5261529911\",\"rewardUsd\":200,\"fastCashScore\":111,\"updatedAt\":\"2026-08-26T21:15:47Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
@@ -184,9 +283,18 @@
     "competitionRequired": "low",
     "rejectedFakeRevenueCount": 0,
     "rejectedAlreadyPaidCount": 1,
-    "rejectedIdentityGateCount": 0
+    "rejectedIdentityGateCount": 1
   },
   "economicallyRejected": [
+    {
+      "id": "github:5261523249",
+      "title": "Add epoch_reward_cap() limiting maximum total rewards paid in any single epoch",
+      "rewardUsd": 128,
+      "reasons": [
+        "preclaim_or_identity_gate_not_configured"
+      ],
+      "rejectedAt": "2026-08-26T21:18:07.348Z"
+    },
     {
       "id": "github:3055155077",
       "title": "Switch to `ky` from `redaxios`",
@@ -194,7 +302,7 @@
       "reasons": [
         "already_rewarded_or_paid"
       ],
-      "rejectedAt": "2026-08-26T18:46:25.231Z"
+      "rejectedAt": "2026-08-26T21:18:07.349Z"
     },
     {
       "id": "github:5190110718",
