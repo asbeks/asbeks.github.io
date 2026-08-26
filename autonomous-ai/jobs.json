@@ -1,9 +1,45 @@
 {
   "version": 11,
-  "updatedAt": "2026-08-26T14:08:53.170Z",
+  "updatedAt": "2026-08-26T15:53:40.801Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
+    {
+      "id": "github:5248997266",
+      "source": "github",
+      "title": "`distribute()`'s per-beneficiary share math doesn't use the overflow-safe `proportional_share` helper it already uses for the keeper bounty",
+      "url": "https://github.com/SoroWill/sorowill-contracts/issues/190",
+      "repositoryApiUrl": "https://api.github.com/repos/SoroWill/sorowill-contracts",
+      "rewardUsd": 2553,
+      "score": 54,
+      "labels": [
+        "High",
+        "Stellar Wave",
+        "security"
+      ],
+      "commentCount": 3,
+      "updatedAt": "2026-08-26T15:47:37Z",
+      "summary": "`proportional_share` (lib.rs ~2553-2560) exists specifically to compute `floor(total * basis_points / 10_000)` without ever forming the potentially-overflowing `total * basis_points` intermediate — its own doc comment explains this is safe independently of the workspace's `overflow-checks = true` release setting. `distribute()` uses it for the keeper-bounty calculation (`bounty_amount = proportional_share(total, will.keeper_bounty_bps)`, line ~2586) but its actual beneficiary-payout loop computes the far more common and security-critical share directly as `let portion = remaining * (bp as i128) / 10_000;` (line ~2620), bypassing the safer helper entirely. The one code path in the whole contract whose overflow behaviour matters most — the amount that gets transferred out to real beneficiaries — is the one path that doesn't use the overflow-hardened calculation the codebase already wrote and relies on elsewhere in the same function. ## Acceptance criteria - [ ] Replace `distribute()`'s `remaining * (bp as i128) / 10_000` beneficiary-payout calculation with the `proportional_share` helper already used for the keeper bounty - [ ] Add a regression/fuzz test with large balances confirmin",
+      "state": "candidate",
+      "payoutConfidence": 0.65,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 120,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 3,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 2553,
+      "requiresPreclaimOrIdentity": false
+    },
     {
       "id": "github:4975260101",
       "source": "github",
@@ -86,6 +122,77 @@
       "requiresPreclaimOrIdentity": false
     },
     {
+      "id": "github:5177292050",
+      "source": "github",
+      "title": "[radar] SN open bounty 2026-08-18T02:13",
+      "url": "https://github.com/relayhop/ClaudeEarnSelf-runtime/issues/726",
+      "repositoryApiUrl": "https://api.github.com/repos/relayhop/ClaudeEarnSelf-runtime",
+      "rewardUsd": 2026,
+      "score": 46,
+      "labels": [
+        "radar",
+        "sn"
+      ],
+      "commentCount": 4,
+      "updatedAt": "2026-08-26T15:33:01Z",
+      "summary": "New SN OPEN_BOUNTY detected: ``` 1549793 bitcoin 5000 17 12.0 OPEN_BOUNTY,HOT ⚡Best tips for running a profitable lighting node?⚡ ```",
+      "state": "candidate",
+      "payoutConfidence": 0.5,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 112,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 4,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 2026,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5248993376",
+      "source": "github",
+      "title": "`HashedBeneficiary.percentage` is interpreted on a 0-100 scale in `reveal_and_claim` but validated on the contract's 0-10,000 basis-point scale everywhere else",
+      "url": "https://github.com/SoroWill/sorowill-contracts/issues/183",
+      "repositoryApiUrl": "https://api.github.com/repos/SoroWill/sorowill-contracts",
+      "rewardUsd": 128,
+      "score": 54,
+      "labels": [
+        "High",
+        "Stellar Wave",
+        "security"
+      ],
+      "commentCount": 3,
+      "updatedAt": "2026-08-26T15:46:00Z",
+      "summary": "`reveal_and_claim` computes the payout as `will.balance * (hb.percentage as i128) / 100` — i.e. it treats `percentage` as a raw 0-100 value (50 means 50%). But `assert_valid_percentages`, which gates `add_hashed_beneficiary`, adds `hb.percentage` directly into the same running total as `Allocation::Percentage`'s basis-point values and compares the sum against `10_000` — the basis-point convention used by every other percentage field in the contract (`Beneficiary.allocation`'s `Percentage(bp)`, `MAX_KEEPER_BOUNTY_BPS`, etc.). An owner who follows the codebase's dominant basis-point convention and passes e.g. `percentage: 5000` intending \"50%\" would pass validation (5,000 ≤ 10,000, assuming a will with no other percentage beneficiaries per the sibling bug in `add_hashed_beneficiary`) but `reveal_and_claim` would then compute `balance * 5000 / 100` — 50x the intended payout, either reverting the transfer or, depending on balance and other flows, paying out far more than intended. ## Acceptance criteria - [ ] Standardize `HashedBeneficiary.percentage` on the same basis-point (0-10,000) scale used everywhere else, fixing either `reveal_and_claim`'s payout formula or `assert_valid_percen",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 104,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 3,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 128,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
       "id": "github:4318279838",
       "source": "github",
       "title": "Add unit tests for `src.services.service_utils`",
@@ -120,38 +227,6 @@
       },
       "realMoneyEligible": true,
       "economicValueUsd": 200,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5257951210",
-      "source": "github",
-      "title": "Go",
-      "url": "https://github.com/toncenter/tonweb/issues/447",
-      "repositoryApiUrl": "https://api.github.com/repos/toncenter/tonweb",
-      "rewardUsd": 28,
-      "score": 46,
-      "labels": [],
-      "commentCount": 0,
-      "updatedAt": "2026-08-26T14:04:11Z",
-      "summary": "Go _Originally posted by @tcka4enckoalexei2014-commits in https://github.com/ton-blockchain/bug-bounty/pull/28#discussion_r3838021454_",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 100,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 0,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 28,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -192,20 +267,19 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5247887640",
+      "id": "github:5258945220",
       "source": "github",
-      "title": "`resolve_dispute_pay_driver` calls `increase_reputation` with the wrong number of arguments",
-      "url": "https://github.com/fanilabs/fanilab-smartcontract/issues/207",
-      "repositoryApiUrl": "https://api.github.com/repos/fanilabs/fanilab-smartcontract",
-      "rewardUsd": 32,
-      "score": 48,
+      "title": "Moonshot: continuous spatial Atlas shell with interactive 3D Earth navigation",
+      "url": "https://github.com/BenWassa/flag/issues/119",
+      "repositoryApiUrl": "https://api.github.com/repos/BenWassa/flag",
+      "rewardUsd": 10,
+      "score": 30,
       "labels": [
-        "bug",
-        "Stellar Wave"
+        "enhancement"
       ],
-      "commentCount": 1,
-      "updatedAt": "2026-08-26T13:46:25Z",
-      "summary": "## Problem Statement `identity_reputation_contract::increase_reputation` has this signature: ```rust pub fn increase_reputation( env: Env, caller: Address, driver: Address, delivery_id: u64, weight_grams: u32, fragile: bool, ) ``` `dispute_resolution_contract::resolve_dispute_pay_driver` invokes it with three arguments, the third being a reputation-point constant rather than a delivery ID: ```rust let _: () = env.invoke_contract( &reputation_addr, &Symbol::new(&env, \"increase_reputation\"), soroban_sdk::vec![ &env, env.current_contract_address().into_val(&env), driver.clone().into_val(&env), DISPUTE_REPUTATION_REWARD.into_val(&env), ], ); ``` Five parameters are expected after `env`; three are supplied. The types also disagree — `DISPUTE_REPUTATION_REWARD` is a `u32` being passed where `delivery_id: u64` is expected. ## Why It Matters The call fails at runtime whenever an identity-reputation contract is configured, and because the failure propagates, **the entire `resolve_dispute_pay_driver` transaction reverts**. The dispute cannot be resolved in the driver's favour at all on any deployment that has wired reputation — which is the deployment the protocol documents as complete. This",
+      "commentCount": 0,
+      "updatedAt": "2026-08-26T15:49:27Z",
+      "summary": "## Status **MOONSHOT PRODUCT + TECHNICAL EXPLORATION — prototype first, not scheduled for production replacement.** This issue scopes a major future Atlas UI/UX direction: replace the *perceived* sequence of discrete screens with a persistent spatial interface centred on a stylised interactive Earth. The goal is **not** to remove routing, persistence, learning-domain architecture or ordinary HTML controls. The goal is to keep those durable systems underneath while making navigation feel like one continuous geographic object. ## Product vision Atlas remains **mode-first**: 1. learner opens Atlas and chooses **Flags / Locations / Outlines / Neighbours**; 2. the persistent Earth becomes the primary geography-selection surface; 3. learner rotates the Earth and selects a continent; 4. camera smoothly frames that continent; 5. the continent name acts as the primary **whole-continent Play** control; 6. learner-facing regions appear as secondary geographically associated controls; 7. selecting a region smoothly moves closer without an obvious screen break; 8. starting Play transitions into the domain-native activity while retaining spatial continuity; 9. Results can pull geography back int",
       "state": "candidate",
       "payoutConfidence": 0.35,
       "autonomyFit": 1,
@@ -214,69 +288,34 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 99,
+      "fastCashScore": 95,
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
-        "comments": 1,
+        "comments": 0,
         "attemptSignals": 0,
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 32,
+      "economicValueUsd": 10,
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5002334583",
+      "id": "github:5079151132",
       "source": "github",
-      "title": "[Bounty $1500] Add a dry-run mode that previews installer actions without modifying the system",
-      "url": "https://github.com/tenstorrent/tt-installer/issues/140",
-      "repositoryApiUrl": "https://api.github.com/repos/tenstorrent/tt-installer",
-      "rewardUsd": 1500,
-      "score": 48,
-      "labels": [
-        "bounty",
-        "bounty_difficulty/medium"
-      ],
-      "commentCount": 7,
-      "updatedAt": "2026-08-26T14:03:58Z",
-      "summary": "## Problem `tt-installer` performs several system-changing operations during a normal install: package manager changes, DKMS setup, HugePages configuration, container image pulls, and optional firmware updates. Users currently have no supported way to see the planned actions before running the installer. This makes it harder to review an installation on managed systems and to use the installer safely in CI or provisioning scripts. ## Proposed solution Add a `--dry-run` option that builds and prints the installation plan without modifying the system. The output should include: - Detected distribution and version. - Host architecture and kernel version. - System packages and Python packages selected for installation. - HugePages configuration that would be applied. - Selected container runtime. - Container images that would be pulled. - Firmware version and firmware action that would be performed. The output should make clear that it is a plan and should identify actions that would normally require elevated privileges. ## Required behavior With `--dry-run`, the installer must not execute: - `apt-get` or `dnf` package changes. - DKMS installation or module changes. - HugePages or othe",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 2,
-      "fundedBountySignal": false,
-      "fastCashScore": 91,
-      "survivalEligible": false,
-      "eligibilityReason": "Competition is too high for bootstrap mode.",
-      "competition": {
-        "comments": 7,
-        "attemptSignals": 1,
-        "risk": "medium"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 1500,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5116156343",
-      "source": "github",
-      "title": "🎯 Prevent Indefinite Request Throttling When RateLimiter Burst is Configured Too Low",
-      "url": "https://github.com/CornelParsch21/client-go/issues/1",
-      "repositoryApiUrl": "https://api.github.com/repos/CornelParsch21/client-go",
+      "title": "🎯 Fix Case-Insensitive Path Comparison in `Worktree.Status()` on Case-Insensitive Filesystems",
+      "url": "https://github.com/jakaramelod/go-git/issues/1",
+      "repositoryApiUrl": "https://api.github.com/repos/jakaramelod/go-git",
       "rewardUsd": 10,
       "score": 54,
       "labels": [
         "bounty",
-        "opire",
+        "bountyhub",
         "$10"
       ],
-      "commentCount": 11,
-      "updatedAt": "2026-08-26T13:58:45Z",
-      "summary": "## 📝 Description In `client-go`, the client-side rate limiting is managed via the `util/flowcontrol` package, which wraps `golang.org/x/time/rate`. Currently, if a `RateLimiter` is configured with a very small burst size (specifically `burst <= 0` or a burst size that is too small relative to the concurrency of the requests), requests can be throttled indefinitely. In `golang.org/x/time/rate`, a token bucket with a burst of `0` will never allow any tokens to be consumed, causing `Wait()` or `Accept()` calls to block indefinitely or fail continuously. This issue tracks the implementation of a safeguard to ensure that the rate limiter is never initialized with a burst size that causes indefinite blocking, defaulting to a minimum safe burst size (e.g., `1`) when an invalid or dangerously low burst is provided. ## 🎯 Acceptance Criteria - [ ] `NewTokenBucketRateLimiter(qps float32, burst int)` must automatically sanitize the `burst` parameter. If `burst` is less than or equal to `0` (and QPS is greater than 0), it should be coerced to a minimum value of `1`. - [ ] A warning should be logged (using `klog`) when the burst size is automatically adjusted/coerced to prevent silent configur",
+      "commentCount": 8,
+      "updatedAt": "2026-08-26T15:36:18Z",
+      "summary": "## 📝 Description On case-insensitive filesystems (such as APFS on macOS or NTFS on Windows), `go-git` incorrectly reports files as modified immediately after checking out a branch or commit that contains filename casing differences (e.g., renaming `README.md` to `Readme.md`). While the physical file contents remain unchanged and the Git CLI correctly reports a clean working tree, `Worktree.Status()` returns a dirty status with untracked, modified, or deleted files. This discrepancy occurs because the index comparison logic performs case-sensitive path matching, failing to recognize that the file on disk matches the index entry despite the casing difference. ## 🎯 Acceptance Criteria - [ ] `Worktree.Status()` must report a clean working tree (`IsClean() == true`) immediately after checkout on case-insensitive filesystems, even if the branch contains files with casing-only changes. - [ ] The fix must respect the Git configuration option `core.ignorecase` (typically set to `true` automatically on macOS and Windows). - [ ] Path normalization and comparison during index-to-worktree traversal must handle case-folding when `core.ignorecase` is enabled. - [ ] The fix must not introduce re",
       "state": "candidate",
       "payoutConfidence": 0.7,
       "autonomyFit": 1,
@@ -285,11 +324,11 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 86,
+      "fastCashScore": 90,
       "survivalEligible": false,
       "eligibilityReason": "Competition is too high for bootstrap mode.",
       "competition": {
-        "comments": 11,
+        "comments": 8,
         "attemptSignals": 1,
         "risk": "medium"
       },
@@ -333,39 +372,38 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5253558268",
+      "id": "github:5223629185",
       "source": "github",
-      "title": "🎯 Fail with descriptive error instead of silently sending unauthenticated API requests when keyring access fails",
-      "url": "https://github.com/condoraltidoi32/cli/issues/1",
-      "repositoryApiUrl": "https://api.github.com/repos/condoraltidoi32/cli",
-      "rewardUsd": 10,
+      "title": "[Bounty $750] ttnn.addcdiv: forms in1 * value before dividing, overflowing to +/-inf for finite results",
+      "url": "https://github.com/tenstorrent/tt-metal/issues/54055",
+      "repositoryApiUrl": "https://api.github.com/repos/tenstorrent/tt-metal",
+      "rewardUsd": 750,
       "score": 46,
       "labels": [
-        "bounty",
-        "bountyhub",
-        "$10"
+        "bug",
+        "community"
       ],
-      "commentCount": 10,
-      "updatedAt": "2026-08-26T14:03:40Z",
-      "summary": "## 📝 Description When executing `gh api` commands, `cli` attempts to resolve authentication tokens for the target host via the configured credential store (such as the system keyring, environment variables, or config files). If credential retrieval from the system keyring fails due to an operational or system error (e.g., locked keychain, missing D-Bus session, OS permission denied, corrupted secret store), the error is swallowed and treated as if no credentials exist. Consequently, `gh api` silently proceeds with an unauthenticated HTTP request. This results in misleading downstream API errors—such as `HTTP 404 Not Found` for private resources or `HTTP 403 API rate limit exceeded`—masking the underlying keyring issue and complicating debugging. ## 🎯 Acceptance Criteria - [ ] Credential resolution distinguishes between a missing token (`ErrNotFound`) and an operational keyring failure (e.g., D-Bus disconnected, keychain locked, access denied). - [ ] If keyring access returns an operational failure during token resolution for `gh api`, the command must abort immediately and return a non-zero exit code. - [ ] The CLI outputs a clear, actionable error message to `stderr` explaining ",
+      "commentCount": 3,
+      "updatedAt": "2026-08-26T15:52:36Z",
+      "summary": "## Summary `ttnn.addcdiv` computes `out = input + value * (tensor1 / tensor2)`. The SFPU kernel evaluates it in the wrong order: ```cpp sfpi::vFloat result = in0 + (in1 * value_float * sfpu_reciprocal_iter<2>(in2)); ``` C++ left-associativity makes this `in0 + ((in1 * value_float) * recip(in2))` — the scaled numerator `in1 * value` is formed **before** the division is applied. When `|in1 * value| > FLT_MAX` but the mathematically exact result `in0 + value*(in1/in2)` is an ordinary finite number, the intermediate overflows to `+/-inf` and poisons the entire lane. `torch.addcdiv` (the golden reference) divides first: `input + value * (tensor1 / tensor2)`, so the intermediate quotient `tensor1/tensor2` is modest and the result is finite. The two orders agree for almost all inputs and diverge exactly on the overflow set — a finite-vs-inf mismatch, not a ULP nit. ## Measured (source-faithful fp32 model of the kernel vs torch/numpy addcdiv golden) Reproduction script attached (`verify_addcdiv.py`, `proof.txt`). | in0 | in1 | in2 | value | kernel | golden `in0+value*(in1/in2)` | | |------|---------|-----|-------|--------|------------------------------|-----| | 0 | 3.0e38 | 8 | 4 | `inf` |",
       "state": "candidate",
-      "payoutConfidence": 0.7,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
+      "payoutConfidence": 0.15,
+      "autonomyFit": 0.45,
+      "requiresHumanGate": true,
       "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
+      "estimatedHoursBand": 8,
+      "complexity": 4,
       "fundedBountySignal": false,
-      "fastCashScore": 79,
+      "fastCashScore": 50,
       "survivalEligible": false,
-      "eligibilityReason": "Competition is too high for bootstrap mode.",
+      "eligibilityReason": "Too slow for bootstrap mode: first real cash currently requires a <=4 hour task.",
       "competition": {
-        "comments": 10,
-        "attemptSignals": 2,
-        "risk": "medium"
+        "comments": 3,
+        "attemptSignals": 0,
+        "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 10,
+      "economicValueUsd": 750,
       "requiresPreclaimOrIdentity": false
     }
   ],
@@ -379,7 +417,7 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-24T13:15:06Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":118,\"updatedAt\":\"2026-08-25T23:02:25Z\",\"competition\":{\"comments\":6,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4318279838\",\"rewardUsd\":200,\"fastCashScore\":102,\"updatedAt\":\"2026-08-25T22:48:10Z\",\"competition\":{\"comments\":6,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":99,\"updatedAt\":\"2026-08-26T05:58:16Z\",\"competition\":{\"comments\":21,\"attemptSignals\":3,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-25T07:38:13Z\",\"competition\":{\"comments\":46,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:4975260101\",\"rewardUsd\":780,\"fastCashScore\":119,\"updatedAt\":\"2026-08-25T05:07:59Z\",\"competition\":{\"comments\":18,\"attemptSignals\":1,\"risk\":\"high\"}},{\"id\":\"github:5002334583\",\"rewardUsd\":1500,\"fastCashScore\":91,\"updatedAt\":\"2026-08-26T14:03:58Z\",\"competition\":{\"comments\":7,\"attemptSignals\":1,\"risk\":\"medium\"}},{\"id\":\"github:5116156343\",\"rewardUsd\":10,\"fastCashScore\":86,\"updatedAt\":\"2026-08-26T13:58:45Z\",\"competition\":{\"comments\":11,\"attemptSignals\":1,\"risk\":\"medium\"}},{\"id\":\"github:5247887640\",\"rewardUsd\":32,\"fastCashScore\":99,\"updatedAt\":\"2026-08-26T13:46:25Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5253558268\",\"rewardUsd\":10,\"fastCashScore\":79,\"updatedAt\":\"2026-08-26T14:03:40Z\",\"competition\":{\"comments\":10,\"attemptSignals\":2,\"risk\":\"medium\"}},{\"id\":\"github:5257951210\",\"rewardUsd\":28,\"fastCashScore\":100,\"updatedAt\":\"2026-08-26T14:04:11Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-24T13:15:06Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":118,\"updatedAt\":\"2026-08-25T23:02:25Z\",\"competition\":{\"comments\":6,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4318279838\",\"rewardUsd\":200,\"fastCashScore\":102,\"updatedAt\":\"2026-08-25T22:48:10Z\",\"competition\":{\"comments\":6,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":99,\"updatedAt\":\"2026-08-26T05:58:16Z\",\"competition\":{\"comments\":21,\"attemptSignals\":3,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-25T07:38:13Z\",\"competition\":{\"comments\":46,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:4975260101\",\"rewardUsd\":780,\"fastCashScore\":119,\"updatedAt\":\"2026-08-25T05:07:59Z\",\"competition\":{\"comments\":18,\"attemptSignals\":1,\"risk\":\"high\"}},{\"id\":\"github:5079151132\",\"rewardUsd\":10,\"fastCashScore\":90,\"updatedAt\":\"2026-08-26T15:36:18Z\",\"competition\":{\"comments\":8,\"attemptSignals\":1,\"risk\":\"medium\"}},{\"id\":\"github:5177292050\",\"rewardUsd\":2026,\"fastCashScore\":112,\"updatedAt\":\"2026-08-26T15:33:01Z\",\"competition\":{\"comments\":4,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5223629185\",\"rewardUsd\":750,\"fastCashScore\":50,\"updatedAt\":\"2026-08-26T15:52:36Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5248993376\",\"rewardUsd\":128,\"fastCashScore\":104,\"updatedAt\":\"2026-08-26T15:46:00Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5248997266\",\"rewardUsd\":2553,\"fastCashScore\":120,\"updatedAt\":\"2026-08-26T15:47:37Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5258945220\",\"rewardUsd\":10,\"fastCashScore\":95,\"updatedAt\":\"2026-08-26T15:49:27Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
@@ -403,7 +441,7 @@
       "reasons": [
         "already_rewarded_or_paid"
       ],
-      "rejectedAt": "2026-08-26T14:08:53.127Z"
+      "rejectedAt": "2026-08-26T15:53:40.745Z"
     },
     {
       "id": "github:5257200618",
