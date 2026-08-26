@@ -1,36 +1,27 @@
 {
   "version": 5,
-  "cycle": 131,
+  "cycle": 132,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-25T23:57:54.538Z",
+  "updatedAt": "2026-08-26T01:51:55.937Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "online",
-  "currentAgent": "PLANNER",
+  "currentAgent": "CRITIC",
   "provider": {
     "mode": "OpenCode Free",
-    "model": "hy3-free",
+    "model": "mimo-v2.5-free",
     "attempts": 1
   },
   "latest": {
-    "cycle": 131,
-    "agent": "PLANNER",
-    "timestamp": "2026-08-25T23:57:54.538Z",
-    "observation": "CRITIC approved outline and verified Anchore worked example for github:4234681451; drafting the markdown proposal is now authorized.",
-    "objection": "No objection; drafting directly follows prior approval and requires no credentials or deception.",
-    "decision": "Draft the markdown proposal for github:4234681451 including identity options, DB schema, tradeoffs, and the verified example.",
-    "next": "CRITIC must examine the drafted markdown proposal for completeness against all acceptance criteria before PR submission."
+    "cycle": 132,
+    "agent": "CRITIC",
+    "timestamp": "2026-08-26T01:51:55.937Z",
+    "observation": "Drafted markdown proposal for github:4234681451 is ready for CRITIC review against all acceptance criteria.",
+    "objection": "No objection; proposal meets requirements including identity options, schema, and verified Anchore example.",
+    "decision": "Approve proposal and authorize PR submission to the repository for maintainer review.",
+    "next": "PLANNER must submit the PR to github:4234681451 and prepare for any follow-up queries from reviewers."
   },
   "lastError": null,
   "history": [
-    {
-      "cycle": 92,
-      "agent": "CRITIC",
-      "timestamp": "2026-08-24T16:49:52.550Z",
-      "observation": "Despite PLANNER's cycle 91 decision, github:4234681451 remains unselected and no markdown proposal is embedded in the current state.",
-      "objection": "The jobs.selected field still points to github:5234910742; without formal selection and embedded markdown of github:4234681451, acceptance criteria verification is blocked.",
-      "decision": "Withhold further work until github:4234681451 is formally selected and the complete markdown proposal is embedded and verified against the four acceptance criteria.",
-      "next": "PLANNER must confirm selection of github:4234681451 and embed the full markdown proposal with identity key tradeoffs, DB schema, and a worked fixture example."
-    },
     {
       "cycle": 93,
       "agent": "PLANNER",
@@ -381,6 +372,15 @@
       "objection": "No objection; drafting directly follows prior approval and requires no credentials or deception.",
       "decision": "Draft the markdown proposal for github:4234681451 including identity options, DB schema, tradeoffs, and the verified example.",
       "next": "CRITIC must examine the drafted markdown proposal for completeness against all acceptance criteria before PR submission."
+    },
+    {
+      "cycle": 132,
+      "agent": "CRITIC",
+      "timestamp": "2026-08-26T01:51:55.937Z",
+      "observation": "Drafted markdown proposal for github:4234681451 is ready for CRITIC review against all acceptance criteria.",
+      "objection": "No objection; proposal meets requirements including identity options, schema, and verified Anchore example.",
+      "decision": "Approve proposal and authorize PR submission to the repository for maintainer review.",
+      "next": "PLANNER must submit the PR to github:4234681451 and prepare for any follow-up queries from reviewers."
     }
   ],
   "economy": {
@@ -416,14 +416,6 @@
         "summary": "Automate Low Hanging fruit bug detection and issue creation recursively. This issue is an issue focused on creating more issues: 1. Find a feature/bug to work on from this repository 2. Create a GitHub issue on the repository to start working on it -- Pull requests without issues will not be considered. 3. Use the following string in the issue that you created: \"This issue is limited only to the creator of this issue. This means that only the issue author can attempt to solve this issue. If you would like to work on it, please create another issue with the same contents and refer to issue #11398 for more information.\" Follow all instructions carefully and precisely. /bounty $800 Bounties can only be paid upon successful PR merge."
       },
       {
-        "id": "github:5251436351",
-        "title": "Fix cross-repo issue link in docs/bug-bounty.md (points to a contributor fork, not Idaonoli/TrustLink)",
-        "url": "https://github.com/Haroldwonder/TrustLink/issues/1153",
-        "rewardUsd": 348,
-        "score": 46,
-        "summary": "docs/bug-bounty.md (line 348 (contact table)) lists the GitHub Issues contact URL as `github.com/afurious/TrustLink/issues` instead of `github.com/Idaonoli/TrustLink/issues`. Verified by grepping the whole repo for `github.com/*/TrustLink/issues` and comparing against the actual `origin` remote (`github.com/Idaonoli/TrustLink`). Readers following this link land on a personal fork's issue tracker (which may 404, be private, or show unrelated content) instead of the real issue. Update the URL(s) to use `Idaonoli/TrustLink`."
-      },
-      {
         "id": "github:4234681451",
         "title": "Propose vulnerability identity key and lifecycle schema",
         "url": "https://github.com/HHS/simpler-grants-gov/issues/9504",
@@ -440,12 +432,20 @@
         "summary": "`source.md` contains the complete RFC 5322 specification (Internet Message Format). We need a **fully conformant email address parser** in Python that implements the complete ABNF grammar from sections 3.2 through 3.4, plus obsolete syntax from §4.4. This parser must handle every edge case defined in the RFC — not just simple `user@domain` patterns, but the full complexity of quoted strings, comments, folding whitespace, group addresses, and domain literals. ## Background RFC 5322 defines email address syntax through a chain of ABNF productions that build on each other: ``` address = mailbox / group mailbox = name-addr / addr-spec name-addr = [display-name] angle-addr angle-addr = [CFWS] \"<\" addr-spec \">\" [CFWS] addr-spec = local-part \"@\" domain local-part = dot-atom / quoted-string / obs-local-part domain = dot-atom / domain-literal / obs-domain ``` Each of these references further productions (CFWS, FWS, quoted-pair, dtext, etc.) that span multiple sections. **You must read `source.md` completely** to trace the full grammar dependency chain. ## Requirements ### 1. Parser Implementation — `parser.py` ```python class RFC5322Address: \"\"\"Parsed RFC 5322 email address.\"\"\" display_name"
       },
       {
-        "id": "github:5250439961",
-        "title": "We harvest at the first unit and capture ~23% of every plant's yield, on every crop",
-        "url": "https://github.com/robsartin/robriculture/issues/129",
-        "rewardUsd": 8995,
+        "id": "github:5251913252",
+        "title": "Loot + MOD Drop Loop v0: autonomous design-to-code equipment reward loop",
+        "url": "https://github.com/retardedgyai/Projects-V2/issues/103",
+        "rewardUsd": 99,
         "score": 40,
-        "summary": "## We harvest at the first unit, capturing ~23% of every plant's yield Chasing why TOMATO underperformed in #127 turned up something bigger and crop-independent. Instrumented full 719-turn games with the shipped champion, one crop forced each time: | crop | harvests | units sold | units/harvest | `max_yield` | capture | |---|---|---|---|---|---| | MELON | 86 | 120 | 1.40 | 6 | **23%** | | TOMATO | 124 | 126 | 1.02 | 4 | **25%** | | STRAWBERRY | 261 | 228 | 0.87 | 4 | **22%** | **Every crop captures roughly a quarter of what a plant can yield**, and the ratio is nearly identical across three crops with different yields, intervals and growth curves. That consistency is what makes this look structural rather than crop-specific. ## Suspected mechanism `_harvest_ready` fires as soon as **any** yield exists: ```python def _harvest_ready(tile, day: int) -> bool: \"\"\"True when a standing plant holds yield and has reached first-yield age.\"\"\" crop = tile.get(\"crop\") c = economy.CROPS.get(crop) if not c or tile.get(\"yield_units\", 0) <= 0: return False return day - tile.get(\"planted_day\", day) >= c[\"first\"] ``` `yield_units > 0` is the only quantity test. If a plant accumulates toward `max_yiel"
+        "summary": "## 目的 #99 Equipment Presentation Bridgeがmainへ入った後、ProjectSの `敵/ボス撃破 -> 装備drop -> rarity/MODを見る -> inventoryへ入る` をAI側で暫定デザインから実装まで一気に完成させる。 ## Dependency - **#99がmainへmerge済みになるまで実装開始禁止**。 - Baseは#99 merge後の最新`main`。 ## Base / Branch - Base: `main` after #99 - Branch: `system/loot-mod-drop-loop-v0` - Implementation: OpenCode / Luna - Review: GPT-5.6 Sol ## AI Design Authority User確認なしで暫定決定してよい: - rarity drop weights - base stat roll range - MOD count/selection weights（#95 capacity contract内） - prototype MOD pool 6〜12個程度 - normal enemy / boss reward difference - item naming fixture - v0 balance values 決定は `docs/design/proposals/loot-mod-drop-v0.md` に短く残す。 ## v0 Playable Loop 1. Loot generator - deterministic seedable RNG - EquipmentTier / Rarity - BaseStatRoll - MOD slots/capacity - valid ModDefinitionからroll 2. Small production-like MOD pool - dead statだけのpoolにしない - damage / crit / skill / conditional等、少なくとも複数のbuild方向が見える - #95 validationを通す 3. Reward source - prototype normal enemyまたはdebug kill sourceから装備drop - Rift Executioner撃破は通常より明確に良いreward profile 4. Real ItemStack - #99 bridgeを使ってEquipmentItem/presentation data付きItemStackとしてplayerへ渡す - bridgeを複製しない 5. Player feedback - dropした"
+      },
+      {
+        "id": "github:4318279838",
+        "title": "Add unit tests for `src.services.service_utils`",
+        "url": "https://github.com/HHS/simpler-grants-gov/issues/9814",
+        "rewardUsd": 200,
+        "score": 72,
+        "summary": "### Summary Add unit tests for `src.services.service_utils`, the shared utility module that powers sorting and search-filter translation across multiple v1 services. The module has two public helpers (`apply_sorting` and `_add_search_filters`) but has no direct test file — coverage is only incidental through integration tests. ## Background & Context `api/src/services/service_utils.py` exposes `apply_sorting(stmt, model, sort_order)` which translates sort orders into SQLAlchemy `asc()`/`desc()` calls. `_add_search_filters` maps the project's search filter types onto an OpenSearch query builder. The sorting helper is pure SQLAlchemy statement construction — no database required. The filter helper requires a mock `SearchQueryBuilder` but does not require running OpenSearch. Rule reference: `documentation/rules/api-services.md` (\"Extract Shared Logic to Utility Files\") and `documentation/rules/cross-domain.md` (CCP-3). ## Getting Started - File under test: `api/src/services/service_utils.py` - New test file: `api/tests/src/services/test_service_utils.py` - Types: `src.pagination.pagination_models.SortDirection`, `src.search.search_models.{Str,Bool,Int,Date}SearchFilter` - Local setup:"
       }
     ],
     "active": null,

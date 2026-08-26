@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-08-25T23:57:44.318Z",
+  "updatedAt": "2026-08-26T01:51:25.599Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -47,42 +47,6 @@
       },
       "realMoneyEligible": true,
       "economicValueUsd": 780,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5251436351",
-      "source": "github",
-      "title": "Fix cross-repo issue link in docs/bug-bounty.md (points to a contributor fork, not Idaonoli/TrustLink)",
-      "url": "https://github.com/Haroldwonder/TrustLink/issues/1153",
-      "repositoryApiUrl": "https://api.github.com/repos/Haroldwonder/TrustLink",
-      "rewardUsd": 348,
-      "score": 46,
-      "labels": [
-        "bug",
-        "documentation",
-        "Stellar Wave"
-      ],
-      "commentCount": 0,
-      "updatedAt": "2026-08-25T23:48:00Z",
-      "summary": "docs/bug-bounty.md (line 348 (contact table)) lists the GitHub Issues contact URL as `github.com/afurious/TrustLink/issues` instead of `github.com/Idaonoli/TrustLink/issues`. Verified by grepping the whole repo for `github.com/*/TrustLink/issues` and comparing against the actual `origin` remote (`github.com/Idaonoli/TrustLink`). Readers following this link land on a personal fork's issue tracker (which may 404, be private, or show unrelated content) instead of the real issue. Update the URL(s) to use `Idaonoli/TrustLink`.",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 118,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 0,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 348,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -159,51 +123,17 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5250439961",
+      "id": "github:5251913252",
       "source": "github",
-      "title": "We harvest at the first unit and capture ~23% of every plant's yield, on every crop",
-      "url": "https://github.com/robsartin/robriculture/issues/129",
-      "repositoryApiUrl": "https://api.github.com/repos/robsartin/robriculture",
-      "rewardUsd": 8995,
+      "title": "Loot + MOD Drop Loop v0: autonomous design-to-code equipment reward loop",
+      "url": "https://github.com/retardedgyai/Projects-V2/issues/103",
+      "repositoryApiUrl": "https://api.github.com/repos/retardedgyai/Projects-V2",
+      "rewardUsd": 99,
       "score": 40,
-      "labels": [
-        "ready"
-      ],
-      "commentCount": 1,
-      "updatedAt": "2026-08-25T23:43:15Z",
-      "summary": "## We harvest at the first unit, capturing ~23% of every plant's yield Chasing why TOMATO underperformed in #127 turned up something bigger and crop-independent. Instrumented full 719-turn games with the shipped champion, one crop forced each time: | crop | harvests | units sold | units/harvest | `max_yield` | capture | |---|---|---|---|---|---| | MELON | 86 | 120 | 1.40 | 6 | **23%** | | TOMATO | 124 | 126 | 1.02 | 4 | **25%** | | STRAWBERRY | 261 | 228 | 0.87 | 4 | **22%** | **Every crop captures roughly a quarter of what a plant can yield**, and the ratio is nearly identical across three crops with different yields, intervals and growth curves. That consistency is what makes this look structural rather than crop-specific. ## Suspected mechanism `_harvest_ready` fires as soon as **any** yield exists: ```python def _harvest_ready(tile, day: int) -> bool: \"\"\"True when a standing plant holds yield and has reached first-yield age.\"\"\" crop = tile.get(\"crop\") c = economy.CROPS.get(crop) if not c or tile.get(\"yield_units\", 0) <= 0: return False return day - tile.get(\"planted_day\", day) >= c[\"first\"] ``` `yield_units > 0` is the only quantity test. If a plant accumulates toward `max_yiel",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 109,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 1,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 8995,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5251220929",
-      "source": "github",
-      "title": "Evaluate Profitise solar PPL route after direct reply",
-      "url": "https://github.com/lahman00/GridPermit/issues/14",
-      "repositoryApiUrl": "https://api.github.com/repos/lahman00/GridPermit",
-      "rewardUsd": 100,
-      "score": 36,
       "labels": [],
-      "commentCount": 0,
-      "updatedAt": "2026-08-25T22:16:45Z",
-      "summary": "## Current primary-source evidence verified 2026-08-26 Profitise currently operates a dedicated U.S. solar affiliate / lead-selling program. Official solar affiliate pages: - https://profitise.com/sell-solar-leads/ - https://profitise.com/solar-affiliate-program/ - https://profitise.com/solar-energy-affiliates/ Official Affiliate Agreement: https://profitise.com/affiliate-agreement/ Current public facts: - pay-per-lead solar model - publishers can generate solar leads from a website/blog/digital channel - no published minimum monthly traffic requirement - affiliate links and Profitise lead-generation forms are supported promotional methods, subject to campaign rules - U.S. solar buyer coverage is advertised - public payout description is 'dozens of dollars' per qualified/sold solar lead, with exact rate dependent on lead/campaign criteria - real-time dashboard reports accepted/rejected leads and earnings - current public payout methods listed: wire, ACH, check, USDT - current public minimum payout: $100 - the newest solar lead-selling page says payouts are weekly, while another official solar page still describes bi-weekly payouts. Treat schedule as unresolved until confirmed for G",
+      "commentCount": 3,
+      "updatedAt": "2026-08-26T01:44:00Z",
+      "summary": "## 目的 #99 Equipment Presentation Bridgeがmainへ入った後、ProjectSの `敵/ボス撃破 -> 装備drop -> rarity/MODを見る -> inventoryへ入る` をAI側で暫定デザインから実装まで一気に完成させる。 ## Dependency - **#99がmainへmerge済みになるまで実装開始禁止**。 - Baseは#99 merge後の最新`main`。 ## Base / Branch - Base: `main` after #99 - Branch: `system/loot-mod-drop-loop-v0` - Implementation: OpenCode / Luna - Review: GPT-5.6 Sol ## AI Design Authority User確認なしで暫定決定してよい: - rarity drop weights - base stat roll range - MOD count/selection weights（#95 capacity contract内） - prototype MOD pool 6〜12個程度 - normal enemy / boss reward difference - item naming fixture - v0 balance values 決定は `docs/design/proposals/loot-mod-drop-v0.md` に短く残す。 ## v0 Playable Loop 1. Loot generator - deterministic seedable RNG - EquipmentTier / Rarity - BaseStatRoll - MOD slots/capacity - valid ModDefinitionからroll 2. Small production-like MOD pool - dead statだけのpoolにしない - damage / crit / skill / conditional等、少なくとも複数のbuild方向が見える - #95 validationを通す 3. Reward source - prototype normal enemyまたはdebug kill sourceから装備drop - Rift Executioner撃破は通常より明確に良いreward profile 4. Real ItemStack - #99 bridgeを使ってEquipmentItem/presentation data付きItemStackとしてplayerへ渡す - bridgeを複製しない 5. Player feedback - dropした",
       "state": "candidate",
       "payoutConfidence": 0.35,
       "autonomyFit": 1,
@@ -212,16 +142,16 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 107,
+      "fastCashScore": 103,
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
-        "comments": 0,
+        "comments": 3,
         "attemptSignals": 0,
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 100,
+      "economicValueUsd": 99,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -262,23 +192,17 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5242872784",
+      "id": "github:5251591378",
       "source": "github",
-      "title": "SC-29: Spectator Live Micro-Tipping and Stream Bounties Escrow",
-      "url": "https://github.com/OpenKnight-Foundation/KnightVerse/issues/979",
-      "repositoryApiUrl": "https://api.github.com/repos/OpenKnight-Foundation/KnightVerse",
-      "rewardUsd": 32,
-      "score": 54,
-      "labels": [
-        "enhancement",
-        "Rust",
-        "Stellar Wave",
-        "contracts",
-        "contribution-ready"
-      ],
-      "commentCount": 2,
-      "updatedAt": "2026-08-25T23:23:53Z",
-      "summary": "### Context & Description Spectators watching high-stakes games want to tip players or place bounties (e.g. \"50 XLM if White wins with a Queen sacrifice\"). The contract needs an escrow mechanism allowing spectators to deposit tips and claimable bounties linked to a `game_id`. **Location:** `contracts/game_contract/src/lib.rs` ### Requirements 1. Implement `send_tip(game_id: BytesN<32>, recipient: Address, amount: i128)`. 2. Implement `create_bounty(game_id: BytesN<32>, condition_hash: BytesN<32>, amount: i128, expiry_ledger: u32)`. 3. Implement `claim_bounty(bounty_id: u64, proof: Bytes, recipient: Address)` with arbiter verification. 4. Implement `refund_expired_bounty(bounty_id: u64)`. ### Acceptance Criteria - [ ] Instant tips transfer tokens directly from spectator to player without holding. - [ ] Bounties hold tokens in contract escrow until claimed with valid proof or expired. - [ ] Expired bounties can be reclaimed by creator. - [ ] Unit tests cover tip dispatch, bounty creation, claiming, and expiry refund. ### What to be done 1. Create `Bounty` storage structure and ID generator. 2. Implement `send_tip`, `create_bounty`, `claim_bounty`, and `refund_expired_bounty`. 3. Emit",
+      "title": "Naming Incosistencies",
+      "url": "https://github.com/ljtpetersen/hgss_archipelago/issues/5",
+      "repositoryApiUrl": "https://api.github.com/repos/ljtpetersen/hgss_archipelago",
+      "rewardUsd": 24,
+      "score": 30,
+      "labels": [],
+      "commentCount": 1,
+      "updatedAt": "2026-08-26T01:45:26Z",
+      "summary": "This is a list of naming inconsistencies that @UselessWater3 will iron out 1. Sometimes Diglett's Cave is referred to as Diglett's Tunnel (in other locations) 2. Some locations use the wrong apostrophe (not ``'``) 3. Some Dragon's Den locations are called ``Dragons Den`` erronously 4. Fly Unlocks should follow the \"City - Fly Unlock\" pattern established in other apworlds 5. Fly Unlock for National Park to Fly Unlock Pokeathlondome (also items!) 6. Inconsistent: @Ecruteak Dowsing Machine House/Gift 7. All Gym locations to \"X City Gym - Locationname\". Currently it's \"X Gym - Locationname\". To be in line with PT and other one. 8. \"Dragon's Den Shrine - Badge from Clair\" and \"Dragon's Den Gift from Clair\" is inconsistent. Or is one actually outside? 9. Elm's Lab Locations need to be in New Bark Town. 10. Elms Lab -> Elm's Lab. Essentially search for anything that is ``s `` and then you can find missing plural apostrophes. 11. Chucks Wife -> Chuck's Wife 12. {\"@Ecruteak Dance Theater\"}, -> needs City 13. Oaks Lab -> Oak's Lab 14. Mr. Pokemons House -> Route 30 - Mr. Pokemon's House - ... 15. Olivine S.S. Aqua Port/National Dex from Prof. Oak\" is inconsistent. I think all should be \"Oliv",
       "state": "candidate",
       "payoutConfidence": 0.35,
       "autonomyFit": 1,
@@ -291,63 +215,31 @@
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
-        "comments": 2,
+        "comments": 1,
         "attemptSignals": 0,
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 32,
+      "economicValueUsd": 24,
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:4594227386",
+      "id": "github:5212980317",
       "source": "github",
-      "title": "Bounty issue template omits required /bounty marker",
-      "url": "https://github.com/xevrion-v2/agent-playground/issues/687",
-      "repositoryApiUrl": "https://api.github.com/repos/xevrion-v2/agent-playground",
-      "rewardUsd": 50,
-      "score": 42,
-      "labels": [],
-      "commentCount": 9,
-      "updatedAt": "2026-08-25T23:49:26Z",
-      "summary": "/bounty $50 References #33. ## Problem The `Bounty task` issue template asks for a bounty amount as plain text: ```md ## Bounty Amount $50 ``` But the bounty program instructions in #33 require new bounty issues to include the machine-readable slash marker `/bounty $[amount]`. Issues created from the template can therefore omit the marker that contributors and automation use to identify reward-backed work. ## Expected behavior The template should default to the same `/bounty $50` marker used by the seeded bounty issues and the program instructions. ## Acceptance criteria - Update `.github/ISSUE_TEMPLATE/bounty_task.md` so the default bounty amount uses `/bounty $50`. - Keep the change focused on the issue template and required AI agent metadata. - Verify the template contains exactly one `/bounty $50` default marker.",
-      "state": "candidate",
-      "payoutConfidence": 0.65,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 95,
-      "survivalEligible": false,
-      "eligibilityReason": "Competition is too high for bootstrap mode.",
-      "competition": {
-        "comments": 9,
-        "attemptSignals": 1,
-        "risk": "medium"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 50,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5003699379",
-      "source": "github",
-      "title": "Reward for completing the core dictionary: a fake 90s Wordnetic commercial",
-      "url": "https://github.com/denzmilk/wordtide/issues/329",
-      "repositoryApiUrl": "https://api.github.com/repos/denzmilk/wordtide",
-      "rewardUsd": 90,
-      "score": 40,
+      "title": "[Search] Progressive disclosure: compact summary → full lesson on demand",
+      "url": "https://github.com/Ikalus1988/MisakaNet/issues/1167",
+      "repositoryApiUrl": "https://api.github.com/repos/Ikalus1988/MisakaNet",
+      "rewardUsd": 100,
+      "score": 58,
       "labels": [
-        "type:feature",
-        "needs-signoff",
-        "phase-a",
-        "blocked"
+        "enhancement",
+        "ready",
+        "agent-friendly",
+        "zero-bounty"
       ],
-      "commentCount": 14,
-      "updatedAt": "2026-08-25T23:52:35Z",
-      "summary": "## Context / why Chris: a reward for **capturing every word in the core dictionary** — the whole thing, excluding slang and adult words. The reward is a **fake 90s TV commercial for Wordnetic, with a catchy jingle**: the game advertising itself, in period, as the payoff for finishing it. It is the only 100% in the game, and the first reward that is a *thing to watch* rather than a cosmetic to equip. ## The number Measured against the current corpus: **25,986 words** — `DICT` (26,097, the curated generation set) minus the 111 adult words inside it. By length: 3→1,214 · 4→3,003 · 5→4,541 · 6→5,833 · 7→6,067 · 8→5,328. That is a *very* long tail. At the bot-measured ~26 words per casual run (~35 skilled), with no repeats, it is on the order of a thousand flawless runs — realistically several thousand. **This needs a decision from Chris before the reward is built**, because it sets what \"completion\" means: - **(a) The full 25,986** — a genuine lifetime trophy almost nobody reaches. The commercial becomes folklore. - **(b) Per-length completion** — finishing all 3-letter words (1,214) is achievable and could pay out its own reward, with the full set as the grand prize. Fits the existing",
+      "commentCount": 2,
+      "updatedAt": "2026-08-26T01:41:16Z",
+      "summary": "## Problem Current `misakanet_search` returns full lesson content in search results. This is wasteful for agent context windows — an agent doing a broad search might get 10 full lessons (thousands of tokens) when it only needs to know \"does a relevant lesson exist?\" and then drill into the best match. WeKnora's skill system uses **progressive disclosure**: Level 1 metadata (~100 tokens) always loaded → Level 2 instructions on match → Level 3 full resources on demand. This pattern is ideal for lesson search. ## Proposed Design ### Response Levels | Level | Content | Tokens (est.) | When | |---|---|---|---| | **Compact** | title + problem (1-line) + fix (1-line) + freshness + evidence | ~80/lesson | Default search | | **Summary** | + root_cause + tags + related_lessons | ~200/lesson | `detail=summary` | | **Full** | Complete lesson content | ~500-2000/lesson | `misakanet_get_lesson` | ### MCP Tool Changes ```json // misakanet_search — add detail parameter { \"name\": \"misakanet_search\", \"inputSchema\": { \"properties\": { \"query\": {\"type\": \"string\"}, \"detail\": { \"type\": \"string\", \"enum\": [\"compact\", \"summary\", \"full\"], \"default\": \"compact\" }, \"max_results\": {\"type\": \"integer\", \"default\": ",
       "state": "candidate",
       "payoutConfidence": 0.35,
       "autonomyFit": 1,
@@ -356,16 +248,121 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 86,
+      "fastCashScore": 96,
       "survivalEligible": false,
       "eligibilityReason": "Competition is too high for bootstrap mode.",
       "competition": {
-        "comments": 14,
-        "attemptSignals": 0,
+        "comments": 2,
+        "attemptSignals": 1,
         "risk": "medium"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 90,
+      "economicValueUsd": 100,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5235368316",
+      "source": "github",
+      "title": "Audit installs optional search engines but fallback tests patch stale compatibility state",
+      "url": "https://github.com/Ikalus1988/MisakaNet/issues/1290",
+      "repositoryApiUrl": "https://api.github.com/repos/Ikalus1988/MisakaNet",
+      "rewardUsd": 100,
+      "score": 48,
+      "labels": [],
+      "commentCount": 2,
+      "updatedAt": "2026-08-26T01:41:12Z",
+      "summary": "## Problem The full PR auditor installs `requirements.txt` plus nested optional requirements, which makes the BM25 search backend importable. Seven MCP tests then fail even for README-only PRs. The fallback fixture patches `scripts.mcp_server.HAS_SAG` / `HAS_BM25`, but `handle_search` now reads the lazy `_SEARCH_STATE` owned by `misakanet.server.handlers.search`, so those compatibility-layer variables no longer control the handler. The same tests expect `path` and `domain` from the default compact response, although those fields are part of the `detail: full` result. `handle_deepseek_smoke` also needs a lesson path but does not request the full result. ## Reproduction The current audit on PR #1229 fails: - `test_mcp_deepseek_adapter.py::test_deepseek_recovery_smoke_passes` - six assertions in `test_mcp_fallback.py` Run with the same dependency shape as the audit: ```bash uv run --no-project \\ --with-requirements requirements.txt \\ --with-requirements hub/requirements.txt \\ --with pytest --with pytest-cov \\ python -m pytest tests/test_mcp_fallback.py tests/test_mcp_deepseek_adapter.py -q ``` ## Proposed fix - Patch `misakanet.server.handlers.search._SEARCH_STATE` in the fallback fix",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 96,
+      "survivalEligible": false,
+      "eligibilityReason": "Competition is too high for bootstrap mode.",
+      "competition": {
+        "comments": 2,
+        "attemptSignals": 1,
+        "risk": "medium"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 100,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5211154647",
+      "source": "github",
+      "title": "🎯 GORM v2.24.0 Panics When Querying with Complex Joins",
+      "url": "https://github.com/HarrieAlexandrowicz5/gorm/issues/1",
+      "repositoryApiUrl": "https://api.github.com/repos/HarrieAlexandrowicz5/gorm",
+      "rewardUsd": 10,
+      "score": 44,
+      "labels": [
+        "bounty",
+        "opire",
+        "$10"
+      ],
+      "commentCount": 17,
+      "updatedAt": "2026-08-26T01:44:22Z",
+      "summary": "## 📝 Description When attempting to query the database using GORM v2.24.0 with complex joins, the application panics. This issue has been observed in multiple environments and with various database backends (PostgreSQL, MySQL, SQLite). ## 🎯 Acceptance Criteria - [ ] The application should not panic when querying with complex joins. - [ ] The query should return the correct results as expected. - [ ] The panic should be reproducible and consistently occur with the same query. - [ ] The issue should be resolved in GORM v2.24.0 or a subsequent patch release. ## 🛠️ Technical Specifications & Context - The panic occurs when executing a query with multiple joins, including self-joins and joins with subqueries. - The issue is likely related to how GORM handles complex query structures internally. - The panic message typically includes a stack trace pointing to a file in the GORM library, such as `gorm.go` or `query.go`. ## 🧪 Verification & Testing 1. **Reproduce the Issue:** - Create a test case that includes a complex query with multiple joins. - Execute the test case and observe if the application panics. 2. **Verify Fix:** - Apply the proposed fix (if available) or a potential patc",
+      "state": "candidate",
+      "payoutConfidence": 0.7,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 85,
+      "survivalEligible": false,
+      "eligibilityReason": "Competition is too high for bootstrap mode.",
+      "competition": {
+        "comments": 17,
+        "attemptSignals": 0,
+        "risk": "high"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 10,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5222686588",
+      "source": "github",
+      "title": "[MCP] Fix KV token verification for write_lesson",
+      "url": "https://github.com/Ikalus1988/MisakaNet/issues/1240",
+      "repositoryApiUrl": "https://api.github.com/repos/Ikalus1988/MisakaNet",
+      "rewardUsd": 100,
+      "score": 58,
+      "labels": [
+        "bug",
+        "ready",
+        "agent-friendly",
+        "zero-bounty"
+      ],
+      "commentCount": 5,
+      "updatedAt": "2026-08-26T01:41:14Z",
+      "summary": "## Problem Remote MCP token verification fails for `misakanet_write_lesson`. Registration succeeds and stores token in KV, but subsequent authenticated calls return `Unauthorized`. **Root cause**: KV lookup fails during token verification, even though KV binding is configured and data exists. ## Current state | Tool | Auth requirement | Status | |---|---|---| | `misakanet_register` | None | ✅ | | `misakanet_search` | None (rate-limited) | ✅ | | `misakanet_get_lesson` | None (rate-limited) | ✅ | | `misakanet_submit_intake` | None | ✅ | | `misakanet_preflight` | None (rate-limited) | ✅ | | `misakanet_write_lesson` | Required (KV token) | ❌ | ## What we know 1. Registration stores token at `mcp_token:${token}` in KV ✅ 2. KV data exists (verified in Cloudflare Dashboard) ✅ 3. KV binding is configured (`MISAKANET_KV`) ✅ 4. Auth check reads from `mcp_token:${token}` but returns null ❌ ## Possible causes 1. **KV namespace mismatch**: Registration writes to one KV, auth reads from another 2. **KV binding not available in Worker context**: `env.MISAKANET_KV` is undefined during auth check 3. **Timing issue**: KV eventual consistency delay 4. **Code path issue**: Auth check runs before KV is",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 84,
+      "survivalEligible": false,
+      "eligibilityReason": "Competition is too high for bootstrap mode.",
+      "competition": {
+        "comments": 5,
+        "attemptSignals": 2,
+        "risk": "medium"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 100,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -414,7 +411,7 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-24T13:15:06Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":118,\"updatedAt\":\"2026-08-25T23:02:25Z\",\"competition\":{\"comments\":6,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4318279838\",\"rewardUsd\":200,\"fastCashScore\":102,\"updatedAt\":\"2026-08-25T22:48:10Z\",\"competition\":{\"comments\":6,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":110,\"updatedAt\":\"2026-08-25T01:35:34Z\",\"competition\":{\"comments\":19,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-25T07:38:13Z\",\"competition\":{\"comments\":46,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:4594227386\",\"rewardUsd\":50,\"fastCashScore\":95,\"updatedAt\":\"2026-08-25T23:49:26Z\",\"competition\":{\"comments\":9,\"attemptSignals\":1,\"risk\":\"medium\"}},{\"id\":\"github:4975260101\",\"rewardUsd\":780,\"fastCashScore\":119,\"updatedAt\":\"2026-08-25T05:07:59Z\",\"competition\":{\"comments\":18,\"attemptSignals\":1,\"risk\":\"high\"}},{\"id\":\"github:5003699379\",\"rewardUsd\":90,\"fastCashScore\":86,\"updatedAt\":\"2026-08-25T23:52:35Z\",\"competition\":{\"comments\":14,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5242872784\",\"rewardUsd\":32,\"fastCashScore\":98,\"updatedAt\":\"2026-08-25T23:23:53Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5250439961\",\"rewardUsd\":8995,\"fastCashScore\":109,\"updatedAt\":\"2026-08-25T23:43:15Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5251220929\",\"rewardUsd\":100,\"fastCashScore\":107,\"updatedAt\":\"2026-08-25T22:16:45Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5251241758\",\"rewardUsd\":282,\"fastCashScore\":112,\"updatedAt\":\"2026-08-25T23:53:38Z\",\"competition\":{\"comments\":4,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5251436351\",\"rewardUsd\":348,\"fastCashScore\":118,\"updatedAt\":\"2026-08-25T23:48:00Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-24T13:15:06Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":118,\"updatedAt\":\"2026-08-25T23:02:25Z\",\"competition\":{\"comments\":6,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4318279838\",\"rewardUsd\":200,\"fastCashScore\":102,\"updatedAt\":\"2026-08-25T22:48:10Z\",\"competition\":{\"comments\":6,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":110,\"updatedAt\":\"2026-08-25T01:35:34Z\",\"competition\":{\"comments\":19,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-25T07:38:13Z\",\"competition\":{\"comments\":46,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:4975260101\",\"rewardUsd\":780,\"fastCashScore\":119,\"updatedAt\":\"2026-08-25T05:07:59Z\",\"competition\":{\"comments\":18,\"attemptSignals\":1,\"risk\":\"high\"}},{\"id\":\"github:5211154647\",\"rewardUsd\":10,\"fastCashScore\":85,\"updatedAt\":\"2026-08-26T01:44:22Z\",\"competition\":{\"comments\":17,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:5212980317\",\"rewardUsd\":100,\"fastCashScore\":96,\"updatedAt\":\"2026-08-26T01:41:16Z\",\"competition\":{\"comments\":2,\"attemptSignals\":1,\"risk\":\"medium\"}},{\"id\":\"github:5222686588\",\"rewardUsd\":100,\"fastCashScore\":84,\"updatedAt\":\"2026-08-26T01:41:14Z\",\"competition\":{\"comments\":5,\"attemptSignals\":2,\"risk\":\"medium\"}},{\"id\":\"github:5235368316\",\"rewardUsd\":100,\"fastCashScore\":96,\"updatedAt\":\"2026-08-26T01:41:12Z\",\"competition\":{\"comments\":2,\"attemptSignals\":1,\"risk\":\"medium\"}},{\"id\":\"github:5251591378\",\"rewardUsd\":24,\"fastCashScore\":98,\"updatedAt\":\"2026-08-26T01:45:26Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5251913252\",\"rewardUsd\":99,\"fastCashScore\":103,\"updatedAt\":\"2026-08-26T01:44:00Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
@@ -427,10 +424,19 @@
     "minPayoutConfidence": 0.8,
     "competitionRequired": "low",
     "rejectedFakeRevenueCount": 0,
-    "rejectedAlreadyPaidCount": 2,
+    "rejectedAlreadyPaidCount": 1,
     "rejectedIdentityGateCount": 0
   },
   "economicallyRejected": [
+    {
+      "id": "github:3055155077",
+      "title": "Switch to `ky` from `redaxios`",
+      "rewardUsd": 12,
+      "reasons": [
+        "already_rewarded_or_paid"
+      ],
+      "rejectedAt": "2026-08-26T01:51:25.546Z"
+    },
     {
       "id": "github:5251241758",
       "title": "[BOUNTY ROUND] Distribution Packages — agents build it, humans publish it (YouTube, Shorts, syndication) — 15-60 RTC",
@@ -439,15 +445,6 @@
         "already_rewarded_or_paid"
       ],
       "rejectedAt": "2026-08-25T23:57:44.268Z"
-    },
-    {
-      "id": "github:3055155077",
-      "title": "Switch to `ky` from `redaxios`",
-      "rewardUsd": 12,
-      "reasons": [
-        "already_rewarded_or_paid"
-      ],
-      "rejectedAt": "2026-08-25T23:57:44.269Z"
     },
     {
       "id": "github:5247007690",
