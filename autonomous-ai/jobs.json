@@ -1,9 +1,45 @@
 {
   "version": 11,
-  "updatedAt": "2026-08-26T11:01:39.453Z",
+  "updatedAt": "2026-08-26T11:39:54.032Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
+    {
+      "id": "github:5248997266",
+      "source": "github",
+      "title": "`distribute()`'s per-beneficiary share math doesn't use the overflow-safe `proportional_share` helper it already uses for the keeper bounty",
+      "url": "https://github.com/SoroWill/sorowill-contracts/issues/190",
+      "repositoryApiUrl": "https://api.github.com/repos/SoroWill/sorowill-contracts",
+      "rewardUsd": 2553,
+      "score": 54,
+      "labels": [
+        "High",
+        "Stellar Wave",
+        "security"
+      ],
+      "commentCount": 0,
+      "updatedAt": "2026-08-26T11:37:40Z",
+      "summary": "`proportional_share` (lib.rs ~2553-2560) exists specifically to compute `floor(total * basis_points / 10_000)` without ever forming the potentially-overflowing `total * basis_points` intermediate — its own doc comment explains this is safe independently of the workspace's `overflow-checks = true` release setting. `distribute()` uses it for the keeper-bounty calculation (`bounty_amount = proportional_share(total, will.keeper_bounty_bps)`, line ~2586) but its actual beneficiary-payout loop computes the far more common and security-critical share directly as `let portion = remaining * (bp as i128) / 10_000;` (line ~2620), bypassing the safer helper entirely. The one code path in the whole contract whose overflow behaviour matters most — the amount that gets transferred out to real beneficiaries — is the one path that doesn't use the overflow-hardened calculation the codebase already wrote and relies on elsewhere in the same function. ## Acceptance criteria - [ ] Replace `distribute()`'s `remaining * (bp as i128) / 10_000` beneficiary-payout calculation with the `proportional_share` helper already used for the keeper bounty - [ ] Add a regression/fuzz test with large balances confirmin",
+      "state": "candidate",
+      "payoutConfidence": 0.65,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 124,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 2553,
+      "requiresPreclaimOrIdentity": false
+    },
     {
       "id": "github:4975260101",
       "source": "github",
@@ -118,20 +154,21 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5244944439",
+      "id": "github:5248993376",
       "source": "github",
-      "title": "fix: reviewer_reward compute_reviewer_share always returns the entire pool to the first claimant",
-      "url": "https://github.com/PhasoraLabs/StellarGrantProtocol/issues/948",
-      "repositoryApiUrl": "https://api.github.com/repos/PhasoraLabs/StellarGrantProtocol",
+      "title": "`HashedBeneficiary.percentage` is interpreted on a 0-100 scale in `reveal_and_claim` but validated on the contract's 0-10,000 basis-point scale everywhere else",
+      "url": "https://github.com/SoroWill/sorowill-contracts/issues/183",
+      "repositoryApiUrl": "https://api.github.com/repos/SoroWill/sorowill-contracts",
       "rewardUsd": 128,
-      "score": 48,
+      "score": 54,
       "labels": [
-        "bug",
-        "Stellar Wave"
+        "High",
+        "Stellar Wave",
+        "security"
       ],
-      "commentCount": 2,
-      "updatedAt": "2026-08-26T10:58:37Z",
-      "summary": "## Labels `bug`, `security`, `core` ## Description ```rust fn compute_reviewer_share(env: &Env, reviewer: &Address, token: &Address, pool: &ReviewerRewardPool) -> Result<i128, ContractError> { if pool.total_deposited <= 0 { return Ok(0); } let mut reviewer_votes: i128 = 0; let mut total_reviewer_votes: i128 = 0; // ... sums this reviewer's own votes_cast across their grants into reviewer_votes ... total_reviewer_votes = reviewer_votes; // BUG: should be the sum across ALL reviewers drawing from this pool if total_reviewer_votes <= 0 { return Ok(0); } let share = pool.total_deposited .saturating_mul(reviewer_votes) .checked_div(total_reviewer_votes) .unwrap_or(0) .min(pool.balance); Ok(share.max(0)) } ``` `total_reviewer_votes` is named and documented as if it should be the sum of votes cast by **all** reviewers drawing from this shared pool, but it's assigned the exact same value as `reviewer_votes` (this one reviewer's own count). So `share = pool.total_deposited * reviewer_votes / reviewer_votes`, which simplifies to `pool.total_deposited` (capped by `pool.balance`) for *any* reviewer with at least one vote — regardless of how many other reviewers also contributed votes. **Failur",
+      "commentCount": 0,
+      "updatedAt": "2026-08-26T11:37:44Z",
+      "summary": "`reveal_and_claim` computes the payout as `will.balance * (hb.percentage as i128) / 100` — i.e. it treats `percentage` as a raw 0-100 value (50 means 50%). But `assert_valid_percentages`, which gates `add_hashed_beneficiary`, adds `hb.percentage` directly into the same running total as `Allocation::Percentage`'s basis-point values and compares the sum against `10_000` — the basis-point convention used by every other percentage field in the contract (`Beneficiary.allocation`'s `Percentage(bp)`, `MAX_KEEPER_BOUNTY_BPS`, etc.). An owner who follows the codebase's dominant basis-point convention and passes e.g. `percentage: 5000` intending \"50%\" would pass validation (5,000 ≤ 10,000, assuming a will with no other percentage beneficiaries per the sibling bug in `add_hashed_beneficiary`) but `reveal_and_claim` would then compute `balance * 5000 / 100` — 50x the intended payout, either reverting the transfer or, depending on balance and other flows, paying out far more than intended. ## Acceptance criteria - [ ] Standardize `HashedBeneficiary.percentage` on the same basis-point (0-10,000) scale used everywhere else, fixing either `reveal_and_claim`'s payout formula or `assert_valid_percen",
       "state": "candidate",
       "payoutConfidence": 0.35,
       "autonomyFit": 1,
@@ -140,11 +177,11 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 106,
+      "fastCashScore": 109,
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
-        "comments": 2,
+        "comments": 0,
         "attemptSignals": 0,
         "risk": "low"
       },
@@ -153,26 +190,30 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5243263356",
+      "id": "github:5256496614",
       "source": "github",
-      "title": "Tron USDT egress fee inflated ~17x (≈$4 → ≈$72): simulated-swap TRX price accepts a dust-pool fill",
-      "url": "https://github.com/chainflip-io/chainflip-backend/issues/6814",
-      "repositoryApiUrl": "https://api.github.com/repos/chainflip-io/chainflip-backend",
-      "rewardUsd": 71.61,
-      "score": 40,
-      "labels": [],
+      "title": "🎯 reverse_proxy: Request body is closed before reaching error handlers on upstream dial timeout",
+      "url": "https://github.com/condoraltidoi32/caddy/issues/1",
+      "repositoryApiUrl": "https://api.github.com/repos/condoraltidoi32/caddy",
+      "rewardUsd": 10,
+      "score": 62,
+      "labels": [
+        "bounty",
+        "bountyhub",
+        "$10"
+      ],
       "commentCount": 1,
-      "updatedAt": "2026-08-26T09:03:02Z",
-      "summary": "## Summary The protocol-level **egress fee for USDT on Tron is currently \\~17x too high**: **\\~71.61 USDT**, against a real on-chain broadcast cost of **10.7757 TRX (~$3.68)**. The TRX-denominated gas model is fine (\\~12.668 TRX vs 10.776 TRX actually burned, +17.6%). The inflation happens entirely in the **TRX → USDT price conversion**, which for TRX is sourced from a rolled-back 20-USDC simulated swap against Chainflip's own TRX/USDC pool. That pool is currently dust, so the probe returns a price of **~$5.65/TRX against a market price of \\~$0.3416** — and the only guard on that value is `.filter(|v| *v > 0)`. ## Impact - Users swapping to USDT on Tron are overcharged \\~$68 per swap. On the swap below the egress fee was **2.45% of the output**. - Fill-or-kill does not protect against it (see \"Secondary finding\"). - Tron **ingress** is hit by the same path: `ingress_fees.Tron.USDT` ≈ **63.52 USDT**. - Any asset lacking a Chainlink feed and egressing a non-gas asset is exposed to the same failure mode. ## Reproduction (live, mainnet) ```bash curl -s https://mainnet-archive.chainflip.io -H 'content-type: application/json' \\ -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"cf_environment\",\"param",
+      "updatedAt": "2026-08-26T11:30:43Z",
+      "summary": "## 📝 Description When a request is proxied via `reverse_proxy` and encounters an upstream dial failure or dial timeout (e.g., upstream host is unreachable or fails to respond within `dial_timeout`), the request body is closed during the transport round-trip. If the server has error handling configured (such as via `handle_errors` or custom error handling middleware), downstream handlers attempting to inspect, log, or forward the original `http.Request.Body` fail with `http.ErrBodyReadAfterClose` or unexpected `io.EOF`. When request body buffering is enabled or when the incoming request body has not been fully consumed, `reverse_proxy` should ensure the request body remains in a readable state or is safely restored before yielding control to error handlers. --- ## 🎯 Acceptance Criteria - [ ] If request body buffering is configured (`buffer_requests` / `request_buffers`) or the body has been buffered in memory/temp file, `req.Body` must be rewound and replaced with an open `io.ReadCloser` before invoking error handlers after an upstream failure. - [ ] When an upstream dial timeout or connection refusal occurs in `reverse_proxy`, control passed to `caddyhttp.Handler` error routes (o",
       "state": "candidate",
-      "payoutConfidence": 0.35,
+      "payoutConfidence": 0.7,
       "autonomyFit": 1,
       "requiresHumanGate": false,
       "requiresSpecialHardware": false,
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 104,
+      "fastCashScore": 109,
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
@@ -181,7 +222,7 @@
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 71.61,
+      "economicValueUsd": 10,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -219,6 +260,38 @@
       },
       "realMoneyEligible": true,
       "economicValueUsd": 200,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5243263356",
+      "source": "github",
+      "title": "Tron USDT egress fee inflated ~17x (≈$4 → ≈$72): simulated-swap TRX price accepts a dust-pool fill",
+      "url": "https://github.com/chainflip-io/chainflip-backend/issues/6814",
+      "repositoryApiUrl": "https://api.github.com/repos/chainflip-io/chainflip-backend",
+      "rewardUsd": 71.61,
+      "score": 40,
+      "labels": [],
+      "commentCount": 2,
+      "updatedAt": "2026-08-26T11:08:05Z",
+      "summary": "## Summary The protocol-level **egress fee for USDT on Tron is currently \\~17x too high**: **\\~71.61 USDT**, against a real on-chain broadcast cost of **10.7757 TRX (~$3.68)**. The TRX-denominated gas model is fine (\\~12.668 TRX vs 10.776 TRX actually burned, +17.6%). The inflation happens entirely in the **TRX → USDT price conversion**, which for TRX is sourced from a rolled-back 20-USDC simulated swap against Chainflip's own TRX/USDC pool. That pool is currently dust, so the probe returns a price of **~$5.65/TRX against a market price of \\~$0.3416** — and the only guard on that value is `.filter(|v| *v > 0)`. ## Impact - Users swapping to USDT on Tron are overcharged \\~$68 per swap. On the swap below the egress fee was **2.45% of the output**. - Fill-or-kill does not protect against it (see \"Secondary finding\"). - Tron **ingress** is hit by the same path: `ingress_fees.Tron.USDT` ≈ **63.52 USDT**. - Any asset lacking a Chainlink feed and egressing a non-gas asset is exposed to the same failure mode. ## Reproduction (live, mainnet) ```bash curl -s https://mainnet-archive.chainflip.io -H 'content-type: application/json' \\ -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"cf_environment\",\"param",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 102,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 2,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 71.61,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -292,42 +365,6 @@
       "realMoneyEligible": true,
       "economicValueUsd": 50,
       "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5211154647",
-      "source": "github",
-      "title": "🎯 GORM v2.24.0 Panics When Querying with Complex Joins",
-      "url": "https://github.com/HarrieAlexandrowicz5/gorm/issues/1",
-      "repositoryApiUrl": "https://api.github.com/repos/HarrieAlexandrowicz5/gorm",
-      "rewardUsd": 10,
-      "score": 44,
-      "labels": [
-        "bounty",
-        "opire",
-        "$10"
-      ],
-      "commentCount": 22,
-      "updatedAt": "2026-08-26T10:41:13Z",
-      "summary": "## 📝 Description When attempting to query the database using GORM v2.24.0 with complex joins, the application panics. This issue has been observed in multiple environments and with various database backends (PostgreSQL, MySQL, SQLite). ## 🎯 Acceptance Criteria - [ ] The application should not panic when querying with complex joins. - [ ] The query should return the correct results as expected. - [ ] The panic should be reproducible and consistently occur with the same query. - [ ] The issue should be resolved in GORM v2.24.0 or a subsequent patch release. ## 🛠️ Technical Specifications & Context - The panic occurs when executing a query with multiple joins, including self-joins and joins with subqueries. - The issue is likely related to how GORM handles complex query structures internally. - The panic message typically includes a stack trace pointing to a file in the GORM library, such as `gorm.go` or `query.go`. ## 🧪 Verification & Testing 1. **Reproduce the Issue:** - Create a test case that includes a complex query with multiple joins. - Execute the test case and observe if the application panics. 2. **Verify Fix:** - Apply the proposed fix (if available) or a potential patc",
-      "state": "candidate",
-      "payoutConfidence": 0.7,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 77,
-      "survivalEligible": false,
-      "eligibilityReason": "Competition is too high for bootstrap mode.",
-      "competition": {
-        "comments": 22,
-        "attemptSignals": 0,
-        "risk": "high"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 10,
-      "requiresPreclaimOrIdentity": false
     }
   ],
   "selected": null,
@@ -340,7 +377,7 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-24T13:15:06Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":118,\"updatedAt\":\"2026-08-25T23:02:25Z\",\"competition\":{\"comments\":6,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4318279838\",\"rewardUsd\":200,\"fastCashScore\":102,\"updatedAt\":\"2026-08-25T22:48:10Z\",\"competition\":{\"comments\":6,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":99,\"updatedAt\":\"2026-08-26T05:58:16Z\",\"competition\":{\"comments\":21,\"attemptSignals\":3,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-25T07:38:13Z\",\"competition\":{\"comments\":46,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:4975260101\",\"rewardUsd\":780,\"fastCashScore\":119,\"updatedAt\":\"2026-08-25T05:07:59Z\",\"competition\":{\"comments\":18,\"attemptSignals\":1,\"risk\":\"high\"}},{\"id\":\"github:5211154647\",\"rewardUsd\":10,\"fastCashScore\":77,\"updatedAt\":\"2026-08-26T10:41:13Z\",\"competition\":{\"comments\":22,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:5213991032\",\"rewardUsd\":13102.80834,\"fastCashScore\":109,\"updatedAt\":\"2026-08-26T06:46:38Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5243263356\",\"rewardUsd\":71.61,\"fastCashScore\":104,\"updatedAt\":\"2026-08-26T09:03:02Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5244944439\",\"rewardUsd\":128,\"fastCashScore\":106,\"updatedAt\":\"2026-08-26T10:58:37Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5254373377\",\"rewardUsd\":41,\"fastCashScore\":99,\"updatedAt\":\"2026-08-26T10:26:01Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-24T13:15:06Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4234681451\",\"rewardUsd\":250,\"fastCashScore\":118,\"updatedAt\":\"2026-08-25T23:02:25Z\",\"competition\":{\"comments\":6,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4318279838\",\"rewardUsd\":200,\"fastCashScore\":102,\"updatedAt\":\"2026-08-25T22:48:10Z\",\"competition\":{\"comments\":6,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":99,\"updatedAt\":\"2026-08-26T05:58:16Z\",\"competition\":{\"comments\":21,\"attemptSignals\":3,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-25T07:38:13Z\",\"competition\":{\"comments\":46,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:4975260101\",\"rewardUsd\":780,\"fastCashScore\":119,\"updatedAt\":\"2026-08-25T05:07:59Z\",\"competition\":{\"comments\":18,\"attemptSignals\":1,\"risk\":\"high\"}},{\"id\":\"github:4978774913\",\"rewardUsd\":200,\"fastCashScore\":106,\"updatedAt\":\"2026-08-26T11:32:32Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5213991032\",\"rewardUsd\":13102.80834,\"fastCashScore\":109,\"updatedAt\":\"2026-08-26T06:46:38Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5243263356\",\"rewardUsd\":71.61,\"fastCashScore\":102,\"updatedAt\":\"2026-08-26T11:08:05Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5248993376\",\"rewardUsd\":128,\"fastCashScore\":109,\"updatedAt\":\"2026-08-26T11:37:44Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5248997266\",\"rewardUsd\":2553,\"fastCashScore\":124,\"updatedAt\":\"2026-08-26T11:37:40Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5256496614\",\"rewardUsd\":10,\"fastCashScore\":109,\"updatedAt\":\"2026-08-26T11:30:43Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
@@ -352,11 +389,20 @@
     "maxHours": 4,
     "minPayoutConfidence": 0.8,
     "competitionRequired": "low",
-    "rejectedFakeRevenueCount": 0,
-    "rejectedAlreadyPaidCount": 2,
+    "rejectedFakeRevenueCount": 1,
+    "rejectedAlreadyPaidCount": 1,
     "rejectedIdentityGateCount": 0
   },
   "economicallyRejected": [
+    {
+      "id": "github:4978774913",
+      "title": "[SDK] Add integration tests for stop-loss module against Stellar Testnet",
+      "rewardUsd": 200,
+      "reasons": [
+        "testnet_or_test_token_reward"
+      ],
+      "rejectedAt": "2026-08-26T11:39:53.976Z"
+    },
     {
       "id": "github:3055155077",
       "title": "Switch to `ky` from `redaxios`",
@@ -364,7 +410,7 @@
       "reasons": [
         "already_rewarded_or_paid"
       ],
-      "rejectedAt": "2026-08-26T11:01:39.399Z"
+      "rejectedAt": "2026-08-26T11:39:53.977Z"
     },
     {
       "id": "github:5254373377",

@@ -1,36 +1,27 @@
 {
   "version": 5,
-  "cycle": 141,
+  "cycle": 142,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-26T11:02:12.590Z",
+  "updatedAt": "2026-08-26T11:40:12.090Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "online",
-  "currentAgent": "PLANNER",
+  "currentAgent": "CRITIC",
   "provider": {
     "mode": "OpenCode Free",
-    "model": "mimo-v2.5-free",
+    "model": "hy3-free",
     "attempts": 1
   },
   "latest": {
-    "cycle": 141,
-    "agent": "PLANNER",
-    "timestamp": "2026-08-26T11:02:12.590Z",
-    "observation": "Jobs snapshot lists github:4234681451 with clear acceptance criteria and $250 reward for a proposal.",
-    "objection": "Requires human review, but criteria are well-defined for autonomous preparation.",
-    "decision": "Evaluate github:4234681451 for immediate autonomous execution as smallest useful next move.",
-    "next": "CRITIC assess feasibility and prepare deliverables for the vulnerability schema proposal."
+    "cycle": 142,
+    "agent": "CRITIC",
+    "timestamp": "2026-08-26T11:40:12.090Z",
+    "observation": "Jobs snapshot lists github:4234681451 ($250) with clear criteria: proposal doc, DB schema, worked example, human review.",
+    "objection": "Payout requires human approval by Brandon/Matt; autonomous prep feasible but PR submission needs credentials we must not assume.",
+    "decision": "Prepare the markdown proposal and analytics schema from fixtures autonomously; treat human review as external gate, not blocking prep.",
+    "next": "PLANNER verify GitHub access for PR submission; if none, stage deliverable locally and await review without inventing credentials."
   },
   "lastError": null,
   "history": [
-    {
-      "cycle": 102,
-      "agent": "CRITIC",
-      "timestamp": "2026-08-24T22:47:18.614Z",
-      "observation": "Jobs snapshot lists five opportunities; none match github:5239249425; selected is null.",
-      "objection": "PLANNER selected a job ID absent from the authoritative snapshot, violating the rule to use only provided opportunities.",
-      "decision": "Reject selection of github:5239249425; require choosing from available snapshot opportunities.",
-      "next": "PLANNER must select a job from the current snapshot and embed its markdown proposal for review."
-    },
     {
       "cycle": 103,
       "agent": "PLANNER",
@@ -381,6 +372,15 @@
       "objection": "Requires human review, but criteria are well-defined for autonomous preparation.",
       "decision": "Evaluate github:4234681451 for immediate autonomous execution as smallest useful next move.",
       "next": "CRITIC assess feasibility and prepare deliverables for the vulnerability schema proposal."
+    },
+    {
+      "cycle": 142,
+      "agent": "CRITIC",
+      "timestamp": "2026-08-26T11:40:12.090Z",
+      "observation": "Jobs snapshot lists github:4234681451 ($250) with clear criteria: proposal doc, DB schema, worked example, human review.",
+      "objection": "Payout requires human approval by Brandon/Matt; autonomous prep feasible but PR submission needs credentials we must not assume.",
+      "decision": "Prepare the markdown proposal and analytics schema from fixtures autonomously; treat human review as external gate, not blocking prep.",
+      "next": "PLANNER verify GitHub access for PR submission; if none, stage deliverable locally and await review without inventing credentials."
     }
   ],
   "economy": {
@@ -408,6 +408,14 @@
     "selected": null,
     "opportunities": [
       {
+        "id": "github:5248997266",
+        "title": "`distribute()`'s per-beneficiary share math doesn't use the overflow-safe `proportional_share` helper it already uses for the keeper bounty",
+        "url": "https://github.com/SoroWill/sorowill-contracts/issues/190",
+        "rewardUsd": 2553,
+        "score": 54,
+        "summary": "`proportional_share` (lib.rs ~2553-2560) exists specifically to compute `floor(total * basis_points / 10_000)` without ever forming the potentially-overflowing `total * basis_points` intermediate — its own doc comment explains this is safe independently of the workspace's `overflow-checks = true` release setting. `distribute()` uses it for the keeper-bounty calculation (`bounty_amount = proportional_share(total, will.keeper_bounty_bps)`, line ~2586) but its actual beneficiary-payout loop computes the far more common and security-critical share directly as `let portion = remaining * (bp as i128) / 10_000;` (line ~2620), bypassing the safer helper entirely. The one code path in the whole contract whose overflow behaviour matters most — the amount that gets transferred out to real beneficiaries — is the one path that doesn't use the overflow-hardened calculation the codebase already wrote and relies on elsewhere in the same function. ## Acceptance criteria - [ ] Replace `distribute()`'s `remaining * (bp as i128) / 10_000` beneficiary-payout calculation with the `proportional_share` helper already used for the keeper bounty - [ ] Add a regression/fuzz test with large balances confirmin"
+      },
+      {
         "id": "github:4975260101",
         "title": "Automate Bug Detection and Reviews",
         "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/11398",
@@ -432,20 +440,12 @@
         "summary": "SUPPLEMENT to my earlier report: full laundering chain, 61 scammer addresses. 2026-06-01 17:08:30 UTC, 13,102.80834 USDT (BEP-20) taken from my wallet 0x5e008016e858b1fa76d5ec8d6a2a95d02b97c44e (VICTIM - do not flag). Police report KUSP 12228, Moscow. I am 71, on chemotherapy and temporarily blind at the time; the money was for eye surgery. MECHANISM. On a Zoom screen-share I was induced to sign an UNLIMITED ERC-20 approval (2^256-1) to drainer 0x5df85325b2b65f90ed14e6ef80e152310d54cddb. The operator then called selector 0x5af1a80d on it FROM HIS OWN ADDRESS 0x905f70c9c772c1d63f42bf1cc84dc1445313260d, paying gas himself - I never sent anything. Batch tooling, deployed 2026-03-26, two months BEFORE I was contacted. The approval is STILL ACTIVE. CONCEALMENT. 65 seconds later I received 13,201 units of a counterfeit \"Tether USD\"/\"USDT\" spelled with a Greek Tau, identical on screen, so I thought my funds were safe for 3 weeks. A second counterfeit uses Cyrillic e and Armenian S. Both are EIP-1167 clones of one factory template. SCALE. 4,000 drainer operations from public chain data: 46 victims, 5,651,466.35 USDT, 2026-07-02 to 2026-08-18; my own case predates that window. Largest losse"
       },
       {
-        "id": "github:5244944439",
-        "title": "fix: reviewer_reward compute_reviewer_share always returns the entire pool to the first claimant",
-        "url": "https://github.com/PhasoraLabs/StellarGrantProtocol/issues/948",
+        "id": "github:5248993376",
+        "title": "`HashedBeneficiary.percentage` is interpreted on a 0-100 scale in `reveal_and_claim` but validated on the contract's 0-10,000 basis-point scale everywhere else",
+        "url": "https://github.com/SoroWill/sorowill-contracts/issues/183",
         "rewardUsd": 128,
-        "score": 48,
-        "summary": "## Labels `bug`, `security`, `core` ## Description ```rust fn compute_reviewer_share(env: &Env, reviewer: &Address, token: &Address, pool: &ReviewerRewardPool) -> Result<i128, ContractError> { if pool.total_deposited <= 0 { return Ok(0); } let mut reviewer_votes: i128 = 0; let mut total_reviewer_votes: i128 = 0; // ... sums this reviewer's own votes_cast across their grants into reviewer_votes ... total_reviewer_votes = reviewer_votes; // BUG: should be the sum across ALL reviewers drawing from this pool if total_reviewer_votes <= 0 { return Ok(0); } let share = pool.total_deposited .saturating_mul(reviewer_votes) .checked_div(total_reviewer_votes) .unwrap_or(0) .min(pool.balance); Ok(share.max(0)) } ``` `total_reviewer_votes` is named and documented as if it should be the sum of votes cast by **all** reviewers drawing from this shared pool, but it's assigned the exact same value as `reviewer_votes` (this one reviewer's own count). So `share = pool.total_deposited * reviewer_votes / reviewer_votes`, which simplifies to `pool.total_deposited` (capped by `pool.balance`) for *any* reviewer with at least one vote — regardless of how many other reviewers also contributed votes. **Failur"
-      },
-      {
-        "id": "github:5243263356",
-        "title": "Tron USDT egress fee inflated ~17x (≈$4 → ≈$72): simulated-swap TRX price accepts a dust-pool fill",
-        "url": "https://github.com/chainflip-io/chainflip-backend/issues/6814",
-        "rewardUsd": 71.61,
-        "score": 40,
-        "summary": "## Summary The protocol-level **egress fee for USDT on Tron is currently \\~17x too high**: **\\~71.61 USDT**, against a real on-chain broadcast cost of **10.7757 TRX (~$3.68)**. The TRX-denominated gas model is fine (\\~12.668 TRX vs 10.776 TRX actually burned, +17.6%). The inflation happens entirely in the **TRX → USDT price conversion**, which for TRX is sourced from a rolled-back 20-USDC simulated swap against Chainflip's own TRX/USDC pool. That pool is currently dust, so the probe returns a price of **~$5.65/TRX against a market price of \\~$0.3416** — and the only guard on that value is `.filter(|v| *v > 0)`. ## Impact - Users swapping to USDT on Tron are overcharged \\~$68 per swap. On the swap below the egress fee was **2.45% of the output**. - Fill-or-kill does not protect against it (see \"Secondary finding\"). - Tron **ingress** is hit by the same path: `ingress_fees.Tron.USDT` ≈ **63.52 USDT**. - Any asset lacking a Chainlink feed and egressing a non-gas asset is exposed to the same failure mode. ## Reproduction (live, mainnet) ```bash curl -s https://mainnet-archive.chainflip.io -H 'content-type: application/json' \\ -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"cf_environment\",\"param"
+        "score": 54,
+        "summary": "`reveal_and_claim` computes the payout as `will.balance * (hb.percentage as i128) / 100` — i.e. it treats `percentage` as a raw 0-100 value (50 means 50%). But `assert_valid_percentages`, which gates `add_hashed_beneficiary`, adds `hb.percentage` directly into the same running total as `Allocation::Percentage`'s basis-point values and compares the sum against `10_000` — the basis-point convention used by every other percentage field in the contract (`Beneficiary.allocation`'s `Percentage(bp)`, `MAX_KEEPER_BOUNTY_BPS`, etc.). An owner who follows the codebase's dominant basis-point convention and passes e.g. `percentage: 5000` intending \"50%\" would pass validation (5,000 ≤ 10,000, assuming a will with no other percentage beneficiaries per the sibling bug in `add_hashed_beneficiary`) but `reveal_and_claim` would then compute `balance * 5000 / 100` — 50x the intended payout, either reverting the transfer or, depending on balance and other flows, paying out far more than intended. ## Acceptance criteria - [ ] Standardize `HashedBeneficiary.percentage` on the same basis-point (0-10,000) scale used everywhere else, fixing either `reveal_and_claim`'s payout formula or `assert_valid_percen"
       }
     ],
     "active": null,
