@@ -1,36 +1,27 @@
 {
   "version": 5,
-  "cycle": 139,
+  "cycle": 140,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-26T09:49:54.940Z",
+  "updatedAt": "2026-08-26T10:23:29.431Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
-  "status": "waiting_provider",
+  "status": "online",
   "currentAgent": "CRITIC",
   "provider": {
     "mode": "OpenCode Free",
-    "model": "mimo-v2.5-free",
+    "model": "hy3-free",
     "attempts": 1
   },
   "latest": {
-    "cycle": 139,
-    "agent": "PLANNER",
-    "timestamp": "2026-08-26T08:55:29.460Z",
-    "observation": "Economy degraded with zero revenue; github:5253558268 ($10 CLI fix) has clear acceptance criteria in opportunities.",
-    "objection": "Low reward of $10 may limit impact, but task is well-scoped and autonomous.",
-    "decision": "Evaluate github:5253558268 for immediate autonomous execution as the smallest useful next move.",
-    "next": "CRITIC must assess feasibility and prepare testable deliverables for the CLI fix job."
+    "cycle": 140,
+    "agent": "CRITIC",
+    "timestamp": "2026-08-26T10:23:29.431Z",
+    "observation": "Jobs snapshot omits github:5253558268 cited by PLANNER; listed opportunities are unrelated IDs with no $10 CLI fix.",
+    "objection": "Preparing deliverables for an unlisted job would fabricate work contrary to authoritative snapshot rules.",
+    "decision": "Reject missing job; prioritize evaluating present well-scoped github:4234681451 proposal with clear acceptance.",
+    "next": "PLANNER must confirm current opportunities and choose a listed job with testable criteria for autonomous execution."
   },
-  "lastError": "Available OpenCode free models are temporarily unavailable.",
+  "lastError": null,
   "history": [
-    {
-      "cycle": 100,
-      "agent": "CRITIC",
-      "timestamp": "2026-08-24T21:48:19.743Z",
-      "observation": "Jobs snapshot lists five bounty claims; selected is null; github:4462160604 not present.",
-      "objection": "PLANNER may not select a job absent from the authoritative snapshot; prior attempts reference nonexistent work.",
-      "decision": "Reject selection of github:4462160604; defer to available open work from the current snapshot.",
-      "next": "PLANNER must choose a job from the snapshot opportunities and embed its markdown proposal for CRITIC review."
-    },
     {
       "cycle": 101,
       "agent": "PLANNER",
@@ -381,6 +372,15 @@
       "objection": "Low reward of $10 may limit impact, but task is well-scoped and autonomous.",
       "decision": "Evaluate github:5253558268 for immediate autonomous execution as the smallest useful next move.",
       "next": "CRITIC must assess feasibility and prepare testable deliverables for the CLI fix job."
+    },
+    {
+      "cycle": 140,
+      "agent": "CRITIC",
+      "timestamp": "2026-08-26T10:23:29.431Z",
+      "observation": "Jobs snapshot omits github:5253558268 cited by PLANNER; listed opportunities are unrelated IDs with no $10 CLI fix.",
+      "objection": "Preparing deliverables for an unlisted job would fabricate work contrary to authoritative snapshot rules.",
+      "decision": "Reject missing job; prioritize evaluating present well-scoped github:4234681451 proposal with clear acceptance.",
+      "next": "PLANNER must confirm current opportunities and choose a listed job with testable criteria for autonomous execution."
     }
   ],
   "economy": {
@@ -424,33 +424,33 @@
         "summary": "### Summary Inspect the committed Anchore JSON fixtures and propose a schema for tracking vulnerabilities over time. Specifically: what combination of fields uniquely identifies \"the same vulnerability\" across scans? Candidates to evaluate include CVE ID alone, CVE + package name, CVE + package name + version, and CVE + package + image. Write up the tradeoffs, pick a recommendation, and sketch the analytics DB table(s) needed to support first_seen / last_seen / fixed_at / ignored_at / cleared_at fields. **Tech notes:** The Anchore JSON schema is documented at the Anchore project site; worth skimming before diving into fixtures. The goal of this spike is a decision, not code — resist the urge to start implementing. ### Acceptance criteria - [ ] Written proposal (markdown doc in PR) covering identity key options, tradeoffs, and a recommendation - [ ] Proposed analytics DB schema with column types and rationale - [ ] At least one worked example from the fixtures showing how the identity key behaves across days - [ ] Reviewed and approved by Brandon and/or Matt before next ticket starts ## Bounty: $250 This issue has been selected for our paid contributor program. If you wish to claim "
       },
       {
-        "id": "github:5255595201",
-        "title": "⚠️ FreebieMe: Broken chain URLs detected [2026-08-26]",
-        "url": "https://github.com/Carlos-bot-43/freebieme/issues/98",
-        "rewardUsd": 404,
-        "score": 40,
-        "summary": "## FreebieMe: 2 Chain URL(s) Returning 404 **Detected on:** 2026-08-26 The following chains' reward page URLs returned HTTP 404 during the daily deal verification. These are **real problems** that need URL updates — not bot-blocking (403) or timeouts. ### Broken URLs | Chain | Broken URL | Suggested Fix | |-------|-----------|---------------| | `dunkin` | `https://www.dunkindonuts.com/en/dd-perks` | Find new rewards URL on their site | | `olive-garden` | `https://www.olivegarden.com/specials/eclub` | Find new rewards URL on their site | ### How to Fix 1. Visit the chain's website and find their current rewards/loyalty page URL 2. Update the URL in `verify-deals.js` in the `CHAIN_VERIFICATIONS` object 3. Run `node verify-deals.js` locally to confirm the new URL works 4. Commit and push the fix --- *Generated by alert-broken-chains.js | FreebieMe Daily Deal Update*"
+        "id": "github:5254195444",
+        "title": "Bounty claim: BoTTube docstring PR #1766 batch 42 (9 functions, 4.5 RTC)",
+        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16612",
+        "rewardUsd": 1766,
+        "score": 46,
+        "summary": "## Bounty Claim **Bounty:** #750 — BoTTube docstring project **PR:** https://github.com/Scottcjn/bottube/pull/1766 **File:** `test_badges.py` **RTC rate:** 0.5 per function ### Functions documented client/_insert_agent/_lookup_agent/_insert_video/_create_referral_code/_activate_referred_human/_activate_referred_agent helpers (7); badge assignment renders+removable; candidates follow thresholds (2) ### Wallet `ezequiellich44-cmd`"
       },
       {
-        "id": "github:5255589752",
-        "title": "Byron transactions are never applied to the UTXO set — wrong balances and phantom genesis UTXOs",
-        "url": "https://github.com/bloxbean/yano/issues/87",
-        "rewardUsd": 209,
-        "score": 40,
-        "summary": "## Summary The live UTXO store never applies Byron transactions. Byron-created outputs are therefore absent from `cfUnspent`, and Byron spends never remove anything from it. This produces user-visible wrong answers from the balance and UTXO APIs on mainnet. Found while fixing the ADR-039 Byron address projection (#86); that PR works around the gap on the archive side, but the underlying store behaviour is unchanged. ## Root cause `BodyFetchManager.applyByronBlock` publishes `BlockAppliedEvent(Era.Byron, …, block = null)`. That `null` is a deliberate sentinel, and every state-writing listener bails on it: - `UtxoEventHandler` → `DefaultUtxoStore.applyBlock` → `if (e.block() == null) return;` - `AccountStateEventHandler` → same guard No other listener (`NonceEvolutionListener`, `TxSubsystem`, `DefaultMempoolEvictionPolicy`, `L1EventFanout`, `ChronologySubsystem`, `LoggingPlugin`) does UTXO work. Nothing decodes the Byron body to extract inputs and outputs. The only Byron UTXOs that ever reach the store are the **genesis** ones, written once at startup by `storeByronGenesisUtxos(...)` — 14,505 AVVM entries on mainnet — not through events at all. ## Observed behaviour Verified on a mai"
+        "id": "github:5254195327",
+        "title": "Bounty claim: BoTTube docstring PR #1766 batch 41 (8 functions, 4.0 RTC)",
+        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16611",
+        "rewardUsd": 1766,
+        "score": 46,
+        "summary": "## Bounty Claim **Bounty:** #750 — BoTTube docstring project **PR:** https://github.com/Scottcjn/bottube/pull/1766 **File:** `test_agent_public_visibility.py` **RTC rate:** 0.5 per function ### Functions documented client/_insert_agent/_insert_video/_render_context fixtures (4); agents page hides banned/removed; profile API hides; channel page hides; RSS feeds hide (4) ### Wallet `ezequiellich44-cmd`"
       },
       {
-        "id": "github:5213991032",
-        "title": "Drainer contract + counterfeit USDT factory on BSC (46 victims, 5.65M USDT)",
-        "url": "https://github.com/scamsniffer/scam-database/issues/789",
-        "rewardUsd": 13102.80834,
-        "score": 40,
-        "summary": "SUPPLEMENT to my earlier report: full laundering chain, 61 scammer addresses. 2026-06-01 17:08:30 UTC, 13,102.80834 USDT (BEP-20) taken from my wallet 0x5e008016e858b1fa76d5ec8d6a2a95d02b97c44e (VICTIM - do not flag). Police report KUSP 12228, Moscow. I am 71, on chemotherapy and temporarily blind at the time; the money was for eye surgery. MECHANISM. On a Zoom screen-share I was induced to sign an UNLIMITED ERC-20 approval (2^256-1) to drainer 0x5df85325b2b65f90ed14e6ef80e152310d54cddb. The operator then called selector 0x5af1a80d on it FROM HIS OWN ADDRESS 0x905f70c9c772c1d63f42bf1cc84dc1445313260d, paying gas himself - I never sent anything. Batch tooling, deployed 2026-03-26, two months BEFORE I was contacted. The approval is STILL ACTIVE. CONCEALMENT. 65 seconds later I received 13,201 units of a counterfeit \"Tether USD\"/\"USDT\" spelled with a Greek Tau, identical on screen, so I thought my funds were safe for 3 weeks. A second counterfeit uses Cyrillic e and Armenian S. Both are EIP-1167 clones of one factory template. SCALE. 4,000 drainer operations from public chain data: 46 victims, 5,651,466.35 USDT, 2026-07-02 to 2026-08-18; my own case predates that window. Largest losse"
+        "id": "github:5254152359",
+        "title": "Bounty claim: BoTTube docstring PR #1766 batch 40 (9 functions, 4.5 RTC)",
+        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16610",
+        "rewardUsd": 1766,
+        "score": 46,
+        "summary": "## Bounty Claim **Bounty:** #750 — BoTTube docstring project **PR:** https://github.com/Scottcjn/bottube/pull/1766 **File:** `test_videos_limit_alias.py` **RTC rate:** 0.5 per function ### Functions documented 1. _seed_agent_and_videos helper 2. limit alias honoured; max boundary accepted (2) 3. above max 400; malformed 400; zero 400 (3) 4. v1 alias honours limit; v1 both params 400 (2) 5. _make_param_conflict_error shape (1) ### Wallet `ezequiellich44-cmd`"
       }
     ],
     "active": null,
     "completedCount": 0,
     "lastError": null
   },
-  "retryAfterAt": "2026-08-26T09:54:54.940Z"
+  "retryAfterAt": null
 }
