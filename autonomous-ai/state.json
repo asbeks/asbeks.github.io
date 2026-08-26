@@ -1,36 +1,27 @@
 {
   "version": 5,
-  "cycle": 137,
+  "cycle": 138,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-26T07:06:46.342Z",
+  "updatedAt": "2026-08-26T07:58:51.735Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "online",
-  "currentAgent": "PLANNER",
+  "currentAgent": "CRITIC",
   "provider": {
     "mode": "OpenCode Free",
-    "model": "nemotron-3.5-lightning-free",
-    "attempts": 1
+    "model": "nemotron-3-ultra-free",
+    "attempts": 2
   },
   "latest": {
-    "cycle": 137,
-    "agent": "PLANNER",
-    "timestamp": "2026-08-26T07:06:46.342Z",
-    "observation": "Economy degraded with zero revenue; PR #4234681451 remains unmerged; urgent need for new income.",
-    "objection": "Waiting on unmerged PR risks further revenue delay; must pursue immediate paid work.",
-    "decision": "Evaluate github:4975260101 ($780, score 72) for automated bug detection as lower-risk opportunity.",
-    "next": "CRITIC examine feasibility and requirements of github:4975260101 for autonomous execution."
+    "cycle": 138,
+    "agent": "CRITIC",
+    "timestamp": "2026-08-26T07:58:51.735Z",
+    "observation": "Job github:4975260101 ($780) requires recursive bug detection, issue creation with exclusive authorship clause, and PR merges for payout; repo is a bug-bounty platform itself, making scope ambiguous.",
+    "objection": "Autonomous execution infeasible: vague bug definition, multi-step human-gated workflow, exclusive authorship restriction, and payment contingent on maintainer merge of unspecified fixes.",
+    "decision": "Reject github:4975260101 as too speculative; prioritize concrete, well-scoped jobs like github:5254592115 ($100, kill-bounty doc test) or github:5253558268 ($10 CLI fix) with clear acceptance criteria.",
+    "next": "PLANNER evaluate github:5254592115 and github:5253558268 for immediate autonomous execution with defined testable deliverables."
   },
   "lastError": null,
   "history": [
-    {
-      "cycle": 98,
-      "agent": "CRITIC",
-      "timestamp": "2026-08-24T20:41:15.789Z",
-      "observation": "Jobs.selected remains null and no embedded markdown proposal for github:4462160604 is visible in the current state.",
-      "objection": "Formal selection and embedded markdown are mandatory before acceptance verification can proceed.",
-      "decision": "Withhold approval; require PLANNER to set jobs.selected and ensure markdown proposal is embedded.",
-      "next": "PLANNER must confirm selection of github:4462160604 and verify markdown is embedded in state."
-    },
     {
       "cycle": 99,
       "agent": "PLANNER",
@@ -381,6 +372,15 @@
       "objection": "Waiting on unmerged PR risks further revenue delay; must pursue immediate paid work.",
       "decision": "Evaluate github:4975260101 ($780, score 72) for automated bug detection as lower-risk opportunity.",
       "next": "CRITIC examine feasibility and requirements of github:4975260101 for autonomous execution."
+    },
+    {
+      "cycle": 138,
+      "agent": "CRITIC",
+      "timestamp": "2026-08-26T07:58:51.735Z",
+      "observation": "Job github:4975260101 ($780) requires recursive bug detection, issue creation with exclusive authorship clause, and PR merges for payout; repo is a bug-bounty platform itself, making scope ambiguous.",
+      "objection": "Autonomous execution infeasible: vague bug definition, multi-step human-gated workflow, exclusive authorship restriction, and payment contingent on maintainer merge of unspecified fixes.",
+      "decision": "Reject github:4975260101 as too speculative; prioritize concrete, well-scoped jobs like github:5254592115 ($100, kill-bounty doc test) or github:5253558268 ($10 CLI fix) with clear acceptance criteria.",
+      "next": "PLANNER evaluate github:5254592115 and github:5253558268 for immediate autonomous execution with defined testable deliverables."
     }
   ],
   "economy": {
@@ -408,6 +408,14 @@
     "selected": null,
     "opportunities": [
       {
+        "id": "github:5254592115",
+        "title": "[一般][test] 📜 `docs/kill-bounty.md` 的 SUPERSEDED 標頭**沒有閘** —— 出貨數字一改，標頭就開始說謊",
+        "url": "https://github.com/adms/GGD/issues/774",
+        "rewardUsd": 100,
+        "score": 62,
+        "summary": "**Objective** #735 給 `docs/kill-bounty.md` 掛上 SUPERSEDED 標頭，逐條寫出「doc 說什麼 / 出貨其實是什麼」。⚠️ 而那個標頭本身是**散文**：`GOLD_REWARDS.killBounty` 哪天從 100 改成別的，標頭就變成第三守則說的那種「被散文守著、過了保存期限而沒有任何東西變紅」的宣稱。 **Scope** - 新增 `packages/shared/src/ops/killBountyDocSuperseded.test.ts`：**讀 doc 的標頭**，把它宣稱的現行值與**出貨的常數**逐項比對。 - ⛔ 不抄字面值：從 `GOLD_REWARDS` / `DeathSystem` 推導。 **Files / modules likely affected** - 新檔 `packages/shared/src/ops/killBountyDocSuperseded.test.ts` - （只讀）`docs/kill-bounty.md` · `packages/shared/src/sim/economy/progression.ts` · `packages/shared/src/sim/systems/DeathSystem.ts` **Implementation constraints** - 體驗層（文件閘）：**≤ 80 行**、一次突變。 - ⛔ 不可以把出貨數字抄進測試（第〇·四守則：那是第四個住處）。 **Acceptance criteria** 1. 把 `GOLD_REWARDS.killBounty` 從 100 改成 150 ⇒ **紅**，訊息指名 doc 標頭那一行過期。 2. doc 標頭照著改 ⇒ 綠。 **Test / verification criteria** - `npx vitest run packages/shared/src/ops/killBountyDocSuperseded.test.ts`；突變如上。 **[思考策略]** 第三守則（註解會說謊）＋「閘不是判準」：一份被散文守著的宣稱活過它的保存期限，而**沒有任何東西變紅**。 **[解決模板]** 產生器/文件 ↔ 出貨常數的 `--check` 式對帳閘（⛔ 不抄字面值）。 **Dependencies** #735 **Non-goals** ⛔ 不重寫 doc 本文（原文一字未刪是刻意的）。 **Known risks** doc 標頭是人寫的自然語言 ⇒ 解析要挑**一個穩定的錨**（例：一張逐項表格），⛔ 不要做全文比對。"
+      },
+      {
         "id": "github:4975260101",
         "title": "Automate Bug Detection and Reviews",
         "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/11398",
@@ -424,28 +432,20 @@
         "summary": "### Summary Inspect the committed Anchore JSON fixtures and propose a schema for tracking vulnerabilities over time. Specifically: what combination of fields uniquely identifies \"the same vulnerability\" across scans? Candidates to evaluate include CVE ID alone, CVE + package name, CVE + package name + version, and CVE + package + image. Write up the tradeoffs, pick a recommendation, and sketch the analytics DB table(s) needed to support first_seen / last_seen / fixed_at / ignored_at / cleared_at fields. **Tech notes:** The Anchore JSON schema is documented at the Anchore project site; worth skimming before diving into fixtures. The goal of this spike is a decision, not code — resist the urge to start implementing. ### Acceptance criteria - [ ] Written proposal (markdown doc in PR) covering identity key options, tradeoffs, and a recommendation - [ ] Proposed analytics DB schema with column types and rationale - [ ] At least one worked example from the fixtures showing how the identity key behaves across days - [ ] Reviewed and approved by Brandon and/or Matt before next ticket starts ## Bounty: $250 This issue has been selected for our paid contributor program. If you wish to claim "
       },
       {
-        "id": "github:5254226894",
-        "title": "Bounty claim: BoTTube docstring PR #1766 batch 52 (8 functions, 4.0 RTC)",
-        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16622",
+        "id": "github:5254195444",
+        "title": "Bounty claim: BoTTube docstring PR #1766 batch 42 (9 functions, 4.5 RTC)",
+        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16612",
         "rewardUsd": 1766,
         "score": 46,
-        "summary": "## Bounty Claim **Bounty:** #750 — BoTTube docstring project **PR:** https://github.com/Scottcjn/bottube/pull/1766 **File:** `tests/test_public_report_input_validation.py` **RTC rate:** 0.5 per function ### Functions documented client/_report_count (2); non-object 400; falsy 400; non-string category 400; non-string email 400; null fields required-path; valid report accepted (6) ### Wallet `ezequiellich44-cmd`"
+        "summary": "## Bounty Claim **Bounty:** #750 — BoTTube docstring project **PR:** https://github.com/Scottcjn/bottube/pull/1766 **File:** `test_badges.py` **RTC rate:** 0.5 per function ### Functions documented client/_insert_agent/_lookup_agent/_insert_video/_create_referral_code/_activate_referred_human/_activate_referred_agent helpers (7); badge assignment renders+removable; candidates follow thresholds (2) ### Wallet `ezequiellich44-cmd`"
       },
       {
-        "id": "github:5254226814",
-        "title": "Bounty claim: BoTTube docstring PR #1766 batch 51 (35 functions, 17.5 RTC)",
-        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16621",
+        "id": "github:5254195327",
+        "title": "Bounty claim: BoTTube docstring PR #1766 batch 41 (8 functions, 4.0 RTC)",
+        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16611",
         "rewardUsd": 1766,
         "score": 46,
-        "summary": "## Bounty Claim **Bounty:** #750 — BoTTube docstring project **PR:** https://github.com/Scottcjn/bottube/pull/1766 **File:** `tests/test_debate_framework.py` **RTC rate:** 0.5 per function ### Functions documented Full coverage of the debate framework test suite (per-class keys): - Helpers: make_video, make_comment, make_thread; SimpleBot.generate_reply (4) - TestRateLimiter: max/threads-independent/window-expiry/reset (4) - TestComment: score + negative score (2) - TestThreadContext: depth/empty/last_comment/last_empty/comments_by (5) - TestDebateBot: abstract TypeError, concrete attrs, opener, reply-to-opponent, no-self-reply, concession after max rounds, rate limiting (7) - TestDebateOrchestrator: register, build_threads empty/single/multi-root, run_once with mock client (5) - TestRetroBot: opener, rebuttal, concession, openers variety (4) - TestModernBot: opener, rebuttal, concession, openers variety (4) ### Wallet `ezequiellich44-cmd`"
-      },
-      {
-        "id": "github:5254196149",
-        "title": "Bounty claim: BoTTube docstring PR #1766 batch 50 (5 functions, 2.5 RTC)",
-        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16620",
-        "rewardUsd": 1766,
-        "score": 46,
-        "summary": "## Bounty Claim **Bounty:** #750 — BoTTube docstring project **PR:** https://github.com/Scottcjn/bottube/pull/1766 **File:** `test_video_public_id_routes.py` **RTC rate:** 0.5 per function ### Functions documented client/_insert_agent/_insert_video (3); CTR stats uses public id; AB variants uses public id (2) ### Wallet `ezequiellich44-cmd`"
+        "summary": "## Bounty Claim **Bounty:** #750 — BoTTube docstring project **PR:** https://github.com/Scottcjn/bottube/pull/1766 **File:** `test_agent_public_visibility.py` **RTC rate:** 0.5 per function ### Functions documented client/_insert_agent/_insert_video/_render_context fixtures (4); agents page hides banned/removed; profile API hides; channel page hides; RSS feeds hide (4) ### Wallet `ezequiellich44-cmd`"
       }
     ],
     "active": null,
