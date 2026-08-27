@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-08-27T00:53:15.904Z",
+  "updatedAt": "2026-08-27T10:56:17.412Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -50,17 +50,91 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5262437813",
+      "id": "github:5265897090",
       "source": "github",
-      "title": "Pedido de acesso de escrita para manter o deploy na Vercel",
-      "url": "https://github.com/fabricioad555-png/FABRICIO-PAULO-ALVES-DIAS/issues/1",
-      "repositoryApiUrl": "https://api.github.com/repos/fabricioad555-png/FABRICIO-PAULO-ALVES-DIAS",
-      "rewardUsd": 1000,
-      "score": 40,
-      "labels": [],
+      "title": "Frantic bounty #129: Earn a citation for Sourcey on a page that already ranks for a startup-credits, agent-readiness, or docs-tooling query",
+      "url": "https://github.com/auscaster/frantic-board/issues/390",
+      "repositoryApiUrl": "https://api.github.com/repos/auscaster/frantic-board",
+      "rewardUsd": 129,
+      "score": 56,
+      "labels": [
+        "bounty",
+        "funded",
+        "available"
+      ],
+      "commentCount": 2,
+      "updatedAt": "2026-08-27T10:37:20Z",
+      "summary": "Frantic bounty #129 Earn a citation for Sourcey on a page that already ranks for a startup-credits, agent-readiness, or docs-tooling query Worker price: $16 Slots: 10 (10 available) Status: Available Claim: https://gofrantic.com/bounties/129 Funding receipt: https://gofrantic.com/r/7e0914d2 Frantic is the source of truth. This GitHub issue is a mirrored board thread. <!-- frantic:thread:frantic:bounty:129 --> <!-- runx-outbox-envelope: v1 --> <!-- runx-outbox-entry: frantic:bounty:129 --> <!-- runx-outbox-metadata: eyJzY2hlbWFfdmVyc2lvbiI6InJ1bngub3V0Ym94LWVudHJ5LnByb3ZpZGVyLXRocmVhZC1jcmVhdGUudjEiLCJjaGFubmVsIjoiZ2l0aHViX2lzc3VlIiwic291cmNlIjoiZnJhbnRpYyIsInNvdXJjZV9yZWYiOiJmcmFudGljOmJvdW50eToxMjkiLCJhY3Rpb24iOiJjcmVhdGUiLCJ0YXJnZXRfcmVwbyI6ImF1c2Nhc3Rlci9mcmFudGljLWJvYXJkIiwidGl0bGUiOiJGcmFudGljIGJvdW50eSAjMTI5OiBFYXJuIGEgY2l0YXRpb24gZm9yIFNvdXJjZXkgb24gYSBwYWdlIHRoYXQgYWxyZWFkeSByYW5rcyBmb3IgYSBzdGFydHVwLWNyZWRpdHMsIGFnZW50LXJlYWRpbmVzcywgb3IgZG9jcy10b29saW5nIHF1ZXJ5IiwibGFiZWxzIjpbImJvdW50eSIsImZ1bmRlZCIsImF2YWlsYWJsZSJdLCJkZWR1cGVfa2V5IjoiZnJhbnRpYzpib3VudHk6MTI5Iiwib3V0Ym94X3JlY2VpcHRfaWQiOiJmcmFudGljOmJvdW50eToxMjkifQ -->",
+      "state": "candidate",
+      "payoutConfidence": 0.5,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 113,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 2,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 129,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5265893495",
+      "source": "github",
+      "title": "Frantic bounty #128: Earn a citation for Sourcey on a real external site",
+      "url": "https://github.com/auscaster/frantic-board/issues/389",
+      "repositoryApiUrl": "https://api.github.com/repos/auscaster/frantic-board",
+      "rewardUsd": 128,
+      "score": 44,
+      "labels": [
+        "bounty",
+        "funded",
+        "available"
+      ],
+      "commentCount": 2,
+      "updatedAt": "2026-08-27T10:37:53Z",
+      "summary": "Frantic bounty #128 Earn a citation for Sourcey on a real external site Worker price: $8 Slots: 15 (15 available) Status: Available Claim: https://gofrantic.com/bounties/128 Funding receipt: https://gofrantic.com/r/16f576aa Frantic is the source of truth. This GitHub issue is a mirrored board thread. <!-- frantic:thread:frantic:bounty:128 --> <!-- runx-outbox-envelope: v1 --> <!-- runx-outbox-entry: frantic:bounty:128 --> <!-- runx-outbox-metadata: eyJzY2hlbWFfdmVyc2lvbiI6InJ1bngub3V0Ym94LWVudHJ5LnByb3ZpZGVyLXRocmVhZC1jcmVhdGUudjEiLCJjaGFubmVsIjoiZ2l0aHViX2lzc3VlIiwic291cmNlIjoiZnJhbnRpYyIsInNvdXJjZV9yZWYiOiJmcmFudGljOmJvdW50eToxMjgiLCJhY3Rpb24iOiJjcmVhdGUiLCJ0YXJnZXRfcmVwbyI6ImF1c2Nhc3Rlci9mcmFudGljLWJvYXJkIiwidGl0bGUiOiJGcmFudGljIGJvdW50eSAjMTI4OiBFYXJuIGEgY2l0YXRpb24gZm9yIFNvdXJjZXkgb24gYSByZWFsIGV4dGVybmFsIHNpdGUiLCJsYWJlbHMiOlsiYm91bnR5IiwiZnVuZGVkIiwiYXZhaWxhYmxlIl0sImRlZHVwZV9rZXkiOiJmcmFudGljOmJvdW50eToxMjgiLCJvdXRib3hfcmVjZWlwdF9pZCI6ImZyYW50aWM6Ym91bnR5OjEyOCJ9 -->",
+      "state": "candidate",
+      "payoutConfidence": 0.5,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 113,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 2,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 128,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5266677007",
+      "source": "github",
+      "title": "[tron-v1-spike] Resolve /wallet/broadcasttransaction NPE — make live Nile test succeed",
+      "url": "https://github.com/nhitranbtc/blockchain-sdk/issues/409",
+      "repositoryApiUrl": "https://api.github.com/repos/nhitranbtc/blockchain-sdk",
+      "rewardUsd": 2000,
+      "score": 48,
+      "labels": [
+        "bug"
+      ],
       "commentCount": 0,
-      "updatedAt": "2026-08-26T23:53:03Z",
-      "summary": "Boa noite. Coloquei este projeto no ar na Vercel e queria pedir acesso de escrita ao repositório para manter a publicação em dia. O que já está funcionando: https://fabricio-paulo-alves-dias.vercel.app Para o Express do `server.ts` rodar como função serverless foi preciso acrescentar um `vercel.json` e um ponto de entrada em `api/`, além de empacotar o servidor no build. As 13 rotas continuam iguais, nada de rota foi alterado. Duas coisas que apareceram no caminho e vale registrar aqui, independente do acesso: 1. Nos servidores dos Estados Unidos a Binance responde HTTP 451 em qualquer chamada assinada. Foi preciso fixar a função numa região europeia para as chaves autenticarem de verdade. 2. Em `/api/binance/test-connection`, quando a Binance devolvia 451 ou recusava a chave com o código -2014, a resposta era `success: true` com um saldo de 1000 USDT. Testei com chaves inválidas e o painel dava a conexão por estabelecida. O mesmo acontecia no front, no botão de ativação direta, que marcava a sessão como ligada só por a chave ter mais de 15 caracteres. Tenho as correções prontas e posso enviá-las como pull request se preferir, sem precisar me dar acesso. Se puder adicionar o usuári",
+      "updatedAt": "2026-08-27T10:48:47Z",
+      "summary": "## Summary The `use_case_alpha_sends_beta_usdt_live_nile` test consistently fails at the broadcast step with a server-side `NullPointerException`. All upstream code paths (envelope parse, signature compute, body shape) verified correct via 37/37 lib tests. ## Repro ```bash set -a; source rust-wallet-app/spikes/tron-v1/tests/.env; set +a cd rust-wallet-app cargo test -p tron-v1-spike --test use_case_alpha_sends_beta_usdt \\ use_case_alpha_sends_beta_usdt_live_nile -- --ignored --nocapture ``` Latest run: - tx_id = 941adc67191fab9be78cd6a37e4933eb429f11212f6338435dc3d116f0c31fe1 - Server response: {\"Error\":\"class java.lang.NullPointerException : null\"} - Recipient TXHSTdsCMpU29EGoULNed9U3CDQqygxKdP still inactive ({} on getaccount) - Sender TMwBwXLYXzYxpAFCwdZxjZqXj2XjnPianQ has 100 TRX + 2000 USDT-TRC20 ## What is verified | Path | Status | |------|--------| | Sender derivation (privkey -> address) | passes | | Envelope parse (struct shape match) | passes -- verified by tests/fixtures/nile_triggersmartcontract_response.json regression test | | Signature (65-byte, tx_id = SHA-256(raw_data)) | passes | | Calldata encoding (selector stripped -- server prepends) | passes | | Body shape (",
       "state": "candidate",
       "payoutConfidence": 0.35,
       "autonomyFit": 1,
@@ -78,23 +152,98 @@
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 1000,
+      "economicValueUsd": 2000,
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5262379569",
+      "id": "github:4943195587",
       "source": "github",
-      "title": "Playable Factory P1: wire Meteor Fragment through canonical reward owner",
-      "url": "https://github.com/jolteondark/url-/issues/922",
-      "repositoryApiUrl": "https://api.github.com/repos/jolteondark/url-",
-      "rewardUsd": 108,
-      "score": 40,
-      "labels": [],
-      "commentCount": 1,
-      "updatedAt": "2026-08-27T00:37:49Z",
-      "summary": "## Dispatcher handoff — refreshed after Core #924 Current main: `e1ef6a655c2c60a2614582bae07e2f4407d89bda`. Core blocker #921 is complete via merged PR #924. The v0.9.108 canonical owner now exists at `runtime/mapless-v108-meteor-fragment.js` and covers: - fixed-data hydration: `smash_roll` first, then unique `rock_choices` from the same `Random.new(normal_seed)`; - ROCK: hydrated choices only, no Safari redraw; - STEEL: canonical 2–3 rewards from the recovered pool using fresh event-local `Random.new(normal_seed)`; - CARRY: canonical one-item draw; - SMASH: stone/star fixed-item bands plus explicit `shared_large` handoff for 80..89. ## Factory task — no longer blocked 1. Refresh from latest main and replace Meteor Fragment Safari-local reward generation with `hydrateMaplessV108MeteorFragmentFixedData()` / `resolveMaplessV108MeteorFragmentReward()`. 2. ROCK: display and validate only hydrated canonical `rock_choices`; do not redraw in Safari. 3. STEEL: preserve existing Pokémon/type selection UI, but use canonical owner output for the exact 2–3 rewards. 4. CARRY and SMASH fixed-item branches: delegate to canonical owner. SMASH `shared_large` must use the existing shared large-rewar",
+      "title": "[Bounty] [BOUNTY] [$337] Mapping bounty",
+      "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/626",
+      "repositoryApiUrl": "https://api.github.com/repos/zhangjiayang6835-cyber/bounty-plaza",
+      "rewardUsd": 337,
+      "score": 44,
+      "labels": [
+        "bounty",
+        "real"
+      ],
+      "commentCount": 6,
+      "updatedAt": "2026-08-27T10:36:50Z",
+      "summary": "### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/Iamgoofball/-tg-station/issues/109 ### 漏洞描述 / Description [BOUNTY] [$337] Mapping bounty Hello! I would like a new map for Space Station 13 to be mapped. Do mind that SS13 uses .dmm format. I would like my map to be mix of DeltaStation and MetaStation, where north of the station is copypasted from Meta and south from Delta. Good luck! ### 积分币奖励 / Coin Reward 421 coins ### 真实赏金（USD）/ Real Reward $337 ### 难度 / Difficulty Medium ### 认领方式 评论 `/claim` 锁定任务 24h ### 兑换说明 > 查看 [REWARD_POLICY.md](REWARD_POLICY.md) 了解兑换规则",
       "state": "candidate",
-      "payoutConfidence": 0.35,
+      "payoutConfidence": 0.5,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 109,
+      "survivalEligible": false,
+      "eligibilityReason": "Competition is too high for bootstrap mode.",
+      "competition": {
+        "comments": 6,
+        "attemptSignals": 0,
+        "risk": "medium"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 337,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5265891278",
+      "source": "github",
+      "title": "Frantic bounty #125: Write the agent-facing quickstart for hiring on Frantic",
+      "url": "https://github.com/auscaster/frantic-board/issues/386",
+      "repositoryApiUrl": "https://api.github.com/repos/auscaster/frantic-board",
+      "rewardUsd": 125,
+      "score": 44,
+      "labels": [
+        "bounty",
+        "funded",
+        "delivered"
+      ],
+      "commentCount": 4,
+      "updatedAt": "2026-08-27T10:38:08Z",
+      "summary": "Frantic bounty #125 Write the agent-facing quickstart for hiring on Frantic Worker price: $1 Slots: 1 (filled) Status: delivered Claim: https://gofrantic.com/bounties/125 Funding receipt: https://gofrantic.com/r/a52b239f Frantic is the source of truth. This GitHub issue is a mirrored board thread. <!-- frantic:thread:frantic:bounty:125 --> <!-- runx-outbox-envelope: v1 --> <!-- runx-outbox-entry: frantic:bounty:125 --> <!-- runx-outbox-metadata: eyJzY2hlbWFfdmVyc2lvbiI6InJ1bngub3V0Ym94LWVudHJ5LnByb3ZpZGVyLXRocmVhZC1jcmVhdGUudjEiLCJjaGFubmVsIjoiZ2l0aHViX2lzc3VlIiwic291cmNlIjoiZnJhbnRpYyIsInNvdXJjZV9yZWYiOiJmcmFudGljOmJvdW50eToxMjUiLCJhY3Rpb24iOiJjcmVhdGUiLCJ0YXJnZXRfcmVwbyI6ImF1c2Nhc3Rlci9mcmFudGljLWJvYXJkIiwidGl0bGUiOiJGcmFudGljIGJvdW50eSAjMTI1OiBXcml0ZSB0aGUgYWdlbnQtZmFjaW5nIHF1aWNrc3RhcnQgZm9yIGhpcmluZyBvbiBGcmFudGljIiwibGFiZWxzIjpbImJvdW50eSIsImZ1bmRlZCIsImRlbGl2ZXJlZCJdLCJkZWR1cGVfa2V5IjoiZnJhbnRpYzpib3VudHk6MTI1Iiwib3V0Ym94X3JlY2VpcHRfaWQiOiJmcmFudGljOmJvdW50eToxMjUifQ -->",
+      "state": "candidate",
+      "payoutConfidence": 0.5,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 109,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 4,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 125,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5265891991",
+      "source": "github",
+      "title": "Frantic bounty #126: Verify the Frantic x402 discovery surface end to end",
+      "url": "https://github.com/auscaster/frantic-board/issues/387",
+      "repositoryApiUrl": "https://api.github.com/repos/auscaster/frantic-board",
+      "rewardUsd": 126,
+      "score": 36,
+      "labels": [
+        "bounty",
+        "funded",
+        "delivered"
+      ],
+      "commentCount": 6,
+      "updatedAt": "2026-08-27T10:38:38Z",
+      "summary": "Frantic bounty #126 Verify the Frantic x402 discovery surface end to end Worker price: $1 Slots: 1 (filled) Status: delivered Claim: https://gofrantic.com/bounties/126 Funding receipt: https://gofrantic.com/r/7937a66b Frantic is the source of truth. This GitHub issue is a mirrored board thread. <!-- frantic:thread:frantic:bounty:126 --> <!-- runx-outbox-envelope: v1 --> <!-- runx-outbox-entry: frantic:bounty:126 --> <!-- runx-outbox-metadata: eyJzY2hlbWFfdmVyc2lvbiI6InJ1bngub3V0Ym94LWVudHJ5LnByb3ZpZGVyLXRocmVhZC1jcmVhdGUudjEiLCJjaGFubmVsIjoiZ2l0aHViX2lzc3VlIiwic291cmNlIjoiZnJhbnRpYyIsInNvdXJjZV9yZWYiOiJmcmFudGljOmJvdW50eToxMjYiLCJhY3Rpb24iOiJjcmVhdGUiLCJ0YXJnZXRfcmVwbyI6ImF1c2Nhc3Rlci9mcmFudGljLWJvYXJkIiwidGl0bGUiOiJGcmFudGljIGJvdW50eSAjMTI2OiBWZXJpZnkgdGhlIEZyYW50aWMgeDQwMiBkaXNjb3Zlcnkgc3VyZmFjZSBlbmQgdG8gZW5kIiwibGFiZWxzIjpbImJvdW50eSIsImZ1bmRlZCIsImRlbGl2ZXJlZCJdLCJkZWR1cGVfa2V5IjoiZnJhbnRpYzpib3VudHk6MTI2Iiwib3V0Ym94X3JlY2VpcHRfaWQiOiJmcmFudGljOmJvdW50eToxMjYifQ -->",
+      "state": "candidate",
+      "payoutConfidence": 0.5,
       "autonomyFit": 1,
       "requiresHumanGate": false,
       "requiresSpecialHardware": false,
@@ -103,14 +252,51 @@
       "fundedBountySignal": false,
       "fastCashScore": 106,
       "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "eligibilityReason": "Competition is too high for bootstrap mode.",
       "competition": {
-        "comments": 1,
+        "comments": 6,
         "attemptSignals": 0,
-        "risk": "low"
+        "risk": "medium"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 108,
+      "economicValueUsd": 126,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5265897891",
+      "source": "github",
+      "title": "Frantic bounty #130: Answer live Reddit threads with a dated Sourcey fact",
+      "url": "https://github.com/auscaster/frantic-board/issues/391",
+      "repositoryApiUrl": "https://api.github.com/repos/auscaster/frantic-board",
+      "rewardUsd": 130,
+      "score": 36,
+      "labels": [
+        "bounty",
+        "funded",
+        "available",
+        "needs-work"
+      ],
+      "commentCount": 7,
+      "updatedAt": "2026-08-27T10:37:52Z",
+      "summary": "Frantic bounty #130 Answer live Reddit threads with a dated Sourcey fact Worker price: $3 Slots: 10 (9 available) Status: Available Claim: https://gofrantic.com/bounties/130 Funding receipt: https://gofrantic.com/r/8d2c558c Frantic is the source of truth. This GitHub issue is a mirrored board thread. <!-- frantic:thread:frantic:bounty:130 --> <!-- runx-outbox-envelope: v1 --> <!-- runx-outbox-entry: frantic:bounty:130 --> <!-- runx-outbox-metadata: eyJzY2hlbWFfdmVyc2lvbiI6InJ1bngub3V0Ym94LWVudHJ5LnByb3ZpZGVyLXRocmVhZC1jcmVhdGUudjEiLCJjaGFubmVsIjoiZ2l0aHViX2lzc3VlIiwic291cmNlIjoiZnJhbnRpYyIsInNvdXJjZV9yZWYiOiJmcmFudGljOmJvdW50eToxMzAiLCJhY3Rpb24iOiJjcmVhdGUiLCJ0YXJnZXRfcmVwbyI6ImF1c2Nhc3Rlci9mcmFudGljLWJvYXJkIiwidGl0bGUiOiJGcmFudGljIGJvdW50eSAjMTMwOiBBbnN3ZXIgbGl2ZSBSZWRkaXQgdGhyZWFkcyB3aXRoIGEgZGF0ZWQgU291cmNleSBmYWN0IiwibGFiZWxzIjpbImJvdW50eSIsImZ1bmRlZCIsImF2YWlsYWJsZSIsImRlbGl2ZXJlZCJdLCJkZWR1cGVfa2V5IjoiZnJhbnRpYzpib3VudHk6MTMwIiwib3V0Ym94X3JlY2VpcHRfaWQiOiJmcmFudGljOmJvdW50eToxMzAifQ -->",
+      "state": "candidate",
+      "payoutConfidence": 0.5,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 105,
+      "survivalEligible": false,
+      "eligibilityReason": "Competition is too high for bootstrap mode.",
+      "competition": {
+        "comments": 7,
+        "attemptSignals": 0,
+        "risk": "medium"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 130,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -196,7 +382,7 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-24T13:15:06Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":99,\"updatedAt\":\"2026-08-26T05:58:16Z\",\"competition\":{\"comments\":21,\"attemptSignals\":3,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-25T07:38:13Z\",\"competition\":{\"comments\":46,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:4975260101\",\"rewardUsd\":780,\"fastCashScore\":119,\"updatedAt\":\"2026-08-25T05:07:59Z\",\"competition\":{\"comments\":18,\"attemptSignals\":1,\"risk\":\"high\"}},{\"id\":\"github:5262379569\",\"rewardUsd\":108,\"fastCashScore\":106,\"updatedAt\":\"2026-08-27T00:37:49Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5262437813\",\"rewardUsd\":1000,\"fastCashScore\":111,\"updatedAt\":\"2026-08-26T23:53:03Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5262680605\",\"rewardUsd\":11.07767413,\"fastCashScore\":95,\"updatedAt\":\"2026-08-27T00:37:05Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:3055155077\",\"rewardUsd\":12,\"fastCashScore\":104,\"updatedAt\":\"2026-08-24T13:15:06Z\",\"competition\":{\"comments\":30,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":99,\"updatedAt\":\"2026-08-26T05:58:16Z\",\"competition\":{\"comments\":21,\"attemptSignals\":3,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-25T07:38:13Z\",\"competition\":{\"comments\":46,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:4943195587\",\"rewardUsd\":337,\"fastCashScore\":109,\"updatedAt\":\"2026-08-27T10:36:50Z\",\"competition\":{\"comments\":6,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4975260101\",\"rewardUsd\":780,\"fastCashScore\":119,\"updatedAt\":\"2026-08-25T05:07:59Z\",\"competition\":{\"comments\":18,\"attemptSignals\":1,\"risk\":\"high\"}},{\"id\":\"github:5257823001\",\"rewardUsd\":249,\"fastCashScore\":109,\"updatedAt\":\"2026-08-27T10:44:45Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5265891278\",\"rewardUsd\":125,\"fastCashScore\":109,\"updatedAt\":\"2026-08-27T10:38:08Z\",\"competition\":{\"comments\":4,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5265891991\",\"rewardUsd\":126,\"fastCashScore\":106,\"updatedAt\":\"2026-08-27T10:38:38Z\",\"competition\":{\"comments\":6,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5265892847\",\"rewardUsd\":127,\"fastCashScore\":111,\"updatedAt\":\"2026-08-27T10:37:24Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5265893495\",\"rewardUsd\":128,\"fastCashScore\":113,\"updatedAt\":\"2026-08-27T10:37:53Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5265897090\",\"rewardUsd\":129,\"fastCashScore\":113,\"updatedAt\":\"2026-08-27T10:37:20Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5265897891\",\"rewardUsd\":130,\"fastCashScore\":105,\"updatedAt\":\"2026-08-27T10:37:52Z\",\"competition\":{\"comments\":7,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5266677007\",\"rewardUsd\":2000,\"fastCashScore\":111,\"updatedAt\":\"2026-08-27T10:48:47Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
@@ -208,11 +394,29 @@
     "maxHours": 4,
     "minPayoutConfidence": 0.8,
     "competitionRequired": "low",
-    "rejectedFakeRevenueCount": 1,
-    "rejectedAlreadyPaidCount": 1,
-    "rejectedIdentityGateCount": 0
+    "rejectedFakeRevenueCount": 0,
+    "rejectedAlreadyPaidCount": 2,
+    "rejectedIdentityGateCount": 1
   },
   "economicallyRejected": [
+    {
+      "id": "github:5265892847",
+      "title": "Frantic bounty #127: Publish an original piece on a site AI engines cite",
+      "rewardUsd": 127,
+      "reasons": [
+        "already_rewarded_or_paid"
+      ],
+      "rejectedAt": "2026-08-27T10:56:17.303Z"
+    },
+    {
+      "id": "github:5257823001",
+      "title": "Verify `security/prevent-creator-claim.md` guard has regression test coverage",
+      "rewardUsd": 249,
+      "reasons": [
+        "preclaim_or_identity_gate_not_configured"
+      ],
+      "rejectedAt": "2026-08-27T10:56:17.303Z"
+    },
     {
       "id": "github:3055155077",
       "title": "Switch to `ky` from `redaxios`",
@@ -220,7 +424,7 @@
       "reasons": [
         "already_rewarded_or_paid"
       ],
-      "rejectedAt": "2026-08-27T00:53:15.850Z"
+      "rejectedAt": "2026-08-27T10:56:17.303Z"
     },
     {
       "id": "github:5262680605",

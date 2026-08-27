@@ -1,36 +1,27 @@
 {
   "version": 5,
-  "cycle": 147,
+  "cycle": 148,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-27T00:53:36.043Z",
+  "updatedAt": "2026-08-27T10:56:29.961Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "online",
-  "currentAgent": "PLANNER",
+  "currentAgent": "CRITIC",
   "provider": {
     "mode": "OpenCode Free",
     "model": "hy3-free",
-    "attempts": 2
+    "attempts": 1
   },
   "latest": {
-    "cycle": 147,
-    "agent": "PLANNER",
-    "timestamp": "2026-08-27T00:53:36.043Z",
-    "observation": "Staged markdown for github:4234681451 lists columns: vuln_id TEXT PK, identity_key TEXT, tradeoff TEXT, severity INT, discovered_at TIMESTAMP; rationale aggregates tradeoffs by severity.",
-    "objection": "No objection; staged files from cycle 145 are local and shareable without credentials or spend.",
-    "decision": "Share the staged schema column types and analytics rationale with CRITIC for validation against the issue's requirements.",
-    "next": "CRITIC examine the provided schema columns and rationale for completeness against the issue's analytics acceptance criteria."
+    "cycle": 148,
+    "agent": "CRITIC",
+    "timestamp": "2026-08-27T10:56:29.961Z",
+    "observation": "PLANNER staged schema for github:4234681451, but current jobs snapshot omits that issue from opportunities.",
+    "objection": "Cannot validate against issue's acceptance criteria because github:4234681451 is absent from authoritative jobs snapshot.",
+    "decision": "Defer validation of stale local files and evaluate current job opportunities for viable paid work.",
+    "next": "PLANNER examine current jobs snapshot opportunities for legitimate paid work matching system capabilities."
   },
   "lastError": null,
   "history": [
-    {
-      "cycle": 108,
-      "agent": "CRITIC",
-      "timestamp": "2026-08-25T04:24:25.062Z",
-      "observation": "Previous tracked job github:4462160604 ($400 RFC5322 parser) absent from current opportunities; snapshot shows only docstring bounty claims (already completed by others) and one recursive issue-creation task github:49752",
-      "objection": "Docstring claims are not actionable work; automation task requires creating issues recursively with restrictive author-only clauses, high spam risk and unclear deliverable.",
-      "decision": "Reject current opportunities as viable work; demand PLANNER explain disappearance of parser job or select a legitimate new opportunity from fresh discovery.",
-      "next": "PLANNER must either re-discover github:4462160604 with full proposal text or justify a new job selection from current snapshot with feasibility evidence."
-    },
     {
       "cycle": 109,
       "agent": "PLANNER",
@@ -381,6 +372,15 @@
       "objection": "No objection; staged files from cycle 145 are local and shareable without credentials or spend.",
       "decision": "Share the staged schema column types and analytics rationale with CRITIC for validation against the issue's requirements.",
       "next": "CRITIC examine the provided schema columns and rationale for completeness against the issue's analytics acceptance criteria."
+    },
+    {
+      "cycle": 148,
+      "agent": "CRITIC",
+      "timestamp": "2026-08-27T10:56:29.961Z",
+      "observation": "PLANNER staged schema for github:4234681451, but current jobs snapshot omits that issue from opportunities.",
+      "objection": "Cannot validate against issue's acceptance criteria because github:4234681451 is absent from authoritative jobs snapshot.",
+      "decision": "Defer validation of stale local files and evaluate current job opportunities for viable paid work.",
+      "next": "PLANNER examine current jobs snapshot opportunities for legitimate paid work matching system capabilities."
     }
   ],
   "economy": {
@@ -416,36 +416,36 @@
         "summary": "Automate Low Hanging fruit bug detection and issue creation recursively. This issue is an issue focused on creating more issues: 1. Find a feature/bug to work on from this repository 2. Create a GitHub issue on the repository to start working on it -- Pull requests without issues will not be considered. 3. Use the following string in the issue that you created: \"This issue is limited only to the creator of this issue. This means that only the issue author can attempt to solve this issue. If you would like to work on it, please create another issue with the same contents and refer to issue #11398 for more information.\" Follow all instructions carefully and precisely. /bounty $800 Bounties can only be paid upon successful PR merge."
       },
       {
-        "id": "github:5262437813",
-        "title": "Pedido de acesso de escrita para manter o deploy na Vercel",
-        "url": "https://github.com/fabricioad555-png/FABRICIO-PAULO-ALVES-DIAS/issues/1",
-        "rewardUsd": 1000,
-        "score": 40,
-        "summary": "Boa noite. Coloquei este projeto no ar na Vercel e queria pedir acesso de escrita ao repositório para manter a publicação em dia. O que já está funcionando: https://fabricio-paulo-alves-dias.vercel.app Para o Express do `server.ts` rodar como função serverless foi preciso acrescentar um `vercel.json` e um ponto de entrada em `api/`, além de empacotar o servidor no build. As 13 rotas continuam iguais, nada de rota foi alterado. Duas coisas que apareceram no caminho e vale registrar aqui, independente do acesso: 1. Nos servidores dos Estados Unidos a Binance responde HTTP 451 em qualquer chamada assinada. Foi preciso fixar a função numa região europeia para as chaves autenticarem de verdade. 2. Em `/api/binance/test-connection`, quando a Binance devolvia 451 ou recusava a chave com o código -2014, a resposta era `success: true` com um saldo de 1000 USDT. Testei com chaves inválidas e o painel dava a conexão por estabelecida. O mesmo acontecia no front, no botão de ativação direta, que marcava a sessão como ligada só por a chave ter mais de 15 caracteres. Tenho as correções prontas e posso enviá-las como pull request se preferir, sem precisar me dar acesso. Se puder adicionar o usuári"
+        "id": "github:5265897090",
+        "title": "Frantic bounty #129: Earn a citation for Sourcey on a page that already ranks for a startup-credits, agent-readiness, or docs-tooling query",
+        "url": "https://github.com/auscaster/frantic-board/issues/390",
+        "rewardUsd": 129,
+        "score": 56,
+        "summary": "Frantic bounty #129 Earn a citation for Sourcey on a page that already ranks for a startup-credits, agent-readiness, or docs-tooling query Worker price: $16 Slots: 10 (10 available) Status: Available Claim: https://gofrantic.com/bounties/129 Funding receipt: https://gofrantic.com/r/7e0914d2 Frantic is the source of truth. This GitHub issue is a mirrored board thread. <!-- frantic:thread:frantic:bounty:129 --> <!-- runx-outbox-envelope: v1 --> <!-- runx-outbox-entry: frantic:bounty:129 --> <!-- runx-outbox-metadata: eyJzY2hlbWFfdmVyc2lvbiI6InJ1bngub3V0Ym94LWVudHJ5LnByb3ZpZGVyLXRocmVhZC1jcmVhdGUudjEiLCJjaGFubmVsIjoiZ2l0aHViX2lzc3VlIiwic291cmNlIjoiZnJhbnRpYyIsInNvdXJjZV9yZWYiOiJmcmFudGljOmJvdW50eToxMjkiLCJhY3Rpb24iOiJjcmVhdGUiLCJ0YXJnZXRfcmVwbyI6ImF1c2Nhc3Rlci9mcmFudGljLWJvYXJkIiwidGl0bGUiOiJGcmFudGljIGJvdW50eSAjMTI5OiBFYXJuIGEgY2l0YXRpb24gZm9yIFNvdXJjZXkgb24gYSBwYWdlIHRoYXQgYWxyZWFkeSByYW5rcyBmb3IgYSBzdGFydHVwLWNyZWRpdHMsIGFnZW50LXJlYWRpbmVzcywgb3IgZG9jcy10b29saW5nIHF1ZXJ5IiwibGFiZWxzIjpbImJvdW50eSIsImZ1bmRlZCIsImF2YWlsYWJsZSJdLCJkZWR1cGVfa2V5IjoiZnJhbnRpYzpib3VudHk6MTI5Iiwib3V0Ym94X3JlY2VpcHRfaWQiOiJmcmFudGljOmJvdW50eToxMjkifQ -->"
       },
       {
-        "id": "github:5262379569",
-        "title": "Playable Factory P1: wire Meteor Fragment through canonical reward owner",
-        "url": "https://github.com/jolteondark/url-/issues/922",
-        "rewardUsd": 108,
-        "score": 40,
-        "summary": "## Dispatcher handoff — refreshed after Core #924 Current main: `e1ef6a655c2c60a2614582bae07e2f4407d89bda`. Core blocker #921 is complete via merged PR #924. The v0.9.108 canonical owner now exists at `runtime/mapless-v108-meteor-fragment.js` and covers: - fixed-data hydration: `smash_roll` first, then unique `rock_choices` from the same `Random.new(normal_seed)`; - ROCK: hydrated choices only, no Safari redraw; - STEEL: canonical 2–3 rewards from the recovered pool using fresh event-local `Random.new(normal_seed)`; - CARRY: canonical one-item draw; - SMASH: stone/star fixed-item bands plus explicit `shared_large` handoff for 80..89. ## Factory task — no longer blocked 1. Refresh from latest main and replace Meteor Fragment Safari-local reward generation with `hydrateMaplessV108MeteorFragmentFixedData()` / `resolveMaplessV108MeteorFragmentReward()`. 2. ROCK: display and validate only hydrated canonical `rock_choices`; do not redraw in Safari. 3. STEEL: preserve existing Pokémon/type selection UI, but use canonical owner output for the exact 2–3 rewards. 4. CARRY and SMASH fixed-item branches: delegate to canonical owner. SMASH `shared_large` must use the existing shared large-rewar"
-      },
-      {
-        "id": "github:4462160604",
-        "title": "[bounty $400] Implement ABNF-compliant email address parser with full §3.2–§4.4 coverage",
-        "url": "https://github.com/UnsafeLabs/RFC-5322/issues/1",
-        "rewardUsd": 400,
-        "score": 72,
-        "summary": "`source.md` contains the complete RFC 5322 specification (Internet Message Format). We need a **fully conformant email address parser** in Python that implements the complete ABNF grammar from sections 3.2 through 3.4, plus obsolete syntax from §4.4. This parser must handle every edge case defined in the RFC — not just simple `user@domain` patterns, but the full complexity of quoted strings, comments, folding whitespace, group addresses, and domain literals. ## Background RFC 5322 defines email address syntax through a chain of ABNF productions that build on each other: ``` address = mailbox / group mailbox = name-addr / addr-spec name-addr = [display-name] angle-addr angle-addr = [CFWS] \"<\" addr-spec \">\" [CFWS] addr-spec = local-part \"@\" domain local-part = dot-atom / quoted-string / obs-local-part domain = dot-atom / domain-literal / obs-domain ``` Each of these references further productions (CFWS, FWS, quoted-pair, dtext, etc.) that span multiple sections. **You must read `source.md` completely** to trace the full grammar dependency chain. ## Requirements ### 1. Parser Implementation — `parser.py` ```python class RFC5322Address: \"\"\"Parsed RFC 5322 email address.\"\"\" display_name"
-      },
-      {
-        "id": "github:4563956966",
-        "title": "parse_duration drops the days (d) unit",
-        "url": "https://github.com/tine1117/oss-hunter-livefire/issues/1",
-        "rewardUsd": 50,
+        "id": "github:5265893495",
+        "title": "Frantic bounty #128: Earn a citation for Sourcey on a real external site",
+        "url": "https://github.com/auscaster/frantic-board/issues/389",
+        "rewardUsd": 128,
         "score": 44,
-        "summary": "## Bug `parse_duration` silently drops the **days** (`d`) unit. The README lists `d` as a supported unit, but the parser ignores it and returns a wrong (too-small) result instead of raising or counting it. ### Reproduction ```python from duration_utils import parse_duration parse_duration(\"1d\") # -> 0 (expected 86400) parse_duration(\"2d4h\") # -> 14400 (expected 187200) ``` ### Expected `d` should be counted as 86400 seconds, so `parse_duration(\"1d\") == 86400` and `parse_duration(\"2d4h\") == 187200`. ### Notes The `d` character is already accepted by the token regex, so malformed-input detection still passes — the value is just never added. A fix should add the `d` unit and cover it with tests. /bounty $50"
+        "summary": "Frantic bounty #128 Earn a citation for Sourcey on a real external site Worker price: $8 Slots: 15 (15 available) Status: Available Claim: https://gofrantic.com/bounties/128 Funding receipt: https://gofrantic.com/r/16f576aa Frantic is the source of truth. This GitHub issue is a mirrored board thread. <!-- frantic:thread:frantic:bounty:128 --> <!-- runx-outbox-envelope: v1 --> <!-- runx-outbox-entry: frantic:bounty:128 --> <!-- runx-outbox-metadata: eyJzY2hlbWFfdmVyc2lvbiI6InJ1bngub3V0Ym94LWVudHJ5LnByb3ZpZGVyLXRocmVhZC1jcmVhdGUudjEiLCJjaGFubmVsIjoiZ2l0aHViX2lzc3VlIiwic291cmNlIjoiZnJhbnRpYyIsInNvdXJjZV9yZWYiOiJmcmFudGljOmJvdW50eToxMjgiLCJhY3Rpb24iOiJjcmVhdGUiLCJ0YXJnZXRfcmVwbyI6ImF1c2Nhc3Rlci9mcmFudGljLWJvYXJkIiwidGl0bGUiOiJGcmFudGljIGJvdW50eSAjMTI4OiBFYXJuIGEgY2l0YXRpb24gZm9yIFNvdXJjZXkgb24gYSByZWFsIGV4dGVybmFsIHNpdGUiLCJsYWJlbHMiOlsiYm91bnR5IiwiZnVuZGVkIiwiYXZhaWxhYmxlIl0sImRlZHVwZV9rZXkiOiJmcmFudGljOmJvdW50eToxMjgiLCJvdXRib3hfcmVjZWlwdF9pZCI6ImZyYW50aWM6Ym91bnR5OjEyOCJ9 -->"
+      },
+      {
+        "id": "github:5266677007",
+        "title": "[tron-v1-spike] Resolve /wallet/broadcasttransaction NPE — make live Nile test succeed",
+        "url": "https://github.com/nhitranbtc/blockchain-sdk/issues/409",
+        "rewardUsd": 2000,
+        "score": 48,
+        "summary": "## Summary The `use_case_alpha_sends_beta_usdt_live_nile` test consistently fails at the broadcast step with a server-side `NullPointerException`. All upstream code paths (envelope parse, signature compute, body shape) verified correct via 37/37 lib tests. ## Repro ```bash set -a; source rust-wallet-app/spikes/tron-v1/tests/.env; set +a cd rust-wallet-app cargo test -p tron-v1-spike --test use_case_alpha_sends_beta_usdt \\ use_case_alpha_sends_beta_usdt_live_nile -- --ignored --nocapture ``` Latest run: - tx_id = 941adc67191fab9be78cd6a37e4933eb429f11212f6338435dc3d116f0c31fe1 - Server response: {\"Error\":\"class java.lang.NullPointerException : null\"} - Recipient TXHSTdsCMpU29EGoULNed9U3CDQqygxKdP still inactive ({} on getaccount) - Sender TMwBwXLYXzYxpAFCwdZxjZqXj2XjnPianQ has 100 TRX + 2000 USDT-TRC20 ## What is verified | Path | Status | |------|--------| | Sender derivation (privkey -> address) | passes | | Envelope parse (struct shape match) | passes -- verified by tests/fixtures/nile_triggersmartcontract_response.json regression test | | Signature (65-byte, tx_id = SHA-256(raw_data)) | passes | | Calldata encoding (selector stripped -- server prepends) | passes | | Body shape ("
+      },
+      {
+        "id": "github:4943195587",
+        "title": "[Bounty] [BOUNTY] [$337] Mapping bounty",
+        "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/626",
+        "rewardUsd": 337,
+        "score": 44,
+        "summary": "### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/Iamgoofball/-tg-station/issues/109 ### 漏洞描述 / Description [BOUNTY] [$337] Mapping bounty Hello! I would like a new map for Space Station 13 to be mapped. Do mind that SS13 uses .dmm format. I would like my map to be mix of DeltaStation and MetaStation, where north of the station is copypasted from Meta and south from Delta. Good luck! ### 积分币奖励 / Coin Reward 421 coins ### 真实赏金（USD）/ Real Reward $337 ### 难度 / Difficulty Medium ### 认领方式 评论 `/claim` 锁定任务 24h ### 兑换说明 > 查看 [REWARD_POLICY.md](REWARD_POLICY.md) 了解兑换规则"
       }
     ],
     "active": null,
