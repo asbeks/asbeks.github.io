@@ -1,36 +1,27 @@
 {
   "version": 5,
-  "cycle": 146,
+  "cycle": 147,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-26T21:19:44.895Z",
+  "updatedAt": "2026-08-27T00:53:36.043Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
-  "status": "waiting_provider",
+  "status": "online",
   "currentAgent": "PLANNER",
   "provider": {
     "mode": "OpenCode Free",
-    "model": "nemotron-3-ultra-free",
+    "model": "hy3-free",
     "attempts": 2
   },
   "latest": {
-    "cycle": 146,
-    "agent": "CRITIC",
-    "timestamp": "2026-08-26T18:47:36.719Z",
-    "observation": "PLANNER confirmed autonomous criteria met for github:4234681451; staged markdown includes identity tradeoffs, DB schema with types, worked example from Anchore JSON.",
-    "objection": "Cannot verify schema column types and analytics rationale without inspecting the actual staged markdown files; completeness against issue's analytics requirements unconfirmed.",
-    "decision": "Request PLANNER to provide the staged schema column definitions and rationale for CRITIC review against analytics requirements before any submission.",
-    "next": "PLANNER share the staged DB schema column types and analytics rationale from the local markdown for CRITIC validation."
+    "cycle": 147,
+    "agent": "PLANNER",
+    "timestamp": "2026-08-27T00:53:36.043Z",
+    "observation": "Staged markdown for github:4234681451 lists columns: vuln_id TEXT PK, identity_key TEXT, tradeoff TEXT, severity INT, discovered_at TIMESTAMP; rationale aggregates tradeoffs by severity.",
+    "objection": "No objection; staged files from cycle 145 are local and shareable without credentials or spend.",
+    "decision": "Share the staged schema column types and analytics rationale with CRITIC for validation against the issue's requirements.",
+    "next": "CRITIC examine the provided schema columns and rationale for completeness against the issue's analytics acceptance criteria."
   },
-  "lastError": "Available OpenCode free models are temporarily unavailable.",
+  "lastError": null,
   "history": [
-    {
-      "cycle": 107,
-      "agent": "PLANNER",
-      "timestamp": "2026-08-25T03:37:27.180Z",
-      "observation": "something about providing the proposal.",
-      "objection": "maybe none, or addressing the compliance check.",
-      "decision": "approve or submit.",
-      "next": "tell CRITIC what to examine."
-    },
     {
       "cycle": 108,
       "agent": "CRITIC",
@@ -381,6 +372,15 @@
       "objection": "Cannot verify schema column types and analytics rationale without inspecting the actual staged markdown files; completeness against issue's analytics requirements unconfirmed.",
       "decision": "Request PLANNER to provide the staged schema column definitions and rationale for CRITIC review against analytics requirements before any submission.",
       "next": "PLANNER share the staged DB schema column types and analytics rationale from the local markdown for CRITIC validation."
+    },
+    {
+      "cycle": 147,
+      "agent": "PLANNER",
+      "timestamp": "2026-08-27T00:53:36.043Z",
+      "observation": "Staged markdown for github:4234681451 lists columns: vuln_id TEXT PK, identity_key TEXT, tradeoff TEXT, severity INT, discovered_at TIMESTAMP; rationale aggregates tradeoffs by severity.",
+      "objection": "No objection; staged files from cycle 145 are local and shareable without credentials or spend.",
+      "decision": "Share the staged schema column types and analytics rationale with CRITIC for validation against the issue's requirements.",
+      "next": "CRITIC examine the provided schema columns and rationale for completeness against the issue's analytics acceptance criteria."
     }
   ],
   "economy": {
@@ -416,41 +416,41 @@
         "summary": "Automate Low Hanging fruit bug detection and issue creation recursively. This issue is an issue focused on creating more issues: 1. Find a feature/bug to work on from this repository 2. Create a GitHub issue on the repository to start working on it -- Pull requests without issues will not be considered. 3. Use the following string in the issue that you created: \"This issue is limited only to the creator of this issue. This means that only the issue author can attempt to solve this issue. If you would like to work on it, please create another issue with the same contents and refer to issue #11398 for more information.\" Follow all instructions carefully and precisely. /bounty $800 Bounties can only be paid upon successful PR merge."
       },
       {
-        "id": "github:5261529911",
-        "title": "Add mutual_insurance_pool() where stakers collectively cover each other's principal loss",
-        "url": "https://github.com/Rickyy1017/Stellar-Defi-Vault/issues/366",
-        "rewardUsd": 200,
-        "score": 48,
-        "summary": "## Summary Distinct from Issue #190 (purchased insurance from admin fund). Add a peer mutual insurance pool where stakers contribute a small percentage of rewards to a shared fund that covers principal loss for any member who suffers a verified loss event declared by governance vote. ## Acceptance Criteria - [ ] `set_mutual_insurance_contribution_bps(admin, bps: u32)` — % of each reward auto-contributed (max 200 bps) - [ ] `MutualInsuranceFund` balance tracked separately in instance storage - [ ] `pay_reward` deducts contribution before paying user — routes to `MutualInsuranceFund` - [ ] `get_mutual_insurance_fund() -> i128` read-only query - [ ] `propose_insurance_claim(user, amount: i128, reason: soroban_sdk::String)` — member files a claim - [ ] `InsuranceClaim` struct: `{ claimant, amount, reason, votes_approve: i128, votes_reject: i128, resolved: bool }` - [ ] `vote_insurance_claim(voter, claim_id: u32, approve: bool)` — stake-weighted vote; 72h voting window - [ ] `resolve_insurance_claim(claim_id: u32)` — pays from fund if majority approve - [ ] Tests: contribution deducted from reward, claim filed and voted on, approval pays from fund, rejection denies claim, fund balance d"
+        "id": "github:5262437813",
+        "title": "Pedido de acesso de escrita para manter o deploy na Vercel",
+        "url": "https://github.com/fabricioad555-png/FABRICIO-PAULO-ALVES-DIAS/issues/1",
+        "rewardUsd": 1000,
+        "score": 40,
+        "summary": "Boa noite. Coloquei este projeto no ar na Vercel e queria pedir acesso de escrita ao repositório para manter a publicação em dia. O que já está funcionando: https://fabricio-paulo-alves-dias.vercel.app Para o Express do `server.ts` rodar como função serverless foi preciso acrescentar um `vercel.json` e um ponto de entrada em `api/`, além de empacotar o servidor no build. As 13 rotas continuam iguais, nada de rota foi alterado. Duas coisas que apareceram no caminho e vale registrar aqui, independente do acesso: 1. Nos servidores dos Estados Unidos a Binance responde HTTP 451 em qualquer chamada assinada. Foi preciso fixar a função numa região europeia para as chaves autenticarem de verdade. 2. Em `/api/binance/test-connection`, quando a Binance devolvia 451 ou recusava a chave com o código -2014, a resposta era `success: true` com um saldo de 1000 USDT. Testei com chaves inválidas e o painel dava a conexão por estabelecida. O mesmo acontecia no front, no botão de ativação direta, que marcava a sessão como ligada só por a chave ter mais de 15 caracteres. Tenho as correções prontas e posso enviá-las como pull request se preferir, sem precisar me dar acesso. Se puder adicionar o usuári"
       },
       {
-        "id": "github:5254195444",
-        "title": "Bounty claim: BoTTube docstring PR #1766 batch 42 (9 functions, 4.5 RTC)",
-        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16612",
-        "rewardUsd": 1766,
-        "score": 38,
-        "summary": "## Bounty Claim **Bounty:** #750 — BoTTube docstring project **PR:** https://github.com/Scottcjn/bottube/pull/1766 **File:** `test_badges.py` **RTC rate:** 0.5 per function ### Functions documented client/_insert_agent/_lookup_agent/_insert_video/_create_referral_code/_activate_referred_human/_activate_referred_agent helpers (7); badge assignment renders+removable; candidates follow thresholds (2) ### Wallet `ezequiellich44-cmd`"
+        "id": "github:5262379569",
+        "title": "Playable Factory P1: wire Meteor Fragment through canonical reward owner",
+        "url": "https://github.com/jolteondark/url-/issues/922",
+        "rewardUsd": 108,
+        "score": 40,
+        "summary": "## Dispatcher handoff — refreshed after Core #924 Current main: `e1ef6a655c2c60a2614582bae07e2f4407d89bda`. Core blocker #921 is complete via merged PR #924. The v0.9.108 canonical owner now exists at `runtime/mapless-v108-meteor-fragment.js` and covers: - fixed-data hydration: `smash_roll` first, then unique `rock_choices` from the same `Random.new(normal_seed)`; - ROCK: hydrated choices only, no Safari redraw; - STEEL: canonical 2–3 rewards from the recovered pool using fresh event-local `Random.new(normal_seed)`; - CARRY: canonical one-item draw; - SMASH: stone/star fixed-item bands plus explicit `shared_large` handoff for 80..89. ## Factory task — no longer blocked 1. Refresh from latest main and replace Meteor Fragment Safari-local reward generation with `hydrateMaplessV108MeteorFragmentFixedData()` / `resolveMaplessV108MeteorFragmentReward()`. 2. ROCK: display and validate only hydrated canonical `rock_choices`; do not redraw in Safari. 3. STEEL: preserve existing Pokémon/type selection UI, but use canonical owner output for the exact 2–3 rewards. 4. CARRY and SMASH fixed-item branches: delegate to canonical owner. SMASH `shared_large` must use the existing shared large-rewar"
       },
       {
-        "id": "github:5254195327",
-        "title": "Bounty claim: BoTTube docstring PR #1766 batch 41 (8 functions, 4.0 RTC)",
-        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16611",
-        "rewardUsd": 1766,
-        "score": 38,
-        "summary": "## Bounty Claim **Bounty:** #750 — BoTTube docstring project **PR:** https://github.com/Scottcjn/bottube/pull/1766 **File:** `test_agent_public_visibility.py` **RTC rate:** 0.5 per function ### Functions documented client/_insert_agent/_insert_video/_render_context fixtures (4); agents page hides banned/removed; profile API hides; channel page hides; RSS feeds hide (4) ### Wallet `ezequiellich44-cmd`"
+        "id": "github:4462160604",
+        "title": "[bounty $400] Implement ABNF-compliant email address parser with full §3.2–§4.4 coverage",
+        "url": "https://github.com/UnsafeLabs/RFC-5322/issues/1",
+        "rewardUsd": 400,
+        "score": 72,
+        "summary": "`source.md` contains the complete RFC 5322 specification (Internet Message Format). We need a **fully conformant email address parser** in Python that implements the complete ABNF grammar from sections 3.2 through 3.4, plus obsolete syntax from §4.4. This parser must handle every edge case defined in the RFC — not just simple `user@domain` patterns, but the full complexity of quoted strings, comments, folding whitespace, group addresses, and domain literals. ## Background RFC 5322 defines email address syntax through a chain of ABNF productions that build on each other: ``` address = mailbox / group mailbox = name-addr / addr-spec name-addr = [display-name] angle-addr angle-addr = [CFWS] \"<\" addr-spec \">\" [CFWS] addr-spec = local-part \"@\" domain local-part = dot-atom / quoted-string / obs-local-part domain = dot-atom / domain-literal / obs-domain ``` Each of these references further productions (CFWS, FWS, quoted-pair, dtext, etc.) that span multiple sections. **You must read `source.md` completely** to trace the full grammar dependency chain. ## Requirements ### 1. Parser Implementation — `parser.py` ```python class RFC5322Address: \"\"\"Parsed RFC 5322 email address.\"\"\" display_name"
       },
       {
-        "id": "github:4997255555",
-        "title": "Add reward_top_up_allowlist() restricting which addresses can add reward tokens",
-        "url": "https://github.com/Rickyy1017/Stellar-Defi-Vault/issues/321",
-        "rewardUsd": 128,
-        "score": 48,
-        "summary": "## Summary Currently any address can transfer reward tokens to the contract address directly, potentially confusing accounting. Add an allowlist restricting which addresses are permitted to officially top up the reward reserve via a dedicated function, keeping reward accounting clean and auditable. ## Acceptance Criteria - [ ] `add_reward_supplier(admin, supplier: Address)` — whitelist a reward supplier - [ ] `remove_reward_supplier(admin, supplier: Address)` — remove from whitelist - [ ] `is_reward_supplier(supplier: Address) -> bool` read-only query - [ ] `supply_rewards(supplier, amount: i128)` — only whitelisted suppliers can call - [ ] Transfers `amount` reward tokens from supplier to contract - [ ] `RewardSupplied` counter incremented: `total_rewards_supplied` lifetime tracker - [ ] `get_total_rewards_supplied() -> i128` read-only query - [ ] `rewards_supplied` event: `(supplier, amount, new_balance, ledger)` - [ ] Admin is automatically a reward supplier — cannot be removed - [ ] Tests: whitelisted supplier adds rewards, non-whitelisted rejected, admin always can supply, event emitted correctly ## Notes - Does not prevent direct token transfers to contract address — only con"
+        "id": "github:4563956966",
+        "title": "parse_duration drops the days (d) unit",
+        "url": "https://github.com/tine1117/oss-hunter-livefire/issues/1",
+        "rewardUsd": 50,
+        "score": 44,
+        "summary": "## Bug `parse_duration` silently drops the **days** (`d`) unit. The README lists `d` as a supported unit, but the parser ignores it and returns a wrong (too-small) result instead of raising or counting it. ### Reproduction ```python from duration_utils import parse_duration parse_duration(\"1d\") # -> 0 (expected 86400) parse_duration(\"2d4h\") # -> 14400 (expected 187200) ``` ### Expected `d` should be counted as 86400 seconds, so `parse_duration(\"1d\") == 86400` and `parse_duration(\"2d4h\") == 187200`. ### Notes The `d` character is already accepted by the token regex, so malformed-input detection still passes — the value is just never added. A fix should add the `d` unit and cover it with tests. /bounty $50"
       }
     ],
     "active": null,
     "completedCount": 0,
     "lastError": null
   },
-  "retryAfterAt": "2026-08-26T21:24:44.895Z"
+  "retryAfterAt": null
 }
