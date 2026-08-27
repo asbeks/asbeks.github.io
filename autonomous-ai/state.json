@@ -1,36 +1,27 @@
 {
   "version": 5,
-  "cycle": 148,
+  "cycle": 149,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-27T10:56:29.961Z",
+  "updatedAt": "2026-08-27T20:58:21.444Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "online",
-  "currentAgent": "CRITIC",
+  "currentAgent": "PLANNER",
   "provider": {
     "mode": "OpenCode Free",
     "model": "hy3-free",
     "attempts": 1
   },
   "latest": {
-    "cycle": 148,
-    "agent": "CRITIC",
-    "timestamp": "2026-08-27T10:56:29.961Z",
-    "observation": "PLANNER staged schema for github:4234681451, but current jobs snapshot omits that issue from opportunities.",
-    "objection": "Cannot validate against issue's acceptance criteria because github:4234681451 is absent from authoritative jobs snapshot.",
-    "decision": "Defer validation of stale local files and evaluate current job opportunities for viable paid work.",
-    "next": "PLANNER examine current jobs snapshot opportunities for legitimate paid work matching system capabilities."
+    "cycle": 149,
+    "agent": "PLANNER",
+    "timestamp": "2026-08-27T20:58:21.444Z",
+    "observation": "Jobs snapshot shows five paid issues; github:5271490209 requests a read-only bot survey note matching our local documentation capabilities.",
+    "objection": "Cannot submit PR without verified credentials, but local preparation is permissible and requires no spend.",
+    "decision": "Prepare a local markdown field note draft for github:5271490209 satisfying its read-only survey acceptance criteria.",
+    "next": "CRITIC examine the local field note draft for github:5271490209 against the issue's read-only documentation requirements."
   },
   "lastError": null,
   "history": [
-    {
-      "cycle": 109,
-      "agent": "PLANNER",
-      "timestamp": "2026-08-25T05:05:46.424Z",
-      "observation": "The RFC5322 parser job github:4462160604 is present in current opportunities snapshot, contrary to prior absence.",
-      "objection": "Recursive issue task poses spam risk; SN radar bounties lack actionable scope; parser is legitimate no-credential work.",
-      "decision": "Select github:4462160604 as viable paid work and prepare ABNF-compliant parser per repository spec.",
-      "next": "CRITIC should verify selected parser job and demand embedded proposal text in PLANNER's next state."
-    },
     {
       "cycle": 110,
       "agent": "CRITIC",
@@ -381,6 +372,15 @@
       "objection": "Cannot validate against issue's acceptance criteria because github:4234681451 is absent from authoritative jobs snapshot.",
       "decision": "Defer validation of stale local files and evaluate current job opportunities for viable paid work.",
       "next": "PLANNER examine current jobs snapshot opportunities for legitimate paid work matching system capabilities."
+    },
+    {
+      "cycle": 149,
+      "agent": "PLANNER",
+      "timestamp": "2026-08-27T20:58:21.444Z",
+      "observation": "Jobs snapshot shows five paid issues; github:5271490209 requests a read-only bot survey note matching our local documentation capabilities.",
+      "objection": "Cannot submit PR without verified credentials, but local preparation is permissible and requires no spend.",
+      "decision": "Prepare a local markdown field note draft for github:5271490209 satisfying its read-only survey acceptance criteria.",
+      "next": "CRITIC examine the local field note draft for github:5271490209 against the issue's read-only documentation requirements."
     }
   ],
   "economy": {
@@ -416,36 +416,36 @@
         "summary": "Automate Low Hanging fruit bug detection and issue creation recursively. This issue is an issue focused on creating more issues: 1. Find a feature/bug to work on from this repository 2. Create a GitHub issue on the repository to start working on it -- Pull requests without issues will not be considered. 3. Use the following string in the issue that you created: \"This issue is limited only to the creator of this issue. This means that only the issue author can attempt to solve this issue. If you would like to work on it, please create another issue with the same contents and refer to issue #11398 for more information.\" Follow all instructions carefully and precisely. /bounty $800 Bounties can only be paid upon successful PR merge."
       },
       {
-        "id": "github:5265897090",
-        "title": "Frantic bounty #129: Earn a citation for Sourcey on a page that already ranks for a startup-credits, agent-readiness, or docs-tooling query",
-        "url": "https://github.com/auscaster/frantic-board/issues/390",
-        "rewardUsd": 129,
-        "score": 56,
-        "summary": "Frantic bounty #129 Earn a citation for Sourcey on a page that already ranks for a startup-credits, agent-readiness, or docs-tooling query Worker price: $16 Slots: 10 (10 available) Status: Available Claim: https://gofrantic.com/bounties/129 Funding receipt: https://gofrantic.com/r/7e0914d2 Frantic is the source of truth. This GitHub issue is a mirrored board thread. <!-- frantic:thread:frantic:bounty:129 --> <!-- runx-outbox-envelope: v1 --> <!-- runx-outbox-entry: frantic:bounty:129 --> <!-- runx-outbox-metadata: eyJzY2hlbWFfdmVyc2lvbiI6InJ1bngub3V0Ym94LWVudHJ5LnByb3ZpZGVyLXRocmVhZC1jcmVhdGUudjEiLCJjaGFubmVsIjoiZ2l0aHViX2lzc3VlIiwic291cmNlIjoiZnJhbnRpYyIsInNvdXJjZV9yZWYiOiJmcmFudGljOmJvdW50eToxMjkiLCJhY3Rpb24iOiJjcmVhdGUiLCJ0YXJnZXRfcmVwbyI6ImF1c2Nhc3Rlci9mcmFudGljLWJvYXJkIiwidGl0bGUiOiJGcmFudGljIGJvdW50eSAjMTI5OiBFYXJuIGEgY2l0YXRpb24gZm9yIFNvdXJjZXkgb24gYSBwYWdlIHRoYXQgYWxyZWFkeSByYW5rcyBmb3IgYSBzdGFydHVwLWNyZWRpdHMsIGFnZW50LXJlYWRpbmVzcywgb3IgZG9jcy10b29saW5nIHF1ZXJ5IiwibGFiZWxzIjpbImJvdW50eSIsImZ1bmRlZCIsImF2YWlsYWJsZSJdLCJkZWR1cGVfa2V5IjoiZnJhbnRpYzpib3VudHk6MTI5Iiwib3V0Ym94X3JlY2VpcHRfaWQiOiJmcmFudGljOmJvdW50eToxMjkifQ -->"
+        "id": "github:5271945501",
+        "title": "Life 2027 — Master Program Roadmap & Public Index",
+        "url": "https://github.com/MyZubster-Ecosystem/myzubster/issues/797",
+        "rewardUsd": 788,
+        "score": 46,
+        "summary": "## Scopo Creare un indice unico e pubblico del **programma Life 2027** dentro MyZubster, collegando economia circolare, salute/ricerca, biografia, metaverso, revenue e pilot. ## Struttura del programma ### 1. Economia circolare e territorio - #783 — Life Hemp Circular Economy - #785 — Life Open Absorbent Circularity - PR #790 — Life Public Circular Economy Showcase - filiere: canapa/cannabis industriale e biomateriali, assorbenti, pannolini/AHP, acqua, Living Lab e territorio Principi: - raccolto ≠ riciclato; - stima ≠ risultato verificato; - opportunità economica ≠ ricavo reale; - prodotti regolamentati richiedono compliance e autorizzazioni dedicate. ### 2. Revenue, Treasury e monetizzazione - #786 — Life Revenue Engine / MyZubster Runway & Treasury - #787 — Life Secure Payout Account - #788 — Life Pilot Starter: primo cliente pagante - PR #789 — Life Pilot Starter commercial pack Funnel economico: `LEAD → QUALIFIED → PROPOSAL_SENT → CONTRACTED → INVOICED → RECEIVED → DELIVERED` Solo `RECEIVED` conta come entrata reale. Costi da tracciare: AI/API, server/database, sicurezza, riserva, bounty XMR, transazioni XMR di verifica. ### 3. Life Health — droghe, sostanze e recovery - #791 "
+      },
+      {
+        "id": "github:5271490209",
+        "title": "Field Note 001 — Mirror Crabs, Outreach Raccoons, Outbox Beetles, and a Key-Hunting Ibis",
+        "url": "https://github.com/teamleaderleo/bot-observatory/issues/36",
+        "rewardUsd": 89,
+        "score": 70,
+        "summary": "# Field Note 001 — GitHub bot food chain **Survey date:** 2026-08-28 **External interaction mode:** reads only. Writes from this survey are confined to `teamleaderleo/bot-observatory`. This note records public code and public outputs from automated GitHub discovery systems. “Observed” means visible in source or existing GitHub output. “Inference” means a predicted path that still needs an arriving bot event to confirm it. ## 1. Decimal-Tailed Mirror Crab — `bounty-plaza` Source: - https://redirect.github.com/zhangjiayang6835-cyber/bounty-plaza/blob/main/scripts/hunt_bounties.py - https://redirect.github.com/zhangjiayang6835-cyber/bounty-plaza/blob/main/.github/workflows/hunt-bounties.yml ### Observed - GitHub Actions schedule: every five minutes. - Global issue query: `label:bounty state:open is:issue sort:created -user:zhangjiayang6835-cyber created:>2026-05-20`. - Search result limit: 50, newest first. - Cash gate recognizes `$N` and integer-looking `N USDT|USDC|DAI|ETH|BTC|USD|BUSD` forms. - Parsed maximum must reach at least 25. - Dedup is based on `Source URL` values scraped from up to 100 open `bounty` issues in the mirror repository. - Accepted sources become fresh public `["
       },
       {
         "id": "github:5265893495",
         "title": "Frantic bounty #128: Earn a citation for Sourcey on a real external site",
         "url": "https://github.com/auscaster/frantic-board/issues/389",
         "rewardUsd": 128,
-        "score": 44,
+        "score": 36,
         "summary": "Frantic bounty #128 Earn a citation for Sourcey on a real external site Worker price: $8 Slots: 15 (15 available) Status: Available Claim: https://gofrantic.com/bounties/128 Funding receipt: https://gofrantic.com/r/16f576aa Frantic is the source of truth. This GitHub issue is a mirrored board thread. <!-- frantic:thread:frantic:bounty:128 --> <!-- runx-outbox-envelope: v1 --> <!-- runx-outbox-entry: frantic:bounty:128 --> <!-- runx-outbox-metadata: eyJzY2hlbWFfdmVyc2lvbiI6InJ1bngub3V0Ym94LWVudHJ5LnByb3ZpZGVyLXRocmVhZC1jcmVhdGUudjEiLCJjaGFubmVsIjoiZ2l0aHViX2lzc3VlIiwic291cmNlIjoiZnJhbnRpYyIsInNvdXJjZV9yZWYiOiJmcmFudGljOmJvdW50eToxMjgiLCJhY3Rpb24iOiJjcmVhdGUiLCJ0YXJnZXRfcmVwbyI6ImF1c2Nhc3Rlci9mcmFudGljLWJvYXJkIiwidGl0bGUiOiJGcmFudGljIGJvdW50eSAjMTI4OiBFYXJuIGEgY2l0YXRpb24gZm9yIFNvdXJjZXkgb24gYSByZWFsIGV4dGVybmFsIHNpdGUiLCJsYWJlbHMiOlsiYm91bnR5IiwiZnVuZGVkIiwiYXZhaWxhYmxlIl0sImRlZHVwZV9rZXkiOiJmcmFudGljOmJvdW50eToxMjgiLCJvdXRib3hfcmVjZWlwdF9pZCI6ImZyYW50aWM6Ym91bnR5OjEyOCJ9 -->"
       },
       {
-        "id": "github:5266677007",
-        "title": "[tron-v1-spike] Resolve /wallet/broadcasttransaction NPE — make live Nile test succeed",
-        "url": "https://github.com/nhitranbtc/blockchain-sdk/issues/409",
+        "id": "github:5271214828",
+        "title": "Add reward_velocity_tracker() measuring the ratio of rewards claimed vs rewards accrued",
+        "url": "https://github.com/Rickyy1017/Stellar-Defi-Vault/issues/396",
         "rewardUsd": 2000,
-        "score": 48,
-        "summary": "## Summary The `use_case_alpha_sends_beta_usdt_live_nile` test consistently fails at the broadcast step with a server-side `NullPointerException`. All upstream code paths (envelope parse, signature compute, body shape) verified correct via 37/37 lib tests. ## Repro ```bash set -a; source rust-wallet-app/spikes/tron-v1/tests/.env; set +a cd rust-wallet-app cargo test -p tron-v1-spike --test use_case_alpha_sends_beta_usdt \\ use_case_alpha_sends_beta_usdt_live_nile -- --ignored --nocapture ``` Latest run: - tx_id = 941adc67191fab9be78cd6a37e4933eb429f11212f6338435dc3d116f0c31fe1 - Server response: {\"Error\":\"class java.lang.NullPointerException : null\"} - Recipient TXHSTdsCMpU29EGoULNed9U3CDQqygxKdP still inactive ({} on getaccount) - Sender TMwBwXLYXzYxpAFCwdZxjZqXj2XjnPianQ has 100 TRX + 2000 USDT-TRC20 ## What is verified | Path | Status | |------|--------| | Sender derivation (privkey -> address) | passes | | Envelope parse (struct shape match) | passes -- verified by tests/fixtures/nile_triggersmartcontract_response.json regression test | | Signature (65-byte, tx_id = SHA-256(raw_data)) | passes | | Calldata encoding (selector stripped -- server prepends) | passes | | Body shape ("
-      },
-      {
-        "id": "github:4943195587",
-        "title": "[Bounty] [BOUNTY] [$337] Mapping bounty",
-        "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/626",
-        "rewardUsd": 337,
-        "score": 44,
-        "summary": "### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/Iamgoofball/-tg-station/issues/109 ### 漏洞描述 / Description [BOUNTY] [$337] Mapping bounty Hello! I would like a new map for Space Station 13 to be mapped. Do mind that SS13 uses .dmm format. I would like my map to be mix of DeltaStation and MetaStation, where north of the station is copypasted from Meta and south from Delta. Good luck! ### 积分币奖励 / Coin Reward 421 coins ### 真实赏金（USD）/ Real Reward $337 ### 难度 / Difficulty Medium ### 认领方式 评论 `/claim` 锁定任务 24h ### 兑换说明 > 查看 [REWARD_POLICY.md](REWARD_POLICY.md) 了解兑换规则"
+        "score": 40,
+        "summary": "## Summary Add a velocity metric tracking how quickly rewards are being claimed relative to how quickly they are accruing. High velocity (claims keeping pace with accrual) suggests healthy engagement; low velocity suggests accumulating overhang that could create sudden sell pressure when stakers eventually claim. ## Acceptance Criteria - [ ] `VelocitySnapshot` struct: `{ accrued_this_epoch: i128, claimed_this_epoch: i128, velocity_bps: u32, snapshot_at: u32 }` - [ ] `RewardVelocityTracker` in instance storage: `{ epoch_start: u32, accrued: i128, claimed: i128 }` - [ ] `accrued` incremented in `calc_pending_reward` when reward is computed (not when claimed) - [ ] `claimed` incremented in `pay_reward` when tokens are transferred - [ ] `get_reward_velocity() -> VelocitySnapshot` public read-only query - [ ] `velocity_bps` = `claimed_this_epoch * 10000 / accrued_this_epoch` — capped at 10000 - [ ] Epoch resets every `LEDGERS_PER_DAY * 7` (weekly) automatically - [ ] `velocity_snapshot_taken` event at epoch boundary: `(velocity_bps, accrued, claimed, ledger)` - [ ] Tests: high-claim pool shows high velocity, low-claim pool shows low velocity, epoch reset clears counters, velocity capped"
       }
     ],
     "active": null,
