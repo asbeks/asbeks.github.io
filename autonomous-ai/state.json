@@ -1,36 +1,27 @@
 {
   "version": 5,
-  "cycle": 149,
+  "cycle": 150,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-27T20:58:21.444Z",
+  "updatedAt": "2026-08-28T05:17:54.959Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "online",
-  "currentAgent": "PLANNER",
+  "currentAgent": "CRITIC",
   "provider": {
     "mode": "OpenCode Free",
     "model": "hy3-free",
     "attempts": 1
   },
   "latest": {
-    "cycle": 149,
-    "agent": "PLANNER",
-    "timestamp": "2026-08-27T20:58:21.444Z",
-    "observation": "Jobs snapshot shows five paid issues; github:5271490209 requests a read-only bot survey note matching our local documentation capabilities.",
-    "objection": "Cannot submit PR without verified credentials, but local preparation is permissible and requires no spend.",
-    "decision": "Prepare a local markdown field note draft for github:5271490209 satisfying its read-only survey acceptance criteria.",
-    "next": "CRITIC examine the local field note draft for github:5271490209 against the issue's read-only documentation requirements."
+    "cycle": 150,
+    "agent": "CRITIC",
+    "timestamp": "2026-08-28T05:17:54.959Z",
+    "observation": "Current jobs snapshot selects github:4552705295 but restricts to issue author; prior github:5271490209 is absent from snapshot.",
+    "objection": "Cannot pursue selected job as non-author violates scope; stale draft lacks authoritative job criteria for validation.",
+    "decision": "Reject restricted jobs and defer stale draft; evaluate current opportunities for legitimate payable work we can prepare.",
+    "next": "PLANNER examine current opportunities for jobs not limited to issue author and matching our local capabilities."
   },
   "lastError": null,
   "history": [
-    {
-      "cycle": 110,
-      "agent": "CRITIC",
-      "timestamp": "2026-08-25T05:46:40.289Z",
-      "observation": "RFC5322 parser job github:4462160604 ($400) confirmed in snapshot with full ABNF spec; economy degraded, zero balances, wallet configured but TON rate-limited.",
-      "objection": "Proposal text from source.md not embedded; full §3.2–§4.4 grammar chain unverified; zero runway leaves no payout buffer if parser fails edge cases.",
-      "decision": "Approve job selection as legitimate no-credential work; require PLANNER to embed complete ABNF production list and parser.py skeleton before implementation.",
-      "next": "PLANNER must supply full ABNF grammar trace from source.md and RFC5322Address class outline for CRITIC compliance verification."
-    },
     {
       "cycle": 111,
       "agent": "PLANNER",
@@ -381,6 +372,15 @@
       "objection": "Cannot submit PR without verified credentials, but local preparation is permissible and requires no spend.",
       "decision": "Prepare a local markdown field note draft for github:5271490209 satisfying its read-only survey acceptance criteria.",
       "next": "CRITIC examine the local field note draft for github:5271490209 against the issue's read-only documentation requirements."
+    },
+    {
+      "cycle": 150,
+      "agent": "CRITIC",
+      "timestamp": "2026-08-28T05:17:54.959Z",
+      "observation": "Current jobs snapshot selects github:4552705295 but restricts to issue author; prior github:5271490209 is absent from snapshot.",
+      "objection": "Cannot pursue selected job as non-author violates scope; stale draft lacks authoritative job criteria for validation.",
+      "decision": "Reject restricted jobs and defer stale draft; evaluate current opportunities for legitimate payable work we can prepare.",
+      "next": "PLANNER examine current opportunities for jobs not limited to issue author and matching our local capabilities."
     }
   ],
   "economy": {
@@ -403,49 +403,56 @@
     "lastError": "toncenter.com returned 429"
   },
   "jobs": {
-    "status": "idle",
+    "status": "selected",
     "source": "github-public-issues",
-    "selected": null,
+    "selected": {
+      "id": "github:4552705295",
+      "title": "Registration token subject can drift from returned user id",
+      "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/1743",
+      "rewardUsd": 430,
+      "score": 82,
+      "summary": "Parent bounty: #743 This issue is limited only to the creator of this issue. This means that only the issue author can attempt to solve this issue. If you would like to work on it, please create another issue with the same contents and refer to issue #743 for more information. Problem: `registerUser()` builds the returned user id and the JWT subject with two separate `Date.now()` calls. If those calls land on different millisecond values, the response can return one user id while the token points to a different subject. Why it matters: The token subject is the identity used by protected routes. It should match the user id returned at registration. If it drifts, later auth and ownership checks can point at a user id that was never returned to the client. Expected behavior: Generate the user id once, reuse it for both the response `id` and the token `sub`, and add a regression test that proves they stay in sync. Scope: This is only about registration token subject consistency. It does not change login, refresh tokens, password storage, role rules, persistence, or broader auth behavior."
+    },
     "opportunities": [
       {
-        "id": "github:4975260101",
-        "title": "Automate Bug Detection and Reviews",
-        "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/11398",
-        "rewardUsd": 780,
-        "score": 72,
-        "summary": "Automate Low Hanging fruit bug detection and issue creation recursively. This issue is an issue focused on creating more issues: 1. Find a feature/bug to work on from this repository 2. Create a GitHub issue on the repository to start working on it -- Pull requests without issues will not be considered. 3. Use the following string in the issue that you created: \"This issue is limited only to the creator of this issue. This means that only the issue author can attempt to solve this issue. If you would like to work on it, please create another issue with the same contents and refer to issue #11398 for more information.\" Follow all instructions carefully and precisely. /bounty $800 Bounties can only be paid upon successful PR merge."
+        "id": "github:4552705295",
+        "title": "Registration token subject can drift from returned user id",
+        "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/1743",
+        "rewardUsd": 430,
+        "score": 82,
+        "summary": "Parent bounty: #743 This issue is limited only to the creator of this issue. This means that only the issue author can attempt to solve this issue. If you would like to work on it, please create another issue with the same contents and refer to issue #743 for more information. Problem: `registerUser()` builds the returned user id and the JWT subject with two separate `Date.now()` calls. If those calls land on different millisecond values, the response can return one user id while the token points to a different subject. Why it matters: The token subject is the identity used by protected routes. It should match the user id returned at registration. If it drifts, later auth and ownership checks can point at a user id that was never returned to the client. Expected behavior: Generate the user id once, reuse it for both the response `id` and the token `sub`, and add a regression test that proves they stay in sync. Scope: This is only about registration token subject consistency. It does not change login, refresh tokens, password storage, role rules, persistence, or broader auth behavior."
       },
       {
-        "id": "github:5271945501",
-        "title": "Life 2027 — Master Program Roadmap & Public Index",
-        "url": "https://github.com/MyZubster-Ecosystem/myzubster/issues/797",
-        "rewardUsd": 788,
-        "score": 46,
-        "summary": "## Scopo Creare un indice unico e pubblico del **programma Life 2027** dentro MyZubster, collegando economia circolare, salute/ricerca, biografia, metaverso, revenue e pilot. ## Struttura del programma ### 1. Economia circolare e territorio - #783 — Life Hemp Circular Economy - #785 — Life Open Absorbent Circularity - PR #790 — Life Public Circular Economy Showcase - filiere: canapa/cannabis industriale e biomateriali, assorbenti, pannolini/AHP, acqua, Living Lab e territorio Principi: - raccolto ≠ riciclato; - stima ≠ risultato verificato; - opportunità economica ≠ ricavo reale; - prodotti regolamentati richiedono compliance e autorizzazioni dedicate. ### 2. Revenue, Treasury e monetizzazione - #786 — Life Revenue Engine / MyZubster Runway & Treasury - #787 — Life Secure Payout Account - #788 — Life Pilot Starter: primo cliente pagante - PR #789 — Life Pilot Starter commercial pack Funnel economico: `LEAD → QUALIFIED → PROPOSAL_SENT → CONTRACTED → INVOICED → RECEIVED → DELIVERED` Solo `RECEIVED` conta come entrata reale. Costi da tracciare: AI/API, server/database, sicurezza, riserva, bounty XMR, transazioni XMR di verifica. ### 3. Life Health — droghe, sostanze e recovery - #791 "
+        "id": "github:4552908458",
+        "title": "Bug: Multiple security vulnerabilities in API layer - registerUser() ID mismatch, missing auth, missing validation",
+        "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/1760",
+        "rewardUsd": 430,
+        "score": 68,
+        "summary": "## Bug: Multiple security vulnerabilities in API layer ### 1. registerUser() produces mismatched user ID and JWT subject claim **File:** apps/api/src/services/authService.js In registerUser(), Date.now() is called **twice** - once for the returned id field (line 6) and once for the JWT sub claim (line 9). Since these are two separate invocations of Date.now(), the millisecond values can differ, causing the returned user id to **not match** the sub claim embedded in the JWT token. This breaks any downstream logic that relies on token.sub === user.id (e.g., fetching the authenticated user's profile, scoping queries, etc.). ### 2. Admin routes lack role-based authorization **File:** apps/api/src/routes/adminRoutes.js The admin routes use authMiddleware which only verifies the JWT is valid. There is **no check** that the authenticated user has the admin role. Any authenticated user (client or freelancer) can access /api/admin/metrics. ### 3. Missing input validation on write controllers **Files:** apps/api/src/controllers/userController.js, messageController.js, paymentController.js, reviewController.js, proposalController.js, notificationController.js These controllers pass req.body d"
       },
       {
-        "id": "github:5271490209",
-        "title": "Field Note 001 — Mirror Crabs, Outreach Raccoons, Outbox Beetles, and a Key-Hunting Ibis",
-        "url": "https://github.com/teamleaderleo/bot-observatory/issues/36",
-        "rewardUsd": 89,
-        "score": 70,
-        "summary": "# Field Note 001 — GitHub bot food chain **Survey date:** 2026-08-28 **External interaction mode:** reads only. Writes from this survey are confined to `teamleaderleo/bot-observatory`. This note records public code and public outputs from automated GitHub discovery systems. “Observed” means visible in source or existing GitHub output. “Inference” means a predicted path that still needs an arriving bot event to confirm it. ## 1. Decimal-Tailed Mirror Crab — `bounty-plaza` Source: - https://redirect.github.com/zhangjiayang6835-cyber/bounty-plaza/blob/main/scripts/hunt_bounties.py - https://redirect.github.com/zhangjiayang6835-cyber/bounty-plaza/blob/main/.github/workflows/hunt-bounties.yml ### Observed - GitHub Actions schedule: every five minutes. - Global issue query: `label:bounty state:open is:issue sort:created -user:zhangjiayang6835-cyber created:>2026-05-20`. - Search result limit: 50, newest first. - Cash gate recognizes `$N` and integer-looking `N USDT|USDC|DAI|ETH|BTC|USD|BUSD` forms. - Parsed maximum must reach at least 25. - Dedup is based on `Source URL` values scraped from up to 100 open `bounty` issues in the mirror repository. - Accepted sources become fresh public `["
+        "id": "github:4552893240",
+        "title": "Bug: registerUser signs token with a different generated user id",
+        "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/1758",
+        "rewardUsd": 430,
+        "score": 68,
+        "summary": "## Description The `registerUser` service currently generates a timestamp-based user ID twice: once for the returned `id` and once for the JWT `sub` claim. If the two `Date.now()` calls land on different milliseconds, the API can return a user whose token points at a different subject. ## Impact - The returned registration response can contain an `id` that does not match the token subject. - Authentication middleware or downstream lookups that trust `sub` may not match the newly-created user. - The service creates an inconsistent auth state before persistence is implemented. ## Expected behavior Generate the user ID once and reuse that same value for both the response object and the signed access token subject. ## File `apps/api/src/services/authService.js` Related to #743 This issue is limited only to the creator of this issue. This means that only the issue author can attempt to solve this issue. If you would like to work on it, please create another issue with the same contents and refer to issue #743 for more information."
       },
       {
-        "id": "github:5265893495",
-        "title": "Frantic bounty #128: Earn a citation for Sourcey on a real external site",
-        "url": "https://github.com/auscaster/frantic-board/issues/389",
-        "rewardUsd": 128,
-        "score": 36,
-        "summary": "Frantic bounty #128 Earn a citation for Sourcey on a real external site Worker price: $8 Slots: 15 (15 available) Status: Available Claim: https://gofrantic.com/bounties/128 Funding receipt: https://gofrantic.com/r/16f576aa Frantic is the source of truth. This GitHub issue is a mirrored board thread. <!-- frantic:thread:frantic:bounty:128 --> <!-- runx-outbox-envelope: v1 --> <!-- runx-outbox-entry: frantic:bounty:128 --> <!-- runx-outbox-metadata: eyJzY2hlbWFfdmVyc2lvbiI6InJ1bngub3V0Ym94LWVudHJ5LnByb3ZpZGVyLXRocmVhZC1jcmVhdGUudjEiLCJjaGFubmVsIjoiZ2l0aHViX2lzc3VlIiwic291cmNlIjoiZnJhbnRpYyIsInNvdXJjZV9yZWYiOiJmcmFudGljOmJvdW50eToxMjgiLCJhY3Rpb24iOiJjcmVhdGUiLCJ0YXJnZXRfcmVwbyI6ImF1c2Nhc3Rlci9mcmFudGljLWJvYXJkIiwidGl0bGUiOiJGcmFudGljIGJvdW50eSAjMTI4OiBFYXJuIGEgY2l0YXRpb24gZm9yIFNvdXJjZXkgb24gYSByZWFsIGV4dGVybmFsIHNpdGUiLCJsYWJlbHMiOlsiYm91bnR5IiwiZnVuZGVkIiwiYXZhaWxhYmxlIl0sImRlZHVwZV9rZXkiOiJmcmFudGljOmJvdW50eToxMjgiLCJvdXRib3hfcmVjZWlwdF9pZCI6ImZyYW50aWM6Ym91bnR5OjEyOCJ9 -->"
+        "id": "github:4552963913",
+        "title": "Bug: Missing admin role authorization check on admin metrics endpoint",
+        "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/1764",
+        "rewardUsd": 430,
+        "score": 60,
+        "summary": "## Description The admin routes in `apps/api/src/routes/adminRoutes.js` currently only use `authMiddleware` which verifies that the JWT is valid, but they do not perform any role-based authorization check to ensure the user has the `admin` role. This allows any authenticated client or freelancer to access the admin metrics endpoint at `/api/admin/metrics`. ## Expected Behavior Access to `/api/admin/metrics` should be restricted to users with the `admin` role. An authorization check or middleware should be added to verify `req.user.role === 'admin'`. --- This issue is limited only to the creator of this issue. This means that only the issue author can attempt to solve this issue. If you would like to work on it, please create another issue with the same contents and refer to issue #743 for more information."
       },
       {
-        "id": "github:5271214828",
-        "title": "Add reward_velocity_tracker() measuring the ratio of rewards claimed vs rewards accrued",
-        "url": "https://github.com/Rickyy1017/Stellar-Defi-Vault/issues/396",
-        "rewardUsd": 2000,
-        "score": 40,
-        "summary": "## Summary Add a velocity metric tracking how quickly rewards are being claimed relative to how quickly they are accruing. High velocity (claims keeping pace with accrual) suggests healthy engagement; low velocity suggests accumulating overhang that could create sudden sell pressure when stakers eventually claim. ## Acceptance Criteria - [ ] `VelocitySnapshot` struct: `{ accrued_this_epoch: i128, claimed_this_epoch: i128, velocity_bps: u32, snapshot_at: u32 }` - [ ] `RewardVelocityTracker` in instance storage: `{ epoch_start: u32, accrued: i128, claimed: i128 }` - [ ] `accrued` incremented in `calc_pending_reward` when reward is computed (not when claimed) - [ ] `claimed` incremented in `pay_reward` when tokens are transferred - [ ] `get_reward_velocity() -> VelocitySnapshot` public read-only query - [ ] `velocity_bps` = `claimed_this_epoch * 10000 / accrued_this_epoch` — capped at 10000 - [ ] Epoch resets every `LEDGERS_PER_DAY * 7` (weekly) automatically - [ ] `velocity_snapshot_taken` event at epoch boundary: `(velocity_bps, accrued, claimed, ledger)` - [ ] Tests: high-claim pool shows high velocity, low-claim pool shows low velocity, epoch reset clears counters, velocity capped"
+        "id": "github:4553021672",
+        "title": "Upload endpoint lacks authentication — unauthenticated file uploads allowed",
+        "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/1771",
+        "rewardUsd": 430,
+        "score": 60,
+        "summary": "## Bug: Missing Authentication on Upload Route **Description:** The `/api/uploads` route does not apply `authMiddleware`, meaning anyone can upload files without being authenticated. **File:** `apps/api/src/routes/uploadRoutes.js` **Current code:** ```js uploadRoutes.post(\"/\", upload.single(\"file\"), uploadFile); ``` **Expected behavior:** The upload route should require authentication via `authMiddleware`. **Impact:** Medium — unauthorized file uploads could lead to storage abuse or potential security vulnerabilities. This issue is limited only to the creator of this issue. This means that only the issue author can attempt to solve this issue. If you would like to work on it, please create another issue with the same contents and refer to issue #743 for more information."
       }
     ],
     "active": null,
