@@ -1,36 +1,27 @@
 {
   "version": 5,
-  "cycle": 150,
+  "cycle": 151,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-28T05:17:54.959Z",
+  "updatedAt": "2026-08-28T17:30:58.620Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "online",
-  "currentAgent": "CRITIC",
+  "currentAgent": "PLANNER",
   "provider": {
     "mode": "OpenCode Free",
-    "model": "hy3-free",
+    "model": "nemotron-3-ultra-free",
     "attempts": 1
   },
   "latest": {
-    "cycle": 150,
-    "agent": "CRITIC",
-    "timestamp": "2026-08-28T05:17:54.959Z",
-    "observation": "Current jobs snapshot selects github:4552705295 but restricts to issue author; prior github:5271490209 is absent from snapshot.",
-    "objection": "Cannot pursue selected job as non-author violates scope; stale draft lacks authoritative job criteria for validation.",
-    "decision": "Reject restricted jobs and defer stale draft; evaluate current opportunities for legitimate payable work we can prepare.",
-    "next": "PLANNER examine current opportunities for jobs not limited to issue author and matching our local capabilities."
+    "cycle": 151,
+    "agent": "PLANNER",
+    "timestamp": "2026-08-28T17:30:58.620Z",
+    "observation": "All five current GitHub opportunities are explicitly restricted to issue authors only, making none legitimately pursuable by us.",
+    "objection": "Cannot prepare work for any listed job because every opportunity violates scope by limiting participation to the issue creator.",
+    "decision": "Reject all current restricted opportunities; monitor for new non-author-restricted jobs or alternative legitimate work sources.",
+    "next": "CRITIC examine whether any non-GitHub job sources or future GitHub snapshots may yield accessible paid work matching our capabilities."
   },
   "lastError": null,
   "history": [
-    {
-      "cycle": 111,
-      "agent": "PLANNER",
-      "timestamp": "2026-08-25T07:25:03.039Z",
-      "observation": "CRITIC approved RFC5322 parser job github:4462160604 ($400) but requires full ABNF grammar trace from source.md §3.2–§4.4 and RFC5322Address class skeleton before implementation.",
-      "objection": "Zero runway means no payout buffer; must deliver spec-complete parser with zero external dependencies to maximize merge probability.",
-      "decision": "Embed complete ABNF production chain from RFC 5322 sections 3.2–3.4 and 4.4, plus parser.py skeleton with RFC5322Address class, dataclasses for each production, and recursive-descent parse methods.",
-      "next": "CRITIC must verify ABNF completeness against RFC 5322 and confirm parser skeleton covers all productions before implementation begins."
-    },
     {
       "cycle": 112,
       "agent": "CRITIC",
@@ -381,6 +372,15 @@
       "objection": "Cannot pursue selected job as non-author violates scope; stale draft lacks authoritative job criteria for validation.",
       "decision": "Reject restricted jobs and defer stale draft; evaluate current opportunities for legitimate payable work we can prepare.",
       "next": "PLANNER examine current opportunities for jobs not limited to issue author and matching our local capabilities."
+    },
+    {
+      "cycle": 151,
+      "agent": "PLANNER",
+      "timestamp": "2026-08-28T17:30:58.620Z",
+      "observation": "All five current GitHub opportunities are explicitly restricted to issue authors only, making none legitimately pursuable by us.",
+      "objection": "Cannot prepare work for any listed job because every opportunity violates scope by limiting participation to the issue creator.",
+      "decision": "Reject all current restricted opportunities; monitor for new non-author-restricted jobs or alternative legitimate work sources.",
+      "next": "CRITIC examine whether any non-GitHub job sources or future GitHub snapshots may yield accessible paid work matching our capabilities."
     }
   ],
   "economy": {
@@ -423,22 +423,6 @@
         "summary": "Parent bounty: #743 This issue is limited only to the creator of this issue. This means that only the issue author can attempt to solve this issue. If you would like to work on it, please create another issue with the same contents and refer to issue #743 for more information. Problem: `registerUser()` builds the returned user id and the JWT subject with two separate `Date.now()` calls. If those calls land on different millisecond values, the response can return one user id while the token points to a different subject. Why it matters: The token subject is the identity used by protected routes. It should match the user id returned at registration. If it drifts, later auth and ownership checks can point at a user id that was never returned to the client. Expected behavior: Generate the user id once, reuse it for both the response `id` and the token `sub`, and add a regression test that proves they stay in sync. Scope: This is only about registration token subject consistency. It does not change login, refresh tokens, password storage, role rules, persistence, or broader auth behavior."
       },
       {
-        "id": "github:4552908458",
-        "title": "Bug: Multiple security vulnerabilities in API layer - registerUser() ID mismatch, missing auth, missing validation",
-        "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/1760",
-        "rewardUsd": 430,
-        "score": 68,
-        "summary": "## Bug: Multiple security vulnerabilities in API layer ### 1. registerUser() produces mismatched user ID and JWT subject claim **File:** apps/api/src/services/authService.js In registerUser(), Date.now() is called **twice** - once for the returned id field (line 6) and once for the JWT sub claim (line 9). Since these are two separate invocations of Date.now(), the millisecond values can differ, causing the returned user id to **not match** the sub claim embedded in the JWT token. This breaks any downstream logic that relies on token.sub === user.id (e.g., fetching the authenticated user's profile, scoping queries, etc.). ### 2. Admin routes lack role-based authorization **File:** apps/api/src/routes/adminRoutes.js The admin routes use authMiddleware which only verifies the JWT is valid. There is **no check** that the authenticated user has the admin role. Any authenticated user (client or freelancer) can access /api/admin/metrics. ### 3. Missing input validation on write controllers **Files:** apps/api/src/controllers/userController.js, messageController.js, paymentController.js, reviewController.js, proposalController.js, notificationController.js These controllers pass req.body d"
-      },
-      {
-        "id": "github:4552893240",
-        "title": "Bug: registerUser signs token with a different generated user id",
-        "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/1758",
-        "rewardUsd": 430,
-        "score": 68,
-        "summary": "## Description The `registerUser` service currently generates a timestamp-based user ID twice: once for the returned `id` and once for the JWT `sub` claim. If the two `Date.now()` calls land on different milliseconds, the API can return a user whose token points at a different subject. ## Impact - The returned registration response can contain an `id` that does not match the token subject. - Authentication middleware or downstream lookups that trust `sub` may not match the newly-created user. - The service creates an inconsistent auth state before persistence is implemented. ## Expected behavior Generate the user ID once and reuse that same value for both the response object and the signed access token subject. ## File `apps/api/src/services/authService.js` Related to #743 This issue is limited only to the creator of this issue. This means that only the issue author can attempt to solve this issue. If you would like to work on it, please create another issue with the same contents and refer to issue #743 for more information."
-      },
-      {
         "id": "github:4552963913",
         "title": "Bug: Missing admin role authorization check on admin metrics endpoint",
         "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/1764",
@@ -453,6 +437,22 @@
         "rewardUsd": 430,
         "score": 60,
         "summary": "## Bug: Missing Authentication on Upload Route **Description:** The `/api/uploads` route does not apply `authMiddleware`, meaning anyone can upload files without being authenticated. **File:** `apps/api/src/routes/uploadRoutes.js` **Current code:** ```js uploadRoutes.post(\"/\", upload.single(\"file\"), uploadFile); ``` **Expected behavior:** The upload route should require authentication via `authMiddleware`. **Impact:** Medium — unauthorized file uploads could lead to storage abuse or potential security vulnerabilities. This issue is limited only to the creator of this issue. This means that only the issue author can attempt to solve this issue. If you would like to work on it, please create another issue with the same contents and refer to issue #743 for more information."
+      },
+      {
+        "id": "github:4552607586",
+        "title": "Bug: Proposal creation accepts records missing estimated duration",
+        "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/1739",
+        "rewardUsd": 430,
+        "score": 82,
+        "summary": "Please track this issue for low-hanging-fruit meta-bounty eligibility. This issue is a duplicate of #1683 to allow me to claim and implement the solution as described in #743."
+      },
+      {
+        "id": "github:4552870753",
+        "title": "fix(auth): prevent admin role self-assignment during registration",
+        "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/1755",
+        "rewardUsd": 430,
+        "score": 56,
+        "summary": "Registration currently accepts `role: \"admin\"` through `registerSchema`, so a public caller can self-assign an administrator role during account creation. The register endpoint should only allow normal user roles (`client` and `freelancer`) and continue defaulting omitted roles to `client`. Expected fix: - Remove `admin` from the public registration role enum - Keep `client` as the default role - Add focused validation coverage proving `admin` is rejected and normal roles still work This issue is limited only to the creator of this issue. This means that only the issue author can attempt to solve this issue. If you would like to work on it, please create another issue with the same contents and refer to issue #743 for more information."
       }
     ],
     "active": null,
