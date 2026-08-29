@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-08-28T17:30:32.709Z",
+  "updatedAt": "2026-08-29T01:08:45.502Z",
   "status": "selected",
   "source": "github-public-issues",
   "opportunities": [
@@ -43,6 +43,48 @@
       },
       "realMoneyEligible": true,
       "economicValueUsd": 430,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:4557180255",
+      "source": "github",
+      "title": "POST /api/reviews endpoint missing authentication middleware (reissue via #743)",
+      "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/2776",
+      "repositoryApiUrl": "https://api.github.com/repos/SecureBananaLabs/bug-bounty",
+      "rewardUsd": 780,
+      "score": 74,
+      "labels": [
+        "bug",
+        "enhancement",
+        "good first issue",
+        "help wanted",
+        "bug bounty",
+        "AI agent friendly",
+        "bounty",
+        "💎 Bounty",
+        "$780"
+      ],
+      "commentCount": 8,
+      "updatedAt": "2026-08-29T01:05:40Z",
+      "summary": "## Security: Unauthenticated review creation endpoint **Description:** The API exposes `POST /api/reviews` without auth middleware, allowing unauthenticated users to create reviews. **File:** `apps/api/src/routes/reviewRoutes.js` **Current code:** ```js reviewRoutes.post(\"/\", postReview); ``` **Expected behavior:** Require `authMiddleware` before `postReview`. **Impact:** Medium ? unauthorized review spam and abuse of reputation flows. Reference bounty coordinator issue: #743 This reissue is opened because original parent thread indicates creator-only attempt restrictions.",
+      "state": "candidate",
+      "payoutConfidence": 0.92,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": true,
+      "fastCashScore": 142,
+      "survivalEligible": false,
+      "eligibilityReason": "Competition is too high for bootstrap mode.",
+      "competition": {
+        "comments": 8,
+        "attemptSignals": 0,
+        "risk": "medium"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 780,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -169,47 +211,6 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:4552870753",
-      "source": "github",
-      "title": "fix(auth): prevent admin role self-assignment during registration",
-      "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/1755",
-      "repositoryApiUrl": "https://api.github.com/repos/SecureBananaLabs/bug-bounty",
-      "rewardUsd": 430,
-      "score": 56,
-      "labels": [
-        "bug",
-        "good first issue",
-        "help wanted",
-        "bug bounty",
-        "AI agent friendly",
-        "bounty",
-        "💎 Bounty",
-        "$430"
-      ],
-      "commentCount": 4,
-      "updatedAt": "2026-08-27T22:08:54Z",
-      "summary": "Registration currently accepts `role: \"admin\"` through `registerSchema`, so a public caller can self-assign an administrator role during account creation. The register endpoint should only allow normal user roles (`client` and `freelancer`) and continue defaulting omitted roles to `client`. Expected fix: - Remove `admin` from the public registration role enum - Keep `client` as the default role - Add focused validation coverage proving `admin` is rejected and normal roles still work This issue is limited only to the creator of this issue. This means that only the issue author can attempt to solve this issue. If you would like to work on it, please create another issue with the same contents and refer to issue #743 for more information.",
-      "state": "candidate",
-      "payoutConfidence": 0.92,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": true,
-      "fastCashScore": 140,
-      "survivalEligible": false,
-      "eligibilityReason": "Competition is too high for bootstrap mode.",
-      "competition": {
-        "comments": 4,
-        "attemptSignals": 1,
-        "risk": "medium"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 430,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
       "id": "github:4552703674",
       "source": "github",
       "title": "fix: prevent admin role self-assignment during registration",
@@ -244,47 +245,6 @@
       "competition": {
         "comments": 5,
         "attemptSignals": 1,
-        "risk": "medium"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 430,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:4553022084",
-      "source": "github",
-      "title": "User creation endpoint has no input validation",
-      "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/1773",
-      "repositoryApiUrl": "https://api.github.com/repos/SecureBananaLabs/bug-bounty",
-      "rewardUsd": 430,
-      "score": 60,
-      "labels": [
-        "bug",
-        "good first issue",
-        "help wanted",
-        "bug bounty",
-        "AI agent friendly",
-        "bounty",
-        "💎 Bounty",
-        "$430"
-      ],
-      "commentCount": 12,
-      "updatedAt": "2026-08-27T22:08:55Z",
-      "summary": "## Bug: Missing Input Validation on User Creation **Description:** The `POST /api/users` endpoint does not validate input with Zod schema, unlike auth and job routes which use proper validation. This allows arbitrary data to be stored as user records. **File:** `apps/api/src/controllers/userController.js` **Current code:** ```js export async function postUser(req, res) { return ok(res, await createUser(req.body), 201); } ``` **Expected behavior:** A Zod validation schema should be created for user creation (similar to `registerSchema` and `createJobSchema`) and applied before passing data to the service layer. **Impact:** Medium — allows malformed or malicious data to be persisted as user records. This issue is limited only to the creator of this issue. This means that only the issue author can attempt to solve this issue. If you would like to work on it, please create another issue with the same contents and refer to issue #743 for more information.",
-      "state": "candidate",
-      "payoutConfidence": 0.92,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": true,
-      "fastCashScore": 136,
-      "survivalEligible": false,
-      "eligibilityReason": "Competition is too high for bootstrap mode.",
-      "competition": {
-        "comments": 12,
-        "attemptSignals": 0,
         "risk": "medium"
       },
       "realMoneyEligible": true,
@@ -333,35 +293,48 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5227477302",
+      "id": "github:4975260101",
       "source": "github",
-      "title": "[Bug bounty follow-up] tarsnap-recrypt can commit old-machine deletes while retaining a stale chunk directory",
-      "url": "https://github.com/Tarsnap/tarsnap/issues/757",
-      "repositoryApiUrl": "https://api.github.com/repos/Tarsnap/tarsnap",
-      "rewardUsd": 500,
-      "score": 46,
-      "labels": [],
-      "commentCount": 2,
-      "updatedAt": "2026-08-28T17:07:02Z",
-      "summary": "# [Bug bounty follow-up] tarsnap-recrypt can commit old-machine deletes while retaining a stale chunk directory I found a reproducible non-security crash-consistency gap in current `master` commit `0bf0b299fed91139044c81cc6fcdc5521c34d235` (`1.0.41-head`), after the fix for #746 / PR #747. At the end of `tarsnap-recrypt`, the old-machine delete transaction can be committed without any post-delete chunk directory being staged. An interruption or `unlink` failure immediately after that commit leaves a current sequence number but an old local directory which still claims that the deleted chunks exist. Disclosure: this issue was prepared with OpenAI Codex, an LLM, working on behalf of Sebastian Albrecht. The source path, commit state, subsequent deduplication decision, and fix control were independently rerun locally. Sebastian is available to discuss the report and answer technical questions. ## Cause The success tail in `recrypt/recrypt.c` performs: ```c storage_delete_end(SD); multitape_commit(ocachedir, omachinenum, oseqnum, 1, &storage_modified); unlink(odirpath); ``` Unlike a normal chunk deletion, this path never calls `chunks_delete_end` or `chunks_directory_write(..., \".tmp\")`",
+      "title": "Automate Bug Detection and Reviews",
+      "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/11398",
+      "repositoryApiUrl": "https://api.github.com/repos/SecureBananaLabs/bug-bounty",
+      "rewardUsd": 780,
+      "score": 72,
+      "labels": [
+        "bug",
+        "documentation",
+        "enhancement",
+        "good first issue",
+        "help wanted",
+        "bug bounty",
+        "AI agent friendly",
+        "bounty",
+        "💎 Bounty",
+        "$780",
+        "$1k",
+        "$1.2k"
+      ],
+      "commentCount": 20,
+      "updatedAt": "2026-08-28T18:51:33Z",
+      "summary": "Automate Low Hanging fruit bug detection and issue creation recursively. This issue is an issue focused on creating more issues: 1. Find a feature/bug to work on from this repository 2. Create a GitHub issue on the repository to start working on it -- Pull requests without issues will not be considered. 3. Use the following string in the issue that you created: \"This issue is limited only to the creator of this issue. This means that only the issue author can attempt to solve this issue. If you would like to work on it, please create another issue with the same contents and refer to issue #11398 for more information.\" Follow all instructions carefully and precisely. /bounty $800 Bounties can only be paid upon successful PR merge.",
       "state": "candidate",
-      "payoutConfidence": 0.5,
+      "payoutConfidence": 0.92,
       "autonomyFit": 1,
       "requiresHumanGate": false,
       "requiresSpecialHardware": false,
       "estimatedHoursBand": 4,
       "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 115,
+      "fundedBountySignal": true,
+      "fastCashScore": 116,
       "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "eligibilityReason": "Competition is too high for bootstrap mode.",
       "competition": {
-        "comments": 2,
-        "attemptSignals": 0,
-        "risk": "low"
+        "comments": 20,
+        "attemptSignals": 1,
+        "risk": "high"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 500,
+      "economicValueUsd": 780,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -376,8 +349,8 @@
         "wayfinder:map"
       ],
       "commentCount": 0,
-      "updatedAt": "2026-08-28T12:56:33Z",
-      "summary": "## Destination Reproduce all 7 cross-sectional/stat-arb strategies from the Closed map **Cross-sectional crypto strategies from the literature** on a broad, real Bybit daily universe, and land a per-strategy summary (universe count, per-coin coverage, net Sharpe/PnL/trades, honest caveats). Plan only — this map charts the route; execution is handed off after the way is clear. ## Notes - **Domain**: crypto perpetual futures backtesting on the sbt multi-instrument portfolio engine (`SBTPortfolioStrategy`). Skills: `grilling`, `domain-modeling` for any HITL decision; `research` for any AFK fact-gathering. - **The 7 strategies** (in `sbt/strategies/ohlc/xsectional/`): `factor_long_short`, `zaremba_reversal`, `momentum_reversal`, `size_volume_momentum`, `ts_xs_momentum`, `momentum_winners` (cross-sectional over a basket), and `cointegrated_arb` (fixed BTC/ETH/BCH/LTC basket — isolated, not cross-sectional). All validated headless on synthetic bars; none run against real feathers yet. - **Universe**: all Bybit USDT linear perps (~741 — the real ceiling; \"top 1000\" is unreachable from Bybit alone). Existing disk universe is ~132 daily coins. Symbol form on disk/exchange: `SYMBOLUSDT:USDT`",
+      "updatedAt": "2026-08-28T22:35:22Z",
+      "summary": "## Destination Reproduce all 7 cross-sectional/stat-arb strategies from the Closed map **Cross-sectional crypto strategies from the literature** on a broad, real Bybit daily universe, and land a per-strategy summary (universe count, per-coin coverage, net Sharpe/PnL/trades, honest caveats). Plan only — this map charts the route; execution is handed off after the way is clear. ## Notes - **Domain**: crypto perpetual futures backtesting on the sbt multi-instrument portfolio engine (`SBTPortfolioStrategy`). Skills: `grilling`, `domain-modeling` for any HITL decision; `research` for any AFK fact-gathering. - **The 7 strategies** (in `sbt/strategies/ohlc/xsectional/`): `factor_long_short`, `zaremba_reversal`, `momentum_reversal`, `size_volume_momentum`, `ts_xs_momentum`, `momentum_winners` (cross-sectional over a basket), and `cointegrated_arb` (fixed BTC/ETH/BCH/LTC basket — isolated, not cross-sectional). All validated headless on synthetic bars; none run against real feathers yet. - **Universe**: all Bybit USDT linear perps (~741 — the real ceiling; \"top 1000\" is unreachable from Bybit alone). **Disk reality: 195 Bybit daily-bar files; 119 have data from 2024-01-01; 183 have data fro",
       "state": "candidate",
       "payoutConfidence": 0.35,
       "autonomyFit": 1,
@@ -399,17 +372,23 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5175979580",
+      "id": "github:4978781829",
       "source": "github",
-      "title": "Missing Compendium Reward: Tyrian Regalia Treasure not awarded (TI 2025)",
-      "url": "https://github.com/ValveSoftware/Dota2-Gameplay/issues/34491",
-      "repositoryApiUrl": "https://api.github.com/repos/ValveSoftware/Dota2-Gameplay",
-      "rewardUsd": 2025,
-      "score": 40,
-      "labels": [],
-      "commentCount": 1,
-      "updatedAt": "2026-08-28T17:28:56Z",
-      "summary": "Steam ID: [1719992139] Bug Description: I reached the required percentile for the Tyrian Regalia treasure reward during The International 2025, but the treasure was never delivered to my inventory. Steps to Reproduce. Screenshot attached showing my TI 2025 Compendium progression page. <img width=\"1919\" height=\"1079\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/fcd91d02-a7b9-4a30-9ec0-71d308bbc179\" />",
+      "title": "[SDK] Migrate liquidity.ts input validation to zod schemas",
+      "url": "https://github.com/CoralSwap-Finance/coralswap-sdk/issues/491",
+      "repositoryApiUrl": "https://api.github.com/repos/CoralSwap-Finance/coralswap-sdk",
+      "rewardUsd": 200,
+      "score": 48,
+      "labels": [
+        "enhancement",
+        "sdk",
+        "complexity:medium",
+        "Stellar Wave",
+        "wave-eligible"
+      ],
+      "commentCount": 4,
+      "updatedAt": "2026-08-29T00:52:55Z",
+      "summary": "**Reward:** 200 Wave points ## Context Add/remove liquidity validates token amounts, addresses, and slippage parameters via hand-written checks. Adopting the shared zod schema pattern (companion issue in this batch) here centralizes this module's input contract. ## What to implement - Define zod schemas for add/remove liquidity parameters - Replace the manual checks with schema validation, surfacing the SDK's existing `ValidationError` on failure - Confirm all existing validation rules are preserved exactly ## Acceptance criteria - [ ] Manual validation replaced by zod schema validation - [ ] All existing validation test cases still pass with equivalent or better error messages - [ ] No validation rule is silently dropped in the migration",
       "state": "candidate",
       "payoutConfidence": 0.35,
       "autonomyFit": 1,
@@ -418,16 +397,16 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 109,
+      "fastCashScore": 105,
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
-        "comments": 1,
+        "comments": 4,
         "attemptSignals": 0,
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 2025,
+      "economicValueUsd": 200,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -468,43 +447,6 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5276725964",
-      "source": "github",
-      "title": "[Enhancement] D1 lesson service analytics — track usage and knowledge gaps",
-      "url": "https://github.com/Ikalus1988/MisakaNet/issues/1357",
-      "repositoryApiUrl": "https://api.github.com/repos/Ikalus1988/MisakaNet",
-      "rewardUsd": 100,
-      "score": 72,
-      "labels": [
-        "enhancement",
-        "ready",
-        "agent-friendly",
-        "zero-bounty"
-      ],
-      "commentCount": 4,
-      "updatedAt": "2026-08-28T17:18:11Z",
-      "summary": "## Background D1 lesson service is live with 314 lessons, but we have no visibility into: - Which lessons are most searched/viewed - Which queries return no results (knowledge gaps) - API latency and error rates ## Goal Add **observability** to the D1 lesson service via a lightweight analytics endpoint. ## Requirements ### 1. Usage Tracking Table Create a D1 table for analytics: ```sql CREATE TABLE IF NOT EXISTS lesson_usage ( id INTEGER PRIMARY KEY AUTOINCREMENT, event TEXT NOT NULL, -- 'search', 'get_lesson', 'no_match' query TEXT, -- search query (if applicable) lesson_id TEXT, -- lesson accessed (if applicable) domain TEXT, -- lesson domain ip TEXT, -- anonymized IP (first 2 octets only) user_agent TEXT, -- agent name/version created_at TEXT DEFAULT (datetime('now')) ); CREATE INDEX idx_usage_event ON lesson_usage(event); CREATE INDEX idx_usage_created ON lesson_usage(created_at); ``` ### 2. Track Events In `workers/register-proxy-sw.js`: - Log `search` events with query + results count - Log `get_lesson` events with lesson_id - Log `no_match` events for knowledge gaps - Anonymize IP: `192.168.x.x` → `192.168.0.0` ### 3. Analytics Endpoint New endpoint: `GET /api/analytics` - T",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 93,
-      "survivalEligible": false,
-      "eligibilityReason": "Competition is too high for bootstrap mode.",
-      "competition": {
-        "comments": 4,
-        "attemptSignals": 1,
-        "risk": "medium"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 100,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
       "id": "github:4563956966",
       "source": "github",
       "title": "parse_duration drops the days (d) unit",
@@ -537,6 +479,41 @@
       },
       "realMoneyEligible": true,
       "economicValueUsd": 50,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:3954481532",
+      "source": "github",
+      "title": "[BOUNTY] Write a Blog Post About Proof-of-Antiquity — 15 RTC",
+      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/282",
+      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
+      "rewardUsd": 15,
+      "score": 32,
+      "labels": [
+        "bounty",
+        "distribution"
+      ],
+      "commentCount": 51,
+      "updatedAt": "2026-08-29T01:05:21Z",
+      "summary": "## Write About Proof-of-Antiquity **Reward: 15 RTC** ### What To Do Publish a blog post on Dev.to, Hashnode, Medium, or your own site explaining RustChain Proof-of-Antiquity consensus. ### Requirements - 500+ words minimum - Explain how 1 CPU = 1 Vote works with hardware fingerprinting - Explain why vintage hardware earns more (antiquity multipliers) - Link to rustchain.org or the GitHub repo - Must stay published (no delete after claiming) ### Topics You Could Cover - How PoA differs from PoW and PoS - Why hardware identity prevents Sybil attacks - The silicon stratigraphy of computing eras - How a PowerPC G4 from 2002 earns 2.5x vs modern x86 - Anti-emulation: why VMs cant fake real hardware ### How To Claim 1. Publish your article 2. Reply here with direct link + RTC wallet",
+      "state": "candidate",
+      "payoutConfidence": 0.5,
+      "autonomyFit": 0.55,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": true,
+      "estimatedHoursBand": 30,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": -13,
+      "survivalEligible": false,
+      "eligibilityReason": "Too slow for bootstrap mode: first real cash currently requires a <=4 hour task.",
+      "competition": {
+        "comments": 51,
+        "attemptSignals": 2,
+        "risk": "high"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 15,
       "requiresPreclaimOrIdentity": false
     }
   ],
@@ -603,7 +580,7 @@
     }
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":97,\"updatedAt\":\"2026-08-27T22:09:05Z\",\"competition\":{\"comments\":22,\"attemptSignals\":3,\"risk\":\"high\"}},{\"id\":\"github:4552607586\",\"rewardUsd\":430,\"fastCashScore\":140,\"updatedAt\":\"2026-08-27T22:09:03Z\",\"competition\":{\"comments\":4,\"attemptSignals\":1,\"risk\":\"medium\"}},{\"id\":\"github:4552703674\",\"rewardUsd\":430,\"fastCashScore\":139,\"updatedAt\":\"2026-08-27T22:08:58Z\",\"competition\":{\"comments\":5,\"attemptSignals\":1,\"risk\":\"medium\"}},{\"id\":\"github:4552705295\",\"rewardUsd\":430,\"fastCashScore\":147,\"updatedAt\":\"2026-08-27T22:09:00Z\",\"competition\":{\"comments\":5,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4552822989\",\"rewardUsd\":430,\"fastCashScore\":134,\"updatedAt\":\"2026-08-27T22:08:57Z\",\"competition\":{\"comments\":8,\"attemptSignals\":1,\"risk\":\"medium\"}},{\"id\":\"github:4552870753\",\"rewardUsd\":430,\"fastCashScore\":140,\"updatedAt\":\"2026-08-27T22:08:54Z\",\"competition\":{\"comments\":4,\"attemptSignals\":1,\"risk\":\"medium\"}},{\"id\":\"github:4552963913\",\"rewardUsd\":430,\"fastCashScore\":142,\"updatedAt\":\"2026-08-27T22:09:04Z\",\"competition\":{\"comments\":8,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4553021672\",\"rewardUsd\":430,\"fastCashScore\":141,\"updatedAt\":\"2026-08-27T22:09:01Z\",\"competition\":{\"comments\":9,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4553022084\",\"rewardUsd\":430,\"fastCashScore\":136,\"updatedAt\":\"2026-08-27T22:08:55Z\",\"competition\":{\"comments\":12,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-27T22:12:06Z\",\"competition\":{\"comments\":48,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5175979580\",\"rewardUsd\":2025,\"fastCashScore\":109,\"updatedAt\":\"2026-08-28T17:28:56Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5227477302\",\"rewardUsd\":500,\"fastCashScore\":115,\"updatedAt\":\"2026-08-28T17:07:02Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5276171239\",\"rewardUsd\":10,\"fastCashScore\":106,\"updatedAt\":\"2026-08-28T17:23:21Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5276172323\",\"rewardUsd\":15,\"fastCashScore\":108,\"updatedAt\":\"2026-08-28T17:23:18Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5276725964\",\"rewardUsd\":100,\"fastCashScore\":93,\"updatedAt\":\"2026-08-28T17:18:11Z\",\"competition\":{\"comments\":4,\"attemptSignals\":1,\"risk\":\"medium\"}},{\"id\":\"github:5278225619\",\"rewardUsd\":741,\"fastCashScore\":111,\"updatedAt\":\"2026-08-28T12:56:33Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:3954481532\",\"rewardUsd\":15,\"fastCashScore\":-13,\"updatedAt\":\"2026-08-29T01:05:21Z\",\"competition\":{\"comments\":51,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":97,\"updatedAt\":\"2026-08-27T22:09:05Z\",\"competition\":{\"comments\":22,\"attemptSignals\":3,\"risk\":\"high\"}},{\"id\":\"github:4552607586\",\"rewardUsd\":430,\"fastCashScore\":140,\"updatedAt\":\"2026-08-27T22:09:03Z\",\"competition\":{\"comments\":4,\"attemptSignals\":1,\"risk\":\"medium\"}},{\"id\":\"github:4552703674\",\"rewardUsd\":430,\"fastCashScore\":139,\"updatedAt\":\"2026-08-27T22:08:58Z\",\"competition\":{\"comments\":5,\"attemptSignals\":1,\"risk\":\"medium\"}},{\"id\":\"github:4552705295\",\"rewardUsd\":430,\"fastCashScore\":147,\"updatedAt\":\"2026-08-27T22:09:00Z\",\"competition\":{\"comments\":5,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4552822989\",\"rewardUsd\":430,\"fastCashScore\":134,\"updatedAt\":\"2026-08-27T22:08:57Z\",\"competition\":{\"comments\":8,\"attemptSignals\":1,\"risk\":\"medium\"}},{\"id\":\"github:4552963913\",\"rewardUsd\":430,\"fastCashScore\":142,\"updatedAt\":\"2026-08-27T22:09:04Z\",\"competition\":{\"comments\":8,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4553021672\",\"rewardUsd\":430,\"fastCashScore\":141,\"updatedAt\":\"2026-08-27T22:09:01Z\",\"competition\":{\"comments\":9,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4557180255\",\"rewardUsd\":780,\"fastCashScore\":142,\"updatedAt\":\"2026-08-29T01:05:40Z\",\"competition\":{\"comments\":8,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-27T22:12:06Z\",\"competition\":{\"comments\":48,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:4975260101\",\"rewardUsd\":780,\"fastCashScore\":116,\"updatedAt\":\"2026-08-28T18:51:33Z\",\"competition\":{\"comments\":20,\"attemptSignals\":1,\"risk\":\"high\"}},{\"id\":\"github:4978781829\",\"rewardUsd\":200,\"fastCashScore\":105,\"updatedAt\":\"2026-08-29T00:52:55Z\",\"competition\":{\"comments\":4,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5251241758\",\"rewardUsd\":282,\"fastCashScore\":98,\"updatedAt\":\"2026-08-29T01:05:19Z\",\"competition\":{\"comments\":13,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5278225619\",\"rewardUsd\":741,\"fastCashScore\":111,\"updatedAt\":\"2026-08-28T22:35:22Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5283412145\",\"rewardUsd\":12.35519,\"fastCashScore\":96,\"updatedAt\":\"2026-08-29T00:19:47Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
@@ -615,11 +592,29 @@
     "maxHours": 4,
     "minPayoutConfidence": 0.8,
     "competitionRequired": "low",
-    "rejectedFakeRevenueCount": 2,
-    "rejectedAlreadyPaidCount": 0,
-    "rejectedIdentityGateCount": 2
+    "rejectedFakeRevenueCount": 1,
+    "rejectedAlreadyPaidCount": 1,
+    "rejectedIdentityGateCount": 0
   },
   "economicallyRejected": [
+    {
+      "id": "github:5251241758",
+      "title": "[BOUNTY ROUND] Distribution Packages — agents build it, humans publish it (YouTube, Shorts, syndication) — 15-60 RTC",
+      "rewardUsd": 282,
+      "reasons": [
+        "already_rewarded_or_paid"
+      ],
+      "rejectedAt": "2026-08-29T01:08:45.447Z"
+    },
+    {
+      "id": "github:5283412145",
+      "title": "Orbit Testnet daily report: 2026-08-28",
+      "rewardUsd": 12.35519,
+      "reasons": [
+        "testnet_or_test_token_reward"
+      ],
+      "rejectedAt": "2026-08-29T01:08:45.447Z"
+    },
     {
       "id": "github:5276172323",
       "title": "[Bug] FileUpload input has duplicate id and aria-describedby attributes",
@@ -774,15 +769,6 @@
         "preclaim_or_identity_gate_not_configured"
       ],
       "rejectedAt": "2026-08-26T03:59:18.961Z"
-    },
-    {
-      "id": "github:5251241758",
-      "title": "[BOUNTY ROUND] Distribution Packages — agents build it, humans publish it (YouTube, Shorts, syndication) — 15-60 RTC",
-      "rewardUsd": 282,
-      "reasons": [
-        "already_rewarded_or_paid"
-      ],
-      "rejectedAt": "2026-08-25T23:57:44.268Z"
     },
     {
       "id": "github:5248303259",
