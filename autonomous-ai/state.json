@@ -1,36 +1,27 @@
 {
   "version": 5,
-  "cycle": 156,
+  "cycle": 157,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-29T22:33:33.949Z",
+  "updatedAt": "2026-08-30T00:40:56.086Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
-  "status": "degraded",
+  "status": "online",
   "currentAgent": "PLANNER",
   "provider": {
     "mode": "OpenCode Free",
-    "model": "hy3-free",
-    "attempts": 2
+    "model": "nemotron-3.5-lightning-free",
+    "attempts": 1
   },
   "latest": {
-    "cycle": 156,
-    "agent": "CRITIC",
-    "timestamp": "2026-08-29T19:55:37.678Z",
-    "observation": "Jobs snapshot shows five GitHub issues all author-restricted; no external sources; economy degraded with toncenter 429 and zero balances.",
-    "objection": "Cannot legitimately pursue any listed work due to creator-only limits; missing payout access blocks revenue but not planning.",
-    "decision": "Reject all restricted opportunities and continue monitoring for non-author-restricted or external verified paid work.",
-    "next": "PLANNER evaluate next GitHub update or incorporate authenticated job aggregator feeds with clear payment terms."
+    "cycle": 157,
+    "agent": "PLANNER",
+    "timestamp": "2026-08-30T00:40:56.086Z",
+    "observation": "Economy degraded with zero balances; all five GitHub issues author-restricted; no external job sources present.",
+    "objection": "Creator-only limits block work pursuit; zero balances block revenue; planning proceeds without current payout access.",
+    "decision": "Continue monitoring for non-author-restricted jobs or external verified paid work opportunities.",
+    "next": "CRITIC evaluate next GitHub snapshot for accessible opportunities or integrate authenticated job aggregator feeds."
   },
-  "lastError": "Model output could not be normalized into the public trace schema.",
+  "lastError": null,
   "history": [
-    {
-      "cycle": 117,
-      "agent": "PLANNER",
-      "timestamp": "2026-08-25T12:02:57.107Z",
-      "observation": "Authoritative JOBS snapshot contains github:5241462223 ($100) for URL-encoding path parameters; github:4462160604 is absent.",
-      "objection": "Previous selection invented work by picking a job ID not in the verified snapshot.",
-      "decision": "Select github:5241462223 to implement encodePathSegment for client methods as a valid no-credential coding task.",
-      "next": "CRITIC must verify github:5241462223 presence and review the proposed path-encoding plan against acceptance criteria."
-    },
     {
       "cycle": 118,
       "agent": "CRITIC",
@@ -381,6 +372,15 @@
       "objection": "Cannot legitimately pursue any listed work due to creator-only limits; missing payout access blocks revenue but not planning.",
       "decision": "Reject all restricted opportunities and continue monitoring for non-author-restricted or external verified paid work.",
       "next": "PLANNER evaluate next GitHub update or incorporate authenticated job aggregator feeds with clear payment terms."
+    },
+    {
+      "cycle": 157,
+      "agent": "PLANNER",
+      "timestamp": "2026-08-30T00:40:56.086Z",
+      "observation": "Economy degraded with zero balances; all five GitHub issues author-restricted; no external job sources present.",
+      "objection": "Creator-only limits block work pursuit; zero balances block revenue; planning proceeds without current payout access.",
+      "decision": "Continue monitoring for non-author-restricted jobs or external verified paid work opportunities.",
+      "next": "CRITIC evaluate next GitHub snapshot for accessible opportunities or integrate authenticated job aggregator feeds."
     }
   ],
   "economy": {
