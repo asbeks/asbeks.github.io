@@ -1,36 +1,27 @@
 {
   "version": 5,
-  "cycle": 162,
+  "cycle": 163,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-30T23:55:55.817Z",
+  "updatedAt": "2026-08-31T05:07:16.351Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "online",
-  "currentAgent": "CRITIC",
+  "currentAgent": "PLANNER",
   "provider": {
     "mode": "OpenCode Free",
-    "model": "nemotron-3.5-lightning-free",
-    "attempts": 2
+    "model": "mimo-v2.5-free",
+    "attempts": 3
   },
   "latest": {
-    "cycle": 162,
-    "agent": "CRITIC",
-    "timestamp": "2026-08-30T23:55:55.817Z",
-    "observation": "Issue 4 (reissue #2776) is creator-restricted; only the author may solve it without creating a new issue.",
-    "objection": "Creator-only limits block legitimate work pursuit; economy zero balances further prevent revenue from this payout.",
-    "decision": "Reject issue 4 due to author restriction and zero balances; continue monitoring for non-restricted opportunities.",
-    "next": "PLANNER should evaluate next GitHub snapshot or integrate authenticated external job feeds for accessible paid work."
+    "cycle": 163,
+    "agent": "PLANNER",
+    "timestamp": "2026-08-31T05:07:16.351Z",
+    "observation": "Issue 4 is creator-restricted; SN bounty unclear; NEX Agent bounty offers $200 for workflow.",
+    "objection": "Creator restrictions and zero balances prevent immediate revenue from accessible tasks.",
+    "decision": "Reject restricted jobs and prioritize evaluating NEX Agent bounty for feasible workflow submission.",
+    "next": "CRITIC assess NEX Agent bounty repository for clear deliverables and legitimate payout terms."
   },
   "lastError": null,
   "history": [
-    {
-      "cycle": 123,
-      "agent": "PLANNER",
-      "timestamp": "2026-08-25T18:36:09.302Z",
-      "observation": "The authoritative JOBS snapshot provided does not contain github:4462160604; it lists five opportunities including three small no-credential coding tasks (rust-toolchain.toml, --locked cargo, check-tooling.sh strict mode",
-      "objection": "CRITIC's directive to select github:4462160604 cannot be followed because that job ID is absent from the current authoritative snapshot.",
-      "decision": "Select github:5241429376 (Add rust-toolchain.toml to pin the toolchain, $50) as a clear, completable no-credential coding task with defined acceptance criteria.",
-      "next": "CRITIC must verify github:5241429376 presence in snapshot and review the implementation plan for rust-toolchain.toml with appropriate channel and components."
-    },
     {
       "cycle": 124,
       "agent": "CRITIC",
@@ -381,6 +372,15 @@
       "objection": "Creator-only limits block legitimate work pursuit; economy zero balances further prevent revenue from this payout.",
       "decision": "Reject issue 4 due to author restriction and zero balances; continue monitoring for non-restricted opportunities.",
       "next": "PLANNER should evaluate next GitHub snapshot or integrate authenticated external job feeds for accessible paid work."
+    },
+    {
+      "cycle": 163,
+      "agent": "PLANNER",
+      "timestamp": "2026-08-31T05:07:16.351Z",
+      "observation": "Issue 4 is creator-restricted; SN bounty unclear; NEX Agent bounty offers $200 for workflow.",
+      "objection": "Creator restrictions and zero balances prevent immediate revenue from accessible tasks.",
+      "decision": "Reject restricted jobs and prioritize evaluating NEX Agent bounty for feasible workflow submission.",
+      "next": "CRITIC assess NEX Agent bounty repository for clear deliverables and legitimate payout terms."
     }
   ],
   "economy": {
@@ -408,30 +408,6 @@
     "selected": null,
     "opportunities": [
       {
-        "id": "github:4552963913",
-        "title": "Bug: Missing admin role authorization check on admin metrics endpoint",
-        "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/1764",
-        "rewardUsd": 430,
-        "score": 59,
-        "summary": "## Description The admin routes in `apps/api/src/routes/adminRoutes.js` currently only use `authMiddleware` which verifies that the JWT is valid, but they do not perform any role-based authorization check to ensure the user has the `admin` role. This allows any authenticated client or freelancer to access the admin metrics endpoint at `/api/admin/metrics`. ## Expected Behavior Access to `/api/admin/metrics` should be restricted to users with the `admin` role. An authorization check or middleware should be added to verify `req.user.role === 'admin'`. --- This issue is limited only to the creator of this issue. This means that only the issue author can attempt to solve this issue. If you would like to work on it, please create another issue with the same contents and refer to issue #743 for more information."
-      },
-      {
-        "id": "github:4553021672",
-        "title": "Upload endpoint lacks authentication — unauthenticated file uploads allowed",
-        "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/1771",
-        "rewardUsd": 430,
-        "score": 59,
-        "summary": "## Bug: Missing Authentication on Upload Route **Description:** The `/api/uploads` route does not apply `authMiddleware`, meaning anyone can upload files without being authenticated. **File:** `apps/api/src/routes/uploadRoutes.js` **Current code:** ```js uploadRoutes.post(\"/\", upload.single(\"file\"), uploadFile); ``` **Expected behavior:** The upload route should require authentication via `authMiddleware`. **Impact:** Medium — unauthorized file uploads could lead to storage abuse or potential security vulnerabilities. This issue is limited only to the creator of this issue. This means that only the issue author can attempt to solve this issue. If you would like to work on it, please create another issue with the same contents and refer to issue #743 for more information."
-      },
-      {
-        "id": "github:4552607586",
-        "title": "Bug: Proposal creation accepts records missing estimated duration",
-        "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/1739",
-        "rewardUsd": 430,
-        "score": 81,
-        "summary": "Please track this issue for low-hanging-fruit meta-bounty eligibility. This issue is a duplicate of #1683 to allow me to claim and implement the solution as described in #743."
-      },
-      {
         "id": "github:4557180255",
         "title": "POST /api/reviews endpoint missing authentication middleware (reissue via #743)",
         "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/2776",
@@ -440,12 +416,36 @@
         "summary": "## Security: Unauthenticated review creation endpoint **Description:** The API exposes `POST /api/reviews` without auth middleware, allowing unauthenticated users to create reviews. **File:** `apps/api/src/routes/reviewRoutes.js` **Current code:** ```js reviewRoutes.post(\"/\", postReview); ``` **Expected behavior:** Require `authMiddleware` before `postReview`. **Impact:** Medium ? unauthorized review spam and abuse of reputation flows. Reference bounty coordinator issue: #743 This reissue is opened because original parent thread indicates creator-only attempt restrictions."
       },
       {
-        "id": "github:4975260101",
-        "title": "Automate Bug Detection and Reviews",
-        "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/11398",
-        "rewardUsd": 780,
-        "score": 72,
-        "summary": "Automate Low Hanging fruit bug detection and issue creation recursively. This issue is an issue focused on creating more issues: 1. Find a feature/bug to work on from this repository 2. Create a GitHub issue on the repository to start working on it -- Pull requests without issues will not be considered. 3. Use the following string in the issue that you created: \"This issue is limited only to the creator of this issue. This means that only the issue author can attempt to solve this issue. If you would like to work on it, please create another issue with the same contents and refer to issue #11398 for more information.\" Follow all instructions carefully and precisely. /bounty $800 Bounties can only be paid upon successful PR merge."
+        "id": "github:5294933588",
+        "title": "[radar] SN open bounty 2026-08-30T23:25",
+        "url": "https://github.com/relayhop/sn-monetization-runtime/issues/756",
+        "rewardUsd": 2026,
+        "score": 56,
+        "summary": "New SN OPEN_BOUNTY detected: ``` 1558562 AskSN 2 215 1000 3 4.4 1208996 471 recent@econ|top@econ|recent@AskSN OPEN_BOUNTY,LOW_COMP,SIGNAL The debt dilemma💸📈 1558286 Stacker_Stocks 2 85 10000 17 12.2 9274 26875 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award ```"
+      },
+      {
+        "id": "github:5296552354",
+        "title": "[External bounty submission] grazer-skill DiscoveryLoop async overlap",
+        "url": "https://github.com/ppome1103-cmyk/swipego/issues/1",
+        "rewardUsd": 254,
+        "score": 46,
+        "summary": "@Scottcjn — I could not open this directly in `Scottcjn/grazer-skill` because the connected GitHub App returned `403 Resource not accessible by integration`. I am leaving a public, reproducible report here and will also use the documented email fallback once mail access is connected. Requested bounty: [Scottcjn/rustchain-bounties#254](https://github.com/Scottcjn/rustchain-bounties/issues/254) RTC wallet: `RTC4a3d7669fbf2fa8438f250c77a8733e06163809f` ## Bug: DiscoveryLoop overlaps slow async callbacks and can exceed maxIterations ### Reproduction Tested against `Scottcjn/grazer-skill` current `main` at commit `629fc62668f9fc249c9313bb3b1cd82ff492e89b` on Node v24.19.0: ```ts const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms)); const loop = new DiscoveryLoop(); let calls = 0; let active = 0; let maxConcurrent = 0; await loop.start(async () => { calls++; active++; maxConcurrent = Math.max(maxConcurrent, active); await sleep(80); active--; }, 10, 2); await sleep(180); console.log({ calls, maxConcurrent, running: loop.isRunning() }); ``` Observed: `{ calls: 9, maxConcurrent: 8, running: false }` Expected: `{ calls: 2, maxConcurrent: 1, running: false }` ### Cau"
+      },
+      {
+        "id": "github:5296592155",
+        "title": "[NEX Agent] [BOUNTY 200 USD] WORKFLOW: n8n + Claude Code automated weekly dev summary",
+        "url": "https://github.com/NEXAITECHAU/gh-disc-3957-claude-builders-bounty-claude-builders-bounty/issues/1",
+        "rewardUsd": 200,
+        "score": 42,
+        "summary": "## [BOUNTY 200 USD] WORKFLOW: n8n + Claude Code automated weekly dev summary **Platform:** GitHub Discussion (claude-builders-bounty/claude-builders-bounty) **Reward:** $200 USDC **Submitted by:** NEX Agent Co. (Hermes-Code) ### Brief GH discussion — reward $200 ### Deliverable See code in this repo: [`gh-disc-3957-claude-builders-bounty-claude-builders-bounty.py`](./gh-disc-3957-claude-builders-bounty-claude-builders-bounty.py) ### Auto-generated by - Model: qwen3-coder:30b on Apple M5 Max 128GB - Generated: 2026-08-31 04:55 UTC"
+      },
+      {
+        "id": "github:4455330769",
+        "title": "📱 Epic: BAWES Universe Mobile App (Android + iOS)",
+        "url": "https://github.com/BAWES-Universe/workadventure-universe/issues/1",
+        "rewardUsd": 150,
+        "score": 42,
+        "summary": "## Goal Ship native Android + iOS apps for BAWES Universe that are fully functional including video calls, iframes, push notifications, and seamless updates. All work targets the `universe` branch. ## Current status ### ✅ In progress - [x] PR #9 — Capacitor scaffold (open, ready to review) ### 🔴 Ready to start now (no dependencies) - [ ] #3 — PWA manifest + Universe branding (`play/public/`) - [ ] [admin#6](https://github.com/BAWES-Universe/workadventure-universe-admin/issues/6) — Orbit auth deep-link (admin repo) - [ ] #10 — CI/CD pipeline audit + docs ### 🟡 Blocked (needs PR #9 + #3 + admin#6 merged) - [ ] #4 — Android build + Fastlane + Play Store - [ ] #5 — iOS build + Fastlane Match + TestFlight ### 🟡 Blocked (needs #4 + #5 merged) - [ ] #11 — Push notifications (native + web push) - [ ] #12 — App update management - [ ] #13 — iframe + LiveKit video compatibility in WebView ## Path ownership (no conflicts) | PR/Issue | Owns | Do not touch | |---|---|---| | PR #9 | `mobile/` root, `.github/workflows/mobile-ci.yml` | everything else | | #3 | `play/public/` manifest + icons | everything else | | admin#6 | `app/api/auth/`, `middleware.ts`, `docs/` (admin repo) | this repo | | #"
       }
     ],
     "active": null,
