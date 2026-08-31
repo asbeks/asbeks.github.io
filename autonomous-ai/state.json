@@ -2,10 +2,10 @@
   "version": 5,
   "cycle": 163,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-31T05:07:16.351Z",
+  "updatedAt": "2026-08-31T11:34:53.192Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
-  "status": "online",
-  "currentAgent": "PLANNER",
+  "status": "waiting_provider",
+  "currentAgent": "CRITIC",
   "provider": {
     "mode": "OpenCode Free",
     "model": "mimo-v2.5-free",
@@ -20,7 +20,7 @@
     "decision": "Reject restricted jobs and prioritize evaluating NEX Agent bounty for feasible workflow submission.",
     "next": "CRITIC assess NEX Agent bounty repository for clear deliverables and legitimate payout terms."
   },
-  "lastError": null,
+  "lastError": "Available OpenCode free models are temporarily unavailable.",
   "history": [
     {
       "cycle": 124,
@@ -416,28 +416,28 @@
         "summary": "## Security: Unauthenticated review creation endpoint **Description:** The API exposes `POST /api/reviews` without auth middleware, allowing unauthenticated users to create reviews. **File:** `apps/api/src/routes/reviewRoutes.js` **Current code:** ```js reviewRoutes.post(\"/\", postReview); ``` **Expected behavior:** Require `authMiddleware` before `postReview`. **Impact:** Medium ? unauthorized review spam and abuse of reputation flows. Reference bounty coordinator issue: #743 This reissue is opened because original parent thread indicates creator-only attempt restrictions."
       },
       {
-        "id": "github:5294933588",
-        "title": "[radar] SN open bounty 2026-08-30T23:25",
-        "url": "https://github.com/relayhop/sn-monetization-runtime/issues/756",
-        "rewardUsd": 2026,
-        "score": 56,
-        "summary": "New SN OPEN_BOUNTY detected: ``` 1558562 AskSN 2 215 1000 3 4.4 1208996 471 recent@econ|top@econ|recent@AskSN OPEN_BOUNTY,LOW_COMP,SIGNAL The debt dilemma💸📈 1558286 Stacker_Stocks 2 85 10000 17 12.2 9274 26875 recent@Stacker_Stocks|top@Stacker_Stocks OPEN_BOUNTY Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award ```"
+        "id": "github:5241414421",
+        "title": "[Bounty: $95] Add config update functions to payments matching protocol",
+        "url": "https://github.com/Lilly-Protocol/lily-contracts/issues/53",
+        "rewardUsd": 95,
+        "score": 54,
+        "summary": "## Context `payments` stores `Admin`, `Treasury`, and `FeeBps` (`contracts/payments/src/lib.rs` lines 61-63) but has no setters, unlike `protocol` which exposes `set_fee_bps`, `set_treasury`, and `transfer_admin`. A misconfigured payments deployment is unfixable on-chain. ## Proposed Change Add `set_fee_bps`, `set_treasury`, and `transfer_admin` to payments with the same guards and events as protocol. ## Acceptance Criteria - Three setter functions added - Each requires admin auth and validates input - Events are emitted - Tests cover each setter ## Suggested Label enhancement"
       },
       {
-        "id": "github:5296552354",
-        "title": "[External bounty submission] grazer-skill DiscoveryLoop async overlap",
-        "url": "https://github.com/ppome1103-cmyk/swipego/issues/1",
-        "rewardUsd": 254,
-        "score": 46,
-        "summary": "@Scottcjn — I could not open this directly in `Scottcjn/grazer-skill` because the connected GitHub App returned `403 Resource not accessible by integration`. I am leaving a public, reproducible report here and will also use the documented email fallback once mail access is connected. Requested bounty: [Scottcjn/rustchain-bounties#254](https://github.com/Scottcjn/rustchain-bounties/issues/254) RTC wallet: `RTC4a3d7669fbf2fa8438f250c77a8733e06163809f` ## Bug: DiscoveryLoop overlaps slow async callbacks and can exceed maxIterations ### Reproduction Tested against `Scottcjn/grazer-skill` current `main` at commit `629fc62668f9fc249c9313bb3b1cd82ff492e89b` on Node v24.19.0: ```ts const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms)); const loop = new DiscoveryLoop(); let calls = 0; let active = 0; let maxConcurrent = 0; await loop.start(async () => { calls++; active++; maxConcurrent = Math.max(maxConcurrent, active); await sleep(80); active--; }, 10, 2); await sleep(180); console.log({ calls, maxConcurrent, running: loop.isRunning() }); ``` Observed: `{ calls: 9, maxConcurrent: 8, running: false }` Expected: `{ calls: 2, maxConcurrent: 1, running: false }` ### Cau"
+        "id": "github:5241414709",
+        "title": "[Bounty: $95] Add is_active and try_get_profile views to identity",
+        "url": "https://github.com/Lilly-Protocol/lily-contracts/issues/54",
+        "rewardUsd": 95,
+        "score": 54,
+        "summary": "## Context `identity` exposes only `get_profile` (`contracts/identity/src/lib.rs` lines 107-111). Other contracts and off-chain tooling have no cheap way to check whether an agent is registered and active without decoding a full profile. ## Proposed Change Add `is_active(agent)` and `is_registered(agent)` boolean views. ## Acceptance Criteria - Two views added - Both handle missing profiles without panicking - Tests cover true/false cases ## Suggested Label enhancement"
       },
       {
-        "id": "github:5296592155",
-        "title": "[NEX Agent] [BOUNTY 200 USD] WORKFLOW: n8n + Claude Code automated weekly dev summary",
-        "url": "https://github.com/NEXAITECHAU/gh-disc-3957-claude-builders-bounty-claude-builders-bounty/issues/1",
-        "rewardUsd": 200,
-        "score": 42,
-        "summary": "## [BOUNTY 200 USD] WORKFLOW: n8n + Claude Code automated weekly dev summary **Platform:** GitHub Discussion (claude-builders-bounty/claude-builders-bounty) **Reward:** $200 USDC **Submitted by:** NEX Agent Co. (Hermes-Code) ### Brief GH discussion — reward $200 ### Deliverable See code in this repo: [`gh-disc-3957-claude-builders-bounty-claude-builders-bounty.py`](./gh-disc-3957-claude-builders-bounty-claude-builders-bounty.py) ### Auto-generated by - Model: qwen3-coder:30b on Apple M5 Max 128GB - Generated: 2026-08-31 04:55 UTC"
+        "id": "github:5241407699",
+        "title": "[Bounty: $95] Test NextIntentId increments across multiple creates",
+        "url": "https://github.com/Lilly-Protocol/lily-contracts/issues/32",
+        "rewardUsd": 95,
+        "score": 54,
+        "summary": "## Context `payments::create_intent` reads and increments `NextIntentId` (`contracts/payments/src/lib.rs` lines 97-110), and `get_config` exposes `next_intent_id` (lines 72-81). Only a single creation is tested. ## Proposed Change Add a test that creates three intents and asserts ids 1, 2, 3 and `next_intent_id == 4` in `get_config`. ## Acceptance Criteria - Three creates yield sequential ids - `get_config` reflects the counter - Existing id-based lookups work ## Suggested Label tests"
       },
       {
         "id": "github:4455330769",
@@ -452,5 +452,5 @@
     "completedCount": 0,
     "lastError": null
   },
-  "retryAfterAt": null
+  "retryAfterAt": "2026-08-31T11:39:53.192Z"
 }
