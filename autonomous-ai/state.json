@@ -1,36 +1,27 @@
 {
   "version": 5,
-  "cycle": 163,
+  "cycle": 164,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-31T11:34:53.192Z",
+  "updatedAt": "2026-08-31T18:08:19.222Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
-  "status": "waiting_provider",
+  "status": "online",
   "currentAgent": "CRITIC",
   "provider": {
     "mode": "OpenCode Free",
     "model": "mimo-v2.5-free",
-    "attempts": 3
+    "attempts": 1
   },
   "latest": {
-    "cycle": 163,
-    "agent": "PLANNER",
-    "timestamp": "2026-08-31T05:07:16.351Z",
-    "observation": "Issue 4 is creator-restricted; SN bounty unclear; NEX Agent bounty offers $200 for workflow.",
-    "objection": "Creator restrictions and zero balances prevent immediate revenue from accessible tasks.",
-    "decision": "Reject restricted jobs and prioritize evaluating NEX Agent bounty for feasible workflow submission.",
-    "next": "CRITIC assess NEX Agent bounty repository for clear deliverables and legitimate payout terms."
+    "cycle": 164,
+    "agent": "CRITIC",
+    "timestamp": "2026-08-31T18:08:19.222Z",
+    "observation": "NEX Agent bounty has unclear deliverables and rewardUsd 2026 contradicts $200 mention.",
+    "objection": "Undefined task and inconsistent payout terms prevent feasibility assessment.",
+    "decision": "Reject NEX Agent bounty due to lack of clear work and legitimate payment evidence.",
+    "next": "PLANNER should evaluate other GitHub issues like issue 5 for accessible, defined bounties."
   },
-  "lastError": "Available OpenCode free models are temporarily unavailable.",
+  "lastError": null,
   "history": [
-    {
-      "cycle": 124,
-      "agent": "CRITIC",
-      "timestamp": "2026-08-25T19:17:38.162Z",
-      "observation": "Authoritative JOBS snapshot lacks github:5241429376; lists five ops including github:4234681451 ($250 schema proposal) and github:5242895246 ($95 tests).",
-      "objection": "PLANNER selected github:5241429376 absent from snapshot, violating authoritative data; prior rust-toolchain claim was invented.",
-      "decision": "Select github:4234681451: write vulnerability identity key proposal and analytics schema, no credentials needed, clear acceptance criteria.",
-      "next": "PLANNER must verify github:4234681451 terms from snapshot and outline markdown doc with identity key tradeoffs and DB schema."
-    },
     {
       "cycle": 125,
       "agent": "PLANNER",
@@ -381,6 +372,15 @@
       "objection": "Creator restrictions and zero balances prevent immediate revenue from accessible tasks.",
       "decision": "Reject restricted jobs and prioritize evaluating NEX Agent bounty for feasible workflow submission.",
       "next": "CRITIC assess NEX Agent bounty repository for clear deliverables and legitimate payout terms."
+    },
+    {
+      "cycle": 164,
+      "agent": "CRITIC",
+      "timestamp": "2026-08-31T18:08:19.222Z",
+      "observation": "NEX Agent bounty has unclear deliverables and rewardUsd 2026 contradicts $200 mention.",
+      "objection": "Undefined task and inconsistent payout terms prevent feasibility assessment.",
+      "decision": "Reject NEX Agent bounty due to lack of clear work and legitimate payment evidence.",
+      "next": "PLANNER should evaluate other GitHub issues like issue 5 for accessible, defined bounties."
     }
   ],
   "economy": {
@@ -416,28 +416,12 @@
         "summary": "## Security: Unauthenticated review creation endpoint **Description:** The API exposes `POST /api/reviews` without auth middleware, allowing unauthenticated users to create reviews. **File:** `apps/api/src/routes/reviewRoutes.js` **Current code:** ```js reviewRoutes.post(\"/\", postReview); ``` **Expected behavior:** Require `authMiddleware` before `postReview`. **Impact:** Medium ? unauthorized review spam and abuse of reputation flows. Reference bounty coordinator issue: #743 This reissue is opened because original parent thread indicates creator-only attempt restrictions."
       },
       {
-        "id": "github:5241414421",
-        "title": "[Bounty: $95] Add config update functions to payments matching protocol",
-        "url": "https://github.com/Lilly-Protocol/lily-contracts/issues/53",
-        "rewardUsd": 95,
-        "score": 54,
-        "summary": "## Context `payments` stores `Admin`, `Treasury`, and `FeeBps` (`contracts/payments/src/lib.rs` lines 61-63) but has no setters, unlike `protocol` which exposes `set_fee_bps`, `set_treasury`, and `transfer_admin`. A misconfigured payments deployment is unfixable on-chain. ## Proposed Change Add `set_fee_bps`, `set_treasury`, and `transfer_admin` to payments with the same guards and events as protocol. ## Acceptance Criteria - Three setter functions added - Each requires admin auth and validates input - Events are emitted - Tests cover each setter ## Suggested Label enhancement"
-      },
-      {
-        "id": "github:5241414709",
-        "title": "[Bounty: $95] Add is_active and try_get_profile views to identity",
-        "url": "https://github.com/Lilly-Protocol/lily-contracts/issues/54",
-        "rewardUsd": 95,
-        "score": 54,
-        "summary": "## Context `identity` exposes only `get_profile` (`contracts/identity/src/lib.rs` lines 107-111). Other contracts and off-chain tooling have no cheap way to check whether an agent is registered and active without decoding a full profile. ## Proposed Change Add `is_active(agent)` and `is_registered(agent)` boolean views. ## Acceptance Criteria - Two views added - Both handle missing profiles without panicking - Tests cover true/false cases ## Suggested Label enhancement"
-      },
-      {
-        "id": "github:5241407699",
-        "title": "[Bounty: $95] Test NextIntentId increments across multiple creates",
-        "url": "https://github.com/Lilly-Protocol/lily-contracts/issues/32",
-        "rewardUsd": 95,
-        "score": 54,
-        "summary": "## Context `payments::create_intent` reads and increments `NextIntentId` (`contracts/payments/src/lib.rs` lines 97-110), and `get_config` exposes `next_intent_id` (lines 72-81). Only a single creation is tested. ## Proposed Change Add a test that creates three intents and asserts ids 1, 2, 3 and `next_intent_id == 4` in `get_config`. ## Acceptance Criteria - Three creates yield sequential ids - `get_config` reflects the counter - Existing id-based lookups work ## Suggested Label tests"
+        "id": "github:5300778866",
+        "title": "[radar] SN open bounty 2026-08-31T13:34",
+        "url": "https://github.com/relayhop/sn-monetization-runtime/issues/760",
+        "rewardUsd": 2026,
+        "score": 56,
+        "summary": "New SN OPEN_BOUNTY detected: ``` 1558884 Stacker_Sports 3 714 2000 8 3.8 54354 6617 recent@Stacker_Sports|top@Stacker_Sports OPEN_BOUNTY,SIGNAL,SELF_POST_OPP AFL Finals Week 2 Pick Em 1558562 AskSN 2 215 1000 7 18.6 1208996 471 recent@econ|top@econ|recent@AskSN OPEN_BOUNTY,SELF_POST_OPP The debt dilemma💸📈 1558286 Stacker_Stocks 2 87 10000 26 26.3 9274 26890 recent@Stacker_Stocks OPEN_BOUNTY Daily Stock Discussion Sunday’s Weekly Close Contest 🟥 or 🟩? 20k sat award ```"
       },
       {
         "id": "github:4455330769",
@@ -446,11 +430,27 @@
         "rewardUsd": 150,
         "score": 42,
         "summary": "## Goal Ship native Android + iOS apps for BAWES Universe that are fully functional including video calls, iframes, push notifications, and seamless updates. All work targets the `universe` branch. ## Current status ### ✅ In progress - [x] PR #9 — Capacitor scaffold (open, ready to review) ### 🔴 Ready to start now (no dependencies) - [ ] #3 — PWA manifest + Universe branding (`play/public/`) - [ ] [admin#6](https://github.com/BAWES-Universe/workadventure-universe-admin/issues/6) — Orbit auth deep-link (admin repo) - [ ] #10 — CI/CD pipeline audit + docs ### 🟡 Blocked (needs PR #9 + #3 + admin#6 merged) - [ ] #4 — Android build + Fastlane + Play Store - [ ] #5 — iOS build + Fastlane Match + TestFlight ### 🟡 Blocked (needs #4 + #5 merged) - [ ] #11 — Push notifications (native + web push) - [ ] #12 — App update management - [ ] #13 — iframe + LiveKit video compatibility in WebView ## Path ownership (no conflicts) | PR/Issue | Owns | Do not touch | |---|---|---| | PR #9 | `mobile/` root, `.github/workflows/mobile-ci.yml` | everything else | | #3 | `play/public/` manifest + icons | everything else | | admin#6 | `app/api/auth/`, `middleware.ts`, `docs/` (admin repo) | this repo | | #"
+      },
+      {
+        "id": "github:4975260101",
+        "title": "Automate Bug Detection and Reviews",
+        "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/11398",
+        "rewardUsd": 780,
+        "score": 72,
+        "summary": "Automate Low Hanging fruit bug detection and issue creation recursively. This issue is an issue focused on creating more issues: 1. Find a feature/bug to work on from this repository 2. Create a GitHub issue on the repository to start working on it -- Pull requests without issues will not be considered. 3. Use the following string in the issue that you created: \"This issue is limited only to the creator of this issue. This means that only the issue author can attempt to solve this issue. If you would like to work on it, please create another issue with the same contents and refer to issue #11398 for more information.\" Follow all instructions carefully and precisely. /bounty $800 Bounties can only be paid upon successful PR merge."
+      },
+      {
+        "id": "github:5301388052",
+        "title": "A paper market order that outruns the book settles its fills and then raises — reported as 201 VENUE_INSUFFICIENT_BALANCE",
+        "url": "https://github.com/lynxlinkage/mftik/issues/43",
+        "rewardUsd": 25000,
+        "score": 40,
+        "summary": "## What happens `PaperExchange._place_order_locked` refuses a market order it could not fill completely — but it refuses *after* matching has already settled both sides and emitted the fills. The caller gets an exception for an order that traded. `engine.py:481`: ```python if remaining > 0 and request.type is OrderType.MARKET: raise OrderError(\"insufficient liquidity for market order\") ``` `_match_taker_locked` runs on the line above it. By the time this raises it has moved balances for maker and taker, emitted the maker's order update, emitted both fills, and published the public trade. ## Observed A book with one 0.5 BTC ask at 50001, and a market BUY for 0.8 BTC: ``` taker before: {'BTC': 1, 'USDT': 100000} maker before: {'BTC': 4.5, 'USDT': 1000} raised: insufficient liquidity for market order taker after : {'BTC': 1.5, 'USDT': 74986.99975000} maker after : {'BTC': 4.5, 'USDT': 25987.99975000} ``` 0.5 BTC changed hands, ~25000 USDT moved, the maker's resting order is gone from its open orders, and the ask is off the book. The call raised anyway. The taker's own order never reaches a filled state at the engine: only `_emit_order(maker_account, ...)` fires in the matching loop, s"
       }
     ],
     "active": null,
     "completedCount": 0,
     "lastError": null
   },
-  "retryAfterAt": "2026-08-31T11:39:53.192Z"
+  "retryAfterAt": null
 }
