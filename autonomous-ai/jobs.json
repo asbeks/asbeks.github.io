@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-09-01T06:45:03.523Z",
+  "updatedAt": "2026-09-01T12:06:51.147Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -44,6 +44,42 @@
       },
       "realMoneyEligible": true,
       "economicValueUsd": 780,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5311287436",
+      "source": "github",
+      "title": "[radar] SN open bounty 2026-09-01T11:33",
+      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/768",
+      "repositoryApiUrl": "https://api.github.com/repos/relayhop/sn-monetization-runtime",
+      "rewardUsd": 2026,
+      "score": 44,
+      "labels": [
+        "radar",
+        "sn",
+        "bounty"
+      ],
+      "commentCount": 0,
+      "updatedAt": "2026-09-01T12:00:17Z",
+      "summary": "New SN OPEN_BOUNTY detected: ``` 1559635 AskSN 2 158 1000 2 8.4 1208996 472 recent@AskSN|top@AskSN|recent@the_stacker_muse OPEN_BOUNTY,LOW_COMP,SIGNAL 🔥 THE QUESTION THAT ALMOST NO ONE DARES TO ANSWER 1558884 Stacker_Sports 3 1301 2000 11 25.8 54354 6617 recent@Stacker_Sports OPEN_BOUNTY,HOT,SELF_POST_OPP AFL Finals Week 2 Pick Em ```",
+      "state": "candidate",
+      "payoutConfidence": 0.5,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 118,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 2026,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -128,20 +164,19 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5308555340",
+      "id": "github:5215718715",
       "source": "github",
-      "title": "Difficulty by graph distance instead of ringOf",
-      "url": "https://github.com/starquake/mediumrogue/issues/472",
-      "repositoryApiUrl": "https://api.github.com/repos/starquake/mediumrogue",
-      "rewardUsd": 471,
-      "score": 40,
+      "title": "Map: Terra's flow to the first rocket launch",
+      "url": "https://github.com/adamico/planetary-factory/issues/25",
+      "repositoryApiUrl": "https://api.github.com/repos/adamico/planetary-factory",
+      "rewardUsd": 26,
+      "score": 48,
       "labels": [
-        "design",
-        "needs: spec"
+        "wayfinder:map"
       ],
-      "commentCount": 1,
-      "updatedAt": "2026-09-01T06:29:46Z",
-      "summary": "> 🤖 **Issue by Claude** (AI pair-programmer working with @starquake) — posted through @starquake's account. Split from #458, where this was deliberately kept **out** of the answer block on the grounds that it *\"probably deserves its own slice once the graph generator has actually been walked — deciding it now would be deciding it on paper, which is what today's mockup already showed does not work.\"* The generator has now been walked and shipped (#466), so the condition is met. @starquake chose to file it as its own slice, 2026-09-01. ## The idea Today difficulty is `ringOf` — **straight-line distance** from the origin, in `protocol.RingCount` (3) concentric bands. The proposal is difficulty by **graph distance**: how far along the carved paths a hex is from home. ## Why it is worth considering - **It falls out of the generator rather than being bolted on.** The graph already knows the path structure; `ringOf` deliberately ignores it. - **It makes a world a journey rather than a radius.** Grim Dawn — the reference #458 was built from — is not radial at all; it is a sequence of connected regions. Hexagon-plus-concentric-rings *means* \"home in the middle, danger grows with distance\",",
+      "commentCount": 0,
+      "updatedAt": "2026-09-01T12:01:50Z",
+      "summary": "## Destination A written specification for Terra's progression from world spawn to a standing Platform in Terra Orbit: Factorio-named science tiers as the spine, each unlocking a capability that the next tier's production physically requires, delivered to FTB Quests Task Screens by machine; a rung-ownership table naming exactly one mod per capability; the pre-launch logistics cut-and-gate list; and the rocket-part production chain that gates the launch. Lands as an ADR for the spine plus `docs/spec/terra-progression.md` for the beat sheet, with the GDD's delivery sequence amended to place this work before Sapros. Quest authoring (`.snbt`) and manifest edits are a later build map, not this one. ## Notes **Domain**: modpack design. `CONTEXT.md` is the vocabulary; `docs/gdd.md` is the design of record; `docs/adr/` holds the hard-to-reverse decisions. Every session consults `/grilling` and `/domain-modeling`. **Settled before charting** (grilling session, six rounds): - **Factorio progression is the leitmotif.** Science packs are the spine; capability milestones are the reward each tier grants, and the next tier's production requires that capability. One ladder, not two. - **GregTech i",
       "state": "candidate",
       "payoutConfidence": 0.35,
       "autonomyFit": 1,
@@ -150,48 +185,16 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 109,
+      "fastCashScore": 100,
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
-        "comments": 1,
+        "comments": 0,
         "attemptSignals": 0,
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 471,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5300440791",
-      "source": "github",
-      "title": "monero backend for nutshell, looking for review",
-      "url": "https://github.com/lescuer97/nutmix/issues/258",
-      "repositoryApiUrl": "https://api.github.com/repos/lescuer97/nutmix",
-      "rewardUsd": 136,
-      "score": 46,
-      "labels": [],
-      "commentCount": 2,
-      "updatedAt": "2026-09-01T06:34:11Z",
-      "summary": "hi, ive built a monero backend for nutshell as part of monero bounty #136, so similar ground to nutmix but in python. its working and ive tried to close the obvious holes, but it needs someone who knows cashu to look before it can be signed off, and youd spot things faster than most. what id most want eyes on: - deposits only credited after 10 confirmations, so the txpool cant be used to mint against a tx that never lands - the melt path settles on broadcast rather than on confirmation. thats a tradeoff i documented rather than fixed, curious what youd do - fee estimation is a do not relay dry run instead of a fixed reserve https://github.com/Ed13-coder/monero-ecash no worries if youre buried, even a pointer to who else to ask helps",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 106,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 2,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 136,
+      "economicValueUsd": 26,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -232,74 +235,6 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5308637548",
-      "source": "github",
-      "title": "[Idea] Arbitrum Treasury Stress Simulator for Launchpads and NFT Teams Using Monte Carlo Cashflow Modeling",
-      "url": "https://github.com/MosslandOpenDevs/agentic-orchestrator/issues/4468",
-      "repositoryApiUrl": "https://api.github.com/repos/MosslandOpenDevs/agentic-orchestrator",
-      "rewardUsd": 15,
-      "score": 30,
-      "labels": [
-        "type:idea",
-        "status:backlog",
-        "generated:by-orchestrator"
-      ],
-      "commentCount": 0,
-      "updatedAt": "2026-09-01T06:40:38Z",
-      "summary": "## Idea Summary - **Idea Title**: Arbitrum Treasury Stress Simulator for Launchpads and NFT Teams Using Monte Carlo Cashflow Modeling - **Core Analysis**: The current Layer-2 surge is creating a false sense of safety: lower fees and faster execution improve adoption, but they also encourage teams to overextend incentives, inventory, and liquidity commitments. For Mossland, the bigger problem is not trade routing or marketplace features; it is preventing treasury mistakes before launch. As more projects migrate to low-cost chains, they need a disciplined way to test whether their token, reward, and operating budgets survive volatility, user churn, and sudden liquidity shocks. - **Opportunity Risk**: - **Opportunities**: A simulator that models 30, 60, and 90-day treasury outcomes can help teams avoid the most common failure mode in Web3: running out of runway after aggressive incentives. If a launchpad allocates even $100,000 in rewards, a 15% forecast error can distort months of planning. A tool that stress-tests burn rate, reward emissions, and expected TVL under 3 to 5 market scenarios can become a decision layer for teams before they deploy capital. - **Risks**: The main risks a",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 97,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 0,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 15,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5156914393",
-      "source": "github",
-      "title": "[MVP 3/3] Exécuteur live minimal — canary puis pilote 10 USDT",
-      "url": "https://github.com/pivox/sol-token-listener/issues/51",
-      "repositoryApiUrl": "https://api.github.com/repos/pivox/sol-token-listener",
-      "rewardUsd": 10,
-      "score": 30,
-      "labels": [],
-      "commentCount": 3,
-      "updatedAt": "2026-09-01T04:55:17Z",
-      "summary": "## Source normative versionnée La conception approuvée de l’exécuteur Solana V1 est la source normative de cette issue : - [Spécification Executor V1 — version 1.0.0](https://github.com/pivox/sol-token-listener/blob/main/docs/superpowers/specs/2026-08-30-executor-v1-design.md) - [Plan d’implémentation #51-B](https://github.com/pivox/sol-token-listener/blob/main/docs/superpowers/plans/2026-08-30-execution-intents-foundation.md) - PR documentaire fusionnée : #69 En cas de divergence entre cet aperçu et la spécification versionnée, la spécification prévaut. ## Décision opérateur L’étape paper Mainnet #49 est explicitement sautée. Elle n’est pas déclarée PASS et aucune preuve de rentabilité, de sellabilité ou de sécurité Mainnet équivalente n’est revendiquée. Cette décision augmente le risque opérationnel. L’activation réelle reste interdite jusqu’à satisfaction de tous les gates compensatoires de la section 10 de la spécification : dry-run déterministe, simulation sans envoi, crash/reprise, idempotence, réconciliation, quota provider, preflight sans capacité de soumission, kill switches et armement explicite. ## Objectif Livrer progressivement un processus executor séparé capable de t",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 90,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 3,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 10,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
       "id": "github:4563956966",
       "source": "github",
       "title": "parse_duration drops the days (d) unit",
@@ -335,36 +270,35 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:4739789255",
+      "id": "github:5211154647",
       "source": "github",
-      "title": "[$10 BOUNTY] [TypeScript] Add telemetry batch flush threshold tests",
-      "url": "https://github.com/Saiaaax/CyberNinja-Dojo/issues/10",
-      "repositoryApiUrl": "https://api.github.com/repos/Saiaaax/CyberNinja-Dojo",
+      "title": "🎯 GORM v2.24.0 Panics When Querying with Complex Joins",
+      "url": "https://github.com/HarrieAlexandrowicz5/gorm/issues/1",
+      "repositoryApiUrl": "https://api.github.com/repos/HarrieAlexandrowicz5/gorm",
       "rewardUsd": 10,
-      "score": 44,
+      "score": 32,
       "labels": [
-        "help wanted",
-        "good first issue",
         "bounty",
-        "language:typescript"
+        "opire",
+        "$10"
       ],
-      "commentCount": 24,
-      "updatedAt": "2026-09-01T06:16:00Z",
-      "summary": "**Bounty:** $10 (LT) **Area:** frontend/src/services/telemetry.ts — batch flush logic **Current state:** The telemetry service batches events and flushes when batch size exceeds 100 or on page unload. There are no unit tests verifying the flush threshold behavior. **What is needed:** Add tests for the batch flush threshold logic: flush triggers at 100 events, flush triggers on page unload, partial batches are preserved, and reset after flush. **Acceptance criteria:** - Add at least 4 tests covering flush threshold, page unload trigger, partial batch preservation, reset after flush - Tests must not require external services - Document the tested behavior in `docs/OPERATIONS.md` - Include the diagnostic build artifacts from `python3 build.py` Commissions: You can earn an extra $5 for every bounty issue you create on your own fork of the repo, provided you keep up with submissions. Rename your fork to something fun and unique. Required validation: Run `python3 build.py`, include diagnostic `.logd` artifact, use PR template.",
+      "commentCount": 42,
+      "updatedAt": "2026-09-01T11:28:08Z",
+      "summary": "## 📝 Description When attempting to query the database using GORM v2.24.0 with complex joins, the application panics. This issue has been observed in multiple environments and with various database backends (PostgreSQL, MySQL, SQLite). ## 🎯 Acceptance Criteria - [ ] The application should not panic when querying with complex joins. - [ ] The query should return the correct results as expected. - [ ] The panic should be reproducible and consistently occur with the same query. - [ ] The issue should be resolved in GORM v2.24.0 or a subsequent patch release. ## 🛠️ Technical Specifications & Context - The panic occurs when executing a query with multiple joins, including self-joins and joins with subqueries. - The issue is likely related to how GORM handles complex query structures internally. - The panic message typically includes a stack trace pointing to a file in the GORM library, such as `gorm.go` or `query.go`. ## 🧪 Verification & Testing 1. **Reproduce the Issue:** - Create a test case that includes a complex query with multiple joins. - Execute the test case and observe if the application panics. 2. **Verify Fix:** - Apply the proposed fix (if available) or a potential patc",
       "state": "candidate",
-      "payoutConfidence": 0.85,
+      "payoutConfidence": 0.7,
       "autonomyFit": 1,
       "requiresHumanGate": false,
       "requiresSpecialHardware": false,
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 58,
+      "fastCashScore": 67,
       "survivalEligible": false,
       "eligibilityReason": "Competition is too high for bootstrap mode.",
       "competition": {
-        "comments": 24,
-        "attemptSignals": 3,
+        "comments": 42,
+        "attemptSignals": 1,
         "risk": "high"
       },
       "realMoneyEligible": true,
@@ -382,7 +316,7 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:4455330769\",\"rewardUsd\":150,\"fastCashScore\":118,\"updatedAt\":\"2026-09-01T01:51:01Z\",\"competition\":{\"comments\":24,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":99,\"updatedAt\":\"2026-09-01T00:09:20Z\",\"competition\":{\"comments\":21,\"attemptSignals\":3,\"risk\":\"high\"}},{\"id\":\"github:4557180255\",\"rewardUsd\":780,\"fastCashScore\":139,\"updatedAt\":\"2026-08-29T02:37:40Z\",\"competition\":{\"comments\":10,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-31T03:06:46Z\",\"competition\":{\"comments\":51,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:4739789255\",\"rewardUsd\":10,\"fastCashScore\":58,\"updatedAt\":\"2026-09-01T06:16:00Z\",\"competition\":{\"comments\":24,\"attemptSignals\":3,\"risk\":\"high\"}},{\"id\":\"github:4975260101\",\"rewardUsd\":780,\"fastCashScore\":116,\"updatedAt\":\"2026-08-28T18:51:33Z\",\"competition\":{\"comments\":20,\"attemptSignals\":1,\"risk\":\"high\"}},{\"id\":\"github:5156914393\",\"rewardUsd\":10,\"fastCashScore\":90,\"updatedAt\":\"2026-09-01T04:55:17Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5300440791\",\"rewardUsd\":136,\"fastCashScore\":106,\"updatedAt\":\"2026-09-01T06:34:11Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5308555340\",\"rewardUsd\":471,\"fastCashScore\":109,\"updatedAt\":\"2026-09-01T06:29:46Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5308637548\",\"rewardUsd\":15,\"fastCashScore\":97,\"updatedAt\":\"2026-09-01T06:40:38Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:4455330769\",\"rewardUsd\":150,\"fastCashScore\":118,\"updatedAt\":\"2026-09-01T01:51:01Z\",\"competition\":{\"comments\":24,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":99,\"updatedAt\":\"2026-09-01T00:09:20Z\",\"competition\":{\"comments\":21,\"attemptSignals\":3,\"risk\":\"high\"}},{\"id\":\"github:4557180255\",\"rewardUsd\":780,\"fastCashScore\":139,\"updatedAt\":\"2026-08-29T02:37:40Z\",\"competition\":{\"comments\":10,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-31T03:06:46Z\",\"competition\":{\"comments\":51,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:4975260101\",\"rewardUsd\":780,\"fastCashScore\":116,\"updatedAt\":\"2026-08-28T18:51:33Z\",\"competition\":{\"comments\":20,\"attemptSignals\":1,\"risk\":\"high\"}},{\"id\":\"github:5211154647\",\"rewardUsd\":10,\"fastCashScore\":67,\"updatedAt\":\"2026-09-01T11:28:08Z\",\"competition\":{\"comments\":42,\"attemptSignals\":1,\"risk\":\"high\"}},{\"id\":\"github:5215718715\",\"rewardUsd\":26,\"fastCashScore\":100,\"updatedAt\":\"2026-09-01T12:01:50Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5311287436\",\"rewardUsd\":2026,\"fastCashScore\":118,\"updatedAt\":\"2026-09-01T12:00:17Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5311460492\",\"rewardUsd\":13,\"fastCashScore\":96,\"updatedAt\":\"2026-09-01T11:51:08Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
@@ -396,9 +330,18 @@
     "competitionRequired": "low",
     "rejectedFakeRevenueCount": 0,
     "rejectedAlreadyPaidCount": 0,
-    "rejectedIdentityGateCount": 0
+    "rejectedIdentityGateCount": 1
   },
   "economicallyRejected": [
+    {
+      "id": "github:5311460492",
+      "title": "Bug: Lively Scene collect-all claims only one reward per click or automation restart",
+      "rewardUsd": 13,
+      "reasons": [
+        "preclaim_or_identity_gate_not_configured"
+      ],
+      "rejectedAt": "2026-09-01T12:06:51.098Z"
+    },
     {
       "id": "github:5295068200",
       "title": "Orbit Testnet daily report: 2026-08-30",
@@ -1131,16 +1074,6 @@
       "rewardUsd": 2000,
       "reasons": [
         "already_rewarded_or_paid"
-      ],
-      "rejectedAt": "2026-08-22T18:00:52.889Z"
-    },
-    {
-      "id": "github:5190341394",
-      "title": "KYC Registry Expiry Index Compaction and Per-Subject Verifier Log",
-      "rewardUsd": 2000,
-      "reasons": [
-        "already_rewarded_or_paid",
-        "preclaim_or_identity_gate_not_configured"
       ],
       "rejectedAt": "2026-08-22T18:00:52.889Z"
     }

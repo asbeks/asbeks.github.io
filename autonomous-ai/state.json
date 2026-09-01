@@ -2,7 +2,7 @@
   "version": 5,
   "cycle": 166,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-09-01T06:46:45.546Z",
+  "updatedAt": "2026-09-01T12:07:43.245Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "waiting_provider",
   "currentAgent": "PLANNER",
@@ -416,6 +416,14 @@
         "summary": "## Security: Unauthenticated review creation endpoint **Description:** The API exposes `POST /api/reviews` without auth middleware, allowing unauthenticated users to create reviews. **File:** `apps/api/src/routes/reviewRoutes.js` **Current code:** ```js reviewRoutes.post(\"/\", postReview); ``` **Expected behavior:** Require `authMiddleware` before `postReview`. **Impact:** Medium ? unauthorized review spam and abuse of reputation flows. Reference bounty coordinator issue: #743 This reissue is opened because original parent thread indicates creator-only attempt restrictions."
       },
       {
+        "id": "github:5311287436",
+        "title": "[radar] SN open bounty 2026-09-01T11:33",
+        "url": "https://github.com/relayhop/sn-monetization-runtime/issues/768",
+        "rewardUsd": 2026,
+        "score": 44,
+        "summary": "New SN OPEN_BOUNTY detected: ``` 1559635 AskSN 2 158 1000 2 8.4 1208996 472 recent@AskSN|top@AskSN|recent@the_stacker_muse OPEN_BOUNTY,LOW_COMP,SIGNAL 🔥 THE QUESTION THAT ALMOST NO ONE DARES TO ANSWER 1558884 Stacker_Sports 3 1301 2000 11 25.8 54354 6617 recent@Stacker_Sports OPEN_BOUNTY,HOT,SELF_POST_OPP AFL Finals Week 2 Pick Em ```"
+      },
+      {
         "id": "github:4455330769",
         "title": "📱 Epic: BAWES Universe Mobile App (Android + iOS)",
         "url": "https://github.com/BAWES-Universe/workadventure-universe/issues/1",
@@ -432,25 +440,17 @@
         "summary": "Automate Low Hanging fruit bug detection and issue creation recursively. This issue is an issue focused on creating more issues: 1. Find a feature/bug to work on from this repository 2. Create a GitHub issue on the repository to start working on it -- Pull requests without issues will not be considered. 3. Use the following string in the issue that you created: \"This issue is limited only to the creator of this issue. This means that only the issue author can attempt to solve this issue. If you would like to work on it, please create another issue with the same contents and refer to issue #11398 for more information.\" Follow all instructions carefully and precisely. /bounty $800 Bounties can only be paid upon successful PR merge."
       },
       {
-        "id": "github:5308555340",
-        "title": "Difficulty by graph distance instead of ringOf",
-        "url": "https://github.com/starquake/mediumrogue/issues/472",
-        "rewardUsd": 471,
-        "score": 40,
-        "summary": "> 🤖 **Issue by Claude** (AI pair-programmer working with @starquake) — posted through @starquake's account. Split from #458, where this was deliberately kept **out** of the answer block on the grounds that it *\"probably deserves its own slice once the graph generator has actually been walked — deciding it now would be deciding it on paper, which is what today's mockup already showed does not work.\"* The generator has now been walked and shipped (#466), so the condition is met. @starquake chose to file it as its own slice, 2026-09-01. ## The idea Today difficulty is `ringOf` — **straight-line distance** from the origin, in `protocol.RingCount` (3) concentric bands. The proposal is difficulty by **graph distance**: how far along the carved paths a hex is from home. ## Why it is worth considering - **It falls out of the generator rather than being bolted on.** The graph already knows the path structure; `ringOf` deliberately ignores it. - **It makes a world a journey rather than a radius.** Grim Dawn — the reference #458 was built from — is not radial at all; it is a sequence of connected regions. Hexagon-plus-concentric-rings *means* \"home in the middle, danger grows with distance\","
-      },
-      {
-        "id": "github:5300440791",
-        "title": "monero backend for nutshell, looking for review",
-        "url": "https://github.com/lescuer97/nutmix/issues/258",
-        "rewardUsd": 136,
-        "score": 46,
-        "summary": "hi, ive built a monero backend for nutshell as part of monero bounty #136, so similar ground to nutmix but in python. its working and ive tried to close the obvious holes, but it needs someone who knows cashu to look before it can be signed off, and youd spot things faster than most. what id most want eyes on: - deposits only credited after 10 confirmations, so the txpool cant be used to mint against a tx that never lands - the melt path settles on broadcast rather than on confirmation. thats a tradeoff i documented rather than fixed, curious what youd do - fee estimation is a do not relay dry run instead of a fixed reserve https://github.com/Ed13-coder/monero-ecash no worries if youre buried, even a pointer to who else to ask helps"
+        "id": "github:5215718715",
+        "title": "Map: Terra's flow to the first rocket launch",
+        "url": "https://github.com/adamico/planetary-factory/issues/25",
+        "rewardUsd": 26,
+        "score": 48,
+        "summary": "## Destination A written specification for Terra's progression from world spawn to a standing Platform in Terra Orbit: Factorio-named science tiers as the spine, each unlocking a capability that the next tier's production physically requires, delivered to FTB Quests Task Screens by machine; a rung-ownership table naming exactly one mod per capability; the pre-launch logistics cut-and-gate list; and the rocket-part production chain that gates the launch. Lands as an ADR for the spine plus `docs/spec/terra-progression.md` for the beat sheet, with the GDD's delivery sequence amended to place this work before Sapros. Quest authoring (`.snbt`) and manifest edits are a later build map, not this one. ## Notes **Domain**: modpack design. `CONTEXT.md` is the vocabulary; `docs/gdd.md` is the design of record; `docs/adr/` holds the hard-to-reverse decisions. Every session consults `/grilling` and `/domain-modeling`. **Settled before charting** (grilling session, six rounds): - **Factorio progression is the leitmotif.** Science packs are the spine; capability milestones are the reward each tier grants, and the next tier's production requires that capability. One ladder, not two. - **GregTech i"
       }
     ],
     "active": null,
     "completedCount": 0,
     "lastError": null
   },
-  "retryAfterAt": "2026-09-01T06:51:45.546Z"
+  "retryAfterAt": "2026-09-01T12:12:43.245Z"
 }
