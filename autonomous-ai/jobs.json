@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-08-31T22:50:43.307Z",
+  "updatedAt": "2026-09-01T01:32:16.055Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -44,38 +44,6 @@
       },
       "realMoneyEligible": true,
       "economicValueUsd": 780,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5242757808",
-      "source": "github",
-      "title": "[Bounty: $95] Add runtime.stopped lifecycle event",
-      "url": "https://github.com/Lilly-Protocol/agentlily-runtime/issues/134",
-      "repositoryApiUrl": "https://api.github.com/repos/Lilly-Protocol/agentlily-runtime",
-      "rewardUsd": 95,
-      "score": 54,
-      "labels": [],
-      "commentCount": 1,
-      "updatedAt": "2026-08-31T22:11:27Z",
-      "summary": "## Context `RuntimeEventMap` in `src/events/runtime-events.ts` defines `runtime.started`, `runtime.task.received`, `runtime.task.completed`, and `runtime.task.failed`, but there is no lifecycle event for shutdown, leaving observers unable to track runtime availability. ## Proposed Change Add `runtime.stopped` to `RuntimeEventMap` and emit it from a new `AgentRuntime.stop()` method. ## Acceptance Criteria - [ ] Event name added to `RuntimeEventMap` - [ ] `stop()` emits the event - [ ] Test covers emission ## Suggested Label feature",
-      "state": "candidate",
-      "payoutConfidence": 0.65,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 119,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 1,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 95,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -160,49 +128,17 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5279395598",
+      "id": "github:5217130315",
       "source": "github",
-      "title": "[submit] Agent Earn Radar — bounty radar",
-      "url": "https://github.com/lordbasilaiassistant-sudo/x402-wiki/issues/11",
-      "repositoryApiUrl": "https://api.github.com/repos/lordbasilaiassistant-sudo/x402-wiki",
-      "rewardUsd": 402,
+      "title": "Missing: Yotta Data Services — Rudra Launch Tier",
+      "url": "https://github.com/sourcey/startup-credits/issues/669",
+      "repositoryApiUrl": "https://api.github.com/repos/sourcey/startup-credits",
+      "rewardUsd": 120,
       "score": 54,
       "labels": [],
       "commentCount": 2,
-      "updatedAt": "2026-08-31T22:29:13Z",
-      "summary": "### Service name Agent Earn Radar — bounty radar ### Endpoint URL https://agent-earn-radar.vercel.app/api/radar ### Price per call (USDC) 0.05 ### Payment wallet (Base mainnet, EIP-55 checksummed) 0x568Ab98578d682FB0B0b45619BE73EbFfbf5a6eA ### Category data ### What does it do? Returns live, agent-eligible crypto bounty listings with reward, deadline, competition, account-dependency, wallet-action, and payout-evidence fields. It uses x402 v2 on Base USDC. Free preview: https://agent-earn-radar.vercel.app/api/preview · OpenAPI: https://agent-earn-radar.vercel.app/openapi.json · x402 discovery: https://agent-earn-radar.vercel.app/.well-known/x402 · agent skill: https://agent-earn-radar.vercel.app/skill.md · public source: https://github.com/future-zhang/agent-earn-radar ### Input schema (JSON) ```json { \"method\": \"GET\", \"query\": { \"minReward\": 100, \"token\": \"USDC\", \"take\": 10 } } ``` ### Test transaction hash (optional but speeds up review) _No response_ ### Confirmations - [x] The 402 response price matches what I listed above - [x] I understand the review is honest — low ratings are published with reasons",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 115,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 2,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 402,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5232456127",
-      "source": "github",
-      "title": "Agent maintenance candidates",
-      "url": "https://github.com/TokenBrice/pharos-watch/issues/934",
-      "repositoryApiUrl": "https://api.github.com/repos/TokenBrice/pharos-watch",
-      "rewardUsd": 350,
-      "score": 40,
-      "labels": [],
-      "commentCount": 0,
-      "updatedAt": "2026-08-31T15:04:50Z",
-      "summary": "<!-- agent-maintenance-candidates --> # Agent maintenance candidates Generated from commit `67ac1bdd32b0e4110b1ca5c4732ccc58285b59a0` on 2026-08-31. These are review queues only; no product data was changed. Command status: annotations=0, AI summaries=0, curation digest=0. ## Curation digest ```text # Curation digest — 2026-08-31 Generated by `npm run digest:curation`. Pharos editorial streams at a glance. _Quarterly hand-check due in ~64 days._ ## oneLiner coverage Status: **OK** — 367/367 active/pre-launch coins have a oneLiner. ## mechanismArchetype coverage (top-60-by-canonical-rank) Tracked non-variant coins in cohort: 39/39 have an archetype (100.0%); 20 variants and 1 frozen excluded. ## proofOfReserves.attestorTier coverage Independent-audit coins with attestorTier: 79/79 (100.0%). ## AI summary staleness Stale (>180d since updatedAt) active summaries: 0. Missing: 0. ## Annotation queue health Rows pending review: 19 Last swept: 2026-08-31 Oldest dated row: 2026-08-03 Curated annotations on file: 222 total; 99 are older than 2 years (quarterly hand-check anchors). ``` ## Annotation queue ```text # Annotation candidates Append-only queue feeding the `annotations-refresh` ski",
+      "updatedAt": "2026-09-01T01:04:38Z",
+      "summary": "### Vendor Yotta Data Services ### Canonical domain yotta.com ### Startup offer Rudra Launch Tier — up to $10,000 in Shakti Cloud credits, valid for six months, subject to the published program stage and eligibility requirements. A full duplicate check was completed across the current repository tree and live Sourcey catalog/API; open and closed issues; open, closed, and merged pull requests; and current public Frantic bounty #120 claim and delivery records. No conflict was found. Prepared for Frantic bounty #120. This issue is the public Sourcey reservation; no Frantic claim or delivery has been made. AI assistance disclosure: Codex assisted with research and preparation of this reservation under the FundzCMS operator. ### First-party sources https://yotta.com/rudra/ https://yotta.com/rudra/eligibility-criteria.html https://yotta.com/rudra/program-structure.html ### Duplicate check - [x] I searched the open issues and pull requests for this vendor.",
       "state": "candidate",
       "payoutConfidence": 0.35,
       "autonomyFit": 1,
@@ -211,80 +147,119 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 111,
+      "fastCashScore": 105,
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 0,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 350,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5242836725",
-      "source": "github",
-      "title": "[Bounty: $90] Add a test asserting the SDK works when only an apiKey is configured",
-      "url": "https://github.com/Lilly-Protocol/lily-sdk/issues/121",
-      "repositoryApiUrl": "https://api.github.com/repos/Lilly-Protocol/lily-sdk",
-      "rewardUsd": 90,
-      "score": 46,
-      "labels": [],
-      "commentCount": 4,
-      "updatedAt": "2026-08-31T22:41:50Z",
-      "summary": "## Context The fetch transport supports both `x-api-key` and `Bearer` auth, and `resolveLilySdkConfig` allows either. `client-behavior.test.ts` covers the 401 mapping and auth header presence, but there is no explicit matrix test that the correct header is sent for each single-credential configuration and that an absent credential sends neither. ## Proposed Change Add a parameterized test over the four auth configurations (apiKey only, authToken only, both, neither) asserting the exact headers forwarded to a mock `fetch`, and that neither header is sent when no credential is configured.",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 108,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 4,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 90,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5241453244",
-      "source": "github",
-      "title": "[Bounty: $75] Add JSON-LD Organization structured data",
-      "url": "https://github.com/Lilly-Protocol/lily-frontend/issues/87",
-      "repositoryApiUrl": "https://api.github.com/repos/Lilly-Protocol/lily-frontend",
-      "rewardUsd": 75,
-      "score": 54,
-      "labels": [],
-      "commentCount": 2,
-      "updatedAt": "2026-08-31T22:40:38Z",
-      "summary": "## Context The root layout (`src/app/layout.tsx`) exports metadata from `createSiteMetadata()`, but no structured data is emitted. There is no `WebSite`/`Organization` JSON-LD, which would help search engines associate the site with the Lily Protocol brand and the Stellar ecosystem keyword set in `src/config/site.ts`. ## Proposed Change Add a `<script type=\"application/ld+json\">` block (via a `jsonLd` helper in `src/config` or a `WebSite`/`Organization` schema) in the root layout, using `siteConfig.name`, `url`, and `description`. ## Acceptance Criteria - JSON-LD appears in the rendered homepage HTML - Schema uses values from `siteConfig` (no duplication) - Type-checks and tests pass - Validated with a JSON-LD validator ## Suggested Label feature",
-      "state": "candidate",
-      "payoutConfidence": 0.65,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 108,
-      "survivalEligible": false,
-      "eligibilityReason": "Competition is too high for bootstrap mode.",
       "competition": {
         "comments": 2,
-        "attemptSignals": 1,
-        "risk": "medium"
+        "attemptSignals": 0,
+        "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 75,
+      "economicValueUsd": 120,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5162349650",
+      "source": "github",
+      "title": "Missing: Signzy for Startups",
+      "url": "https://github.com/sourcey/startup-credits/issues/606",
+      "repositoryApiUrl": "https://api.github.com/repos/sourcey/startup-credits",
+      "rewardUsd": 120,
+      "score": 46,
+      "labels": [],
+      "commentCount": 2,
+      "updatedAt": "2026-09-01T01:25:07Z",
+      "summary": "### Vendor Signzy ### Canonical domain signzy.com ### Startup offer Signzy's startup initiative offers INR 5,000 in API sandbox credits, startup-friendly rates, mentoring from industry experts, and access to financial-institution and venture-capital networks. ### First-party sources https://www.signzy.com/fintech-apis/startups ### Duplicate check - [x] I searched the current vendor catalog, open issues, and open pull requests for this vendor. I am preparing one data-only vendor YAML with exactly one offer for Frantic bounty #120.",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 105,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 2,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 120,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:4462160604",
+      "source": "github",
+      "title": "[bounty $400] Implement ABNF-compliant email address parser with full §3.2–§4.4 coverage",
+      "url": "https://github.com/UnsafeLabs/RFC-5322/issues/1",
+      "repositoryApiUrl": "https://api.github.com/repos/UnsafeLabs/RFC-5322",
+      "rewardUsd": 400,
+      "score": 72,
+      "labels": [
+        "good first issue",
+        "help wanted",
+        "💎 Bounty",
+        "$400"
+      ],
+      "commentCount": 21,
+      "updatedAt": "2026-09-01T00:09:20Z",
+      "summary": "`source.md` contains the complete RFC 5322 specification (Internet Message Format). We need a **fully conformant email address parser** in Python that implements the complete ABNF grammar from sections 3.2 through 3.4, plus obsolete syntax from §4.4. This parser must handle every edge case defined in the RFC — not just simple `user@domain` patterns, but the full complexity of quoted strings, comments, folding whitespace, group addresses, and domain literals. ## Background RFC 5322 defines email address syntax through a chain of ABNF productions that build on each other: ``` address = mailbox / group mailbox = name-addr / addr-spec name-addr = [display-name] angle-addr angle-addr = [CFWS] \"<\" addr-spec \">\" [CFWS] addr-spec = local-part \"@\" domain local-part = dot-atom / quoted-string / obs-local-part domain = dot-atom / domain-literal / obs-domain ``` Each of these references further productions (CFWS, FWS, quoted-pair, dtext, etc.) that span multiple sections. **You must read `source.md` completely** to trace the full grammar dependency chain. ## Requirements ### 1. Parser Implementation — `parser.py` ```python class RFC5322Address: \"\"\"Parsed RFC 5322 email address.\"\"\" display_name",
+      "state": "candidate",
+      "payoutConfidence": 0.92,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 16,
+      "complexity": 0,
+      "fundedBountySignal": true,
+      "fastCashScore": 99,
+      "survivalEligible": false,
+      "eligibilityReason": "Too slow for bootstrap mode: first real cash currently requires a <=4 hour task.",
+      "competition": {
+        "comments": 21,
+        "attemptSignals": 3,
+        "risk": "high"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 400,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5306470770",
+      "source": "github",
+      "title": "[QUEST] Bring a Pollinations Community Agent to Discord",
+      "url": "https://github.com/pollinations/pollinations/issues/14227",
+      "repositoryApiUrl": "https://api.github.com/repos/pollinations/pollinations",
+      "rewardUsd": 10,
+      "score": 30,
+      "labels": [
+        "POLLEN-QUEST"
+      ],
+      "commentCount": 1,
+      "updatedAt": "2026-09-01T01:22:15Z",
+      "summary": "### How this quest works Multiple contributors may submit PRs. We will select the clearest, smallest completed approach. The author of the selected merged PR receives the reward. PRs opened under the original generic Discord-bot scope remain eligible, including #14230. ### Goal Bring one existing public Pollinations Community Agent to Discord as a working bot. Choose an agent whose purpose fits Discord well and keep the integration simple. Other strong Pollinations-powered Discord ideas are welcome when proposed in this issue before implementation. ### Outcome - A selected `owner/name` Community Agent can be used naturally from Discord and is available for maintainers to test. - The agent remains the source of its behavior; the Discord adapter does not duplicate its system prompt or agent logic. - A stateless design that uses Discord as the source of conversation context is welcome, but not required. - Users connect Pollinations through device authorization and never paste an API key into Discord. - Bot actions use the connected user's Pollen, with an App Key for attribution and isolation between users. - Users can disconnect, and expired authorization has a clear reconnect path. -",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 93,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 1,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 10,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -296,8 +271,8 @@
       "rewardUsd": 1000,
       "score": 56,
       "labels": [],
-      "commentCount": 12,
-      "updatedAt": "2026-08-31T21:58:46Z",
+      "commentCount": 13,
+      "updatedAt": "2026-09-01T00:03:36Z",
       "summary": "## Goal Expand the clipping/content-reward opportunity surface beyond Clip Army/Whop without granting execution authority that is not backed by an official machine interface. ## Fresh public evidence checked 2026-08-30 ### Clipping.net - Official creator/docs surfaces expose campaign name/status, accepted platforms, payout rate, payment method, campaign type and duration/budget behavior. - Official docs state there is no separate join step for ordinary campaigns: the creator joins by submitting the first clip; private campaigns hide full rules and the Submit clip button until approval. - Official creator flow remains: pick campaign -> create/post on connected social account -> paste/submit the public post link -> platform tracks views/engagement and pays verified cycles. - No official authenticated creator machine-submission API was verified in this check. ### Vues - Public campaign pages expose campaign/brand stats and describe campaign-specific CPM/budget behavior plus automatic view tracking. - Public creator guidance remains: apply/join campaign -> post on social platform -> drop/share the post link into Vues -> tracked views feed balance/payout. - No official authenticated cre",
       "state": "candidate",
       "payoutConfidence": 0.35,
@@ -307,11 +282,11 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 93,
+      "fastCashScore": 91,
       "survivalEligible": false,
       "eligibilityReason": "Competition is too high for bootstrap mode.",
       "competition": {
-        "comments": 12,
+        "comments": 13,
         "attemptSignals": 0,
         "risk": "medium"
       },
@@ -320,35 +295,39 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5241453524",
+      "id": "github:5269559369",
       "source": "github",
-      "title": "[Bounty: $85] Disallow /app routes in robots.txt",
-      "url": "https://github.com/Lilly-Protocol/lily-frontend/issues/88",
-      "repositoryApiUrl": "https://api.github.com/repos/Lilly-Protocol/lily-frontend",
-      "rewardUsd": 85,
-      "score": 54,
-      "labels": [],
-      "commentCount": 5,
-      "updatedAt": "2026-08-31T22:40:37Z",
-      "summary": "## Context `src/app/robots.ts` returns `allow: \"/\"` for all user agents, which includes the authenticated dashboard surface (`/app`, `/app/agents`, `/app/payments`, `/app/wallets`, `/app/activity`, `/app/developers`, `/app/settings`). These are private user areas and should not be indexed. ## Proposed Change Update `robots.ts` to `disallow` `/app` (and any future auth-protected prefixes) while keeping marketing, legal, and support routes crawlable, and add a test asserting the disallow rules. ## Acceptance Criteria - Robots output includes a `disallow` entry for `/app` - Marketing routes remain allowed - Test covers the generated rules - Sitemap still lists only public pages ## Suggested Label enhancement",
+      "title": "🎯 Fix Memory Leak in Buffer Pool Manager",
+      "url": "https://github.com/ravshanitoviah/go-github/issues/4",
+      "repositoryApiUrl": "https://api.github.com/repos/ravshanitoviah/go-github",
+      "rewardUsd": 10,
+      "score": 46,
+      "labels": [
+        "bounty",
+        "$10",
+        "opire"
+      ],
+      "commentCount": 8,
+      "updatedAt": "2026-09-01T01:01:04Z",
+      "summary": "## 📝 Description The Buffer Pool Manager is currently leaking memory during high-concurrency operations. Profiling indicates that `Page` objects are not being properly reclaimed after being unpinned, leading to a gradual increase in heap usage until an Out-of-Memory (OOM) error occurs. This issue appears to be related to the reference counting mechanism in the `Page` struct or an incorrect implementation of the eviction policy, preventing pages from returning to the free list. ## 🎯 Acceptance Criteria - [ ] Identify and resolve the root cause of the memory leak in `BufferPoolManager`. - [ ] Ensure that `pin_count` and `is_dirty` flags are correctly managed during page eviction. - [ ] Verify that all allocated `Page` objects are properly deallocated or returned to the free list when no longer in use. - [ ] Implement a regression test that simulates high-frequency page access and eviction to ensure memory stability. - [ ] Memory usage must remain constant under sustained load (no growth over 10,000 operations). ## 🛠️ Technical Specifications & Context - **Likely Location:** `src/storage/buffer_pool_manager.cpp` and `src/storage/page.h`. - **Key Areas to Investigate:** - **`UnpinPa",
       "state": "candidate",
-      "payoutConfidence": 0.65,
+      "payoutConfidence": 0.7,
       "autonomyFit": 1,
       "requiresHumanGate": false,
       "requiresSpecialHardware": false,
       "estimatedHoursBand": 4,
-      "complexity": 0,
+      "complexity": 2,
       "fundedBountySignal": false,
-      "fastCashScore": 80,
+      "fastCashScore": 82,
       "survivalEligible": false,
       "eligibilityReason": "Competition is too high for bootstrap mode.",
       "competition": {
-        "comments": 5,
-        "attemptSignals": 4,
-        "risk": "high"
+        "comments": 8,
+        "attemptSignals": 1,
+        "risk": "medium"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 85,
+      "economicValueUsd": 10,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -385,6 +364,114 @@
       "realMoneyEligible": true,
       "economicValueUsd": 50,
       "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5306552166",
+      "source": "github",
+      "title": "The per-hop multiplier is measured out: what makes rim-to-core transmission possible at all?",
+      "url": "https://github.com/NGL321/patchworks/issues/230",
+      "repositoryApiUrl": "https://api.github.com/repos/NGL321/patchworks",
+      "rewardUsd": 127,
+      "score": 40,
+      "labels": [
+        "wayfinder:grilling"
+      ],
+      "commentCount": 0,
+      "updatedAt": "2026-09-01T01:09:04Z",
+      "summary": "Part of #127, stage 2. Raised by [#184](https://github.com/NGL321/patchworks/issues/184) on [#214](https://github.com/NGL321/patchworks/issues/214)'s measurement. **Blocked on [#231](https://github.com/NGL321/patchworks/issues/231)**, the backlog sweep, which reads the project's own record before this is taken. ## The question **What makes rim-to-core transmission possible at all — considering the system as a whole rather than one factor inside it?** The map's destination is one sentence: *a perturbation at the rim measurably reaches the apex and returns*. #214 ran the first direct read of exactly that and it fails by **1.15e9x** rim→apex and **7.6e7x** apex→rim. A unit rim deviation clears its first edge by 103x and is under the floor by the second. If the rim cannot influence the core and the core cannot influence the rim, there is no point in the system having depth, and the hierarchical structure — which is not optional, it is the architecture's claim — does not survive. That is what is actually on the table. ## Why this is not another remedy ticket **Every open transmission ticket is a per-hop multiplier.** [#220](https://github.com/NGL321/patchworks/issues/220) swaps a denomi",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 16,
+      "complexity": 5,
+      "fundedBountySignal": false,
+      "fastCashScore": 64,
+      "survivalEligible": false,
+      "eligibilityReason": "Too slow for bootstrap mode: first real cash currently requires a <=4 hour task.",
+      "competition": {
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 127,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5290929680",
+      "source": "github",
+      "title": "[DRAFT DIRECT] Make verifier settlement deadline-aware and provider-resilient",
+      "url": "https://github.com/NSPG13/agent-bounties/issues/1262",
+      "repositoryApiUrl": "https://api.github.com/repos/NSPG13/agent-bounties",
+      "rewardUsd": 14.5,
+      "score": 52,
+      "labels": [
+        "bounty",
+        "ai-agent-welcome",
+        "payments",
+        "funding-needed"
+      ],
+      "commentCount": 29,
+      "updatedAt": "2026-09-01T01:02:35Z",
+      "summary": "> **UNFUNDED PRECOMMIT — do not claim, sign, spend, or start implementation yet.** This becomes paid work only after the immutable benchmark reaches protected `main`, a live verifier canary passes, and canonical Base creation/funding/claimability evidence is linked here. ## Goal Build a production settlement watchdog that keeps valid sandboxed-regression submissions moving through the existing runner, independent signer/provider paths, and relay before their immutable verification deadlines—without giving the watchdog any verdict, signature, wallet, payment, or settlement authority. ## Why this is commercially valuable Verifier liveness is the clearest observed marketplace bottleneck. Recent valid coding bounties repeatedly expired after submission because one bad archive or one unavailable workflow/provider prevented attestations and settlement. Fixing that failure mode reduces locked capital, abandoned solver work, and false “the code passed but nobody got paid” outcomes. ## Acceptance criteria - Add a deterministic deadline-aware planner at `scripts/regression_verifier_watchdog.py`. - Return one exact action, next owner, recheck time, and stable idempotency key for every canonic",
+      "state": "candidate",
+      "payoutConfidence": 0.7,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 2,
+      "fundedBountySignal": false,
+      "fastCashScore": 61,
+      "survivalEligible": false,
+      "eligibilityReason": "Competition is too high for bootstrap mode.",
+      "competition": {
+        "comments": 29,
+        "attemptSignals": 1,
+        "risk": "high"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 14.5,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:4832474948",
+      "source": "github",
+      "title": "[Bounty $2500] Command-R bringup using TTNN APIs",
+      "url": "https://github.com/tenstorrent/tt-metal/issues/49307",
+      "repositoryApiUrl": "https://api.github.com/repos/tenstorrent/tt-metal",
+      "rewardUsd": 2500,
+      "score": 56,
+      "labels": [
+        "community",
+        "bounty",
+        "bounty_difficulty/hard",
+        "model bringup"
+      ],
+      "commentCount": 15,
+      "updatedAt": "2026-09-01T01:07:17Z",
+      "summary": "### 📝 Background This bounty is for bringing up [CohereForAI/c4ai-command-r-v01](https://huggingface.co/CohereForAI/c4ai-command-r-v01) using TTNN APIs on Tenstorrent hardware (Wormhole T3K — 4× N300s). Command R is Cohere's open-weight 35B parameter autoregressive language model built on an optimized transformer architecture with 128K context length. It was specifically designed for grounded generation and retrieval-augmented generation (RAG), with native single-step and multi-step tool use. The architecture closely follows Llama-style decoder-only transformers with GQA, RoPE positional embeddings, SwiGLU activations, and a unique QK LayerNorm applied within each attention block. At 35B parameters, this model is a natural fit for a T3K (4× N300, TP=8) topology and represents a practical bringup target: its operator composition closely matches what is already proven on TT hardware (Llama, Qwen, Mixtral), while adding new coverage for the Cohere model type, QK LayerNorm, and grounded-generation prompt templates. ### 🎯 What Success Looks Like - - Implement the full Command R decoder stack in TTNN: token embeddings, 40× CohereDecoderLayer (QK-normed GQA attention + SwiGLU MLP), and ",
+      "state": "candidate",
+      "payoutConfidence": 0.8,
+      "autonomyFit": 0,
+      "requiresHumanGate": true,
+      "requiresSpecialHardware": true,
+      "estimatedHoursBand": 30,
+      "complexity": 3,
+      "fundedBountySignal": false,
+      "fastCashScore": 12,
+      "survivalEligible": false,
+      "eligibilityReason": "Too slow for bootstrap mode: first real cash currently requires a <=4 hour task.",
+      "competition": {
+        "comments": 15,
+        "attemptSignals": 0,
+        "risk": "medium"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 2500,
+      "requiresPreclaimOrIdentity": false
     }
   ],
   "selected": null,
@@ -397,13 +484,13 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:4455330769\",\"rewardUsd\":150,\"fastCashScore\":118,\"updatedAt\":\"2026-08-31T18:40:46Z\",\"competition\":{\"comments\":26,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4557180255\",\"rewardUsd\":780,\"fastCashScore\":139,\"updatedAt\":\"2026-08-29T02:37:40Z\",\"competition\":{\"comments\":10,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-31T03:06:46Z\",\"competition\":{\"comments\":51,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:4765251938\",\"rewardUsd\":20,\"fastCashScore\":94,\"updatedAt\":\"2026-08-31T15:21:46Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4975260101\",\"rewardUsd\":780,\"fastCashScore\":116,\"updatedAt\":\"2026-08-28T18:51:33Z\",\"competition\":{\"comments\":20,\"attemptSignals\":1,\"risk\":\"high\"}},{\"id\":\"github:5232456127\",\"rewardUsd\":350,\"fastCashScore\":111,\"updatedAt\":\"2026-08-31T15:04:50Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5241453244\",\"rewardUsd\":75,\"fastCashScore\":108,\"updatedAt\":\"2026-08-31T22:40:38Z\",\"competition\":{\"comments\":2,\"attemptSignals\":1,\"risk\":\"medium\"}},{\"id\":\"github:5241453524\",\"rewardUsd\":85,\"fastCashScore\":80,\"updatedAt\":\"2026-08-31T22:40:37Z\",\"competition\":{\"comments\":5,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5242757808\",\"rewardUsd\":95,\"fastCashScore\":119,\"updatedAt\":\"2026-08-31T22:11:27Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5242836725\",\"rewardUsd\":90,\"fastCashScore\":108,\"updatedAt\":\"2026-08-31T22:41:50Z\",\"competition\":{\"comments\":4,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5279395598\",\"rewardUsd\":402,\"fastCashScore\":115,\"updatedAt\":\"2026-08-31T22:29:13Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5282653916\",\"rewardUsd\":1000,\"fastCashScore\":93,\"updatedAt\":\"2026-08-31T21:58:46Z\",\"competition\":{\"comments\":12,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5295068200\",\"rewardUsd\":12.36358,\"fastCashScore\":94,\"updatedAt\":\"2026-08-31T18:10:52Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:4455330769\",\"rewardUsd\":150,\"fastCashScore\":118,\"updatedAt\":\"2026-08-31T18:40:46Z\",\"competition\":{\"comments\":26,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":99,\"updatedAt\":\"2026-09-01T00:09:20Z\",\"competition\":{\"comments\":21,\"attemptSignals\":3,\"risk\":\"high\"}},{\"id\":\"github:4557180255\",\"rewardUsd\":780,\"fastCashScore\":139,\"updatedAt\":\"2026-08-29T02:37:40Z\",\"competition\":{\"comments\":10,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-31T03:06:46Z\",\"competition\":{\"comments\":51,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:4832474948\",\"rewardUsd\":2500,\"fastCashScore\":12,\"updatedAt\":\"2026-09-01T01:07:17Z\",\"competition\":{\"comments\":15,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4975260101\",\"rewardUsd\":780,\"fastCashScore\":116,\"updatedAt\":\"2026-08-28T18:51:33Z\",\"competition\":{\"comments\":20,\"attemptSignals\":1,\"risk\":\"high\"}},{\"id\":\"github:5162349650\",\"rewardUsd\":120,\"fastCashScore\":105,\"updatedAt\":\"2026-09-01T01:25:07Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5217130315\",\"rewardUsd\":120,\"fastCashScore\":105,\"updatedAt\":\"2026-09-01T01:04:38Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5269559369\",\"rewardUsd\":10,\"fastCashScore\":82,\"updatedAt\":\"2026-09-01T01:01:04Z\",\"competition\":{\"comments\":8,\"attemptSignals\":1,\"risk\":\"medium\"}},{\"id\":\"github:5282653916\",\"rewardUsd\":1000,\"fastCashScore\":91,\"updatedAt\":\"2026-09-01T00:03:36Z\",\"competition\":{\"comments\":13,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5290929680\",\"rewardUsd\":14.5,\"fastCashScore\":61,\"updatedAt\":\"2026-09-01T01:02:35Z\",\"competition\":{\"comments\":29,\"attemptSignals\":1,\"risk\":\"high\"}},{\"id\":\"github:5295068200\",\"rewardUsd\":12.36358,\"fastCashScore\":94,\"updatedAt\":\"2026-08-31T18:10:52Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5298635570\",\"rewardUsd\":15,\"fastCashScore\":64,\"updatedAt\":\"2026-09-01T01:07:03Z\",\"competition\":{\"comments\":9,\"attemptSignals\":5,\"risk\":\"high\"}},{\"id\":\"github:5306470770\",\"rewardUsd\":10,\"fastCashScore\":93,\"updatedAt\":\"2026-09-01T01:22:15Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5306552166\",\"rewardUsd\":127,\"fastCashScore\":64,\"updatedAt\":\"2026-09-01T01:09:04Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
     "mode": true,
     "eligibleCount": 0,
-    "fundedSignalCount": 4,
+    "fundedSignalCount": 5,
     "objective": "first_real_confirmed_cash_fast",
     "policy": "bootstrap_basic_v1",
     "maxHours": 4,
@@ -411,9 +498,28 @@
     "competitionRequired": "low",
     "rejectedFakeRevenueCount": 2,
     "rejectedAlreadyPaidCount": 0,
-    "rejectedIdentityGateCount": 0
+    "rejectedIdentityGateCount": 1
   },
   "economicallyRejected": [
+    {
+      "id": "github:5295068200",
+      "title": "Orbit Testnet daily report: 2026-08-30",
+      "rewardUsd": 12.36358,
+      "reasons": [
+        "testnet_or_test_token_reward"
+      ],
+      "rejectedAt": "2026-09-01T01:32:16.003Z"
+    },
+    {
+      "id": "github:5298635570",
+      "title": "[Bug] file_upload_component.test.js only checks FileUpload previews, not the shared hook contract",
+      "rewardUsd": 15,
+      "reasons": [
+        "testnet_or_test_token_reward",
+        "preclaim_or_identity_gate_not_configured"
+      ],
+      "rejectedAt": "2026-09-01T01:32:16.003Z"
+    },
     {
       "id": "github:4765251938",
       "title": "[DBIP] Add chain-logo coverage validation for specific-network listings",
@@ -422,15 +528,6 @@
         "testnet_or_test_token_reward"
       ],
       "rejectedAt": "2026-08-31T22:50:43.215Z"
-    },
-    {
-      "id": "github:5295068200",
-      "title": "Orbit Testnet daily report: 2026-08-30",
-      "rewardUsd": 12.36358,
-      "reasons": [
-        "testnet_or_test_token_reward"
-      ],
-      "rejectedAt": "2026-08-31T22:50:43.216Z"
     },
     {
       "id": "github:5298635872",
@@ -1142,16 +1239,6 @@
     {
       "id": "github:5190341394",
       "title": "KYC Registry Expiry Index Compaction and Per-Subject Verifier Log",
-      "rewardUsd": 2000,
-      "reasons": [
-        "already_rewarded_or_paid",
-        "preclaim_or_identity_gate_not_configured"
-      ],
-      "rejectedAt": "2026-08-22T18:00:52.889Z"
-    },
-    {
-      "id": "github:5190342386",
-      "title": "Invoice Token Secondary Market Enablement and Partial Redemption Precision",
       "rewardUsd": 2000,
       "reasons": [
         "already_rewarded_or_paid",

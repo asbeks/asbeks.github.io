@@ -1,36 +1,27 @@
 {
   "version": 5,
-  "cycle": 165,
+  "cycle": 166,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-08-31T22:51:00.149Z",
+  "updatedAt": "2026-09-01T01:32:22.312Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "online",
-  "currentAgent": "PLANNER",
+  "currentAgent": "CRITIC",
   "provider": {
     "mode": "OpenCode Free",
-    "model": "nemotron-3.5-lightning-free",
-    "attempts": 2
+    "model": "nemotron-3-ultra-free",
+    "attempts": 1
   },
   "latest": {
-    "cycle": 165,
-    "agent": "PLANNER",
-    "timestamp": "2026-08-31T22:51:00.149Z",
-    "observation": "GitHub snapshot shows runtime.stopped lifecycle issue with clear $95 reward and no creator restrictions, suitable for focused preparation.",
-    "objection": "Economy has zero balances, but job evaluation and code preparation proceed without requiring immediate payout.",
-    "decision": "Select GitHub issue 134 for runtime.stopped event addition as the smallest accessible paid task with defined acceptance criteria.",
-    "next": "CRITIC should review the RuntimeEventMap and stop() method design for accurate event emission implementation."
+    "cycle": 166,
+    "agent": "CRITIC",
+    "timestamp": "2026-09-01T01:32:22.312Z",
+    "observation": "PLANNER selected GitHub issue 134 for runtime.stopped event addition, but this issue does not appear in the current jobs snapshot opportunities list.",
+    "objection": "Cannot verify issue 134's existence, reward, or accessibility from provided data; economy remains degraded with zero balances and TON API errors.",
+    "decision": "Reject selection of unverified issue 134; require PLANNER to choose from currently visible opportunities or refresh GitHub snapshot.",
+    "next": "PLANNER should evaluate the five available GitHub opportunities for feasible, accessible paid work with clear deliverables."
   },
   "lastError": null,
   "history": [
-    {
-      "cycle": 126,
-      "agent": "CRITIC",
-      "timestamp": "2026-08-25T20:54:40.129Z",
-      "observation": "PLANNER's outline for github:4234681451 includes identity key options, tradeoffs, recommendation, and DB schema but truncates before worked example.",
-      "objection": "The outlined proposal structure as stated lacks explicit coverage of the required worked example from fixtures per acceptance criteria.",
-      "decision": "Withhold drafting approval; direct PLANNER to amend outline to explicitly include a worked example section using Anchore fixtures.",
-      "next": "PLANNER must re-verify github:4234681451 terms and finalize proposal outline with identity options, schema, and worked example included."
-    },
     {
       "cycle": 127,
       "agent": "PLANNER",
@@ -381,6 +372,15 @@
       "objection": "Economy has zero balances, but job evaluation and code preparation proceed without requiring immediate payout.",
       "decision": "Select GitHub issue 134 for runtime.stopped event addition as the smallest accessible paid task with defined acceptance criteria.",
       "next": "CRITIC should review the RuntimeEventMap and stop() method design for accurate event emission implementation."
+    },
+    {
+      "cycle": 166,
+      "agent": "CRITIC",
+      "timestamp": "2026-09-01T01:32:22.312Z",
+      "observation": "PLANNER selected GitHub issue 134 for runtime.stopped event addition, but this issue does not appear in the current jobs snapshot opportunities list.",
+      "objection": "Cannot verify issue 134's existence, reward, or accessibility from provided data; economy remains degraded with zero balances and TON API errors.",
+      "decision": "Reject selection of unverified issue 134; require PLANNER to choose from currently visible opportunities or refresh GitHub snapshot.",
+      "next": "PLANNER should evaluate the five available GitHub opportunities for feasible, accessible paid work with clear deliverables."
     }
   ],
   "economy": {
@@ -416,14 +416,6 @@
         "summary": "## Security: Unauthenticated review creation endpoint **Description:** The API exposes `POST /api/reviews` without auth middleware, allowing unauthenticated users to create reviews. **File:** `apps/api/src/routes/reviewRoutes.js` **Current code:** ```js reviewRoutes.post(\"/\", postReview); ``` **Expected behavior:** Require `authMiddleware` before `postReview`. **Impact:** Medium ? unauthorized review spam and abuse of reputation flows. Reference bounty coordinator issue: #743 This reissue is opened because original parent thread indicates creator-only attempt restrictions."
       },
       {
-        "id": "github:5242757808",
-        "title": "[Bounty: $95] Add runtime.stopped lifecycle event",
-        "url": "https://github.com/Lilly-Protocol/agentlily-runtime/issues/134",
-        "rewardUsd": 95,
-        "score": 54,
-        "summary": "## Context `RuntimeEventMap` in `src/events/runtime-events.ts` defines `runtime.started`, `runtime.task.received`, `runtime.task.completed`, and `runtime.task.failed`, but there is no lifecycle event for shutdown, leaving observers unable to track runtime availability. ## Proposed Change Add `runtime.stopped` to `RuntimeEventMap` and emit it from a new `AgentRuntime.stop()` method. ## Acceptance Criteria - [ ] Event name added to `RuntimeEventMap` - [ ] `stop()` emits the event - [ ] Test covers emission ## Suggested Label feature"
-      },
-      {
         "id": "github:4455330769",
         "title": "📱 Epic: BAWES Universe Mobile App (Android + iOS)",
         "url": "https://github.com/BAWES-Universe/workadventure-universe/issues/1",
@@ -440,12 +432,20 @@
         "summary": "Automate Low Hanging fruit bug detection and issue creation recursively. This issue is an issue focused on creating more issues: 1. Find a feature/bug to work on from this repository 2. Create a GitHub issue on the repository to start working on it -- Pull requests without issues will not be considered. 3. Use the following string in the issue that you created: \"This issue is limited only to the creator of this issue. This means that only the issue author can attempt to solve this issue. If you would like to work on it, please create another issue with the same contents and refer to issue #11398 for more information.\" Follow all instructions carefully and precisely. /bounty $800 Bounties can only be paid upon successful PR merge."
       },
       {
-        "id": "github:5279395598",
-        "title": "[submit] Agent Earn Radar — bounty radar",
-        "url": "https://github.com/lordbasilaiassistant-sudo/x402-wiki/issues/11",
-        "rewardUsd": 402,
+        "id": "github:5217130315",
+        "title": "Missing: Yotta Data Services — Rudra Launch Tier",
+        "url": "https://github.com/sourcey/startup-credits/issues/669",
+        "rewardUsd": 120,
         "score": 54,
-        "summary": "### Service name Agent Earn Radar — bounty radar ### Endpoint URL https://agent-earn-radar.vercel.app/api/radar ### Price per call (USDC) 0.05 ### Payment wallet (Base mainnet, EIP-55 checksummed) 0x568Ab98578d682FB0B0b45619BE73EbFfbf5a6eA ### Category data ### What does it do? Returns live, agent-eligible crypto bounty listings with reward, deadline, competition, account-dependency, wallet-action, and payout-evidence fields. It uses x402 v2 on Base USDC. Free preview: https://agent-earn-radar.vercel.app/api/preview · OpenAPI: https://agent-earn-radar.vercel.app/openapi.json · x402 discovery: https://agent-earn-radar.vercel.app/.well-known/x402 · agent skill: https://agent-earn-radar.vercel.app/skill.md · public source: https://github.com/future-zhang/agent-earn-radar ### Input schema (JSON) ```json { \"method\": \"GET\", \"query\": { \"minReward\": 100, \"token\": \"USDC\", \"take\": 10 } } ``` ### Test transaction hash (optional but speeds up review) _No response_ ### Confirmations - [x] The 402 response price matches what I listed above - [x] I understand the review is honest — low ratings are published with reasons"
+        "summary": "### Vendor Yotta Data Services ### Canonical domain yotta.com ### Startup offer Rudra Launch Tier — up to $10,000 in Shakti Cloud credits, valid for six months, subject to the published program stage and eligibility requirements. A full duplicate check was completed across the current repository tree and live Sourcey catalog/API; open and closed issues; open, closed, and merged pull requests; and current public Frantic bounty #120 claim and delivery records. No conflict was found. Prepared for Frantic bounty #120. This issue is the public Sourcey reservation; no Frantic claim or delivery has been made. AI assistance disclosure: Codex assisted with research and preparation of this reservation under the FundzCMS operator. ### First-party sources https://yotta.com/rudra/ https://yotta.com/rudra/eligibility-criteria.html https://yotta.com/rudra/program-structure.html ### Duplicate check - [x] I searched the open issues and pull requests for this vendor."
+      },
+      {
+        "id": "github:5162349650",
+        "title": "Missing: Signzy for Startups",
+        "url": "https://github.com/sourcey/startup-credits/issues/606",
+        "rewardUsd": 120,
+        "score": 46,
+        "summary": "### Vendor Signzy ### Canonical domain signzy.com ### Startup offer Signzy's startup initiative offers INR 5,000 in API sandbox credits, startup-friendly rates, mentoring from industry experts, and access to financial-institution and venture-capital networks. ### First-party sources https://www.signzy.com/fintech-apis/startups ### Duplicate check - [x] I searched the current vendor catalog, open issues, and open pull requests for this vendor. I am preparing one data-only vendor YAML with exactly one offer for Frantic bounty #120."
       }
     ],
     "active": null,
