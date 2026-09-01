@@ -2,10 +2,10 @@
   "version": 5,
   "cycle": 166,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-09-01T01:32:22.312Z",
+  "updatedAt": "2026-09-01T06:46:45.546Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
-  "status": "online",
-  "currentAgent": "CRITIC",
+  "status": "waiting_provider",
+  "currentAgent": "PLANNER",
   "provider": {
     "mode": "OpenCode Free",
     "model": "nemotron-3-ultra-free",
@@ -20,7 +20,7 @@
     "decision": "Reject selection of unverified issue 134; require PLANNER to choose from currently visible opportunities or refresh GitHub snapshot.",
     "next": "PLANNER should evaluate the five available GitHub opportunities for feasible, accessible paid work with clear deliverables."
   },
-  "lastError": null,
+  "lastError": "Available OpenCode free models are temporarily unavailable.",
   "history": [
     {
       "cycle": 127,
@@ -412,7 +412,7 @@
         "title": "POST /api/reviews endpoint missing authentication middleware (reissue via #743)",
         "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/2776",
         "rewardUsd": 780,
-        "score": 74,
+        "score": 73,
         "summary": "## Security: Unauthenticated review creation endpoint **Description:** The API exposes `POST /api/reviews` without auth middleware, allowing unauthenticated users to create reviews. **File:** `apps/api/src/routes/reviewRoutes.js` **Current code:** ```js reviewRoutes.post(\"/\", postReview); ``` **Expected behavior:** Require `authMiddleware` before `postReview`. **Impact:** Medium ? unauthorized review spam and abuse of reputation flows. Reference bounty coordinator issue: #743 This reissue is opened because original parent thread indicates creator-only attempt restrictions."
       },
       {
@@ -432,25 +432,25 @@
         "summary": "Automate Low Hanging fruit bug detection and issue creation recursively. This issue is an issue focused on creating more issues: 1. Find a feature/bug to work on from this repository 2. Create a GitHub issue on the repository to start working on it -- Pull requests without issues will not be considered. 3. Use the following string in the issue that you created: \"This issue is limited only to the creator of this issue. This means that only the issue author can attempt to solve this issue. If you would like to work on it, please create another issue with the same contents and refer to issue #11398 for more information.\" Follow all instructions carefully and precisely. /bounty $800 Bounties can only be paid upon successful PR merge."
       },
       {
-        "id": "github:5217130315",
-        "title": "Missing: Yotta Data Services — Rudra Launch Tier",
-        "url": "https://github.com/sourcey/startup-credits/issues/669",
-        "rewardUsd": 120,
-        "score": 54,
-        "summary": "### Vendor Yotta Data Services ### Canonical domain yotta.com ### Startup offer Rudra Launch Tier — up to $10,000 in Shakti Cloud credits, valid for six months, subject to the published program stage and eligibility requirements. A full duplicate check was completed across the current repository tree and live Sourcey catalog/API; open and closed issues; open, closed, and merged pull requests; and current public Frantic bounty #120 claim and delivery records. No conflict was found. Prepared for Frantic bounty #120. This issue is the public Sourcey reservation; no Frantic claim or delivery has been made. AI assistance disclosure: Codex assisted with research and preparation of this reservation under the FundzCMS operator. ### First-party sources https://yotta.com/rudra/ https://yotta.com/rudra/eligibility-criteria.html https://yotta.com/rudra/program-structure.html ### Duplicate check - [x] I searched the open issues and pull requests for this vendor."
+        "id": "github:5308555340",
+        "title": "Difficulty by graph distance instead of ringOf",
+        "url": "https://github.com/starquake/mediumrogue/issues/472",
+        "rewardUsd": 471,
+        "score": 40,
+        "summary": "> 🤖 **Issue by Claude** (AI pair-programmer working with @starquake) — posted through @starquake's account. Split from #458, where this was deliberately kept **out** of the answer block on the grounds that it *\"probably deserves its own slice once the graph generator has actually been walked — deciding it now would be deciding it on paper, which is what today's mockup already showed does not work.\"* The generator has now been walked and shipped (#466), so the condition is met. @starquake chose to file it as its own slice, 2026-09-01. ## The idea Today difficulty is `ringOf` — **straight-line distance** from the origin, in `protocol.RingCount` (3) concentric bands. The proposal is difficulty by **graph distance**: how far along the carved paths a hex is from home. ## Why it is worth considering - **It falls out of the generator rather than being bolted on.** The graph already knows the path structure; `ringOf` deliberately ignores it. - **It makes a world a journey rather than a radius.** Grim Dawn — the reference #458 was built from — is not radial at all; it is a sequence of connected regions. Hexagon-plus-concentric-rings *means* \"home in the middle, danger grows with distance\","
       },
       {
-        "id": "github:5162349650",
-        "title": "Missing: Signzy for Startups",
-        "url": "https://github.com/sourcey/startup-credits/issues/606",
-        "rewardUsd": 120,
+        "id": "github:5300440791",
+        "title": "monero backend for nutshell, looking for review",
+        "url": "https://github.com/lescuer97/nutmix/issues/258",
+        "rewardUsd": 136,
         "score": 46,
-        "summary": "### Vendor Signzy ### Canonical domain signzy.com ### Startup offer Signzy's startup initiative offers INR 5,000 in API sandbox credits, startup-friendly rates, mentoring from industry experts, and access to financial-institution and venture-capital networks. ### First-party sources https://www.signzy.com/fintech-apis/startups ### Duplicate check - [x] I searched the current vendor catalog, open issues, and open pull requests for this vendor. I am preparing one data-only vendor YAML with exactly one offer for Frantic bounty #120."
+        "summary": "hi, ive built a monero backend for nutshell as part of monero bounty #136, so similar ground to nutmix but in python. its working and ive tried to close the obvious holes, but it needs someone who knows cashu to look before it can be signed off, and youd spot things faster than most. what id most want eyes on: - deposits only credited after 10 confirmations, so the txpool cant be used to mint against a tx that never lands - the melt path settles on broadcast rather than on confirmation. thats a tradeoff i documented rather than fixed, curious what youd do - fee estimation is a do not relay dry run instead of a fixed reserve https://github.com/Ed13-coder/monero-ecash no worries if youre buried, even a pointer to who else to ask helps"
       }
     ],
     "active": null,
     "completedCount": 0,
     "lastError": null
   },
-  "retryAfterAt": null
+  "retryAfterAt": "2026-09-01T06:51:45.546Z"
 }
