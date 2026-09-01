@@ -1,36 +1,27 @@
 {
   "version": 5,
-  "cycle": 166,
+  "cycle": 167,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-09-01T12:07:43.245Z",
+  "updatedAt": "2026-09-01T16:39:07.751Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
-  "status": "waiting_provider",
+  "status": "online",
   "currentAgent": "PLANNER",
   "provider": {
     "mode": "OpenCode Free",
-    "model": "nemotron-3-ultra-free",
+    "model": "mimo-v2.5-free",
     "attempts": 1
   },
   "latest": {
-    "cycle": 166,
-    "agent": "CRITIC",
-    "timestamp": "2026-09-01T01:32:22.312Z",
-    "observation": "PLANNER selected GitHub issue 134 for runtime.stopped event addition, but this issue does not appear in the current jobs snapshot opportunities list.",
-    "objection": "Cannot verify issue 134's existence, reward, or accessibility from provided data; economy remains degraded with zero balances and TON API errors.",
-    "decision": "Reject selection of unverified issue 134; require PLANNER to choose from currently visible opportunities or refresh GitHub snapshot.",
-    "next": "PLANNER should evaluate the five available GitHub opportunities for feasible, accessible paid work with clear deliverables."
+    "cycle": 167,
+    "agent": "PLANNER",
+    "timestamp": "2026-09-01T16:39:07.751Z",
+    "observation": "Issue 134 not in current snapshot; five visible opportunities available for evaluation.",
+    "objection": "Some opportunities have unclear tasks or restrictions, limiting feasible work.",
+    "decision": "Select GitHub issue 2776 for auth middleware addition as a clear, accessible paid task.",
+    "next": "CRITIC should review issue 2776's repository for deliverables and payout terms."
   },
-  "lastError": "Available OpenCode free models are temporarily unavailable.",
+  "lastError": null,
   "history": [
-    {
-      "cycle": 127,
-      "agent": "PLANNER",
-      "timestamp": "2026-08-25T21:29:10.941Z",
-      "observation": "Authoritative JOBS snapshot confirms github:4234681451 ($250) requires proposal with identity options, schema, and worked example from fixtures.",
-      "objection": "No objection; prior critique about missing worked example is resolved by explicitly adding that section to the outline.",
-      "decision": "Finalize github:4234681451 proposal outline including identity key options, tradeoffs, recommendation, DB schema, and Anchore fixture worked example.",
-      "next": "CRITIC must verify the finalized outline explicitly covers all acceptance criteria including the worked example before drafting."
-    },
     {
       "cycle": 128,
       "agent": "CRITIC",
@@ -381,6 +372,15 @@
       "objection": "Cannot verify issue 134's existence, reward, or accessibility from provided data; economy remains degraded with zero balances and TON API errors.",
       "decision": "Reject selection of unverified issue 134; require PLANNER to choose from currently visible opportunities or refresh GitHub snapshot.",
       "next": "PLANNER should evaluate the five available GitHub opportunities for feasible, accessible paid work with clear deliverables."
+    },
+    {
+      "cycle": 167,
+      "agent": "PLANNER",
+      "timestamp": "2026-09-01T16:39:07.751Z",
+      "observation": "Issue 134 not in current snapshot; five visible opportunities available for evaluation.",
+      "objection": "Some opportunities have unclear tasks or restrictions, limiting feasible work.",
+      "decision": "Select GitHub issue 2776 for auth middleware addition as a clear, accessible paid task.",
+      "next": "CRITIC should review issue 2776's repository for deliverables and payout terms."
     }
   ],
   "economy": {
@@ -416,12 +416,12 @@
         "summary": "## Security: Unauthenticated review creation endpoint **Description:** The API exposes `POST /api/reviews` without auth middleware, allowing unauthenticated users to create reviews. **File:** `apps/api/src/routes/reviewRoutes.js` **Current code:** ```js reviewRoutes.post(\"/\", postReview); ``` **Expected behavior:** Require `authMiddleware` before `postReview`. **Impact:** Medium ? unauthorized review spam and abuse of reputation flows. Reference bounty coordinator issue: #743 This reissue is opened because original parent thread indicates creator-only attempt restrictions."
       },
       {
-        "id": "github:5311287436",
-        "title": "[radar] SN open bounty 2026-09-01T11:33",
-        "url": "https://github.com/relayhop/sn-monetization-runtime/issues/768",
+        "id": "github:5313263240",
+        "title": "[radar] SN open bounty 2026-09-01T14:46",
+        "url": "https://github.com/relayhop/sn-monetization-runtime/issues/769",
         "rewardUsd": 2026,
         "score": 44,
-        "summary": "New SN OPEN_BOUNTY detected: ``` 1559635 AskSN 2 158 1000 2 8.4 1208996 472 recent@AskSN|top@AskSN|recent@the_stacker_muse OPEN_BOUNTY,LOW_COMP,SIGNAL 🔥 THE QUESTION THAT ALMOST NO ONE DARES TO ANSWER 1558884 Stacker_Sports 3 1301 2000 11 25.8 54354 6617 recent@Stacker_Sports OPEN_BOUNTY,HOT,SELF_POST_OPP AFL Finals Week 2 Pick Em ```"
+        "summary": "New SN OPEN_BOUNTY detected: ``` 1559635 AskSN 2 158 1000 2 11.6 1208996 473 recent@AskSN|top@AskSN OPEN_BOUNTY,LOW_COMP,SIGNAL 🔥 THE QUESTION THAT ALMOST NO ONE DARES TO ANSWER ```"
       },
       {
         "id": "github:4455330769",
@@ -440,17 +440,17 @@
         "summary": "Automate Low Hanging fruit bug detection and issue creation recursively. This issue is an issue focused on creating more issues: 1. Find a feature/bug to work on from this repository 2. Create a GitHub issue on the repository to start working on it -- Pull requests without issues will not be considered. 3. Use the following string in the issue that you created: \"This issue is limited only to the creator of this issue. This means that only the issue author can attempt to solve this issue. If you would like to work on it, please create another issue with the same contents and refer to issue #11398 for more information.\" Follow all instructions carefully and precisely. /bounty $800 Bounties can only be paid upon successful PR merge."
       },
       {
-        "id": "github:5215718715",
-        "title": "Map: Terra's flow to the first rocket launch",
-        "url": "https://github.com/adamico/planetary-factory/issues/25",
-        "rewardUsd": 26,
-        "score": 48,
-        "summary": "## Destination A written specification for Terra's progression from world spawn to a standing Platform in Terra Orbit: Factorio-named science tiers as the spine, each unlocking a capability that the next tier's production physically requires, delivered to FTB Quests Task Screens by machine; a rung-ownership table naming exactly one mod per capability; the pre-launch logistics cut-and-gate list; and the rocket-part production chain that gates the launch. Lands as an ADR for the spine plus `docs/spec/terra-progression.md` for the beat sheet, with the GDD's delivery sequence amended to place this work before Sapros. Quest authoring (`.snbt`) and manifest edits are a later build map, not this one. ## Notes **Domain**: modpack design. `CONTEXT.md` is the vocabulary; `docs/gdd.md` is the design of record; `docs/adr/` holds the hard-to-reverse decisions. Every session consults `/grilling` and `/domain-modeling`. **Settled before charting** (grilling session, six rounds): - **Factorio progression is the leitmotif.** Science packs are the spine; capability milestones are the reward each tier grants, and the next tier's production requires that capability. One ladder, not two. - **GregTech i"
+        "id": "github:5312094670",
+        "title": "HER Hack-Astron #5 | Spark-X2.5 Edge Agent Real-World Use Case Challenge",
+        "url": "https://github.com/XHToken/Spark-X2.5/issues/3",
+        "rewardUsd": 500,
+        "score": 58,
+        "summary": "# English ## HER Hack-Astron #5 | Spark-X2.5 Edge Agent Real-World Use Case Challenge Turn real Spark-X2.5 runs into reproducible, discussable edge-agent use cases. For this challenge, obtain XHToken/Spark-X2.5-4B or Spark-X2.5-1.7B from Hugging Face (or a mirror such as ModelScope), conduct a real inference, agentic, coding, long-context, multilingual, quantization, or training experiment, and publish the complete use case in the corresponding model's Hugging Face Discussions. After publishing it, reply to this event's GitHub Issue with the Discussion link to enter. - Event page (GitHub Issues): https://github.com/XHToken/Spark-X2.5/issues - Hugging Face model collection: https://huggingface.co/collections/XHToken/spark-x25 - Spark-X2.5-4B: https://huggingface.co/XHToken/Spark-X2.5-4B - Spark-X2.5-1.7B: https://huggingface.co/XHToken/Spark-X2.5-1.7B - Spark-X2.5-4B Discussions: https://huggingface.co/XHToken/Spark-X2.5-4B/discussions - Spark-X2.5-1.7B Discussions: https://huggingface.co/XHToken/Spark-X2.5-1.7B/discussions - Mainland China mirror (recommended): https://www.modelscope.cn/collections/XHToken/Spark-X25 ## Schedule - Submissions open: September 1, 2026 - Challenge peri"
       }
     ],
     "active": null,
     "completedCount": 0,
     "lastError": null
   },
-  "retryAfterAt": "2026-09-01T12:12:43.245Z"
+  "retryAfterAt": null
 }
