@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-09-01T22:03:51.268Z",
+  "updatedAt": "2026-09-02T00:07:08.335Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -47,10 +47,10 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5317130333",
+      "id": "github:5318118911",
       "source": "github",
-      "title": "[radar] SN open bounty 2026-09-01T21:43",
-      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/772",
+      "title": "[radar] SN open bounty 2026-09-02T00:02",
+      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/775",
       "repositoryApiUrl": "https://api.github.com/repos/relayhop/sn-monetization-runtime",
       "rewardUsd": 2026,
       "score": 44,
@@ -60,8 +60,8 @@
         "bounty"
       ],
       "commentCount": 0,
-      "updatedAt": "2026-09-01T22:00:09Z",
-      "summary": "New SN OPEN_BOUNTY detected: ``` 1559635 AskSN 2 158 1000 2 18.6 1208996 473 recent@AskSN|top@AskSN OPEN_BOUNTY,LOW_COMP 🔥 THE QUESTION THAT ALMOST NO ONE DARES TO ANSWER ```",
+      "updatedAt": "2026-09-02T00:02:02Z",
+      "summary": "New SN OPEN_BOUNTY detected: ``` 1559635 AskSN 2 158 1000 2 20.9 1208996 473 recent@AskSN|top@AskSN OPEN_BOUNTY,LOW_COMP 🔥 THE QUESTION THAT ALMOST NO ONE DARES TO ANSWER ```",
       "state": "candidate",
       "payoutConfidence": 0.5,
       "autonomyFit": 1,
@@ -83,10 +83,10 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5315329270",
+      "id": "github:5317130333",
       "source": "github",
-      "title": "[radar] SN open bounty 2026-09-01T18:23",
-      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/770",
+      "title": "[radar] SN open bounty 2026-09-01T21:43",
+      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/772",
       "repositoryApiUrl": "https://api.github.com/repos/relayhop/sn-monetization-runtime",
       "rewardUsd": 2026,
       "score": 44,
@@ -96,8 +96,8 @@
         "bounty"
       ],
       "commentCount": 0,
-      "updatedAt": "2026-09-01T21:00:12Z",
-      "summary": "New SN OPEN_BOUNTY detected: ``` 1559635 AskSN 2 158 1000 2 15.2 1208996 473 recent@AskSN|top@AskSN OPEN_BOUNTY,LOW_COMP 🔥 THE QUESTION THAT ALMOST NO ONE DARES TO ANSWER ```",
+      "updatedAt": "2026-09-02T00:00:17Z",
+      "summary": "New SN OPEN_BOUNTY detected: ``` 1559635 AskSN 2 158 1000 2 18.6 1208996 473 recent@AskSN|top@AskSN OPEN_BOUNTY,LOW_COMP 🔥 THE QUESTION THAT ALMOST NO ONE DARES TO ANSWER ```",
       "state": "candidate",
       "payoutConfidence": 0.5,
       "autonomyFit": 1,
@@ -200,118 +200,17 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5316792274",
+      "id": "github:5318139491",
       "source": "github",
-      "title": "User service should not store or expose credential fields",
-      "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/12333",
-      "repositoryApiUrl": "https://api.github.com/repos/SecureBananaLabs/bug-bounty",
-      "rewardUsd": 11398,
-      "score": 46,
-      "labels": [],
-      "commentCount": 0,
-      "updatedAt": "2026-09-01T21:01:29Z",
-      "summary": "## Bug Current `apps/api/src/services/userService.js` stores the entire caller-controlled payload and returns stored user objects directly: ```js const user = { id: `usr_${Date.now()}`, ...payload }; users.push(user); return user; ``` `listUsers()` then returns the same objects unchanged. If a caller supplies credential/private fields such as `password`, `passwordHash`, `token`, or `resetToken`, those values are persisted in the in-memory user list, echoed by the create response, and exposed again by the user-list response. ## Expected behavior - User records should store only intended public/profile fields. - Credential/private fields such as `password`, `passwordHash`, `token`, and `resetToken` must not appear in create-user responses or `listUsers()` output. - Preserve legitimate public user fields and server-owned IDs. - Add focused regression coverage for both create and list behavior. ## Scope Keep production changes focused on `apps/api/src/services/userService.js` plus focused service regression tests. Do not add persistence, password hashing, route authentication, or unrelated user validation. ## Parent bounty This issue is created under #11398. This issue is limited only ",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 111,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 0,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 11398,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5317205388",
-      "source": "github",
-      "title": "BuildAgent: dedicated reward design + epsilon alignment",
-      "url": "https://github.com/Apelsinmack/Civulator/issues/49",
-      "repositoryApiUrl": "https://api.github.com/repos/Apelsinmack/Civulator",
-      "rewardUsd": 2026,
-      "score": 40,
-      "labels": [
-        "training",
-        "idea"
-      ],
-      "commentCount": 0,
-      "updatedAt": "2026-09-01T21:52:47Z",
-      "summary": "From Erik, 2026-09-01 evening (while reviewing the #46/#48 ladder): the build network currently learns only from the turn-accumulated COMBAT rewards of its player, and its exploration is a hardcoded epsilon=0.3 in trainer.py (the eval harness reuses --epsilon instead — flagged as a protocol open question in the 2026-08-26 handoff). Two things to design, later, one variable at a time: 1. **Dedicated build rewards** — what should production choices be rewarded for? (growth? army value? tempo?) Currently the accidental 0.3 exploration keeps the build mix diverse (\"it seems to try out all kinds of units\" — Erik), which may actually be desirable while combat learning is the bottleneck; a deliberate design should preserve that diversity pressure or replace it knowingly. 2. **Epsilon alignment** — decide the build agent's exploration schedule deliberately (train AND eval), instead of the current hardcoded/mismatched pair. Related fact discovered while adding build-distribution tracking to evaluate.py: capitals are founded with a Warrior already queued (so short smoke games show zero build decisions — first real decision comes when that finishes). Not before milestone A shows combat progre",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 111,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 0,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 2026,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5316920861",
-      "source": "github",
-      "title": "SpawnAndDeleteAllEntitiesInTheSameSpot test failure on main (Content.IntegrationTests.Tests.EntityTest.SpawnAndDeleteAllEntitiesInTheSameSpot)",
-      "url": "https://github.com/Triad-Sector/Triad_Sector/issues/595",
-      "repositoryApiUrl": "https://api.github.com/repos/Triad-Sector/Triad_Sector",
-      "rewardUsd": 186,
-      "score": 46,
-      "labels": [
-        "autogenerated"
-      ],
-      "commentCount": 0,
-      "updatedAt": "2026-09-01T21:16:39Z",
-      "summary": "## Test Failure On Main A test failure has been detected on the main branch. This should never occur. > [!NOTE] > This issue is automatically generated by a github action and will be updated when this failure reoccurs. > Do not edit the body of this issue. ## Failure Details <dl> <dt>Test name</dt> <dd>SpawnAndDeleteAllEntitiesInTheSameSpot</dd> <dt>Fully qualified name</dt> <dd>Content.IntegrationTests.Tests.EntityTest.SpawnAndDeleteAllEntitiesInTheSameSpot</dd> <dt>Last encountered</dt> <dd>Tuesday, September 1st</dd> </dl> <details> <summary>Failure message</summary> ``` SERVER: 30.262s [ERRO] system.device_link: Device sink robotic arm (193766/n193766, RoboticArm) source list contains invalid entity: 234425/n0D Exception: ``` </details> <details> <summary>Test output</summary> ``` GetPair: Called by test EntityTest.SpawnAndDeleteAllEntitiesInTheSameSpot GetPair: Looking in pool for a suitable pair GetPair: Suitable pair found (Pair 2) GetPair: Cleanup not needed, Skipping cleanup of pair SERVER: 0.000s [WARN] cfg: Only clients can change the 'net.interp' cvar. GetPair: Retrieving pair 2 from pool took 2.7868 ms GetPair: Returning pair 2 with client/server seeds: 474332537/57926",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 111,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 0,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 186,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:2526062246",
-      "source": "github",
-      "title": "Website 'Upload' doesn't show all albums (0.5 Monero reward)",
-      "url": "https://github.com/GrapheneOS/Vanadium/issues/616",
-      "repositoryApiUrl": "https://api.github.com/repos/GrapheneOS/Vanadium",
-      "rewardUsd": 2024,
+      "title": "[远程] Olantra 诚聘 Research Analyst（研究分析师），薪水 5,000–8,000 USD/月",
+      "url": "https://github.com/rebase-network/who-is-hiring/issues/1282",
+      "repositoryApiUrl": "https://api.github.com/repos/rebase-network/who-is-hiring",
+      "rewardUsd": 8000,
       "score": 40,
       "labels": [],
-      "commentCount": 1,
-      "updatedAt": "2026-09-01T21:59:05Z",
-      "summary": "The 'photos' upload feature on websites (eg, twitter) only shows a chronological 'Photo' menu (of all photos on the phone), or an 'Albums' option that only shows the 'Camera', 'Videos', 'Downloads' or 'Screenshots' folders — and none of the user-created photo folders Users have to scroll through potentially thousands of photos to find a specific file It's a disorganized mess 0.5 xmr reward to whoever can fix this (at September 2024 $170 USD prices)",
+      "commentCount": 0,
+      "updatedAt": "2026-09-02T00:05:28Z",
+      "summary": "## 公司/团队介绍 Olantra 是一个专注于早期项目的投资网络，主要关注 Web3、AI、FinTech 以及其他新兴科技领域。 我们与全球范围内的创始人、投资人及生态合作伙伴合作，并参与早期项目研究、投资判断以及 Portfolio 项目的长期发展。 Research 团队直接参与投资决策。我们希望研究员不仅能够搜集和整理信息，更能够形成独立判断，对市场共识提出质疑，并将复杂的技术、市场和经济模型转化为清晰、可执行的研究结论。 官网： https://olantra.org/ Careers： https://olantra.org/careers ## 薪资福利待遇 - Base Salary：5,000–8,000 USD / USDT / 月 - 最终薪资根据候选人的经验、研究深度、技术理解能力以及面试 / Research Sample 表现确定 - 随着职责范围和 Seniority 提升，可进行薪资 Review - Remote-first，全球远程协作 - 有机会参与 Olantra 的早期项目研究、投资尽调以及 Portfolio Research - 通过初期磨合后，优秀研究内容有机会以作者身份公开发表 ## 地点 - 工作地点：Remote / 全球远程 - 联系方式： - Telegram：@BiyaKiml - Email：biya@olantra.org ## 工作性质 - 是否全职：是 - 是否远程：是，100% Remote - 时区要求：GMT+8 优先，可覆盖核心工作时间，可适应国际分布式团队协作 ## 岗位要求、职责 主要职责 - 深入研究 Web3、Crypto、AI 以及其他新兴科技领域的早期项目、协议和市场机会 - 对 L1 / L2、DeFi、Wallet、Infrastructure、Payments、Identity、DePIN、RWA、AI × Crypto 等方向进行 Deep Dive Research - 分析项目的产品、团队、技术架构、竞争格局、用户采用情况以及生态发展 - 分析 Tokenomics，包括 Value Capture、Incentive Design、Supply / Demand、Liquidity 以及不同情景下的经济模型 - 使用链上数据、市场数据以及产品数据验证或挑战市场 Narrative - 撰写 Research Report、Investment Memo 以及内部 Decision Note - 跟踪重点项目、Portfolio Companies、Governance Proposal、Protocol Update 以及重要市场变化 - 从 Research Question 定义、资料收集、分析、结论到最终 Research Output，独立负责完",
       "state": "candidate",
       "payoutConfidence": 0.35,
       "autonomyFit": 1,
@@ -320,16 +219,52 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 109,
+      "fastCashScore": 111,
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
-        "comments": 1,
+        "comments": 0,
         "attemptSignals": 0,
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 2024,
+      "economicValueUsd": 8000,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5317864259",
+      "source": "github",
+      "title": "Share your dog from the empty deck and after the first match",
+      "url": "https://github.com/GSTJ/pegada/issues/197",
+      "repositoryApiUrl": "https://api.github.com/repos/GSTJ/pegada",
+      "rewardUsd": 216,
+      "score": 48,
+      "labels": [
+        "metric: virality",
+        "area: mobile",
+        "P1"
+      ],
+      "commentCount": 0,
+      "updatedAt": "2026-09-01T23:51:48Z",
+      "summary": "## Why (metric) Virality. The share entry point in #186 lives on the profile tab, a place people visit rarely. The two moments a person is most likely to brag about their dog are right after the first match and when the deck runs dry. Putting a one line prompt there should raise the share rate per active user. ## Hypothesis Showing \"Compartilhe o {{name}}\" once after the first match is dismissed and inside the swipe empty state raises the weekly share rate (users who fire any share event divided by weekly active users) from the profile only baseline by at least 50 percent relative. If the prompt tap rate is under 2 percent after two weeks we remove it. ## Baseline No share events exist in production yet; #186 introduces them. The baseline is the share rate in the first two weeks after #186 ships, read from PostHog. This issue ships behind the same events so both numbers come from the same insight. ## Readout PostHog events `Share Prompt Shown` and `Share Prompt Tapped` with property `placement` (`first_match` or `empty_deck`), followed by the existing share events from #186. Funnel insight: Shown, Tapped, then any share action. Compare share rate per weekly active user with and wit",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 111,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 216,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -371,70 +306,6 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5293807269",
-      "source": "github",
-      "title": "RFC: named review budget per pool (second cash line for reviewers)",
-      "url": "https://github.com/SlopDotCash/slopdotcash/issues/303",
-      "repositoryApiUrl": "https://api.github.com/repos/SlopDotCash/slopdotcash",
-      "rewardUsd": 2026,
-      "score": 70,
-      "labels": [],
-      "commentCount": 3,
-      "updatedAt": "2026-09-01T21:12:06Z",
-      "summary": "# RFC: a named review budget per pool, so review pay never dilutes the author pool **Amended 2026-09-01** to adopt the additive-only invariant, following [mashingaan's analysis](https://github.com/SlopDotCash/slopdotcash/issues/303#issuecomment-5500417981) of live leaderboard data. The original draft allocated review events from the review line instead of the shared pool; that split could have paid reviewers less than they receive today. The amended design keeps the shared pool byte for byte unchanged and makes the review line strictly additive. **TL;DR:** Projects that fund a monthly contributor pool should be able to commit a second, smaller cash line that pays reviewers. Today, review points share the single monthly pool with authored work, so every hour of review a contributor does makes the authors' slices smaller. This proposal adds an optional `reviewBudget` block to the project manifest, pays reviewers from that line at cycle close **on top of the unchanged shared pool**, and shows it as its own line on the pool card and in the allocation table. Nothing changes for projects that do not opt in, and nothing changes for the shared pool even for projects that do. ## Problem Sub",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 106,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 3,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 2026,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5300440791",
-      "source": "github",
-      "title": "monero backend for nutshell, looking for review",
-      "url": "https://github.com/lescuer97/nutmix/issues/258",
-      "repositoryApiUrl": "https://api.github.com/repos/lescuer97/nutmix",
-      "rewardUsd": 136,
-      "score": 46,
-      "labels": [],
-      "commentCount": 3,
-      "updatedAt": "2026-09-01T21:55:10Z",
-      "summary": "hi, ive built a monero backend for nutshell as part of monero bounty #136, so similar ground to nutmix but in python. its working and ive tried to close the obvious holes, but it needs someone who knows cashu to look before it can be signed off, and youd spot things faster than most. what id most want eyes on: - deposits only credited after 10 confirmations, so the txpool cant be used to mint against a tx that never lands - the melt path settles on broadcast rather than on confirmation. thats a tradeoff i documented rather than fixed, curious what youd do - fee estimation is a do not relay dry run instead of a fixed reserve https://github.com/Ed13-coder/monero-ecash no worries if youre buried, even a pointer to who else to ask helps",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 105,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 3,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 136,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
       "id": "github:4462160604",
       "source": "github",
       "title": "[bounty $400] Implement ABNF-compliant email address parser with full §3.2–§4.4 coverage",
@@ -472,6 +343,38 @@
       "requiresPreclaimOrIdentity": false
     },
     {
+      "id": "github:5066574206",
+      "source": "github",
+      "title": "Downloading fails due to some error.",
+      "url": "https://github.com/CuteTenshii/crunchyroll-downloader/issues/32",
+      "repositoryApiUrl": "https://api.github.com/repos/CuteTenshii/crunchyroll-downloader",
+      "rewardUsd": 21,
+      "score": 36,
+      "labels": [],
+      "commentCount": 5,
+      "updatedAt": "2026-09-01T23:31:58Z",
+      "summary": "I run the latest git version on linux. I used the release but got a pssh error or something. I tried to download things but it just made a folder called One Piece and never put anything in it here is the command output: ``` Downloading season 21 of One Piece (208 episodes) Downloading: The Land of Wano! To the Samurai Country where Cherry Blossoms Flutter! (S21E892) from One Piece Audio locales: ja-JP, en-US | Subtitle locales: en-US Downloading subtitles for English... Downloaded subtitles! Cleaning up...Recovered from error:(0x911a20,0xa0d060)Downloading: Otama Appears! Luffy vs. Kaido's Army! (S21E893) from One Piece Audio locales: ja-JP, en-US | Subtitle locales: en-US Downloading subtitles for English... Downloaded subtitles! Cleaning up...Recovered from error:(0x911a20,0x3e98ea95f5a0)Downloading: He'll Come! The Legend of Ace in the Land of Wano! (S21E894) from One Piece Audio locales: ja-JP, en-US | Subtitle locales: en-US Downloading subtitles for English... Downloaded subtitles! Cleaning up...Recovered from error:(0x911a20,0x3e98ea95fb60)Downloading: Side Story! The World's Greatest Bounty Hunter, Cidre! (S21E895) from One Piece Audio locales: ja-JP, en-US | Subtitle local",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 91,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 5,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 21,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
       "id": "github:4563956966",
       "source": "github",
       "title": "parse_duration drops the days (d) unit",
@@ -505,6 +408,42 @@
       "realMoneyEligible": true,
       "economicValueUsd": 50,
       "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5211154647",
+      "source": "github",
+      "title": "🎯 GORM v2.24.0 Panics When Querying with Complex Joins",
+      "url": "https://github.com/HarrieAlexandrowicz5/gorm/issues/1",
+      "repositoryApiUrl": "https://api.github.com/repos/HarrieAlexandrowicz5/gorm",
+      "rewardUsd": 10,
+      "score": 32,
+      "labels": [
+        "bounty",
+        "opire",
+        "$10"
+      ],
+      "commentCount": 45,
+      "updatedAt": "2026-09-01T23:55:26Z",
+      "summary": "## 📝 Description When attempting to query the database using GORM v2.24.0 with complex joins, the application panics. This issue has been observed in multiple environments and with various database backends (PostgreSQL, MySQL, SQLite). ## 🎯 Acceptance Criteria - [ ] The application should not panic when querying with complex joins. - [ ] The query should return the correct results as expected. - [ ] The panic should be reproducible and consistently occur with the same query. - [ ] The issue should be resolved in GORM v2.24.0 or a subsequent patch release. ## 🛠️ Technical Specifications & Context - The panic occurs when executing a query with multiple joins, including self-joins and joins with subqueries. - The issue is likely related to how GORM handles complex query structures internally. - The panic message typically includes a stack trace pointing to a file in the GORM library, such as `gorm.go` or `query.go`. ## 🧪 Verification & Testing 1. **Reproduce the Issue:** - Create a test case that includes a complex query with multiple joins. - Execute the test case and observe if the application panics. 2. **Verify Fix:** - Apply the proposed fix (if available) or a potential patc",
+      "state": "candidate",
+      "payoutConfidence": 0.7,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 67,
+      "survivalEligible": false,
+      "eligibilityReason": "Competition is too high for bootstrap mode.",
+      "competition": {
+        "comments": 45,
+        "attemptSignals": 1,
+        "risk": "high"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 10,
+      "requiresPreclaimOrIdentity": false
     }
   ],
   "selected": null,
@@ -517,7 +456,7 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:2526062246\",\"rewardUsd\":2024,\"fastCashScore\":109,\"updatedAt\":\"2026-09-01T21:59:05Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4455330769\",\"rewardUsd\":150,\"fastCashScore\":118,\"updatedAt\":\"2026-09-01T01:51:01Z\",\"competition\":{\"comments\":24,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":99,\"updatedAt\":\"2026-09-01T00:09:20Z\",\"competition\":{\"comments\":21,\"attemptSignals\":3,\"risk\":\"high\"}},{\"id\":\"github:4557180255\",\"rewardUsd\":780,\"fastCashScore\":139,\"updatedAt\":\"2026-08-29T02:37:40Z\",\"competition\":{\"comments\":10,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-31T03:06:46Z\",\"competition\":{\"comments\":51,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:4975260101\",\"rewardUsd\":780,\"fastCashScore\":116,\"updatedAt\":\"2026-08-28T18:51:33Z\",\"competition\":{\"comments\":20,\"attemptSignals\":1,\"risk\":\"high\"}},{\"id\":\"github:5293807269\",\"rewardUsd\":2026,\"fastCashScore\":106,\"updatedAt\":\"2026-09-01T21:12:06Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5300440791\",\"rewardUsd\":136,\"fastCashScore\":105,\"updatedAt\":\"2026-09-01T21:55:10Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5312094670\",\"rewardUsd\":500,\"fastCashScore\":109,\"updatedAt\":\"2026-09-01T18:15:55Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5315329270\",\"rewardUsd\":2026,\"fastCashScore\":118,\"updatedAt\":\"2026-09-01T21:00:12Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5316792274\",\"rewardUsd\":11398,\"fastCashScore\":111,\"updatedAt\":\"2026-09-01T21:01:29Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5316920861\",\"rewardUsd\":186,\"fastCashScore\":111,\"updatedAt\":\"2026-09-01T21:16:39Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5317121474\",\"rewardUsd\":100,\"fastCashScore\":101,\"updatedAt\":\"2026-09-01T21:42:19Z\",\"competition\":{\"comments\":4,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5317130333\",\"rewardUsd\":2026,\"fastCashScore\":118,\"updatedAt\":\"2026-09-01T22:00:09Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5317205388\",\"rewardUsd\":2026,\"fastCashScore\":111,\"updatedAt\":\"2026-09-01T21:52:47Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:3806657240\",\"rewardUsd\":100,\"fastCashScore\":103,\"updatedAt\":\"2026-09-01T23:55:18Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4432803358\",\"rewardUsd\":100,\"fastCashScore\":106,\"updatedAt\":\"2026-09-01T23:58:05Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4432817190\",\"rewardUsd\":100,\"fastCashScore\":106,\"updatedAt\":\"2026-09-01T23:55:39Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4455330769\",\"rewardUsd\":150,\"fastCashScore\":118,\"updatedAt\":\"2026-09-01T01:51:01Z\",\"competition\":{\"comments\":24,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":99,\"updatedAt\":\"2026-09-01T00:09:20Z\",\"competition\":{\"comments\":21,\"attemptSignals\":3,\"risk\":\"high\"}},{\"id\":\"github:4557180255\",\"rewardUsd\":780,\"fastCashScore\":139,\"updatedAt\":\"2026-08-29T02:37:40Z\",\"competition\":{\"comments\":10,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-31T03:06:46Z\",\"competition\":{\"comments\":51,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:4975260101\",\"rewardUsd\":780,\"fastCashScore\":116,\"updatedAt\":\"2026-08-28T18:51:33Z\",\"competition\":{\"comments\":20,\"attemptSignals\":1,\"risk\":\"high\"}},{\"id\":\"github:5066574206\",\"rewardUsd\":21,\"fastCashScore\":91,\"updatedAt\":\"2026-09-01T23:31:58Z\",\"competition\":{\"comments\":5,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5211154647\",\"rewardUsd\":10,\"fastCashScore\":67,\"updatedAt\":\"2026-09-01T23:55:26Z\",\"competition\":{\"comments\":45,\"attemptSignals\":1,\"risk\":\"high\"}},{\"id\":\"github:5312094670\",\"rewardUsd\":500,\"fastCashScore\":109,\"updatedAt\":\"2026-09-01T18:15:55Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5317130333\",\"rewardUsd\":2026,\"fastCashScore\":118,\"updatedAt\":\"2026-09-02T00:00:17Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5317863972\",\"rewardUsd\":211,\"fastCashScore\":111,\"updatedAt\":\"2026-09-01T23:51:46Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5317864259\",\"rewardUsd\":216,\"fastCashScore\":111,\"updatedAt\":\"2026-09-01T23:51:48Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5318118911\",\"rewardUsd\":2026,\"fastCashScore\":118,\"updatedAt\":\"2026-09-02T00:02:02Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5318139491\",\"rewardUsd\":8000,\"fastCashScore\":111,\"updatedAt\":\"2026-09-02T00:05:28Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
@@ -531,9 +470,45 @@
     "competitionRequired": "low",
     "rejectedFakeRevenueCount": 0,
     "rejectedAlreadyPaidCount": 0,
-    "rejectedIdentityGateCount": 1
+    "rejectedIdentityGateCount": 4
   },
   "economicallyRejected": [
+    {
+      "id": "github:5317863972",
+      "title": "Attribute installs and signups to the dog that was shared",
+      "rewardUsd": 211,
+      "reasons": [
+        "preclaim_or_identity_gate_not_configured"
+      ],
+      "rejectedAt": "2026-09-02T00:07:08.289Z"
+    },
+    {
+      "id": "github:4432803358",
+      "title": "Instant mute all",
+      "rewardUsd": 100,
+      "reasons": [
+        "preclaim_or_identity_gate_not_configured"
+      ],
+      "rejectedAt": "2026-09-02T00:07:08.289Z"
+    },
+    {
+      "id": "github:4432817190",
+      "title": "Open teleport history with a keystroke",
+      "rewardUsd": 100,
+      "reasons": [
+        "preclaim_or_identity_gate_not_configured"
+      ],
+      "rejectedAt": "2026-09-02T00:07:08.289Z"
+    },
+    {
+      "id": "github:3806657240",
+      "title": "SLua viewer: TRUE and FALSE are highlighted in the editor",
+      "rewardUsd": 100,
+      "reasons": [
+        "preclaim_or_identity_gate_not_configured"
+      ],
+      "rejectedAt": "2026-09-02T00:07:08.290Z"
+    },
     {
       "id": "github:5317121474",
       "title": "[Intake] Automated agents often try to submit pull requests for new debugging lessons, wh",
@@ -1237,46 +1212,6 @@
         "preclaim_or_identity_gate_not_configured"
       ],
       "rejectedAt": "2026-08-23T02:48:57.993Z"
-    },
-    {
-      "id": "github:5222209235",
-      "title": "[Bug] file_upload_component.test.js is syntactically broken and fails node --check",
-      "rewardUsd": 25,
-      "reasons": [
-        "testnet_or_test_token_reward",
-        "preclaim_or_identity_gate_not_configured"
-      ],
-      "rejectedAt": "2026-08-23T02:48:57.993Z"
-    },
-    {
-      "id": "github:5222232993",
-      "title": "[Bug] Login.tsx has no file-size cap (FileUpload caps at 5MB)",
-      "rewardUsd": 25,
-      "reasons": [
-        "testnet_or_test_token_reward",
-        "preclaim_or_identity_gate_not_configured"
-      ],
-      "rejectedAt": "2026-08-23T02:48:57.993Z"
-    },
-    {
-      "id": "github:5222232622",
-      "title": "[Bug] fix.py is a stale hardcoded stub",
-      "rewardUsd": 10,
-      "reasons": [
-        "testnet_or_test_token_reward",
-        "preclaim_or_identity_gate_not_configured"
-      ],
-      "rejectedAt": "2026-08-22T22:20:44.416Z"
-    },
-    {
-      "id": "github:5222232071",
-      "title": "[Bug] Login.tsx uploads to hardcoded https://example.com",
-      "rewardUsd": 50,
-      "reasons": [
-        "testnet_or_test_token_reward",
-        "preclaim_or_identity_gate_not_configured"
-      ],
-      "rejectedAt": "2026-08-22T19:11:45.079Z"
     }
   ]
 }
