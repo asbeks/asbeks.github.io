@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-09-02T00:07:08.335Z",
+  "updatedAt": "2026-09-02T04:32:01.141Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -47,10 +47,10 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5318118911",
+      "id": "github:5319682369",
       "source": "github",
-      "title": "[radar] SN open bounty 2026-09-02T00:02",
-      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/775",
+      "title": "[radar] SN open bounty 2026-09-02T04:20",
+      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/781",
       "repositoryApiUrl": "https://api.github.com/repos/relayhop/sn-monetization-runtime",
       "rewardUsd": 2026,
       "score": 44,
@@ -60,8 +60,8 @@
         "bounty"
       ],
       "commentCount": 0,
-      "updatedAt": "2026-09-02T00:02:02Z",
-      "summary": "New SN OPEN_BOUNTY detected: ``` 1559635 AskSN 2 158 1000 2 20.9 1208996 473 recent@AskSN|top@AskSN OPEN_BOUNTY,LOW_COMP 🔥 THE QUESTION THAT ALMOST NO ONE DARES TO ANSWER ```",
+      "updatedAt": "2026-09-02T04:20:03Z",
+      "summary": "New SN OPEN_BOUNTY detected: ``` 1559635 AskSN 2 227 1000 2 25.2 1208996 473 recent@AskSN OPEN_BOUNTY,LOW_COMP 🔥 THE QUESTION THAT ALMOST NO ONE DARES TO ANSWER ```",
       "state": "candidate",
       "payoutConfidence": 0.5,
       "autonomyFit": 1,
@@ -83,10 +83,10 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5317130333",
+      "id": "github:5318118911",
       "source": "github",
-      "title": "[radar] SN open bounty 2026-09-01T21:43",
-      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/772",
+      "title": "[radar] SN open bounty 2026-09-02T00:02",
+      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/775",
       "repositoryApiUrl": "https://api.github.com/repos/relayhop/sn-monetization-runtime",
       "rewardUsd": 2026,
       "score": 44,
@@ -96,8 +96,8 @@
         "bounty"
       ],
       "commentCount": 0,
-      "updatedAt": "2026-09-02T00:00:17Z",
-      "summary": "New SN OPEN_BOUNTY detected: ``` 1559635 AskSN 2 158 1000 2 18.6 1208996 473 recent@AskSN|top@AskSN OPEN_BOUNTY,LOW_COMP 🔥 THE QUESTION THAT ALMOST NO ONE DARES TO ANSWER ```",
+      "updatedAt": "2026-09-02T04:00:12Z",
+      "summary": "New SN OPEN_BOUNTY detected: ``` 1559635 AskSN 2 158 1000 2 20.9 1208996 473 recent@AskSN|top@AskSN OPEN_BOUNTY,LOW_COMP 🔥 THE QUESTION THAT ALMOST NO ONE DARES TO ANSWER ```",
       "state": "candidate",
       "payoutConfidence": 0.5,
       "autonomyFit": 1,
@@ -200,17 +200,17 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5318139491",
+      "id": "github:5319677514",
       "source": "github",
-      "title": "[远程] Olantra 诚聘 Research Analyst（研究分析师），薪水 5,000–8,000 USD/月",
-      "url": "https://github.com/rebase-network/who-is-hiring/issues/1282",
-      "repositoryApiUrl": "https://api.github.com/repos/rebase-network/who-is-hiring",
-      "rewardUsd": 8000,
-      "score": 40,
+      "title": "P1: connect reachable bounty_target board touch to canonical Battle continuation",
+      "url": "https://github.com/jolteondark/url-/issues/1125",
+      "repositoryApiUrl": "https://api.github.com/repos/jolteondark/url-",
+      "rewardUsd": 1119,
+      "score": 42,
       "labels": [],
       "commentCount": 0,
-      "updatedAt": "2026-09-02T00:05:28Z",
-      "summary": "## 公司/团队介绍 Olantra 是一个专注于早期项目的投资网络，主要关注 Web3、AI、FinTech 以及其他新兴科技领域。 我们与全球范围内的创始人、投资人及生态合作伙伴合作，并参与早期项目研究、投资判断以及 Portfolio 项目的长期发展。 Research 团队直接参与投资决策。我们希望研究员不仅能够搜集和整理信息，更能够形成独立判断，对市场共识提出质疑，并将复杂的技术、市场和经济模型转化为清晰、可执行的研究结论。 官网： https://olantra.org/ Careers： https://olantra.org/careers ## 薪资福利待遇 - Base Salary：5,000–8,000 USD / USDT / 月 - 最终薪资根据候选人的经验、研究深度、技术理解能力以及面试 / Research Sample 表现确定 - 随着职责范围和 Seniority 提升，可进行薪资 Review - Remote-first，全球远程协作 - 有机会参与 Olantra 的早期项目研究、投资尽调以及 Portfolio Research - 通过初期磨合后，优秀研究内容有机会以作者身份公开发表 ## 地点 - 工作地点：Remote / 全球远程 - 联系方式： - Telegram：@BiyaKiml - Email：biya@olantra.org ## 工作性质 - 是否全职：是 - 是否远程：是，100% Remote - 时区要求：GMT+8 优先，可覆盖核心工作时间，可适应国际分布式团队协作 ## 岗位要求、职责 主要职责 - 深入研究 Web3、Crypto、AI 以及其他新兴科技领域的早期项目、协议和市场机会 - 对 L1 / L2、DeFi、Wallet、Infrastructure、Payments、Identity、DePIN、RWA、AI × Crypto 等方向进行 Deep Dive Research - 分析项目的产品、团队、技术架构、竞争格局、用户采用情况以及生态发展 - 分析 Tokenomics，包括 Value Capture、Incentive Design、Supply / Demand、Liquidity 以及不同情景下的经济模型 - 使用链上数据、市场数据以及产品数据验证或挑战市场 Narrative - 撰写 Research Report、Investment Memo 以及内部 Decision Note - 跟踪重点项目、Portfolio Companies、Governance Proposal、Protocol Update 以及重要市场变化 - 从 Research Question 定义、资料收集、分析、结论到最终 Research Output，独立负责完",
+      "updatedAt": "2026-09-02T04:19:17Z",
+      "summary": "## Problem Current `main` makes `bounty_target` reachable on the Day Board after bounty acceptance (#1119), but the production Safari normal-event touch handoff does not support `bounty_target`, and there is no dedicated bounty-target touch interaction in the current runtime tree. The canonical dispatcher/owner already exists and emits `start_trainer_battle` with bounty constraints. This leaves a reachable P1 vertical gap before Battle even starts: touching the revealed bounty target cannot reach the canonical Battle owner through the normal Safari path. ## Current owners to reuse - `runtime/mapless-normal-events-a4-flow.js` → `resolveBountyTarget`: canonical event owner; emits `start_trainer_battle`, `modifier: 2`, `extra_pokemon: true`, `cannot_run: true`, `strong_ai: true`, type/seed, then post-Battle reward/clear-bounty ops. - `runtime/safari-normal-event-battle-continuation.js`: shared exactly-once checkpoint/bind/RETURN continuation owner for normal-event Battles. - `runtime/safari-battle-run-constraint.js`: shared RUN eligibility owner already blocks `battle.cannot_run === true` (and `origin === \"village_bounty\"`). - `runtime/mapless-bounty-battle-prelaunch.js`: existing bou",
       "state": "candidate",
       "payoutConfidence": 0.35,
       "autonomyFit": 1,
@@ -228,25 +228,21 @@
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 8000,
+      "economicValueUsd": 1119,
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5317864259",
+      "id": "github:5287745132",
       "source": "github",
-      "title": "Share your dog from the empty deck and after the first match",
-      "url": "https://github.com/GSTJ/pegada/issues/197",
-      "repositoryApiUrl": "https://api.github.com/repos/GSTJ/pegada",
-      "rewardUsd": 216,
-      "score": 48,
-      "labels": [
-        "metric: virality",
-        "area: mobile",
-        "P1"
-      ],
-      "commentCount": 0,
-      "updatedAt": "2026-09-01T23:51:48Z",
-      "summary": "## Why (metric) Virality. The share entry point in #186 lives on the profile tab, a place people visit rarely. The two moments a person is most likely to brag about their dog are right after the first match and when the deck runs dry. Putting a one line prompt there should raise the share rate per active user. ## Hypothesis Showing \"Compartilhe o {{name}}\" once after the first match is dismissed and inside the swipe empty state raises the weekly share rate (users who fire any share event divided by weekly active users) from the profile only baseline by at least 50 percent relative. If the prompt tap rate is under 2 percent after two weeks we remove it. ## Baseline No share events exist in production yet; #186 introduces them. The baseline is the share rate in the first two weeks after #186 ships, read from PostHog. This issue ships behind the same events so both numbers come from the same insight. ## Readout PostHog events `Share Prompt Shown` and `Share Prompt Tapped` with property `placement` (`first_match` or `empty_deck`), followed by the existing share events from #186. Funnel insight: Shown, Tapped, then any share action. Compare share rate per weekly active user with and wit",
+      "title": "Claim: Wallet Balance Error Handling (PR #8293)",
+      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16697",
+      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
+      "rewardUsd": 16253,
+      "score": 54,
+      "labels": [],
+      "commentCount": 3,
+      "updatedAt": "2026-09-02T03:28:10Z",
+      "summary": "## Bounty Claim **Bounty:** #16253 (Consistent error handling + exit codes in wallet balance check script) **PR:** https://github.com/Scottcjn/Rustchain/pull/8295 **Claimant:** @rafaio1 **Wallet:** `RTC1e9bf7a2a60aac9bcbc5a0df0c65e9501e932861` ### Deliverable Created the missing `scripts/check_balance.sh` referenced in Scottcjn/Rustchain#7889 with fully consistent error handling: | Exit Code | Meaning | |-----------|---------| | 0 | Success — balance printed | | 1 | Usage error (missing/invalid wallet ID) | | 2 | Network error (curl failure, DNS, timeout) | | 3 | Bad response (non-200 HTTP, malformed JSON, missing field) | | 4 | Wallet not found (HTTP 404) | Every failure path prints a distinct error message to stderr and exits non-zero. Never prints a balance that wasn't actually retrieved. Closes #7889. ### Status PR #8295 is **MERGED** and the `reward` workflow completed successfully at 2026-08-29T19:00:13Z. ### Payout 7 RTC per bounty #16253.",
       "state": "candidate",
       "payoutConfidence": 0.35,
       "autonomyFit": 1,
@@ -255,16 +251,16 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 111,
+      "fastCashScore": 106,
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
-        "comments": 0,
+        "comments": 3,
         "attemptSignals": 0,
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 216,
+      "economicValueUsd": 16253,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -282,8 +278,8 @@
         "reward",
         "bounty"
       ],
-      "commentCount": 1,
-      "updatedAt": "2026-09-01T18:15:55Z",
+      "commentCount": 4,
+      "updatedAt": "2026-09-02T04:03:29Z",
       "summary": "# English ## HER Hack-Astron #5 | Spark-X2.5 Edge Agent Real-World Use Case Challenge Turn real Spark-X2.5 runs into reproducible, discussable edge-agent use cases. For this challenge, obtain XHToken/Spark-X2.5-4B or Spark-X2.5-1.7B from Hugging Face (or a mirror such as ModelScope), conduct a real inference, agentic, coding, long-context, multilingual, quantization, or training experiment, and publish the complete use case in the corresponding model's Hugging Face Discussions. After publishing it, reply to this event's GitHub Issue with the Discussion link to enter. - Event page (GitHub Issues): https://github.com/XHToken/Spark-X2.5/issues - Hugging Face model collection: https://huggingface.co/collections/XHToken/spark-x25 - Spark-X2.5-4B: https://huggingface.co/XHToken/Spark-X2.5-4B - Spark-X2.5-1.7B: https://huggingface.co/XHToken/Spark-X2.5-1.7B - Spark-X2.5-4B Discussions: https://huggingface.co/XHToken/Spark-X2.5-4B/discussions - Spark-X2.5-1.7B Discussions: https://huggingface.co/XHToken/Spark-X2.5-1.7B/discussions - Mainland China mirror (recommended): https://www.modelscope.cn/collections/XHToken/Spark-X25 ## Schedule - Submissions open: September 1, 2026 - Challenge peri",
       "state": "candidate",
       "payoutConfidence": 0.35,
@@ -293,16 +289,50 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 109,
+      "fastCashScore": 105,
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
-        "comments": 1,
+        "comments": 4,
         "attemptSignals": 0,
         "risk": "low"
       },
       "realMoneyEligible": true,
       "economicValueUsd": 500,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5287734860",
+      "source": "github",
+      "title": "Claim: Silent-Success Audit Fixes (PR #16695)",
+      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16696",
+      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
+      "rewardUsd": 16471,
+      "score": 46,
+      "labels": [
+        "needs-human"
+      ],
+      "commentCount": 5,
+      "updatedAt": "2026-09-02T03:28:32Z",
+      "summary": "## Bounty Claim **Bounty:** #16471 (Master Audit Bounty) **PR:** https://github.com/Scottcjn/rustchain-bounties/pull/16695 **Claimant:** @rafaio1 **Wallet:** `RTC1e9bf7a2a60aac9bcbc5a0df0c65e9501e932861` ### Defects Fixed 1. `scripts/docstring_gate.py:gh_raw` — returned empty string on `gh` failure (silent success) 2. `scripts/sophia_scheduler.py` — returned `None` on API failure (silent success) 3. `scripts/second_act.py:build` — bare except swallowed formatting errors (silent success) 4. `scripts/bounty_claim.py:gh_ok` — swallowed `gh` stderr without logging (observability gap) ### Verification All fixes are fail-closed: functions now raise or log explicitly instead of returning silent defaults. No behavioral change for success paths. ### Payout Calculation - Base audit bounty: 35 RTC - 4 defects × 10 RTC/defect = 40 RTC - **Total claimed: 75 RTC**",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 103,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 5,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 16471,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -340,38 +370,6 @@
       },
       "realMoneyEligible": true,
       "economicValueUsd": 400,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5066574206",
-      "source": "github",
-      "title": "Downloading fails due to some error.",
-      "url": "https://github.com/CuteTenshii/crunchyroll-downloader/issues/32",
-      "repositoryApiUrl": "https://api.github.com/repos/CuteTenshii/crunchyroll-downloader",
-      "rewardUsd": 21,
-      "score": 36,
-      "labels": [],
-      "commentCount": 5,
-      "updatedAt": "2026-09-01T23:31:58Z",
-      "summary": "I run the latest git version on linux. I used the release but got a pssh error or something. I tried to download things but it just made a folder called One Piece and never put anything in it here is the command output: ``` Downloading season 21 of One Piece (208 episodes) Downloading: The Land of Wano! To the Samurai Country where Cherry Blossoms Flutter! (S21E892) from One Piece Audio locales: ja-JP, en-US | Subtitle locales: en-US Downloading subtitles for English... Downloaded subtitles! Cleaning up...Recovered from error:(0x911a20,0xa0d060)Downloading: Otama Appears! Luffy vs. Kaido's Army! (S21E893) from One Piece Audio locales: ja-JP, en-US | Subtitle locales: en-US Downloading subtitles for English... Downloaded subtitles! Cleaning up...Recovered from error:(0x911a20,0x3e98ea95f5a0)Downloading: He'll Come! The Legend of Ace in the Land of Wano! (S21E894) from One Piece Audio locales: ja-JP, en-US | Subtitle locales: en-US Downloading subtitles for English... Downloaded subtitles! Cleaning up...Recovered from error:(0x911a20,0x3e98ea95fb60)Downloading: Side Story! The World's Greatest Bounty Hunter, Cidre! (S21E895) from One Piece Audio locales: ja-JP, en-US | Subtitle local",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 91,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 5,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 21,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -422,8 +420,8 @@
         "opire",
         "$10"
       ],
-      "commentCount": 45,
-      "updatedAt": "2026-09-01T23:55:26Z",
+      "commentCount": 46,
+      "updatedAt": "2026-09-02T04:00:00Z",
       "summary": "## 📝 Description When attempting to query the database using GORM v2.24.0 with complex joins, the application panics. This issue has been observed in multiple environments and with various database backends (PostgreSQL, MySQL, SQLite). ## 🎯 Acceptance Criteria - [ ] The application should not panic when querying with complex joins. - [ ] The query should return the correct results as expected. - [ ] The panic should be reproducible and consistently occur with the same query. - [ ] The issue should be resolved in GORM v2.24.0 or a subsequent patch release. ## 🛠️ Technical Specifications & Context - The panic occurs when executing a query with multiple joins, including self-joins and joins with subqueries. - The issue is likely related to how GORM handles complex query structures internally. - The panic message typically includes a stack trace pointing to a file in the GORM library, such as `gorm.go` or `query.go`. ## 🧪 Verification & Testing 1. **Reproduce the Issue:** - Create a test case that includes a complex query with multiple joins. - Execute the test case and observe if the application panics. 2. **Verify Fix:** - Apply the proposed fix (if available) or a potential patc",
       "state": "candidate",
       "payoutConfidence": 0.7,
@@ -437,7 +435,7 @@
       "survivalEligible": false,
       "eligibilityReason": "Competition is too high for bootstrap mode.",
       "competition": {
-        "comments": 45,
+        "comments": 46,
         "attemptSignals": 1,
         "risk": "high"
       },
@@ -456,7 +454,7 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:3806657240\",\"rewardUsd\":100,\"fastCashScore\":103,\"updatedAt\":\"2026-09-01T23:55:18Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4432803358\",\"rewardUsd\":100,\"fastCashScore\":106,\"updatedAt\":\"2026-09-01T23:58:05Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4432817190\",\"rewardUsd\":100,\"fastCashScore\":106,\"updatedAt\":\"2026-09-01T23:55:39Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4455330769\",\"rewardUsd\":150,\"fastCashScore\":118,\"updatedAt\":\"2026-09-01T01:51:01Z\",\"competition\":{\"comments\":24,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":99,\"updatedAt\":\"2026-09-01T00:09:20Z\",\"competition\":{\"comments\":21,\"attemptSignals\":3,\"risk\":\"high\"}},{\"id\":\"github:4557180255\",\"rewardUsd\":780,\"fastCashScore\":139,\"updatedAt\":\"2026-08-29T02:37:40Z\",\"competition\":{\"comments\":10,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-31T03:06:46Z\",\"competition\":{\"comments\":51,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:4975260101\",\"rewardUsd\":780,\"fastCashScore\":116,\"updatedAt\":\"2026-08-28T18:51:33Z\",\"competition\":{\"comments\":20,\"attemptSignals\":1,\"risk\":\"high\"}},{\"id\":\"github:5066574206\",\"rewardUsd\":21,\"fastCashScore\":91,\"updatedAt\":\"2026-09-01T23:31:58Z\",\"competition\":{\"comments\":5,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5211154647\",\"rewardUsd\":10,\"fastCashScore\":67,\"updatedAt\":\"2026-09-01T23:55:26Z\",\"competition\":{\"comments\":45,\"attemptSignals\":1,\"risk\":\"high\"}},{\"id\":\"github:5312094670\",\"rewardUsd\":500,\"fastCashScore\":109,\"updatedAt\":\"2026-09-01T18:15:55Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5317130333\",\"rewardUsd\":2026,\"fastCashScore\":118,\"updatedAt\":\"2026-09-02T00:00:17Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5317863972\",\"rewardUsd\":211,\"fastCashScore\":111,\"updatedAt\":\"2026-09-01T23:51:46Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5317864259\",\"rewardUsd\":216,\"fastCashScore\":111,\"updatedAt\":\"2026-09-01T23:51:48Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5318118911\",\"rewardUsd\":2026,\"fastCashScore\":118,\"updatedAt\":\"2026-09-02T00:02:02Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5318139491\",\"rewardUsd\":8000,\"fastCashScore\":111,\"updatedAt\":\"2026-09-02T00:05:28Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:4455330769\",\"rewardUsd\":150,\"fastCashScore\":118,\"updatedAt\":\"2026-09-01T01:51:01Z\",\"competition\":{\"comments\":24,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":99,\"updatedAt\":\"2026-09-01T00:09:20Z\",\"competition\":{\"comments\":21,\"attemptSignals\":3,\"risk\":\"high\"}},{\"id\":\"github:4557180255\",\"rewardUsd\":780,\"fastCashScore\":139,\"updatedAt\":\"2026-08-29T02:37:40Z\",\"competition\":{\"comments\":10,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-31T03:06:46Z\",\"competition\":{\"comments\":51,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:4644823208\",\"rewardUsd\":10,\"fastCashScore\":71,\"updatedAt\":\"2026-09-02T04:29:59Z\",\"competition\":{\"comments\":20,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4975260101\",\"rewardUsd\":780,\"fastCashScore\":116,\"updatedAt\":\"2026-08-28T18:51:33Z\",\"competition\":{\"comments\":20,\"attemptSignals\":1,\"risk\":\"high\"}},{\"id\":\"github:5112736273\",\"rewardUsd\":35,\"fastCashScore\":41,\"updatedAt\":\"2026-09-02T03:52:23Z\",\"competition\":{\"comments\":54,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5211154647\",\"rewardUsd\":10,\"fastCashScore\":67,\"updatedAt\":\"2026-09-02T04:00:00Z\",\"competition\":{\"comments\":46,\"attemptSignals\":1,\"risk\":\"high\"}},{\"id\":\"github:5287734860\",\"rewardUsd\":16471,\"fastCashScore\":103,\"updatedAt\":\"2026-09-02T03:28:32Z\",\"competition\":{\"comments\":5,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5287745132\",\"rewardUsd\":16253,\"fastCashScore\":106,\"updatedAt\":\"2026-09-02T03:28:10Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5312094670\",\"rewardUsd\":500,\"fastCashScore\":105,\"updatedAt\":\"2026-09-02T04:03:29Z\",\"competition\":{\"comments\":4,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5318118911\",\"rewardUsd\":2026,\"fastCashScore\":118,\"updatedAt\":\"2026-09-02T04:00:12Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5319677514\",\"rewardUsd\":1119,\"fastCashScore\":111,\"updatedAt\":\"2026-09-02T04:19:17Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5319682369\",\"rewardUsd\":2026,\"fastCashScore\":118,\"updatedAt\":\"2026-09-02T04:20:03Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
@@ -469,10 +467,28 @@
     "minPayoutConfidence": 0.8,
     "competitionRequired": "low",
     "rejectedFakeRevenueCount": 0,
-    "rejectedAlreadyPaidCount": 0,
-    "rejectedIdentityGateCount": 4
+    "rejectedAlreadyPaidCount": 2,
+    "rejectedIdentityGateCount": 0
   },
   "economicallyRejected": [
+    {
+      "id": "github:4644823208",
+      "title": "[BOUNTY: 10 RTC] Proof-of-Antiquity Explainer — Diagram, Infographic, or 60s Video",
+      "rewardUsd": 10,
+      "reasons": [
+        "already_rewarded_or_paid"
+      ],
+      "rejectedAt": "2026-09-02T04:32:01.096Z"
+    },
+    {
+      "id": "github:5112736273",
+      "title": "[BOUNTY: 35 RTC + 10/defect] Audit the payout pipeline for silent-success failures",
+      "rewardUsd": 35,
+      "reasons": [
+        "already_rewarded_or_paid"
+      ],
+      "rejectedAt": "2026-09-02T04:32:01.097Z"
+    },
     {
       "id": "github:5317863972",
       "title": "Attribute installs and signups to the dog that was shared",
@@ -1105,15 +1121,6 @@
       "rejectedAt": "2026-08-23T11:03:07.365Z"
     },
     {
-      "id": "github:5112736273",
-      "title": "[BOUNTY: 35 RTC + 10/defect] Audit the payout pipeline for silent-success failures",
-      "rewardUsd": 35,
-      "reasons": [
-        "already_rewarded_or_paid"
-      ],
-      "rejectedAt": "2026-08-23T10:10:03.300Z"
-    },
-    {
       "id": "github:5222233738",
       "title": "[Bug] maxSizeMB prop silently accepted as NaN / 0 / negative",
       "rewardUsd": 10,
@@ -1202,16 +1209,6 @@
         "preclaim_or_identity_gate_not_configured"
       ],
       "rejectedAt": "2026-08-23T06:03:47.482Z"
-    },
-    {
-      "id": "github:5222232235",
-      "title": "[Bug] upload_file.tsx is a drifted copy of Login.tsx with its own hardcoded endpoint",
-      "rewardUsd": 30,
-      "reasons": [
-        "testnet_or_test_token_reward",
-        "preclaim_or_identity_gate_not_configured"
-      ],
-      "rejectedAt": "2026-08-23T02:48:57.993Z"
     }
   ]
 }
