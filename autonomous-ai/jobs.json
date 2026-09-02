@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-09-02T19:55:35.122Z",
+  "updatedAt": "2026-09-02T22:30:18.037Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -128,22 +128,23 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5328234737",
+      "id": "github:5299604292",
       "source": "github",
-      "title": "Three of six lodestar_epochs fields do not match the subgraph, and the parity script never compared any of them",
-      "url": "https://github.com/nightswatchhq/nuthatch/issues/1113",
-      "repositoryApiUrl": "https://api.github.com/repos/nightswatchhq/nuthatch",
-      "rewardUsd": 236,
+      "title": "training: materialize immutable real-corpus inputs for reward calibration",
+      "url": "https://github.com/existential-birds/daydream/issues/1083",
+      "repositoryApiUrl": "https://api.github.com/repos/existential-birds/daydream",
+      "rewardUsd": 114,
       "score": 48,
       "labels": [
         "bug",
-        "verification",
-        "p1",
-        "questioning-quelea"
+        "high",
+        "area:cli",
+        "area:training",
+        "area:eval"
       ],
-      "commentCount": 1,
-      "updatedAt": "2026-09-02T19:42:39Z",
-      "summary": "Measured while implementing the epoch comparison for #1076 (PR #1111). The parity script had `EPOCH_N` computed, exported and never compared, printing `count-only: mutable aggregates have no historical snapshot surface` instead. Two claims in that line are wrong, and the second is the interesting one. **There is an as-of surface.** `lodestar_epochs` aggregates with no block filter, but every epoch except the newest is immutable at a pin: rewards are grouped by the event's own `currentEpoch`, which is monotonic in block, and fees/signal are bucketed by `block_number BETWEEN start_block AND end_block`, a window that closes once the successor epoch is first observed. So an epoch whose successor is already observed at the pinned block cannot change. Only the newest epoch is open. **Comparing the six fields at pinned block 501070866**, over the 266 closed epochs the nest and the Graph Network subgraph both hold (nest range 1104-1370, newest excluded as open): | field | agrees | disagrees | disagreement range | |---|---|---|---| | `total_rewards` | 236 | 30 | 1104-1194 | | `total_indexer_rewards` | 237 | 29 | 1104-1194 | | `total_delegator_rewards` | 239 | 27 | 1104-1194 | | `signalled_t",
+      "commentCount": 0,
+      "updatedAt": "2026-09-02T22:22:02Z",
+      "summary": "Parent: #114 Follow-up to: #999 and the corpus-v2 training bridge Depends on: #94's frozen corpus and the real Stage-0 run Blocks: executing #114 without manually fabricated inputs ## Problem #999 ships the calibration consumer, but no production command creates its required `--gold-labels`, `--breakdowns`, or optional `--stage0-scores` inputs from the frozen corpus. The current corpus-v2 projector does not emit intrinsic per-axis breakdowns keyed by v2 `record_id`, and the Stage-0 coordinator writes model state/gate evidence but not the complete per-record score map expected by `calibrate-reward`. The only complete input set is a checked-in synthetic fixture. Running #114 on real data would therefore require hand-authored JSON, violating #999 acceptance criterion 6 and the immutable-lineage contract. ## Required work 1. Add a supported deterministic command/path that derives the gold accepted/rejected calibration cohort and `gold-labels` mapping from the frozen corpus-v2 splits without changing membership. 2. Recompute or project every required intrinsic reward axis for each calibration record from pinned artifacts and versions, emitting a complete `record_id`-keyed breakdown map.",
       "state": "candidate",
       "payoutConfidence": 0.35,
       "autonomyFit": 1,
@@ -152,16 +153,16 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 109,
+      "fastCashScore": 108,
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
-        "comments": 1,
+        "comments": 0,
         "attemptSignals": 0,
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 236,
+      "economicValueUsd": 114,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -203,45 +204,6 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5309710456",
-      "source": "github",
-      "title": "[Bounty] Test dsh plugin installation methods",
-      "url": "https://github.com/Ikalus1988/MisakaNet/issues/1401",
-      "repositoryApiUrl": "https://api.github.com/repos/Ikalus1988/MisakaNet",
-      "rewardUsd": 100,
-      "score": 56,
-      "labels": [
-        "good first issue",
-        "ready",
-        "bounty",
-        "agent-friendly",
-        "has-test",
-        "status:competition"
-      ],
-      "commentCount": 8,
-      "updatedAt": "2026-09-02T19:37:45Z",
-      "summary": "## Description Test all three installation methods for the MisakaNet dsh plugin to ensure they work correctly. ## Installation Methods to Test ### Method 1: npm plugin market (new) ```bash dsh plugin add misakanet ``` ### Method 2: git method ```bash dsh plugin add github:Ikalus1988/MisakaNet ``` ### Method 3: Skill discovery ```bash mkdir -p ~/.dsh/skills && cp -r skills/misakanet ~/.dsh/skills/ ``` ## Test Cases 1. **Installation test**: Each method should complete without errors 2. **Activation test**: Plugin should be recognized by dsh after installation 3. **Functionality test**: MCP tools should be accessible via dsh 4. **Conflict test**: Multiple installation methods should not conflict 5. **Uninstall test**: Plugin should be removable cleanly ## Expected Output - [ ] Method 1 installs successfully - [ ] Method 2 installs successfully - [ ] Method 3 installs successfully - [ ] Plugin appears in `dsh plugin list` - [ ] MCP tools are accessible - [ ] No conflicts between methods - [ ] Clean uninstall possible ## Environment - OS: [Your OS] - dsh version: [Your dsh version] - Node.js version: [Your Node.js version] ## Labels bounty, good first issue, agent-friendly, has-test <b",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 102,
-      "survivalEligible": false,
-      "eligibilityReason": "Competition is too high for bootstrap mode.",
-      "competition": {
-        "comments": 8,
-        "attemptSignals": 0,
-        "risk": "medium"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 100,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
       "id": "github:4462160604",
       "source": "github",
       "title": "[bounty $400] Implement ABNF-compliant email address parser with full §3.2–§4.4 coverage",
@@ -279,42 +241,6 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5161425279",
-      "source": "github",
-      "title": "Semantic content invariants: the extractor's enforced check set",
-      "url": "https://github.com/maximsan/brewpath/issues/100",
-      "repositoryApiUrl": "https://api.github.com/repos/maximsan/brewpath",
-      "rewardUsd": 10,
-      "score": 30,
-      "labels": [
-        "enhancement",
-        "ready-for-agent",
-        "content"
-      ],
-      "commentCount": 3,
-      "updatedAt": "2026-09-02T19:42:40Z",
-      "summary": "> **Status, 2 Sep 2026.** Most of this is built and shipped; what remains is > blocked on content only the product owner can author. See *Where this stands* > below for the line-by-line state — it supersedes any count or `(existing)` tag > further down that disagrees with it. > *This was generated by AI during triage.* Specifies the invariant set resolved on [#27](https://github.com/maximsan/brewpath/issues/27). Built on [#77](https://github.com/maximsan/brewpath/issues/77) (shipped), which built the extractor, the `ContentCard` union and the write mechanism this extends. ## Problem Statement A content author can break the course in ways that every existing check passes clean. The extractor's referential integrity asks *does this id resolve?* Three classes of real defect answer yes and are still wrong: - **A reference that resolves but is not true.** Five Espresso dictionary terms pointed at Grind lessons that never mention crema, portafilter, cortado, tamp or channeling. The lessons exist. The pointers resolve. They are simply false. Run today's audit logic against the commit before the audit was written and it flags **25 such pointers**. - **The same content in two places.** Two ",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 90,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 3,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 10,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
       "id": "github:4563956966",
       "source": "github",
       "title": "parse_duration drops the days (d) unit",
@@ -348,43 +274,6 @@
       "realMoneyEligible": true,
       "economicValueUsd": 50,
       "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5057114620",
-      "source": "github",
-      "title": "[Bounty $1500] logaddexp / logaddexp2: overflow-safe reformulation",
-      "url": "https://github.com/tenstorrent/tt-metal/issues/52037",
-      "repositoryApiUrl": "https://api.github.com/repos/tenstorrent/tt-metal",
-      "rewardUsd": 1500,
-      "score": 36,
-      "labels": [
-        "op_cat: eltwise",
-        "community",
-        "bounty",
-        "bounty_difficulty/medium"
-      ],
-      "commentCount": 9,
-      "updatedAt": "2026-09-02T19:34:58Z",
-      "summary": "## Summary `ttnn.logaddexp` and `ttnn.logaddexp2` are composed as `log(exp(a) + exp(b))` literally, so they return `±inf` for arguments whose exact result is an ordinary finite number. The whole point of a log-sum-exp primitive is that it does not overflow; this one overflows at `|a| > 88.7`, which is inside the normal working range of any log-domain computation. Both directions fail: `logaddexp(100, 0)` returns `inf` where the exact answer is `100`, and `logaddexp(-100, -100)` returns `-inf` where the exact answer is `-99.31`. There is no representable-range argument available here, because the result is boxed in by its own inputs: ``` max(a, b) <= logaddexp(a, b) <= max(a, b) + ln 2 ``` If both arguments are finite the answer is finite and within 0.694 of one of them, so an `inf` return is never a range limitation — it is always the intermediate. ## Current state measured on ttsim ttsim 1.9.7, `Arch.BLACKHOLE`, `ttnn.logaddexp` called directly: | a | b | chip | exact | | |---|---|---|---|---| | 100 | 0 | `inf` | 100.000000 | ✗ | | 89 | 0 | `inf` | 89.000000 | ✗ | | 90 | 89 | `inf` | 90.313263 | ✗ | | 100 | 100 | `inf` | 100.693146 | ✗ | | 200 | 199 | `inf` | 200.313263 | ✗ | | −1",
-      "state": "candidate",
-      "payoutConfidence": 0.8,
-      "autonomyFit": 0,
-      "requiresHumanGate": true,
-      "requiresSpecialHardware": true,
-      "estimatedHoursBand": 30,
-      "complexity": 3,
-      "fundedBountySignal": false,
-      "fastCashScore": 21,
-      "survivalEligible": false,
-      "eligibilityReason": "Too slow for bootstrap mode: first real cash currently requires a <=4 hour task.",
-      "competition": {
-        "comments": 9,
-        "attemptSignals": 0,
-        "risk": "medium"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 1500,
-      "requiresPreclaimOrIdentity": false
     }
   ],
   "selected": null,
@@ -397,7 +286,7 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:4455330769\",\"rewardUsd\":150,\"fastCashScore\":118,\"updatedAt\":\"2026-09-01T01:51:01Z\",\"competition\":{\"comments\":24,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":99,\"updatedAt\":\"2026-09-01T00:09:20Z\",\"competition\":{\"comments\":21,\"attemptSignals\":3,\"risk\":\"high\"}},{\"id\":\"github:4557180255\",\"rewardUsd\":780,\"fastCashScore\":139,\"updatedAt\":\"2026-08-29T02:37:40Z\",\"competition\":{\"comments\":10,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-31T03:06:46Z\",\"competition\":{\"comments\":51,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:4975260101\",\"rewardUsd\":780,\"fastCashScore\":116,\"updatedAt\":\"2026-08-28T18:51:33Z\",\"competition\":{\"comments\":20,\"attemptSignals\":1,\"risk\":\"high\"}},{\"id\":\"github:5057114620\",\"rewardUsd\":1500,\"fastCashScore\":21,\"updatedAt\":\"2026-09-02T19:34:58Z\",\"competition\":{\"comments\":9,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5112736273\",\"rewardUsd\":35,\"fastCashScore\":41,\"updatedAt\":\"2026-09-02T19:34:58Z\",\"competition\":{\"comments\":57,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5161425279\",\"rewardUsd\":10,\"fastCashScore\":90,\"updatedAt\":\"2026-09-02T19:42:40Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5309710456\",\"rewardUsd\":100,\"fastCashScore\":102,\"updatedAt\":\"2026-09-02T19:37:45Z\",\"competition\":{\"comments\":8,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5312094670\",\"rewardUsd\":500,\"fastCashScore\":102,\"updatedAt\":\"2026-09-02T09:02:17Z\",\"competition\":{\"comments\":6,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5328234737\",\"rewardUsd\":236,\"fastCashScore\":109,\"updatedAt\":\"2026-09-02T19:42:39Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:4455330769\",\"rewardUsd\":150,\"fastCashScore\":118,\"updatedAt\":\"2026-09-01T01:51:01Z\",\"competition\":{\"comments\":24,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":99,\"updatedAt\":\"2026-09-01T00:09:20Z\",\"competition\":{\"comments\":21,\"attemptSignals\":3,\"risk\":\"high\"}},{\"id\":\"github:4557180255\",\"rewardUsd\":780,\"fastCashScore\":139,\"updatedAt\":\"2026-08-29T02:37:40Z\",\"competition\":{\"comments\":10,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-31T03:06:46Z\",\"competition\":{\"comments\":51,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:4975260101\",\"rewardUsd\":780,\"fastCashScore\":116,\"updatedAt\":\"2026-08-28T18:51:33Z\",\"competition\":{\"comments\":20,\"attemptSignals\":1,\"risk\":\"high\"}},{\"id\":\"github:5096778319\",\"rewardUsd\":770,\"fastCashScore\":107,\"updatedAt\":\"2026-09-02T22:08:25Z\",\"competition\":{\"comments\":8,\"attemptSignals\":1,\"risk\":\"medium\"}},{\"id\":\"github:5299604292\",\"rewardUsd\":114,\"fastCashScore\":108,\"updatedAt\":\"2026-09-02T22:22:02Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5312094670\",\"rewardUsd\":500,\"fastCashScore\":102,\"updatedAt\":\"2026-09-02T09:02:17Z\",\"competition\":{\"comments\":6,\"attemptSignals\":0,\"risk\":\"medium\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
@@ -410,10 +299,19 @@
     "minPayoutConfidence": 0.8,
     "competitionRequired": "low",
     "rejectedFakeRevenueCount": 0,
-    "rejectedAlreadyPaidCount": 1,
-    "rejectedIdentityGateCount": 0
+    "rejectedAlreadyPaidCount": 0,
+    "rejectedIdentityGateCount": 1
   },
   "economicallyRejected": [
+    {
+      "id": "github:5096778319",
+      "title": "[FEAT] Implement CSV export functionality for historical pool TVL data",
+      "rewardUsd": 770,
+      "reasons": [
+        "preclaim_or_identity_gate_not_configured"
+      ],
+      "rejectedAt": "2026-09-02T22:30:17.984Z"
+    },
     {
       "id": "github:5112736273",
       "title": "[BOUNTY: 35 RTC + 10/defect] Audit the payout pipeline for silent-success failures",
@@ -1135,16 +1033,6 @@
       "id": "github:5222233299",
       "title": "[Bug] File inputs have no accessible label — screen readers announce an unnamed control",
       "rewardUsd": 20,
-      "reasons": [
-        "testnet_or_test_token_reward",
-        "preclaim_or_identity_gate_not_configured"
-      ],
-      "rejectedAt": "2026-08-23T08:45:46.310Z"
-    },
-    {
-      "id": "github:5222231802",
-      "title": "[Bug] npm test silently skips file_upload_component.test.js",
-      "rewardUsd": 15,
       "reasons": [
         "testnet_or_test_token_reward",
         "preclaim_or_identity_gate_not_configured"
