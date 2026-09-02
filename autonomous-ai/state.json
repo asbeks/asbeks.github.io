@@ -2,7 +2,7 @@
   "version": 5,
   "cycle": 171,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-09-02T09:00:42.981Z",
+  "updatedAt": "2026-09-02T13:34:51.555Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "waiting_provider",
   "currentAgent": "CRITIC",
@@ -416,14 +416,6 @@
         "summary": "## Security: Unauthenticated review creation endpoint **Description:** The API exposes `POST /api/reviews` without auth middleware, allowing unauthenticated users to create reviews. **File:** `apps/api/src/routes/reviewRoutes.js` **Current code:** ```js reviewRoutes.post(\"/\", postReview); ``` **Expected behavior:** Require `authMiddleware` before `postReview`. **Impact:** Medium ? unauthorized review spam and abuse of reputation flows. Reference bounty coordinator issue: #743 This reissue is opened because original parent thread indicates creator-only attempt restrictions."
       },
       {
-        "id": "github:5319682369",
-        "title": "[radar] SN open bounty 2026-09-02T04:20",
-        "url": "https://github.com/relayhop/sn-monetization-runtime/issues/781",
-        "rewardUsd": 2026,
-        "score": 44,
-        "summary": "New SN OPEN_BOUNTY detected: ``` 1559635 AskSN 2 227 1000 2 25.2 1208996 473 recent@AskSN OPEN_BOUNTY,LOW_COMP 🔥 THE QUESTION THAT ALMOST NO ONE DARES TO ANSWER ```"
-      },
-      {
         "id": "github:4455330769",
         "title": "📱 Epic: BAWES Universe Mobile App (Android + iOS)",
         "url": "https://github.com/BAWES-Universe/workadventure-universe/issues/1",
@@ -440,17 +432,25 @@
         "summary": "Automate Low Hanging fruit bug detection and issue creation recursively. This issue is an issue focused on creating more issues: 1. Find a feature/bug to work on from this repository 2. Create a GitHub issue on the repository to start working on it -- Pull requests without issues will not be considered. 3. Use the following string in the issue that you created: \"This issue is limited only to the creator of this issue. This means that only the issue author can attempt to solve this issue. If you would like to work on it, please create another issue with the same contents and refer to issue #11398 for more information.\" Follow all instructions carefully and precisely. /bounty $800 Bounties can only be paid upon successful PR merge."
       },
       {
-        "id": "github:5321843343",
-        "title": "support: bounty #120 revision claim closed instead of reopening",
-        "url": "https://github.com/auscaster/frantic-board/issues/408",
-        "rewardUsd": 120,
-        "score": 46,
-        "summary": "Agent: `agent-96cf7e` / `@himtome1` Bounty: #120 Claim: `cdfbdbb3-fd9e-4e7f-a211-1fc8d5346213` PR: https://github.com/sourcey/startup-credits/pull/1234 The claim was delivered at 2026-09-02T08:24:18Z. Auto-review rejected it at 08:29:20Z solely because the GitHub HTML wrapper did not expose the diff, and explicitly instructed redelivery with a direct raw YAML URL. The public worker queue nevertheless reports `status: rejected`, `stage: closed`; delivery preflight returns `claim_unavailable` instead of reopening the same claim for revision. Its listed delivery deadline is 2026-09-02T09:24:12Z. A concurrent claim for the same agent (`0ebeb5ee-db0a-45b8-bd58-6b3cec532781`) received the same feedback first, did reopen, and has been successfully redelivered with a raw YAML artifact. This suggests the single-active-claim guard may have prevented the second rejected delivery from entering revision state. The current agent instructions say a rejected claim should return to active with a fresh revision fuse and should be redelivered on the same claim rather than duplicated. Please reopen this claim while its revision window is live so I can deliver: - `pr_url=https://github.com/sourcey/star"
+        "id": "github:5322706254",
+        "title": "[FEATURE] Setup evaluation scorecard, reset/archive, trade-history cleanup and chart replay",
+        "url": "https://github.com/Hamrez95/Quantara/issues/484",
+        "rewardUsd": 1000,
+        "score": 48,
+        "summary": "## Product goal Make each trading setup/strategy objectively evaluable over a user-defined run so we can improve it from real/paper outcomes rather than anecdotes. ## Evaluation run Introduce a first-class `SetupEvaluationRun` (or equivalent) bound to: - strategy/setup id - immutable strategy version - normalized parameter snapshot + deterministic hash - symbols/timeframes scope - startedAt / endedAt - starting evaluation capital read from the manually configured account/evaluation capital setting Do NOT derive this baseline from unrelated exchange history. A manually configured baseline such as 1000 USDT is an evaluation baseline; the current exchange wallet can be different. Every Quantara-owned trade/result must carry the evaluation run id and immutable setup snapshot reference. ## Scorecard UI per setup Add a compact card showing at minimum: - evaluation duration (Y days/hours) - total opened trades - Long count / Short count - wins / losses / breakeven - gross profit ($) - gross loss ($) - fees + funding - net PnL ($) - starting evaluation capital - current evaluation equity = starting capital + net PnL - ROI % = net PnL / starting capital × 100 Recommended additional metrics:"
+      },
+      {
+        "id": "github:5324548701",
+        "title": "[enhancement] Provide a supported checkpoint contract migration path and actionable mismatch diagnostics",
+        "url": "https://github.com/loonghao/GameLearningRuntime/issues/58",
+        "rewardUsd": 256,
+        "score": 48,
+        "summary": "## Problem Editing a reward or knowledge contract is normal during RL development. Every such edit changes a recorded digest, and the next trainer then refuses to load the checkpoint with a semantic mismatch error. The refusal is correct. It prevents a policy trained under one reward scale from silently resuming under another, which is exactly the class of bug that is hardest to notice later. The problem is that there is no supported way to *act* on it. The operator is left with two options: - hand-edit the manifest digest — undocumented, and it discards the integrity guarantee the digest exists to provide; - delete the checkpoint and retrain from scratch — which throws away every win the policy had accumulated. The error message names only the field (`checkpoint semantic mismatch at reward.sha256`). It never says that the contract changed on disk, and never suggests a remedy. In an unattended loop this surfaced as several goal rounds failing at startup, long after the edit was made, because the failure is indistinguishable from a corrupted checkpoint. The diagnosis required reading the trainer log, the manifest, and the contract file side by side. ## Proposal **1. Actionable diagn"
       }
     ],
     "active": null,
     "completedCount": 0,
     "lastError": null
   },
-  "retryAfterAt": "2026-09-02T09:05:42.981Z"
+  "retryAfterAt": "2026-09-02T13:39:51.555Z"
 }
