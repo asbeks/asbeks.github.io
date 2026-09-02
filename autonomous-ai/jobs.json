@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-09-02T17:19:40.551Z",
+  "updatedAt": "2026-09-02T19:55:35.122Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -44,42 +44,6 @@
       },
       "realMoneyEligible": true,
       "economicValueUsd": 780,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5325157159",
-      "source": "github",
-      "title": "[radar] SN open bounty 2026-09-02T14:22",
-      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/794",
-      "repositoryApiUrl": "https://api.github.com/repos/relayhop/sn-monetization-runtime",
-      "rewardUsd": 2026,
-      "score": 44,
-      "labels": [
-        "radar",
-        "sn",
-        "bounty"
-      ],
-      "commentCount": 0,
-      "updatedAt": "2026-09-02T17:00:17Z",
-      "summary": "New SN OPEN_BOUNTY detected: ``` 1559635 AskSN 2 227 1000 2 35.2 1208996 474 recent@AskSN OPEN_BOUNTY,LOW_COMP 🔥 THE QUESTION THAT ALMOST NO ONE DARES TO ANSWER ```",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 118,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 0,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 2026,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -164,86 +128,22 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5291185259",
+      "id": "github:5328234737",
       "source": "github",
-      "title": "Bounty Claim: Merged PRs on RustChain (#8277, #8275, #8274) and BoTTube (#1795, #1794, #1793, #1792)",
-      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16704",
-      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
-      "rewardUsd": 8277,
-      "score": 46,
-      "labels": [],
-      "commentCount": 3,
-      "updatedAt": "2026-09-02T17:01:57Z",
-      "summary": "## Bounty Claim for Merged PRs (RustChain & BoTTube) ### Contributor Information - **GitHub Username**: @ravendevhub - **Claimant Account**: ravendevhub --- ### Merged Pull Requests Summary (7 Merged PRs) #### 1. RustChain Repository (`Scottcjn/Rustchain`) 1. **PR #8277**: `docs(rip-0001): update stale consensus/poa.rs path to active implementations (#8276)` - Status: **Merged** - Link: https://github.com/Scottcjn/Rustchain/pull/8277 2. **PR #8275**: `ci(docs): add size check and verification rules` - Status: **Merged** - Link: https://github.com/Scottcjn/Rustchain/pull/8275 3. **PR #8274**: `docs(api): document consensus and proof-of-antiquity endpoints` - Status: **Merged** - Link: https://github.com/Scottcjn/Rustchain/pull/8274 #### 2. BoTTube Repository (`Scottcjn/bottube`) 4. **PR #1795**: `fix(avap): validate payload structure and prevent null dereference` - Status: **Merged** - Link: https://github.com/Scottcjn/bottube/pull/1795 5. **PR #1794**: `fix(vote): reject invalid votes and enforce rate limits` - Status: **Merged** - Link: https://github.com/Scottcjn/bottube/pull/1794 6. **PR #1793**: `fix(seo): remove deprecated tags and improve crawler discovery` - Status: **Merged",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 113,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 3,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 8277,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5312910919",
-      "source": "github",
-      "title": "Claim: May Flowers Star Pack — nwinkelman2",
-      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16793",
-      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
-      "rewardUsd": 625,
-      "score": 34,
-      "labels": [],
-      "commentCount": 2,
-      "updatedAt": "2026-09-02T16:46:21Z",
-      "summary": "## May Flowers Star Pack claim — 2 RTC\\n\\nCompleted on the authenticated winkelman2 account:\\n\\n- Starred https://github.com/Scottcjn/beacon-skill\\n- Starred https://github.com/Scottcjn/grazer-skill\\n- Starred https://github.com/Scottcjn/ram-coffers\\n- Added the requested 🌸 campaign mark to recent PR https://github.com/Scottcjn/rustchain-bounties/pull/16791#issuecomment-5495298608\\n\\n**Native RTC payout address:** RTCe625bc2d5c25d4348236a4fcb74e5d0ef01f6d6d\\n**Canonical wallet registration:** https://github.com/Scottcjn/rustchain-bounties/issues/16792#issuecomment-5495156331\\n\\nThis claim uses three fresh repo-star actions and is not reusing the RustChain/clawrtc-rs actions claimed under other bounty records. No acceptance or payment is asserted until verification and transfer.",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 108,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 2,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 625,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:4687674692",
-      "source": "github",
-      "title": "[owockibot] Build an onchain reputation dashboard for contributors",
-      "url": "https://github.com/cyrilawoyemi99-max/owockibot-bounty-sync-/issues/1",
-      "repositoryApiUrl": "https://api.github.com/repos/cyrilawoyemi99-max/owockibot-bounty-sync-",
-      "rewardUsd": 750,
-      "score": 56,
+      "title": "Three of six lodestar_epochs fields do not match the subgraph, and the parity script never compared any of them",
+      "url": "https://github.com/nightswatchhq/nuthatch/issues/1113",
+      "repositoryApiUrl": "https://api.github.com/repos/nightswatchhq/nuthatch",
+      "rewardUsd": 236,
+      "score": 48,
       "labels": [
-        "owockibot",
-        "status: open",
-        "reward: 🥇 $500+",
-        "category: Engineering"
+        "bug",
+        "verification",
+        "p1",
+        "questioning-quelea"
       ],
-      "commentCount": 6,
-      "updatedAt": "2026-09-02T17:14:43Z",
-      "summary": "## Build an onchain reputation dashboard for contributors Create a web dashboard that visualises a contributor's onchain reputation across owockibot bounties. Should show completed work, streaks, and category expertise. Stack is open — deploy to GitHub Pages or Vercel. --- | Field | Value | |---|---| | **Reward** | $750 USDC | | **Category** | Engineering | | **Deadline** | 2026-08-31 | | **Status** | open | | **Bounty ID** | `owk-001` | --- 🔗 **[View on owockibot.xyz →](https://owockibot.xyz/bounty/owk-001)** > _This issue is automatically synced from the [owockibot bounty board](https://owockibot.xyz/bounty). Do not edit manually._",
+      "commentCount": 1,
+      "updatedAt": "2026-09-02T19:42:39Z",
+      "summary": "Measured while implementing the epoch comparison for #1076 (PR #1111). The parity script had `EPOCH_N` computed, exported and never compared, printing `count-only: mutable aggregates have no historical snapshot surface` instead. Two claims in that line are wrong, and the second is the interesting one. **There is an as-of surface.** `lodestar_epochs` aggregates with no block filter, but every epoch except the newest is immutable at a pin: rewards are grouped by the event's own `currentEpoch`, which is monotonic in block, and fees/signal are bucketed by `block_number BETWEEN start_block AND end_block`, a window that closes once the successor epoch is first observed. So an epoch whose successor is already observed at the pinned block cannot change. Only the newest epoch is open. **Comparing the six fields at pinned block 501070866**, over the 266 closed epochs the nest and the Graph Network subgraph both hold (nest range 1104-1370, newest excluded as open): | field | agrees | disagrees | disagreement range | |---|---|---|---| | `total_rewards` | 236 | 30 | 1104-1194 | | `total_indexer_rewards` | 237 | 29 | 1104-1194 | | `total_delegator_rewards` | 239 | 27 | 1104-1194 | | `signalled_t",
       "state": "candidate",
       "payoutConfidence": 0.35,
       "autonomyFit": 1,
@@ -252,16 +152,16 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 102,
+      "fastCashScore": 109,
       "survivalEligible": false,
-      "eligibilityReason": "Competition is too high for bootstrap mode.",
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
-        "comments": 6,
+        "comments": 1,
         "attemptSignals": 0,
-        "risk": "medium"
+        "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 750,
+      "economicValueUsd": 236,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -303,6 +203,45 @@
       "requiresPreclaimOrIdentity": false
     },
     {
+      "id": "github:5309710456",
+      "source": "github",
+      "title": "[Bounty] Test dsh plugin installation methods",
+      "url": "https://github.com/Ikalus1988/MisakaNet/issues/1401",
+      "repositoryApiUrl": "https://api.github.com/repos/Ikalus1988/MisakaNet",
+      "rewardUsd": 100,
+      "score": 56,
+      "labels": [
+        "good first issue",
+        "ready",
+        "bounty",
+        "agent-friendly",
+        "has-test",
+        "status:competition"
+      ],
+      "commentCount": 8,
+      "updatedAt": "2026-09-02T19:37:45Z",
+      "summary": "## Description Test all three installation methods for the MisakaNet dsh plugin to ensure they work correctly. ## Installation Methods to Test ### Method 1: npm plugin market (new) ```bash dsh plugin add misakanet ``` ### Method 2: git method ```bash dsh plugin add github:Ikalus1988/MisakaNet ``` ### Method 3: Skill discovery ```bash mkdir -p ~/.dsh/skills && cp -r skills/misakanet ~/.dsh/skills/ ``` ## Test Cases 1. **Installation test**: Each method should complete without errors 2. **Activation test**: Plugin should be recognized by dsh after installation 3. **Functionality test**: MCP tools should be accessible via dsh 4. **Conflict test**: Multiple installation methods should not conflict 5. **Uninstall test**: Plugin should be removable cleanly ## Expected Output - [ ] Method 1 installs successfully - [ ] Method 2 installs successfully - [ ] Method 3 installs successfully - [ ] Plugin appears in `dsh plugin list` - [ ] MCP tools are accessible - [ ] No conflicts between methods - [ ] Clean uninstall possible ## Environment - OS: [Your OS] - dsh version: [Your dsh version] - Node.js version: [Your Node.js version] ## Labels bounty, good first issue, agent-friendly, has-test <b",
+      "state": "candidate",
+      "payoutConfidence": 0.5,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 102,
+      "survivalEligible": false,
+      "eligibilityReason": "Competition is too high for bootstrap mode.",
+      "competition": {
+        "comments": 8,
+        "attemptSignals": 0,
+        "risk": "medium"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 100,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
       "id": "github:4462160604",
       "source": "github",
       "title": "[bounty $400] Implement ABNF-compliant email address parser with full §3.2–§4.4 coverage",
@@ -340,35 +279,39 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5321618245",
+      "id": "github:5161425279",
       "source": "github",
-      "title": "LOOT-LOCATOR-PERSIST-001 — Preserve pending-reward domain position across Save/Continue",
-      "url": "https://github.com/KevinRabbe/underworld/issues/510",
-      "repositoryApiUrl": "https://api.github.com/repos/KevinRabbe/underworld",
-      "rewardUsd": 214,
-      "score": 32,
-      "labels": [],
-      "commentCount": 9,
-      "updatedAt": "2026-09-02T17:14:10Z",
-      "summary": "ID: LOOT-LOCATOR-PERSIST-001 Status: **PLANNED — FIRST-BIOME PENDING-LOOT SPATIAL PERSISTENCE / IMPLEMENTATION WIP=0** Priority: P1 future first-Biome persistence composition after accepted #431 + promoted #470 child graph Category: Loot / Persistence / World Locator / Domain Identity Accepted semantic reward authority: #214 Current M3 loot-runtime reference: #272 Current domain-aware SAVE owner: #431 — prerequisite/current contract, **not widened by this card before acceptance** Domain state: #432/#404 World loot presentation: #481 Creature occurrence/residency: #488 Locator physical establishment/settlement: #507 Collection occlusion/arbitration: #508 Building canonical/runtime state: #493/#495 Integrated Biome-1 acceptance: #499 Board/roadmap: #33/#405/#470 ## Why this card exists Read-only current-source audit confirms unresolved pending rewards lose their spatial identity across Save/Continue. Current `Game._create_combat()` does: ```text encounter_controller.import_pending_loot_states( restored_pending_loot_states, startup_candidate.resume_position ) ``` and current `prototype_burrower_encounter_controller.gd` imports every pending occurrence with: ```text pending_loot_locato",
+      "title": "Semantic content invariants: the extractor's enforced check set",
+      "url": "https://github.com/maximsan/brewpath/issues/100",
+      "repositoryApiUrl": "https://api.github.com/repos/maximsan/brewpath",
+      "rewardUsd": 10,
+      "score": 30,
+      "labels": [
+        "enhancement",
+        "ready-for-agent",
+        "content"
+      ],
+      "commentCount": 3,
+      "updatedAt": "2026-09-02T19:42:40Z",
+      "summary": "> **Status, 2 Sep 2026.** Most of this is built and shipped; what remains is > blocked on content only the product owner can author. See *Where this stands* > below for the line-by-line state — it supersedes any count or `(existing)` tag > further down that disagrees with it. > *This was generated by AI during triage.* Specifies the invariant set resolved on [#27](https://github.com/maximsan/brewpath/issues/27). Built on [#77](https://github.com/maximsan/brewpath/issues/77) (shipped), which built the extractor, the `ContentCard` union and the write mechanism this extends. ## Problem Statement A content author can break the course in ways that every existing check passes clean. The extractor's referential integrity asks *does this id resolve?* Three classes of real defect answer yes and are still wrong: - **A reference that resolves but is not true.** Five Espresso dictionary terms pointed at Grind lessons that never mention crema, portafilter, cortado, tamp or channeling. The lessons exist. The pointers resolve. They are simply false. Run today's audit logic against the commit before the audit was written and it flags **25 such pointers**. - **The same content in two places.** Two ",
       "state": "candidate",
       "payoutConfidence": 0.35,
       "autonomyFit": 1,
       "requiresHumanGate": false,
       "requiresSpecialHardware": false,
-      "estimatedHoursBand": 12,
+      "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 97,
+      "fastCashScore": 90,
       "survivalEligible": false,
-      "eligibilityReason": "Too slow for bootstrap mode: first real cash currently requires a <=4 hour task.",
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
-        "comments": 9,
+        "comments": 3,
         "attemptSignals": 0,
-        "risk": "medium"
+        "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 214,
+      "economicValueUsd": 10,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -405,6 +348,43 @@
       "realMoneyEligible": true,
       "economicValueUsd": 50,
       "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5057114620",
+      "source": "github",
+      "title": "[Bounty $1500] logaddexp / logaddexp2: overflow-safe reformulation",
+      "url": "https://github.com/tenstorrent/tt-metal/issues/52037",
+      "repositoryApiUrl": "https://api.github.com/repos/tenstorrent/tt-metal",
+      "rewardUsd": 1500,
+      "score": 36,
+      "labels": [
+        "op_cat: eltwise",
+        "community",
+        "bounty",
+        "bounty_difficulty/medium"
+      ],
+      "commentCount": 9,
+      "updatedAt": "2026-09-02T19:34:58Z",
+      "summary": "## Summary `ttnn.logaddexp` and `ttnn.logaddexp2` are composed as `log(exp(a) + exp(b))` literally, so they return `±inf` for arguments whose exact result is an ordinary finite number. The whole point of a log-sum-exp primitive is that it does not overflow; this one overflows at `|a| > 88.7`, which is inside the normal working range of any log-domain computation. Both directions fail: `logaddexp(100, 0)` returns `inf` where the exact answer is `100`, and `logaddexp(-100, -100)` returns `-inf` where the exact answer is `-99.31`. There is no representable-range argument available here, because the result is boxed in by its own inputs: ``` max(a, b) <= logaddexp(a, b) <= max(a, b) + ln 2 ``` If both arguments are finite the answer is finite and within 0.694 of one of them, so an `inf` return is never a range limitation — it is always the intermediate. ## Current state measured on ttsim ttsim 1.9.7, `Arch.BLACKHOLE`, `ttnn.logaddexp` called directly: | a | b | chip | exact | | |---|---|---|---|---| | 100 | 0 | `inf` | 100.000000 | ✗ | | 89 | 0 | `inf` | 89.000000 | ✗ | | 90 | 89 | `inf` | 90.313263 | ✗ | | 100 | 100 | `inf` | 100.693146 | ✗ | | 200 | 199 | `inf` | 200.313263 | ✗ | | −1",
+      "state": "candidate",
+      "payoutConfidence": 0.8,
+      "autonomyFit": 0,
+      "requiresHumanGate": true,
+      "requiresSpecialHardware": true,
+      "estimatedHoursBand": 30,
+      "complexity": 3,
+      "fundedBountySignal": false,
+      "fastCashScore": 21,
+      "survivalEligible": false,
+      "eligibilityReason": "Too slow for bootstrap mode: first real cash currently requires a <=4 hour task.",
+      "competition": {
+        "comments": 9,
+        "attemptSignals": 0,
+        "risk": "medium"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 1500,
+      "requiresPreclaimOrIdentity": false
     }
   ],
   "selected": null,
@@ -417,7 +397,7 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:4455330769\",\"rewardUsd\":150,\"fastCashScore\":118,\"updatedAt\":\"2026-09-01T01:51:01Z\",\"competition\":{\"comments\":24,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":99,\"updatedAt\":\"2026-09-01T00:09:20Z\",\"competition\":{\"comments\":21,\"attemptSignals\":3,\"risk\":\"high\"}},{\"id\":\"github:4557180255\",\"rewardUsd\":780,\"fastCashScore\":139,\"updatedAt\":\"2026-08-29T02:37:40Z\",\"competition\":{\"comments\":10,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-31T03:06:46Z\",\"competition\":{\"comments\":51,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:4687674692\",\"rewardUsd\":750,\"fastCashScore\":102,\"updatedAt\":\"2026-09-02T17:14:43Z\",\"competition\":{\"comments\":6,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4975260101\",\"rewardUsd\":780,\"fastCashScore\":116,\"updatedAt\":\"2026-08-28T18:51:33Z\",\"competition\":{\"comments\":20,\"attemptSignals\":1,\"risk\":\"high\"}},{\"id\":\"github:5158391741\",\"rewardUsd\":16469,\"fastCashScore\":112,\"updatedAt\":\"2026-09-02T16:46:30Z\",\"competition\":{\"comments\":4,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5158394547\",\"rewardUsd\":16469,\"fastCashScore\":112,\"updatedAt\":\"2026-09-02T16:46:23Z\",\"competition\":{\"comments\":4,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5291185259\",\"rewardUsd\":8277,\"fastCashScore\":113,\"updatedAt\":\"2026-09-02T17:01:57Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5312094670\",\"rewardUsd\":500,\"fastCashScore\":102,\"updatedAt\":\"2026-09-02T09:02:17Z\",\"competition\":{\"comments\":6,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5312910919\",\"rewardUsd\":625,\"fastCashScore\":108,\"updatedAt\":\"2026-09-02T16:46:21Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5321618245\",\"rewardUsd\":214,\"fastCashScore\":97,\"updatedAt\":\"2026-09-02T17:14:10Z\",\"competition\":{\"comments\":9,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5325157159\",\"rewardUsd\":2026,\"fastCashScore\":118,\"updatedAt\":\"2026-09-02T17:00:17Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:4455330769\",\"rewardUsd\":150,\"fastCashScore\":118,\"updatedAt\":\"2026-09-01T01:51:01Z\",\"competition\":{\"comments\":24,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":99,\"updatedAt\":\"2026-09-01T00:09:20Z\",\"competition\":{\"comments\":21,\"attemptSignals\":3,\"risk\":\"high\"}},{\"id\":\"github:4557180255\",\"rewardUsd\":780,\"fastCashScore\":139,\"updatedAt\":\"2026-08-29T02:37:40Z\",\"competition\":{\"comments\":10,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-31T03:06:46Z\",\"competition\":{\"comments\":51,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:4975260101\",\"rewardUsd\":780,\"fastCashScore\":116,\"updatedAt\":\"2026-08-28T18:51:33Z\",\"competition\":{\"comments\":20,\"attemptSignals\":1,\"risk\":\"high\"}},{\"id\":\"github:5057114620\",\"rewardUsd\":1500,\"fastCashScore\":21,\"updatedAt\":\"2026-09-02T19:34:58Z\",\"competition\":{\"comments\":9,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5112736273\",\"rewardUsd\":35,\"fastCashScore\":41,\"updatedAt\":\"2026-09-02T19:34:58Z\",\"competition\":{\"comments\":57,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5161425279\",\"rewardUsd\":10,\"fastCashScore\":90,\"updatedAt\":\"2026-09-02T19:42:40Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5309710456\",\"rewardUsd\":100,\"fastCashScore\":102,\"updatedAt\":\"2026-09-02T19:37:45Z\",\"competition\":{\"comments\":8,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5312094670\",\"rewardUsd\":500,\"fastCashScore\":102,\"updatedAt\":\"2026-09-02T09:02:17Z\",\"competition\":{\"comments\":6,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5328234737\",\"rewardUsd\":236,\"fastCashScore\":109,\"updatedAt\":\"2026-09-02T19:42:39Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
@@ -430,10 +410,19 @@
     "minPayoutConfidence": 0.8,
     "competitionRequired": "low",
     "rejectedFakeRevenueCount": 0,
-    "rejectedAlreadyPaidCount": 2,
+    "rejectedAlreadyPaidCount": 1,
     "rejectedIdentityGateCount": 0
   },
   "economicallyRejected": [
+    {
+      "id": "github:5112736273",
+      "title": "[BOUNTY: 35 RTC + 10/defect] Audit the payout pipeline for silent-success failures",
+      "rewardUsd": 35,
+      "reasons": [
+        "already_rewarded_or_paid"
+      ],
+      "rejectedAt": "2026-09-02T19:55:35.086Z"
+    },
     {
       "id": "github:5158391741",
       "title": "[CLAIM] Bounty #16469 - Follow tier (2 RTC)",
@@ -460,15 +449,6 @@
         "already_rewarded_or_paid"
       ],
       "rejectedAt": "2026-09-02T04:32:01.096Z"
-    },
-    {
-      "id": "github:5112736273",
-      "title": "[BOUNTY: 35 RTC + 10/defect] Audit the payout pipeline for silent-success failures",
-      "rewardUsd": 35,
-      "reasons": [
-        "already_rewarded_or_paid"
-      ],
-      "rejectedAt": "2026-09-02T04:32:01.097Z"
     },
     {
       "id": "github:5317863972",
