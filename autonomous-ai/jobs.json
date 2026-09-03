@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-09-02T22:30:18.037Z",
+  "updatedAt": "2026-09-03T00:35:42.847Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -128,23 +128,20 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5299604292",
+      "id": "github:5330563979",
       "source": "github",
-      "title": "training: materialize immutable real-corpus inputs for reward calibration",
-      "url": "https://github.com/existential-birds/daydream/issues/1083",
-      "repositoryApiUrl": "https://api.github.com/repos/existential-birds/daydream",
-      "rewardUsd": 114,
-      "score": 48,
+      "title": "[demand] high-priority 2026-09-03T00:03",
+      "url": "https://github.com/relayhop/ClaudeEarnSelf-runtime/issues/932",
+      "repositoryApiUrl": "https://api.github.com/repos/relayhop/ClaudeEarnSelf-runtime",
+      "rewardUsd": 973,
+      "score": 34,
       "labels": [
-        "bug",
-        "high",
-        "area:cli",
-        "area:training",
-        "area:eval"
+        "radar",
+        "demand"
       ],
       "commentCount": 0,
-      "updatedAt": "2026-09-02T22:22:02Z",
-      "summary": "Parent: #114 Follow-up to: #999 and the corpus-v2 training bridge Depends on: #94's frozen corpus and the real Stage-0 run Blocks: executing #114 without manually fabricated inputs ## Problem #999 ships the calibration consumer, but no production command creates its required `--gold-labels`, `--breakdowns`, or optional `--stage0-scores` inputs from the frozen corpus. The current corpus-v2 projector does not emit intrinsic per-axis breakdowns keyed by v2 `record_id`, and the Stage-0 coordinator writes model state/gate evidence but not the complete per-record score map expected by `calibrate-reward`. The only complete input set is a checked-in synthetic fixture. Running #114 on real data would therefore require hand-authored JSON, violating #999 acceptance criterion 6 and the immutable-lineage contract. ## Required work 1. Add a supported deterministic command/path that derives the gold accepted/rejected calibration cohort and `gold-labels` mapping from the frozen corpus-v2 splits without changing membership. 2. Recompute or project every required intrinsic reward axis for each calibration record from pinned artifacts and versions, emitting a complete `record_id`-keyed breakdown map.",
+      "updatedAt": "2026-09-03T00:03:55Z",
+      "summary": "Demand-side radar 高優先訊號: ``` 5 github 2.7 $1 OPEN_ISSUE,LOW_COMP https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/973 [Bounty] [Bounty $1,000] ttnn.prod_bw returns non-finite gradients for zero inputs ```",
       "state": "candidate",
       "payoutConfidence": 0.35,
       "autonomyFit": 1,
@@ -153,7 +150,7 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 108,
+      "fastCashScore": 111,
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
@@ -162,7 +159,7 @@
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 114,
+      "economicValueUsd": 973,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -180,8 +177,8 @@
         "reward",
         "bounty"
       ],
-      "commentCount": 6,
-      "updatedAt": "2026-09-02T09:02:17Z",
+      "commentCount": 7,
+      "updatedAt": "2026-09-03T00:33:27Z",
       "summary": "# English ## HER Hack-Astron #5 | Spark-X2.5 Edge Agent Real-World Use Case Challenge Turn real Spark-X2.5 runs into reproducible, discussable edge-agent use cases. For this challenge, obtain XHToken/Spark-X2.5-4B or Spark-X2.5-1.7B from Hugging Face (or a mirror such as ModelScope), conduct a real inference, agentic, coding, long-context, multilingual, quantization, or training experiment, and publish the complete use case in the corresponding model's Hugging Face Discussions. After publishing it, reply to this event's GitHub Issue with the Discussion link to enter. - Event page (GitHub Issues): https://github.com/XHToken/Spark-X2.5/issues - Hugging Face model collection: https://huggingface.co/collections/XHToken/spark-x25 - Spark-X2.5-4B: https://huggingface.co/XHToken/Spark-X2.5-4B - Spark-X2.5-1.7B: https://huggingface.co/XHToken/Spark-X2.5-1.7B - Spark-X2.5-4B Discussions: https://huggingface.co/XHToken/Spark-X2.5-4B/discussions - Spark-X2.5-1.7B Discussions: https://huggingface.co/XHToken/Spark-X2.5-1.7B/discussions - Mainland China mirror (recommended): https://www.modelscope.cn/collections/XHToken/Spark-X25 ## Schedule - Submissions open: September 1, 2026 - Challenge peri",
       "state": "candidate",
       "payoutConfidence": 0.35,
@@ -191,11 +188,11 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 102,
+      "fastCashScore": 100,
       "survivalEligible": false,
       "eligibilityReason": "Competition is too high for bootstrap mode.",
       "competition": {
-        "comments": 6,
+        "comments": 7,
         "attemptSignals": 0,
         "risk": "medium"
       },
@@ -241,6 +238,38 @@
       "requiresPreclaimOrIdentity": false
     },
     {
+      "id": "github:5314453203",
+      "source": "github",
+      "title": "[M7-8] Authoritative Production Adventure & Vertical Slice",
+      "url": "https://github.com/darkbard81/CardGuild/issues/19",
+      "repositoryApiUrl": "https://api.github.com/repos/darkbard81/CardGuild",
+      "rewardUsd": 18,
+      "score": 38,
+      "labels": [],
+      "commentCount": 1,
+      "updatedAt": "2026-09-03T00:27:28Z",
+      "summary": "Parent: #11 Depends on: #18, #17 Execution: #18 tutorial prefix + #17 reward equipment pool 완료 후 ## Goal #18에서 tutorial-complete 상태가 된 **같은 authoritative Adventure (`adventure.goblin-trouble`)**를 확장하여, onboarding부터 reward/loadout 변화와 advanced encounter, leader/boss finale까지 이어지는 M7 production vertical slice를 완성합니다. M7의 user-facing production entry는 하나입니다. ```text PRODUCTION_CONTENT.adventureId → adventure.goblin-trouble → Tutorial Prefix → Main Progression → Rewards / Loadout pivots → Elite / Leader → Boss / Victory ``` 별도의 Vertical Slice Adventure ID를 새로 만들어 production selector 문제를 만들지 않습니다. --- ## Current Adventure Contract 현재 Adventure가 표현하는 범위: - linear ordered `encounterIds` - party size 1–3 - encounter 완료 후 fixed `card | equipment` reward choices - between-encounter loadout 변경 이 contract를 끝까지 활용합니다. 새 branching graph, quest state machine, save/persistence, objective system을 추가하지 않습니다. --- ## Recommended Final Structure **총 6–8 encounters**를 권장합니다. 모두 #16의 8–12 Scenario Library 안에서 선택합니다. 예시: 1. **T1 Onboarding** — Move / Strike 2. **T2 Onboarding** — Position / Defense 3. **T3 Onboarding** — Skill / Control + first reward 4. **M1 Mixed Roles** — build choice를 실제로 시험 5. **M2 T",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 96,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 1,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 18,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
       "id": "github:4563956966",
       "source": "github",
       "title": "parse_duration drops the days (d) unit",
@@ -274,6 +303,75 @@
       "realMoneyEligible": true,
       "economicValueUsd": 50,
       "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5329370740",
+      "source": "github",
+      "title": "[Bounty] [Bounty $1,000] ttnn.prod_bw returns non-finite gradients for zero inputs",
+      "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/973",
+      "repositoryApiUrl": "https://api.github.com/repos/zhangjiayang6835-cyber/bounty-plaza",
+      "rewardUsd": 1000,
+      "score": 64,
+      "labels": [
+        "bounty",
+        "real"
+      ],
+      "commentCount": 0,
+      "updatedAt": "2026-09-03T00:00:27Z",
+      "summary": "### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/tenstorrent/tt-metal/issues/54551 ### 漏洞描述 / Description [Bounty $1,000] ttnn.prod_bw returns non-finite gradients for zero inputs ## Summary `ttnn.prod_bw` computes the gradient as ```text prod(input) * grad / input ``` which is `reciprocal(input)` multiplied by a broadcast `prod(input) * grad`. Where the input contains an exact zero, `reciprocal(0)` is `+inf` and the surviving product is `0`, so the gradient at that position is non-finite instead of the finite value autograd defines. ```text input: [2, 0, 4] grad: 1 expected: [0, 8, 0] current: [0, non-finite, 0] ``` This is a source-level analysis: I do not have a card, so the host replay below renders the device `inf * 0` as a non-finite value without asserting which one appears in silicon. The defect is that the gradient is non-finite where the correct value is finite. ## Root cause Both branches multiply by `reciprocal(input)`: - `dim=None`: [`unary_backward.cpp#L1668-L1676`](https://github.com/tenstorrent/tt-metal/blob/a5cd86212e/ttnn/cpp/ttnn/operations/eltwise/unary_backward/unary_backward.cpp#L1668-L1676) — `multiply(reciprocal(input), fill_first_val_into",
+      "state": "candidate",
+      "payoutConfidence": 0.5,
+      "autonomyFit": 0.55,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": true,
+      "estimatedHoursBand": 30,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 52,
+      "survivalEligible": false,
+      "eligibilityReason": "Too slow for bootstrap mode: first real cash currently requires a <=4 hour task.",
+      "competition": {
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 1000,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5329985661",
+      "source": "github",
+      "title": "[Tracker] Chapters 18 - 24 Tutorial Development",
+      "url": "https://github.com/jshn9515/deep-learning-notes/issues/23",
+      "repositoryApiUrl": "https://api.github.com/repos/jshn9515/deep-learning-notes",
+      "rewardUsd": 24.7,
+      "score": 30,
+      "labels": [
+        "tutorial"
+      ],
+      "commentCount": 0,
+      "updatedAt": "2026-09-03T00:27:51Z",
+      "summary": "## Chapter 18: 从零实现 GPT：从 Transformer Decoder 到 GPT-2 - [x] 18.1 语言模型到底在预测什么：Next-Token Prediction - [x] 18.2 MiniGPT：从 Causal GPT Block 到语言模型 - [x] 18.3 Tokenizer：字符、BPE 与词表 - [x] 18.4 Embedding、LM Head 与 Weight Tying - [x] 18.5 在 TinyStories 上训练 MiniGPT - [x] 18.6 从训练到生成：Temperature、Top-k、Top-p - [x] 18.7 GPT-2：从 MiniGPT 到预训练语言模型 ## Chapter 19: LLM 训练工程：让模型高效地跑起来 - [x] 19.1 训练一个 LLM 到底花在哪里：参数、激活、梯度、优化器状态 - [ ] 19.2 FLOPs、Memory 与 Arithmetic Intensity：为什么不是只看计算量 - [ ] 19.3 Profiling：怎么知道代码慢在哪里 - [ ] 19.4 Mixed Precision：FP32、FP16、BF16 与 Loss Scaling - [ ] 19.5 Gradient Accumulation：显存不够时如何模拟大 Batch - [ ] 19.6 Activation Checkpointing：用重计算换显存 - [ ] 19.7 大模型 Checkpoint：模型、优化器与分布式状态如何恢复 - [x] 19.8 现代 Attention API：从 PyTorch SDPA 到 Hugging Face Kernels - [ ] 19.9 分布式训练入门：DDP、ZeRO 与 FSDP 的直觉 - [ ] 19.10 Triton 入门：什么时候需要自己写 Kernel ## Chapter 20: LLM 数据：从网页文本到训练样本 - [ ] 20.1 语言模型的数据长什么样：Document、Token、Sequence - [ ] 20.2 Web Data Pipeline：从原始网页到纯文本 - [ ] 20.3 数据清洗：HTML、乱码、语言识别、低质量文本 - [ ] 20.4 去重：为什么重复数据会污染训练 - [ ] 20.5 数据混合：Common Crawl、代码、数学、书籍怎么配比 - [ ] 20.6 Token Budget：数据量、Epoch 与重复训练 - [ ] 20.7 Sequence Packing：如何把 Token 组织成训练样本 - [ ] 20.8 从 TinyStories 到 FineWeb-Edu：如何选择训练数据集 ## C",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 16,
+      "complexity": 6,
+      "fundedBountySignal": false,
+      "fastCashScore": 50,
+      "survivalEligible": false,
+      "eligibilityReason": "Too slow for bootstrap mode: first real cash currently requires a <=4 hour task.",
+      "competition": {
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 24.7,
+      "requiresPreclaimOrIdentity": false
     }
   ],
   "selected": null,
@@ -286,7 +384,7 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:4455330769\",\"rewardUsd\":150,\"fastCashScore\":118,\"updatedAt\":\"2026-09-01T01:51:01Z\",\"competition\":{\"comments\":24,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":99,\"updatedAt\":\"2026-09-01T00:09:20Z\",\"competition\":{\"comments\":21,\"attemptSignals\":3,\"risk\":\"high\"}},{\"id\":\"github:4557180255\",\"rewardUsd\":780,\"fastCashScore\":139,\"updatedAt\":\"2026-08-29T02:37:40Z\",\"competition\":{\"comments\":10,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-31T03:06:46Z\",\"competition\":{\"comments\":51,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:4975260101\",\"rewardUsd\":780,\"fastCashScore\":116,\"updatedAt\":\"2026-08-28T18:51:33Z\",\"competition\":{\"comments\":20,\"attemptSignals\":1,\"risk\":\"high\"}},{\"id\":\"github:5096778319\",\"rewardUsd\":770,\"fastCashScore\":107,\"updatedAt\":\"2026-09-02T22:08:25Z\",\"competition\":{\"comments\":8,\"attemptSignals\":1,\"risk\":\"medium\"}},{\"id\":\"github:5299604292\",\"rewardUsd\":114,\"fastCashScore\":108,\"updatedAt\":\"2026-09-02T22:22:02Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5312094670\",\"rewardUsd\":500,\"fastCashScore\":102,\"updatedAt\":\"2026-09-02T09:02:17Z\",\"competition\":{\"comments\":6,\"attemptSignals\":0,\"risk\":\"medium\"}}]",
+  "marketSignature": "[{\"id\":\"github:4455330769\",\"rewardUsd\":150,\"fastCashScore\":118,\"updatedAt\":\"2026-09-01T01:51:01Z\",\"competition\":{\"comments\":24,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":99,\"updatedAt\":\"2026-09-01T00:09:20Z\",\"competition\":{\"comments\":21,\"attemptSignals\":3,\"risk\":\"high\"}},{\"id\":\"github:4557180255\",\"rewardUsd\":780,\"fastCashScore\":139,\"updatedAt\":\"2026-08-29T02:37:40Z\",\"competition\":{\"comments\":10,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-31T03:06:46Z\",\"competition\":{\"comments\":51,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:4975260101\",\"rewardUsd\":780,\"fastCashScore\":116,\"updatedAt\":\"2026-08-28T18:51:33Z\",\"competition\":{\"comments\":20,\"attemptSignals\":1,\"risk\":\"high\"}},{\"id\":\"github:5312094670\",\"rewardUsd\":500,\"fastCashScore\":100,\"updatedAt\":\"2026-09-03T00:33:27Z\",\"competition\":{\"comments\":7,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5314453203\",\"rewardUsd\":18,\"fastCashScore\":96,\"updatedAt\":\"2026-09-03T00:27:28Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5329370740\",\"rewardUsd\":1000,\"fastCashScore\":52,\"updatedAt\":\"2026-09-03T00:00:27Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5329985661\",\"rewardUsd\":24.7,\"fastCashScore\":50,\"updatedAt\":\"2026-09-03T00:27:51Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5330563979\",\"rewardUsd\":973,\"fastCashScore\":111,\"updatedAt\":\"2026-09-03T00:03:55Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
@@ -300,7 +398,7 @@
     "competitionRequired": "low",
     "rejectedFakeRevenueCount": 0,
     "rejectedAlreadyPaidCount": 0,
-    "rejectedIdentityGateCount": 1
+    "rejectedIdentityGateCount": 0
   },
   "economicallyRejected": [
     {
