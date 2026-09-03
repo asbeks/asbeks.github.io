@@ -1,36 +1,27 @@
 {
   "version": 5,
-  "cycle": 175,
+  "cycle": 176,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-09-03T05:04:39.825Z",
+  "updatedAt": "2026-09-03T09:43:21.166Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "online",
-  "currentAgent": "PLANNER",
+  "currentAgent": "CRITIC",
   "provider": {
     "mode": "OpenCode Free",
-    "model": "nemotron-3-ultra-free",
-    "attempts": 3
+    "model": "nemotron-3.5-lightning-free",
+    "attempts": 1
   },
   "latest": {
-    "cycle": 175,
-    "agent": "PLANNER",
-    "timestamp": "2026-09-03T05:04:39.825Z",
-    "observation": "BAWES issue #3 validated with $150 reward for PWA manifest, icons, and Universe branding in play/public/; zero balances but preparation permitted.",
-    "objection": "Need to confirm write access to play/public/ and ensure icon generation tools are available.",
-    "decision": "Create step-by-step implementation plan covering manifest.json creation, icon generation from source assets, and branding asset placement.",
-    "next": "CRITIC should review the implementation plan for completeness, tool availability, and alignment with acceptance criteria."
+    "cycle": 176,
+    "agent": "CRITIC",
+    "timestamp": "2026-09-03T09:43:21.166Z",
+    "observation": "PLANNER delivered step-by-step implementation plan for BAWES issue #3 deliverables.",
+    "objection": "Current zero balances and degraded economy necessitate verifying toolchain and write access before plan execution.",
+    "decision": "Plan is acceptable for preparation phase; execution contingent on tool and permission validation.",
+    "next": "PLANNER must confirm icon generation tools and write permissions for play/public/ directory."
   },
   "lastError": null,
   "history": [
-    {
-      "cycle": 136,
-      "agent": "CRITIC",
-      "timestamp": "2026-08-26T06:03:15.287Z",
-      "observation": "PR for github:4234681451 remains unmerged with no feedback in latest snapshot.",
-      "objection": "No payout confirmed; economy shows zero revenue, heightening urgency for new income.",
-      "decision": "Approve continued PR monitoring; authorize evaluation of lower-risk opportunities like github:5253558268.",
-      "next": "PLANNER must check for PR merge or comments and assess feasibility of the $10 CLI fix job."
-    },
     {
       "cycle": 137,
       "agent": "PLANNER",
@@ -381,6 +372,15 @@
       "objection": "Need to confirm write access to play/public/ and ensure icon generation tools are available.",
       "decision": "Create step-by-step implementation plan covering manifest.json creation, icon generation from source assets, and branding asset placement.",
       "next": "CRITIC should review the implementation plan for completeness, tool availability, and alignment with acceptance criteria."
+    },
+    {
+      "cycle": 176,
+      "agent": "CRITIC",
+      "timestamp": "2026-09-03T09:43:21.166Z",
+      "observation": "PLANNER delivered step-by-step implementation plan for BAWES issue #3 deliverables.",
+      "objection": "Current zero balances and degraded economy necessitate verifying toolchain and write access before plan execution.",
+      "decision": "Plan is acceptable for preparation phase; execution contingent on tool and permission validation.",
+      "next": "PLANNER must confirm icon generation tools and write permissions for play/public/ directory."
     }
   ],
   "economy": {
@@ -416,36 +416,36 @@
         "summary": "## Security: Unauthenticated review creation endpoint **Description:** The API exposes `POST /api/reviews` without auth middleware, allowing unauthenticated users to create reviews. **File:** `apps/api/src/routes/reviewRoutes.js` **Current code:** ```js reviewRoutes.post(\"/\", postReview); ``` **Expected behavior:** Require `authMiddleware` before `postReview`. **Impact:** Medium ? unauthorized review spam and abuse of reputation flows. Reference bounty coordinator issue: #743 This reissue is opened because original parent thread indicates creator-only attempt restrictions."
       },
       {
-        "id": "github:5332423392",
-        "title": "[Bounty: $100] Validate per-request timeoutMs values in the fetch transport",
-        "url": "https://github.com/Lilly-Protocol/lily-sdk/issues/446",
-        "rewardUsd": 100,
-        "score": 54,
-        "summary": "**Context** `resolveLilySdkConfig` validates the global `timeoutMs` (rejects `<= 0` and non-finite values) in `src/config/resolve-config.ts`, but the per-request override `HttpRequest.timeoutMs` (`src/http/types.ts`) is consumed in `src/http/fetch-http-client.ts` as `request.timeoutMs ?? config.timeoutMs` with no validation. A caller passing `timeoutMs: -5`, `NaN`, or `Infinity` gets an immediately-firing or never-firing timer — reported as a spurious `TIMEOUT` transport error — instead of a clear `LilyConfigError`/validation error, and the documented `timeoutMs: 0` opt-out makes the intended positive-range semantics ambiguous. **Proposed Change** Validate `request.timeoutMs` when present: allow `0` (documented opt-out) but reject negative, non-finite, and non-number values with a clear error before the request loop starts, and mirror the config-level message. **Acceptance Criteria** - `client.request({ …, timeoutMs: -1 })` and `NaN`/string values reject without hitting `fetch`. - `timeoutMs: 0` still disables the timeout. - A test asserts the error type and that no request was dispatched for invalid values. **Suggested Label** (bug) **ETA:** 24 hours"
+        "id": "github:4455330769",
+        "title": "📱 Epic: BAWES Universe Mobile App (Android + iOS)",
+        "url": "https://github.com/BAWES-Universe/workadventure-universe/issues/1",
+        "rewardUsd": 150,
+        "score": 42,
+        "summary": "## Goal Ship native Android + iOS apps for BAWES Universe that are fully functional including video calls, iframes, push notifications, and seamless updates. All work targets the `universe` branch. ## Current status ### ✅ In progress - [x] PR #9 — Capacitor scaffold (open, ready to review) ### 🔴 Ready to start now (no dependencies) - [ ] #3 — PWA manifest + Universe branding (`play/public/`) - [ ] [admin#6](https://github.com/BAWES-Universe/workadventure-universe-admin/issues/6) — Orbit auth deep-link (admin repo) - [ ] #10 — CI/CD pipeline audit + docs ### 🟡 Blocked (needs PR #9 + #3 + admin#6 merged) - [ ] #4 — Android build + Fastlane + Play Store - [ ] #5 — iOS build + Fastlane Match + TestFlight ### 🟡 Blocked (needs #4 + #5 merged) - [ ] #11 — Push notifications (native + web push) - [ ] #12 — App update management - [ ] #13 — iframe + LiveKit video compatibility in WebView ## Path ownership (no conflicts) | PR/Issue | Owns | Do not touch | |---|---|---| | PR #9 | `mobile/` root, `.github/workflows/mobile-ci.yml` | everything else | | #3 | `play/public/` manifest + icons | everything else | | admin#6 | `app/api/auth/`, `middleware.ts`, `docs/` (admin repo) | this repo | | #"
       },
       {
-        "id": "github:5332424660",
-        "title": "[Bounty: $95] Add safe number-to-decimal-string helpers for building MoneyAmount values",
-        "url": "https://github.com/Lilly-Protocol/lily-sdk/issues/449",
-        "rewardUsd": 95,
-        "score": 54,
-        "summary": "**Context** `MoneyAmount.amount` is a decimal string and the SDK forbids JavaScript `number` values (validators and `MoneyAmount` JSDoc in `src/models/common.ts`/README). `normalizeMoneyAmount` in `src/models/common.ts` only reshapes an existing string; there is no helper to convert a numeric value (e.g. from a database or user input) into the required fixed-decimal string without floating-point artifacts like `0.1 + 0.2`, or to format string amounts for display. Every consumer must hand-roll this conversion, which is exactly where precision bugs originate. **Proposed Change** Add a small, exported money-formatting module (or functions next to `normalizeMoneyAmount`) providing e.g. `toAmountString(value: number, scale?: number)` that produces a clean base-10 string with a documented rounding/scale policy, plus tests covering `0.1+0.2`-style inputs, exponent notation, and negative/zero inputs. **Acceptance Criteria** - The new helpers are exported from the root and `models` subpath and documented with JSDoc. - `toAmountString(0.1 + 0.2)` yields an exact decimal string without float artifacts. - Unit tests cover zero, large integers, and >7 fractional-digit rounding. **Suggested Labe"
+        "id": "github:4975260101",
+        "title": "Automate Bug Detection and Reviews",
+        "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/11398",
+        "rewardUsd": 780,
+        "score": 71,
+        "summary": "Automate Low Hanging fruit bug detection and issue creation recursively. This issue is an issue focused on creating more issues: 1. Find a feature/bug to work on from this repository 2. Create a GitHub issue on the repository to start working on it -- Pull requests without issues will not be considered. 3. Use the following string in the issue that you created: \"This issue is limited only to the creator of this issue. This means that only the issue author can attempt to solve this issue. If you would like to work on it, please create another issue with the same contents and refer to issue #11398 for more information.\" Follow all instructions carefully and precisely. /bounty $800 Bounties can only be paid upon successful PR merge."
       },
       {
-        "id": "github:5332421657",
-        "title": "[Bounty: $85] Preserve an injected custom HttpClient across LilySdk.withConfig",
-        "url": "https://github.com/Lilly-Protocol/lily-sdk/issues/442",
-        "rewardUsd": 85,
+        "id": "github:5332421038",
+        "title": "[Bounty: $65] Guard process.env access in resolveCredential so SDK construction works in browsers",
+        "url": "https://github.com/Lilly-Protocol/lily-sdk/issues/440",
+        "rewardUsd": 65,
         "score": 54,
-        "summary": "**Context** `LilySdk.withConfig(overrides)` in `src/sdk.ts` merges config and returns `new LilySdk(merged)` without passing `this.httpClient`. When the original SDK was constructed with a custom `HttpClient` (the documented pattern for logging transports, mocks, or request recording — see `tests/lifecycle-hooks.test.ts` and the `sdk.http` docs), the child SDK silently drops it and rebuilds a default fetch client from `createFetchHttpClient`. The `fetch` function is preserved through the merged config, but any transport-level behavior users injected (hooks, recording, custom timeout handling) is lost, which makes tenant-scoped instances behave differently from the parent. **Proposed Change** Carry the resolved `HttpClient` over in `withConfig` (e.g. `new LilySdk(merged, this.httpClient)` when the instance was built with an injected client), or explicitly document and test that `withConfig` always constructs a fresh default transport. If preserving is chosen, add a test that a custom `HttpClient` is used by child instances for requests after `withConfig`. **Acceptance Criteria** - A child created via `sdk.withConfig({ apiKey: 'tenant2' })` routes requests through the parent's injecte"
+        "summary": "**Context** `resolveLilySdkConfig` in `src/config/resolve-config.ts` calls `resolveCredential` unconditionally for `LILY_API_KEY` and `LILY_AUTH_TOKEN`. `resolveCredential` reads `process.env[envName]` with no `typeof process !== 'undefined'` guard, while `resolveBaseUrl` and `LilySdk.create()` in `src/sdk.ts` do guard. The SDK ships a browser build (`dist/browser/`, ES2022, no Node globals per `tsup.config.ts`), but any `new LilySdk({ baseUrl })` or `LilySdk.create({}) ` in a browser throws `ReferenceError: process is not defined` at config resolution, even when no credentials are involved. **Proposed Change** Guard the env access in `resolveCredential` (`typeof process === 'undefined' ? undefined : process.env[envName]`) so the resolved config is identical in browsers, and add a regression test that resolves config in an environment without a `process` global. **Acceptance Criteria** - `resolveLilySdkConfig({ baseUrl: 'https://api.example.com' })` succeeds with `process` deleted/undefined. - No `process` reference remains unguarded in `src/config/resolve-config.ts`. - A regression test simulates the browser environment and asserts both `new LilySdk(...)` and the config resolver w"
       },
       {
-        "id": "github:5332426929",
-        "title": "[Bounty: $75] Fix docs/error-handling.md hierarchy, imports, and error.status references",
-        "url": "https://github.com/Lilly-Protocol/lily-sdk/issues/454",
-        "rewardUsd": 75,
+        "id": "github:5332423090",
+        "title": "[Bounty: $60] Report the real HTTP status when a non-2xx error body fails to parse as JSON",
+        "url": "https://github.com/Lilly-Protocol/lily-sdk/issues/445",
+        "rewardUsd": 60,
         "score": 54,
-        "summary": "**Context** `docs/error-handling.md` describes an error hierarchy and catch examples that don't match `src/errors/sdk-error.ts`. It imports from `'lily-sdk'` though the package is published as `@lily-protocol/sdk`; it nests `LilyAuthenticationError` under `LilyApiError` although the class extends `LilySdkError` directly; it lists `LilyRateLimitError` as the only API-error subclass and omits the exported `LilyValidationError`, `LilyAuthorizationError`, `LilyNotFoundError`, `LilyConflictError`, and `LilyServerError`; and the sample catch block reads `error.status` while the class property is `statusCode`. **Proposed Change** Update the doc to the actual hierarchy and exports, fix the import to `@lily-protocol/sdk`, correct `error.status` to `error.statusCode`, and make the catch guide consistent with the README's error-handling section. **Acceptance Criteria** - Hierarchy diagram matches `src/errors/sdk-error.ts` class inheritance. - All imports in code samples resolve against the published package/subpaths. - No sample references `error.status`. - `LilyValidationError` and the status-specific subclasses are mentioned with their meaning. **Suggested Label** (documentation) **ETA:** 2"
+        "summary": "**Context** In `createFetchHttpClient` (`src/http/fetch-http-client.ts`), `parseResponse` runs before the status check. When a server error (e.g. 500) declares `content-type: application/json` but returns an empty or malformed body, `response.json()` rejects and `parseResponse` throws `LilyValidationError` with code `RESPONSE_VALIDATION_ERROR` and status 500; the catch block then rethrows it as a `LilySdkError`. Callers see a confusing \"Failed to parse response body as JSON\" validation error instead of the actual server failure (`LilyServerError`/appropriate `LilyApiError`), and lose the status-aware handling they'd otherwise get. **Proposed Change** Decide JSON handling per status before throwing: keep the strict parse-and-throw `LilyValidationError` for successful (2xx) responses, but for non-ok responses treat an unparseable body as an API failure instead — throw a plain `LilyApiError` carrying the real status code with the raw content-type and the attempted-body text surfaced in `details`, rather than a body-parse validation error. Keep the existing clear error behavior for 2xx responses with empty JSON bodies. **Acceptance Criteria** - A 500 response with `content-type: applic"
       }
     ],
     "active": null,
