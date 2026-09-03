@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-09-03T13:55:00.090Z",
+  "updatedAt": "2026-09-03T17:42:27.248Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -83,70 +83,6 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5332416057",
-      "source": "github",
-      "title": "[Bounty: $80] Consolidate mirrored component test files between __tests__ folders and component folders",
-      "url": "https://github.com/Lilly-Protocol/lily-frontend/issues/489",
-      "repositoryApiUrl": "https://api.github.com/repos/Lilly-Protocol/lily-frontend",
-      "rewardUsd": 80,
-      "score": 54,
-      "labels": [],
-      "commentCount": 1,
-      "updatedAt": "2026-09-03T13:34:42Z",
-      "summary": "**Context** Several component suites are duplicated across directories. `active-route.test.tsx` exists in both `src/components/scaffold/` and `src/components/scaffold/__tests__/`, `site-footer.test.tsx` likewise, and `route-group-layout.smoke.test.tsx` exists in both `src/__tests__/` and `src/app/__tests__/` with different, sometimes conflicting assertions. Vitest's default include collects all copies, so the same behavior is tested multiple times and the conflicting copies cannot both pass. **Proposed Change** Choose one canonical home per suite (next to the component under test) and delete the mirrored copies, merging any assertions only present in the removed files. **Acceptance Criteria** - No test file has an exact counterpart in another directory (`src/components/scaffold/__tests__/` and `src/__tests__/` retain only unique suites). - Every assertion from the deleted copies exists in the surviving suite. - `npm run test:run` passes with the consolidated set. **Suggested Label** DX Design reference: https://www.figma.com/design/GRBeDGDHzCGXefm3xmlbHF/Lily-Protocol **ETA:** 24 hours",
-      "state": "candidate",
-      "payoutConfidence": 0.65,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 10,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 118,
-      "survivalEligible": false,
-      "eligibilityReason": "Too slow for bootstrap mode: first real cash currently requires a <=4 hour task.",
-      "competition": {
-        "comments": 1,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 80,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5332410041",
-      "source": "github",
-      "title": "[Bounty: $70] Replace undefined --color-border and --color-muted-foreground tokens in the Accordion component",
-      "url": "https://github.com/Lilly-Protocol/lily-frontend/issues/476",
-      "repositoryApiUrl": "https://api.github.com/repos/Lilly-Protocol/lily-frontend",
-      "rewardUsd": 70,
-      "score": 54,
-      "labels": [],
-      "commentCount": 1,
-      "updatedAt": "2026-09-03T13:44:19Z",
-      "summary": "**Context** `src/components/ui/accordion.tsx` applies `border-[var(--color-border)]`, `divide-[var(--color-border)]`, and `text-[var(--color-muted-foreground)]`. `src/app/globals.css` defines no such custom properties (the closest tokens are `--color-line` and `--color-muted`), so the borders and body text fall back to inherited/default colors, producing visually inconsistent accordion items. **Proposed Change** Map the Accordion styling onto the tokens that actually exist in `globals.css` (`--color-line`, `--color-muted`, `--color-ink`, `--color-accent` for the focus ring) and remove every reference to undefined tokens. **Acceptance Criteria** - No class in `src/components/ui/accordion.tsx` references an undefined CSS variable. - Item dividers, panel text, and the chevron use the intended token colors when rendered in the app. - Existing `src/components/ui/accordion.test.tsx` tests continue to pass. **Suggested Label** bug Design reference: https://www.figma.com/design/GRBeDGDHzCGXefm3xmlbHF/Lily-Protocol **ETA:** 24 hours",
-      "state": "candidate",
-      "payoutConfidence": 0.65,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 10,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 117,
-      "survivalEligible": false,
-      "eligibilityReason": "Too slow for bootstrap mode: first real cash currently requires a <=4 hour task.",
-      "competition": {
-        "comments": 1,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 70,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
       "id": "github:4975260101",
       "source": "github",
       "title": "Automate Bug Detection and Reviews",
@@ -192,102 +128,6 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5332411244",
-      "source": "github",
-      "title": "[Bounty: $90] Fix duplicate alternates key and undefined manifestPath in createSiteMetadata",
-      "url": "https://github.com/Lilly-Protocol/lily-frontend/issues/478",
-      "repositoryApiUrl": "https://api.github.com/repos/Lilly-Protocol/lily-frontend",
-      "rewardUsd": 90,
-      "score": 54,
-      "labels": [],
-      "commentCount": 3,
-      "updatedAt": "2026-09-03T13:46:21Z",
-      "summary": "**Context** `createSiteMetadata` in `src/config/site.ts` returns an object literal containing two `alternates` members (one fixed to `siteConfig.url`, one using the `canonical` option) and references `siteConfig.manifestPath`, which is not defined on `siteConfig`. The duplicate object key and missing property both fail the strict TypeScript compile. **Proposed Change** Collapse the object into a single `alternates.canonical` value derived from the `canonical` option, and either add a typed `manifestPath` to `siteConfig` (matching the `/manifest.webmanifest` output of `src/app/manifest.ts`) or drop the `manifest` metadata line. **Acceptance Criteria** - `createSiteMetadata` compiles and contains exactly one `alternates` key. - `siteConfig` type-checks whether `manifestPath` is added or the `manifest` reference is removed. - `src/config/site.test.ts` still passes and canonical alternates match `siteConfig.url` for the default case. **Suggested Label** bug Design reference: https://www.figma.com/design/GRBeDGDHzCGXefm3xmlbHF/Lily-Protocol **ETA:** 24 hours",
-      "state": "candidate",
-      "payoutConfidence": 0.65,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 10,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 116,
-      "survivalEligible": false,
-      "eligibilityReason": "Too slow for bootstrap mode: first real cash currently requires a <=4 hour task.",
-      "competition": {
-        "comments": 3,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 90,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5332415116",
-      "source": "github",
-      "title": "[Bounty: $55] Align generate-icons.mjs with the committed public icon set and expose it as an npm script",
-      "url": "https://github.com/Lilly-Protocol/lily-frontend/issues/487",
-      "repositoryApiUrl": "https://api.github.com/repos/Lilly-Protocol/lily-frontend",
-      "rewardUsd": 55,
-      "score": 54,
-      "labels": [],
-      "commentCount": 1,
-      "updatedAt": "2026-09-03T13:49:09Z",
-      "summary": "**Context** `scripts/generate-icons.mjs` writes `src/app/icon.svg` and `public/favicon-*.png` names that do not match the assets actually committed (`public/icon.svg`, `public/favicon.svg`, `public/apple-icon.png`, `public/icons/`). It also uses colors (`#1a1a2e` navy, `#00d4aa` teal) that do not match the brand tokens in `src/app/globals.css` (`--color-accent: #0f766e`, `--color-surface: #f7f7f5`). There is no npm script to run it and no README note about regenerating icons. **Proposed Change** Rework the script to emit the committed filenames into `public/`, derive brand colors from the design tokens, add an `npm run icons` script, and document the workflow in README. **Acceptance Criteria** - Running the script regenerates the same icon filenames currently committed under `public/` (including `apple-touch-icon.svg`, `favicon.svg`, and the `icons/` folder). - Generated colors match the token values in `src/app/globals.css`. - `npm run icons` is defined in `package.json` and documented in README. **Suggested Label** DX Design reference: https://www.figma.com/design/GRBeDGDHzCGXefm3xmlbHF/Lily-Protocol **ETA:** 24 hours",
-      "state": "candidate",
-      "payoutConfidence": 0.65,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 10,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 116,
-      "survivalEligible": false,
-      "eligibilityReason": "Too slow for bootstrap mode: first real cash currently requires a <=4 hour task.",
-      "competition": {
-        "comments": 1,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 55,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5332411938",
-      "source": "github",
-      "title": "[Bounty: $45] Make useFormAction reset clear state without re-submitting the form action",
-      "url": "https://github.com/Lilly-Protocol/lily-frontend/issues/480",
-      "repositoryApiUrl": "https://api.github.com/repos/Lilly-Protocol/lily-frontend",
-      "rewardUsd": 45,
-      "score": 54,
-      "labels": [],
-      "commentCount": 1,
-      "updatedAt": "2026-09-03T13:51:55Z",
-      "summary": "**Context** `src/lib/forms/use-form-action.ts` returns a `reset` callback that calls `dispatch(new FormData())`. With `useActionState`, dispatching invokes the wrapped action again, so resetting a form re-runs the server/client action against an empty payload, which can trigger validation errors or server side effects instead of returning to the initial state. **Proposed Change** Rework `useFormAction` so `reset()` returns state to `{ fieldErrors: null, formError: null, data: null }` without dispatching another form submission (for example by tracking a separate clear flag, or splitting state reset from the `useActionState` dispatch path). **Acceptance Criteria** - Calling `reset()` does not invoke the wrapped `action` (asserted with a `vi.fn()` spy). - After `reset()`, `state` is the initial empty shape with no field or form errors. - Existing `src/__tests__/forms/use-form-action.test.tsx` expectations pass or are updated to the new contract. **Suggested Label** bug Design reference: https://www.figma.com/design/GRBeDGDHzCGXefm3xmlbHF/Lily-Protocol **ETA:** 24 hours",
-      "state": "candidate",
-      "payoutConfidence": 0.65,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 10,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 115,
-      "survivalEligible": false,
-      "eligibilityReason": "Too slow for bootstrap mode: first real cash currently requires a <=4 hour task.",
-      "competition": {
-        "comments": 1,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 45,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
       "id": "github:5336394443",
       "source": "github",
       "title": "R-#223: Donation Page for Lensenia Water Well",
@@ -317,6 +157,77 @@
       },
       "realMoneyEligible": true,
       "economicValueUsd": 1200,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5339569955",
+      "source": "github",
+      "title": "Decide DBZ/DBS episode title convention: JP-literal vs official English dub title",
+      "url": "https://github.com/Napandee/AniFillerPedia/issues/206",
+      "repositoryApiUrl": "https://api.github.com/repos/Napandee/AniFillerPedia",
+      "rewardUsd": 100,
+      "score": 48,
+      "labels": [
+        "question"
+      ],
+      "commentCount": 0,
+      "updatedAt": "2026-09-03T17:32:28Z",
+      "summary": "## Summary Dragon Ball Z (284 of 291 episodes) and Dragon Ball Super (127 of 131) use a different Wikipedia page convention from every other loaded show — `\"Literal JP-translation title\" / \"Official English dub title\"` for a single (non-merged) episode. The currently-stored title for every one of these episodes is just the first (literal JP) segment, contrary to the \"official title over literal\" precedent applied elsewhere (Meitantei Conan, One Piece). ## Context This was already found and explicitly flagged for a decision in `CLAUDE.local.md` on 2026-08-27 (during the #114/#116 title-extraction bug investigation) — \"Flagged for Andreas's decision, nothing changed for either show.\" It's still unresolved as of the 2026-09-03 independent data-quality review, which independently re-confirmed it's still live (DBS episode 1 still shows *\"The Peace Reward – Who Will Get the 100 Million Zeni?\"*, the literal reading). Filing as a real tracked issue now since it's been sitting as a local-notes-only item rather than something visible/actionable on GitHub. ## Scope - A decision: keep JP-literal (current state), switch to official English dub titles (matching the \"official over literal\" patter",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 107,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 100,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5337608403",
+      "source": "github",
+      "title": "[Trading][Desk][KISS][P1] Trading desk 收成一页六块：执行读模型、仓位关闭事实、flatten 进度修正，删除从未运行的通知与 Telegram 通道与无渲染字段",
+      "url": "https://github.com/AnalyThothAI/tracefold/issues/528",
+      "repositoryApiUrl": "https://api.github.com/repos/AnalyThothAI/tracefold",
+      "rewardUsd": 60,
+      "score": 40,
+      "labels": [
+        "enhancement",
+        "ready-for-agent",
+        "type: task",
+        "priority: p1"
+      ],
+      "commentCount": 2,
+      "updatedAt": "2026-09-03T17:36:33Z",
+      "summary": "# 目标 Trading desk 收成一页六块，每块一个接口；补齐仓位关闭的事实与\"每个 Signal 一行\"的执行读模型；删除从未渲染的字段、前端死代码、客户端重算，以及从未在生产运行过的通知与 Telegram 控制通道。不加 gate、授权、确认、工作流；不加新表；不做分页与权益曲线。 基线：main `a086f9fac`，审计范围 7 881 行（前端 Trading 2 890、News OI 页 1 298、前端测试 1 211、后端读模型 2 482）。生产 `trading_execution_notification_deliveries` 0 行，`trading.notifications` 与 `trading.control` 均未启用，操作员配置里没有这两个块。 # 缺口（已核实） - **A 写入侧**：`position` 观察只有 `status` 与 `quantity`，`closed` 时数量恒为 0；没有退出价、已实现盈亏、退出原因。 - **B 读模型**：没有按 `signal_id` 聚合的执行视图；页面只画最新一条 Signal。 - **C 前端**：`executionProgress.ts` 按 `command_id` 关联订单与成交，而平仓单带入场 Signal 的 `signal_id`，flatten 进度第三格永远卡住；文案五级、组件四步。 # PR-1 后端：事实、读模型、删通道 1. **仓位事实**（`integrations/nautilus/oi_runtime/observations.py`、`protection.py`、`exit.py`）：`position` 观察 summary 为 `{status, quantity, avg_entry_price, exit_price, realized_pnl_usd, exit_reason}`；`closed` 时 `quantity` 记关闭前数量，`exit_price` / `realized_pnl_usd` 取自 Nautilus `PositionClosed` 事件（`avg_px_close` / `realized_pnl`），`exit_reason ∈ {stop_filled, flatten, unclaimed_flatten}` 由已有的三个退出入口标注；`protection` 观察 summary 补 `trigger_price`。不加新观察种类。 2. **执行读模型** `GET /api/trading/executions`（`trading/storage/queries.py` 一条 SQL，`app/http/routes/trading.py` 一条路由，`schem",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 101,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 2,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 60,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -395,19 +306,17 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5333431526",
+      "id": "github:5207623837",
       "source": "github",
-      "title": "[Submission] When Does Verifiable-Reward RL Create Reasoning Rather Than Reallocate Search? A Controlled Toy-Scale Test of the Budget-Substitution Boundary",
-      "url": "https://github.com/argszero/silicon-science-cs/issues/79",
-      "repositoryApiUrl": "https://api.github.com/repos/argszero/silicon-science-cs",
-      "rewardUsd": 2026,
-      "score": 32,
-      "labels": [
-        "in-preparation"
-      ],
-      "commentCount": 10,
-      "updatedAt": "2026-09-03T13:37:33Z",
-      "summary": "## Research Registration (in-preparation) **Title**: When Does Verifiable-Reward RL Create Reasoning Rather Than Reallocate Search? A Controlled Toy-Scale Test of the Budget-Substitution Boundary **Author instance**: how2how2how2-arch **Abstract**: Reinforcement learning with verifiable rewards (RLVR) reliably improves LLM reasoning, but the mechanism is contested: recent behavioral evidence at 7B scale (Sun et al. 2026, arXiv:2609.01274, \"BOPTR\") shows RL default-policy gains are largely recoverable as *budgeted operating points of the base policy* (N_base ~ alpha * N_RL^beta via pass@k / best-of-N), suggesting RL mostly reallocates the rollout distribution toward more search rather than creating new computation. We ask the question BOPTR leaves open: **when does this substitution break?** In a fully controlled toy-scale setting — tiny transformers trained from scratch on synthetic verifiable task families (counting, parity, modular arithmetic with scratchpad), with base-policy competence p0 manipulated by construction — we measure the substitution exponent beta(p0) and the minimum budget at which base operating points can match the RL default policy. Our prior belief (registered)",
+      "title": "Metaverse Inventory — Wearables, Digital Objects & Ownership",
+      "url": "https://github.com/DanielIoni-creator/space-station/issues/34",
+      "repositoryApiUrl": "https://api.github.com/repos/DanielIoni-creator/space-station",
+      "rewardUsd": 28,
+      "score": 48,
+      "labels": [],
+      "commentCount": 2,
+      "updatedAt": "2026-09-03T17:31:48Z",
+      "summary": "Parent: #31 Depends on: #24, #28 ## Obiettivo Creare un inventario persistente per avatar, cosmetics, badge e oggetti digitali utilizzabili nel metaverso. ## Scope MVP - inventory per `identity_id` - wearable/cosmetic items - badges/trophies - interactive props - rarity/category metadata - equipped vs owned state - transferable/non-transferable flag ## Regole - proprietà digitale non implica proprietà legale/IP - oggetti reward MYZ possono essere soulbound/non-transferable - nessun asset concede capability tecnica se non esplicitamente autorizzato - provenance per reward/creation/source ## Acceptance criteria - [ ] inventory schema - [ ] equip/unequip API - [ ] ownership/provenance record - [ ] integration con Character Creator - [ ] supporto reward item da #28/#29 - [ ] UI inventory MVP ## Priorità P2 — economia visuale e personalizzazione.",
       "state": "candidate",
       "payoutConfidence": 0.35,
       "autonomyFit": 1,
@@ -416,16 +325,50 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 96,
+      "fastCashScore": 97,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 2,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 28,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5251241758",
+      "source": "github",
+      "title": "[BOUNTY ROUND] Distribution Packages — agents build it, humans publish it (YouTube, Shorts, syndication) — 15-60 RTC",
+      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16601",
+      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
+      "rewardUsd": 282,
+      "score": 32,
+      "labels": [
+        "distribution"
+      ],
+      "commentCount": 35,
+      "updatedAt": "2026-09-03T17:18:12Z",
+      "summary": "## The Problem This Solves Agents write great content but can't operate external platforms — YouTube, Medium, dev.to all want accounts, CAPTCHAs, phone numbers. So everything lands on GitHub, where only people already watching us see it. **This round splits the work at the line each side is good at: the agent builds a complete, publication-ready package and delivers it on GitHub (your strength); a human at Elyan Labs publishes it on the official channels (our job). You are credited as the author on the published piece, and you're paid for the package — not blocked by the platform.** --- ## Package Types & Rewards | # | Package | Reward | Traction bonus | Cap | |---|---------|--------|----------------|-----| | A | **YouTube full production kit** | **40 RTC** | +20 RTC | first 5 accepted | | B | **YouTube script + storyboard kit** | **15 RTC** | +10 RTC | first 5 accepted | | C | **Shorts / clip kit** (YouTube Shorts, ≤60s) | **15 RTC** | +10 RTC | first 10 accepted | | D | **Article syndication add-on** | **+8 RTC** on top of any accepted article bounty (#282, #727, #16497…) | — | first 10 | Traction bonus pays once, 30 days after publish, if the video clears 500 views or 25 likes o",
+      "state": "candidate",
+      "payoutConfidence": 0.5,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 83,
       "survivalEligible": false,
       "eligibilityReason": "Competition is too high for bootstrap mode.",
       "competition": {
-        "comments": 10,
+        "comments": 35,
         "attemptSignals": 0,
-        "risk": "medium"
+        "risk": "high"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 2026,
+      "economicValueUsd": 282,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -474,7 +417,7 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:4455330769\",\"rewardUsd\":150,\"fastCashScore\":118,\"updatedAt\":\"2026-09-01T01:51:01Z\",\"competition\":{\"comments\":24,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":99,\"updatedAt\":\"2026-09-01T00:09:20Z\",\"competition\":{\"comments\":21,\"attemptSignals\":3,\"risk\":\"high\"}},{\"id\":\"github:4557180255\",\"rewardUsd\":780,\"fastCashScore\":139,\"updatedAt\":\"2026-08-29T02:37:40Z\",\"competition\":{\"comments\":10,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-31T03:06:46Z\",\"competition\":{\"comments\":51,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:4975260101\",\"rewardUsd\":780,\"fastCashScore\":116,\"updatedAt\":\"2026-08-28T18:51:33Z\",\"competition\":{\"comments\":20,\"attemptSignals\":1,\"risk\":\"high\"}},{\"id\":\"github:5112736273\",\"rewardUsd\":35,\"fastCashScore\":41,\"updatedAt\":\"2026-09-03T13:28:14Z\",\"competition\":{\"comments\":57,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5294793234\",\"rewardUsd\":100,\"fastCashScore\":101,\"updatedAt\":\"2026-09-03T13:28:30Z\",\"competition\":{\"comments\":4,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5312094670\",\"rewardUsd\":500,\"fastCashScore\":99,\"updatedAt\":\"2026-09-03T11:01:50Z\",\"competition\":{\"comments\":8,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5332410041\",\"rewardUsd\":70,\"fastCashScore\":117,\"updatedAt\":\"2026-09-03T13:44:19Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5332411244\",\"rewardUsd\":90,\"fastCashScore\":116,\"updatedAt\":\"2026-09-03T13:46:21Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5332411938\",\"rewardUsd\":45,\"fastCashScore\":115,\"updatedAt\":\"2026-09-03T13:51:55Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5332415116\",\"rewardUsd\":55,\"fastCashScore\":116,\"updatedAt\":\"2026-09-03T13:49:09Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5332416057\",\"rewardUsd\":80,\"fastCashScore\":118,\"updatedAt\":\"2026-09-03T13:34:42Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5333431526\",\"rewardUsd\":2026,\"fastCashScore\":96,\"updatedAt\":\"2026-09-03T13:37:33Z\",\"competition\":{\"comments\":10,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5336394443\",\"rewardUsd\":1200,\"fastCashScore\":111,\"updatedAt\":\"2026-09-03T13:20:18Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:4455330769\",\"rewardUsd\":150,\"fastCashScore\":118,\"updatedAt\":\"2026-09-01T01:51:01Z\",\"competition\":{\"comments\":24,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":99,\"updatedAt\":\"2026-09-01T00:09:20Z\",\"competition\":{\"comments\":21,\"attemptSignals\":3,\"risk\":\"high\"}},{\"id\":\"github:4557180255\",\"rewardUsd\":780,\"fastCashScore\":139,\"updatedAt\":\"2026-08-29T02:37:40Z\",\"competition\":{\"comments\":10,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":80,\"updatedAt\":\"2026-08-31T03:06:46Z\",\"competition\":{\"comments\":51,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:4975260101\",\"rewardUsd\":780,\"fastCashScore\":116,\"updatedAt\":\"2026-08-28T18:51:33Z\",\"competition\":{\"comments\":20,\"attemptSignals\":1,\"risk\":\"high\"}},{\"id\":\"github:5207623837\",\"rewardUsd\":28,\"fastCashScore\":97,\"updatedAt\":\"2026-09-03T17:31:48Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5251241758\",\"rewardUsd\":282,\"fastCashScore\":83,\"updatedAt\":\"2026-09-03T17:18:12Z\",\"competition\":{\"comments\":35,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:5295068486\",\"rewardUsd\":58.88398389,\"fastCashScore\":95,\"updatedAt\":\"2026-09-03T16:28:15Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5312094670\",\"rewardUsd\":500,\"fastCashScore\":99,\"updatedAt\":\"2026-09-03T11:01:50Z\",\"competition\":{\"comments\":8,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5336394443\",\"rewardUsd\":1200,\"fastCashScore\":111,\"updatedAt\":\"2026-09-03T13:20:18Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5337608403\",\"rewardUsd\":60,\"fastCashScore\":101,\"updatedAt\":\"2026-09-03T17:36:33Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5339446266\",\"rewardUsd\":100,\"fastCashScore\":107,\"updatedAt\":\"2026-09-03T17:19:12Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5339569955\",\"rewardUsd\":100,\"fastCashScore\":107,\"updatedAt\":\"2026-09-03T17:32:28Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
@@ -486,11 +429,29 @@
     "maxHours": 4,
     "minPayoutConfidence": 0.8,
     "competitionRequired": "low",
-    "rejectedFakeRevenueCount": 0,
-    "rejectedAlreadyPaidCount": 1,
+    "rejectedFakeRevenueCount": 1,
+    "rejectedAlreadyPaidCount": 0,
     "rejectedIdentityGateCount": 1
   },
   "economicallyRejected": [
+    {
+      "id": "github:5339446266",
+      "title": "[Test] Unit tests for scripts/sync_answered_questions.py",
+      "rewardUsd": 100,
+      "reasons": [
+        "preclaim_or_identity_gate_not_configured"
+      ],
+      "rejectedAt": "2026-09-03T17:42:27.198Z"
+    },
+    {
+      "id": "github:5295068486",
+      "title": "Orbit Testnet weekly report: 2026-08-24",
+      "rewardUsd": 58.88398389,
+      "reasons": [
+        "testnet_or_test_token_reward"
+      ],
+      "rejectedAt": "2026-09-03T17:42:27.199Z"
+    },
     {
       "id": "github:5294793234",
       "title": "[Question] personagens entram em conflito repetitivo ou loops narrativos difíceis de guiar",
@@ -1205,26 +1166,6 @@
         "preclaim_or_identity_gate_not_configured"
       ],
       "rejectedAt": "2026-08-23T08:45:46.309Z"
-    },
-    {
-      "id": "github:5222231944",
-      "title": "[Bug] The two FileUpload test suites assert contradictory contracts",
-      "rewardUsd": 40,
-      "reasons": [
-        "testnet_or_test_token_reward",
-        "preclaim_or_identity_gate_not_configured"
-      ],
-      "rejectedAt": "2026-08-23T08:45:46.310Z"
-    },
-    {
-      "id": "github:5222232372",
-      "title": "[Bug] FileUpload accepts files that violate the accept filter (no MIME/extension check)",
-      "rewardUsd": 35,
-      "reasons": [
-        "testnet_or_test_token_reward",
-        "preclaim_or_identity_gate_not_configured"
-      ],
-      "rejectedAt": "2026-08-23T08:45:46.310Z"
     }
   ]
 }
