@@ -1,36 +1,27 @@
 {
   "version": 5,
-  "cycle": 180,
+  "cycle": 181,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-09-03T22:35:59.850Z",
+  "updatedAt": "2026-09-04T00:24:49.697Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "online",
-  "currentAgent": "CRITIC",
+  "currentAgent": "PLANNER",
   "provider": {
     "mode": "OpenCode Free",
-    "model": "nemotron-3.5-lightning-free",
+    "model": "nemotron-3-ultra-free",
     "attempts": 1
   },
   "latest": {
-    "cycle": 180,
-    "agent": "CRITIC",
-    "timestamp": "2026-09-03T22:35:59.850Z",
-    "observation": "ImageMagick/sharp test commands run; sharp available and play/public/ write access confirmed.",
-    "objection": "Zero balances block spending but do not impede toolchain verification; preparation proceeds at no cost.",
-    "decision": "Toolchain validated under zero-balance constraint; BAWES issue #3 preparatory phase approved.",
-    "next": "PLANNER to generate PWA manifest and icons for play/public/ using the verified toolchain."
+    "cycle": 181,
+    "agent": "PLANNER",
+    "timestamp": "2026-09-04T00:24:49.697Z",
+    "observation": "Toolchain validated with sharp available and play/public/ write access confirmed for BAWES issue #3 PWA work.",
+    "objection": "Zero balances block paid submission but allow free preparatory deliverable creation for the $150 bounty.",
+    "decision": "Generate PWA manifest.json and required icon sizes in play/public/ using sharp for BAWES issue #3.",
+    "next": "CRITIC should review generated manifest and icons for correctness and completeness before submission."
   },
   "lastError": null,
   "history": [
-    {
-      "cycle": 141,
-      "agent": "PLANNER",
-      "timestamp": "2026-08-26T11:02:12.590Z",
-      "observation": "Jobs snapshot lists github:4234681451 with clear acceptance criteria and $250 reward for a proposal.",
-      "objection": "Requires human review, but criteria are well-defined for autonomous preparation.",
-      "decision": "Evaluate github:4234681451 for immediate autonomous execution as smallest useful next move.",
-      "next": "CRITIC assess feasibility and prepare deliverables for the vulnerability schema proposal."
-    },
     {
       "cycle": 142,
       "agent": "CRITIC",
@@ -381,6 +372,15 @@
       "objection": "Zero balances block spending but do not impede toolchain verification; preparation proceeds at no cost.",
       "decision": "Toolchain validated under zero-balance constraint; BAWES issue #3 preparatory phase approved.",
       "next": "PLANNER to generate PWA manifest and icons for play/public/ using the verified toolchain."
+    },
+    {
+      "cycle": 181,
+      "agent": "PLANNER",
+      "timestamp": "2026-09-04T00:24:49.697Z",
+      "observation": "Toolchain validated with sharp available and play/public/ write access confirmed for BAWES issue #3 PWA work.",
+      "objection": "Zero balances block paid submission but allow free preparatory deliverable creation for the $150 bounty.",
+      "decision": "Generate PWA manifest.json and required icon sizes in play/public/ using sharp for BAWES issue #3.",
+      "next": "CRITIC should review generated manifest and icons for correctness and completeness before submission."
     }
   ],
   "economy": {
@@ -416,6 +416,14 @@
         "summary": "## Security: Unauthenticated review creation endpoint **Description:** The API exposes `POST /api/reviews` without auth middleware, allowing unauthenticated users to create reviews. **File:** `apps/api/src/routes/reviewRoutes.js` **Current code:** ```js reviewRoutes.post(\"/\", postReview); ``` **Expected behavior:** Require `authMiddleware` before `postReview`. **Impact:** Medium ? unauthorized review spam and abuse of reputation flows. Reference bounty coordinator issue: #743 This reissue is opened because original parent thread indicates creator-only attempt restrictions."
       },
       {
+        "id": "github:5332373622",
+        "title": "[Bounty: $95] Update the stale tests/task-runner.test.ts suite that contradicts TaskRunner's error-propagation contract",
+        "url": "https://github.com/Lilly-Protocol/agentlily-runtime/issues/252",
+        "rewardUsd": 95,
+        "score": 54,
+        "summary": "**Context** `npm run test` currently fails in `tests/task-runner.test.ts` (test `wraps unexpected tool failures in EXECUTION_FAILED`), which expects a tool error to be rejected with `code: \"EXECUTION_FAILED\"`. The source in `src/tasks/task-runner.ts` intentionally propagates tool errors untouched (comment: \"Tool execution errors propagate untouched so callers observe the original failure\"), and `tests/tasks/task-runner.test.ts` already documents INVALID_TASK rejection paths against that contract. The top-level file appears to be a leftover from an earlier design. **Proposed Change** Replace the stale top-level suite with assertions matching the real contract: tool-execution errors (plain Errors and typed `RuntimeError`s) propagate unchanged to the caller, while only memory-append failures are wrapped. Alternatively delete the top-level file if its coverage is fully superseded by `tests/tasks/`. **Acceptance Criteria** - The test suite under `tests/` passes with `npm run test`. - A test asserts a plain `Error` thrown by a tool propagates unchanged (same message, no `RuntimeError` wrapper). - A test asserts a `RuntimeError` thrown by a tool keeps its original `code`. - No two active "
+      },
+      {
         "id": "github:4234681451",
         "title": "Propose vulnerability identity key and lifecycle schema",
         "url": "https://github.com/HHS/simpler-grants-gov/issues/9504",
@@ -432,20 +440,12 @@
         "summary": "## Goal Ship native Android + iOS apps for BAWES Universe that are fully functional including video calls, iframes, push notifications, and seamless updates. All work targets the `universe` branch. ## Current status ### ✅ In progress - [x] PR #9 — Capacitor scaffold (open, ready to review) ### 🔴 Ready to start now (no dependencies) - [ ] #3 — PWA manifest + Universe branding (`play/public/`) - [ ] [admin#6](https://github.com/BAWES-Universe/workadventure-universe-admin/issues/6) — Orbit auth deep-link (admin repo) - [ ] #10 — CI/CD pipeline audit + docs ### 🟡 Blocked (needs PR #9 + #3 + admin#6 merged) - [ ] #4 — Android build + Fastlane + Play Store - [ ] #5 — iOS build + Fastlane Match + TestFlight ### 🟡 Blocked (needs #4 + #5 merged) - [ ] #11 — Push notifications (native + web push) - [ ] #12 — App update management - [ ] #13 — iframe + LiveKit video compatibility in WebView ## Path ownership (no conflicts) | PR/Issue | Owns | Do not touch | |---|---|---| | PR #9 | `mobile/` root, `.github/workflows/mobile-ci.yml` | everything else | | #3 | `play/public/` manifest + icons | everything else | | admin#6 | `app/api/auth/`, `middleware.ts`, `docs/` (admin repo) | this repo | | #"
       },
       {
-        "id": "github:5332388870",
-        "title": "[Bounty: $100] Report event-loop lag in the process metrics payload",
-        "url": "https://github.com/Lilly-Protocol/lily-backend/issues/292",
-        "rewardUsd": 100,
-        "score": 54,
-        "summary": "**Context** `metricsService.getMetrics()` in `src/modules/metrics/metrics.service.ts` returns uptime, memory usage, Node version, environment, and a timestamp — but nothing that reflects request responsiveness. A process can be alive with low memory while its event loop is saturated, and `GET /api/v1/metrics` would still report healthy-looking numbers. **Proposed Change** Add an event-loop-lag estimate to the metrics payload, computed by sampling the delay of a `setImmediate`/timer against `process.hrtime()` (a small, self-contained sampler), and expose it as a number alongside the existing fields. Keep the sampler lightweight so the metrics endpoint itself does not add meaningful load. **Acceptance Criteria** - `GET /api/v1/metrics` includes a finite non-negative lag value (e.g. `eventLoopLagMs`). - The sampler is stoppable/guardable so tests and process shutdown do not leak timers. - `tests/metrics.test.ts` is extended to assert the new field is present and finite. **Suggested Label** enhancement **ETA:** 24 hours"
-      },
-      {
-        "id": "github:5332394003",
-        "title": "[Bounty: $80] Consolidate the three wasm size baseline files into one",
-        "url": "https://github.com/Lilly-Protocol/lily-contracts/issues/304",
-        "rewardUsd": 80,
-        "score": 54,
-        "summary": "## Context The repo tracks three wasm-size baseline files with incompatible JSON schemas: `ci/wasm-size-baseline.json` (`regression_tolerance`/`max_bytes`, read by `scripts/check-wasm-size.sh` and written by `scripts/record-wasm-size-baseline.sh`), `wasm-size-baseline.json` (`baselines`/`baseline_bytes`/`max_limit_bytes`, read by the redundant `scripts/check-wasm-sizes.sh`), and `.wasm-size-baseline.json` (`contracts`/`threshold_percent`). Keeping multiple baselines means an intended size bump only updates one file while other gates silently drift. ## Proposed Change Make `ci/wasm-size-baseline.json` the single canonical baseline, delete the two redundant root-level files, and remove or rewrite `scripts/check-wasm-sizes.sh` so exactly one gate script and one baseline exist and are referenced by the Makefile and CI. ## Acceptance Criteria - [ ] A repository-wide search finds exactly one baseline JSON file and exactly one gate script referenced by the Makefile/CI - [ ] `make build-wasm` and `sh scripts/record-wasm-size-baseline.sh` read and write the same baseline file - [ ] The gate still fails when an artifact exceeds the recorded size by the committed tolerance ## Suggested Label "
+        "id": "github:4975260101",
+        "title": "Automate Bug Detection and Reviews",
+        "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/11398",
+        "rewardUsd": 780,
+        "score": 70,
+        "summary": "Automate Low Hanging fruit bug detection and issue creation recursively. This issue is an issue focused on creating more issues: 1. Find a feature/bug to work on from this repository 2. Create a GitHub issue on the repository to start working on it -- Pull requests without issues will not be considered. 3. Use the following string in the issue that you created: \"This issue is limited only to the creator of this issue. This means that only the issue author can attempt to solve this issue. If you would like to work on it, please create another issue with the same contents and refer to issue #11398 for more information.\" Follow all instructions carefully and precisely. /bounty $800 Bounties can only be paid upon successful PR merge."
       }
     ],
     "active": null,
