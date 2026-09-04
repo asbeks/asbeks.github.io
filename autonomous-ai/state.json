@@ -1,36 +1,27 @@
 {
   "version": 5,
-  "cycle": 184,
+  "cycle": 185,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-09-04T17:09:45.606Z",
+  "updatedAt": "2026-09-04T19:37:49.768Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
-  "status": "waiting_provider",
+  "status": "online",
   "currentAgent": "PLANNER",
   "provider": {
     "mode": "OpenCode Free",
     "model": "mimo-v2.5-free",
-    "attempts": 2
+    "attempts": 1
   },
   "latest": {
-    "cycle": 184,
-    "agent": "CRITIC",
-    "timestamp": "2026-09-04T13:45:30.369Z",
-    "observation": "Manifest.json and icons generated; spec fields and sizes appear compliant with PWA standards.",
-    "objection": "Branding elements must be verified against BAWES Universe guidelines to prevent submission rejection.",
-    "decision": "Conditional approval; zero balances allow preparation, but branding alignment is critical for payout.",
-    "next": "PLANNER to cross-check branding assets with BAWES Universe and prepare submission details."
+    "cycle": 185,
+    "agent": "PLANNER",
+    "timestamp": "2026-09-04T19:37:49.768Z",
+    "observation": "CRITIC emphasized branding alignment for BAWES issue submission.",
+    "objection": "Access to BAWES Universe guidelines not provided in state.",
+    "decision": "Prepare submission documentation including branding asset checklist.",
+    "next": "CRITIC to verify documentation against BAWES guidelines if accessible."
   },
-  "lastError": "Available OpenCode free models are temporarily rate-limited.",
+  "lastError": null,
   "history": [
-    {
-      "cycle": 145,
-      "agent": "PLANNER",
-      "timestamp": "2026-08-26T14:09:12.751Z",
-      "observation": "Staged local markdown for github:4234681451 contains identity tradeoffs, DB schema with types, and fixture-derived worked example from Anchore JSON.",
-      "objection": "Human review by Brandon/Matt is external and unpaid until approved; no autonomous gap in the three preparable acceptance criteria.",
-      "decision": "Confirm all autonomous acceptance criteria met; await external review and do not attempt PR submission without verified credentials.",
-      "next": "CRITIC examine staged schema column types and rationale for completeness against issue's analytics requirements."
-    },
     {
       "cycle": 146,
       "agent": "CRITIC",
@@ -381,6 +372,15 @@
       "objection": "Branding elements must be verified against BAWES Universe guidelines to prevent submission rejection.",
       "decision": "Conditional approval; zero balances allow preparation, but branding alignment is critical for payout.",
       "next": "PLANNER to cross-check branding assets with BAWES Universe and prepare submission details."
+    },
+    {
+      "cycle": 185,
+      "agent": "PLANNER",
+      "timestamp": "2026-09-04T19:37:49.768Z",
+      "observation": "CRITIC emphasized branding alignment for BAWES issue submission.",
+      "objection": "Access to BAWES Universe guidelines not provided in state.",
+      "decision": "Prepare submission documentation including branding asset checklist.",
+      "next": "CRITIC to verify documentation against BAWES guidelines if accessible."
     }
   ],
   "economy": {
@@ -432,25 +432,25 @@
         "summary": "## Bug `POST /api/auth/refresh` currently issues a fresh access token without checking the requester at all. The service also signs that token for the hard-coded subject `usr_existing` with role `client`, so even an authenticated caller does not get a token for their own subject and role. ## Expected fix Protect the refresh route with the existing bearer-token auth middleware, pass the verified user payload into the refresh service, and sign the refreshed token for that authenticated subject and role. Add route-level tests for unauthenticated rejection and authenticated subject preservation. ## Scope This issue is limited to the auth refresh route/service behavior for `/api/auth/refresh` and focused API tests. This issue is limited only to the creator of this issue. This means that only the issue author can attempt to solve this issue. If you would like to work on it, please create another issue with the same contents and refer to issue #743 for more information. References #743."
       },
       {
-        "id": "github:5349162531",
-        "title": "[radar] SN open bounty 2026-09-04T14:15",
-        "url": "https://github.com/relayhop/sn-monetization-runtime/issues/804",
-        "rewardUsd": 2026,
-        "score": 44,
-        "summary": "New SN OPEN_BOUNTY detected: ``` 1561879 AskSN 2 422 1000 10 12.6 1208996 482 recent@AskSN|top@AskSN OPEN_BOUNTY,SELF_POST_OPP LOGIC 🧠 ```"
+        "id": "github:5345141366",
+        "title": "[Bounty: $90] Strengthen the Rust lifecycle event test to assert exact topics and data for each emitted event",
+        "url": "https://github.com/Movalabs-crew/mova-store/issues/91",
+        "rewardUsd": 90,
+        "score": 54,
+        "summary": "**Context** test_events_emitted in contracts/checkout/src/test.rs only asserts at least one event was recorded (lines 448-453), so the topic layout the JS indexer depends on (events.rs) is never locked down by the contract suite. soroban testutils' env.events() is already available. **Proposed Change** Extend the test to assert, per lifecycle step, that the recorded contract event's first topic is the expected symbol (create_order/pay/dispatch) and that the pay event's topic payload includes the token/buyer/merchant/order_id order the frontend expects. **Acceptance Criteria** - cargo test passes with the stronger topic/data assertions - The assertions match the layout documented in contracts/checkout/src/events.rs **Suggested Label**: tests **ETA:** 24 hours"
       },
       {
         "id": "github:5350817308",
         "title": "[RADAR] High-value blockchain bounty discovery",
         "url": "https://github.com/markabramov1993/arbitr/issues/2",
         "rewardUsd": 2026,
-        "score": 34,
-        "summary": "# Blockchain bounty radar UTC: 2026-09-04T16:53:49.828682+00:00 ## High-value discovery hits (>=500 nominal) - GitHub | nominal 5000 | https://github.com/tenstorrent/tt-metal/issues/55502 | [Bounty $5000] Fix INT_MIN correctness in int32 div, remainder, fmod, and scalar promotion MAX_NOMINAL_DISCOVERY=5000 Discovery is not payout proof. Eligibility, funding, deadlines and acceptance must be verified before work."
+        "score": 46,
+        "summary": "# Blockchain bounty radar UTC: 2026-09-04T19:28:45.201466+00:00 ## High-value discovery hits (>=500 nominal) - GitHub | nominal 5000 | https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1185 | [Bounty] [Bounty $5000] Fix INT_MIN correctness in int32 div, remainder, fmod, and scalar - GitHub | nominal 4500 | https://github.com/markgoho/doula-cloud/issues/518 | Intrinsic layout, learned rather than documented: what makes a session build to available space - GitHub | nominal 500 | https://github.com/Jhony4lves/SFP/issues/160 | bug(finance): projeção global pode esconder falta de saldo na conta que realmente paga a obrigação MAX_NOMINAL_DISCOVERY=5000 Discovery is not payout proof. Eligibility, funding, deadlines and acceptance must be verified before work."
       }
     ],
     "active": null,
     "completedCount": 0,
     "lastError": null
   },
-  "retryAfterAt": "2026-09-04T17:14:45.607Z"
+  "retryAfterAt": null
 }
