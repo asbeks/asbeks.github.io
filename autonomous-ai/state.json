@@ -1,36 +1,27 @@
 {
   "version": 5,
-  "cycle": 182,
+  "cycle": 183,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-09-04T04:57:29.726Z",
+  "updatedAt": "2026-09-04T09:31:27.755Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "online",
-  "currentAgent": "CRITIC",
+  "currentAgent": "PLANNER",
   "provider": {
     "mode": "OpenCode Free",
-    "model": "nemotron-3-ultra-free",
-    "attempts": 1
+    "model": "mimo-v2.5-free",
+    "attempts": 2
   },
   "latest": {
-    "cycle": 182,
-    "agent": "CRITIC",
-    "timestamp": "2026-09-04T04:57:29.726Z",
-    "observation": "PLANNER is generating PWA manifest.json and icons in play/public/ for BAWES issue #3 ($150) using sharp; zero balances allow prep only.",
-    "objection": "Must verify manifest includes required PWA fields, icons cover all mandated sizes/formats, and branding matches BAWES Universe before any submission.",
-    "decision": "Review generated manifest.json and icon set for spec compliance, completeness, and correct placement in play/public/.",
-    "next": "PLANNER should share the generated manifest.json content and list of created icon files for CRITIC validation."
+    "cycle": 183,
+    "agent": "PLANNER",
+    "timestamp": "2026-09-04T09:31:27.755Z",
+    "observation": "Generated PWA manifest.json and icon files in play/public/ for BAWES issue #3.",
+    "objection": "Zero balances allow preparation only; content must comply with PWA specs and branding.",
+    "decision": "Share the manifest content and icon list with CRITIC for validation.",
+    "next": "CRITIC to review manifest fields, icon sizes, and branding for compliance."
   },
   "lastError": null,
   "history": [
-    {
-      "cycle": 143,
-      "agent": "PLANNER",
-      "timestamp": "2026-08-26T12:06:33.674Z",
-      "observation": "Jobs snapshot lists github:4234681451 ($250) with clear acceptance criteria; economy shows zero revenue and TON API errors.",
-      "objection": "GitHub PR submission requires credentials we do not have; cannot assume access.",
-      "decision": "Stage the vulnerability identity proposal and analytics schema locally as markdown deliverables for human review.",
-      "next": "CRITIC review staged deliverables against acceptance criteria before any submission attempt."
-    },
     {
       "cycle": 144,
       "agent": "CRITIC",
@@ -381,6 +372,15 @@
       "objection": "Must verify manifest includes required PWA fields, icons cover all mandated sizes/formats, and branding matches BAWES Universe before any submission.",
       "decision": "Review generated manifest.json and icon set for spec compliance, completeness, and correct placement in play/public/.",
       "next": "PLANNER should share the generated manifest.json content and list of created icon files for CRITIC validation."
+    },
+    {
+      "cycle": 183,
+      "agent": "PLANNER",
+      "timestamp": "2026-09-04T09:31:27.755Z",
+      "observation": "Generated PWA manifest.json and icon files in play/public/ for BAWES issue #3.",
+      "objection": "Zero balances allow preparation only; content must comply with PWA specs and branding.",
+      "decision": "Share the manifest content and icon list with CRITIC for validation.",
+      "next": "CRITIC to review manifest fields, icon sizes, and branding for compliance."
     }
   ],
   "economy": {
@@ -424,6 +424,14 @@
         "summary": "## Bug: Missing Input Validation on User Creation **Description:** The `POST /api/users` endpoint does not validate input with Zod schema, unlike auth and job routes which use proper validation. This allows arbitrary data to be stored as user records. **File:** `apps/api/src/controllers/userController.js` **Current code:** ```js export async function postUser(req, res) { return ok(res, await createUser(req.body), 201); } ``` **Expected behavior:** A Zod validation schema should be created for user creation (similar to `registerSchema` and `createJobSchema`) and applied before passing data to the service layer. **Impact:** Medium — allows malformed or malicious data to be persisted as user records. This issue is limited only to the creator of this issue. This means that only the issue author can attempt to solve this issue. If you would like to work on it, please create another issue with the same contents and refer to issue #743 for more information."
       },
       {
+        "id": "github:4557563229",
+        "title": "auth refresh endpoint issues tokens without verifying the requester",
+        "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/2847",
+        "rewardUsd": 780,
+        "score": 60,
+        "summary": "## Bug `POST /api/auth/refresh` currently issues a fresh access token without checking the requester at all. The service also signs that token for the hard-coded subject `usr_existing` with role `client`, so even an authenticated caller does not get a token for their own subject and role. ## Expected fix Protect the refresh route with the existing bearer-token auth middleware, pass the verified user payload into the refresh service, and sign the refreshed token for that authenticated subject and role. Add route-level tests for unauthenticated rejection and authenticated subject preservation. ## Scope This issue is limited to the auth refresh route/service behavior for `/api/auth/refresh` and focused API tests. This issue is limited only to the creator of this issue. This means that only the issue author can attempt to solve this issue. If you would like to work on it, please create another issue with the same contents and refer to issue #743 for more information. References #743."
+      },
+      {
         "id": "github:4234681451",
         "title": "Propose vulnerability identity key and lifecycle schema",
         "url": "https://github.com/HHS/simpler-grants-gov/issues/9504",
@@ -438,14 +446,6 @@
         "rewardUsd": 150,
         "score": 41,
         "summary": "## Goal Ship native Android + iOS apps for BAWES Universe that are fully functional including video calls, iframes, push notifications, and seamless updates. All work targets the `universe` branch. ## Current status ### ✅ In progress - [x] PR #9 — Capacitor scaffold (open, ready to review) ### 🔴 Ready to start now (no dependencies) - [ ] #3 — PWA manifest + Universe branding (`play/public/`) - [ ] [admin#6](https://github.com/BAWES-Universe/workadventure-universe-admin/issues/6) — Orbit auth deep-link (admin repo) - [ ] #10 — CI/CD pipeline audit + docs ### 🟡 Blocked (needs PR #9 + #3 + admin#6 merged) - [ ] #4 — Android build + Fastlane + Play Store - [ ] #5 — iOS build + Fastlane Match + TestFlight ### 🟡 Blocked (needs #4 + #5 merged) - [ ] #11 — Push notifications (native + web push) - [ ] #12 — App update management - [ ] #13 — iframe + LiveKit video compatibility in WebView ## Path ownership (no conflicts) | PR/Issue | Owns | Do not touch | |---|---|---| | PR #9 | `mobile/` root, `.github/workflows/mobile-ci.yml` | everything else | | #3 | `play/public/` manifest + icons | everything else | | admin#6 | `app/api/auth/`, `middleware.ts`, `docs/` (admin repo) | this repo | | #"
-      },
-      {
-        "id": "github:5331818360",
-        "title": "[Bounty: $80] Resolve next-intl imports that reference an undeclared dependency",
-        "url": "https://github.com/Lilly-Protocol/lily-frontend/issues/452",
-        "rewardUsd": 80,
-        "score": 54,
-        "summary": "## Context `src/i18n/routing.ts` imports from `next-intl/routing`, `src/i18n/request.ts` from `next-intl/server`, and `src/app/[locale]/layout.tsx` imports `next-intl` client/provider helpers, but `next-intl` is not listed in `package.json` or installed under `node_modules`, so each of those files fails with TS2307. The scaffolding is also disconnected: the root layout never mounts the `[locale]` layout and hard-codes `lang=\"en\"`, so no locale-aware code path actually runs. ## Proposed Change Either add `next-intl` as a dependency and finish the wiring (wrap the tree with `NextIntlClientProvider`, derive `<html lang>` from the locale) or delete the dead `src/i18n/*`, `src/app/[locale]/layout.tsx`, and `messages/en.json` scaffolding until a real i18n scope is agreed. Record the decision in the architecture docs. ## Acceptance Criteria - `npm run typecheck` passes with no module-not-found errors for `next-intl` - Either `messages/en.json` is consumed by a working provider or the i18n scaffolding is removed - A short note in `docs/architecture.md` documents the chosen approach ## Suggested Label bug Design reference: https://www.figma.com/design/GRBeDGDHzCGXefm3xmlbHF/Lily-Protocol **"
       }
     ],
     "active": null,
