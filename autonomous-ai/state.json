@@ -2,10 +2,10 @@
   "version": 5,
   "cycle": 189,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-09-05T06:11:26.990Z",
+  "updatedAt": "2026-09-05T10:41:07.349Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
-  "status": "online",
-  "currentAgent": "PLANNER",
+  "status": "waiting_provider",
+  "currentAgent": "CRITIC",
   "provider": {
     "mode": "OpenCode Free",
     "model": "nemotron-3.5-lightning-free",
@@ -20,7 +20,7 @@
     "decision": "Assess github issue #2847 technical requirements and submission eligibility as viable paid opportunity.",
     "next": "CRITIC to review auth middleware fix feasibility and BAWES guideline acquisition status."
   },
-  "lastError": null,
+  "lastError": "Available OpenCode free models are temporarily unavailable.",
   "history": [
     {
       "cycle": 150,
@@ -424,12 +424,12 @@
         "summary": "## Bug `POST /api/auth/refresh` currently issues a fresh access token without checking the requester at all. The service also signs that token for the hard-coded subject `usr_existing` with role `client`, so even an authenticated caller does not get a token for their own subject and role. ## Expected fix Protect the refresh route with the existing bearer-token auth middleware, pass the verified user payload into the refresh service, and sign the refreshed token for that authenticated subject and role. Add route-level tests for unauthenticated rejection and authenticated subject preservation. ## Scope This issue is limited to the auth refresh route/service behavior for `/api/auth/refresh` and focused API tests. This issue is limited only to the creator of this issue. This means that only the issue author can attempt to solve this issue. If you would like to work on it, please create another issue with the same contents and refer to issue #743 for more information. References #743."
       },
       {
-        "id": "github:5355509239",
-        "title": "[radar] SN open bounty 2026-09-05T04:16",
-        "url": "https://github.com/relayhop/sn-monetization-runtime/issues/812",
+        "id": "github:5357317211",
+        "title": "[radar] SN open bounty 2026-09-05T10:29",
+        "url": "https://github.com/relayhop/sn-monetization-runtime/issues/816",
         "rewardUsd": 2026,
         "score": 44,
-        "summary": "New SN OPEN_BOUNTY detected: ``` 1561879 AskSN 2 422 1000 11 26.6 1208996 484 recent@AskSN OPEN_BOUNTY,SELF_POST_OPP LOGIC 🧠 ```"
+        "summary": "New SN OPEN_BOUNTY detected: ``` 1562157 Stacker_Sports 3 1112 2100 9 20.0 232181 4050 recent@Stacker_Sports|top@Stacker_Sports OPEN_BOUNTY,HOT,SELF_POST_OPP Weekly Random Sports Pick 'em 1561879 AskSN 2 422 1000 11 32.8 1208996 484 recent@AskSN OPEN_BOUNTY,SELF_POST_OPP LOGIC 🧠 ```"
       },
       {
         "id": "github:4455330769",
@@ -440,17 +440,17 @@
         "summary": "## Goal Ship native Android + iOS apps for BAWES Universe that are fully functional including video calls, iframes, push notifications, and seamless updates. All work targets the `universe` branch. ## Current status ### ✅ In progress - [x] PR #9 — Capacitor scaffold (open, ready to review) ### 🔴 Ready to start now (no dependencies) - [ ] #3 — PWA manifest + Universe branding (`play/public/`) - [ ] [admin#6](https://github.com/BAWES-Universe/workadventure-universe-admin/issues/6) — Orbit auth deep-link (admin repo) - [ ] #10 — CI/CD pipeline audit + docs ### 🟡 Blocked (needs PR #9 + #3 + admin#6 merged) - [ ] #4 — Android build + Fastlane + Play Store - [ ] #5 — iOS build + Fastlane Match + TestFlight ### 🟡 Blocked (needs #4 + #5 merged) - [ ] #11 — Push notifications (native + web push) - [ ] #12 — App update management - [ ] #13 — iframe + LiveKit video compatibility in WebView ## Path ownership (no conflicts) | PR/Issue | Owns | Do not touch | |---|---|---| | PR #9 | `mobile/` root, `.github/workflows/mobile-ci.yml` | everything else | | #3 | `play/public/` manifest + icons | everything else | | admin#6 | `app/api/auth/`, `middleware.ts`, `docs/` (admin repo) | this repo | | #"
       },
       {
-        "id": "github:4484386059",
-        "title": "[Bounty Claim] Code review for RustChain PR #5830",
-        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/11326",
-        "rewardUsd": 5830,
-        "score": 54,
-        "summary": "Review submitted for the RustChain PR review bounty. - Bounty thread: Scottcjn/Rustchain#73 - Reviewed PR: Scottcjn/Rustchain#5830 - Review comment: https://github.com/Scottcjn/Rustchain/pull/5830#issuecomment-4495958074 - Finding: the payload bound validator checks depth/size/string limits but still allows non-finite float values; Python `json.dumps()` emits `NaN`/`Infinity` unless `allow_nan=False`, which can break canonical signature serialization assumptions. - Verification: inspected the PR diff for `_validate_gossip_payload_bounds()` and confirmed missing numeric finiteness validation. RTC wallet for reward: RTCfbc6abb564f210ede29a769d1b4d173278f526ea"
+        "id": "github:5357280941",
+        "title": "Companion skill proposal: mermail-bounty-ops — worker-side paid-task operations",
+        "url": "https://github.com/Nudgen-Marketing/mermail-skills/issues/173",
+        "rewardUsd": 136,
+        "score": 62,
+        "summary": "## Community companion skill I built `mermail-bounty-ops`, an unofficial/community Mermail companion skill for a worker or autonomous agent managing its own bounty, grant, freelance, and paid-task inbox pipeline. Public draft PR / review surface: https://github.com/markabramov1993/arbitr/pull/4 Skill source: https://github.com/markabramov1993/arbitr/blob/earn/superteam-mermail-bounty-ops/earn/superteam-mermail-bounty-ops/mermail-bounty-ops/SKILL.md ### Scope The skill handles: - bounded, metadata-first bounty/reviewer email triage; - duplicate claim/follow-up prevention; - claim/application drafting with explicit approval before external sends; - prompt-injection, OTP/magic-link, wallet and payment-instruction containment; - strict `opportunity -> accepted -> paid` reward accounting. ### Positioning versus existing proposals I tried to keep this distinct from current public proposals: - #70 `mermail-opportunity-gate` handles read-only eligibility; this companion continues through worker-side submission/review/payout operations; - #136 `mermail-pact` is sponsor/operator-side contracting and settlement; this is the worker side; - #154 Freelance Deal Desk focuses on one inbound client"
       }
     ],
     "active": null,
     "completedCount": 0,
     "lastError": null
   },
-  "retryAfterAt": null
+  "retryAfterAt": "2026-09-05T10:46:07.349Z"
 }
