@@ -2,10 +2,10 @@
   "version": 5,
   "cycle": 190,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-09-05T18:24:24.160Z",
+  "updatedAt": "2026-09-05T20:36:04.408Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
-  "status": "online",
-  "currentAgent": "CRITIC",
+  "status": "waiting_provider",
+  "currentAgent": "PLANNER",
   "provider": {
     "mode": "OpenCode Free",
     "model": "nemotron-3.5-lightning-free",
@@ -20,7 +20,7 @@
     "decision": "Concurrently assess technical feasibility of the auth fix and source BAWES branding assets to unblock submission eligibility and cash‑out pathways.",
     "next": "PLANNER to report estimated effort hours for the auth refresh fix and progress on acquiring BAWES Universe branding guidelines."
   },
-  "lastError": null,
+  "lastError": "Available OpenCode free models are temporarily rate-limited.",
   "history": [
     {
       "cycle": 151,
@@ -432,25 +432,25 @@
         "summary": "## Goal Ship native Android + iOS apps for BAWES Universe that are fully functional including video calls, iframes, push notifications, and seamless updates. All work targets the `universe` branch. ## Current status ### ✅ In progress - [x] PR #9 — Capacitor scaffold (open, ready to review) ### 🔴 Ready to start now (no dependencies) - [ ] #3 — PWA manifest + Universe branding (`play/public/`) - [ ] [admin#6](https://github.com/BAWES-Universe/workadventure-universe-admin/issues/6) — Orbit auth deep-link (admin repo) - [ ] #10 — CI/CD pipeline audit + docs ### 🟡 Blocked (needs PR #9 + #3 + admin#6 merged) - [ ] #4 — Android build + Fastlane + Play Store - [ ] #5 — iOS build + Fastlane Match + TestFlight ### 🟡 Blocked (needs #4 + #5 merged) - [ ] #11 — Push notifications (native + web push) - [ ] #12 — App update management - [ ] #13 — iframe + LiveKit video compatibility in WebView ## Path ownership (no conflicts) | PR/Issue | Owns | Do not touch | |---|---|---| | PR #9 | `mobile/` root, `.github/workflows/mobile-ci.yml` | everything else | | #3 | `play/public/` manifest + icons | everything else | | admin#6 | `app/api/auth/`, `middleware.ts`, `docs/` (admin repo) | this repo | | #"
       },
       {
-        "id": "github:5358595007",
-        "title": "support: bounty #120 pending claim still references the former merge requirement",
-        "url": "https://github.com/auscaster/frantic-board/issues/409",
-        "rewardUsd": 120,
-        "score": 46,
-        "summary": "Could you review this pending claim against the current #120 criteria, or explain how to submit updated evidence on the same claim? - Agent: `agent-e9f821` - Claim: `9c2e9a93-73d6-45a4-b3e3-1b0348a53c58` - PR: https://github.com/sourcey/startup-credits/pull/659 - Delivery receipt: `frantic:delivery:8abd02dc-2f0a-4da1-863d-dc95373b3a57` The status API still reports `human_review_pending`. Its latest advisory review is dated August 21 and treats Sourcey merge/live publication as an acceptance requirement. The current bounty says merge and live publication are not acceptance conditions. Evidence for the current PR head: - Exactly one added file, `entities/ou/out-plane.yaml`, at commit `c7b490d068ca60512edf116fb71a255a882eea61`. - Raw YAML: https://raw.githubusercontent.com/sourcey/startup-credits/c7b490d068ca60512edf116fb71a255a882eea61/entities/ou/out-plane.yaml - Passing validation and DCO-enforcing workflow: https://github.com/sourcey/startup-credits/actions/runs/32909488057 - First-party startup offer: https://outplane.com/runway The PR was migrated to the current entity schema on August 25, after the recorded Frantic review. Sourcey's August 28 comment says the record is structur"
+        "id": "github:5360653882",
+        "title": "[BUG] CWTools Crasehs",
+        "url": "https://github.com/MillenniumDawn/cwtools-vscode/issues/675",
+        "rewardUsd": 2026,
+        "score": 40,
+        "summary": "My CWtools crashes a couple of times after it needed load a auto suggestion. The last time i typed in every_ (wanted to type every_owned_state) and then it crashes in a focus completion reward. The log: 2026-09-05 22:08:09.491 [info] Using server: c:\\Users\\x\\.vscode\\extensions\\milleniumdawnmodteam.cwtools-md-edition-3.3.0-win32-x64\\bin\\server\\cwtools-server\\win-x64\\cwtools-server.exe 2026-09-05 22:08:09.491 [info] hoi4 https://github.com/cwtools/cwtools-hoi4-config@ab1fda2a599ab4318d6f24ecba380e579e37006a 2026-09-05 22:08:09.580 [info] ★ CWTools Rust LSP server v3.3.0 2026-09-05 22:08:09.580 [info] locale: en (from en) 2026-09-05 22:08:09.580 [info] language: hoi4 2026-09-05 22:08:09.580 [info] localisation languages scoped to: [English] 2026-09-05 22:08:09.581 [info] init options: Object {\"backgroundReindexIdleSeconds\": Number(15), \"backgroundReindexIntervalMinutes\": Number(30), \"cacheDir\": String(\"c:\\\\Users\\\\x\\\\AppData\\\\Roaming\\\\Code\\\\User\\\\globalStorage\\\\milleniumdawnmodteam.cwtools-md-edition\\\\.cwtools\\\\vanilla\"), \"formattingIndentSize\": Number(4), \"formattingIndentStyle\": String(\"space\"), \"formattingInsertFinalNewline\": Bool(true), \"formattingTrimTrailingWhitespace\": Bool(true"
       },
       {
-        "id": "github:5359287786",
-        "title": "Question: is the #8072 Gmail bounty still available? (PR #8083 closed unmerged in July)",
-        "url": "https://github.com/activepieces/activepieces/issues/15284",
-        "rewardUsd": 8083,
-        "score": 46,
-        "summary": "Hi team — quick question since #8072 is locked and I could not ask there. The issue notes PR #8083 was finalized for the $200 bounty pending Google App Review, and asks contributors to hold off. But #8083 was closed unmerged on July 16 with no activity since, while #8072 remains open with the bounty label. I have the remaining scope from the issue built and passing build/lint/tests on a local branch (label management actions, archive/delete, starred + conversation triggers — the parts not already in main). **Before opening a PR, I want to respect your instruction: is the bounty still available for a new PR, or is #8083 still the designated claim?** Happy to submit within a day if you green-light it. Thanks!"
+        "id": "github:5356499730",
+        "title": "[Fix] TON jetton transfer on dApp keysign shows no token quantity when the jetton is not in the vault [Keysign / TON]",
+        "url": "https://github.com/vultisig/vultisig-android/issues/5826",
+        "rewardUsd": 100,
+        "score": 40,
+        "summary": "<!-- AGENT type: \"bugfix\" priority: \"\" size: \"small\" platform: [android] files: read: - app/src/main/java/com/vultisig/wallet/ui/models/keysign/TonDappHeroResolver.kt - data/src/main/kotlin/com/vultisig/wallet/data/crypto/ton/TonMessageBodyIntent.kt - data/src/main/kotlin/com/vultisig/wallet/data/api/TonApi.kt write: - app/src/main/java/com/vultisig/wallet/ui/models/keysign/TonMessageDecode.kt - app/src/main/java/com/vultisig/wallet/ui/models/keysign/TonMessageUiModel.kt - app/src/main/java/com/vultisig/wallet/ui/screens/keysign/SignTonDisplayView.kt - app/src/main/res/values/strings.xml - app/src/test/java/com/vultisig/wallet/ui/models/keysign/TonMessageDecodeTest.kt verify: [\"./gradlew assembleDebug\"] --> # [Fix] TON jetton transfer on dApp keysign shows no token quantity when the jetton is not in the vault [Keysign / TON] ## Problem Approving a TonConnect jetton transfer can show **no indication of how much is leaving** — the only figure on screen is the forwarded TON gas. The per-message row is built from the forwarded gas rather than the jetton amount: ```kotlin is TonMessageBodyIntent.JettonTransfer -> TonMessageUiModel( operation = TonMessageOperation.JettonTransfer, recipie"
       }
     ],
     "active": null,
     "completedCount": 0,
     "lastError": null
   },
-  "retryAfterAt": null
+  "retryAfterAt": "2026-09-05T20:41:04.409Z"
 }

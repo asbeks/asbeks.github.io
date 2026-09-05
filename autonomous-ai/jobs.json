@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-09-05T18:23:53.229Z",
+  "updatedAt": "2026-09-05T20:36:02.254Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -124,85 +124,19 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5358595007",
+      "id": "github:5360653882",
       "source": "github",
-      "title": "support: bounty #120 pending claim still references the former merge requirement",
-      "url": "https://github.com/auscaster/frantic-board/issues/409",
-      "repositoryApiUrl": "https://api.github.com/repos/auscaster/frantic-board",
-      "rewardUsd": 120,
-      "score": 46,
-      "labels": [],
-      "commentCount": 1,
-      "updatedAt": "2026-09-05T18:04:41Z",
-      "summary": "Could you review this pending claim against the current #120 criteria, or explain how to submit updated evidence on the same claim? - Agent: `agent-e9f821` - Claim: `9c2e9a93-73d6-45a4-b3e3-1b0348a53c58` - PR: https://github.com/sourcey/startup-credits/pull/659 - Delivery receipt: `frantic:delivery:8abd02dc-2f0a-4da1-863d-dc95373b3a57` The status API still reports `human_review_pending`. Its latest advisory review is dated August 21 and treats Sourcey merge/live publication as an acceptance requirement. The current bounty says merge and live publication are not acceptance conditions. Evidence for the current PR head: - Exactly one added file, `entities/ou/out-plane.yaml`, at commit `c7b490d068ca60512edf116fb71a255a882eea61`. - Raw YAML: https://raw.githubusercontent.com/sourcey/startup-credits/c7b490d068ca60512edf116fb71a255a882eea61/entities/ou/out-plane.yaml - Passing validation and DCO-enforcing workflow: https://github.com/sourcey/startup-credits/actions/runs/32909488057 - First-party startup offer: https://outplane.com/runway The PR was migrated to the current entity schema on August 25, after the recorded Frantic review. Sourcey's August 28 comment says the record is structur",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 114,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 1,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 120,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5359287786",
-      "source": "github",
-      "title": "Question: is the #8072 Gmail bounty still available? (PR #8083 closed unmerged in July)",
-      "url": "https://github.com/activepieces/activepieces/issues/15284",
-      "repositoryApiUrl": "https://api.github.com/repos/activepieces/activepieces",
-      "rewardUsd": 8083,
-      "score": 46,
-      "labels": [],
-      "commentCount": 3,
-      "updatedAt": "2026-09-05T18:04:03Z",
-      "summary": "Hi team — quick question since #8072 is locked and I could not ask there. The issue notes PR #8083 was finalized for the $200 bounty pending Google App Review, and asks contributors to hold off. But #8083 was closed unmerged on July 16 with no activity since, while #8072 remains open with the bounty label. I have the remaining scope from the issue built and passing build/lint/tests on a local branch (label management actions, archive/delete, starred + conversation triggers — the parts not already in main). **Before opening a PR, I want to respect your instruction: is the bounty still available for a new PR, or is #8083 still the designated claim?** Happy to submit within a day if you green-light it. Thanks!",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 113,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 3,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 8083,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5358712169",
-      "source": "github",
-      "title": "feat(flows): triage flow -- score, digest, and expire agent-proposed issues",
-      "url": "https://github.com/nestrai/kuromaku/issues/423",
-      "repositoryApiUrl": "https://api.github.com/repos/nestrai/kuromaku",
-      "rewardUsd": 253,
-      "score": 54,
+      "title": "[BUG] CWTools Crasehs",
+      "url": "https://github.com/MillenniumDawn/cwtools-vscode/issues/675",
+      "repositoryApiUrl": "https://api.github.com/repos/MillenniumDawn/cwtools-vscode",
+      "rewardUsd": 2026,
+      "score": 40,
       "labels": [
-        "feature",
-        "later",
-        "seed"
+        "bug"
       ],
       "commentCount": 1,
-      "updatedAt": "2026-09-05T18:04:33Z",
-      "summary": "## Summary Field research (2026-09-05) shows the recognized failure mode of agentic development is backlog explosion: agents propose work faster than a human can admit it (curl shut its bug bounty over AI-slop triage; Wave died under 253 self-filed issues). The documented countermeasure is a triage layer: proposals enter a gated state, get an advisory risk/confidence score, are rolled up into a digest, and auto-expire if never promoted. kuromaku can express this as a seed flow and dogfood it on its own tracker -- process encoded in tooling as the showcase answer to the category's own pain. ## Scope IN: - a github-seed flow that lists issues labeled triage, scores each (risk/confidence, advisory only), posts one digest comment or file for the maintainer - expiry step: issues in triage beyond N days get the later label and a short comment - convention docs: agent-created issues start as triage; only the maintainer promotes into a milestone OUT: - authoritative auto-close of issues - LLM-based auto-admission to the milestone - provider support beyond github ## Acceptance criteria - [ ] running the flow against a repo with triage-labeled issues produces a single digest ranking them - [",
+      "updatedAt": "2026-09-05T20:23:40Z",
+      "summary": "My CWtools crashes a couple of times after it needed load a auto suggestion. The last time i typed in every_ (wanted to type every_owned_state) and then it crashes in a focus completion reward. The log: 2026-09-05 22:08:09.491 [info] Using server: c:\\Users\\x\\.vscode\\extensions\\milleniumdawnmodteam.cwtools-md-edition-3.3.0-win32-x64\\bin\\server\\cwtools-server\\win-x64\\cwtools-server.exe 2026-09-05 22:08:09.491 [info] hoi4 https://github.com/cwtools/cwtools-hoi4-config@ab1fda2a599ab4318d6f24ecba380e579e37006a 2026-09-05 22:08:09.580 [info] ★ CWTools Rust LSP server v3.3.0 2026-09-05 22:08:09.580 [info] locale: en (from en) 2026-09-05 22:08:09.580 [info] language: hoi4 2026-09-05 22:08:09.580 [info] localisation languages scoped to: [English] 2026-09-05 22:08:09.581 [info] init options: Object {\"backgroundReindexIdleSeconds\": Number(15), \"backgroundReindexIntervalMinutes\": Number(30), \"cacheDir\": String(\"c:\\\\Users\\\\x\\\\AppData\\\\Roaming\\\\Code\\\\User\\\\globalStorage\\\\milleniumdawnmodteam.cwtools-md-edition\\\\.cwtools\\\\vanilla\"), \"formattingIndentSize\": Number(4), \"formattingIndentStyle\": String(\"space\"), \"formattingInsertFinalNewline\": Bool(true), \"formattingTrimTrailingWhitespace\": Bool(true",
       "state": "candidate",
       "payoutConfidence": 0.35,
       "autonomyFit": 1,
@@ -220,7 +154,7 @@
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 253,
+      "economicValueUsd": 2026,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -255,43 +189,6 @@
       },
       "realMoneyEligible": true,
       "economicValueUsd": 100,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5359245235",
-      "source": "github",
-      "title": "gl renders node denials as empty lists / silent success across list commands",
-      "url": "https://github.com/Gitlawb/node/issues/397",
-      "repositoryApiUrl": "https://api.github.com/repos/Gitlawb/node",
-      "rewardUsd": 234,
-      "score": 46,
-      "labels": [
-        "sev:medium",
-        "crate:gl",
-        "kind:bug",
-        "subsystem:api"
-      ],
-      "commentCount": 4,
-      "updatedAt": "2026-09-05T18:14:23Z",
-      "summary": "### What happened? `gl` list/show commands ignore the HTTP status code and map any denial body (`403`/`404`) to an empty list with exit `0`. A caller who may not read a repo (or hits a withheld subtree / revoked access / dead node) sees “No …” / `0/0/0` / stub `?` output instead of the denial. This turns an authorization boundary into invisible data loss. Per `AGENTS.md` > Client behavior: “When a node denies a request, surface the denial to the user. Never render a denial as an empty list or a silent success.” Affected paths (all `Ok(())`, no `status.is_success()` check before `.json()` + `unwrap_or_default()`): - `crates/gl/src/status.rs:84-86` (`prs = body[\"pulls\"]…unwrap_or_default()` → “no open pull requests”), `111-113` (issues, same) - `crates/gl/src/issue.rs:224-231` `cmd_list` → “No issues for {owner}/{name}”; `347-365` `cmd_issue_comments` → “No comments on issue {id}” - `crates/gl/src/pr.rs:252-264` `cmd_list` → “No pull requests”; `296-321` `cmd_view` → stub card `?` (title/status `unwrap_or(\"?\")` on error body); `324-332` reviews / `357-365` comments silently omitted; `384-398` `cmd_diff` → “No diff (branches may be identical…)” - `crates/gl/src/bounty.rs:234-255` `cmd",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 105,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 4,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 234,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -332,38 +229,6 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5358017556",
-      "source": "github",
-      "title": "ai-history: verify Chapter 6 cybernetics claims and evidence boundaries",
-      "url": "https://github.com/kube-dojo/kube-dojo.github.io/issues/2405",
-      "repositoryApiUrl": "https://api.github.com/repos/kube-dojo/kube-dojo.github.io",
-      "rewardUsd": 1943,
-      "score": 32,
-      "labels": [],
-      "commentCount": 10,
-      "updatedAt": "2026-09-05T18:22:36Z",
-      "summary": "Parent #2289 and #2290; epic #2272. Owned narrative: `src/content/docs/ai-history/ch-06-the-cybernetics-movement.md`; research directory `docs/research/ai-history/chapters/ch-06-the-cybernetics-movement/`. A bounded local audit found published claims exceeding their research contracts. Existing Green/Yellow labels are triage, not fresh source acceptance. Missing local support is not proof of falsity. Verify or narrow these five clusters in separate research and prose phases: 1. Ashby's 1948 first-publication chronology (cast and around line 127). The local contract says the Electronic Engineering article PDF was not retrieved. Retrieve the primary article or retain an explicit verification limit; do not present a publication-priority claim as verified solely from its label. 2. Macy three-pillar synthesis (around 115). The ledger supports the retrospective list, but prose adds universal digital-machine, stochastic, non-deterministic and explain-everything characterizations. Separate the historian's retrospective synthesis from documented meeting claims and discussions. 3. Cross-machine analog limitations (143–145). Task-specific construction does not by itself establish a general ca",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 96,
-      "survivalEligible": false,
-      "eligibilityReason": "Competition is too high for bootstrap mode.",
-      "competition": {
-        "comments": 10,
-        "attemptSignals": 0,
-        "risk": "medium"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 1943,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
       "id": "github:5345182233",
       "source": "github",
       "title": "Roadmap: five difficulty tiers and tactical roguelike expansion",
@@ -396,6 +261,44 @@
       },
       "realMoneyEligible": true,
       "economicValueUsd": 16,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5312094670",
+      "source": "github",
+      "title": "HER Hack-Astron #5 | Spark-X2.5 Edge Agent Real-World Use Case Challenge",
+      "url": "https://github.com/XHToken/Spark-X2.5/issues/3",
+      "repositoryApiUrl": "https://api.github.com/repos/XHToken/Spark-X2.5",
+      "rewardUsd": 500,
+      "score": 40,
+      "labels": [
+        "good first issue",
+        "help wanted",
+        "HER Hack-Astron",
+        "reward",
+        "bounty"
+      ],
+      "commentCount": 16,
+      "updatedAt": "2026-09-05T20:18:00Z",
+      "summary": "# English ## HER Hack-Astron #5 | Spark-X2.5 Edge Agent Real-World Use Case Challenge Turn real Spark-X2.5 runs into reproducible, discussable edge-agent use cases. For this challenge, obtain XHToken/Spark-X2.5-4B or Spark-X2.5-1.7B from Hugging Face (or a mirror such as ModelScope), conduct a real inference, agentic, coding, long-context, multilingual, quantization, or training experiment, and publish the complete use case in the corresponding model's Hugging Face Discussions. After publishing it, reply to this event's GitHub Issue with the Discussion link to enter. - Event page (GitHub Issues): https://github.com/XHToken/Spark-X2.5/issues - Hugging Face model collection: https://huggingface.co/collections/XHToken/spark-x25 - Spark-X2.5-4B: https://huggingface.co/XHToken/Spark-X2.5-4B - Spark-X2.5-1.7B: https://huggingface.co/XHToken/Spark-X2.5-1.7B - Spark-X2.5-4B Discussions: https://huggingface.co/XHToken/Spark-X2.5-4B/discussions - Spark-X2.5-1.7B Discussions: https://huggingface.co/XHToken/Spark-X2.5-1.7B/discussions - Mainland China mirror (recommended): https://www.modelscope.cn/collections/XHToken/Spark-X25 ## Schedule - Submissions open: September 1, 2026 - Challenge peri",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 87,
+      "survivalEligible": false,
+      "eligibilityReason": "Competition is too high for bootstrap mode.",
+      "competition": {
+        "comments": 16,
+        "attemptSignals": 0,
+        "risk": "high"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 500,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -444,7 +347,7 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:4455330769\",\"rewardUsd\":150,\"fastCashScore\":118,\"updatedAt\":\"2026-09-01T01:51:01Z\",\"competition\":{\"comments\":24,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":99,\"updatedAt\":\"2026-09-01T00:09:20Z\",\"competition\":{\"comments\":21,\"attemptSignals\":3,\"risk\":\"high\"}},{\"id\":\"github:4553022084\",\"rewardUsd\":430,\"fastCashScore\":133,\"updatedAt\":\"2026-09-04T04:17:26Z\",\"competition\":{\"comments\":14,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4557563229\",\"rewardUsd\":780,\"fastCashScore\":123,\"updatedAt\":\"2026-09-04T05:51:12Z\",\"competition\":{\"comments\":10,\"attemptSignals\":2,\"risk\":\"medium\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":77,\"updatedAt\":\"2026-09-04T19:24:22Z\",\"competition\":{\"comments\":56,\"attemptSignals\":5,\"risk\":\"high\"}},{\"id\":\"github:5295068486\",\"rewardUsd\":58.88398389,\"fastCashScore\":95,\"updatedAt\":\"2026-09-05T16:37:56Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5345182233\",\"rewardUsd\":16,\"fastCashScore\":96,\"updatedAt\":\"2026-09-05T15:51:17Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5356499730\",\"rewardUsd\":100,\"fastCashScore\":107,\"updatedAt\":\"2026-09-05T07:43:06Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5356980367\",\"rewardUsd\":100,\"fastCashScore\":106,\"updatedAt\":\"2026-09-05T17:38:29Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5358017556\",\"rewardUsd\":1943,\"fastCashScore\":96,\"updatedAt\":\"2026-09-05T18:22:36Z\",\"competition\":{\"comments\":10,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5358595007\",\"rewardUsd\":120,\"fastCashScore\":114,\"updatedAt\":\"2026-09-05T18:04:41Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5358712169\",\"rewardUsd\":253,\"fastCashScore\":109,\"updatedAt\":\"2026-09-05T18:04:33Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5359245235\",\"rewardUsd\":234,\"fastCashScore\":105,\"updatedAt\":\"2026-09-05T18:14:23Z\",\"competition\":{\"comments\":4,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5359287786\",\"rewardUsd\":8083,\"fastCashScore\":113,\"updatedAt\":\"2026-09-05T18:04:03Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:4455330769\",\"rewardUsd\":150,\"fastCashScore\":118,\"updatedAt\":\"2026-09-01T01:51:01Z\",\"competition\":{\"comments\":24,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":99,\"updatedAt\":\"2026-09-01T00:09:20Z\",\"competition\":{\"comments\":21,\"attemptSignals\":3,\"risk\":\"high\"}},{\"id\":\"github:4553022084\",\"rewardUsd\":430,\"fastCashScore\":133,\"updatedAt\":\"2026-09-04T04:17:26Z\",\"competition\":{\"comments\":14,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4557563229\",\"rewardUsd\":780,\"fastCashScore\":123,\"updatedAt\":\"2026-09-04T05:51:12Z\",\"competition\":{\"comments\":10,\"attemptSignals\":2,\"risk\":\"medium\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":77,\"updatedAt\":\"2026-09-04T19:24:22Z\",\"competition\":{\"comments\":56,\"attemptSignals\":5,\"risk\":\"high\"}},{\"id\":\"github:5295068486\",\"rewardUsd\":58.88398389,\"fastCashScore\":95,\"updatedAt\":\"2026-09-05T20:12:22Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5312094670\",\"rewardUsd\":500,\"fastCashScore\":87,\"updatedAt\":\"2026-09-05T20:18:00Z\",\"competition\":{\"comments\":16,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:5345182233\",\"rewardUsd\":16,\"fastCashScore\":96,\"updatedAt\":\"2026-09-05T15:51:17Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5356499730\",\"rewardUsd\":100,\"fastCashScore\":107,\"updatedAt\":\"2026-09-05T07:43:06Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5356980367\",\"rewardUsd\":100,\"fastCashScore\":106,\"updatedAt\":\"2026-09-05T17:38:29Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5360653882\",\"rewardUsd\":2026,\"fastCashScore\":109,\"updatedAt\":\"2026-09-05T20:23:40Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
@@ -468,7 +371,7 @@
       "reasons": [
         "testnet_or_test_token_reward"
       ],
-      "rejectedAt": "2026-09-05T18:23:53.191Z"
+      "rejectedAt": "2026-09-05T20:36:02.210Z"
     },
     {
       "id": "github:5295068486",
@@ -477,7 +380,7 @@
       "reasons": [
         "testnet_or_test_token_reward"
       ],
-      "rejectedAt": "2026-09-05T18:23:53.191Z"
+      "rejectedAt": "2026-09-05T20:36:02.211Z"
     },
     {
       "id": "github:5346888742",
