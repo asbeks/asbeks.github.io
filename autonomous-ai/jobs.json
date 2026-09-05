@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-09-05T20:36:02.254Z",
+  "updatedAt": "2026-09-05T22:18:02.556Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -124,28 +124,58 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5360653882",
+      "id": "github:5331783841",
       "source": "github",
-      "title": "[BUG] CWTools Crasehs",
-      "url": "https://github.com/MillenniumDawn/cwtools-vscode/issues/675",
-      "repositoryApiUrl": "https://api.github.com/repos/MillenniumDawn/cwtools-vscode",
-      "rewardUsd": 2026,
-      "score": 40,
-      "labels": [
-        "bug"
-      ],
-      "commentCount": 1,
-      "updatedAt": "2026-09-05T20:23:40Z",
-      "summary": "My CWtools crashes a couple of times after it needed load a auto suggestion. The last time i typed in every_ (wanted to type every_owned_state) and then it crashes in a focus completion reward. The log: 2026-09-05 22:08:09.491 [info] Using server: c:\\Users\\x\\.vscode\\extensions\\milleniumdawnmodteam.cwtools-md-edition-3.3.0-win32-x64\\bin\\server\\cwtools-server\\win-x64\\cwtools-server.exe 2026-09-05 22:08:09.491 [info] hoi4 https://github.com/cwtools/cwtools-hoi4-config@ab1fda2a599ab4318d6f24ecba380e579e37006a 2026-09-05 22:08:09.580 [info] ★ CWTools Rust LSP server v3.3.0 2026-09-05 22:08:09.580 [info] locale: en (from en) 2026-09-05 22:08:09.580 [info] language: hoi4 2026-09-05 22:08:09.580 [info] localisation languages scoped to: [English] 2026-09-05 22:08:09.581 [info] init options: Object {\"backgroundReindexIdleSeconds\": Number(15), \"backgroundReindexIntervalMinutes\": Number(30), \"cacheDir\": String(\"c:\\\\Users\\\\x\\\\AppData\\\\Roaming\\\\Code\\\\User\\\\globalStorage\\\\milleniumdawnmodteam.cwtools-md-edition\\\\.cwtools\\\\vanilla\"), \"formattingIndentSize\": Number(4), \"formattingIndentStyle\": String(\"space\"), \"formattingInsertFinalNewline\": Bool(true), \"formattingTrimTrailingWhitespace\": Bool(true",
+      "title": "[Bounty: $100] Make JsonFileMemoryStore satisfy the MemoryStore interface contract",
+      "url": "https://github.com/Lilly-Protocol/agentlily-runtime/issues/230",
+      "repositoryApiUrl": "https://api.github.com/repos/Lilly-Protocol/agentlily-runtime",
+      "rewardUsd": 100,
+      "score": 54,
+      "labels": [],
+      "commentCount": 2,
+      "updatedAt": "2026-09-05T22:00:07Z",
+      "summary": "## Context `JsonFileMemoryStore` in `src/memory/memory-store.ts` (lines 128-201) does not conform to `MemoryStore`: it exposes `size` as a synchronous number getter instead of `size?(): Promise<number>`, and `clear()`, `size`, and `capacity` reference `this.entries` and `this.maxEntries`, properties that do not exist on the class (only `filePath` and `memoryCache` exist), so calling `clear()` or reading `size` crashes at runtime and typecheck fails (TS2416/TS2339). `listByAgent(agentId)` also ignores the `ListMemoryOptions` `offset`/`limit` supported by the in-memory store, and `createRuntimeDependencies` in `src/runtime/bootstrap.ts` (line 20) wires this store into runtimes configured with `memoryStoragePath`. ## Proposed Change Rewrite the store to implement `MemoryStore` faithfully: implement async `size()`/`clear()` (clearing both the cache and rewriting/removing the backing file), make `capacity`/`maxEntries` configuration explicit, and have `listByAgent` honor `offset`/`limit` consistently with `InMemoryMemoryStore`. ## Acceptance Criteria - [ ] `JsonFileMemoryStore` typechecks as an implementation of `MemoryStore` - [ ] `clear()` empties subsequent `listByAgent` results and ",
       "state": "candidate",
-      "payoutConfidence": 0.35,
+      "payoutConfidence": 0.65,
       "autonomyFit": 1,
       "requiresHumanGate": false,
       "requiresSpecialHardware": false,
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 109,
+      "fastCashScore": 118,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 2,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 100,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5331784206",
+      "source": "github",
+      "title": "[Bounty: $50] Deduplicate warn() and restore level filtering in ConsoleRuntimeLogger",
+      "url": "https://github.com/Lilly-Protocol/agentlily-runtime/issues/231",
+      "repositoryApiUrl": "https://api.github.com/repos/Lilly-Protocol/agentlily-runtime",
+      "rewardUsd": 50,
+      "score": 54,
+      "labels": [],
+      "commentCount": 1,
+      "updatedAt": "2026-09-05T22:00:05Z",
+      "summary": "## Context `src/logger/runtime-logger.ts` declares `warn()` three times (lines 43-55); in JavaScript the last declaration wins, so the effective `warn()` bypasses `shouldLog()` entirely and prints even when the logger is constructed with `{ level: \"error\" }`. The `shouldLog(level: \"info\" | \"error\")` signature also cannot express `warn`, and the file carries duplicate `LogLevel`/`RuntimeLogLevel`, priority maps, and `ConsoleRuntimeLoggerOptions`. `tests/logger/console-runtime-logger-level.test.ts` expects `warn` to be suppressed at `level: \"error\"`. ## Proposed Change Keep a single `warn()` that routes through the same filtering as `info()`/`error()`, widen `shouldLog` to accept `RuntimeLogLevel`, and delete the duplicated type and constant declarations so the logger honors its configured minimum level for every level. ## Acceptance Criteria - [ ] With `level: \"error\"`, `warn()` makes no `console.warn` call - [ ] With `level: \"warn\"`, `info()` is suppressed while `warn()` and `error()` are printed - [ ] Typecheck passes with no duplicate-method or duplicate-interface errors in the logger file ## Suggested Label bug **ETA:** 24 hours",
+      "state": "candidate",
+      "payoutConfidence": 0.65,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 115,
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
@@ -154,23 +184,88 @@
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 2026,
+      "economicValueUsd": 50,
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5356499730",
+      "id": "github:5331786330",
       "source": "github",
-      "title": "[Fix] TON jetton transfer on dApp keysign shows no token quantity when the jetton is not in the vault [Keysign / TON]",
-      "url": "https://github.com/vultisig/vultisig-android/issues/5826",
-      "repositoryApiUrl": "https://api.github.com/repos/vultisig/vultisig-android",
-      "rewardUsd": 100,
+      "title": "[Bounty: $50] Expose an agent-instance capacity limit through RuntimeOptions",
+      "url": "https://github.com/Lilly-Protocol/agentlily-runtime/issues/236",
+      "repositoryApiUrl": "https://api.github.com/repos/Lilly-Protocol/agentlily-runtime",
+      "rewardUsd": 50,
+      "score": 54,
+      "labels": [],
+      "commentCount": 1,
+      "updatedAt": "2026-09-05T22:00:03Z",
+      "summary": "## Context `RuntimeOptions` in `src/runtime/types.ts` has no option to bound agent instances, and `createRuntimeDependencies` in `src/runtime/bootstrap.ts` (line 26) always constructs `new AgentInstanceManager()` with its default `maxInstances` of 5_000 (`src/agents/agent-instance-manager.ts`, lines 6-12). Runtime operators cannot configure a tighter per-deployment cap, and when the manager silently evicts the oldest instance at capacity there is no way to observe or tune the policy. ## Proposed Change Add an optional `maxAgentInstances?: number` to `RuntimeOptions`, pass it into `AgentInstanceManager` in `createRuntimeDependencies`, and document the default. Optionally expose the eviction count on the manager or log it via the configured `RuntimeLogger`. ## Acceptance Criteria - [ ] `new AgentRuntime({ runtimeId, maxAgentInstances: 2 })` produces an `AgentInstanceManager` that evicts the oldest instance when a third distinct agent is created - [ ] Omitting the option preserves the existing default of 5_000 - [ ] An integration test through `executeTask` shows eviction does not break in-flight task contexts ## Suggested Label enhancement **ETA:** 24 hours",
+      "state": "candidate",
+      "payoutConfidence": 0.65,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 115,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 1,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 50,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5332380589",
+      "source": "github",
+      "title": "[Bounty: $50] Exclude src/**/__tests__ suites from Vitest coverage totals",
+      "url": "https://github.com/Lilly-Protocol/agentlily-runtime/issues/268",
+      "repositoryApiUrl": "https://api.github.com/repos/Lilly-Protocol/agentlily-runtime",
+      "rewardUsd": 50,
+      "score": 54,
+      "labels": [],
+      "commentCount": 2,
+      "updatedAt": "2026-09-05T22:00:09Z",
+      "summary": "**Context** `vitest.config.ts` configures `coverage.include: [\"src/**/*.ts\"]` with thresholds (lines 85, functions 75, branches 70, statements 85). The repository keeps two test suites inside `src/` at `src/events/__tests__/runtime-events.test.ts` and `src/events/__tests__/runtime-internal-error.test.ts`, which are matched by the include glob; because they execute their own code, they inflate the measured coverage and can mask real gaps in library code behind the thresholds. **Proposed Change** Move the `src/**/__tests__` suites into the top-level `tests/` tree (or add an explicit coverage exclude such as `\"src/**/__tests__/**\"`) so coverage thresholds reflect only production code. **Acceptance Criteria** - Running `npm run test` shows coverage reported only over `src/**/*.ts` excluding any `__tests__` files. - The reported line/function/statement percentages change without threshold violations, or thresholds are adjusted deliberately and documented in the PR. - Test execution count and pass/fail results are unchanged after relocating the suites. - No `src/**/__tests__` directory remains after the move. **Suggested Label** ci **ETA:** 24 hours",
+      "state": "candidate",
+      "payoutConfidence": 0.65,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 114,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 2,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 50,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5358159731",
+      "source": "github",
+      "title": "Reward cost > balance gives a 400 error",
+      "url": "https://github.com/jamesread/StarLoom/issues/12",
+      "repositoryApiUrl": "https://api.github.com/repos/jamesread/StarLoom",
+      "rewardUsd": 400,
       "score": 40,
       "labels": [
-        "bug"
+        "needs: feedback",
+        "progress: design"
       ],
-      "commentCount": 0,
-      "updatedAt": "2026-09-05T07:43:06Z",
-      "summary": "<!-- AGENT type: \"bugfix\" priority: \"\" size: \"small\" platform: [android] files: read: - app/src/main/java/com/vultisig/wallet/ui/models/keysign/TonDappHeroResolver.kt - data/src/main/kotlin/com/vultisig/wallet/data/crypto/ton/TonMessageBodyIntent.kt - data/src/main/kotlin/com/vultisig/wallet/data/api/TonApi.kt write: - app/src/main/java/com/vultisig/wallet/ui/models/keysign/TonMessageDecode.kt - app/src/main/java/com/vultisig/wallet/ui/models/keysign/TonMessageUiModel.kt - app/src/main/java/com/vultisig/wallet/ui/screens/keysign/SignTonDisplayView.kt - app/src/main/res/values/strings.xml - app/src/test/java/com/vultisig/wallet/ui/models/keysign/TonMessageDecodeTest.kt verify: [\"./gradlew assembleDebug\"] --> # [Fix] TON jetton transfer on dApp keysign shows no token quantity when the jetton is not in the vault [Keysign / TON] ## Problem Approving a TonConnect jetton transfer can show **no indication of how much is leaving** — the only figure on screen is the forwarded TON gas. The per-message row is built from the forwarded gas rather than the jetton amount: ```kotlin is TonMessageBodyIntent.JettonTransfer -> TonMessageUiModel( operation = TonMessageOperation.JettonTransfer, recipie",
+      "commentCount": 2,
+      "updatedAt": "2026-09-05T22:07:15Z",
+      "summary": "**Describe the bug** Trying to grant an award with a cost above the child's balance gives a 400 error in the UI. **To Reproduce** Steps to reproduce the behavior: 1. Create a child and an award with cost 1. Ensure the child has no stars. (works with any balance < award cost) 2. Navigate to `/control-panel/rewards` and press \"Award\" for your new award. **Expected behavior** A message indicating the child's balance is insufficient **Screenshots** <img width=\"1256\" height=\"692\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/a88bc6cb-52d8-4292-8c20-12eb0c2858ac\" />",
       "state": "candidate",
       "payoutConfidence": 0.35,
       "autonomyFit": 1,
@@ -179,16 +274,48 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 107,
+      "fastCashScore": 108,
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
-        "comments": 0,
+        "comments": 2,
         "attemptSignals": 0,
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 100,
+      "economicValueUsd": 400,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5360888206",
+      "source": "github",
+      "title": "T002: Establish the initial backend boundaries",
+      "url": "https://github.com/alexisdacquay/chorum-murohc/issues/2",
+      "repositoryApiUrl": "https://api.github.com/repos/alexisdacquay/chorum-murohc",
+      "rewardUsd": 56,
+      "score": 48,
+      "labels": [],
+      "commentCount": 1,
+      "updatedAt": "2026-09-05T22:14:03Z",
+      "summary": "**Source task**: T002 in `_docs/tasks.md` **Status**: Blocked **Ready confirmed by and date**: Not ready — the exact backend-boundary contract below requires recorded human approval. **Workstream**: Architecture **Depends on**: T001 — verified against `_docs/task-dependencies.md` **Merged dependency commits**: T001 merged into `origin/main` at `faf6be13c795af04262a5b346de864efeb41e4b3`; [post-merge QA evidence](https://github.com/alexisdacquay/chorum-murohc/issues/1#issuecomment-5555110200) **Base commit**: `faf6be13c795af04262a5b346de864efeb41e4b3` **Integration owner**: Main orchestrator **Ownership**: - Owned paths: `_docs/design.md`; `chorum_murohc/tests.py`; and only `__init__.py`, `apps.py`, and `migrations/__init__.py` below each new package `chorum_murohc/{identity,audit,chores,submissions,ledger,rewards,progression,creatures}/` - Shared paths requiring exclusive ownership: `config/settings.py` for Django app registration; `_docs/design.md` for the backend-boundary contract - Shared-path ownership granted by: Main orchestrator, 2026-09-05. The eventual T002 engineer has exclusive ownership for this task; no other write-capable worker may overlap these paths. **Worktree path",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 103,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 1,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 56,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -347,7 +474,7 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:4455330769\",\"rewardUsd\":150,\"fastCashScore\":118,\"updatedAt\":\"2026-09-01T01:51:01Z\",\"competition\":{\"comments\":24,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":99,\"updatedAt\":\"2026-09-01T00:09:20Z\",\"competition\":{\"comments\":21,\"attemptSignals\":3,\"risk\":\"high\"}},{\"id\":\"github:4553022084\",\"rewardUsd\":430,\"fastCashScore\":133,\"updatedAt\":\"2026-09-04T04:17:26Z\",\"competition\":{\"comments\":14,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4557563229\",\"rewardUsd\":780,\"fastCashScore\":123,\"updatedAt\":\"2026-09-04T05:51:12Z\",\"competition\":{\"comments\":10,\"attemptSignals\":2,\"risk\":\"medium\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":77,\"updatedAt\":\"2026-09-04T19:24:22Z\",\"competition\":{\"comments\":56,\"attemptSignals\":5,\"risk\":\"high\"}},{\"id\":\"github:5295068486\",\"rewardUsd\":58.88398389,\"fastCashScore\":95,\"updatedAt\":\"2026-09-05T20:12:22Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5312094670\",\"rewardUsd\":500,\"fastCashScore\":87,\"updatedAt\":\"2026-09-05T20:18:00Z\",\"competition\":{\"comments\":16,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:5345182233\",\"rewardUsd\":16,\"fastCashScore\":96,\"updatedAt\":\"2026-09-05T15:51:17Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5356499730\",\"rewardUsd\":100,\"fastCashScore\":107,\"updatedAt\":\"2026-09-05T07:43:06Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5356980367\",\"rewardUsd\":100,\"fastCashScore\":106,\"updatedAt\":\"2026-09-05T17:38:29Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5360653882\",\"rewardUsd\":2026,\"fastCashScore\":109,\"updatedAt\":\"2026-09-05T20:23:40Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:4455330769\",\"rewardUsd\":150,\"fastCashScore\":118,\"updatedAt\":\"2026-09-01T01:51:01Z\",\"competition\":{\"comments\":24,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":99,\"updatedAt\":\"2026-09-01T00:09:20Z\",\"competition\":{\"comments\":21,\"attemptSignals\":3,\"risk\":\"high\"}},{\"id\":\"github:4553022084\",\"rewardUsd\":430,\"fastCashScore\":133,\"updatedAt\":\"2026-09-04T04:17:26Z\",\"competition\":{\"comments\":14,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4557563229\",\"rewardUsd\":780,\"fastCashScore\":123,\"updatedAt\":\"2026-09-04T05:51:12Z\",\"competition\":{\"comments\":10,\"attemptSignals\":2,\"risk\":\"medium\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":77,\"updatedAt\":\"2026-09-04T19:24:22Z\",\"competition\":{\"comments\":56,\"attemptSignals\":5,\"risk\":\"high\"}},{\"id\":\"github:5295068486\",\"rewardUsd\":58.88398389,\"fastCashScore\":95,\"updatedAt\":\"2026-09-05T20:12:22Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5312094670\",\"rewardUsd\":500,\"fastCashScore\":87,\"updatedAt\":\"2026-09-05T20:18:00Z\",\"competition\":{\"comments\":16,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:5331783841\",\"rewardUsd\":100,\"fastCashScore\":118,\"updatedAt\":\"2026-09-05T22:00:07Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5331784206\",\"rewardUsd\":50,\"fastCashScore\":115,\"updatedAt\":\"2026-09-05T22:00:05Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5331786330\",\"rewardUsd\":50,\"fastCashScore\":115,\"updatedAt\":\"2026-09-05T22:00:03Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5332380589\",\"rewardUsd\":50,\"fastCashScore\":114,\"updatedAt\":\"2026-09-05T22:00:09Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5345182233\",\"rewardUsd\":16,\"fastCashScore\":96,\"updatedAt\":\"2026-09-05T15:51:17Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5356980367\",\"rewardUsd\":100,\"fastCashScore\":106,\"updatedAt\":\"2026-09-05T17:38:29Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5358159731\",\"rewardUsd\":400,\"fastCashScore\":108,\"updatedAt\":\"2026-09-05T22:07:15Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5360888206\",\"rewardUsd\":56,\"fastCashScore\":103,\"updatedAt\":\"2026-09-05T22:14:03Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
@@ -371,7 +498,7 @@
       "reasons": [
         "testnet_or_test_token_reward"
       ],
-      "rejectedAt": "2026-09-05T20:36:02.210Z"
+      "rejectedAt": "2026-09-05T22:18:02.519Z"
     },
     {
       "id": "github:5295068486",
@@ -380,7 +507,7 @@
       "reasons": [
         "testnet_or_test_token_reward"
       ],
-      "rejectedAt": "2026-09-05T20:36:02.211Z"
+      "rejectedAt": "2026-09-05T22:18:02.519Z"
     },
     {
       "id": "github:5346888742",
