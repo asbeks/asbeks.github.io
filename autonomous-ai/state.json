@@ -2,7 +2,7 @@
   "version": 5,
   "cycle": 189,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-09-05T13:33:29.363Z",
+  "updatedAt": "2026-09-05T16:16:07.599Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "waiting_provider",
   "currentAgent": "CRITIC",
@@ -20,7 +20,7 @@
     "decision": "Assess github issue #2847 technical requirements and submission eligibility as viable paid opportunity.",
     "next": "CRITIC to review auth middleware fix feasibility and BAWES guideline acquisition status."
   },
-  "lastError": "Available OpenCode free models are temporarily rate-limited.",
+  "lastError": "Available OpenCode free models are temporarily unavailable.",
   "history": [
     {
       "cycle": 150,
@@ -424,6 +424,14 @@
         "summary": "## Bug `POST /api/auth/refresh` currently issues a fresh access token without checking the requester at all. The service also signs that token for the hard-coded subject `usr_existing` with role `client`, so even an authenticated caller does not get a token for their own subject and role. ## Expected fix Protect the refresh route with the existing bearer-token auth middleware, pass the verified user payload into the refresh service, and sign the refreshed token for that authenticated subject and role. Add route-level tests for unauthenticated rejection and authenticated subject preservation. ## Scope This issue is limited to the auth refresh route/service behavior for `/api/auth/refresh` and focused API tests. This issue is limited only to the creator of this issue. This means that only the issue author can attempt to solve this issue. If you would like to work on it, please create another issue with the same contents and refer to issue #743 for more information. References #743."
       },
       {
+        "id": "github:5358011949",
+        "title": "[radar] SN open bounty 2026-09-05T12:37",
+        "url": "https://github.com/relayhop/sn-monetization-runtime/issues/818",
+        "rewardUsd": 2026,
+        "score": 44,
+        "summary": "New SN OPEN_BOUNTY detected: ``` 1561879 AskSN 2 422 1000 11 35.0 1208996 484 recent@AskSN OPEN_BOUNTY,SELF_POST_OPP LOGIC 🧠 ```"
+      },
+      {
         "id": "github:4455330769",
         "title": "📱 Epic: BAWES Universe Mobile App (Android + iOS)",
         "url": "https://github.com/BAWES-Universe/workadventure-universe/issues/1",
@@ -432,25 +440,17 @@
         "summary": "## Goal Ship native Android + iOS apps for BAWES Universe that are fully functional including video calls, iframes, push notifications, and seamless updates. All work targets the `universe` branch. ## Current status ### ✅ In progress - [x] PR #9 — Capacitor scaffold (open, ready to review) ### 🔴 Ready to start now (no dependencies) - [ ] #3 — PWA manifest + Universe branding (`play/public/`) - [ ] [admin#6](https://github.com/BAWES-Universe/workadventure-universe-admin/issues/6) — Orbit auth deep-link (admin repo) - [ ] #10 — CI/CD pipeline audit + docs ### 🟡 Blocked (needs PR #9 + #3 + admin#6 merged) - [ ] #4 — Android build + Fastlane + Play Store - [ ] #5 — iOS build + Fastlane Match + TestFlight ### 🟡 Blocked (needs #4 + #5 merged) - [ ] #11 — Push notifications (native + web push) - [ ] #12 — App update management - [ ] #13 — iframe + LiveKit video compatibility in WebView ## Path ownership (no conflicts) | PR/Issue | Owns | Do not touch | |---|---|---| | PR #9 | `mobile/` root, `.github/workflows/mobile-ci.yml` | everything else | | #3 | `play/public/` manifest + icons | everything else | | admin#6 | `app/api/auth/`, `middleware.ts`, `docs/` (admin repo) | this repo | | #"
       },
       {
-        "id": "github:5332426929",
-        "title": "[Bounty: $75] Fix docs/error-handling.md hierarchy, imports, and error.status references",
-        "url": "https://github.com/Lilly-Protocol/lily-sdk/issues/454",
-        "rewardUsd": 75,
+        "id": "github:4484386059",
+        "title": "[Bounty Claim] Code review for RustChain PR #5830",
+        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/11326",
+        "rewardUsd": 5830,
         "score": 54,
-        "summary": "**Context** `docs/error-handling.md` describes an error hierarchy and catch examples that don't match `src/errors/sdk-error.ts`. It imports from `'lily-sdk'` though the package is published as `@lily-protocol/sdk`; it nests `LilyAuthenticationError` under `LilyApiError` although the class extends `LilySdkError` directly; it lists `LilyRateLimitError` as the only API-error subclass and omits the exported `LilyValidationError`, `LilyAuthorizationError`, `LilyNotFoundError`, `LilyConflictError`, and `LilyServerError`; and the sample catch block reads `error.status` while the class property is `statusCode`. **Proposed Change** Update the doc to the actual hierarchy and exports, fix the import to `@lily-protocol/sdk`, correct `error.status` to `error.statusCode`, and make the catch guide consistent with the README's error-handling section. **Acceptance Criteria** - Hierarchy diagram matches `src/errors/sdk-error.ts` class inheritance. - All imports in code samples resolve against the published package/subpaths. - No sample references `error.status`. - `LilyValidationError` and the status-specific subclasses are mentioned with their meaning. **Suggested Label** (documentation) **ETA:** 2"
-      },
-      {
-        "id": "github:5358017556",
-        "title": "ai-history: verify Chapter 6 cybernetics claims and evidence boundaries",
-        "url": "https://github.com/kube-dojo/kube-dojo.github.io/issues/2405",
-        "rewardUsd": 1943,
-        "score": 40,
-        "summary": "Parent #2289 and #2290; epic #2272. Owned narrative: `src/content/docs/ai-history/ch-06-the-cybernetics-movement.md`; research directory `docs/research/ai-history/chapters/ch-06-the-cybernetics-movement/`. A bounded local audit found published claims exceeding their research contracts. Existing Green/Yellow labels are triage, not fresh source acceptance. Missing local support is not proof of falsity. Verify or narrow these five clusters in separate research and prose phases: 1. Ashby's 1948 first-publication chronology (cast and around line 127). The local contract says the Electronic Engineering article PDF was not retrieved. Retrieve the primary article or retain an explicit verification limit; do not present a publication-priority claim as verified solely from its label. 2. Macy three-pillar synthesis (around 115). The ledger supports the retrospective list, but prose adds universal digital-machine, stochastic, non-deterministic and explain-everything characterizations. Separate the historian's retrospective synthesis from documented meeting claims and discussions. 3. Cross-machine analog limitations (143–145). Task-specific construction does not by itself establish a general ca"
+        "summary": "Review submitted for the RustChain PR review bounty. - Bounty thread: Scottcjn/Rustchain#73 - Reviewed PR: Scottcjn/Rustchain#5830 - Review comment: https://github.com/Scottcjn/Rustchain/pull/5830#issuecomment-4495958074 - Finding: the payload bound validator checks depth/size/string limits but still allows non-finite float values; Python `json.dumps()` emits `NaN`/`Infinity` unless `allow_nan=False`, which can break canonical signature serialization assumptions. - Verification: inspected the PR diff for `_validate_gossip_payload_bounds()` and confirmed missing numeric finiteness validation. RTC wallet for reward: RTCfbc6abb564f210ede29a769d1b4d173278f526ea"
       }
     ],
     "active": null,
     "completedCount": 0,
     "lastError": null
   },
-  "retryAfterAt": "2026-09-05T13:38:29.363Z"
+  "retryAfterAt": "2026-09-05T16:21:07.599Z"
 }
