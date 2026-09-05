@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-09-05T10:40:15.172Z",
+  "updatedAt": "2026-09-05T13:33:27.202Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -88,42 +88,6 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5357317211",
-      "source": "github",
-      "title": "[radar] SN open bounty 2026-09-05T10:29",
-      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/816",
-      "repositoryApiUrl": "https://api.github.com/repos/relayhop/sn-monetization-runtime",
-      "rewardUsd": 2026,
-      "score": 44,
-      "labels": [
-        "radar",
-        "sn",
-        "bounty"
-      ],
-      "commentCount": 0,
-      "updatedAt": "2026-09-05T10:29:00Z",
-      "summary": "New SN OPEN_BOUNTY detected: ``` 1562157 Stacker_Sports 3 1112 2100 9 20.0 232181 4050 recent@Stacker_Sports|top@Stacker_Sports OPEN_BOUNTY,HOT,SELF_POST_OPP Weekly Random Sports Pick 'em 1561879 AskSN 2 422 1000 11 32.8 1208996 484 recent@AskSN OPEN_BOUNTY,SELF_POST_OPP LOGIC 🧠 ```",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 118,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 0,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 2026,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
       "id": "github:4455330769",
       "source": "github",
       "title": "📱 Epic: BAWES Universe Mobile App (Android + iOS)",
@@ -160,38 +124,6 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5357280941",
-      "source": "github",
-      "title": "Companion skill proposal: mermail-bounty-ops — worker-side paid-task operations",
-      "url": "https://github.com/Nudgen-Marketing/mermail-skills/issues/173",
-      "repositoryApiUrl": "https://api.github.com/repos/Nudgen-Marketing/mermail-skills",
-      "rewardUsd": 136,
-      "score": 62,
-      "labels": [],
-      "commentCount": 0,
-      "updatedAt": "2026-09-05T10:21:31Z",
-      "summary": "## Community companion skill I built `mermail-bounty-ops`, an unofficial/community Mermail companion skill for a worker or autonomous agent managing its own bounty, grant, freelance, and paid-task inbox pipeline. Public draft PR / review surface: https://github.com/markabramov1993/arbitr/pull/4 Skill source: https://github.com/markabramov1993/arbitr/blob/earn/superteam-mermail-bounty-ops/earn/superteam-mermail-bounty-ops/mermail-bounty-ops/SKILL.md ### Scope The skill handles: - bounded, metadata-first bounty/reviewer email triage; - duplicate claim/follow-up prevention; - claim/application drafting with explicit approval before external sends; - prompt-injection, OTP/magic-link, wallet and payment-instruction containment; - strict `opportunity -> accepted -> paid` reward accounting. ### Positioning versus existing proposals I tried to keep this distinct from current public proposals: - #70 `mermail-opportunity-gate` handles read-only eligibility; this companion continues through worker-side submission/review/payout operations; - #136 `mermail-pact` is sponsor/operator-side contracting and settlement; this is the worker side; - #154 Freelance Deal Desk focuses on one inbound client",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 116,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 0,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 136,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
       "id": "github:5332426929",
       "source": "github",
       "title": "[Bounty: $75] Fix docs/error-handling.md hierarchy, imports, and error.status references",
@@ -200,8 +132,8 @@
       "rewardUsd": 75,
       "score": 54,
       "labels": [],
-      "commentCount": 3,
-      "updatedAt": "2026-09-05T10:38:27Z",
+      "commentCount": 5,
+      "updatedAt": "2026-09-05T13:18:37Z",
       "summary": "**Context** `docs/error-handling.md` describes an error hierarchy and catch examples that don't match `src/errors/sdk-error.ts`. It imports from `'lily-sdk'` though the package is published as `@lily-protocol/sdk`; it nests `LilyAuthenticationError` under `LilyApiError` although the class extends `LilySdkError` directly; it lists `LilyRateLimitError` as the only API-error subclass and omits the exported `LilyValidationError`, `LilyAuthorizationError`, `LilyNotFoundError`, `LilyConflictError`, and `LilyServerError`; and the sample catch block reads `error.status` while the class property is `statusCode`. **Proposed Change** Update the doc to the actual hierarchy and exports, fix the import to `@lily-protocol/sdk`, correct `error.status` to `error.statusCode`, and make the catch guide consistent with the README's error-handling section. **Acceptance Criteria** - Hierarchy diagram matches `src/errors/sdk-error.ts` class inheritance. - All imports in code samples resolve against the published package/subpaths. - No sample references `error.status`. - `LilyValidationError` and the status-specific subclasses are mentioned with their meaning. **Suggested Label** (documentation) **ETA:** 2",
       "state": "candidate",
       "payoutConfidence": 0.65,
@@ -211,11 +143,11 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 115,
+      "fastCashScore": 112,
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
-        "comments": 3,
+        "comments": 5,
         "attemptSignals": 0,
         "risk": "low"
       },
@@ -224,83 +156,17 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5356113988",
+      "id": "github:5358017556",
       "source": "github",
-      "title": "DOT_HOUR_PRESSURE_REVERSAL_BASELINE_V1: 单基线成本后证伪",
-      "url": "https://github.com/He1met/freqtrade-lab/issues/82",
-      "repositoryApiUrl": "https://api.github.com/repos/He1met/freqtrade-lab",
-      "rewardUsd": 1000,
+      "title": "ai-history: verify Chapter 6 cybernetics claims and evidence boundaries",
+      "url": "https://github.com/kube-dojo/kube-dojo.github.io/issues/2405",
+      "repositoryApiUrl": "https://api.github.com/repos/kube-dojo/kube-dojo.github.io",
+      "rewardUsd": 1943,
       "score": 40,
       "labels": [],
-      "commentCount": 0,
-      "updatedAt": "2026-09-05T06:27:54Z",
-      "summary": "监督任务授权推进一次 DOT 小时价格压力反转基线的成本后证伪。已有私有草案 SHA256 3b8afe10f595c05fa8b6a9b222ed27f05f9185fb75439fdb7ad932058ab6c519；规则源码 SHA256 edc09ccf5ed5c14a0cefcbeab6e7d06c1268802e5a033f8b58fa4a9d0f8b4994。旧 Issue80 已结束，Issue78 独立保留，本 Issue 不复用或恢复其研究。 采用 DOT-USDT-SWAP、5m上12根完整闭盘小时收益符号反转、五个固定NY钟表槽、nextbar open、120分钟计划持有、2%止损、ROI={}、单仓1x、初始1000 USDT/固定stake500。S=[2026-07-01,2026-08-01)，D=[2026-08-01,2026-09-01)。核心笔数/分布/净收益/PF/DD/持有/集中度门全部继承草案，禁止看结果后调整。 研究成本为每边7bp（假设fee5bp+slippage代理2bp，不是账户/盘口实测）。在见市场值前追加拒绝检查：同一次原生S1固定成交路径及实际q/进出名义金额，费用从每边7bp提高到14bp后净收益仍须严格>0。另报告剔除正funding信用的敏感性。两者都不是历史Stress重跑、完整路径重演或现金流下界。原生DD不是逐bar MTM，31天×5槽不是155独立样本，论文聚合发现属于公开先验而非本项目独立验证。 验收边界： - 先最多2次新建的离线native合成预检，确认精确2026.7 commit、时钟/nextbar/持有/SL、can_short、实际q/合约量化、资金费方向及08/16UTC结算、阶段±5min边界；不改native/venv。 - 合成通过后复核三个指定safe metadata索引的DOT身份/窗口。外部未登记保持UNKNOWN。 - 一个全新Git外0700 cohort和隔离非敏感六表SQLite，使用现有Profile/Generation/Candidate/prepare/Search API。取值前冻结正式协议并登记ledger，保护既有prefix。 - source最多1个，沿PR81完整REST取S+D union，D仅producer/QC物化、agent不读行情/信号/PnL；非8h、缺项、漂移等BLOCKED_DATA立即停，无第二源、archive回退、换资产/窗口。 - 真实native Search最多1次；R2/D/H/Stress=0。不重跑修复实际native失败。任何技术/经济失败保留原始trials/raw/receipt及真实终止状态。 - 少于80笔或分布不足UNDERPOWERED；足样本但经济门失败BOUNDED_",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 111,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 0,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 1000,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5357010977",
-      "source": "github",
-      "title": "Lodestar without a Graph API key: the full migration, and the features that go with the key",
-      "url": "https://github.com/nightswatchhq/nuthatch/issues/1160",
-      "repositoryApiUrl": "https://api.github.com/repos/nightswatchhq/nuthatch",
-      "rewardUsd": 232,
-      "score": 54,
-      "labels": [
-        "p1"
-      ],
-      "commentCount": 2,
-      "updatedAt": "2026-09-05T10:05:56Z",
-      "summary": "Board decision, Chief, 2026-09-05: **Lodestar runs with no `GRAPH_API_KEY` at all.** Any feature or page that cannot exist without the key is removed rather than kept on an exception. Everything that relies on Pinax goes too. This supersedes the narrower done-state of #1078 and #638 (\"the key is not load-bearing for the dashboard\"), which kept the key for the gateway features; #1078 closes when group C below is done and points here. The denominator is `docs/lodestar-migration-inventory.md` (nuthatch, #1074), re-derived today against `lodestar` main `d446263`. Group letters are the inventory's. ## What \"no key\" means, by group **Group C, on-chain network state, 29 surfaces: migrate to nests.** Served today behind flags (8): allocations, disputes, RAV, horizon activity, payments, POI, feed epochs, and the epochs ingest. Views written and waiting on the eleven-contract nest (the 8107 rebuild, today): `network-stats`, `grt-flow`, `network-snapshot`, `epochs`, `token-metrics`, `tap-provision`. Views still to write, on the eleven-contract tables: `indexers`, `indexer/[address]`, `indexer-stake-history`, `rewards-history`, `curators`, `provisions`, `portfolio`, `apr-provenance` (its on-ch",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 108,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 2,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 232,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5357264290",
-      "source": "github",
-      "title": "Missing record: Nvoip for Startups communication discount",
-      "url": "https://github.com/sourcey/startup-credits/issues/1319",
-      "repositoryApiUrl": "https://api.github.com/repos/sourcey/startup-credits",
-      "rewardUsd": 120,
-      "score": 46,
-      "labels": [],
       "commentCount": 1,
-      "updatedAt": "2026-09-05T10:18:54Z",
-      "summary": "Nvoip's English-language startup program page offers discounts on its communication plans for startups connected with Nvoip partner hubs. The current page advertises up to 90% off, with the benefit dependent on startup maturity and lasting up to two years. First-party source and application form: https://www.nvoip.com.br/en/nvoip-for-startups/ I checked the existing entity files and searched issues and pull requests for Nvoip before reserving this record; no existing Nvoip entry or submission was found. I will contribute one new Entity YAML and one offer, with the partner-hub requirement and variable terms preserved. AI-assisted contribution for [Frantic bounty #120](https://gofrantic.com/bounties/120).",
+      "updatedAt": "2026-09-05T13:20:25Z",
+      "summary": "Parent #2289 and #2290; epic #2272. Owned narrative: `src/content/docs/ai-history/ch-06-the-cybernetics-movement.md`; research directory `docs/research/ai-history/chapters/ch-06-the-cybernetics-movement/`. A bounded local audit found published claims exceeding their research contracts. Existing Green/Yellow labels are triage, not fresh source acceptance. Missing local support is not proof of falsity. Verify or narrow these five clusters in separate research and prose phases: 1. Ashby's 1948 first-publication chronology (cast and around line 127). The local contract says the Electronic Engineering article PDF was not retrieved. Retrieve the primary article or retain an explicit verification limit; do not present a publication-priority claim as verified solely from its label. 2. Macy three-pillar synthesis (around 115). The ledger supports the retrospective list, but prose adds universal digital-machine, stochastic, non-deterministic and explain-everything characterizations. Separate the historian's retrospective synthesis from documented meeting claims and discussions. 3. Cross-machine analog limitations (143–145). Task-specific construction does not by itself establish a general ca",
       "state": "candidate",
       "payoutConfidence": 0.35,
       "autonomyFit": 1,
@@ -309,7 +175,7 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 107,
+      "fastCashScore": 109,
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
@@ -318,7 +184,7 @@
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 120,
+      "economicValueUsd": 1943,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -356,42 +222,6 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5298194036",
-      "source": "github",
-      "title": "experiment(agent): characterize DagobertDuckDQN Task 2 feasibility and Task 1 retention",
-      "url": "https://github.com/1BlauNitrox/mle-final-project/issues/46",
-      "repositoryApiUrl": "https://api.github.com/repos/1BlauNitrox/mle-final-project",
-      "rewardUsd": 44,
-      "score": 40,
-      "labels": [
-        "experiment",
-        "priority: high",
-        "area: evaluation"
-      ],
-      "commentCount": 1,
-      "updatedAt": "2026-09-05T10:32:23Z",
-      "summary": "## Status **Prepared — pending non-author review before training.** Draft PR #81 implements the seed-compatible starting-artifact mechanism, metric instrumentation, immutable run plans, and preregistered analysis. No scientific training or evaluation result has been observed under this protocol. ## Hypothesis Starting from the reviewed Task 1 migration artifact delivered by #44, the unchanged `DagobertDuckDQNTask2` implementation will learn reproducible crate destruction and hidden-coin collection under a staged 10,000-episode curriculum without materially degrading visible-coin navigation. The experiment has two required gates: 1. **Task 2 feasibility:** training improves `classic` coin collection over the untrained migration artifact by a practically relevant amount while keeping self-kills and invalid actions within initial feasibility limits. 2. **Task 1 retention:** the trained Task 2 artifacts remain non-inferior to the frozen Task 1 DQN on `coin-heaven`. Passing only one gate is not success. A negative or mixed result remains valid and must be retained; it should motivate a separately registered single-factor experiment such as legal-action masking. ## Proposed change This i",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 101,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 1,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 44,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
       "id": "github:4462160604",
       "source": "github",
       "title": "[bounty $400] Implement ABNF-compliant email address parser with full §3.2–§4.4 coverage",
@@ -426,6 +256,115 @@
       },
       "realMoneyEligible": true,
       "economicValueUsd": 400,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5345289693",
+      "source": "github",
+      "title": "phase1: §2 — Kostenmodell core/costs.py: fünf Stellen, ein Modell, Single-Source-Test",
+      "url": "https://github.com/jholze/xagent-trading-bot/issues/301",
+      "repositoryApiUrl": "https://api.github.com/repos/jholze/xagent-trading-bot",
+      "rewardUsd": 30,
+      "score": 40,
+      "labels": [
+        "bug",
+        "priority:p1",
+        "area:execution"
+      ],
+      "commentCount": 2,
+      "updatedAt": "2026-09-05T11:21:09Z",
+      "summary": "> **Phase 1 — Kasse · §2 Kostenmodell** · Spec: [phase1-kasse.md §2](https://github.com/jholze/xagent-trading-bot/blob/7aee9ad91cc68682e59c5feb4018cf1138c60e52/docs/rebuild/phase1-kasse.md) · Hintergrund: [v4 A.2](https://github.com/jholze/xagent-trading-bot/blob/7aee9ad91cc68682e59c5feb4018cf1138c60e52/docs/umbau/konzept-regime-strategie-v4.md) · Delegation: **C** (2.1 Design, 2.3 Live-Fee), **G** (2.2 Verdrahtung) · Branch `feat/trade-cost-model` · **Hängt ab von #311, #310** · **Danach #316** > > **Korrektur zum Befund unten:** Der Backtester ist intern konsistent, aber die Größenordnung ist das eigentliche Problem — 1,5 % beidseitig = **3 % Round-Trip gegen real ~0,2 %** Gebühr auf Gate Spot, ~15-fach zu pessimistisch. **Hermes hat deshalb monatelang gute Strategien verworfen.** Fünf Stellen, vier verschiedene Annahmen, keine aus der Börse. > > **§2.1** `core/costs.py`: `CostModel(exchange, market)` → `fee_maker_pct, fee_taker_pct, slippage_pct, funding_source`; `apply_entry/apply_exit(price, qty, side, order_type) → (net_price, fee_usdt)`; `round_trip_pct(order_type)`. Config-Block `costs.gate.spot / swap`. `COST_MODEL_VERSION = \"2026-09-v1\"`. Startwerte **gegen das Konto prüf",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 98,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 2,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 30,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5345182233",
+      "source": "github",
+      "title": "Roadmap: five difficulty tiers and tactical roguelike expansion",
+      "url": "https://github.com/shipiyouniao/Minesweeper-2.0/issues/1",
+      "repositoryApiUrl": "https://api.github.com/repos/shipiyouniao/Minesweeper-2.0",
+      "rewardUsd": 16,
+      "score": 38,
+      "labels": [
+        "enhancement",
+        "help wanted"
+      ],
+      "commentCount": 1,
+      "updatedAt": "2026-09-05T13:24:17Z",
+      "summary": "# Five difficulty tiers and a tactical roguelike expedition This tracking issue describes the next expansion of Twin and Expedition: larger configurable boards, longer-term progression, shared health and shields, distinct turn-based boss encounters, and individual artwork for professions and bosses. **Status: in progress.** Five difficulties, six professions, 24 distinct gameplay unlocks plus two finite trainings, and 29 relics are released. The tactical roster now includes Bastion Guardian, Brood Queen and **Mirror Twins (PR #20)**. Shared combat builds shipped in PR #18; current-rule save retirement and mobile long-press fixes shipped in PR #19. Magnetic knight, Clock mage and progression milestones remain open below. Each workstream is completed through a reviewed PR; this roadmap stays open until all planned work is delivered. ## Agreed direction - Both Twin and Expedition receive **five difficulty choices**, with different board sizes and expedition lengths. - Permanent unlocks follow a **stepped curve**: an early rewarding run can unlock two choices, intermediate upgrades take several runs, and the most expensive single item should require **at most ten successful highest-dif",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 96,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 1,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 16,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5312094670",
+      "source": "github",
+      "title": "HER Hack-Astron #5 | Spark-X2.5 Edge Agent Real-World Use Case Challenge",
+      "url": "https://github.com/XHToken/Spark-X2.5/issues/3",
+      "repositoryApiUrl": "https://api.github.com/repos/XHToken/Spark-X2.5",
+      "rewardUsd": 500,
+      "score": 50,
+      "labels": [
+        "good first issue",
+        "help wanted",
+        "HER Hack-Astron",
+        "reward",
+        "bounty"
+      ],
+      "commentCount": 12,
+      "updatedAt": "2026-09-05T11:31:09Z",
+      "summary": "# English ## HER Hack-Astron #5 | Spark-X2.5 Edge Agent Real-World Use Case Challenge Turn real Spark-X2.5 runs into reproducible, discussable edge-agent use cases. For this challenge, obtain XHToken/Spark-X2.5-4B or Spark-X2.5-1.7B from Hugging Face (or a mirror such as ModelScope), conduct a real inference, agentic, coding, long-context, multilingual, quantization, or training experiment, and publish the complete use case in the corresponding model's Hugging Face Discussions. After publishing it, reply to this event's GitHub Issue with the Discussion link to enter. - Event page (GitHub Issues): https://github.com/XHToken/Spark-X2.5/issues - Hugging Face model collection: https://huggingface.co/collections/XHToken/spark-x25 - Spark-X2.5-4B: https://huggingface.co/XHToken/Spark-X2.5-4B - Spark-X2.5-1.7B: https://huggingface.co/XHToken/Spark-X2.5-1.7B - Spark-X2.5-4B Discussions: https://huggingface.co/XHToken/Spark-X2.5-4B/discussions - Spark-X2.5-1.7B Discussions: https://huggingface.co/XHToken/Spark-X2.5-1.7B/discussions - Mainland China mirror (recommended): https://www.modelscope.cn/collections/XHToken/Spark-X25 ## Schedule - Submissions open: September 1, 2026 - Challenge peri",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 93,
+      "survivalEligible": false,
+      "eligibilityReason": "Competition is too high for bootstrap mode.",
+      "competition": {
+        "comments": 12,
+        "attemptSignals": 0,
+        "risk": "medium"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 500,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -474,7 +413,7 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:4455330769\",\"rewardUsd\":150,\"fastCashScore\":118,\"updatedAt\":\"2026-09-01T01:51:01Z\",\"competition\":{\"comments\":24,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":99,\"updatedAt\":\"2026-09-01T00:09:20Z\",\"competition\":{\"comments\":21,\"attemptSignals\":3,\"risk\":\"high\"}},{\"id\":\"github:4553022084\",\"rewardUsd\":430,\"fastCashScore\":133,\"updatedAt\":\"2026-09-04T04:17:26Z\",\"competition\":{\"comments\":14,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4557563229\",\"rewardUsd\":780,\"fastCashScore\":123,\"updatedAt\":\"2026-09-04T05:51:12Z\",\"competition\":{\"comments\":10,\"attemptSignals\":2,\"risk\":\"medium\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":77,\"updatedAt\":\"2026-09-04T19:24:22Z\",\"competition\":{\"comments\":56,\"attemptSignals\":5,\"risk\":\"high\"}},{\"id\":\"github:5298194036\",\"rewardUsd\":44,\"fastCashScore\":101,\"updatedAt\":\"2026-09-05T10:32:23Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5332426929\",\"rewardUsd\":75,\"fastCashScore\":115,\"updatedAt\":\"2026-09-05T10:38:27Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5356113988\",\"rewardUsd\":1000,\"fastCashScore\":111,\"updatedAt\":\"2026-09-05T06:27:54Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5356499730\",\"rewardUsd\":100,\"fastCashScore\":107,\"updatedAt\":\"2026-09-05T07:43:06Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5356980367\",\"rewardUsd\":100,\"fastCashScore\":107,\"updatedAt\":\"2026-09-05T10:35:51Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5357010977\",\"rewardUsd\":232,\"fastCashScore\":108,\"updatedAt\":\"2026-09-05T10:05:56Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5357264290\",\"rewardUsd\":120,\"fastCashScore\":107,\"updatedAt\":\"2026-09-05T10:18:54Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5357280941\",\"rewardUsd\":136,\"fastCashScore\":116,\"updatedAt\":\"2026-09-05T10:21:31Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5357317211\",\"rewardUsd\":2026,\"fastCashScore\":118,\"updatedAt\":\"2026-09-05T10:29:00Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5357363429\",\"rewardUsd\":120,\"fastCashScore\":108,\"updatedAt\":\"2026-09-05T10:40:05Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:4455330769\",\"rewardUsd\":150,\"fastCashScore\":118,\"updatedAt\":\"2026-09-01T01:51:01Z\",\"competition\":{\"comments\":24,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":99,\"updatedAt\":\"2026-09-01T00:09:20Z\",\"competition\":{\"comments\":21,\"attemptSignals\":3,\"risk\":\"high\"}},{\"id\":\"github:4553022084\",\"rewardUsd\":430,\"fastCashScore\":133,\"updatedAt\":\"2026-09-04T04:17:26Z\",\"competition\":{\"comments\":14,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4557563229\",\"rewardUsd\":780,\"fastCashScore\":123,\"updatedAt\":\"2026-09-04T05:51:12Z\",\"competition\":{\"comments\":10,\"attemptSignals\":2,\"risk\":\"medium\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":77,\"updatedAt\":\"2026-09-04T19:24:22Z\",\"competition\":{\"comments\":56,\"attemptSignals\":5,\"risk\":\"high\"}},{\"id\":\"github:5295068486\",\"rewardUsd\":58.88398389,\"fastCashScore\":95,\"updatedAt\":\"2026-09-05T11:55:09Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5312094670\",\"rewardUsd\":500,\"fastCashScore\":93,\"updatedAt\":\"2026-09-05T11:31:09Z\",\"competition\":{\"comments\":12,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5332426929\",\"rewardUsd\":75,\"fastCashScore\":112,\"updatedAt\":\"2026-09-05T13:18:37Z\",\"competition\":{\"comments\":5,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5345182233\",\"rewardUsd\":16,\"fastCashScore\":96,\"updatedAt\":\"2026-09-05T13:24:17Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5345289693\",\"rewardUsd\":30,\"fastCashScore\":98,\"updatedAt\":\"2026-09-05T11:21:09Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5346888742\",\"rewardUsd\":50000,\"fastCashScore\":89,\"updatedAt\":\"2026-09-05T13:28:35Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5356499730\",\"rewardUsd\":100,\"fastCashScore\":107,\"updatedAt\":\"2026-09-05T07:43:06Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5356980367\",\"rewardUsd\":100,\"fastCashScore\":107,\"updatedAt\":\"2026-09-05T10:35:51Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5358017556\",\"rewardUsd\":1943,\"fastCashScore\":109,\"updatedAt\":\"2026-09-05T13:20:25Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
@@ -486,26 +425,44 @@
     "maxHours": 4,
     "minPayoutConfidence": 0.8,
     "competitionRequired": "low",
-    "rejectedFakeRevenueCount": 1,
+    "rejectedFakeRevenueCount": 2,
     "rejectedAlreadyPaidCount": 0,
     "rejectedIdentityGateCount": 1
   },
   "economicallyRejected": [
-    {
-      "id": "github:5357363429",
-      "title": "Missing record: Cardboard for Startups paid-plan discount",
-      "rewardUsd": 120,
-      "reasons": [
-        "preclaim_or_identity_gate_not_configured"
-      ],
-      "rejectedAt": "2026-09-05T10:40:15.121Z"
-    },
     {
       "id": "github:5356980367",
       "title": "phase1: §0 — Vorbereitung: Hermes pausieren, Testnet vs. Klein-Live entscheiden",
       "rewardUsd": 100,
       "reasons": [
         "testnet_or_test_token_reward"
+      ],
+      "rejectedAt": "2026-09-05T13:33:27.149Z"
+    },
+    {
+      "id": "github:5295068486",
+      "title": "Orbit Testnet weekly report: 2026-08-24",
+      "rewardUsd": 58.88398389,
+      "reasons": [
+        "testnet_or_test_token_reward"
+      ],
+      "rejectedAt": "2026-09-05T13:33:27.149Z"
+    },
+    {
+      "id": "github:5346888742",
+      "title": "Zcash East Africa @ Africa Blockchain Festival 2026",
+      "rewardUsd": 50000,
+      "reasons": [
+        "preclaim_or_identity_gate_not_configured"
+      ],
+      "rejectedAt": "2026-09-05T13:33:27.150Z"
+    },
+    {
+      "id": "github:5357363429",
+      "title": "Missing record: Cardboard for Startups paid-plan discount",
+      "rewardUsd": 120,
+      "reasons": [
+        "preclaim_or_identity_gate_not_configured"
       ],
       "rejectedAt": "2026-09-05T10:40:15.121Z"
     },
@@ -544,15 +501,6 @@
         "already_rewarded_or_paid"
       ],
       "rejectedAt": "2026-09-04T04:57:10.233Z"
-    },
-    {
-      "id": "github:5295068486",
-      "title": "Orbit Testnet weekly report: 2026-08-24",
-      "rewardUsd": 58.88398389,
-      "reasons": [
-        "testnet_or_test_token_reward"
-      ],
-      "rejectedAt": "2026-09-03T22:35:26.001Z"
     },
     {
       "id": "github:5339446266",
@@ -1207,15 +1155,6 @@
       "rewardUsd": 2000,
       "reasons": [
         "testnet_or_test_token_reward",
-        "already_rewarded_or_paid"
-      ],
-      "rejectedAt": "2026-08-23T12:49:32.781Z"
-    },
-    {
-      "id": "github:5190343724",
-      "title": "Off-Chain Soroban Contract Event Indexer Service",
-      "rewardUsd": 2000,
-      "reasons": [
         "already_rewarded_or_paid"
       ],
       "rejectedAt": "2026-08-23T12:49:32.781Z"
