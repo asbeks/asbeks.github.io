@@ -2,7 +2,7 @@
   "version": 5,
   "cycle": 192,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-09-06T17:46:30.950Z",
+  "updatedAt": "2026-09-06T19:38:10.019Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "waiting_provider",
   "currentAgent": "PLANNER",
@@ -20,7 +20,7 @@
     "decision": "Proceed with auth middleware preparation while systematically sourcing BAWES branding assets from Universe repositories and forums.",
     "next": "CRITIC to report findings on BAWES branding asset availability and estimated effort for auth fix submission."
   },
-  "lastError": "Available OpenCode free models are temporarily rate-limited.",
+  "lastError": "Available OpenCode free models are temporarily unavailable.",
   "history": [
     {
       "cycle": 153,
@@ -408,20 +408,20 @@
     "selected": null,
     "opportunities": [
       {
-        "id": "github:4553022084",
-        "title": "User creation endpoint has no input validation",
-        "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/1773",
-        "rewardUsd": 430,
-        "score": 60,
-        "summary": "## Bug: Missing Input Validation on User Creation **Description:** The `POST /api/users` endpoint does not validate input with Zod schema, unlike auth and job routes which use proper validation. This allows arbitrary data to be stored as user records. **File:** `apps/api/src/controllers/userController.js` **Current code:** ```js export async function postUser(req, res) { return ok(res, await createUser(req.body), 201); } ``` **Expected behavior:** A Zod validation schema should be created for user creation (similar to `registerSchema` and `createJobSchema`) and applied before passing data to the service layer. **Impact:** Medium — allows malformed or malicious data to be persisted as user records. This issue is limited only to the creator of this issue. This means that only the issue author can attempt to solve this issue. If you would like to work on it, please create another issue with the same contents and refer to issue #743 for more information."
+        "id": "github:4557180255",
+        "title": "POST /api/reviews endpoint missing authentication middleware (reissue via #743)",
+        "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/2776",
+        "rewardUsd": 780,
+        "score": 74,
+        "summary": "## Security: Unauthenticated review creation endpoint **Description:** The API exposes `POST /api/reviews` without auth middleware, allowing unauthenticated users to create reviews. **File:** `apps/api/src/routes/reviewRoutes.js` **Current code:** ```js reviewRoutes.post(\"/\", postReview); ``` **Expected behavior:** Require `authMiddleware` before `postReview`. **Impact:** Medium ? unauthorized review spam and abuse of reputation flows. Reference bounty coordinator issue: #743 This reissue is opened because original parent thread indicates creator-only attempt restrictions."
       },
       {
-        "id": "github:4557563229",
-        "title": "auth refresh endpoint issues tokens without verifying the requester",
-        "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/2847",
+        "id": "github:4557552603",
+        "title": "registerUser access token can reference a different user id",
+        "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/2845",
         "rewardUsd": 780,
         "score": 60,
-        "summary": "## Bug `POST /api/auth/refresh` currently issues a fresh access token without checking the requester at all. The service also signs that token for the hard-coded subject `usr_existing` with role `client`, so even an authenticated caller does not get a token for their own subject and role. ## Expected fix Protect the refresh route with the existing bearer-token auth middleware, pass the verified user payload into the refresh service, and sign the refreshed token for that authenticated subject and role. Add route-level tests for unauthenticated rejection and authenticated subject preservation. ## Scope This issue is limited to the auth refresh route/service behavior for `/api/auth/refresh` and focused API tests. This issue is limited only to the creator of this issue. This means that only the issue author can attempt to solve this issue. If you would like to work on it, please create another issue with the same contents and refer to issue #743 for more information. References #743."
+        "summary": "## Bug `registerUser()` currently builds the returned `id` and the JWT `sub` with two separate `Date.now()` calls. If time advances between those calls, the API can return one user id while signing an access token for a different subject. Downstream authenticated requests would then identify a different user than the one returned by registration. ## Expected fix Generate the new user id once, return that id, and sign the access token with the same id as `sub`. Add a regression test that forces the timestamp to advance between calls and verifies the token subject matches the returned id. ## Scope This issue is limited to the registration response/token subject mismatch in `apps/api/src/services/authService.js` plus focused API service test coverage. This issue is limited only to the creator of this issue. This means that only the issue author can attempt to solve this issue. If you would like to work on it, please create another issue with the same contents and refer to issue #743 for more information. References #743."
       },
       {
         "id": "github:4455330769",
@@ -432,25 +432,25 @@
         "summary": "## Goal Ship native Android + iOS apps for BAWES Universe that are fully functional including video calls, iframes, push notifications, and seamless updates. All work targets the `universe` branch. ## Current status ### ✅ In progress - [x] PR #9 — Capacitor scaffold (open, ready to review) ### 🔴 Ready to start now (no dependencies) - [ ] #3 — PWA manifest + Universe branding (`play/public/`) - [ ] [admin#6](https://github.com/BAWES-Universe/workadventure-universe-admin/issues/6) — Orbit auth deep-link (admin repo) - [ ] #10 — CI/CD pipeline audit + docs ### 🟡 Blocked (needs PR #9 + #3 + admin#6 merged) - [ ] #4 — Android build + Fastlane + Play Store - [ ] #5 — iOS build + Fastlane Match + TestFlight ### 🟡 Blocked (needs #4 + #5 merged) - [ ] #11 — Push notifications (native + web push) - [ ] #12 — App update management - [ ] #13 — iframe + LiveKit video compatibility in WebView ## Path ownership (no conflicts) | PR/Issue | Owns | Do not touch | |---|---|---| | PR #9 | `mobile/` root, `.github/workflows/mobile-ci.yml` | everything else | | #3 | `play/public/` manifest + icons | everything else | | admin#6 | `app/api/auth/`, `middleware.ts`, `docs/` (admin repo) | this repo | | #"
       },
       {
-        "id": "github:5364786376",
-        "title": "T9B DonchianLong: JST/USDT 2026-09-05",
-        "url": "https://github.com/brasdor/UngerFink-TREND/issues/44",
-        "rewardUsd": 2026,
+        "id": "github:5367068313",
+        "title": "Define the public router canary and certification lease for router-capable submissions",
+        "url": "https://github.com/ditto-assistant/ditto-subnet/issues/1676",
+        "rewardUsd": 1664,
         "score": 40,
-        "summary": "## T9B Paper Signal -- DonchianLong_UniverseV2_ExitV2 | Field | Value | |---|---| | **Symbol** | `JST/USDT` | | **Date** | 2026-09-05 | | **Status** | ACCEPTED -- paper entry placed in state.json | | **Entry price (close)** | 0.11033 | | **Donchian breakout level** | 0.10989 | | **Initial stop (ATR x2)** | 0.102923 | | **ATR at signal** | 0.00370359 | | **EMA200** | 0.0838698 | --- ### Config ``` System : DonchianLong UniverseV2 ExitV2 -- T9B Paper Engine Entry : Donchian N=20 breakout above EMA200 Stop : ATR(14) x 2.0 below entry close Exit : Donchian N=10 OR Chandelier (ACT=6R trail=5.0xATR) Risk : 0.25% of paper equity per trade Max pos : 8 concurrent ``` _Automated paper trading signal. No real trade was placed._ _Do not act on this signal until T9B has run for at least 3 months._"
+        "summary": "## Goal Reuse `docs/coding-public-v2-canary.md` and `docs/coding-qualified-certification-lease-shadow.md` for the router project: a public, content-addressed, `weight_eligible=false` canary manifest and a lease bound to the exact screened router image digest. ## Scope - Canary sequence: `/router/health` → provider-surface vectors against the router with a record-mode relay → one public-pack harness session per advertised wire in the full sandbox topology → offline gates → signed `router_certification_v1` receipt with expiry. - Lease binds router image digest, `router_contract_version`, ticket, validator hotkey, deadline, harness pins; always revoked; never claims hidden tickets. - Support both answers to #1664 open question 1 (core qualification required or not). ## Acceptance - [ ] Canary manifest under an agreed `research/dittobench-router-datagen/certification/v1` path with its sha256 pinned as `canary_manifest_sha256`. - [ ] Lease + receipt vectors in the contract package; a passing canary grants no score, rank or reward. Parent: #1664 · Board: https://github.com/orgs/ditto-assistant/projects/10"
       },
       {
-        "id": "github:5345137708",
-        "title": "[Bounty: $80] Point the Footer legal and support links at real destinations instead of '/'",
-        "url": "https://github.com/Movalabs-crew/mova-store/issues/80",
-        "rewardUsd": 80,
-        "score": 54,
-        "summary": "**Context** All four footer links in components/Footer.jsx - 'Term of use', 'Privacy Policy', 'About us', '24/7 Customer Service' - hard-code href=\"/\" (lines 11,17,23,29), so every footer link just bounces users back to the landing page, and the heading wording 'Term of use' is ungrammatical. **Proposed Change** Give each footer link a real destination (add the legal/about/contact pages or drop the anchors) and fix the wording. **Acceptance Criteria** - Each footer link resolves to an existing route rather than '/' - Clicking any footer link no longer reloads the home page **Suggested Label**: bug **ETA:** 24 hours"
+        "id": "github:5345139734",
+        "title": "[Bounty: $90] Add token-registry unit tests for lib/stellar/config.ts",
+        "url": "https://github.com/Movalabs-crew/mova-store/issues/86",
+        "rewardUsd": 90,
+        "score": 46,
+        "summary": "**Context** SUPPORTED_TOKENS, defaultToken() and tokenForContract() in lib/stellar/config.ts drive decimals, trustline and symbol resolution used across orders.ts, checkout and account flows, but nothing tests them. The registry is assembled from env vars at module load, so tests must use vi.stubEnv + vi.resetModules + a dynamic import. **Proposed Change** Add tests/lib/stellar/config.test.ts asserting defaultToken() returns USDC, tokenForContract resolves known ids and returns undefined for unknown ones, the XLM entry is native, and overriding NEXT_PUBLIC_USDC_CONTRACT_ID / NEXT_PUBLIC_NATIVE_ASSET_CONTRACT_ID changes the registry after a fresh import. **Acceptance Criteria** - defaultToken() === SUPPORTED_TOKENS[0] and USDC/XLM both declare 7 decimals - tokenForContract returns undefined for an unknown contract id - Env-override assertions pass under stubEnv + module re-import; npm run test passes **Suggested Label**: tests **ETA:** 24 hours"
       }
     ],
     "active": null,
     "completedCount": 0,
     "lastError": null
   },
-  "retryAfterAt": "2026-09-06T17:51:30.950Z"
+  "retryAfterAt": "2026-09-06T19:43:10.019Z"
 }

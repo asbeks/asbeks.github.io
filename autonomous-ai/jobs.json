@@ -1,30 +1,31 @@
 {
   "version": 11,
-  "updatedAt": "2026-09-06T17:45:38.843Z",
+  "updatedAt": "2026-09-06T19:37:17.978Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
     {
-      "id": "github:4553022084",
+      "id": "github:4557180255",
       "source": "github",
-      "title": "User creation endpoint has no input validation",
-      "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/1773",
+      "title": "POST /api/reviews endpoint missing authentication middleware (reissue via #743)",
+      "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/2776",
       "repositoryApiUrl": "https://api.github.com/repos/SecureBananaLabs/bug-bounty",
-      "rewardUsd": 430,
-      "score": 60,
+      "rewardUsd": 780,
+      "score": 74,
       "labels": [
         "bug",
+        "enhancement",
         "good first issue",
         "help wanted",
         "bug bounty",
         "AI agent friendly",
         "bounty",
         "💎 Bounty",
-        "$430"
+        "$780"
       ],
-      "commentCount": 14,
-      "updatedAt": "2026-09-04T04:17:26Z",
-      "summary": "## Bug: Missing Input Validation on User Creation **Description:** The `POST /api/users` endpoint does not validate input with Zod schema, unlike auth and job routes which use proper validation. This allows arbitrary data to be stored as user records. **File:** `apps/api/src/controllers/userController.js` **Current code:** ```js export async function postUser(req, res) { return ok(res, await createUser(req.body), 201); } ``` **Expected behavior:** A Zod validation schema should be created for user creation (similar to `registerSchema` and `createJobSchema`) and applied before passing data to the service layer. **Impact:** Medium — allows malformed or malicious data to be persisted as user records. This issue is limited only to the creator of this issue. This means that only the issue author can attempt to solve this issue. If you would like to work on it, please create another issue with the same contents and refer to issue #743 for more information.",
+      "commentCount": 8,
+      "updatedAt": "2026-09-06T19:17:45Z",
+      "summary": "## Security: Unauthenticated review creation endpoint **Description:** The API exposes `POST /api/reviews` without auth middleware, allowing unauthenticated users to create reviews. **File:** `apps/api/src/routes/reviewRoutes.js` **Current code:** ```js reviewRoutes.post(\"/\", postReview); ``` **Expected behavior:** Require `authMiddleware` before `postReview`. **Impact:** Medium ? unauthorized review spam and abuse of reputation flows. Reference bounty coordinator issue: #743 This reissue is opened because original parent thread indicates creator-only attempt restrictions.",
       "state": "candidate",
       "payoutConfidence": 0.92,
       "autonomyFit": 1,
@@ -33,23 +34,23 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": true,
-      "fastCashScore": 133,
+      "fastCashScore": 142,
       "survivalEligible": false,
       "eligibilityReason": "Competition is too high for bootstrap mode.",
       "competition": {
-        "comments": 14,
+        "comments": 8,
         "attemptSignals": 0,
         "risk": "medium"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 430,
+      "economicValueUsd": 780,
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:4557563229",
+      "id": "github:4557552603",
       "source": "github",
-      "title": "auth refresh endpoint issues tokens without verifying the requester",
-      "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/2847",
+      "title": "registerUser access token can reference a different user id",
+      "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/2845",
       "repositoryApiUrl": "https://api.github.com/repos/SecureBananaLabs/bug-bounty",
       "rewardUsd": 780,
       "score": 60,
@@ -64,9 +65,9 @@
         "💎 Bounty",
         "$780"
       ],
-      "commentCount": 10,
-      "updatedAt": "2026-09-04T05:51:12Z",
-      "summary": "## Bug `POST /api/auth/refresh` currently issues a fresh access token without checking the requester at all. The service also signs that token for the hard-coded subject `usr_existing` with role `client`, so even an authenticated caller does not get a token for their own subject and role. ## Expected fix Protect the refresh route with the existing bearer-token auth middleware, pass the verified user payload into the refresh service, and sign the refreshed token for that authenticated subject and role. Add route-level tests for unauthenticated rejection and authenticated subject preservation. ## Scope This issue is limited to the auth refresh route/service behavior for `/api/auth/refresh` and focused API tests. This issue is limited only to the creator of this issue. This means that only the issue author can attempt to solve this issue. If you would like to work on it, please create another issue with the same contents and refer to issue #743 for more information. References #743.",
+      "commentCount": 8,
+      "updatedAt": "2026-09-06T19:05:58Z",
+      "summary": "## Bug `registerUser()` currently builds the returned `id` and the JWT `sub` with two separate `Date.now()` calls. If time advances between those calls, the API can return one user id while signing an access token for a different subject. Downstream authenticated requests would then identify a different user than the one returned by registration. ## Expected fix Generate the new user id once, return that id, and sign the access token with the same id as `sub`. Add a regression test that forces the timestamp to advance between calls and verifies the token subject matches the returned id. ## Scope This issue is limited to the registration response/token subject mismatch in `apps/api/src/services/authService.js` plus focused API service test coverage. This issue is limited only to the creator of this issue. This means that only the issue author can attempt to solve this issue. If you would like to work on it, please create another issue with the same contents and refer to issue #743 for more information. References #743.",
       "state": "candidate",
       "payoutConfidence": 0.92,
       "autonomyFit": 1,
@@ -75,11 +76,11 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": true,
-      "fastCashScore": 123,
+      "fastCashScore": 126,
       "survivalEligible": false,
       "eligibilityReason": "Competition is too high for bootstrap mode.",
       "competition": {
-        "comments": 10,
+        "comments": 8,
         "attemptSignals": 2,
         "risk": "medium"
       },
@@ -100,8 +101,8 @@
         "💎 Bounty",
         "$150"
       ],
-      "commentCount": 25,
-      "updatedAt": "2026-09-05T23:37:20Z",
+      "commentCount": 26,
+      "updatedAt": "2026-09-06T18:31:43Z",
       "summary": "## Goal Ship native Android + iOS apps for BAWES Universe that are fully functional including video calls, iframes, push notifications, and seamless updates. All work targets the `universe` branch. ## Current status ### ✅ In progress - [x] PR #9 — Capacitor scaffold (open, ready to review) ### 🔴 Ready to start now (no dependencies) - [ ] #3 — PWA manifest + Universe branding (`play/public/`) - [ ] [admin#6](https://github.com/BAWES-Universe/workadventure-universe-admin/issues/6) — Orbit auth deep-link (admin repo) - [ ] #10 — CI/CD pipeline audit + docs ### 🟡 Blocked (needs PR #9 + #3 + admin#6 merged) - [ ] #4 — Android build + Fastlane + Play Store - [ ] #5 — iOS build + Fastlane Match + TestFlight ### 🟡 Blocked (needs #4 + #5 merged) - [ ] #11 — Push notifications (native + web push) - [ ] #12 — App update management - [ ] #13 — iframe + LiveKit video compatibility in WebView ## Path ownership (no conflicts) | PR/Issue | Owns | Do not touch | |---|---|---| | PR #9 | `mobile/` root, `.github/workflows/mobile-ci.yml` | everything else | | #3 | `play/public/` manifest + icons | everything else | | admin#6 | `app/api/auth/`, `middleware.ts`, `docs/` (admin repo) | this repo | | #",
       "state": "candidate",
       "payoutConfidence": 0.92,
@@ -115,7 +116,7 @@
       "survivalEligible": false,
       "eligibilityReason": "Competition is too high for bootstrap mode.",
       "competition": {
-        "comments": 25,
+        "comments": 26,
         "attemptSignals": 0,
         "risk": "high"
       },
@@ -124,17 +125,19 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5364786376",
+      "id": "github:5367068313",
       "source": "github",
-      "title": "T9B DonchianLong: JST/USDT 2026-09-05",
-      "url": "https://github.com/brasdor/UngerFink-TREND/issues/44",
-      "repositoryApiUrl": "https://api.github.com/repos/brasdor/UngerFink-TREND",
-      "rewardUsd": 2026,
+      "title": "Define the public router canary and certification lease for router-capable submissions",
+      "url": "https://github.com/ditto-assistant/ditto-subnet/issues/1676",
+      "repositoryApiUrl": "https://api.github.com/repos/ditto-assistant/ditto-subnet",
+      "rewardUsd": 1664,
       "score": 40,
-      "labels": [],
+      "labels": [
+        "enhancement"
+      ],
       "commentCount": 0,
-      "updatedAt": "2026-09-06T11:55:05Z",
-      "summary": "## T9B Paper Signal -- DonchianLong_UniverseV2_ExitV2 | Field | Value | |---|---| | **Symbol** | `JST/USDT` | | **Date** | 2026-09-05 | | **Status** | ACCEPTED -- paper entry placed in state.json | | **Entry price (close)** | 0.11033 | | **Donchian breakout level** | 0.10989 | | **Initial stop (ATR x2)** | 0.102923 | | **ATR at signal** | 0.00370359 | | **EMA200** | 0.0838698 | --- ### Config ``` System : DonchianLong UniverseV2 ExitV2 -- T9B Paper Engine Entry : Donchian N=20 breakout above EMA200 Stop : ATR(14) x 2.0 below entry close Exit : Donchian N=10 OR Chandelier (ACT=6R trail=5.0xATR) Risk : 0.25% of paper equity per trade Max pos : 8 concurrent ``` _Automated paper trading signal. No real trade was placed._ _Do not act on this signal until T9B has run for at least 3 months._",
+      "updatedAt": "2026-09-06T19:28:57Z",
+      "summary": "## Goal Reuse `docs/coding-public-v2-canary.md` and `docs/coding-qualified-certification-lease-shadow.md` for the router project: a public, content-addressed, `weight_eligible=false` canary manifest and a lease bound to the exact screened router image digest. ## Scope - Canary sequence: `/router/health` → provider-surface vectors against the router with a record-mode relay → one public-pack harness session per advertised wire in the full sandbox topology → offline gates → signed `router_certification_v1` receipt with expiry. - Lease binds router image digest, `router_contract_version`, ticket, validator hotkey, deadline, harness pins; always revoked; never claims hidden tickets. - Support both answers to #1664 open question 1 (core qualification required or not). ## Acceptance - [ ] Canary manifest under an agreed `research/dittobench-router-datagen/certification/v1` path with its sha256 pinned as `canary_manifest_sha256`. - [ ] Lease + receipt vectors in the contract package; a passing canary grants no score, rank or reward. Parent: #1664 · Board: https://github.com/orgs/ditto-assistant/projects/10",
       "state": "candidate",
       "payoutConfidence": 0.35,
       "autonomyFit": 1,
@@ -152,21 +155,21 @@
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 2026,
+      "economicValueUsd": 1664,
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5345137708",
+      "id": "github:5345139734",
       "source": "github",
-      "title": "[Bounty: $80] Point the Footer legal and support links at real destinations instead of '/'",
-      "url": "https://github.com/Movalabs-crew/mova-store/issues/80",
+      "title": "[Bounty: $90] Add token-registry unit tests for lib/stellar/config.ts",
+      "url": "https://github.com/Movalabs-crew/mova-store/issues/86",
       "repositoryApiUrl": "https://api.github.com/repos/Movalabs-crew/mova-store",
-      "rewardUsd": 80,
-      "score": 54,
+      "rewardUsd": 90,
+      "score": 46,
       "labels": [],
-      "commentCount": 3,
-      "updatedAt": "2026-09-06T17:44:40Z",
-      "summary": "**Context** All four footer links in components/Footer.jsx - 'Term of use', 'Privacy Policy', 'About us', '24/7 Customer Service' - hard-code href=\"/\" (lines 11,17,23,29), so every footer link just bounces users back to the landing page, and the heading wording 'Term of use' is ungrammatical. **Proposed Change** Give each footer link a real destination (add the legal/about/contact pages or drop the anchors) and fix the wording. **Acceptance Criteria** - Each footer link resolves to an existing route rather than '/' - Clicking any footer link no longer reloads the home page **Suggested Label**: bug **ETA:** 24 hours",
+      "commentCount": 6,
+      "updatedAt": "2026-09-06T19:34:11Z",
+      "summary": "**Context** SUPPORTED_TOKENS, defaultToken() and tokenForContract() in lib/stellar/config.ts drive decimals, trustline and symbol resolution used across orders.ts, checkout and account flows, but nothing tests them. The registry is assembled from env vars at module load, so tests must use vi.stubEnv + vi.resetModules + a dynamic import. **Proposed Change** Add tests/lib/stellar/config.test.ts asserting defaultToken() returns USDC, tokenForContract resolves known ids and returns undefined for unknown ones, the XLM entry is native, and overriding NEXT_PUBLIC_USDC_CONTRACT_ID / NEXT_PUBLIC_NATIVE_ASSET_CONTRACT_ID changes the registry after a fresh import. **Acceptance Criteria** - defaultToken() === SUPPORTED_TOKENS[0] and USDC/XLM both declare 7 decimals - tokenForContract returns undefined for an unknown contract id - Env-override assertions pass under stubEnv + module re-import; npm run test passes **Suggested Label**: tests **ETA:** 24 hours",
       "state": "candidate",
       "payoutConfidence": 0.65,
       "autonomyFit": 1,
@@ -175,16 +178,16 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 99,
+      "fastCashScore": 103,
       "survivalEligible": false,
       "eligibilityReason": "Competition is too high for bootstrap mode.",
       "competition": {
-        "comments": 3,
-        "attemptSignals": 2,
+        "comments": 6,
+        "attemptSignals": 1,
         "risk": "medium"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 80,
+      "economicValueUsd": 90,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -200,8 +203,8 @@
         "help wanted"
       ],
       "commentCount": 1,
-      "updatedAt": "2026-09-06T17:02:55Z",
-      "summary": "# Five difficulty tiers and a tactical roguelike expedition This tracking issue describes the next expansion of Twin and Expedition: larger configurable boards, longer-term progression, shared health and shields, distinct turn-based boss encounters, and individual artwork for professions and bosses. **Status: in progress.** Five difficulties, eight professions, 42 mission/achievement goals, 24 distinct shop gameplay unlocks plus two finite trainings, and up to 37 relics are implemented. The five-boss roster is Bastion Guardian, Brood Queen, Mirror Twins, Magnetic Knight and Clock Mage. PR #30 adds the expedition interface/tutorials; PR #31 adds boss challenges, titles and progress notices; PR #32 closes the current technical audit and polishes title/run controls. Broader balance acceptance and the independent-mode/derived-encounter deliveries below remain open. Each workstream continues through a focused PR; this roadmap stays open until its planned work is delivered. ## Agreed direction - Both Twin and Expedition receive **five difficulty choices**, with different board sizes and expedition lengths. - Permanent unlocks follow a **stepped curve**: an early rewarding run can unlock ",
+      "updatedAt": "2026-09-06T18:51:26Z",
+      "summary": "# Five difficulty tiers and a tactical roguelike expedition This tracking issue describes the next expansion of Twin and Expedition: larger configurable boards, longer-term progression, shared health and shields, distinct turn-based boss encounters, and individual artwork for professions and bosses. **Status: in progress.** Four standalone modes (Classic, Twin boards, Expedition and Sonar), five expedition difficulties, eight professions, 42 mission/achievement goals, 24 distinct shop gameplay unlocks plus two finite trainings, 22 title abilities and up to 37 relics are implemented. The five-boss roster is Bastion Guardian, Brood Queen, Mirror Twins, Magnetic Knight and Clock Mage. PR #33 releases Sonar; PR #34 adds title builds and reduces all goal currency to a combined 11,340 supplies while retaining existing money and licenses. Human balance playtesting and the remaining independent-mode/derived-encounter deliveries below remain open. Each workstream continues through a focused PR; this roadmap stays open until its planned work is delivered. ## Agreed direction - Both Twin and Expedition receive **five difficulty choices**, with different board sizes and expedition lengths. - P",
       "state": "candidate",
       "payoutConfidence": 0.35,
       "autonomyFit": 1,
@@ -223,17 +226,65 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5366360595",
+      "id": "github:4557579802",
       "source": "github",
-      "title": "Replace the retired Infirmary with a Cooking-based cocoa house and standalone Merry Mint gathering",
-      "url": "https://github.com/rijvirajib/wonderworks/issues/35",
-      "repositoryApiUrl": "https://api.github.com/repos/rijvirajib/wonderworks",
-      "rewardUsd": 32,
+      "title": "upload endpoint accepts empty file submissions as successful uploads",
+      "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/2850",
+      "repositoryApiUrl": "https://api.github.com/repos/SecureBananaLabs/bug-bounty",
+      "rewardUsd": 780,
+      "score": 50,
+      "labels": [
+        "bug",
+        "enhancement",
+        "good first issue",
+        "help wanted",
+        "bug bounty",
+        "AI agent friendly",
+        "bounty",
+        "💎 Bounty",
+        "$780"
+      ],
+      "commentCount": 19,
+      "updatedAt": "2026-09-06T19:04:29Z",
+      "summary": "## Bug `POST /api/uploads` currently returns `201` with `success: true` even when the multipart request does not include a `file` field. The response reports `status: \"no-file\"`, but it is still treated as a successful upload by HTTP status and response shape. ## Expected fix Reject upload requests that do not include a file with a clear `400` response, and keep successful upload responses reserved for requests that actually include `req.file`. Add route-level regression coverage for the missing-file case. ## Scope This issue is limited to missing-file handling in `POST /api/uploads` and focused API test coverage. This issue is limited only to the creator of this issue. This means that only the issue author can attempt to solve this issue. If you would like to work on it, please create another issue with the same contents and refer to issue #743 for more information. References #743.",
+      "state": "candidate",
+      "payoutConfidence": 0.92,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": true,
+      "fastCashScore": 94,
+      "survivalEligible": false,
+      "eligibilityReason": "Competition is too high for bootstrap mode.",
+      "competition": {
+        "comments": 19,
+        "attemptSignals": 4,
+        "risk": "high"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 780,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5312094670",
+      "source": "github",
+      "title": "HER Hack-Astron #5 | Spark-X2.5 Edge Agent Real-World Use Case Challenge",
+      "url": "https://github.com/XHToken/Spark-X2.5/issues/3",
+      "repositoryApiUrl": "https://api.github.com/repos/XHToken/Spark-X2.5",
+      "rewardUsd": 500,
       "score": 40,
-      "labels": [],
-      "commentCount": 5,
-      "updatedAt": "2026-09-06T17:40:22Z",
-      "summary": "## Owner-confirmed Day 13 outcome — shared cocoa tray for the penguins This supersedes the earlier prototype contract in comment 5560796929 where the first ordinary positive-Belonging visit completed the puzzle. The owner explicitly confirmed **Penguin delivery**. - Pippa and Puck are always visible and tappable at the lake entrance, including before Cocoa restoration. Their sadness and request for hot cocoa motivate completing the Cocoa setup. - After two cups are prepared, drop one free elf on either penguin. Atomically reserve exactly two unreserved ready cups for one shared request. One physical pickup at the Cocoa House and one two-cup tray trip serve both penguins; no one-cup fetch loops or carrying-skill gate. - With 0/1 unreserved cups, spend/reserve nothing and explain that two cups are needed. A second courier or a resident guest cannot take the same reserved cups. - **Actual serving of both cups completes Day 13, A Cup of Good Company, and opens Frostwater.** Restoration, Mint delivery, prepared stock, assignment or pickup alone cannot complete it. Ordinary resident visits remain a Morale service, without an additional mandatory quest visit. - Cocoa owns prepared, reserv",
+      "labels": [
+        "good first issue",
+        "help wanted",
+        "HER Hack-Astron",
+        "reward",
+        "bounty"
+      ],
+      "commentCount": 22,
+      "updatedAt": "2026-09-06T14:23:55Z",
+      "summary": "# English ## HER Hack-Astron #5 | Spark-X2.5 Edge Agent Real-World Use Case Challenge Turn real Spark-X2.5 runs into reproducible, discussable edge-agent use cases. For this challenge, obtain XHToken/Spark-X2.5-4B or Spark-X2.5-1.7B from Hugging Face (or a mirror such as ModelScope), conduct a real inference, agentic, coding, long-context, multilingual, quantization, or training experiment, and publish the complete use case in the corresponding model's Hugging Face Discussions. After publishing it, reply to this event's GitHub Issue with the Discussion link to enter. - Event page (GitHub Issues): https://github.com/XHToken/Spark-X2.5/issues - Hugging Face model collection: https://huggingface.co/collections/XHToken/spark-x25 - Spark-X2.5-4B: https://huggingface.co/XHToken/Spark-X2.5-4B - Spark-X2.5-1.7B: https://huggingface.co/XHToken/Spark-X2.5-1.7B - Spark-X2.5-4B Discussions: https://huggingface.co/XHToken/Spark-X2.5-4B/discussions - Spark-X2.5-1.7B Discussions: https://huggingface.co/XHToken/Spark-X2.5-1.7B/discussions - Mainland China mirror (recommended): https://www.modelscope.cn/collections/XHToken/Spark-X25 ## Schedule - Submissions open: September 1, 2026 - Challenge peri",
       "state": "candidate",
       "payoutConfidence": 0.35,
       "autonomyFit": 1,
@@ -242,51 +293,16 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 93,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 5,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 32,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5220496905",
-      "source": "github",
-      "title": "[Bounty] [BOUNTY] Break the NFH Wake holder gate — 25 USDC",
-      "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/882",
-      "repositoryApiUrl": "https://api.github.com/repos/zhangjiayang6835-cyber/bounty-plaza",
-      "rewardUsd": 25,
-      "score": 64,
-      "labels": [
-        "bounty",
-        "real"
-      ],
-      "commentCount": 6,
-      "updatedAt": "2026-09-06T17:41:56Z",
-      "summary": "### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/notforhumansfun-rgb/not-for-humans-mcp/issues/6 ### 漏洞描述 / Description [BOUNTY] Break the NFH Wake holder gate — 25 USDC ## 25 USDC audit bounty Find the first valid, non-duplicate way to make the **unmodified official NFH Wake Kit** at commit [`76e681e`](https://github.com/notforhumansfun-rgb/not-for-humans-mcp/commit/76e681e) emit a holder-gated mission or receipt when **no fresh direct-owner Agent Presence heartbeat exists for that token's current owner**. **Prize:** one award of **25 USDC**, paid after the finding is reproduced and fix coordination is complete. The settlement network and recipient address will be agreed privately with the accepted reporter. No gas reimbursement. **Closes:** September 5, 2026 at 23:59 UTC, or when an award is accepted. ### In scope - Missing, expired, delegated, or mismatched heartbeat bypasses - Canonical endpoint substitution or validation failure - Token/owner mismatch - Transfer or expiry races - A forged `HOLDER_VERIFIED_AT_WAKE` result through the unmodified official CLI - Parser, timestamp, or canonical-URL validation failures ### Not a finding - Editing or forking the so",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 89,
+      "fastCashScore": 78,
       "survivalEligible": false,
       "eligibilityReason": "Competition is too high for bootstrap mode.",
       "competition": {
-        "comments": 6,
-        "attemptSignals": 1,
-        "risk": "medium"
+        "comments": 22,
+        "attemptSignals": 0,
+        "risk": "high"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 25,
+      "economicValueUsd": 500,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -335,23 +351,33 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:4455330769\",\"rewardUsd\":150,\"fastCashScore\":118,\"updatedAt\":\"2026-09-05T23:37:20Z\",\"competition\":{\"comments\":25,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4553022084\",\"rewardUsd\":430,\"fastCashScore\":133,\"updatedAt\":\"2026-09-04T04:17:26Z\",\"competition\":{\"comments\":14,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4557563229\",\"rewardUsd\":780,\"fastCashScore\":123,\"updatedAt\":\"2026-09-04T05:51:12Z\",\"competition\":{\"comments\":10,\"attemptSignals\":2,\"risk\":\"medium\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":77,\"updatedAt\":\"2026-09-04T19:24:22Z\",\"competition\":{\"comments\":56,\"attemptSignals\":5,\"risk\":\"high\"}},{\"id\":\"github:5220496905\",\"rewardUsd\":25,\"fastCashScore\":89,\"updatedAt\":\"2026-09-06T17:41:56Z\",\"competition\":{\"comments\":6,\"attemptSignals\":1,\"risk\":\"medium\"}},{\"id\":\"github:5295068486\",\"rewardUsd\":58.88398389,\"fastCashScore\":95,\"updatedAt\":\"2026-09-06T15:50:12Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5345137708\",\"rewardUsd\":80,\"fastCashScore\":99,\"updatedAt\":\"2026-09-06T17:44:40Z\",\"competition\":{\"comments\":3,\"attemptSignals\":2,\"risk\":\"medium\"}},{\"id\":\"github:5345182233\",\"rewardUsd\":16,\"fastCashScore\":96,\"updatedAt\":\"2026-09-06T17:02:55Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5364786376\",\"rewardUsd\":2026,\"fastCashScore\":111,\"updatedAt\":\"2026-09-06T11:55:05Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5366360595\",\"rewardUsd\":32,\"fastCashScore\":93,\"updatedAt\":\"2026-09-06T17:40:22Z\",\"competition\":{\"comments\":5,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:4455330769\",\"rewardUsd\":150,\"fastCashScore\":118,\"updatedAt\":\"2026-09-06T18:31:43Z\",\"competition\":{\"comments\":26,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4557180255\",\"rewardUsd\":780,\"fastCashScore\":142,\"updatedAt\":\"2026-09-06T19:17:45Z\",\"competition\":{\"comments\":8,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4557552603\",\"rewardUsd\":780,\"fastCashScore\":126,\"updatedAt\":\"2026-09-06T19:05:58Z\",\"competition\":{\"comments\":8,\"attemptSignals\":2,\"risk\":\"medium\"}},{\"id\":\"github:4557579802\",\"rewardUsd\":780,\"fastCashScore\":94,\"updatedAt\":\"2026-09-06T19:04:29Z\",\"competition\":{\"comments\":19,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":77,\"updatedAt\":\"2026-09-04T19:24:22Z\",\"competition\":{\"comments\":56,\"attemptSignals\":5,\"risk\":\"high\"}},{\"id\":\"github:5295068486\",\"rewardUsd\":58.88398389,\"fastCashScore\":95,\"updatedAt\":\"2026-09-06T18:36:14Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5312094670\",\"rewardUsd\":500,\"fastCashScore\":78,\"updatedAt\":\"2026-09-06T14:23:55Z\",\"competition\":{\"comments\":22,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:5345139734\",\"rewardUsd\":90,\"fastCashScore\":103,\"updatedAt\":\"2026-09-06T19:34:11Z\",\"competition\":{\"comments\":6,\"attemptSignals\":1,\"risk\":\"medium\"}},{\"id\":\"github:5345182233\",\"rewardUsd\":16,\"fastCashScore\":96,\"updatedAt\":\"2026-09-06T18:51:26Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5367022030\",\"rewardUsd\":20,\"fastCashScore\":110,\"updatedAt\":\"2026-09-06T19:33:12Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5367068313\",\"rewardUsd\":1664,\"fastCashScore\":111,\"updatedAt\":\"2026-09-06T19:28:57Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
     "mode": true,
     "eligibleCount": 0,
-    "fundedSignalCount": 4,
+    "fundedSignalCount": 5,
     "objective": "first_real_confirmed_cash_fast",
     "policy": "bootstrap_basic_v1",
     "maxHours": 4,
     "minPayoutConfidence": 0.8,
     "competitionRequired": "low",
-    "rejectedFakeRevenueCount": 1,
+    "rejectedFakeRevenueCount": 2,
     "rejectedAlreadyPaidCount": 0,
-    "rejectedIdentityGateCount": 0
+    "rejectedIdentityGateCount": 1
   },
   "economicallyRejected": [
+    {
+      "id": "github:5367022030",
+      "title": "[Bug] npm test can report JS failures while the overall exit code still looks green",
+      "rewardUsd": 20,
+      "reasons": [
+        "testnet_or_test_token_reward",
+        "preclaim_or_identity_gate_not_configured"
+      ],
+      "rejectedAt": "2026-09-06T19:37:17.924Z"
+    },
     {
       "id": "github:5295068486",
       "title": "Orbit Testnet weekly report: 2026-08-24",
@@ -359,7 +385,7 @@
       "reasons": [
         "testnet_or_test_token_reward"
       ],
-      "rejectedAt": "2026-09-06T17:45:38.798Z"
+      "rejectedAt": "2026-09-06T19:37:17.925Z"
     },
     {
       "id": "github:5356980367",
@@ -1071,15 +1097,6 @@
         "preclaim_or_identity_gate_not_configured"
       ],
       "rejectedAt": "2026-08-24T12:29:16.050Z"
-    },
-    {
-      "id": "github:5234074189",
-      "title": "Reward history query joins a non-existent relation: GET /rewards/history crashes with 500",
-      "rewardUsd": 500,
-      "reasons": [
-        "already_rewarded_or_paid"
-      ],
-      "rejectedAt": "2026-08-24T11:49:51.923Z"
     }
   ]
 }
