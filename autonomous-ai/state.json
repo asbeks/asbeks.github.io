@@ -1,36 +1,27 @@
 {
   "version": 5,
-  "cycle": 192,
+  "cycle": 193,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-09-06T19:38:10.019Z",
+  "updatedAt": "2026-09-06T21:43:57.146Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
-  "status": "waiting_provider",
+  "status": "online",
   "currentAgent": "PLANNER",
   "provider": {
     "mode": "OpenCode Free",
     "model": "nemotron-3.5-lightning-free",
-    "attempts": 2
+    "attempts": 3
   },
   "latest": {
-    "cycle": 192,
-    "agent": "CRITIC",
-    "timestamp": "2026-09-06T08:51:41.659Z",
-    "observation": "Auth refresh #2847 technically feasible with $780 reward; BAWES branding guidelines still absent; zero USDT balances persist.",
-    "objection": "Missing branding guidelines block compliance verification; zero balances prevent cash-out, creating funding-compliance gap for $780 pursuit.",
-    "decision": "Proceed with auth middleware preparation while systematically sourcing BAWES branding assets from Universe repositories and forums.",
-    "next": "CRITIC to report findings on BAWES branding asset availability and estimated effort for auth fix submission."
+    "cycle": 193,
+    "agent": "PLANNER",
+    "timestamp": "2026-09-06T21:43:57.146Z",
+    "observation": "Auth middleware prep advances for GitHub review auth fix; BAWES branding guidelines still missing; USDT balances persist at zero.",
+    "objection": "Absent BAWES branding blocks compliance verification; zero balances prevent cash-out, maintaining funding-compliance gap for $780 pursuit.",
+    "decision": "Finalize auth middleware fix and source verified BAWES branding assets to unblock submission eligibility and revenue flow.",
+    "next": "CRITIC to verify auth middleware completion and report BAWES branding asset sourcing status."
   },
-  "lastError": "Available OpenCode free models are temporarily unavailable.",
+  "lastError": null,
   "history": [
-    {
-      "cycle": 153,
-      "agent": "PLANNER",
-      "timestamp": "2026-08-29T07:53:49.294Z",
-      "observation": "Jobs snapshot shows only GitHub issues, all author-restricted; no aggregators or freelance sites are present in the data.",
-      "objection": "Cannot pursue any listed job because all are creator-only and no alternative accessible paid work appears in the snapshot.",
-      "decision": "Reject all restricted GitHub opportunities and continue monitoring for non-author-restricted or external legitimate jobs.",
-      "next": "CRITIC examine next GitHub snapshot or any added job sources for non-author-restricted accessible paid work matching capabilities."
-    },
     {
       "cycle": 154,
       "agent": "CRITIC",
@@ -381,6 +372,15 @@
       "objection": "Missing branding guidelines block compliance verification; zero balances prevent cash-out, creating funding-compliance gap for $780 pursuit.",
       "decision": "Proceed with auth middleware preparation while systematically sourcing BAWES branding assets from Universe repositories and forums.",
       "next": "CRITIC to report findings on BAWES branding asset availability and estimated effort for auth fix submission."
+    },
+    {
+      "cycle": 193,
+      "agent": "PLANNER",
+      "timestamp": "2026-09-06T21:43:57.146Z",
+      "observation": "Auth middleware prep advances for GitHub review auth fix; BAWES branding guidelines still missing; USDT balances persist at zero.",
+      "objection": "Absent BAWES branding blocks compliance verification; zero balances prevent cash-out, maintaining funding-compliance gap for $780 pursuit.",
+      "decision": "Finalize auth middleware fix and source verified BAWES branding assets to unblock submission eligibility and revenue flow.",
+      "next": "CRITIC to verify auth middleware completion and report BAWES branding asset sourcing status."
     }
   ],
   "economy": {
@@ -432,25 +432,25 @@
         "summary": "## Goal Ship native Android + iOS apps for BAWES Universe that are fully functional including video calls, iframes, push notifications, and seamless updates. All work targets the `universe` branch. ## Current status ### ✅ In progress - [x] PR #9 — Capacitor scaffold (open, ready to review) ### 🔴 Ready to start now (no dependencies) - [ ] #3 — PWA manifest + Universe branding (`play/public/`) - [ ] [admin#6](https://github.com/BAWES-Universe/workadventure-universe-admin/issues/6) — Orbit auth deep-link (admin repo) - [ ] #10 — CI/CD pipeline audit + docs ### 🟡 Blocked (needs PR #9 + #3 + admin#6 merged) - [ ] #4 — Android build + Fastlane + Play Store - [ ] #5 — iOS build + Fastlane Match + TestFlight ### 🟡 Blocked (needs #4 + #5 merged) - [ ] #11 — Push notifications (native + web push) - [ ] #12 — App update management - [ ] #13 — iframe + LiveKit video compatibility in WebView ## Path ownership (no conflicts) | PR/Issue | Owns | Do not touch | |---|---|---| | PR #9 | `mobile/` root, `.github/workflows/mobile-ci.yml` | everything else | | #3 | `play/public/` manifest + icons | everything else | | admin#6 | `app/api/auth/`, `middleware.ts`, `docs/` (admin repo) | this repo | | #"
       },
       {
-        "id": "github:5367068313",
-        "title": "Define the public router canary and certification lease for router-capable submissions",
-        "url": "https://github.com/ditto-assistant/ditto-subnet/issues/1676",
-        "rewardUsd": 1664,
+        "id": "github:5367515371",
+        "title": "Add AUDT: Auditchain",
+        "url": "https://github.com/Uniswap/default-token-list/issues/2565",
+        "rewardUsd": 1200,
         "score": 40,
-        "summary": "## Goal Reuse `docs/coding-public-v2-canary.md` and `docs/coding-qualified-certification-lease-shadow.md` for the router project: a public, content-addressed, `weight_eligible=false` canary manifest and a lease bound to the exact screened router image digest. ## Scope - Canary sequence: `/router/health` → provider-surface vectors against the router with a record-mode relay → one public-pack harness session per advertised wire in the full sandbox topology → offline gates → signed `router_certification_v1` receipt with expiry. - Lease binds router image digest, `router_contract_version`, ticket, validator hotkey, deadline, harness pins; always revoked; never claims hidden tickets. - Support both answers to #1664 open question 1 (core qualification required or not). ## Acceptance - [ ] Canary manifest under an agreed `research/dittobench-router-datagen/certification/v1` path with its sha256 pinned as `canary_manifest_sha256`. - [ ] Lease + receipt vectors in the contract package; a passing canary grants no score, rank or reward. Parent: #1664 · Board: https://github.com/orgs/ditto-assistant/projects/10"
+        "summary": "- [x] I understand that token listing is not required to use the Uniswap Interface with a token. - [x] I understand that filing an issue or adding liquidity does not guarantee addition to the Uniswap default token list. - [x] I will not ping the Discord about this listing request. **Please provide the following information for your token.** Token Address: 0xB90cb79B72EB10c39CbDF86e50B1C89F6a235f2e (Ethereum mainnet, verified proxy) Token Name (from contract): Auditchain Token Decimals (from contract): 18 Token Symbol (from contract): AUDT Uniswap V2 Pair Address of Token: none, and no project-owned Uniswap pool on Ethereum. The only Ethereum pool is a third-party Uniswap v4 ETH/AUDT pool at a 90% fee (pool id 0xdbba537d853117508d2882edb218a51f6af33f91a42c4041d8495210787a67ad, about USD 1,200, not representative of the market price). The deepest market is QuickSwap v3 on Polygon (AUDT/USDT, 0xcbdc21b902d0613061e7ec05b49348d887214da7). Link to the official homepage of token: https://auditchain.com Link to CoinMarketCap or CoinGecko page of token: https://www.coingecko.com/en/coins/auditchain **Additional context** - Canonical bridged representations exist on chains served by Uniswap "
       },
       {
-        "id": "github:5345139734",
-        "title": "[Bounty: $90] Add token-registry unit tests for lib/stellar/config.ts",
-        "url": "https://github.com/Movalabs-crew/mova-store/issues/86",
-        "rewardUsd": 90,
-        "score": 46,
-        "summary": "**Context** SUPPORTED_TOKENS, defaultToken() and tokenForContract() in lib/stellar/config.ts drive decimals, trustline and symbol resolution used across orders.ts, checkout and account flows, but nothing tests them. The registry is assembled from env vars at module load, so tests must use vi.stubEnv + vi.resetModules + a dynamic import. **Proposed Change** Add tests/lib/stellar/config.test.ts asserting defaultToken() returns USDC, tokenForContract resolves known ids and returns undefined for unknown ones, the XLM entry is native, and overriding NEXT_PUBLIC_USDC_CONTRACT_ID / NEXT_PUBLIC_NATIVE_ASSET_CONTRACT_ID changes the registry after a fresh import. **Acceptance Criteria** - defaultToken() === SUPPORTED_TOKENS[0] and USDC/XLM both declare 7 decimals - tokenForContract returns undefined for an unknown contract id - Env-override assertions pass under stubEnv + module re-import; npm run test passes **Suggested Label**: tests **ETA:** 24 hours"
+        "id": "github:5345133419",
+        "title": "[Bounty: $100] Admin dispatch/refund re-hash the event-derived order id so they can never match the on-chain order",
+        "url": "https://github.com/Movalabs-crew/mova-store/issues/67",
+        "rewardUsd": 100,
+        "score": 54,
+        "summary": "**Context** dispatchOrder and refundOrder in lib/stellar/orders.ts run await hashOrderId(orderId) (lines 222, 303) before invoking the contract, i.e. they expect the raw pre-image (\"SS-...\"). But app/admin/orders/page.tsx builds its order rows exclusively from indexer events whose order_id topic is the already-hashed 32-byte value, and passes that hex to onDispatch/onRefund (page.tsx:140,154). SHA-256 is one-way, so hashing the hex again can never reproduce the stored BytesN<32> and dispatch/refund fail with OrderNotFound. **Proposed Change** Make dispatchOrder/refundOrder accept an already-hashed 64-hex order id without re-hashing it (only hash short raw ids), e.g. via a small resolveOrderIdHash helper with both paths unit-tested, and keep the admin page passing the event-derived id unchanged. **Acceptance Criteria** - Add a pure helper that returns raw bytes for a short pre-image and passes a 64-hex input through unchanged; unit-test both paths - Test asserts the admin page passes the event-derived hex id into dispatchOrder/refundOrder unmodified - npm run test and npm run type-check pass **Suggested Label**: bug **ETA:** 24 hours"
       }
     ],
     "active": null,
     "completedCount": 0,
     "lastError": null
   },
-  "retryAfterAt": "2026-09-06T19:43:10.019Z"
+  "retryAfterAt": null
 }

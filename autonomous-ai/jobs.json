@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-09-06T19:37:17.978Z",
+  "updatedAt": "2026-09-06T21:43:34.868Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -125,19 +125,17 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5367068313",
+      "id": "github:5367515371",
       "source": "github",
-      "title": "Define the public router canary and certification lease for router-capable submissions",
-      "url": "https://github.com/ditto-assistant/ditto-subnet/issues/1676",
-      "repositoryApiUrl": "https://api.github.com/repos/ditto-assistant/ditto-subnet",
-      "rewardUsd": 1664,
+      "title": "Add AUDT: Auditchain",
+      "url": "https://github.com/Uniswap/default-token-list/issues/2565",
+      "repositoryApiUrl": "https://api.github.com/repos/Uniswap/default-token-list",
+      "rewardUsd": 1200,
       "score": 40,
-      "labels": [
-        "enhancement"
-      ],
+      "labels": [],
       "commentCount": 0,
-      "updatedAt": "2026-09-06T19:28:57Z",
-      "summary": "## Goal Reuse `docs/coding-public-v2-canary.md` and `docs/coding-qualified-certification-lease-shadow.md` for the router project: a public, content-addressed, `weight_eligible=false` canary manifest and a lease bound to the exact screened router image digest. ## Scope - Canary sequence: `/router/health` → provider-surface vectors against the router with a record-mode relay → one public-pack harness session per advertised wire in the full sandbox topology → offline gates → signed `router_certification_v1` receipt with expiry. - Lease binds router image digest, `router_contract_version`, ticket, validator hotkey, deadline, harness pins; always revoked; never claims hidden tickets. - Support both answers to #1664 open question 1 (core qualification required or not). ## Acceptance - [ ] Canary manifest under an agreed `research/dittobench-router-datagen/certification/v1` path with its sha256 pinned as `canary_manifest_sha256`. - [ ] Lease + receipt vectors in the contract package; a passing canary grants no score, rank or reward. Parent: #1664 · Board: https://github.com/orgs/ditto-assistant/projects/10",
+      "updatedAt": "2026-09-06T20:59:51Z",
+      "summary": "- [x] I understand that token listing is not required to use the Uniswap Interface with a token. - [x] I understand that filing an issue or adding liquidity does not guarantee addition to the Uniswap default token list. - [x] I will not ping the Discord about this listing request. **Please provide the following information for your token.** Token Address: 0xB90cb79B72EB10c39CbDF86e50B1C89F6a235f2e (Ethereum mainnet, verified proxy) Token Name (from contract): Auditchain Token Decimals (from contract): 18 Token Symbol (from contract): AUDT Uniswap V2 Pair Address of Token: none, and no project-owned Uniswap pool on Ethereum. The only Ethereum pool is a third-party Uniswap v4 ETH/AUDT pool at a 90% fee (pool id 0xdbba537d853117508d2882edb218a51f6af33f91a42c4041d8495210787a67ad, about USD 1,200, not representative of the market price). The deepest market is QuickSwap v3 on Polygon (AUDT/USDT, 0xcbdc21b902d0613061e7ec05b49348d887214da7). Link to the official homepage of token: https://auditchain.com Link to CoinMarketCap or CoinGecko page of token: https://www.coingecko.com/en/coins/auditchain **Additional context** - Canonical bridged representations exist on chains served by Uniswap ",
       "state": "candidate",
       "payoutConfidence": 0.35,
       "autonomyFit": 1,
@@ -155,21 +153,21 @@
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 1664,
+      "economicValueUsd": 1200,
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5345139734",
+      "id": "github:5345133419",
       "source": "github",
-      "title": "[Bounty: $90] Add token-registry unit tests for lib/stellar/config.ts",
-      "url": "https://github.com/Movalabs-crew/mova-store/issues/86",
+      "title": "[Bounty: $100] Admin dispatch/refund re-hash the event-derived order id so they can never match the on-chain order",
+      "url": "https://github.com/Movalabs-crew/mova-store/issues/67",
       "repositoryApiUrl": "https://api.github.com/repos/Movalabs-crew/mova-store",
-      "rewardUsd": 90,
-      "score": 46,
+      "rewardUsd": 100,
+      "score": 54,
       "labels": [],
-      "commentCount": 6,
-      "updatedAt": "2026-09-06T19:34:11Z",
-      "summary": "**Context** SUPPORTED_TOKENS, defaultToken() and tokenForContract() in lib/stellar/config.ts drive decimals, trustline and symbol resolution used across orders.ts, checkout and account flows, but nothing tests them. The registry is assembled from env vars at module load, so tests must use vi.stubEnv + vi.resetModules + a dynamic import. **Proposed Change** Add tests/lib/stellar/config.test.ts asserting defaultToken() returns USDC, tokenForContract resolves known ids and returns undefined for unknown ones, the XLM entry is native, and overriding NEXT_PUBLIC_USDC_CONTRACT_ID / NEXT_PUBLIC_NATIVE_ASSET_CONTRACT_ID changes the registry after a fresh import. **Acceptance Criteria** - defaultToken() === SUPPORTED_TOKENS[0] and USDC/XLM both declare 7 decimals - tokenForContract returns undefined for an unknown contract id - Env-override assertions pass under stubEnv + module re-import; npm run test passes **Suggested Label**: tests **ETA:** 24 hours",
+      "commentCount": 3,
+      "updatedAt": "2026-09-06T20:55:36Z",
+      "summary": "**Context** dispatchOrder and refundOrder in lib/stellar/orders.ts run await hashOrderId(orderId) (lines 222, 303) before invoking the contract, i.e. they expect the raw pre-image (\"SS-...\"). But app/admin/orders/page.tsx builds its order rows exclusively from indexer events whose order_id topic is the already-hashed 32-byte value, and passes that hex to onDispatch/onRefund (page.tsx:140,154). SHA-256 is one-way, so hashing the hex again can never reproduce the stored BytesN<32> and dispatch/refund fail with OrderNotFound. **Proposed Change** Make dispatchOrder/refundOrder accept an already-hashed 64-hex order id without re-hashing it (only hash short raw ids), e.g. via a small resolveOrderIdHash helper with both paths unit-tested, and keep the admin page passing the event-derived id unchanged. **Acceptance Criteria** - Add a pure helper that returns raw bytes for a short pre-image and passes a 64-hex input through unchanged; unit-test both paths - Test asserts the admin page passes the event-derived hex id into dispatchOrder/refundOrder unmodified - npm run test and npm run type-check pass **Suggested Label**: bug **ETA:** 24 hours",
       "state": "candidate",
       "payoutConfidence": 0.65,
       "autonomyFit": 1,
@@ -178,16 +176,82 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 103,
+      "fastCashScore": 108,
       "survivalEligible": false,
       "eligibilityReason": "Competition is too high for bootstrap mode.",
       "competition": {
-        "comments": 6,
+        "comments": 3,
         "attemptSignals": 1,
         "risk": "medium"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 90,
+      "economicValueUsd": 100,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5367696278",
+      "source": "github",
+      "title": "RESTful API 服务支持一个用户有多个 WebAuthn 凭证",
+      "url": "https://github.com/idea2app/REST-Node-ts/issues/22",
+      "repositoryApiUrl": "https://api.github.com/repos/idea2app/REST-Node-ts",
+      "rewardUsd": 45,
+      "score": 50,
+      "labels": [
+        "reward"
+      ],
+      "commentCount": 0,
+      "updatedAt": "2026-09-06T21:18:45Z",
+      "summary": "### Task description 将 [`POST /registration` 子路由](https://github.com/idea2app/REST-Node-ts/blob/5bb6becdfe2e586c337517c031e29eab3f797041/source/controller/WebAuthn.ts#L27-L61) 改为以下几个路由： 1. `GET /session/credential`：分页查找当前登录用户的所有凭证 2. `POST /session/credential`：新增一个当前登录用户的凭证 3. `DELETE /session/credential/:cid`：删除一个当前登录用户的凭证 `POST /authentication` 接口定义保持不变，但要实现“电邮地址 + 某一凭证”的匹配与验证。 所有逻辑优先使用 model 对应的 service，具体写法参考其它 controller。 ### Reward currency TQT $ ### Reward amount 45 ### Reward payer 石垚 <tech-query@idea2app.cn> ### Task source https://idea2app.feishu.cn/record/JtharyQxLejFOzc9JmbcULpmnJd",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 103,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 45,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5354501411",
+      "source": "github",
+      "title": "Atlas Forge Live Dashboard",
+      "url": "https://github.com/tjhuber2009-eng/TestRepo/issues/20",
+      "repositoryApiUrl": "https://api.github.com/repos/tjhuber2009-eng/TestRepo",
+      "rewardUsd": 33.7,
+      "score": 40,
+      "labels": [],
+      "commentCount": 0,
+      "updatedAt": "2026-09-06T21:41:52Z",
+      "summary": "# AUTORESEARCH Live Dashboard > **Auto-updated:** 2026-09-06 21:41:49 UTC > **Protocol:** `nested_chronological_v3` > **Phase:** **BREADTH** ## Start here — current answers | Question | Current answer | Key numbers | |---|---|---| | **Private account** | V4 authoritative portfolio at **55% max concentration** | CAGR **27.45%** · observed DD **-18.93%** · bootstrap q95 DD **31.27%** | | **Best repeated prop economics** | **FTMO 2-Step · Max repeat payout** | pass **33.7%** · 12-cycle reward **15.68%** · funded survival **95.4%** | | **Simpler prop alternative** | **FTMO 1-Step · Max repeat payout** | pass **35.8%** · 12-cycle reward **8.44%** | | **Balanced exact transfer** | **btc_rsi_adx__eth__prop** | pass **33.0%** · reward **9.06%** · survival **93.2%** | | **Research maturity** | **BREADTH** · development only | core breadth **23.27%** (1,196/5,140) · PBO-ready **71/405** · hidden validation **SEALED** | | **Market expansion** | **30 stocks + 7 FX** · isolated lane | **1,110 tracks** · breadth 0.63% · FX development **2020–2021** · 2022 hidden validation **SEALED** | ### What happens next 1. Let every exact prop adapter compete in V4; keep only genuine frontier winners. 2. Con",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 101,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 33.7,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -244,8 +308,8 @@
         "💎 Bounty",
         "$780"
       ],
-      "commentCount": 19,
-      "updatedAt": "2026-09-06T19:04:29Z",
+      "commentCount": 18,
+      "updatedAt": "2026-09-06T21:28:04Z",
       "summary": "## Bug `POST /api/uploads` currently returns `201` with `success: true` even when the multipart request does not include a `file` field. The response reports `status: \"no-file\"`, but it is still treated as a successful upload by HTTP status and response shape. ## Expected fix Reject upload requests that do not include a file with a clear `400` response, and keep successful upload responses reserved for requests that actually include `req.file`. Add route-level regression coverage for the missing-file case. ## Scope This issue is limited to missing-file handling in `POST /api/uploads` and focused API test coverage. This issue is limited only to the creator of this issue. This means that only the issue author can attempt to solve this issue. If you would like to work on it, please create another issue with the same contents and refer to issue #743 for more information. References #743.",
       "state": "candidate",
       "payoutConfidence": 0.92,
@@ -255,54 +319,16 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": true,
-      "fastCashScore": 94,
+      "fastCashScore": 95,
       "survivalEligible": false,
       "eligibilityReason": "Competition is too high for bootstrap mode.",
       "competition": {
-        "comments": 19,
+        "comments": 18,
         "attemptSignals": 4,
         "risk": "high"
       },
       "realMoneyEligible": true,
       "economicValueUsd": 780,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5312094670",
-      "source": "github",
-      "title": "HER Hack-Astron #5 | Spark-X2.5 Edge Agent Real-World Use Case Challenge",
-      "url": "https://github.com/XHToken/Spark-X2.5/issues/3",
-      "repositoryApiUrl": "https://api.github.com/repos/XHToken/Spark-X2.5",
-      "rewardUsd": 500,
-      "score": 40,
-      "labels": [
-        "good first issue",
-        "help wanted",
-        "HER Hack-Astron",
-        "reward",
-        "bounty"
-      ],
-      "commentCount": 22,
-      "updatedAt": "2026-09-06T14:23:55Z",
-      "summary": "# English ## HER Hack-Astron #5 | Spark-X2.5 Edge Agent Real-World Use Case Challenge Turn real Spark-X2.5 runs into reproducible, discussable edge-agent use cases. For this challenge, obtain XHToken/Spark-X2.5-4B or Spark-X2.5-1.7B from Hugging Face (or a mirror such as ModelScope), conduct a real inference, agentic, coding, long-context, multilingual, quantization, or training experiment, and publish the complete use case in the corresponding model's Hugging Face Discussions. After publishing it, reply to this event's GitHub Issue with the Discussion link to enter. - Event page (GitHub Issues): https://github.com/XHToken/Spark-X2.5/issues - Hugging Face model collection: https://huggingface.co/collections/XHToken/spark-x25 - Spark-X2.5-4B: https://huggingface.co/XHToken/Spark-X2.5-4B - Spark-X2.5-1.7B: https://huggingface.co/XHToken/Spark-X2.5-1.7B - Spark-X2.5-4B Discussions: https://huggingface.co/XHToken/Spark-X2.5-4B/discussions - Spark-X2.5-1.7B Discussions: https://huggingface.co/XHToken/Spark-X2.5-1.7B/discussions - Mainland China mirror (recommended): https://www.modelscope.cn/collections/XHToken/Spark-X25 ## Schedule - Submissions open: September 1, 2026 - Challenge peri",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 78,
-      "survivalEligible": false,
-      "eligibilityReason": "Competition is too high for bootstrap mode.",
-      "competition": {
-        "comments": 22,
-        "attemptSignals": 0,
-        "risk": "high"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 500,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -351,7 +377,7 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:4455330769\",\"rewardUsd\":150,\"fastCashScore\":118,\"updatedAt\":\"2026-09-06T18:31:43Z\",\"competition\":{\"comments\":26,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4557180255\",\"rewardUsd\":780,\"fastCashScore\":142,\"updatedAt\":\"2026-09-06T19:17:45Z\",\"competition\":{\"comments\":8,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4557552603\",\"rewardUsd\":780,\"fastCashScore\":126,\"updatedAt\":\"2026-09-06T19:05:58Z\",\"competition\":{\"comments\":8,\"attemptSignals\":2,\"risk\":\"medium\"}},{\"id\":\"github:4557579802\",\"rewardUsd\":780,\"fastCashScore\":94,\"updatedAt\":\"2026-09-06T19:04:29Z\",\"competition\":{\"comments\":19,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":77,\"updatedAt\":\"2026-09-04T19:24:22Z\",\"competition\":{\"comments\":56,\"attemptSignals\":5,\"risk\":\"high\"}},{\"id\":\"github:5295068486\",\"rewardUsd\":58.88398389,\"fastCashScore\":95,\"updatedAt\":\"2026-09-06T18:36:14Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5312094670\",\"rewardUsd\":500,\"fastCashScore\":78,\"updatedAt\":\"2026-09-06T14:23:55Z\",\"competition\":{\"comments\":22,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:5345139734\",\"rewardUsd\":90,\"fastCashScore\":103,\"updatedAt\":\"2026-09-06T19:34:11Z\",\"competition\":{\"comments\":6,\"attemptSignals\":1,\"risk\":\"medium\"}},{\"id\":\"github:5345182233\",\"rewardUsd\":16,\"fastCashScore\":96,\"updatedAt\":\"2026-09-06T18:51:26Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5367022030\",\"rewardUsd\":20,\"fastCashScore\":110,\"updatedAt\":\"2026-09-06T19:33:12Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5367068313\",\"rewardUsd\":1664,\"fastCashScore\":111,\"updatedAt\":\"2026-09-06T19:28:57Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:4455330769\",\"rewardUsd\":150,\"fastCashScore\":118,\"updatedAt\":\"2026-09-06T18:31:43Z\",\"competition\":{\"comments\":26,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4557180255\",\"rewardUsd\":780,\"fastCashScore\":142,\"updatedAt\":\"2026-09-06T19:17:45Z\",\"competition\":{\"comments\":8,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4557552603\",\"rewardUsd\":780,\"fastCashScore\":126,\"updatedAt\":\"2026-09-06T19:05:58Z\",\"competition\":{\"comments\":8,\"attemptSignals\":2,\"risk\":\"medium\"}},{\"id\":\"github:4557579802\",\"rewardUsd\":780,\"fastCashScore\":95,\"updatedAt\":\"2026-09-06T21:28:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":77,\"updatedAt\":\"2026-09-04T19:24:22Z\",\"competition\":{\"comments\":56,\"attemptSignals\":5,\"risk\":\"high\"}},{\"id\":\"github:5295068486\",\"rewardUsd\":58.88398389,\"fastCashScore\":95,\"updatedAt\":\"2026-09-06T18:36:14Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5345133419\",\"rewardUsd\":100,\"fastCashScore\":108,\"updatedAt\":\"2026-09-06T20:55:36Z\",\"competition\":{\"comments\":3,\"attemptSignals\":1,\"risk\":\"medium\"}},{\"id\":\"github:5345182233\",\"rewardUsd\":16,\"fastCashScore\":96,\"updatedAt\":\"2026-09-06T18:51:26Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5354501411\",\"rewardUsd\":33.7,\"fastCashScore\":101,\"updatedAt\":\"2026-09-06T21:41:52Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5367020909\",\"rewardUsd\":30,\"fastCashScore\":115,\"updatedAt\":\"2026-09-06T21:11:48Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5367021714\",\"rewardUsd\":25,\"fastCashScore\":112,\"updatedAt\":\"2026-09-06T21:31:20Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5367022030\",\"rewardUsd\":20,\"fastCashScore\":90,\"updatedAt\":\"2026-09-06T21:33:57Z\",\"competition\":{\"comments\":16,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:5367515371\",\"rewardUsd\":1200,\"fastCashScore\":111,\"updatedAt\":\"2026-09-06T20:59:51Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5367696278\",\"rewardUsd\":45,\"fastCashScore\":103,\"updatedAt\":\"2026-09-06T21:18:45Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
@@ -363,20 +389,29 @@
     "maxHours": 4,
     "minPayoutConfidence": 0.8,
     "competitionRequired": "low",
-    "rejectedFakeRevenueCount": 2,
+    "rejectedFakeRevenueCount": 4,
     "rejectedAlreadyPaidCount": 0,
-    "rejectedIdentityGateCount": 1
+    "rejectedIdentityGateCount": 2
   },
   "economicallyRejected": [
     {
-      "id": "github:5367022030",
-      "title": "[Bug] npm test can report JS failures while the overall exit code still looks green",
-      "rewardUsd": 20,
+      "id": "github:5367020909",
+      "title": "[Bug] Login builds uploadOptions with callbacks then ignores them in the useFileUpload call",
+      "rewardUsd": 30,
       "reasons": [
         "testnet_or_test_token_reward",
         "preclaim_or_identity_gate_not_configured"
       ],
-      "rejectedAt": "2026-09-06T19:37:17.924Z"
+      "rejectedAt": "2026-09-06T21:43:34.812Z"
+    },
+    {
+      "id": "github:5367021714",
+      "title": "[Bug] mapUploadError.ts and mapUploadError.cjs disagree on network heuristics",
+      "rewardUsd": 25,
+      "reasons": [
+        "testnet_or_test_token_reward"
+      ],
+      "rejectedAt": "2026-09-06T21:43:34.812Z"
     },
     {
       "id": "github:5295068486",
@@ -385,7 +420,17 @@
       "reasons": [
         "testnet_or_test_token_reward"
       ],
-      "rejectedAt": "2026-09-06T19:37:17.925Z"
+      "rejectedAt": "2026-09-06T21:43:34.813Z"
+    },
+    {
+      "id": "github:5367022030",
+      "title": "[Bug] npm test can report JS failures while the overall exit code still looks green",
+      "rewardUsd": 20,
+      "reasons": [
+        "testnet_or_test_token_reward",
+        "preclaim_or_identity_gate_not_configured"
+      ],
+      "rejectedAt": "2026-09-06T21:43:34.813Z"
     },
     {
       "id": "github:5356980367",
@@ -1079,24 +1124,6 @@
         "preclaim_or_identity_gate_not_configured"
       ],
       "rejectedAt": "2026-08-24T15:10:27.575Z"
-    },
-    {
-      "id": "github:5234954701",
-      "title": "calculate_sla's duplicate detection ignores the severity symbol: identical configs across severities make different-severity resubmissions idempotent replays",
-      "rewardUsd": 750,
-      "reasons": [
-        "already_rewarded_or_paid"
-      ],
-      "rejectedAt": "2026-08-24T13:33:17.472Z"
-    },
-    {
-      "id": "github:5153696971",
-      "title": "Add cats instances for DBIOAction",
-      "rewardUsd": 100,
-      "reasons": [
-        "preclaim_or_identity_gate_not_configured"
-      ],
-      "rejectedAt": "2026-08-24T12:29:16.050Z"
     }
   ]
 }
