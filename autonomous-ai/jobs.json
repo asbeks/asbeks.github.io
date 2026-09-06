@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-09-06T15:44:01.324Z",
+  "updatedAt": "2026-09-06T17:45:38.843Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -156,56 +156,19 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5364684932",
+      "id": "github:5345137708",
       "source": "github",
-      "title": "anychain-tron 0.2.14: non-canonical varint in fee_limit breaks TronGrid broadcast (NPE)",
-      "url": "https://github.com/nhitranbtc/blockchain-sdk/issues/540",
-      "repositoryApiUrl": "https://api.github.com/repos/nhitranbtc/blockchain-sdk",
-      "rewardUsd": 61.5,
-      "score": 40,
-      "labels": [
-        "bug",
-        "priority/p1",
-        "backlog",
-        "rust-tron-core"
-      ],
-      "commentCount": 0,
-      "updatedAt": "2026-09-06T11:32:47Z",
-      "summary": "## anychain-tron 0.2.14 emits non-canonical varint for fee_limit, breaks `wallet/broadcasttransaction` against TronGrid ### Summary `tron-wallet-core`'s live Nile USDT-TRC20 broadcast (`tests/v10_broadcast.rs::live_broadcast_usdt_trc20_to_recipient_succeeds_on_nile`) fails with HTTP 200 + `Error: \"class java.lang.NullPointerException : null\"`. The error is reproducible via raw curl — not a Rust client bug. Root cause: the wire bytes anychain-tron emits carry a spurious `01` byte between the fee_limit tag (`90`) and the canonical varint, so TronGrid's Java parser reads `fee_limit = 1` AND sees an unknown field 16 (`1,015,625`) which it cannot deserialize. ### Repro Sender `TFMTNsHwoAftCPxKzMsY93sizkmwS8gJwm` funded with 100 TRX + 61.5 USDT on Nile (verified 2026-09-06). Recipient `TJdcLjM1KvzGotZ5MxEAZZbnT6YCuAYRaf`. `RUN_TRON_NILE=1 cargo test -p tron-wallet-core --test v10_broadcast -- --include-ignored`. ### Observed vs Expected Observed final 6 bytes of `raw_data_hex` (from the test's `tx.to_bytes()` of the unsigned Raw proto): ``` 90 01 80 c9 fe 3d ``` Decoded per protobuf wire spec: - tag `0x90` -> field 18, varint - varint `01 80 c9 fe 3d` -> `0x01` has high bit clear -> vari",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 105,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 0,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 61.5,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5321668806",
-      "source": "github",
-      "title": "LOOT-OCCURRENCE-ID-001 — Collision-free semantic reward occurrence key across domains and creature families",
-      "url": "https://github.com/KevinRabbe/underworld/issues/511",
-      "repositoryApiUrl": "https://api.github.com/repos/KevinRabbe/underworld",
-      "rewardUsd": 214,
-      "score": 40,
+      "title": "[Bounty: $80] Point the Footer legal and support links at real destinations instead of '/'",
+      "url": "https://github.com/Movalabs-crew/mova-store/issues/80",
+      "repositoryApiUrl": "https://api.github.com/repos/Movalabs-crew/mova-store",
+      "rewardUsd": 80,
+      "score": 54,
       "labels": [],
-      "commentCount": 8,
-      "updatedAt": "2026-09-06T15:34:02Z",
-      "summary": "ID: LOOT-OCCURRENCE-ID-001 Status: **PLANNED — CROSS-DOMAIN/CROSS-FAMILY LOOT IDENTITY HARDENING / IMPLEMENTATION WIP=0** Priority: P1 future first-Biome/two-domain loot composition after normal #281/#33 sequencing Category: Loot / Identity / Persistence / Creature Occurrence Accepted semantic reward authority: #214 Accepted M3 persistence/allocator evidence: #217/#272 Domain identity: #432/#404 Underworld encounter occurrence owner: #377 First-Biome occurrence owner: #488 Wildlife/hostile actors: #480/#487 World-loot presentation/locator: #481/#507/#508/#510 Integrated acceptance: #499 Board/roadmap: #33/#405/#470 ## Why this card exists Read-only current-source audit confirms `LootRewardService` uses the caller-supplied **bare String `occurrence_id` as its complete service-wide identity**: ```gdscript var _issued_occurrences: Dictionary = {} var _pending_by_occurrence: Dictionary = {} if _issued_occurrences.has(occurrence_id): ... _issued_occurrences[occurrence_id] = true _pending_by_occurrence[occurrence_id] = pending ``` Current M3 is safe only inside its narrow prototype assumptions: - Burrowers use `burrower_N`; - #217/#272 prove restored `burrower_42` advances that Burrower ",
+      "commentCount": 3,
+      "updatedAt": "2026-09-06T17:44:40Z",
+      "summary": "**Context** All four footer links in components/Footer.jsx - 'Term of use', 'Privacy Policy', 'About us', '24/7 Customer Service' - hard-code href=\"/\" (lines 11,17,23,29), so every footer link just bounces users back to the landing page, and the heading wording 'Term of use' is ungrammatical. **Proposed Change** Give each footer link a real destination (add the legal/about/contact pages or drop the anchors) and fix the wording. **Acceptance Criteria** - Each footer link resolves to an existing route rather than '/' - Clicking any footer link no longer reloads the home page **Suggested Label**: bug **ETA:** 24 hours",
       "state": "candidate",
-      "payoutConfidence": 0.35,
+      "payoutConfidence": 0.65,
       "autonomyFit": 1,
       "requiresHumanGate": false,
       "requiresSpecialHardware": false,
@@ -216,12 +179,12 @@
       "survivalEligible": false,
       "eligibilityReason": "Competition is too high for bootstrap mode.",
       "competition": {
-        "comments": 8,
-        "attemptSignals": 0,
+        "comments": 3,
+        "attemptSignals": 2,
         "risk": "medium"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 214,
+      "economicValueUsd": 80,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -237,8 +200,8 @@
         "help wanted"
       ],
       "commentCount": 1,
-      "updatedAt": "2026-09-06T07:45:45Z",
-      "summary": "# Five difficulty tiers and a tactical roguelike expedition This tracking issue describes the next expansion of Twin and Expedition: larger configurable boards, longer-term progression, shared health and shields, distinct turn-based boss encounters, and individual artwork for professions and bosses. **Status: in progress.** Five difficulties, eight professions, 30 mission/achievement goals, 24 distinct shop gameplay unlocks plus two finite trainings, and up to 37 relics are released. The tactical roster now includes Bastion Guardian, Brood Queen, Mirror Twins (PR #20) and **Magnetic Knight (PR #25)**. Shared combat builds shipped in PR #18; current-rule save retirement and mobile long-press fixes shipped in PR #19. Clock Mage is merged in PR #29; broader balance acceptance remains open below. Each workstream is completed through a reviewed PR; this roadmap stays open until all planned work is delivered. ## Agreed direction - Both Twin and Expedition receive **five difficulty choices**, with different board sizes and expedition lengths. - Permanent unlocks follow a **stepped curve**: an early rewarding run can unlock two choices, intermediate upgrades take several runs, and the most",
+      "updatedAt": "2026-09-06T17:02:55Z",
+      "summary": "# Five difficulty tiers and a tactical roguelike expedition This tracking issue describes the next expansion of Twin and Expedition: larger configurable boards, longer-term progression, shared health and shields, distinct turn-based boss encounters, and individual artwork for professions and bosses. **Status: in progress.** Five difficulties, eight professions, 42 mission/achievement goals, 24 distinct shop gameplay unlocks plus two finite trainings, and up to 37 relics are implemented. The five-boss roster is Bastion Guardian, Brood Queen, Mirror Twins, Magnetic Knight and Clock Mage. PR #30 adds the expedition interface/tutorials; PR #31 adds boss challenges, titles and progress notices; PR #32 closes the current technical audit and polishes title/run controls. Broader balance acceptance and the independent-mode/derived-encounter deliveries below remain open. Each workstream continues through a focused PR; this roadmap stays open until its planned work is delivered. ## Agreed direction - Both Twin and Expedition receive **five difficulty choices**, with different board sizes and expedition lengths. - Permanent unlocks follow a **stepped curve**: an early rewarding run can unlock ",
       "state": "candidate",
       "payoutConfidence": 0.35,
       "autonomyFit": 1,
@@ -260,17 +223,17 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5316770400",
+      "id": "github:5366360595",
       "source": "github",
-      "title": "Setup and spike: gamification mechanics",
-      "url": "https://github.com/GTBitsOfGood/pink-stem/issues/5",
-      "repositoryApiUrl": "https://api.github.com/repos/GTBitsOfGood/pink-stem",
-      "rewardUsd": 12,
-      "score": 38,
+      "title": "Replace the retired Infirmary with a Cooking-based cocoa house and standalone Merry Mint gathering",
+      "url": "https://github.com/rijvirajib/wonderworks/issues/35",
+      "repositoryApiUrl": "https://api.github.com/repos/rijvirajib/wonderworks",
+      "rewardUsd": 32,
+      "score": 40,
       "labels": [],
-      "commentCount": 0,
-      "updatedAt": "2026-09-06T15:35:31Z",
-      "summary": "Sprint context: `docs/sprints/sprint-1.md` ### Description Get your dev environment running, then research how other platforms handle gamification and propose a system for Pink STEM. The nonprofit has been specific about wanting scenario-based challenges where students earn points for problem solving, which teachers can use toward grades. This stays in scope whichever direction we take. ### Acceptance Criteria - [x] `nvm use`, `npm install`, and `npm run dev` serves http://localhost:3000 - [x] You can create, list and delete a note in the demo app (for testing to make sure everything works) - [x] `npm run lint`, `typecheck`, `format:check` and `build` all pass locally - [x] Read `docs/ARCHITECTURE.md` and make sure you understand it. Please let me know if you have any questions - [ ] `docs/spikes/gamification.md` breaks down at least three comparable products (Duolingo, etc): the core loop, the unit of reward, and what makes it work for K-12 - [ ] Make around 8-10 game ideas for the Aviation course that we will develop this semester and make sure that the games are actually feasible to develop - [ ] It recommends three or four mechanics and says which ones you are leaving out and w",
+      "commentCount": 5,
+      "updatedAt": "2026-09-06T17:40:22Z",
+      "summary": "## Owner-confirmed Day 13 outcome — shared cocoa tray for the penguins This supersedes the earlier prototype contract in comment 5560796929 where the first ordinary positive-Belonging visit completed the puzzle. The owner explicitly confirmed **Penguin delivery**. - Pippa and Puck are always visible and tappable at the lake entrance, including before Cocoa restoration. Their sadness and request for hot cocoa motivate completing the Cocoa setup. - After two cups are prepared, drop one free elf on either penguin. Atomically reserve exactly two unreserved ready cups for one shared request. One physical pickup at the Cocoa House and one two-cup tray trip serve both penguins; no one-cup fetch loops or carrying-skill gate. - With 0/1 unreserved cups, spend/reserve nothing and explain that two cups are needed. A second courier or a resident guest cannot take the same reserved cups. - **Actual serving of both cups completes Day 13, A Cup of Good Company, and opens Frostwater.** Restoration, Mint delivery, prepared stock, assignment or pickup alone cannot complete it. Ordinary resident visits remain a Morale service, without an additional mandatory quest visit. - Cocoa owns prepared, reserv",
       "state": "candidate",
       "payoutConfidence": 0.35,
       "autonomyFit": 1,
@@ -279,16 +242,51 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 96,
+      "fastCashScore": 93,
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
-        "comments": 0,
+        "comments": 5,
         "attemptSignals": 0,
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 12,
+      "economicValueUsd": 32,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5220496905",
+      "source": "github",
+      "title": "[Bounty] [BOUNTY] Break the NFH Wake holder gate — 25 USDC",
+      "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/882",
+      "repositoryApiUrl": "https://api.github.com/repos/zhangjiayang6835-cyber/bounty-plaza",
+      "rewardUsd": 25,
+      "score": 64,
+      "labels": [
+        "bounty",
+        "real"
+      ],
+      "commentCount": 6,
+      "updatedAt": "2026-09-06T17:41:56Z",
+      "summary": "### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/notforhumansfun-rgb/not-for-humans-mcp/issues/6 ### 漏洞描述 / Description [BOUNTY] Break the NFH Wake holder gate — 25 USDC ## 25 USDC audit bounty Find the first valid, non-duplicate way to make the **unmodified official NFH Wake Kit** at commit [`76e681e`](https://github.com/notforhumansfun-rgb/not-for-humans-mcp/commit/76e681e) emit a holder-gated mission or receipt when **no fresh direct-owner Agent Presence heartbeat exists for that token's current owner**. **Prize:** one award of **25 USDC**, paid after the finding is reproduced and fix coordination is complete. The settlement network and recipient address will be agreed privately with the accepted reporter. No gas reimbursement. **Closes:** September 5, 2026 at 23:59 UTC, or when an award is accepted. ### In scope - Missing, expired, delegated, or mismatched heartbeat bypasses - Canonical endpoint substitution or validation failure - Token/owner mismatch - Transfer or expiry races - A forged `HOLDER_VERIFIED_AT_WAKE` result through the unmodified official CLI - Parser, timestamp, or canonical-URL validation failures ### Not a finding - Editing or forking the so",
+      "state": "candidate",
+      "payoutConfidence": 0.5,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 89,
+      "survivalEligible": false,
+      "eligibilityReason": "Competition is too high for bootstrap mode.",
+      "competition": {
+        "comments": 6,
+        "attemptSignals": 1,
+        "risk": "medium"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 25,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -337,7 +335,7 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:4455330769\",\"rewardUsd\":150,\"fastCashScore\":118,\"updatedAt\":\"2026-09-05T23:37:20Z\",\"competition\":{\"comments\":25,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4553022084\",\"rewardUsd\":430,\"fastCashScore\":133,\"updatedAt\":\"2026-09-04T04:17:26Z\",\"competition\":{\"comments\":14,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4557563229\",\"rewardUsd\":780,\"fastCashScore\":123,\"updatedAt\":\"2026-09-04T05:51:12Z\",\"competition\":{\"comments\":10,\"attemptSignals\":2,\"risk\":\"medium\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":77,\"updatedAt\":\"2026-09-04T19:24:22Z\",\"competition\":{\"comments\":56,\"attemptSignals\":5,\"risk\":\"high\"}},{\"id\":\"github:5295068486\",\"rewardUsd\":58.88398389,\"fastCashScore\":95,\"updatedAt\":\"2026-09-06T15:39:20Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5316770400\",\"rewardUsd\":12,\"fastCashScore\":96,\"updatedAt\":\"2026-09-06T15:35:31Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5321668806\",\"rewardUsd\":214,\"fastCashScore\":99,\"updatedAt\":\"2026-09-06T15:34:02Z\",\"competition\":{\"comments\":8,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5345182233\",\"rewardUsd\":16,\"fastCashScore\":96,\"updatedAt\":\"2026-09-06T07:45:45Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5364684932\",\"rewardUsd\":61.5,\"fastCashScore\":105,\"updatedAt\":\"2026-09-06T11:32:47Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5364786376\",\"rewardUsd\":2026,\"fastCashScore\":111,\"updatedAt\":\"2026-09-06T11:55:05Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:4455330769\",\"rewardUsd\":150,\"fastCashScore\":118,\"updatedAt\":\"2026-09-05T23:37:20Z\",\"competition\":{\"comments\":25,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4553022084\",\"rewardUsd\":430,\"fastCashScore\":133,\"updatedAt\":\"2026-09-04T04:17:26Z\",\"competition\":{\"comments\":14,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4557563229\",\"rewardUsd\":780,\"fastCashScore\":123,\"updatedAt\":\"2026-09-04T05:51:12Z\",\"competition\":{\"comments\":10,\"attemptSignals\":2,\"risk\":\"medium\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":77,\"updatedAt\":\"2026-09-04T19:24:22Z\",\"competition\":{\"comments\":56,\"attemptSignals\":5,\"risk\":\"high\"}},{\"id\":\"github:5220496905\",\"rewardUsd\":25,\"fastCashScore\":89,\"updatedAt\":\"2026-09-06T17:41:56Z\",\"competition\":{\"comments\":6,\"attemptSignals\":1,\"risk\":\"medium\"}},{\"id\":\"github:5295068486\",\"rewardUsd\":58.88398389,\"fastCashScore\":95,\"updatedAt\":\"2026-09-06T15:50:12Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5345137708\",\"rewardUsd\":80,\"fastCashScore\":99,\"updatedAt\":\"2026-09-06T17:44:40Z\",\"competition\":{\"comments\":3,\"attemptSignals\":2,\"risk\":\"medium\"}},{\"id\":\"github:5345182233\",\"rewardUsd\":16,\"fastCashScore\":96,\"updatedAt\":\"2026-09-06T17:02:55Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5364786376\",\"rewardUsd\":2026,\"fastCashScore\":111,\"updatedAt\":\"2026-09-06T11:55:05Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5366360595\",\"rewardUsd\":32,\"fastCashScore\":93,\"updatedAt\":\"2026-09-06T17:40:22Z\",\"competition\":{\"comments\":5,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
@@ -361,7 +359,7 @@
       "reasons": [
         "testnet_or_test_token_reward"
       ],
-      "rejectedAt": "2026-09-06T15:44:01.273Z"
+      "rejectedAt": "2026-09-06T17:45:38.798Z"
     },
     {
       "id": "github:5356980367",

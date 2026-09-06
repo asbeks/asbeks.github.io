@@ -2,7 +2,7 @@
   "version": 5,
   "cycle": 192,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-09-06T15:45:39.402Z",
+  "updatedAt": "2026-09-06T17:46:30.950Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "waiting_provider",
   "currentAgent": "PLANNER",
@@ -20,7 +20,7 @@
     "decision": "Proceed with auth middleware preparation while systematically sourcing BAWES branding assets from Universe repositories and forums.",
     "next": "CRITIC to report findings on BAWES branding asset availability and estimated effort for auth fix submission."
   },
-  "lastError": "Available OpenCode free models are temporarily unavailable.",
+  "lastError": "Available OpenCode free models are temporarily rate-limited.",
   "history": [
     {
       "cycle": 153,
@@ -440,17 +440,17 @@
         "summary": "## T9B Paper Signal -- DonchianLong_UniverseV2_ExitV2 | Field | Value | |---|---| | **Symbol** | `JST/USDT` | | **Date** | 2026-09-05 | | **Status** | ACCEPTED -- paper entry placed in state.json | | **Entry price (close)** | 0.11033 | | **Donchian breakout level** | 0.10989 | | **Initial stop (ATR x2)** | 0.102923 | | **ATR at signal** | 0.00370359 | | **EMA200** | 0.0838698 | --- ### Config ``` System : DonchianLong UniverseV2 ExitV2 -- T9B Paper Engine Entry : Donchian N=20 breakout above EMA200 Stop : ATR(14) x 2.0 below entry close Exit : Donchian N=10 OR Chandelier (ACT=6R trail=5.0xATR) Risk : 0.25% of paper equity per trade Max pos : 8 concurrent ``` _Automated paper trading signal. No real trade was placed._ _Do not act on this signal until T9B has run for at least 3 months._"
       },
       {
-        "id": "github:5364684932",
-        "title": "anychain-tron 0.2.14: non-canonical varint in fee_limit breaks TronGrid broadcast (NPE)",
-        "url": "https://github.com/nhitranbtc/blockchain-sdk/issues/540",
-        "rewardUsd": 61.5,
-        "score": 40,
-        "summary": "## anychain-tron 0.2.14 emits non-canonical varint for fee_limit, breaks `wallet/broadcasttransaction` against TronGrid ### Summary `tron-wallet-core`'s live Nile USDT-TRC20 broadcast (`tests/v10_broadcast.rs::live_broadcast_usdt_trc20_to_recipient_succeeds_on_nile`) fails with HTTP 200 + `Error: \"class java.lang.NullPointerException : null\"`. The error is reproducible via raw curl — not a Rust client bug. Root cause: the wire bytes anychain-tron emits carry a spurious `01` byte between the fee_limit tag (`90`) and the canonical varint, so TronGrid's Java parser reads `fee_limit = 1` AND sees an unknown field 16 (`1,015,625`) which it cannot deserialize. ### Repro Sender `TFMTNsHwoAftCPxKzMsY93sizkmwS8gJwm` funded with 100 TRX + 61.5 USDT on Nile (verified 2026-09-06). Recipient `TJdcLjM1KvzGotZ5MxEAZZbnT6YCuAYRaf`. `RUN_TRON_NILE=1 cargo test -p tron-wallet-core --test v10_broadcast -- --include-ignored`. ### Observed vs Expected Observed final 6 bytes of `raw_data_hex` (from the test's `tx.to_bytes()` of the unsigned Raw proto): ``` 90 01 80 c9 fe 3d ``` Decoded per protobuf wire spec: - tag `0x90` -> field 18, varint - varint `01 80 c9 fe 3d` -> `0x01` has high bit clear -> vari"
+        "id": "github:5345137708",
+        "title": "[Bounty: $80] Point the Footer legal and support links at real destinations instead of '/'",
+        "url": "https://github.com/Movalabs-crew/mova-store/issues/80",
+        "rewardUsd": 80,
+        "score": 54,
+        "summary": "**Context** All four footer links in components/Footer.jsx - 'Term of use', 'Privacy Policy', 'About us', '24/7 Customer Service' - hard-code href=\"/\" (lines 11,17,23,29), so every footer link just bounces users back to the landing page, and the heading wording 'Term of use' is ungrammatical. **Proposed Change** Give each footer link a real destination (add the legal/about/contact pages or drop the anchors) and fix the wording. **Acceptance Criteria** - Each footer link resolves to an existing route rather than '/' - Clicking any footer link no longer reloads the home page **Suggested Label**: bug **ETA:** 24 hours"
       }
     ],
     "active": null,
     "completedCount": 0,
     "lastError": null
   },
-  "retryAfterAt": "2026-09-06T15:50:39.402Z"
+  "retryAfterAt": "2026-09-06T17:51:30.950Z"
 }
