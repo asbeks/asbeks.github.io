@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-09-06T04:29:21.174Z",
+  "updatedAt": "2026-09-06T08:51:08.563Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -88,6 +88,42 @@
       "requiresPreclaimOrIdentity": false
     },
     {
+      "id": "github:5358011949",
+      "source": "github",
+      "title": "[radar] SN open bounty 2026-09-05T12:37",
+      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/818",
+      "repositoryApiUrl": "https://api.github.com/repos/relayhop/sn-monetization-runtime",
+      "rewardUsd": 2026,
+      "score": 44,
+      "labels": [
+        "radar",
+        "sn",
+        "bounty"
+      ],
+      "commentCount": 0,
+      "updatedAt": "2026-09-06T08:00:14Z",
+      "summary": "New SN OPEN_BOUNTY detected: ``` 1561879 AskSN 2 422 1000 11 35.0 1208996 484 recent@AskSN OPEN_BOUNTY,SELF_POST_OPP LOGIC 🧠 ```",
+      "state": "candidate",
+      "payoutConfidence": 0.5,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 118,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 2026,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
       "id": "github:4455330769",
       "source": "github",
       "title": "📱 Epic: BAWES Universe Mobile App (Android + iOS)",
@@ -124,40 +160,230 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:4462160604",
+      "id": "github:5332424170",
       "source": "github",
-      "title": "[bounty $400] Implement ABNF-compliant email address parser with full §3.2–§4.4 coverage",
-      "url": "https://github.com/UnsafeLabs/RFC-5322/issues/1",
-      "repositoryApiUrl": "https://api.github.com/repos/UnsafeLabs/RFC-5322",
-      "rewardUsd": 400,
-      "score": 71,
-      "labels": [
-        "good first issue",
-        "help wanted",
-        "💎 Bounty",
-        "$400"
-      ],
-      "commentCount": 21,
-      "updatedAt": "2026-09-01T00:09:20Z",
-      "summary": "`source.md` contains the complete RFC 5322 specification (Internet Message Format). We need a **fully conformant email address parser** in Python that implements the complete ABNF grammar from sections 3.2 through 3.4, plus obsolete syntax from §4.4. This parser must handle every edge case defined in the RFC — not just simple `user@domain` patterns, but the full complexity of quoted strings, comments, folding whitespace, group addresses, and domain literals. ## Background RFC 5322 defines email address syntax through a chain of ABNF productions that build on each other: ``` address = mailbox / group mailbox = name-addr / addr-spec name-addr = [display-name] angle-addr angle-addr = [CFWS] \"<\" addr-spec \">\" [CFWS] addr-spec = local-part \"@\" domain local-part = dot-atom / quoted-string / obs-local-part domain = dot-atom / domain-literal / obs-domain ``` Each of these references further productions (CFWS, FWS, quoted-pair, dtext, etc.) that span multiple sections. **You must read `source.md` completely** to trace the full grammar dependency chain. ## Requirements ### 1. Parser Implementation — `parser.py` ```python class RFC5322Address: \"\"\"Parsed RFC 5322 email address.\"\"\" display_name",
+      "title": "[Bounty: $70] Allow LilySdk.withConfig overrides to clear inherited credentials",
+      "url": "https://github.com/Lilly-Protocol/lily-sdk/issues/448",
+      "repositoryApiUrl": "https://api.github.com/repos/Lilly-Protocol/lily-sdk",
+      "rewardUsd": 70,
+      "score": 54,
+      "labels": [],
+      "commentCount": 2,
+      "updatedAt": "2026-09-06T08:26:22Z",
+      "summary": "**Context** `LilySdk.withConfig(overrides)` in `src/sdk.ts` merges credentials from the parent config whenever the override does not supply its own: `...(overrides.apiKey !== undefined ? { apiKey: overrides.apiKey } : this.config.apiKey !== undefined ? { apiKey: this.config.apiKey } : {})`. There is no way to create a tenant-scoped or public child that removes an inherited `apiKey` or `authToken`. A parent configured with a global key therefore leaks it into every child, even when the child should authenticate differently or anonymously, and users work around it by constructing a fresh `LilySdk` instead of using `withConfig`. **Proposed Change** Add an explicit opt-out convention (e.g. accept `apiKey: null` or an `{ apiKey: undefined }` sentinel documented in the type) so an override can clear an inherited credential, and document the semantics in the `withConfig` JSDoc and README. **Acceptance Criteria** - A child created with the clearing sentinel sends neither `x-api-key` nor `Authorization`. - Credentials still inherit when no override is given. - Behavior is covered by tests in `tests/sdk-with-config.test.ts` and documented. **Suggested Label** (enhancement) **ETA:** 24 hours",
       "state": "candidate",
-      "payoutConfidence": 0.92,
+      "payoutConfidence": 0.65,
       "autonomyFit": 1,
       "requiresHumanGate": false,
       "requiresSpecialHardware": false,
-      "estimatedHoursBand": 16,
+      "estimatedHoursBand": 4,
       "complexity": 0,
-      "fundedBountySignal": true,
-      "fastCashScore": 99,
+      "fundedBountySignal": false,
+      "fastCashScore": 116,
       "survivalEligible": false,
-      "eligibilityReason": "Too slow for bootstrap mode: first real cash currently requires a <=4 hour task.",
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
-        "comments": 21,
-        "attemptSignals": 3,
-        "risk": "high"
+        "comments": 2,
+        "attemptSignals": 0,
+        "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 400,
+      "economicValueUsd": 70,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5229389468",
+      "source": "github",
+      "title": "[Add] TON: gasless transfers via W5 relayer — pay fees in USDT (revenue line) [TON / Gasless]",
+      "url": "https://github.com/vultisig/vultisig-sdk/issues/2200",
+      "repositoryApiUrl": "https://api.github.com/repos/vultisig/vultisig-sdk",
+      "rewardUsd": 2000,
+      "score": 40,
+      "labels": [],
+      "commentCount": 0,
+      "updatedAt": "2026-09-06T08:38:30Z",
+      "summary": "**What:** Gasless TON transfers — users pay fees in the token they're sending (USDT etc.) instead of needing native TON. **This is a revenue line, not just UX:** the user signs a batch containing their transfer plus a fee payment to our relayer; the relayer (VultiServer is the natural host) broadcasts, pays the native gas, and keeps the in-token fee. Phantom charges ~1.5% for the equivalent on Solana; Tonkeeper monetizes via Battery. **Why users expect it:** \"Can't send my $2,000 USDT because I have no TON\" is the top wallet-switching complaint in the TON ecosystem; Tonkeeper and Telegram Wallet both ship it. **How it works with our vaults:** the relayer is broadcast-side only — it never joins the key ceremony. Fast and secure vaults sign the same W5 batch; the relayer can't alter it (signature covers the batch), worst case it declines to broadcast. Non-custodial throughout. **Depends on:** W5 wallet contract support (#2181's W5 item) — gasless is a W5 feature. Revenue/parity item under epic #2181.",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 111,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 2000,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5332426929",
+      "source": "github",
+      "title": "[Bounty: $75] Fix docs/error-handling.md hierarchy, imports, and error.status references",
+      "url": "https://github.com/Lilly-Protocol/lily-sdk/issues/454",
+      "repositoryApiUrl": "https://api.github.com/repos/Lilly-Protocol/lily-sdk",
+      "rewardUsd": 75,
+      "score": 46,
+      "labels": [],
+      "commentCount": 6,
+      "updatedAt": "2026-09-06T08:26:17Z",
+      "summary": "**Context** `docs/error-handling.md` describes an error hierarchy and catch examples that don't match `src/errors/sdk-error.ts`. It imports from `'lily-sdk'` though the package is published as `@lily-protocol/sdk`; it nests `LilyAuthenticationError` under `LilyApiError` although the class extends `LilySdkError` directly; it lists `LilyRateLimitError` as the only API-error subclass and omits the exported `LilyValidationError`, `LilyAuthorizationError`, `LilyNotFoundError`, `LilyConflictError`, and `LilyServerError`; and the sample catch block reads `error.status` while the class property is `statusCode`. **Proposed Change** Update the doc to the actual hierarchy and exports, fix the import to `@lily-protocol/sdk`, correct `error.status` to `error.statusCode`, and make the catch guide consistent with the README's error-handling section. **Acceptance Criteria** - Hierarchy diagram matches `src/errors/sdk-error.ts` class inheritance. - All imports in code samples resolve against the published package/subpaths. - No sample references `error.status`. - `LilyValidationError` and the status-specific subclasses are mentioned with their meaning. **Suggested Label** (documentation) **ETA:** 2",
+      "state": "candidate",
+      "payoutConfidence": 0.65,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 110,
+      "survivalEligible": false,
+      "eligibilityReason": "Competition is too high for bootstrap mode.",
+      "competition": {
+        "comments": 6,
+        "attemptSignals": 0,
+        "risk": "medium"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 75,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5332424660",
+      "source": "github",
+      "title": "[Bounty: $95] Add safe number-to-decimal-string helpers for building MoneyAmount values",
+      "url": "https://github.com/Lilly-Protocol/lily-sdk/issues/449",
+      "repositoryApiUrl": "https://api.github.com/repos/Lilly-Protocol/lily-sdk",
+      "rewardUsd": 95,
+      "score": 46,
+      "labels": [],
+      "commentCount": 8,
+      "updatedAt": "2026-09-06T08:20:18Z",
+      "summary": "**Context** `MoneyAmount.amount` is a decimal string and the SDK forbids JavaScript `number` values (validators and `MoneyAmount` JSDoc in `src/models/common.ts`/README). `normalizeMoneyAmount` in `src/models/common.ts` only reshapes an existing string; there is no helper to convert a numeric value (e.g. from a database or user input) into the required fixed-decimal string without floating-point artifacts like `0.1 + 0.2`, or to format string amounts for display. Every consumer must hand-roll this conversion, which is exactly where precision bugs originate. **Proposed Change** Add a small, exported money-formatting module (or functions next to `normalizeMoneyAmount`) providing e.g. `toAmountString(value: number, scale?: number)` that produces a clean base-10 string with a documented rounding/scale policy, plus tests covering `0.1+0.2`-style inputs, exponent notation, and negative/zero inputs. **Acceptance Criteria** - The new helpers are exported from the root and `models` subpath and documented with JSDoc. - `toAmountString(0.1 + 0.2)` yields an exact decimal string without float artifacts. - Unit tests cover zero, large integers, and >7 fractional-digit rounding. **Suggested Labe",
+      "state": "candidate",
+      "payoutConfidence": 0.65,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 101,
+      "survivalEligible": false,
+      "eligibilityReason": "Competition is too high for bootstrap mode.",
+      "competition": {
+        "comments": 8,
+        "attemptSignals": 1,
+        "risk": "medium"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 95,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5354501411",
+      "source": "github",
+      "title": "AUTORESEARCH live dashboard",
+      "url": "https://github.com/tjhuber2009-eng/TestRepo/issues/20",
+      "repositoryApiUrl": "https://api.github.com/repos/tjhuber2009-eng/TestRepo",
+      "rewardUsd": 33.7,
+      "score": 40,
+      "labels": [],
+      "commentCount": 0,
+      "updatedAt": "2026-09-06T08:48:23Z",
+      "summary": "# AUTORESEARCH Live Dashboard > **Auto-updated:** 2026-09-06 08:48:21 UTC > **Protocol:** `nested_chronological_v3` > **Phase:** **BREADTH** ## Start here — current answers | Question | Current answer | Key numbers | |---|---|---| | **Private account** | V4 authoritative portfolio at **55% max concentration** | CAGR **15.59%** · observed DD **-17.29%** · bootstrap q95 DD **31.97%** | | **Best repeated prop economics** | **FTMO 2-Step · Max repeat payout** | pass **33.7%** · 12-cycle reward **15.68%** · funded survival **95.4%** | | **Simpler prop alternative** | **FTMO 1-Step · Max repeat payout** | pass **35.8%** · 12-cycle reward **8.44%** | | **Balanced exact transfer** | **btc_rsi_adx__eth__prop** | pass **33.0%** · reward **9.06%** · survival **93.2%** | | **Research maturity** | **BREADTH** · development only | breadth **17.51%** (900/5,140) · PBO-ready **33/405** · hidden validation **SEALED** | ### What happens next 1. Let every exact prop adapter compete in V4; keep only genuine frontier winners. 2. Continue breadth research until enough unique variants exist for valid CSCV/PBO. 3. Keep hidden validation and 2023+ final OOS sealed until development is genuinely frozen. > *",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 101,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 33.7,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5041828974",
+      "source": "github",
+      "title": "Bounty Hunter's innate works only visually (no gold changes)",
+      "url": "https://github.com/ValveSoftware/Dota2-Gameplay/issues/34097",
+      "repositoryApiUrl": "https://api.github.com/repos/ValveSoftware/Dota2-Gameplay",
+      "rewardUsd": 20,
+      "score": 32,
+      "labels": [],
+      "commentCount": 3,
+      "updatedAt": "2026-09-06T08:01:51Z",
+      "summary": "### Ability name Big Game Hunter ### Description ## Summary The tooltip states that Bounty Hunter receives **20% more kill and assist gold** when a Big Game target dies. However, the bonus appears to be visual only: the floating combat text uses the increased values, while Bounty Hunter's actual gold balance only receives the normal reward. ## Relevant formulas | Term | Formula | Purpose | |---|---|---| | `BountyGold` | `bGold + (DeadHeroLevel × 8) + StreakGold + FirstBloodGold` | Direct kill gold | | `f` | `15 + ((50 + (VictimNetWorth × 0.037)) / NumberOfHeroes)` | Base assist-gold component | | `A` | `(VictimTeamNetWorth / KillerTeamNetWorth) × f` | Assist gold per eligible hero | ### Constants | Variable | Value | |---|---:| | `bGold` | `125` | | `FirstBloodGold` | `135` | | `StreakGold` | `60 / 100 / 150 / 210 / 280 / 360 / 450 / 550` | ## Reproduction example Replay: [8925115591](https://www.dotabuff.com/matches/8925115591) Time: **09:29** Victim: **Centaur** At this point, Centaur is one of the top three net-worth heroes on his team and should be affected by Big Game Hunter. | Variable | Value | |---|---:| | `bGold` | `125` | | `DeadHeroLevel` | `5` | | `StreakGold` | `0` | |",
+      "state": "candidate",
+      "payoutConfidence": 0.5,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 101,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 3,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 20,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5345182233",
+      "source": "github",
+      "title": "Roadmap: five difficulty tiers and tactical roguelike expansion",
+      "url": "https://github.com/shipiyouniao/Minesweeper-2.0/issues/1",
+      "repositoryApiUrl": "https://api.github.com/repos/shipiyouniao/Minesweeper-2.0",
+      "rewardUsd": 16,
+      "score": 38,
+      "labels": [
+        "enhancement",
+        "help wanted"
+      ],
+      "commentCount": 1,
+      "updatedAt": "2026-09-06T07:45:45Z",
+      "summary": "# Five difficulty tiers and a tactical roguelike expedition This tracking issue describes the next expansion of Twin and Expedition: larger configurable boards, longer-term progression, shared health and shields, distinct turn-based boss encounters, and individual artwork for professions and bosses. **Status: in progress.** Five difficulties, eight professions, 30 mission/achievement goals, 24 distinct shop gameplay unlocks plus two finite trainings, and up to 37 relics are released. The tactical roster now includes Bastion Guardian, Brood Queen, Mirror Twins (PR #20) and **Magnetic Knight (PR #25)**. Shared combat builds shipped in PR #18; current-rule save retirement and mobile long-press fixes shipped in PR #19. Clock Mage is merged in PR #29; broader balance acceptance remains open below. Each workstream is completed through a reviewed PR; this roadmap stays open until all planned work is delivered. ## Agreed direction - Both Twin and Expedition receive **five difficulty choices**, with different board sizes and expedition lengths. - Permanent unlocks follow a **stepped curve**: an early rewarding run can unlock two choices, intermediate upgrades take several runs, and the most",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 96,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 1,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 16,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -206,23 +432,41 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:4455330769\",\"rewardUsd\":150,\"fastCashScore\":118,\"updatedAt\":\"2026-09-05T23:37:20Z\",\"competition\":{\"comments\":25,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":99,\"updatedAt\":\"2026-09-01T00:09:20Z\",\"competition\":{\"comments\":21,\"attemptSignals\":3,\"risk\":\"high\"}},{\"id\":\"github:4553022084\",\"rewardUsd\":430,\"fastCashScore\":133,\"updatedAt\":\"2026-09-04T04:17:26Z\",\"competition\":{\"comments\":14,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4557563229\",\"rewardUsd\":780,\"fastCashScore\":123,\"updatedAt\":\"2026-09-04T05:51:12Z\",\"competition\":{\"comments\":10,\"attemptSignals\":2,\"risk\":\"medium\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":77,\"updatedAt\":\"2026-09-04T19:24:22Z\",\"competition\":{\"comments\":56,\"attemptSignals\":5,\"risk\":\"high\"}},{\"id\":\"github:5199686543\",\"rewardUsd\":1102,\"fastCashScore\":106,\"updatedAt\":\"2026-09-06T04:26:02Z\",\"competition\":{\"comments\":8,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5199924986\",\"rewardUsd\":1102,\"fastCashScore\":106,\"updatedAt\":\"2026-09-06T04:26:25Z\",\"competition\":{\"comments\":8,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5202469266\",\"rewardUsd\":1102,\"fastCashScore\":106,\"updatedAt\":\"2026-09-06T04:26:41Z\",\"competition\":{\"comments\":8,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5204659628\",\"rewardUsd\":1102,\"fastCashScore\":106,\"updatedAt\":\"2026-09-06T04:27:16Z\",\"competition\":{\"comments\":8,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5204755392\",\"rewardUsd\":1102,\"fastCashScore\":106,\"updatedAt\":\"2026-09-06T04:27:31Z\",\"competition\":{\"comments\":8,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5206598832\",\"rewardUsd\":1102,\"fastCashScore\":106,\"updatedAt\":\"2026-09-06T04:27:55Z\",\"competition\":{\"comments\":8,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5207820398\",\"rewardUsd\":1102,\"fastCashScore\":106,\"updatedAt\":\"2026-09-06T04:28:08Z\",\"competition\":{\"comments\":8,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5243368615\",\"rewardUsd\":16517,\"fastCashScore\":107,\"updatedAt\":\"2026-09-06T04:28:44Z\",\"competition\":{\"comments\":7,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5248798863\",\"rewardUsd\":16517,\"fastCashScore\":104,\"updatedAt\":\"2026-09-06T04:28:59Z\",\"competition\":{\"comments\":9,\"attemptSignals\":0,\"risk\":\"medium\"}}]",
+  "marketSignature": "[{\"id\":\"github:4455330769\",\"rewardUsd\":150,\"fastCashScore\":118,\"updatedAt\":\"2026-09-05T23:37:20Z\",\"competition\":{\"comments\":25,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4553022084\",\"rewardUsd\":430,\"fastCashScore\":133,\"updatedAt\":\"2026-09-04T04:17:26Z\",\"competition\":{\"comments\":14,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4557563229\",\"rewardUsd\":780,\"fastCashScore\":123,\"updatedAt\":\"2026-09-04T05:51:12Z\",\"competition\":{\"comments\":10,\"attemptSignals\":2,\"risk\":\"medium\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":77,\"updatedAt\":\"2026-09-04T19:24:22Z\",\"competition\":{\"comments\":56,\"attemptSignals\":5,\"risk\":\"high\"}},{\"id\":\"github:4755003147\",\"rewardUsd\":20,\"fastCashScore\":95,\"updatedAt\":\"2026-09-06T08:19:39Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5041828974\",\"rewardUsd\":20,\"fastCashScore\":101,\"updatedAt\":\"2026-09-06T08:01:51Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5229389468\",\"rewardUsd\":2000,\"fastCashScore\":111,\"updatedAt\":\"2026-09-06T08:38:30Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5332424170\",\"rewardUsd\":70,\"fastCashScore\":116,\"updatedAt\":\"2026-09-06T08:26:22Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5332424660\",\"rewardUsd\":95,\"fastCashScore\":101,\"updatedAt\":\"2026-09-06T08:20:18Z\",\"competition\":{\"comments\":8,\"attemptSignals\":1,\"risk\":\"medium\"}},{\"id\":\"github:5332426929\",\"rewardUsd\":75,\"fastCashScore\":110,\"updatedAt\":\"2026-09-06T08:26:17Z\",\"competition\":{\"comments\":6,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5345182233\",\"rewardUsd\":16,\"fastCashScore\":96,\"updatedAt\":\"2026-09-06T07:45:45Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5354501411\",\"rewardUsd\":33.7,\"fastCashScore\":101,\"updatedAt\":\"2026-09-06T08:48:23Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5356980367\",\"rewardUsd\":100,\"fastCashScore\":104,\"updatedAt\":\"2026-09-06T07:36:33Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5358011949\",\"rewardUsd\":2026,\"fastCashScore\":118,\"updatedAt\":\"2026-09-06T08:00:14Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
     "mode": true,
     "eligibleCount": 0,
-    "fundedSignalCount": 5,
+    "fundedSignalCount": 4,
     "objective": "first_real_confirmed_cash_fast",
     "policy": "bootstrap_basic_v1",
     "maxHours": 4,
     "minPayoutConfidence": 0.8,
     "competitionRequired": "low",
-    "rejectedFakeRevenueCount": 0,
-    "rejectedAlreadyPaidCount": 9,
-    "rejectedIdentityGateCount": 2
+    "rejectedFakeRevenueCount": 1,
+    "rejectedAlreadyPaidCount": 0,
+    "rejectedIdentityGateCount": 1
   },
   "economicallyRejected": [
+    {
+      "id": "github:5356980367",
+      "title": "phase1: §0 — Vorbereitung: Hermes pausieren, Testnet vs. Klein-Live entscheiden",
+      "rewardUsd": 100,
+      "reasons": [
+        "testnet_or_test_token_reward"
+      ],
+      "rejectedAt": "2026-09-06T08:51:08.508Z"
+    },
+    {
+      "id": "github:4755003147",
+      "title": "README tells testers to sign in even though APN advertises no signup/no email",
+      "rewardUsd": 20,
+      "reasons": [
+        "preclaim_or_identity_gate_not_configured"
+      ],
+      "rejectedAt": "2026-09-06T08:51:08.508Z"
+    },
     {
       "id": "github:5243368615",
       "title": "[CLAIM] Bounty #16517 — NES 1,117,248 cycles/token reproduced on MAME 0.277",
@@ -305,15 +549,6 @@
         "already_rewarded_or_paid"
       ],
       "rejectedAt": "2026-09-06T04:29:21.114Z"
-    },
-    {
-      "id": "github:5356980367",
-      "title": "phase1: §0 — Vorbereitung: Hermes pausieren, Testnet vs. Klein-Live entscheiden",
-      "rewardUsd": 100,
-      "reasons": [
-        "testnet_or_test_token_reward"
-      ],
-      "rejectedAt": "2026-09-06T00:01:26.370Z"
     },
     {
       "id": "github:5295068486",
@@ -942,15 +1177,6 @@
         "already_rewarded_or_paid"
       ],
       "rejectedAt": "2026-08-24T11:49:51.923Z"
-    },
-    {
-      "id": "github:5230674952",
-      "title": "docs: RESULTS.md устарел — несуществующий «+1.81», Kraken-план и testnet-only правило",
-      "rewardUsd": 100,
-      "reasons": [
-        "testnet_or_test_token_reward"
-      ],
-      "rejectedAt": "2026-08-24T04:24:34.529Z"
     }
   ]
 }

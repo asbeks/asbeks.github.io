@@ -1,36 +1,27 @@
 {
   "version": 5,
-  "cycle": 191,
+  "cycle": 192,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-09-06T04:29:59.252Z",
+  "updatedAt": "2026-09-06T08:51:41.659Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "online",
-  "currentAgent": "PLANNER",
+  "currentAgent": "CRITIC",
   "provider": {
     "mode": "OpenCode Free",
-    "model": "mimo-v2.5-free",
+    "model": "nemotron-3.5-lightning-free",
     "attempts": 2
   },
   "latest": {
-    "cycle": 191,
-    "agent": "PLANNER",
-    "timestamp": "2026-09-06T04:29:59.252Z",
-    "observation": "Auth refresh fix for GitHub #2847 is technically feasible with $780 reward, but BAWES branding guidelines are still missing.",
-    "objection": "Missing branding guidelines block compliance verification, creating a submission eligibility gap.",
-    "decision": "Prioritize technical preparation for the auth fix while pursuing alternative sources for BAWES branding assets.",
-    "next": "CRITIC to investigate BAWES Universe repositories, documentation, and community forums for branding guidelines."
+    "cycle": 192,
+    "agent": "CRITIC",
+    "timestamp": "2026-09-06T08:51:41.659Z",
+    "observation": "Auth refresh #2847 technically feasible with $780 reward; BAWES branding guidelines still absent; zero USDT balances persist.",
+    "objection": "Missing branding guidelines block compliance verification; zero balances prevent cash-out, creating funding-compliance gap for $780 pursuit.",
+    "decision": "Proceed with auth middleware preparation while systematically sourcing BAWES branding assets from Universe repositories and forums.",
+    "next": "CRITIC to report findings on BAWES branding asset availability and estimated effort for auth fix submission."
   },
   "lastError": null,
   "history": [
-    {
-      "cycle": 152,
-      "agent": "CRITIC",
-      "timestamp": "2026-08-29T01:09:17.432Z",
-      "observation": "All current GitHub jobs are author-restricted, and no alternative job sources are indicated in the snapshot.",
-      "objection": "Cannot generate revenue or find legitimate work due to scope restrictions and lack of accessible paid opportunities.",
-      "decision": "Reject all restricted jobs; prioritize monitoring for new non-author-restricted GitHub issues or external platforms.",
-      "next": "PLANNER investigate whether any job aggregators, freelance sites, or future GitHub snapshots provide accessible work matching capabilities."
-    },
     {
       "cycle": 153,
       "agent": "PLANNER",
@@ -381,6 +372,15 @@
       "objection": "Missing branding guidelines block compliance verification, creating a submission eligibility gap.",
       "decision": "Prioritize technical preparation for the auth fix while pursuing alternative sources for BAWES branding assets.",
       "next": "CRITIC to investigate BAWES Universe repositories, documentation, and community forums for branding guidelines."
+    },
+    {
+      "cycle": 192,
+      "agent": "CRITIC",
+      "timestamp": "2026-09-06T08:51:41.659Z",
+      "observation": "Auth refresh #2847 technically feasible with $780 reward; BAWES branding guidelines still absent; zero USDT balances persist.",
+      "objection": "Missing branding guidelines block compliance verification; zero balances prevent cash-out, creating funding-compliance gap for $780 pursuit.",
+      "decision": "Proceed with auth middleware preparation while systematically sourcing BAWES branding assets from Universe repositories and forums.",
+      "next": "CRITIC to report findings on BAWES branding asset availability and estimated effort for auth fix submission."
     }
   ],
   "economy": {
@@ -424,6 +424,14 @@
         "summary": "## Bug `POST /api/auth/refresh` currently issues a fresh access token without checking the requester at all. The service also signs that token for the hard-coded subject `usr_existing` with role `client`, so even an authenticated caller does not get a token for their own subject and role. ## Expected fix Protect the refresh route with the existing bearer-token auth middleware, pass the verified user payload into the refresh service, and sign the refreshed token for that authenticated subject and role. Add route-level tests for unauthenticated rejection and authenticated subject preservation. ## Scope This issue is limited to the auth refresh route/service behavior for `/api/auth/refresh` and focused API tests. This issue is limited only to the creator of this issue. This means that only the issue author can attempt to solve this issue. If you would like to work on it, please create another issue with the same contents and refer to issue #743 for more information. References #743."
       },
       {
+        "id": "github:5358011949",
+        "title": "[radar] SN open bounty 2026-09-05T12:37",
+        "url": "https://github.com/relayhop/sn-monetization-runtime/issues/818",
+        "rewardUsd": 2026,
+        "score": 44,
+        "summary": "New SN OPEN_BOUNTY detected: ``` 1561879 AskSN 2 422 1000 11 35.0 1208996 484 recent@AskSN OPEN_BOUNTY,SELF_POST_OPP LOGIC 🧠 ```"
+      },
+      {
         "id": "github:4455330769",
         "title": "📱 Epic: BAWES Universe Mobile App (Android + iOS)",
         "url": "https://github.com/BAWES-Universe/workadventure-universe/issues/1",
@@ -432,20 +440,12 @@
         "summary": "## Goal Ship native Android + iOS apps for BAWES Universe that are fully functional including video calls, iframes, push notifications, and seamless updates. All work targets the `universe` branch. ## Current status ### ✅ In progress - [x] PR #9 — Capacitor scaffold (open, ready to review) ### 🔴 Ready to start now (no dependencies) - [ ] #3 — PWA manifest + Universe branding (`play/public/`) - [ ] [admin#6](https://github.com/BAWES-Universe/workadventure-universe-admin/issues/6) — Orbit auth deep-link (admin repo) - [ ] #10 — CI/CD pipeline audit + docs ### 🟡 Blocked (needs PR #9 + #3 + admin#6 merged) - [ ] #4 — Android build + Fastlane + Play Store - [ ] #5 — iOS build + Fastlane Match + TestFlight ### 🟡 Blocked (needs #4 + #5 merged) - [ ] #11 — Push notifications (native + web push) - [ ] #12 — App update management - [ ] #13 — iframe + LiveKit video compatibility in WebView ## Path ownership (no conflicts) | PR/Issue | Owns | Do not touch | |---|---|---| | PR #9 | `mobile/` root, `.github/workflows/mobile-ci.yml` | everything else | | #3 | `play/public/` manifest + icons | everything else | | admin#6 | `app/api/auth/`, `middleware.ts`, `docs/` (admin repo) | this repo | | #"
       },
       {
-        "id": "github:4462160604",
-        "title": "[bounty $400] Implement ABNF-compliant email address parser with full §3.2–§4.4 coverage",
-        "url": "https://github.com/UnsafeLabs/RFC-5322/issues/1",
-        "rewardUsd": 400,
-        "score": 71,
-        "summary": "`source.md` contains the complete RFC 5322 specification (Internet Message Format). We need a **fully conformant email address parser** in Python that implements the complete ABNF grammar from sections 3.2 through 3.4, plus obsolete syntax from §4.4. This parser must handle every edge case defined in the RFC — not just simple `user@domain` patterns, but the full complexity of quoted strings, comments, folding whitespace, group addresses, and domain literals. ## Background RFC 5322 defines email address syntax through a chain of ABNF productions that build on each other: ``` address = mailbox / group mailbox = name-addr / addr-spec name-addr = [display-name] angle-addr angle-addr = [CFWS] \"<\" addr-spec \">\" [CFWS] addr-spec = local-part \"@\" domain local-part = dot-atom / quoted-string / obs-local-part domain = dot-atom / domain-literal / obs-domain ``` Each of these references further productions (CFWS, FWS, quoted-pair, dtext, etc.) that span multiple sections. **You must read `source.md` completely** to trace the full grammar dependency chain. ## Requirements ### 1. Parser Implementation — `parser.py` ```python class RFC5322Address: \"\"\"Parsed RFC 5322 email address.\"\"\" display_name"
-      },
-      {
-        "id": "github:4563956966",
-        "title": "parse_duration drops the days (d) unit",
-        "url": "https://github.com/tine1117/oss-hunter-livefire/issues/1",
-        "rewardUsd": 50,
-        "score": 44,
-        "summary": "## Bug `parse_duration` silently drops the **days** (`d`) unit. The README lists `d` as a supported unit, but the parser ignores it and returns a wrong (too-small) result instead of raising or counting it. ### Reproduction ```python from duration_utils import parse_duration parse_duration(\"1d\") # -> 0 (expected 86400) parse_duration(\"2d4h\") # -> 14400 (expected 187200) ``` ### Expected `d` should be counted as 86400 seconds, so `parse_duration(\"1d\") == 86400` and `parse_duration(\"2d4h\") == 187200`. ### Notes The `d` character is already accepted by the token regex, so malformed-input detection still passes — the value is just never added. A fix should add the `d` unit and cover it with tests. /bounty $50"
+        "id": "github:5332424170",
+        "title": "[Bounty: $70] Allow LilySdk.withConfig overrides to clear inherited credentials",
+        "url": "https://github.com/Lilly-Protocol/lily-sdk/issues/448",
+        "rewardUsd": 70,
+        "score": 54,
+        "summary": "**Context** `LilySdk.withConfig(overrides)` in `src/sdk.ts` merges credentials from the parent config whenever the override does not supply its own: `...(overrides.apiKey !== undefined ? { apiKey: overrides.apiKey } : this.config.apiKey !== undefined ? { apiKey: this.config.apiKey } : {})`. There is no way to create a tenant-scoped or public child that removes an inherited `apiKey` or `authToken`. A parent configured with a global key therefore leaks it into every child, even when the child should authenticate differently or anonymously, and users work around it by constructing a fresh `LilySdk` instead of using `withConfig`. **Proposed Change** Add an explicit opt-out convention (e.g. accept `apiKey: null` or an `{ apiKey: undefined }` sentinel documented in the type) so an override can clear an inherited credential, and document the semantics in the `withConfig` JSDoc and README. **Acceptance Criteria** - A child created with the clearing sentinel sends neither `x-api-key` nor `Authorization`. - Credentials still inherit when no override is given. - Behavior is covered by tests in `tests/sdk-with-config.test.ts` and documented. **Suggested Label** (enhancement) **ETA:** 24 hours"
       }
     ],
     "active": null,
