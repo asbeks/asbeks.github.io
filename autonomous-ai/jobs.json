@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-09-06T21:43:34.868Z",
+  "updatedAt": "2026-09-06T23:15:05.031Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -125,49 +125,17 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5367515371",
+      "id": "github:5368187485",
       "source": "github",
-      "title": "Add AUDT: Auditchain",
-      "url": "https://github.com/Uniswap/default-token-list/issues/2565",
-      "repositoryApiUrl": "https://api.github.com/repos/Uniswap/default-token-list",
-      "rewardUsd": 1200,
-      "score": 40,
-      "labels": [],
-      "commentCount": 0,
-      "updatedAt": "2026-09-06T20:59:51Z",
-      "summary": "- [x] I understand that token listing is not required to use the Uniswap Interface with a token. - [x] I understand that filing an issue or adding liquidity does not guarantee addition to the Uniswap default token list. - [x] I will not ping the Discord about this listing request. **Please provide the following information for your token.** Token Address: 0xB90cb79B72EB10c39CbDF86e50B1C89F6a235f2e (Ethereum mainnet, verified proxy) Token Name (from contract): Auditchain Token Decimals (from contract): 18 Token Symbol (from contract): AUDT Uniswap V2 Pair Address of Token: none, and no project-owned Uniswap pool on Ethereum. The only Ethereum pool is a third-party Uniswap v4 ETH/AUDT pool at a 90% fee (pool id 0xdbba537d853117508d2882edb218a51f6af33f91a42c4041d8495210787a67ad, about USD 1,200, not representative of the market price). The deepest market is QuickSwap v3 on Polygon (AUDT/USDT, 0xcbdc21b902d0613061e7ec05b49348d887214da7). Link to the official homepage of token: https://auditchain.com Link to CoinMarketCap or CoinGecko page of token: https://www.coingecko.com/en/coins/auditchain **Additional context** - Canonical bridged representations exist on chains served by Uniswap ",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 111,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 0,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 1200,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5345133419",
-      "source": "github",
-      "title": "[Bounty: $100] Admin dispatch/refund re-hash the event-derived order id so they can never match the on-chain order",
-      "url": "https://github.com/Movalabs-crew/mova-store/issues/67",
-      "repositoryApiUrl": "https://api.github.com/repos/Movalabs-crew/mova-store",
-      "rewardUsd": 100,
+      "title": "Bounty #29 ($100): eligibility, integration scope and Pakistan payout",
+      "url": "https://github.com/bujiproject-art/agentmidasopendevteam/issues/5",
+      "repositoryApiUrl": "https://api.github.com/repos/bujiproject-art/agentmidasopendevteam",
+      "rewardUsd": 29,
       "score": 54,
       "labels": [],
-      "commentCount": 3,
-      "updatedAt": "2026-09-06T20:55:36Z",
-      "summary": "**Context** dispatchOrder and refundOrder in lib/stellar/orders.ts run await hashOrderId(orderId) (lines 222, 303) before invoking the contract, i.e. they expect the raw pre-image (\"SS-...\"). But app/admin/orders/page.tsx builds its order rows exclusively from indexer events whose order_id topic is the already-hashed 32-byte value, and passes that hex to onDispatch/onRefund (page.tsx:140,154). SHA-256 is one-way, so hashing the hex again can never reproduce the stored BytesN<32> and dispatch/refund fail with OrderNotFound. **Proposed Change** Make dispatchOrder/refundOrder accept an already-hashed 64-hex order id without re-hashing it (only hash short raw ids), e.g. via a small resolveOrderIdHash helper with both paths unit-tested, and keep the admin page passing the event-derived id unchanged. **Acceptance Criteria** - Add a pure helper that returns raw bytes for a short pre-image and passes a 64-hex input through unchanged; unit-test both paths - Test asserts the admin page passes the event-derived hex id into dispatchOrder/refundOrder unmodified - npm run test and npm run type-check pass **Suggested Label**: bug **ETA:** 24 hours",
+      "commentCount": 0,
+      "updatedAt": "2026-09-06T22:59:55Z",
+      "summary": "I am evaluating **Bounty #29, Onboarding Checklist ($100)**, listed in BOUNTIES.md, for an implementation covering onboarding steps and progress tracking. **AI disclosure:** Research, implementation and testing would be carried out autonomously by ChatGPT (GPT-6 Astra Pro) on behalf of this GitHub account. This is not an offer of human-only development or live support. Before claiming a slot or beginning implementation, please confirm: 1. Is #29 currently available, with the advertised $100 cash payment budgeted upon acceptance, and is this autonomous contribution workflow eligible? 2. Where is the integration scaffold? CONTRIBUTING.md references package.json and .env.example. Please identify the target application/branch, authentication and tenant model, checklist schema, and required persistence behaviour, or confirm that an independently testable module is acceptable. 3. What acceptance criteria and tests are required? A proposed scope is checklist creation, assignment and completion; progress calculation; empty/loading/error states; responsive keyboard-accessible UI; and regression tests, with no new dependencies without approval. 4. Does your payout arrangement support a contr",
       "state": "candidate",
       "payoutConfidence": 0.65,
       "autonomyFit": 1,
@@ -176,41 +144,7 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 108,
-      "survivalEligible": false,
-      "eligibilityReason": "Competition is too high for bootstrap mode.",
-      "competition": {
-        "comments": 3,
-        "attemptSignals": 1,
-        "risk": "medium"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 100,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5367696278",
-      "source": "github",
-      "title": "RESTful API 服务支持一个用户有多个 WebAuthn 凭证",
-      "url": "https://github.com/idea2app/REST-Node-ts/issues/22",
-      "repositoryApiUrl": "https://api.github.com/repos/idea2app/REST-Node-ts",
-      "rewardUsd": 45,
-      "score": 50,
-      "labels": [
-        "reward"
-      ],
-      "commentCount": 0,
-      "updatedAt": "2026-09-06T21:18:45Z",
-      "summary": "### Task description 将 [`POST /registration` 子路由](https://github.com/idea2app/REST-Node-ts/blob/5bb6becdfe2e586c337517c031e29eab3f797041/source/controller/WebAuthn.ts#L27-L61) 改为以下几个路由： 1. `GET /session/credential`：分页查找当前登录用户的所有凭证 2. `POST /session/credential`：新增一个当前登录用户的凭证 3. `DELETE /session/credential/:cid`：删除一个当前登录用户的凭证 `POST /authentication` 接口定义保持不变，但要实现“电邮地址 + 某一凭证”的匹配与验证。 所有逻辑优先使用 model 对应的 service，具体写法参考其它 controller。 ### Reward currency TQT $ ### Reward amount 45 ### Reward payer 石垚 <tech-query@idea2app.cn> ### Task source https://idea2app.feishu.cn/record/JtharyQxLejFOzc9JmbcULpmnJd",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 103,
+      "fastCashScore": 114,
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
@@ -219,7 +153,169 @@
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 45,
+      "economicValueUsd": 29,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5368230470",
+      "source": "github",
+      "title": "Maintainer notice: allow qualifying 1 USDC meta-bounty children",
+      "url": "https://github.com/NSPG13/agent-bounties/issues/1298",
+      "repositoryApiUrl": "https://api.github.com/repos/NSPG13/agent-bounties",
+      "rewardUsd": 1196,
+      "score": 54,
+      "labels": [],
+      "commentCount": 0,
+      "updatedAt": "2026-09-06T23:08:58Z",
+      "summary": "The public posting composer currently applies the ordinary 2 USDC solver floor to routed-V3 child drafts whose parent requires a 1 USDC total target. This prevents a compatible child review from being prepared. Planned scope (R3, public protocol/UI): make the minimum context-aware for canonical routed-V3 children, preserve exact funding and verifier commitments, and expose the parent-specific preparation through WebMCP. Add deterministic validation and browser regression coverage. No immutable contracts, parent economics, wallet consent, gas-sponsorship claims, or canonical payment evidence will be changed. The full open PR queue was inspected before code edits. Relevant #1266 (child benchmark packages) and #880 (wallet UX child spec) remain mergeable with changes requested, awaiting contributor repairs and canonical lifecycle evidence. Their existing reviews were read; this change does not accept their benchmarks or claim bounty completion. #1196 has unrelated account/UI conflicts; preserve its authentication work on rebase. #1270 is a separate maintainer intake repair with no changed-file overlap. No new collaborator activity requiring this implementation to supersede their work ",
+      "state": "candidate",
+      "payoutConfidence": 0.5,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 2,
+      "fundedBountySignal": false,
+      "fastCashScore": 110,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 1196,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5364841616",
+      "source": "github",
+      "title": "Q: does a step of one model beat a step of the whole army?",
+      "url": "https://github.com/sashman/wargame_rl/issues/283",
+      "repositoryApiUrl": "https://api.github.com/repos/sashman/wargame_rl",
+      "rewardUsd": 287,
+      "score": 40,
+      "labels": [
+        "kind:question"
+      ],
+      "commentCount": 1,
+      "updatedAt": "2026-09-06T23:03:16Z",
+      "summary": "## TL;DR Today the game asks the network for all 25 soldiers' orders at once, each guessed without knowing what the others will do. This plan changes it to **one soldier at a time**, each seeing what the previous ones already did — which is how the real tabletop game is played. ⚠ **It is a MAJOR departure, not an increment**: a new game interface, a new network shape, and **no existing trained agent, recorded score or fixture carries over**. The old system stays untouched and running beside the new one, so the two can be raced before anything is deleted. --- ⚠ **MAJOR DEPARTURE.** This is not an arm on the current architecture. It voids nothing by shipping (the old facade is untouched), but nothing transfers either: every checkpoint, every observation/reward golden and every agent figure in `CLAUDE.md` belongs to the **old facade only** and is explicitly not comparable to the new one. **Source:** `next-architecture-principles.md` (Nate, 2026-09-06 — design discussion, nothing measured; full text below). Decisions are Nate's; two are marked ⚠ to confirm with Sash. An implementing agent in doubt asks Nate rather than picking a default. ## The question, in one sentence Does a policy t",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 109,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 1,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 287,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5368049497",
+      "source": "github",
+      "title": "[task-6.5] Сводить торговый результат и майнинг / Aggregate trading P&L and mining",
+      "url": "https://github.com/pchkauu/want-keep/issues/44",
+      "repositoryApiUrl": "https://api.github.com/repos/pchkauu/want-keep",
+      "rewardUsd": 100,
+      "score": 64,
+      "labels": [],
+      "commentCount": 0,
+      "updatedAt": "2026-09-06T22:28:19Z",
+      "summary": "<!-- want-keep-task: task-6.5 --> # task-6.5 — Сводить торговый результат и майнинг / Aggregate trading P&L and mining ## RU Получать согласованный результат по криптопродуктам без двойных начислений. **Состояние:** Заблокировано зависимостями и проверкой SDD Ready; реализация не начата. **Зависимости:** `task-4.4`, `task-4.6`, `task-6.1`, `task-2.4`. **Тип:** `implementation`. ### Изменение и контракты Через доменные контракты разделить gross/net realized P&L, unrealized P&L, fees, funding и rewards. Учитывать общие IDs нескольких журналов, transfers Funding/Spot/Earn/Coinhold/mining и капитализацию; нереализованный результат не считать наличным доходом. Не добавлять торговый терминал или управление майнингом. ### Границы изменений - `backend/internal/trading/` - `backend/internal/mining/` Это планируемые пути. Общие контракты: `spec/001-want-keep-mvp/contracts.md`; архитектура и команды: `constraints.md`. Менять только владельца поведения и затронутые тесты; при незакрытом контракте обновить evidence и остановить зависимую реализацию. ### Связанные требования - **REQ-007:** Обмен и P2P-конвертация собственных денег сохраняют обе валютные суммы, фактический курс и комиссии. - **RE",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 107,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 100,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5368048946",
+      "source": "github",
+      "title": "[task-6.1] Реализовать курсы и валютную оценку / Implement rates and currency valuation",
+      "url": "https://github.com/pchkauu/want-keep/issues/40",
+      "repositoryApiUrl": "https://api.github.com/repos/pchkauu/want-keep",
+      "rewardUsd": 100,
+      "score": 48,
+      "labels": [],
+      "commentCount": 0,
+      "updatedAt": "2026-09-06T22:28:12Z",
+      "summary": "<!-- want-keep-task: task-6.1 --> # task-6.1 — Реализовать курсы и валютную оценку / Implement rates and currency valuation ## RU Сохранять историческую оценку и показывать текущие эквиваленты/котировки. **Состояние:** Заблокировано зависимостями и проверкой SDD Ready; реализация не начата. **Зависимости:** `task-0.7`, `task-2.2`, `task-3.2`. **Тип:** `implementation`. ### Изменение и контракты Реализовать подтверждённые источники исторических/текущих курсов и сервисных bid/ask по контракту. Фиксировать source/time/direction/amount/fee coverage. Историческую оценку не менять при обновлении текущей цены; исправление курса аудировать отдельно. Missing/stale/unsupported не считать нулём или peg; native amount остаётся доступен. Перевод/обмен использует фактические legs. ### Границы изменений - `backend/internal/valuation/` - `backend/internal/integrations/rates/` Это планируемые пути. Общие контракты: `spec/001-want-keep-mvp/contracts.md`; архитектура и команды: `constraints.md`. Менять только владельца поведения и затронутые тесты; при незакрытом контракте обновить evidence и остановить зависимую реализацию. ### Связанные требования - **REQ-002:** Учёт поддерживает RUB, USD, USDT и B",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 107,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 100,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5368049730",
+      "source": "github",
+      "title": "[task-6.7] Резервировать деньги на цели / Reserve money for goals",
+      "url": "https://github.com/pchkauu/want-keep/issues/46",
+      "repositoryApiUrl": "https://api.github.com/repos/pchkauu/want-keep",
+      "rewardUsd": 100,
+      "score": 40,
+      "labels": [],
+      "commentCount": 0,
+      "updatedAt": "2026-09-06T22:28:23Z",
+      "summary": "<!-- want-keep-task: task-6.7 --> # task-6.7 — Резервировать деньги на цели / Reserve money for goals ## RU Показывать прогресс и доступные деньги без повторных резервов. **Состояние:** Заблокировано зависимостями и проверкой SDD Ready; реализация не начата. **Зависимости:** `task-6.6`, `task-2.1`. **Тип:** `implementation`. ### Изменение и контракты Реализовать goal amount/currency/deadline, virtual allocation и dedicated-account modes. Сохранять связь reserve→funding account; исключить cross-currency funding без реального обмена и allocation выше свободной суммы. Переключение способа атомарно переносит резерв, а не дублирует его. Изменение утверждённой цели AI требует решения владельца. Личные цели изменяет владелец, совместные — любой; общей цели не создавать персональные половины. Резерв явный, проверка семейной доступности и запись атомарны при параллельных запросах. ### Границы изменений - `backend/internal/goals/` Это планируемые пути. Общие контракты: `spec/001-want-keep-mvp/contracts.md`; архитектура и команды: `constraints.md`. Менять только владельца поведения и затронутые тесты; при незакрытом контракте обновить evidence и остановить зависимую реализацию. ### Связанные ",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 107,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 0,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 100,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -228,12 +324,12 @@
       "title": "Atlas Forge Live Dashboard",
       "url": "https://github.com/tjhuber2009-eng/TestRepo/issues/20",
       "repositoryApiUrl": "https://api.github.com/repos/tjhuber2009-eng/TestRepo",
-      "rewardUsd": 33.7,
+      "rewardUsd": 33.9,
       "score": 40,
       "labels": [],
       "commentCount": 0,
-      "updatedAt": "2026-09-06T21:41:52Z",
-      "summary": "# AUTORESEARCH Live Dashboard > **Auto-updated:** 2026-09-06 21:41:49 UTC > **Protocol:** `nested_chronological_v3` > **Phase:** **BREADTH** ## Start here — current answers | Question | Current answer | Key numbers | |---|---|---| | **Private account** | V4 authoritative portfolio at **55% max concentration** | CAGR **27.45%** · observed DD **-18.93%** · bootstrap q95 DD **31.27%** | | **Best repeated prop economics** | **FTMO 2-Step · Max repeat payout** | pass **33.7%** · 12-cycle reward **15.68%** · funded survival **95.4%** | | **Simpler prop alternative** | **FTMO 1-Step · Max repeat payout** | pass **35.8%** · 12-cycle reward **8.44%** | | **Balanced exact transfer** | **btc_rsi_adx__eth__prop** | pass **33.0%** · reward **9.06%** · survival **93.2%** | | **Research maturity** | **BREADTH** · development only | core breadth **23.27%** (1,196/5,140) · PBO-ready **71/405** · hidden validation **SEALED** | | **Market expansion** | **30 stocks + 7 FX** · isolated lane | **1,110 tracks** · breadth 0.63% · FX development **2020–2021** · 2022 hidden validation **SEALED** | ### What happens next 1. Let every exact prop adapter compete in V4; keep only genuine frontier winners. 2. Con",
+      "updatedAt": "2026-09-06T23:03:44Z",
+      "summary": "# AUTORESEARCH Live Dashboard > **Auto-updated:** 2026-09-06 23:03:41 UTC > **Protocol:** `nested_chronological_v3` > **Phase:** **BREADTH** ## Start here — current answers | Question | Current answer | Key numbers | |---|---|---| | **Private account** | V4 authoritative portfolio at **55% max concentration** | CAGR **23.49%** · observed DD **-18.71%** · bootstrap q95 DD **31.93%** | | **Best repeated prop economics** | **FTMO 2-Step · Max repeat payout** | pass **33.9%** · 12-cycle reward **16.54%** · funded survival **94.9%** | | **Simpler prop alternative** | **FTMO 1-Step · Max repeat payout** | pass **36.0%** · 12-cycle reward **9.45%** | | **Balanced exact transfer** | **btc_rsi_adx__eth__prop** | pass **33.0%** · reward **9.06%** · survival **93.2%** | | **Research maturity** | **BREADTH** · development only | core breadth **23.27%** (1,196/5,140) · PBO-ready **71/405** · hidden validation **SEALED** | | **Market expansion** | **30 stocks + 7 FX** · isolated lane | **1,110 tracks** · breadth 0.63% · FX development **2020–2021** · 2022 hidden validation **SEALED** | ### What happens next 1. Let every exact prop adapter compete in V4; keep only genuine frontier winners. 2. Con",
       "state": "candidate",
       "payoutConfidence": 0.35,
       "autonomyFit": 1,
@@ -251,42 +347,7 @@
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 33.7,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5345182233",
-      "source": "github",
-      "title": "Roadmap: five difficulty tiers and tactical roguelike expansion",
-      "url": "https://github.com/shipiyouniao/Minesweeper-2.0/issues/1",
-      "repositoryApiUrl": "https://api.github.com/repos/shipiyouniao/Minesweeper-2.0",
-      "rewardUsd": 16,
-      "score": 38,
-      "labels": [
-        "enhancement",
-        "help wanted"
-      ],
-      "commentCount": 1,
-      "updatedAt": "2026-09-06T18:51:26Z",
-      "summary": "# Five difficulty tiers and a tactical roguelike expedition This tracking issue describes the next expansion of Twin and Expedition: larger configurable boards, longer-term progression, shared health and shields, distinct turn-based boss encounters, and individual artwork for professions and bosses. **Status: in progress.** Four standalone modes (Classic, Twin boards, Expedition and Sonar), five expedition difficulties, eight professions, 42 mission/achievement goals, 24 distinct shop gameplay unlocks plus two finite trainings, 22 title abilities and up to 37 relics are implemented. The five-boss roster is Bastion Guardian, Brood Queen, Mirror Twins, Magnetic Knight and Clock Mage. PR #33 releases Sonar; PR #34 adds title builds and reduces all goal currency to a combined 11,340 supplies while retaining existing money and licenses. Human balance playtesting and the remaining independent-mode/derived-encounter deliveries below remain open. Each workstream continues through a focused PR; this roadmap stays open until its planned work is delivered. ## Agreed direction - Both Twin and Expedition receive **five difficulty choices**, with different board sizes and expedition lengths. - P",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 96,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 1,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 16,
+      "economicValueUsd": 33.9,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -329,6 +390,40 @@
       },
       "realMoneyEligible": true,
       "economicValueUsd": 780,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:1017408519",
+      "source": "github",
+      "title": "Sample Template for Bounty",
+      "url": "https://github.com/Opty-Fi/defi-adapters/issues/7",
+      "repositoryApiUrl": "https://api.github.com/repos/Opty-Fi/defi-adapters",
+      "rewardUsd": 5000,
+      "score": 56,
+      "labels": [
+        "bounty"
+      ],
+      "commentCount": 12,
+      "updatedAt": "2026-09-06T23:05:24Z",
+      "summary": "## Integrating Convex Finance using OptyFi's DeFi Adapter Interface ### Prize Bounty 5000 USDC ### Description The bounty is to build an integration with Convex Finance’s liquidity pools using OptyFi's DeFi Adapter interface and [defi-legos](https://github.com/Opty-Fi/defi-legos) library. With this integration, OptyFi users should be able to deposit CRV, CVX and Curve LP tokens into OptyFi vaults which will in turn deploy them into Convex to earn yield boosted by CRV and CVX rewards. The OptyFi Protocol should also be able to deposit CRV and Curve LP tokens acquired from other strategies involving our direct Curve integration. The overall goal is to maximize the liquidity, utility and profitability of CRV and other Curve assets in DeFi. ### Resources https://github.com/Opty-Fi/defi-legos - This should help in implementing adapter contracts and data for unit tests https://opty.fi/ - This should help to give you a good high-level understanding of OptyFi and what we’re building. https://docs.opty.fi/ - Here you can find more information on the OptyFi Protocol including tokens, pools, vaults, strategies, risk framework, DeFi Adapters and optimization engine. https://github.com/Opty-Fi/",
+      "state": "candidate",
+      "payoutConfidence": 0.5,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 84,
+      "survivalEligible": false,
+      "eligibilityReason": "Competition is too high for bootstrap mode.",
+      "competition": {
+        "comments": 12,
+        "attemptSignals": 2,
+        "risk": "medium"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 5000,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -377,7 +472,7 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:4455330769\",\"rewardUsd\":150,\"fastCashScore\":118,\"updatedAt\":\"2026-09-06T18:31:43Z\",\"competition\":{\"comments\":26,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4557180255\",\"rewardUsd\":780,\"fastCashScore\":142,\"updatedAt\":\"2026-09-06T19:17:45Z\",\"competition\":{\"comments\":8,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4557552603\",\"rewardUsd\":780,\"fastCashScore\":126,\"updatedAt\":\"2026-09-06T19:05:58Z\",\"competition\":{\"comments\":8,\"attemptSignals\":2,\"risk\":\"medium\"}},{\"id\":\"github:4557579802\",\"rewardUsd\":780,\"fastCashScore\":95,\"updatedAt\":\"2026-09-06T21:28:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":77,\"updatedAt\":\"2026-09-04T19:24:22Z\",\"competition\":{\"comments\":56,\"attemptSignals\":5,\"risk\":\"high\"}},{\"id\":\"github:5295068486\",\"rewardUsd\":58.88398389,\"fastCashScore\":95,\"updatedAt\":\"2026-09-06T18:36:14Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5345133419\",\"rewardUsd\":100,\"fastCashScore\":108,\"updatedAt\":\"2026-09-06T20:55:36Z\",\"competition\":{\"comments\":3,\"attemptSignals\":1,\"risk\":\"medium\"}},{\"id\":\"github:5345182233\",\"rewardUsd\":16,\"fastCashScore\":96,\"updatedAt\":\"2026-09-06T18:51:26Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5354501411\",\"rewardUsd\":33.7,\"fastCashScore\":101,\"updatedAt\":\"2026-09-06T21:41:52Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5367020909\",\"rewardUsd\":30,\"fastCashScore\":115,\"updatedAt\":\"2026-09-06T21:11:48Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5367021714\",\"rewardUsd\":25,\"fastCashScore\":112,\"updatedAt\":\"2026-09-06T21:31:20Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5367022030\",\"rewardUsd\":20,\"fastCashScore\":90,\"updatedAt\":\"2026-09-06T21:33:57Z\",\"competition\":{\"comments\":16,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:5367515371\",\"rewardUsd\":1200,\"fastCashScore\":111,\"updatedAt\":\"2026-09-06T20:59:51Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5367696278\",\"rewardUsd\":45,\"fastCashScore\":103,\"updatedAt\":\"2026-09-06T21:18:45Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:1017408519\",\"rewardUsd\":5000,\"fastCashScore\":84,\"updatedAt\":\"2026-09-06T23:05:24Z\",\"competition\":{\"comments\":12,\"attemptSignals\":2,\"risk\":\"medium\"}},{\"id\":\"github:4455330769\",\"rewardUsd\":150,\"fastCashScore\":118,\"updatedAt\":\"2026-09-06T18:31:43Z\",\"competition\":{\"comments\":26,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4557180255\",\"rewardUsd\":780,\"fastCashScore\":142,\"updatedAt\":\"2026-09-06T19:17:45Z\",\"competition\":{\"comments\":8,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4557552603\",\"rewardUsd\":780,\"fastCashScore\":126,\"updatedAt\":\"2026-09-06T19:05:58Z\",\"competition\":{\"comments\":8,\"attemptSignals\":2,\"risk\":\"medium\"}},{\"id\":\"github:4557579802\",\"rewardUsd\":780,\"fastCashScore\":95,\"updatedAt\":\"2026-09-06T21:28:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":77,\"updatedAt\":\"2026-09-04T19:24:22Z\",\"competition\":{\"comments\":56,\"attemptSignals\":5,\"risk\":\"high\"}},{\"id\":\"github:5354501411\",\"rewardUsd\":33.9,\"fastCashScore\":101,\"updatedAt\":\"2026-09-06T23:03:44Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5364841616\",\"rewardUsd\":287,\"fastCashScore\":109,\"updatedAt\":\"2026-09-06T23:03:16Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5367020741\",\"rewardUsd\":25,\"fastCashScore\":112,\"updatedAt\":\"2026-09-06T23:11:53Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5367021385\",\"rewardUsd\":175,\"fastCashScore\":132,\"updatedAt\":\"2026-09-06T23:00:21Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5368048946\",\"rewardUsd\":100,\"fastCashScore\":107,\"updatedAt\":\"2026-09-06T22:28:12Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5368049497\",\"rewardUsd\":100,\"fastCashScore\":107,\"updatedAt\":\"2026-09-06T22:28:19Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5368049730\",\"rewardUsd\":100,\"fastCashScore\":107,\"updatedAt\":\"2026-09-06T22:28:23Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5368187485\",\"rewardUsd\":29,\"fastCashScore\":114,\"updatedAt\":\"2026-09-06T22:59:55Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5368230470\",\"rewardUsd\":1196,\"fastCashScore\":110,\"updatedAt\":\"2026-09-06T23:08:58Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
@@ -389,11 +484,31 @@
     "maxHours": 4,
     "minPayoutConfidence": 0.8,
     "competitionRequired": "low",
-    "rejectedFakeRevenueCount": 4,
+    "rejectedFakeRevenueCount": 2,
     "rejectedAlreadyPaidCount": 0,
     "rejectedIdentityGateCount": 2
   },
   "economicallyRejected": [
+    {
+      "id": "github:5367021385",
+      "title": "[Bug] Orphan workflow bounty-175.yml uses invalid node-version and missing npm run test:js / test:py scripts",
+      "rewardUsd": 175,
+      "reasons": [
+        "testnet_or_test_token_reward",
+        "preclaim_or_identity_gate_not_configured"
+      ],
+      "rejectedAt": "2026-09-06T23:15:04.973Z"
+    },
+    {
+      "id": "github:5367020741",
+      "title": "[Bug] Login file input is disabled when no file is selected — picker can never open",
+      "rewardUsd": 25,
+      "reasons": [
+        "testnet_or_test_token_reward",
+        "preclaim_or_identity_gate_not_configured"
+      ],
+      "rejectedAt": "2026-09-06T23:15:04.974Z"
+    },
     {
       "id": "github:5367020909",
       "title": "[Bug] Login builds uploadOptions with callbacks then ignores them in the useFileUpload call",
@@ -1105,25 +1220,6 @@
         "preclaim_or_identity_gate_not_configured"
       ],
       "rejectedAt": "2026-08-24T15:58:08.549Z"
-    },
-    {
-      "id": "github:5222233848",
-      "title": "[Bug] Drag-and-drop path would bypass validation — no dropzone wiring through the validator",
-      "rewardUsd": 30,
-      "reasons": [
-        "testnet_or_test_token_reward",
-        "preclaim_or_identity_gate_not_configured"
-      ],
-      "rejectedAt": "2026-08-24T15:58:08.549Z"
-    },
-    {
-      "id": "github:5236300990",
-      "title": "Scale flat Gold rewards with Adventurer level and the authoritative Gold modifier",
-      "rewardUsd": 40,
-      "reasons": [
-        "preclaim_or_identity_gate_not_configured"
-      ],
-      "rejectedAt": "2026-08-24T15:10:27.575Z"
     }
   ]
 }
