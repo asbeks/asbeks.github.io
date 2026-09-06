@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-09-05T22:18:02.556Z",
+  "updatedAt": "2026-09-06T00:01:26.556Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -94,14 +94,14 @@
       "url": "https://github.com/BAWES-Universe/workadventure-universe/issues/1",
       "repositoryApiUrl": "https://api.github.com/repos/BAWES-Universe/workadventure-universe",
       "rewardUsd": 150,
-      "score": 41,
+      "score": 42,
       "labels": [
         "epic",
         "💎 Bounty",
         "$150"
       ],
-      "commentCount": 24,
-      "updatedAt": "2026-09-01T01:51:01Z",
+      "commentCount": 25,
+      "updatedAt": "2026-09-05T23:37:20Z",
       "summary": "## Goal Ship native Android + iOS apps for BAWES Universe that are fully functional including video calls, iframes, push notifications, and seamless updates. All work targets the `universe` branch. ## Current status ### ✅ In progress - [x] PR #9 — Capacitor scaffold (open, ready to review) ### 🔴 Ready to start now (no dependencies) - [ ] #3 — PWA manifest + Universe branding (`play/public/`) - [ ] [admin#6](https://github.com/BAWES-Universe/workadventure-universe-admin/issues/6) — Orbit auth deep-link (admin repo) - [ ] #10 — CI/CD pipeline audit + docs ### 🟡 Blocked (needs PR #9 + #3 + admin#6 merged) - [ ] #4 — Android build + Fastlane + Play Store - [ ] #5 — iOS build + Fastlane Match + TestFlight ### 🟡 Blocked (needs #4 + #5 merged) - [ ] #11 — Push notifications (native + web push) - [ ] #12 — App update management - [ ] #13 — iframe + LiveKit video compatibility in WebView ## Path ownership (no conflicts) | PR/Issue | Owns | Do not touch | |---|---|---| | PR #9 | `mobile/` root, `.github/workflows/mobile-ci.yml` | everything else | | #3 | `play/public/` manifest + icons | everything else | | admin#6 | `app/api/auth/`, `middleware.ts`, `docs/` (admin repo) | this repo | | #",
       "state": "candidate",
       "payoutConfidence": 0.92,
@@ -115,7 +115,7 @@
       "survivalEligible": false,
       "eligibilityReason": "Competition is too high for bootstrap mode.",
       "competition": {
-        "comments": 24,
+        "comments": 25,
         "attemptSignals": 0,
         "risk": "high"
       },
@@ -124,113 +124,17 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5331783841",
+      "id": "github:5331805565",
       "source": "github",
-      "title": "[Bounty: $100] Make JsonFileMemoryStore satisfy the MemoryStore interface contract",
-      "url": "https://github.com/Lilly-Protocol/agentlily-runtime/issues/230",
-      "repositoryApiUrl": "https://api.github.com/repos/Lilly-Protocol/agentlily-runtime",
-      "rewardUsd": 100,
-      "score": 54,
-      "labels": [],
-      "commentCount": 2,
-      "updatedAt": "2026-09-05T22:00:07Z",
-      "summary": "## Context `JsonFileMemoryStore` in `src/memory/memory-store.ts` (lines 128-201) does not conform to `MemoryStore`: it exposes `size` as a synchronous number getter instead of `size?(): Promise<number>`, and `clear()`, `size`, and `capacity` reference `this.entries` and `this.maxEntries`, properties that do not exist on the class (only `filePath` and `memoryCache` exist), so calling `clear()` or reading `size` crashes at runtime and typecheck fails (TS2416/TS2339). `listByAgent(agentId)` also ignores the `ListMemoryOptions` `offset`/`limit` supported by the in-memory store, and `createRuntimeDependencies` in `src/runtime/bootstrap.ts` (line 20) wires this store into runtimes configured with `memoryStoragePath`. ## Proposed Change Rewrite the store to implement `MemoryStore` faithfully: implement async `size()`/`clear()` (clearing both the cache and rewriting/removing the backing file), make `capacity`/`maxEntries` configuration explicit, and have `listByAgent` honor `offset`/`limit` consistently with `InMemoryMemoryStore`. ## Acceptance Criteria - [ ] `JsonFileMemoryStore` typechecks as an implementation of `MemoryStore` - [ ] `clear()` empties subsequent `listByAgent` results and ",
-      "state": "candidate",
-      "payoutConfidence": 0.65,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 118,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 2,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 100,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5331784206",
-      "source": "github",
-      "title": "[Bounty: $50] Deduplicate warn() and restore level filtering in ConsoleRuntimeLogger",
-      "url": "https://github.com/Lilly-Protocol/agentlily-runtime/issues/231",
-      "repositoryApiUrl": "https://api.github.com/repos/Lilly-Protocol/agentlily-runtime",
-      "rewardUsd": 50,
+      "title": "[Bounty: $40] Require an admin action to re-enable a wallet binding disabled by admin_deactivate",
+      "url": "https://github.com/Lilly-Protocol/lily-contracts/issues/282",
+      "repositoryApiUrl": "https://api.github.com/repos/Lilly-Protocol/lily-contracts",
+      "rewardUsd": 40,
       "score": 54,
       "labels": [],
       "commentCount": 1,
-      "updatedAt": "2026-09-05T22:00:05Z",
-      "summary": "## Context `src/logger/runtime-logger.ts` declares `warn()` three times (lines 43-55); in JavaScript the last declaration wins, so the effective `warn()` bypasses `shouldLog()` entirely and prints even when the logger is constructed with `{ level: \"error\" }`. The `shouldLog(level: \"info\" | \"error\")` signature also cannot express `warn`, and the file carries duplicate `LogLevel`/`RuntimeLogLevel`, priority maps, and `ConsoleRuntimeLoggerOptions`. `tests/logger/console-runtime-logger-level.test.ts` expects `warn` to be suppressed at `level: \"error\"`. ## Proposed Change Keep a single `warn()` that routes through the same filtering as `info()`/`error()`, widen `shouldLog` to accept `RuntimeLogLevel`, and delete the duplicated type and constant declarations so the logger honors its configured minimum level for every level. ## Acceptance Criteria - [ ] With `level: \"error\"`, `warn()` makes no `console.warn` call - [ ] With `level: \"warn\"`, `info()` is suppressed while `warn()` and `error()` are printed - [ ] Typecheck passes with no duplicate-method or duplicate-interface errors in the logger file ## Suggested Label bug **ETA:** 24 hours",
-      "state": "candidate",
-      "payoutConfidence": 0.65,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 115,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 1,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 50,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5331786330",
-      "source": "github",
-      "title": "[Bounty: $50] Expose an agent-instance capacity limit through RuntimeOptions",
-      "url": "https://github.com/Lilly-Protocol/agentlily-runtime/issues/236",
-      "repositoryApiUrl": "https://api.github.com/repos/Lilly-Protocol/agentlily-runtime",
-      "rewardUsd": 50,
-      "score": 54,
-      "labels": [],
-      "commentCount": 1,
-      "updatedAt": "2026-09-05T22:00:03Z",
-      "summary": "## Context `RuntimeOptions` in `src/runtime/types.ts` has no option to bound agent instances, and `createRuntimeDependencies` in `src/runtime/bootstrap.ts` (line 26) always constructs `new AgentInstanceManager()` with its default `maxInstances` of 5_000 (`src/agents/agent-instance-manager.ts`, lines 6-12). Runtime operators cannot configure a tighter per-deployment cap, and when the manager silently evicts the oldest instance at capacity there is no way to observe or tune the policy. ## Proposed Change Add an optional `maxAgentInstances?: number` to `RuntimeOptions`, pass it into `AgentInstanceManager` in `createRuntimeDependencies`, and document the default. Optionally expose the eviction count on the manager or log it via the configured `RuntimeLogger`. ## Acceptance Criteria - [ ] `new AgentRuntime({ runtimeId, maxAgentInstances: 2 })` produces an `AgentInstanceManager` that evicts the oldest instance when a third distinct agent is created - [ ] Omitting the option preserves the existing default of 5_000 - [ ] An integration test through `executeTask` shows eviction does not break in-flight task contexts ## Suggested Label enhancement **ETA:** 24 hours",
-      "state": "candidate",
-      "payoutConfidence": 0.65,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 115,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 1,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 50,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5332380589",
-      "source": "github",
-      "title": "[Bounty: $50] Exclude src/**/__tests__ suites from Vitest coverage totals",
-      "url": "https://github.com/Lilly-Protocol/agentlily-runtime/issues/268",
-      "repositoryApiUrl": "https://api.github.com/repos/Lilly-Protocol/agentlily-runtime",
-      "rewardUsd": 50,
-      "score": 54,
-      "labels": [],
-      "commentCount": 2,
-      "updatedAt": "2026-09-05T22:00:09Z",
-      "summary": "**Context** `vitest.config.ts` configures `coverage.include: [\"src/**/*.ts\"]` with thresholds (lines 85, functions 75, branches 70, statements 85). The repository keeps two test suites inside `src/` at `src/events/__tests__/runtime-events.test.ts` and `src/events/__tests__/runtime-internal-error.test.ts`, which are matched by the include glob; because they execute their own code, they inflate the measured coverage and can mask real gaps in library code behind the thresholds. **Proposed Change** Move the `src/**/__tests__` suites into the top-level `tests/` tree (or add an explicit coverage exclude such as `\"src/**/__tests__/**\"`) so coverage thresholds reflect only production code. **Acceptance Criteria** - Running `npm run test` shows coverage reported only over `src/**/*.ts` excluding any `__tests__` files. - The reported line/function/statement percentages change without threshold violations, or thresholds are adjusted deliberately and documented in the PR. - Test execution count and pass/fail results are unchanged after relocating the suites. - No `src/**/__tests__` directory remains after the move. **Suggested Label** ci **ETA:** 24 hours",
+      "updatedAt": "2026-09-06T00:00:44Z",
+      "summary": "## Context `admin_deactivate` in `contracts/wallet/src/lib.rs` is described as an emergency admin control, but it only flips the shared `enabled` flag, and `set_enabled` is gated on agent auth alone. A bound agent can immediately call `set_enabled(agent, true)` after an admin deactivation and fully undo the emergency action without admin approval; identity has no equivalent hole because `reactivate` there is admin-gated. ## Proposed Change Track emergency deactivation separately from agent-controlled state: add an admin-only `admin_reactivate` mirroring `identity.reactivate`, and make `set_enabled` reject re-enabling a binding that `admin_deactivate` disabled (or add an explicit admin-disabled marker to `WalletBinding`). Ensure `rebind_wallet` clears the marker so a fresh binding starts fully enabled. ## Acceptance Criteria - [ ] Test: `bind_wallet` then `admin_deactivate` then agent `set_enabled(agent, true)` panics with a typed `ProtocolError` - [ ] Test: the admin can restore the binding via the new admin path, emitting exactly one event and one revision bump - [ ] Agent-initiated `set_enabled(agent, false)` still succeeds both before and after `admin_deactivate` - [ ] `rebind_w",
       "state": "candidate",
       "payoutConfidence": 0.65,
       "autonomyFit": 1,
@@ -243,31 +147,31 @@
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
-        "comments": 2,
+        "comments": 1,
         "attemptSignals": 0,
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 50,
+      "economicValueUsd": 40,
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5358159731",
+      "id": "github:5361681870",
       "source": "github",
-      "title": "Reward cost > balance gives a 400 error",
-      "url": "https://github.com/jamesread/StarLoom/issues/12",
-      "repositoryApiUrl": "https://api.github.com/repos/jamesread/StarLoom",
-      "rewardUsd": 400,
-      "score": 40,
+      "title": "Feature: Empathy audit + synth bounty contracts (Dick-inspired)",
+      "url": "https://github.com/8r4n/adventure-snowcrash/issues/63",
+      "repositoryApiUrl": "https://api.github.com/repos/8r4n/adventure-snowcrash",
+      "rewardUsd": 42,
+      "score": 46,
       "labels": [
-        "needs: feedback",
-        "progress: design"
+        "enhancement",
+        "roadmap"
       ],
-      "commentCount": 2,
-      "updatedAt": "2026-09-05T22:07:15Z",
-      "summary": "**Describe the bug** Trying to grant an award with a cost above the child's balance gives a 400 error in the UI. **To Reproduce** Steps to reproduce the behavior: 1. Create a child and an award with cost 1. Ensure the child has no stars. (works with any balance < award cost) 2. Navigate to `/control-panel/rewards` and press \"Award\" for your new award. **Expected behavior** A message indicating the child's balance is insufficient **Screenshots** <img width=\"1256\" height=\"692\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/a88bc6cb-52d8-4292-8c20-12eb0c2858ac\" />",
+      "commentCount": 1,
+      "updatedAt": "2026-09-05T23:47:37Z",
+      "summary": "Parent: #42 · Related: #27 #28 **Inspiration:** Do Androids Dream empathy tests / bounty hunting — **StreetNet empathy audit** mini-game + synth courier contracts. ## Goal Optional audit encounter; bounty board for rogue synths; moral heat if you fail audits. ## Acceptance - [ ] Empathy mini-game or dialogue test - [ ] ≥2 bounty contract types - [ ] Heat/reputation effects",
       "state": "candidate",
-      "payoutConfidence": 0.35,
+      "payoutConfidence": 0.5,
       "autonomyFit": 1,
       "requiresHumanGate": false,
       "requiresSpecialHardware": false,
@@ -278,44 +182,12 @@
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
-        "comments": 2,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 400,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5360888206",
-      "source": "github",
-      "title": "T002: Establish the initial backend boundaries",
-      "url": "https://github.com/alexisdacquay/chorum-murohc/issues/2",
-      "repositoryApiUrl": "https://api.github.com/repos/alexisdacquay/chorum-murohc",
-      "rewardUsd": 56,
-      "score": 48,
-      "labels": [],
-      "commentCount": 1,
-      "updatedAt": "2026-09-05T22:14:03Z",
-      "summary": "**Source task**: T002 in `_docs/tasks.md` **Status**: Blocked **Ready confirmed by and date**: Not ready — the exact backend-boundary contract below requires recorded human approval. **Workstream**: Architecture **Depends on**: T001 — verified against `_docs/task-dependencies.md` **Merged dependency commits**: T001 merged into `origin/main` at `faf6be13c795af04262a5b346de864efeb41e4b3`; [post-merge QA evidence](https://github.com/alexisdacquay/chorum-murohc/issues/1#issuecomment-5555110200) **Base commit**: `faf6be13c795af04262a5b346de864efeb41e4b3` **Integration owner**: Main orchestrator **Ownership**: - Owned paths: `_docs/design.md`; `chorum_murohc/tests.py`; and only `__init__.py`, `apps.py`, and `migrations/__init__.py` below each new package `chorum_murohc/{identity,audit,chores,submissions,ledger,rewards,progression,creatures}/` - Shared paths requiring exclusive ownership: `config/settings.py` for Django app registration; `_docs/design.md` for the backend-boundary contract - Shared-path ownership granted by: Main orchestrator, 2026-09-05. The eventual T002 engineer has exclusive ownership for this task; no other write-capable worker may overlap these paths. **Worktree path",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 103,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
         "comments": 1,
         "attemptSignals": 0,
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 56,
+      "economicValueUsd": 42,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -462,6 +334,42 @@
       "realMoneyEligible": true,
       "economicValueUsd": 50,
       "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5211154647",
+      "source": "github",
+      "title": "🎯 GORM v2.24.0 Panics When Querying with Complex Joins",
+      "url": "https://github.com/HarrieAlexandrowicz5/gorm/issues/1",
+      "repositoryApiUrl": "https://api.github.com/repos/HarrieAlexandrowicz5/gorm",
+      "rewardUsd": 10,
+      "score": 32,
+      "labels": [
+        "bounty",
+        "opire",
+        "$10"
+      ],
+      "commentCount": 66,
+      "updatedAt": "2026-09-05T23:42:45Z",
+      "summary": "## 📝 Description When attempting to query the database using GORM v2.24.0 with complex joins, the application panics. This issue has been observed in multiple environments and with various database backends (PostgreSQL, MySQL, SQLite). ## 🎯 Acceptance Criteria - [ ] The application should not panic when querying with complex joins. - [ ] The query should return the correct results as expected. - [ ] The panic should be reproducible and consistently occur with the same query. - [ ] The issue should be resolved in GORM v2.24.0 or a subsequent patch release. ## 🛠️ Technical Specifications & Context - The panic occurs when executing a query with multiple joins, including self-joins and joins with subqueries. - The issue is likely related to how GORM handles complex query structures internally. - The panic message typically includes a stack trace pointing to a file in the GORM library, such as `gorm.go` or `query.go`. ## 🧪 Verification & Testing 1. **Reproduce the Issue:** - Create a test case that includes a complex query with multiple joins. - Execute the test case and observe if the application panics. 2. **Verify Fix:** - Apply the proposed fix (if available) or a potential patc",
+      "state": "candidate",
+      "payoutConfidence": 0.7,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 67,
+      "survivalEligible": false,
+      "eligibilityReason": "Competition is too high for bootstrap mode.",
+      "competition": {
+        "comments": 66,
+        "attemptSignals": 1,
+        "risk": "high"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 10,
+      "requiresPreclaimOrIdentity": false
     }
   ],
   "selected": null,
@@ -474,7 +382,7 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:4455330769\",\"rewardUsd\":150,\"fastCashScore\":118,\"updatedAt\":\"2026-09-01T01:51:01Z\",\"competition\":{\"comments\":24,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":99,\"updatedAt\":\"2026-09-01T00:09:20Z\",\"competition\":{\"comments\":21,\"attemptSignals\":3,\"risk\":\"high\"}},{\"id\":\"github:4553022084\",\"rewardUsd\":430,\"fastCashScore\":133,\"updatedAt\":\"2026-09-04T04:17:26Z\",\"competition\":{\"comments\":14,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4557563229\",\"rewardUsd\":780,\"fastCashScore\":123,\"updatedAt\":\"2026-09-04T05:51:12Z\",\"competition\":{\"comments\":10,\"attemptSignals\":2,\"risk\":\"medium\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":77,\"updatedAt\":\"2026-09-04T19:24:22Z\",\"competition\":{\"comments\":56,\"attemptSignals\":5,\"risk\":\"high\"}},{\"id\":\"github:5295068486\",\"rewardUsd\":58.88398389,\"fastCashScore\":95,\"updatedAt\":\"2026-09-05T20:12:22Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5312094670\",\"rewardUsd\":500,\"fastCashScore\":87,\"updatedAt\":\"2026-09-05T20:18:00Z\",\"competition\":{\"comments\":16,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:5331783841\",\"rewardUsd\":100,\"fastCashScore\":118,\"updatedAt\":\"2026-09-05T22:00:07Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5331784206\",\"rewardUsd\":50,\"fastCashScore\":115,\"updatedAt\":\"2026-09-05T22:00:05Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5331786330\",\"rewardUsd\":50,\"fastCashScore\":115,\"updatedAt\":\"2026-09-05T22:00:03Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5332380589\",\"rewardUsd\":50,\"fastCashScore\":114,\"updatedAt\":\"2026-09-05T22:00:09Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5345182233\",\"rewardUsd\":16,\"fastCashScore\":96,\"updatedAt\":\"2026-09-05T15:51:17Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5356980367\",\"rewardUsd\":100,\"fastCashScore\":106,\"updatedAt\":\"2026-09-05T17:38:29Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5358159731\",\"rewardUsd\":400,\"fastCashScore\":108,\"updatedAt\":\"2026-09-05T22:07:15Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5360888206\",\"rewardUsd\":56,\"fastCashScore\":103,\"updatedAt\":\"2026-09-05T22:14:03Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:4455330769\",\"rewardUsd\":150,\"fastCashScore\":118,\"updatedAt\":\"2026-09-05T23:37:20Z\",\"competition\":{\"comments\":25,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":99,\"updatedAt\":\"2026-09-01T00:09:20Z\",\"competition\":{\"comments\":21,\"attemptSignals\":3,\"risk\":\"high\"}},{\"id\":\"github:4553022084\",\"rewardUsd\":430,\"fastCashScore\":133,\"updatedAt\":\"2026-09-04T04:17:26Z\",\"competition\":{\"comments\":14,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4557563229\",\"rewardUsd\":780,\"fastCashScore\":123,\"updatedAt\":\"2026-09-04T05:51:12Z\",\"competition\":{\"comments\":10,\"attemptSignals\":2,\"risk\":\"medium\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":77,\"updatedAt\":\"2026-09-04T19:24:22Z\",\"competition\":{\"comments\":56,\"attemptSignals\":5,\"risk\":\"high\"}},{\"id\":\"github:4604108106\",\"rewardUsd\":17,\"fastCashScore\":60,\"updatedAt\":\"2026-09-05T23:54:12Z\",\"competition\":{\"comments\":19,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:5211154647\",\"rewardUsd\":10,\"fastCashScore\":67,\"updatedAt\":\"2026-09-05T23:42:45Z\",\"competition\":{\"comments\":66,\"attemptSignals\":1,\"risk\":\"high\"}},{\"id\":\"github:5295068486\",\"rewardUsd\":58.88398389,\"fastCashScore\":95,\"updatedAt\":\"2026-09-05T20:12:22Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5312094670\",\"rewardUsd\":500,\"fastCashScore\":87,\"updatedAt\":\"2026-09-05T20:18:00Z\",\"competition\":{\"comments\":16,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:5331805565\",\"rewardUsd\":40,\"fastCashScore\":114,\"updatedAt\":\"2026-09-06T00:00:44Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5345182233\",\"rewardUsd\":16,\"fastCashScore\":96,\"updatedAt\":\"2026-09-05T15:51:17Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5356980367\",\"rewardUsd\":100,\"fastCashScore\":106,\"updatedAt\":\"2026-09-05T17:38:29Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5361681870\",\"rewardUsd\":42,\"fastCashScore\":108,\"updatedAt\":\"2026-09-05T23:47:37Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
@@ -487,7 +395,7 @@
     "minPayoutConfidence": 0.8,
     "competitionRequired": "low",
     "rejectedFakeRevenueCount": 2,
-    "rejectedAlreadyPaidCount": 0,
+    "rejectedAlreadyPaidCount": 1,
     "rejectedIdentityGateCount": 0
   },
   "economicallyRejected": [
@@ -498,7 +406,7 @@
       "reasons": [
         "testnet_or_test_token_reward"
       ],
-      "rejectedAt": "2026-09-05T22:18:02.519Z"
+      "rejectedAt": "2026-09-06T00:01:26.370Z"
     },
     {
       "id": "github:5295068486",
@@ -507,7 +415,16 @@
       "reasons": [
         "testnet_or_test_token_reward"
       ],
-      "rejectedAt": "2026-09-05T22:18:02.519Z"
+      "rejectedAt": "2026-09-06T00:01:26.370Z"
+    },
+    {
+      "id": "github:4604108106",
+      "title": "[BOUNTY: up to 17 RTC · 67 RTC pool] Tear apart RIP-0301 — paid design critique",
+      "rewardUsd": 17,
+      "reasons": [
+        "already_rewarded_or_paid"
+      ],
+      "rejectedAt": "2026-09-06T00:01:26.370Z"
     },
     {
       "id": "github:5346888742",
@@ -1209,16 +1126,6 @@
         "preclaim_or_identity_gate_not_configured"
       ],
       "rejectedAt": "2026-08-23T14:29:49.057Z"
-    },
-    {
-      "id": "github:5190346636",
-      "title": "Automated Multi-Stage CI/CD Pipeline for WASM Build, Testnet Deployment, and Mainnet Gate",
-      "rewardUsd": 2000,
-      "reasons": [
-        "testnet_or_test_token_reward",
-        "already_rewarded_or_paid"
-      ],
-      "rejectedAt": "2026-08-23T12:49:32.781Z"
     }
   ]
 }

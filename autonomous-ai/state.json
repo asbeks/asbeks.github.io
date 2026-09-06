@@ -2,7 +2,7 @@
   "version": 5,
   "cycle": 190,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-09-05T22:18:04.846Z",
+  "updatedAt": "2026-09-06T00:02:19.190Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "waiting_provider",
   "currentAgent": "PLANNER",
@@ -20,7 +20,7 @@
     "decision": "Concurrently assess technical feasibility of the auth fix and source BAWES branding assets to unblock submission eligibility and cash‑out pathways.",
     "next": "PLANNER to report estimated effort hours for the auth refresh fix and progress on acquiring BAWES Universe branding guidelines."
   },
-  "lastError": "Available OpenCode free models are temporarily rate-limited.",
+  "lastError": "Available OpenCode free models are temporarily unavailable.",
   "history": [
     {
       "cycle": 151,
@@ -428,29 +428,29 @@
         "title": "📱 Epic: BAWES Universe Mobile App (Android + iOS)",
         "url": "https://github.com/BAWES-Universe/workadventure-universe/issues/1",
         "rewardUsd": 150,
-        "score": 41,
+        "score": 42,
         "summary": "## Goal Ship native Android + iOS apps for BAWES Universe that are fully functional including video calls, iframes, push notifications, and seamless updates. All work targets the `universe` branch. ## Current status ### ✅ In progress - [x] PR #9 — Capacitor scaffold (open, ready to review) ### 🔴 Ready to start now (no dependencies) - [ ] #3 — PWA manifest + Universe branding (`play/public/`) - [ ] [admin#6](https://github.com/BAWES-Universe/workadventure-universe-admin/issues/6) — Orbit auth deep-link (admin repo) - [ ] #10 — CI/CD pipeline audit + docs ### 🟡 Blocked (needs PR #9 + #3 + admin#6 merged) - [ ] #4 — Android build + Fastlane + Play Store - [ ] #5 — iOS build + Fastlane Match + TestFlight ### 🟡 Blocked (needs #4 + #5 merged) - [ ] #11 — Push notifications (native + web push) - [ ] #12 — App update management - [ ] #13 — iframe + LiveKit video compatibility in WebView ## Path ownership (no conflicts) | PR/Issue | Owns | Do not touch | |---|---|---| | PR #9 | `mobile/` root, `.github/workflows/mobile-ci.yml` | everything else | | #3 | `play/public/` manifest + icons | everything else | | admin#6 | `app/api/auth/`, `middleware.ts`, `docs/` (admin repo) | this repo | | #"
       },
       {
-        "id": "github:5331783841",
-        "title": "[Bounty: $100] Make JsonFileMemoryStore satisfy the MemoryStore interface contract",
-        "url": "https://github.com/Lilly-Protocol/agentlily-runtime/issues/230",
-        "rewardUsd": 100,
+        "id": "github:5331805565",
+        "title": "[Bounty: $40] Require an admin action to re-enable a wallet binding disabled by admin_deactivate",
+        "url": "https://github.com/Lilly-Protocol/lily-contracts/issues/282",
+        "rewardUsd": 40,
         "score": 54,
-        "summary": "## Context `JsonFileMemoryStore` in `src/memory/memory-store.ts` (lines 128-201) does not conform to `MemoryStore`: it exposes `size` as a synchronous number getter instead of `size?(): Promise<number>`, and `clear()`, `size`, and `capacity` reference `this.entries` and `this.maxEntries`, properties that do not exist on the class (only `filePath` and `memoryCache` exist), so calling `clear()` or reading `size` crashes at runtime and typecheck fails (TS2416/TS2339). `listByAgent(agentId)` also ignores the `ListMemoryOptions` `offset`/`limit` supported by the in-memory store, and `createRuntimeDependencies` in `src/runtime/bootstrap.ts` (line 20) wires this store into runtimes configured with `memoryStoragePath`. ## Proposed Change Rewrite the store to implement `MemoryStore` faithfully: implement async `size()`/`clear()` (clearing both the cache and rewriting/removing the backing file), make `capacity`/`maxEntries` configuration explicit, and have `listByAgent` honor `offset`/`limit` consistently with `InMemoryMemoryStore`. ## Acceptance Criteria - [ ] `JsonFileMemoryStore` typechecks as an implementation of `MemoryStore` - [ ] `clear()` empties subsequent `listByAgent` results and "
+        "summary": "## Context `admin_deactivate` in `contracts/wallet/src/lib.rs` is described as an emergency admin control, but it only flips the shared `enabled` flag, and `set_enabled` is gated on agent auth alone. A bound agent can immediately call `set_enabled(agent, true)` after an admin deactivation and fully undo the emergency action without admin approval; identity has no equivalent hole because `reactivate` there is admin-gated. ## Proposed Change Track emergency deactivation separately from agent-controlled state: add an admin-only `admin_reactivate` mirroring `identity.reactivate`, and make `set_enabled` reject re-enabling a binding that `admin_deactivate` disabled (or add an explicit admin-disabled marker to `WalletBinding`). Ensure `rebind_wallet` clears the marker so a fresh binding starts fully enabled. ## Acceptance Criteria - [ ] Test: `bind_wallet` then `admin_deactivate` then agent `set_enabled(agent, true)` panics with a typed `ProtocolError` - [ ] Test: the admin can restore the binding via the new admin path, emitting exactly one event and one revision bump - [ ] Agent-initiated `set_enabled(agent, false)` still succeeds both before and after `admin_deactivate` - [ ] `rebind_w"
       },
       {
-        "id": "github:5331784206",
-        "title": "[Bounty: $50] Deduplicate warn() and restore level filtering in ConsoleRuntimeLogger",
-        "url": "https://github.com/Lilly-Protocol/agentlily-runtime/issues/231",
-        "rewardUsd": 50,
-        "score": 54,
-        "summary": "## Context `src/logger/runtime-logger.ts` declares `warn()` three times (lines 43-55); in JavaScript the last declaration wins, so the effective `warn()` bypasses `shouldLog()` entirely and prints even when the logger is constructed with `{ level: \"error\" }`. The `shouldLog(level: \"info\" | \"error\")` signature also cannot express `warn`, and the file carries duplicate `LogLevel`/`RuntimeLogLevel`, priority maps, and `ConsoleRuntimeLoggerOptions`. `tests/logger/console-runtime-logger-level.test.ts` expects `warn` to be suppressed at `level: \"error\"`. ## Proposed Change Keep a single `warn()` that routes through the same filtering as `info()`/`error()`, widen `shouldLog` to accept `RuntimeLogLevel`, and delete the duplicated type and constant declarations so the logger honors its configured minimum level for every level. ## Acceptance Criteria - [ ] With `level: \"error\"`, `warn()` makes no `console.warn` call - [ ] With `level: \"warn\"`, `info()` is suppressed while `warn()` and `error()` are printed - [ ] Typecheck passes with no duplicate-method or duplicate-interface errors in the logger file ## Suggested Label bug **ETA:** 24 hours"
+        "id": "github:5361681870",
+        "title": "Feature: Empathy audit + synth bounty contracts (Dick-inspired)",
+        "url": "https://github.com/8r4n/adventure-snowcrash/issues/63",
+        "rewardUsd": 42,
+        "score": 46,
+        "summary": "Parent: #42 · Related: #27 #28 **Inspiration:** Do Androids Dream empathy tests / bounty hunting — **StreetNet empathy audit** mini-game + synth courier contracts. ## Goal Optional audit encounter; bounty board for rogue synths; moral heat if you fail audits. ## Acceptance - [ ] Empathy mini-game or dialogue test - [ ] ≥2 bounty contract types - [ ] Heat/reputation effects"
       }
     ],
     "active": null,
     "completedCount": 0,
     "lastError": null
   },
-  "retryAfterAt": "2026-09-05T22:23:04.846Z"
+  "retryAfterAt": "2026-09-06T00:07:19.190Z"
 }
