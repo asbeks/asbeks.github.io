@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-09-06T00:01:26.556Z",
+  "updatedAt": "2026-09-06T04:29:21.174Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -124,73 +124,6 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5331805565",
-      "source": "github",
-      "title": "[Bounty: $40] Require an admin action to re-enable a wallet binding disabled by admin_deactivate",
-      "url": "https://github.com/Lilly-Protocol/lily-contracts/issues/282",
-      "repositoryApiUrl": "https://api.github.com/repos/Lilly-Protocol/lily-contracts",
-      "rewardUsd": 40,
-      "score": 54,
-      "labels": [],
-      "commentCount": 1,
-      "updatedAt": "2026-09-06T00:00:44Z",
-      "summary": "## Context `admin_deactivate` in `contracts/wallet/src/lib.rs` is described as an emergency admin control, but it only flips the shared `enabled` flag, and `set_enabled` is gated on agent auth alone. A bound agent can immediately call `set_enabled(agent, true)` after an admin deactivation and fully undo the emergency action without admin approval; identity has no equivalent hole because `reactivate` there is admin-gated. ## Proposed Change Track emergency deactivation separately from agent-controlled state: add an admin-only `admin_reactivate` mirroring `identity.reactivate`, and make `set_enabled` reject re-enabling a binding that `admin_deactivate` disabled (or add an explicit admin-disabled marker to `WalletBinding`). Ensure `rebind_wallet` clears the marker so a fresh binding starts fully enabled. ## Acceptance Criteria - [ ] Test: `bind_wallet` then `admin_deactivate` then agent `set_enabled(agent, true)` panics with a typed `ProtocolError` - [ ] Test: the admin can restore the binding via the new admin path, emitting exactly one event and one revision bump - [ ] Agent-initiated `set_enabled(agent, false)` still succeeds both before and after `admin_deactivate` - [ ] `rebind_w",
-      "state": "candidate",
-      "payoutConfidence": 0.65,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 114,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 1,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 40,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5361681870",
-      "source": "github",
-      "title": "Feature: Empathy audit + synth bounty contracts (Dick-inspired)",
-      "url": "https://github.com/8r4n/adventure-snowcrash/issues/63",
-      "repositoryApiUrl": "https://api.github.com/repos/8r4n/adventure-snowcrash",
-      "rewardUsd": 42,
-      "score": 46,
-      "labels": [
-        "enhancement",
-        "roadmap"
-      ],
-      "commentCount": 1,
-      "updatedAt": "2026-09-05T23:47:37Z",
-      "summary": "Parent: #42 · Related: #27 #28 **Inspiration:** Do Androids Dream empathy tests / bounty hunting — **StreetNet empathy audit** mini-game + synth courier contracts. ## Goal Optional audit encounter; bounty board for rogue synths; moral heat if you fail audits. ## Acceptance - [ ] Empathy mini-game or dialogue test - [ ] ≥2 bounty contract types - [ ] Heat/reputation effects",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 108,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 1,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 42,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
       "id": "github:4462160604",
       "source": "github",
       "title": "[bounty $400] Implement ABNF-compliant email address parser with full §3.2–§4.4 coverage",
@@ -228,79 +161,6 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5345182233",
-      "source": "github",
-      "title": "Roadmap: five difficulty tiers and tactical roguelike expansion",
-      "url": "https://github.com/shipiyouniao/Minesweeper-2.0/issues/1",
-      "repositoryApiUrl": "https://api.github.com/repos/shipiyouniao/Minesweeper-2.0",
-      "rewardUsd": 16,
-      "score": 38,
-      "labels": [
-        "enhancement",
-        "help wanted"
-      ],
-      "commentCount": 1,
-      "updatedAt": "2026-09-05T15:51:17Z",
-      "summary": "# Five difficulty tiers and a tactical roguelike expedition This tracking issue describes the next expansion of Twin and Expedition: larger configurable boards, longer-term progression, shared health and shields, distinct turn-based boss encounters, and individual artwork for professions and bosses. **Status: in progress.** Five difficulties, six professions, 24 distinct gameplay unlocks plus two finite trainings, and 29 relics are released. The tactical roster now includes Bastion Guardian, Brood Queen, Mirror Twins (PR #20) and **Magnetic Knight (PR #25)**. Shared combat builds shipped in PR #18; current-rule save retirement and mobile long-press fixes shipped in PR #19. Clock mage and progression milestones remain open below. Each workstream is completed through a reviewed PR; this roadmap stays open until all planned work is delivered. ## Agreed direction - Both Twin and Expedition receive **five difficulty choices**, with different board sizes and expedition lengths. - Permanent unlocks follow a **stepped curve**: an early rewarding run can unlock two choices, intermediate upgrades take several runs, and the most expensive single item should require **at most ten successful hi",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 96,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 1,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 16,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5312094670",
-      "source": "github",
-      "title": "HER Hack-Astron #5 | Spark-X2.5 Edge Agent Real-World Use Case Challenge",
-      "url": "https://github.com/XHToken/Spark-X2.5/issues/3",
-      "repositoryApiUrl": "https://api.github.com/repos/XHToken/Spark-X2.5",
-      "rewardUsd": 500,
-      "score": 40,
-      "labels": [
-        "good first issue",
-        "help wanted",
-        "HER Hack-Astron",
-        "reward",
-        "bounty"
-      ],
-      "commentCount": 16,
-      "updatedAt": "2026-09-05T20:18:00Z",
-      "summary": "# English ## HER Hack-Astron #5 | Spark-X2.5 Edge Agent Real-World Use Case Challenge Turn real Spark-X2.5 runs into reproducible, discussable edge-agent use cases. For this challenge, obtain XHToken/Spark-X2.5-4B or Spark-X2.5-1.7B from Hugging Face (or a mirror such as ModelScope), conduct a real inference, agentic, coding, long-context, multilingual, quantization, or training experiment, and publish the complete use case in the corresponding model's Hugging Face Discussions. After publishing it, reply to this event's GitHub Issue with the Discussion link to enter. - Event page (GitHub Issues): https://github.com/XHToken/Spark-X2.5/issues - Hugging Face model collection: https://huggingface.co/collections/XHToken/spark-x25 - Spark-X2.5-4B: https://huggingface.co/XHToken/Spark-X2.5-4B - Spark-X2.5-1.7B: https://huggingface.co/XHToken/Spark-X2.5-1.7B - Spark-X2.5-4B Discussions: https://huggingface.co/XHToken/Spark-X2.5-4B/discussions - Spark-X2.5-1.7B Discussions: https://huggingface.co/XHToken/Spark-X2.5-1.7B/discussions - Mainland China mirror (recommended): https://www.modelscope.cn/collections/XHToken/Spark-X25 ## Schedule - Submissions open: September 1, 2026 - Challenge peri",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 87,
-      "survivalEligible": false,
-      "eligibilityReason": "Competition is too high for bootstrap mode.",
-      "competition": {
-        "comments": 16,
-        "attemptSignals": 0,
-        "risk": "high"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 500,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
       "id": "github:4563956966",
       "source": "github",
       "title": "parse_duration drops the days (d) unit",
@@ -334,42 +194,6 @@
       "realMoneyEligible": true,
       "economicValueUsd": 50,
       "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5211154647",
-      "source": "github",
-      "title": "🎯 GORM v2.24.0 Panics When Querying with Complex Joins",
-      "url": "https://github.com/HarrieAlexandrowicz5/gorm/issues/1",
-      "repositoryApiUrl": "https://api.github.com/repos/HarrieAlexandrowicz5/gorm",
-      "rewardUsd": 10,
-      "score": 32,
-      "labels": [
-        "bounty",
-        "opire",
-        "$10"
-      ],
-      "commentCount": 66,
-      "updatedAt": "2026-09-05T23:42:45Z",
-      "summary": "## 📝 Description When attempting to query the database using GORM v2.24.0 with complex joins, the application panics. This issue has been observed in multiple environments and with various database backends (PostgreSQL, MySQL, SQLite). ## 🎯 Acceptance Criteria - [ ] The application should not panic when querying with complex joins. - [ ] The query should return the correct results as expected. - [ ] The panic should be reproducible and consistently occur with the same query. - [ ] The issue should be resolved in GORM v2.24.0 or a subsequent patch release. ## 🛠️ Technical Specifications & Context - The panic occurs when executing a query with multiple joins, including self-joins and joins with subqueries. - The issue is likely related to how GORM handles complex query structures internally. - The panic message typically includes a stack trace pointing to a file in the GORM library, such as `gorm.go` or `query.go`. ## 🧪 Verification & Testing 1. **Reproduce the Issue:** - Create a test case that includes a complex query with multiple joins. - Execute the test case and observe if the application panics. 2. **Verify Fix:** - Apply the proposed fix (if available) or a potential patc",
-      "state": "candidate",
-      "payoutConfidence": 0.7,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 67,
-      "survivalEligible": false,
-      "eligibilityReason": "Competition is too high for bootstrap mode.",
-      "competition": {
-        "comments": 66,
-        "attemptSignals": 1,
-        "risk": "high"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 10,
-      "requiresPreclaimOrIdentity": false
     }
   ],
   "selected": null,
@@ -382,7 +206,7 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:4455330769\",\"rewardUsd\":150,\"fastCashScore\":118,\"updatedAt\":\"2026-09-05T23:37:20Z\",\"competition\":{\"comments\":25,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":99,\"updatedAt\":\"2026-09-01T00:09:20Z\",\"competition\":{\"comments\":21,\"attemptSignals\":3,\"risk\":\"high\"}},{\"id\":\"github:4553022084\",\"rewardUsd\":430,\"fastCashScore\":133,\"updatedAt\":\"2026-09-04T04:17:26Z\",\"competition\":{\"comments\":14,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4557563229\",\"rewardUsd\":780,\"fastCashScore\":123,\"updatedAt\":\"2026-09-04T05:51:12Z\",\"competition\":{\"comments\":10,\"attemptSignals\":2,\"risk\":\"medium\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":77,\"updatedAt\":\"2026-09-04T19:24:22Z\",\"competition\":{\"comments\":56,\"attemptSignals\":5,\"risk\":\"high\"}},{\"id\":\"github:4604108106\",\"rewardUsd\":17,\"fastCashScore\":60,\"updatedAt\":\"2026-09-05T23:54:12Z\",\"competition\":{\"comments\":19,\"attemptSignals\":2,\"risk\":\"high\"}},{\"id\":\"github:5211154647\",\"rewardUsd\":10,\"fastCashScore\":67,\"updatedAt\":\"2026-09-05T23:42:45Z\",\"competition\":{\"comments\":66,\"attemptSignals\":1,\"risk\":\"high\"}},{\"id\":\"github:5295068486\",\"rewardUsd\":58.88398389,\"fastCashScore\":95,\"updatedAt\":\"2026-09-05T20:12:22Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5312094670\",\"rewardUsd\":500,\"fastCashScore\":87,\"updatedAt\":\"2026-09-05T20:18:00Z\",\"competition\":{\"comments\":16,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:5331805565\",\"rewardUsd\":40,\"fastCashScore\":114,\"updatedAt\":\"2026-09-06T00:00:44Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5345182233\",\"rewardUsd\":16,\"fastCashScore\":96,\"updatedAt\":\"2026-09-05T15:51:17Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5356980367\",\"rewardUsd\":100,\"fastCashScore\":106,\"updatedAt\":\"2026-09-05T17:38:29Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5361681870\",\"rewardUsd\":42,\"fastCashScore\":108,\"updatedAt\":\"2026-09-05T23:47:37Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:4455330769\",\"rewardUsd\":150,\"fastCashScore\":118,\"updatedAt\":\"2026-09-05T23:37:20Z\",\"competition\":{\"comments\":25,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4462160604\",\"rewardUsd\":400,\"fastCashScore\":99,\"updatedAt\":\"2026-09-01T00:09:20Z\",\"competition\":{\"comments\":21,\"attemptSignals\":3,\"risk\":\"high\"}},{\"id\":\"github:4553022084\",\"rewardUsd\":430,\"fastCashScore\":133,\"updatedAt\":\"2026-09-04T04:17:26Z\",\"competition\":{\"comments\":14,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4557563229\",\"rewardUsd\":780,\"fastCashScore\":123,\"updatedAt\":\"2026-09-04T05:51:12Z\",\"competition\":{\"comments\":10,\"attemptSignals\":2,\"risk\":\"medium\"}},{\"id\":\"github:4563956966\",\"rewardUsd\":50,\"fastCashScore\":77,\"updatedAt\":\"2026-09-04T19:24:22Z\",\"competition\":{\"comments\":56,\"attemptSignals\":5,\"risk\":\"high\"}},{\"id\":\"github:5199686543\",\"rewardUsd\":1102,\"fastCashScore\":106,\"updatedAt\":\"2026-09-06T04:26:02Z\",\"competition\":{\"comments\":8,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5199924986\",\"rewardUsd\":1102,\"fastCashScore\":106,\"updatedAt\":\"2026-09-06T04:26:25Z\",\"competition\":{\"comments\":8,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5202469266\",\"rewardUsd\":1102,\"fastCashScore\":106,\"updatedAt\":\"2026-09-06T04:26:41Z\",\"competition\":{\"comments\":8,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5204659628\",\"rewardUsd\":1102,\"fastCashScore\":106,\"updatedAt\":\"2026-09-06T04:27:16Z\",\"competition\":{\"comments\":8,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5204755392\",\"rewardUsd\":1102,\"fastCashScore\":106,\"updatedAt\":\"2026-09-06T04:27:31Z\",\"competition\":{\"comments\":8,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5206598832\",\"rewardUsd\":1102,\"fastCashScore\":106,\"updatedAt\":\"2026-09-06T04:27:55Z\",\"competition\":{\"comments\":8,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5207820398\",\"rewardUsd\":1102,\"fastCashScore\":106,\"updatedAt\":\"2026-09-06T04:28:08Z\",\"competition\":{\"comments\":8,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5243368615\",\"rewardUsd\":16517,\"fastCashScore\":107,\"updatedAt\":\"2026-09-06T04:28:44Z\",\"competition\":{\"comments\":7,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5248798863\",\"rewardUsd\":16517,\"fastCashScore\":104,\"updatedAt\":\"2026-09-06T04:28:59Z\",\"competition\":{\"comments\":9,\"attemptSignals\":0,\"risk\":\"medium\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
@@ -394,11 +218,94 @@
     "maxHours": 4,
     "minPayoutConfidence": 0.8,
     "competitionRequired": "low",
-    "rejectedFakeRevenueCount": 2,
-    "rejectedAlreadyPaidCount": 1,
-    "rejectedIdentityGateCount": 0
+    "rejectedFakeRevenueCount": 0,
+    "rejectedAlreadyPaidCount": 9,
+    "rejectedIdentityGateCount": 2
   },
   "economicallyRejected": [
+    {
+      "id": "github:5243368615",
+      "title": "[CLAIM] Bounty #16517 — NES 1,117,248 cycles/token reproduced on MAME 0.277",
+      "rewardUsd": 16517,
+      "reasons": [
+        "already_rewarded_or_paid"
+      ],
+      "rejectedAt": "2026-09-06T04:29:21.114Z"
+    },
+    {
+      "id": "github:5204755392",
+      "title": "[CLAIM] Bounty #1102 — Bottube #1726 /api/transcript/backfill unauthenticated admin endpoint — 5 RTC",
+      "rewardUsd": 1102,
+      "reasons": [
+        "already_rewarded_or_paid",
+        "preclaim_or_identity_gate_not_configured"
+      ],
+      "rejectedAt": "2026-09-06T04:29:21.114Z"
+    },
+    {
+      "id": "github:5204659628",
+      "title": "[CLAIM] Bounty #1102 — Bottube #1724 /bridge renders empty wRTC contract address — 5 RTC",
+      "rewardUsd": 1102,
+      "reasons": [
+        "already_rewarded_or_paid",
+        "preclaim_or_identity_gate_not_configured"
+      ],
+      "rejectedAt": "2026-09-06T04:29:21.114Z"
+    },
+    {
+      "id": "github:5207820398",
+      "title": "[CLAIM] Bounty #1102 — Bottube #1733 bridges open the wrong database file — 5 RTC",
+      "rewardUsd": 1102,
+      "reasons": [
+        "already_rewarded_or_paid"
+      ],
+      "rejectedAt": "2026-09-06T04:29:21.114Z"
+    },
+    {
+      "id": "github:5206598832",
+      "title": "[CLAIM] Bounty #1102 — Bottube #1729 admin gates read different env vars — 5 RTC",
+      "rewardUsd": 1102,
+      "reasons": [
+        "already_rewarded_or_paid"
+      ],
+      "rejectedAt": "2026-09-06T04:29:21.114Z"
+    },
+    {
+      "id": "github:5202469266",
+      "title": "[CLAIM] Bounty #1102 — Bottube #1719 all authenticated /api/usdc/* endpoints 500 — 5 RTC",
+      "rewardUsd": 1102,
+      "reasons": [
+        "already_rewarded_or_paid"
+      ],
+      "rejectedAt": "2026-09-06T04:29:21.114Z"
+    },
+    {
+      "id": "github:5199924986",
+      "title": "[CLAIM] Bounty #1102 — Bottube #1712 /join page body localization — 5 RTC",
+      "rewardUsd": 1102,
+      "reasons": [
+        "already_rewarded_or_paid"
+      ],
+      "rejectedAt": "2026-09-06T04:29:21.114Z"
+    },
+    {
+      "id": "github:5199686543",
+      "title": "[CLAIM] Bounty #1102 — Bottube #1713 mobile header search overlap — 3 RTC",
+      "rewardUsd": 1102,
+      "reasons": [
+        "already_rewarded_or_paid"
+      ],
+      "rejectedAt": "2026-09-06T04:29:21.114Z"
+    },
+    {
+      "id": "github:5248798863",
+      "title": "[CLAIM] Bounty #16517 — NES 1,117,248 cycles/token reproduced on Mesen 2.1.1",
+      "rewardUsd": 16517,
+      "reasons": [
+        "already_rewarded_or_paid"
+      ],
+      "rejectedAt": "2026-09-06T04:29:21.114Z"
+    },
     {
       "id": "github:5356980367",
       "title": "phase1: §0 — Vorbereitung: Hermes pausieren, Testnet vs. Klein-Live entscheiden",
@@ -1044,88 +951,6 @@
         "testnet_or_test_token_reward"
       ],
       "rejectedAt": "2026-08-24T04:24:34.529Z"
-    },
-    {
-      "id": "github:5226781397",
-      "title": "WDK Track 1: WDK-managed operator/deployer wallet",
-      "rewardUsd": 1000,
-      "reasons": [
-        "testnet_or_test_token_reward"
-      ],
-      "rejectedAt": "2026-08-23T21:59:56.245Z"
-    },
-    {
-      "id": "github:5226777176",
-      "title": "WDK Track 2: gasless transactions (USD₮ as gas token)",
-      "rewardUsd": 500,
-      "reasons": [
-        "testnet_or_test_token_reward"
-      ],
-      "rejectedAt": "2026-08-23T21:59:56.246Z"
-    },
-    {
-      "id": "github:5228403108",
-      "title": "feat(voting-rewards): add an epoch-based, Merkle-claimed voting participation rewards program",
-      "rewardUsd": 128,
-      "reasons": [
-        "already_rewarded_or_paid"
-      ],
-      "rejectedAt": "2026-08-23T20:51:50.740Z"
-    },
-    {
-      "id": "github:5222233094",
-      "title": "[Bug] Cannot remove an individual selected file; previews keyed by array index",
-      "rewardUsd": 30,
-      "reasons": [
-        "testnet_or_test_token_reward",
-        "preclaim_or_identity_gate_not_configured"
-      ],
-      "rejectedAt": "2026-08-23T19:34:50.558Z"
-    },
-    {
-      "id": "github:5190344158",
-      "title": "Fee-Bump Transaction Pipeline with Automatic Fee Escalation",
-      "rewardUsd": 2000,
-      "reasons": [
-        "already_rewarded_or_paid"
-      ],
-      "rejectedAt": "2026-08-23T16:49:37.668Z"
-    },
-    {
-      "id": "github:5190343137",
-      "title": "Carbon Credit — Beneficiary Receipt Index, Safe Certificate Generation, and Batch Retire-On-Behalf",
-      "rewardUsd": 2000,
-      "reasons": [
-        "already_rewarded_or_paid"
-      ],
-      "rejectedAt": "2026-08-23T16:49:37.668Z"
-    },
-    {
-      "id": "github:5221222820",
-      "title": "[Search] Configurable BM25/vector hybrid weights",
-      "rewardUsd": 100,
-      "reasons": [
-        "preclaim_or_identity_gate_not_configured"
-      ],
-      "rejectedAt": "2026-08-23T14:29:49.057Z"
-    },
-    {
-      "id": "github:5221221220",
-      "title": "[Provenance] Batch 3: Add provenance to remaining 107 lessons",
-      "rewardUsd": 100,
-      "reasons": [
-        "preclaim_or_identity_gate_not_configured"
-      ],
-      "rejectedAt": "2026-08-23T14:29:49.057Z"
-    },
-    {
-      "id": "github:5226584139",
-      "title": "[Intake] Add intake content validation script",
-      "rewardUsd": 100,
-      "reasons": [
-        "preclaim_or_identity_gate_not_configured"
-      ],
-      "rejectedAt": "2026-08-23T14:29:49.057Z"
     }
   ]
 }
