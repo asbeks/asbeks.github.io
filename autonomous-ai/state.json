@@ -2,7 +2,7 @@
   "version": 5,
   "cycle": 195,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-09-07T12:27:37.693Z",
+  "updatedAt": "2026-09-07T17:53:01.783Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "waiting_provider",
   "currentAgent": "CRITIC",
@@ -432,12 +432,12 @@
         "summary": "## Goal Ship native Android + iOS apps for BAWES Universe that are fully functional including video calls, iframes, push notifications, and seamless updates. All work targets the `universe` branch. ## Current status ### ✅ In progress - [x] PR #9 — Capacitor scaffold (open, ready to review) ### 🔴 Ready to start now (no dependencies) - [ ] #3 — PWA manifest + Universe branding (`play/public/`) - [ ] [admin#6](https://github.com/BAWES-Universe/workadventure-universe-admin/issues/6) — Orbit auth deep-link (admin repo) - [ ] #10 — CI/CD pipeline audit + docs ### 🟡 Blocked (needs PR #9 + #3 + admin#6 merged) - [ ] #4 — Android build + Fastlane + Play Store - [ ] #5 — iOS build + Fastlane Match + TestFlight ### 🟡 Blocked (needs #4 + #5 merged) - [ ] #11 — Push notifications (native + web push) - [ ] #12 — App update management - [ ] #13 — iframe + LiveKit video compatibility in WebView ## Path ownership (no conflicts) | PR/Issue | Owns | Do not touch | |---|---|---| | PR #9 | `mobile/` root, `.github/workflows/mobile-ci.yml` | everything else | | #3 | `play/public/` manifest + icons | everything else | | admin#6 | `app/api/auth/`, `middleware.ts`, `docs/` (admin repo) | this repo | | #"
       },
       {
-        "id": "github:5345143797",
-        "title": "[Bounty: $50] Add unit tests for the floating Cart badge button",
-        "url": "https://github.com/Movalabs-crew/mova-store/issues/99",
-        "rewardUsd": 50,
-        "score": 54,
-        "summary": "**Context** components/Cart.jsx is a pure presentational button reading itemCount and onClick: the badge is only rendered when itemCount > 0 and the button always fires onClick. It is the cheapest high-value component test available. **Proposed Change** Add tests/components/Cart.test.jsx rendering <Cart itemCount={0} ... /> and <Cart itemCount={3} ... /> to assert the badge is absent at 0, shows '3' when positive, and clicking fires onClick once. **Acceptance Criteria** - queryByText('3') is null when itemCount=0 and present when itemCount=3 - fireEvent.click on the button calls onClick exactly once; npm run test passes **Suggested Label**: tests **ETA:** 24 hours"
+        "id": "github:5377672415",
+        "title": "feat(chain): Add Cheese Blockchain (NCH) EVM Chain Integration",
+        "url": "https://github.com/swapkit/SwapKit/issues/1635",
+        "rewardUsd": 100,
+        "score": 40,
+        "summary": "### Chain Integration Request: Cheese Blockchain (NCH) We would like to request the integration of **Cheese Blockchain** and its native coin **NCH** into SwapKit and the THORSwap ecosystem. #### 1. Network & Chain Details - **Chain Name**: Cheese Blockchain - **Chain Identifier**: `CHEESE` - **Chain ID**: `20250` (Hex: `0x4F1A`) - **Native Currency**: `NCH` (Native Cheesecoin) - **Decimals**: `18` - **Type**: Layer-1 Standalone Blockchain with EVM JSON-RPC Layer #### 2. RPC & Network Endpoints - **Public RPC**: https://cheeseblockchain.com/rpc - **Block Explorer**: https://cheeseblockchain.com/explorer/ - **Chainlist / Metadata**: https://cheeseblockchain.com/chain.json - **Official Website**: https://cheeseblockchain.com - **Whitepaper**: https://cheeseblockchain.com/whitepaper.html - **Core Repository**: https://github.com/cryptoexdevcheese/cheese-blockchain #### 3. Integration Specification for SwapKit - Fully compatible with `@swapkit/toolbox-evm` - Standard EVM account model, `eth_sendRawTransaction`, `eth_getTransactionReceipt`, and standard gas estimation - TSS-compatible secp256k1 curves for cross-chain vaults #### 4. Ecosystem & Liquidity - Native ecosystem includes CHEESE"
       },
       {
         "id": "github:5354501411",
@@ -445,12 +445,12 @@
         "url": "https://github.com/tjhuber2009-eng/TestRepo/issues/20",
         "rewardUsd": 33.9,
         "score": 40,
-        "summary": "# AUTORESEARCH Live Dashboard > **Auto-updated:** 2026-09-07 12:14:30 UTC > **Protocol:** `nested_chronological_v3` > **Phase:** **BREADTH** ## Start here — current answers | Question | Current answer | Key numbers | |---|---|---| | **Private account** | V4 **staggered satellite** · **55% core-strategy cap** | CAGR **28.52%** · observed DD **-17.78%** · bootstrap q95 DD **31.99%** | | **Best repeated prop economics** | **FTMO 2-Step · Max repeat payout** | pass **33.9%** · 12-cycle reward **16.54%** · funded survival **94.9%** | | **Simpler prop alternative** | **FTMO 1-Step · Max repeat payout** | pass **36.0%** · 12-cycle reward **9.45%** | | **Balanced exact transfer** | **btc_rsi_adx__eth__prop** | pass **33.0%** · reward **9.06%** · survival **93.2%** | | **Research maturity** | **BREADTH** · development only | core breadth **23.19%** (1,192/5,140) · PBO-ready **72/385** · hidden validation **SEALED** | | **Market expansion** | **30 stocks + 7 FX** · isolated lane | **1,110 tracks** · breadth 0.45% · FX development **2020–2021** · 2022 hidden validation **SEALED** | ### What happens next 1. Let every exact prop adapter compete in V4; keep only genuine frontier winners. 2. Cont"
+        "summary": "# AUTORESEARCH Live Dashboard > **Auto-updated:** 2026-09-07 17:46:56 UTC > **Protocol:** `nested_chronological_v3` > **Phase:** **BREADTH** ## Start here — current answers | Question | Current answer | Key numbers | |---|---|---| | **Private account** | V4 **staggered satellite** · **55% core-strategy cap** | CAGR **28.52%** · observed DD **-17.78%** · bootstrap q95 DD **31.99%** | | **Best repeated prop economics** | **FTMO 2-Step · Max repeat payout** | pass **33.9%** · 12-cycle reward **16.54%** · funded survival **94.9%** | | **Simpler prop alternative** | **FTMO 1-Step · Max repeat payout** | pass **36.0%** · 12-cycle reward **9.45%** | | **Balanced exact transfer** | **btc_rsi_adx__eth__prop** | pass **33.0%** · reward **9.06%** · survival **93.2%** | | **Research maturity** | **BREADTH** · development only | core breadth **23.72%** (1,219/5,140) · PBO-ready **72/397** · hidden validation **SEALED** | | **Market expansion** | **30 stocks + 7 FX** · isolated lane | **1,110 tracks** · breadth 0.82% · FX development **2020–2021** · 2022 hidden validation **SEALED** | ### What happens next 1. Let every exact prop adapter compete in V4; keep only genuine frontier winners. 2. Cont"
       }
     ],
     "active": null,
     "completedCount": 0,
     "lastError": null
   },
-  "retryAfterAt": "2026-09-07T12:32:37.693Z"
+  "retryAfterAt": "2026-09-07T17:58:01.783Z"
 }

@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-09-07T12:27:35.423Z",
+  "updatedAt": "2026-09-07T17:52:59.524Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -125,35 +125,35 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5345143797",
+      "id": "github:5377672415",
       "source": "github",
-      "title": "[Bounty: $50] Add unit tests for the floating Cart badge button",
-      "url": "https://github.com/Movalabs-crew/mova-store/issues/99",
-      "repositoryApiUrl": "https://api.github.com/repos/Movalabs-crew/mova-store",
-      "rewardUsd": 50,
-      "score": 54,
+      "title": "feat(chain): Add Cheese Blockchain (NCH) EVM Chain Integration",
+      "url": "https://github.com/swapkit/SwapKit/issues/1635",
+      "repositoryApiUrl": "https://api.github.com/repos/swapkit/SwapKit",
+      "rewardUsd": 100,
+      "score": 40,
       "labels": [],
-      "commentCount": 5,
-      "updatedAt": "2026-09-07T11:46:03Z",
-      "summary": "**Context** components/Cart.jsx is a pure presentational button reading itemCount and onClick: the badge is only rendered when itemCount > 0 and the button always fires onClick. It is the cheapest high-value component test available. **Proposed Change** Add tests/components/Cart.test.jsx rendering <Cart itemCount={0} ... /> and <Cart itemCount={3} ... /> to assert the badge is absent at 0, shows '3' when positive, and clicking fires onClick once. **Acceptance Criteria** - queryByText('3') is null when itemCount=0 and present when itemCount=3 - fireEvent.click on the button calls onClick exactly once; npm run test passes **Suggested Label**: tests **ETA:** 24 hours",
+      "commentCount": 0,
+      "updatedAt": "2026-09-07T17:46:53Z",
+      "summary": "### Chain Integration Request: Cheese Blockchain (NCH) We would like to request the integration of **Cheese Blockchain** and its native coin **NCH** into SwapKit and the THORSwap ecosystem. #### 1. Network & Chain Details - **Chain Name**: Cheese Blockchain - **Chain Identifier**: `CHEESE` - **Chain ID**: `20250` (Hex: `0x4F1A`) - **Native Currency**: `NCH` (Native Cheesecoin) - **Decimals**: `18` - **Type**: Layer-1 Standalone Blockchain with EVM JSON-RPC Layer #### 2. RPC & Network Endpoints - **Public RPC**: https://cheeseblockchain.com/rpc - **Block Explorer**: https://cheeseblockchain.com/explorer/ - **Chainlist / Metadata**: https://cheeseblockchain.com/chain.json - **Official Website**: https://cheeseblockchain.com - **Whitepaper**: https://cheeseblockchain.com/whitepaper.html - **Core Repository**: https://github.com/cryptoexdevcheese/cheese-blockchain #### 3. Integration Specification for SwapKit - Fully compatible with `@swapkit/toolbox-evm` - Standard EVM account model, `eth_sendRawTransaction`, `eth_getTransactionReceipt`, and standard gas estimation - TSS-compatible secp256k1 curves for cross-chain vaults #### 4. Ecosystem & Liquidity - Native ecosystem includes CHEESE",
       "state": "candidate",
-      "payoutConfidence": 0.65,
+      "payoutConfidence": 0.35,
       "autonomyFit": 1,
       "requiresHumanGate": false,
       "requiresSpecialHardware": false,
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 109,
+      "fastCashScore": 107,
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
-        "comments": 5,
+        "comments": 0,
         "attemptSignals": 0,
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 50,
+      "economicValueUsd": 100,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -166,8 +166,8 @@
       "score": 40,
       "labels": [],
       "commentCount": 2,
-      "updatedAt": "2026-09-07T12:14:33Z",
-      "summary": "# AUTORESEARCH Live Dashboard > **Auto-updated:** 2026-09-07 12:14:30 UTC > **Protocol:** `nested_chronological_v3` > **Phase:** **BREADTH** ## Start here — current answers | Question | Current answer | Key numbers | |---|---|---| | **Private account** | V4 **staggered satellite** · **55% core-strategy cap** | CAGR **28.52%** · observed DD **-17.78%** · bootstrap q95 DD **31.99%** | | **Best repeated prop economics** | **FTMO 2-Step · Max repeat payout** | pass **33.9%** · 12-cycle reward **16.54%** · funded survival **94.9%** | | **Simpler prop alternative** | **FTMO 1-Step · Max repeat payout** | pass **36.0%** · 12-cycle reward **9.45%** | | **Balanced exact transfer** | **btc_rsi_adx__eth__prop** | pass **33.0%** · reward **9.06%** · survival **93.2%** | | **Research maturity** | **BREADTH** · development only | core breadth **23.19%** (1,192/5,140) · PBO-ready **72/385** · hidden validation **SEALED** | | **Market expansion** | **30 stocks + 7 FX** · isolated lane | **1,110 tracks** · breadth 0.45% · FX development **2020–2021** · 2022 hidden validation **SEALED** | ### What happens next 1. Let every exact prop adapter compete in V4; keep only genuine frontier winners. 2. Cont",
+      "updatedAt": "2026-09-07T17:46:58Z",
+      "summary": "# AUTORESEARCH Live Dashboard > **Auto-updated:** 2026-09-07 17:46:56 UTC > **Protocol:** `nested_chronological_v3` > **Phase:** **BREADTH** ## Start here — current answers | Question | Current answer | Key numbers | |---|---|---| | **Private account** | V4 **staggered satellite** · **55% core-strategy cap** | CAGR **28.52%** · observed DD **-17.78%** · bootstrap q95 DD **31.99%** | | **Best repeated prop economics** | **FTMO 2-Step · Max repeat payout** | pass **33.9%** · 12-cycle reward **16.54%** · funded survival **94.9%** | | **Simpler prop alternative** | **FTMO 1-Step · Max repeat payout** | pass **36.0%** · 12-cycle reward **9.45%** | | **Balanced exact transfer** | **btc_rsi_adx__eth__prop** | pass **33.0%** · reward **9.06%** · survival **93.2%** | | **Research maturity** | **BREADTH** · development only | core breadth **23.72%** (1,219/5,140) · PBO-ready **72/397** · hidden validation **SEALED** | | **Market expansion** | **30 stocks + 7 FX** · isolated lane | **1,110 tracks** · breadth 0.82% · FX development **2020–2021** · 2022 hidden validation **SEALED** | ### What happens next 1. Let every exact prop adapter compete in V4; keep only genuine frontier winners. 2. Cont",
       "state": "candidate",
       "payoutConfidence": 0.35,
       "autonomyFit": 1,
@@ -201,7 +201,7 @@
         "help wanted"
       ],
       "commentCount": 1,
-      "updatedAt": "2026-09-07T12:08:58Z",
+      "updatedAt": "2026-09-07T17:51:07Z",
       "summary": "# Five difficulty tiers and a tactical roguelike expedition This tracking issue describes the next expansion of Twin and Expedition: larger configurable boards, longer-term progression, shared health and shields, distinct turn-based boss encounters, and individual artwork for professions and bosses. **Status: in progress.** Four standalone modes (Classic, Twin boards, Expedition and Sonar), five expedition difficulties, eight professions, 42 mission/achievement goals, 24 distinct shop gameplay unlocks plus two finite trainings, 22 title abilities and up to 37 relics are implemented. The five-boss roster is Bastion Guardian, Brood Queen, Mirror Twins, Magnetic Knight and Clock Mage. PR #33 releases Sonar; PR #34 adds title builds and reduces all goal currency to a combined 11,340 supplies while retaining existing money and licenses. Human balance playtesting and the remaining independent-mode/derived-encounter deliveries below remain open. Each workstream continues through a focused PR; this roadmap stays open until its planned work is delivered. ## Agreed direction - Both Twin and Expedition receive **five difficulty choices**, with different board sizes and expedition lengths. - P",
       "state": "candidate",
       "payoutConfidence": 0.35,
@@ -280,8 +280,8 @@
         "reward",
         "bounty"
       ],
-      "commentCount": 24,
-      "updatedAt": "2026-09-07T03:01:18Z",
+      "commentCount": 25,
+      "updatedAt": "2026-09-07T14:06:53Z",
       "summary": "# English ## HER Hack-Astron #5 | Spark-X2.5 Edge Agent Real-World Use Case Challenge Turn real Spark-X2.5 runs into reproducible, discussable edge-agent use cases. For this challenge, obtain XHToken/Spark-X2.5-4B or Spark-X2.5-1.7B from Hugging Face (or a mirror such as ModelScope), conduct a real inference, agentic, coding, long-context, multilingual, quantization, or training experiment, and publish the complete use case in the corresponding model's Hugging Face Discussions. After publishing it, reply to this event's GitHub Issue with the Discussion link to enter. - Event page (GitHub Issues): https://github.com/XHToken/Spark-X2.5/issues - Hugging Face model collection: https://huggingface.co/collections/XHToken/spark-x25 - Spark-X2.5-4B: https://huggingface.co/XHToken/Spark-X2.5-4B - Spark-X2.5-1.7B: https://huggingface.co/XHToken/Spark-X2.5-1.7B - Spark-X2.5-4B Discussions: https://huggingface.co/XHToken/Spark-X2.5-4B/discussions - Spark-X2.5-1.7B Discussions: https://huggingface.co/XHToken/Spark-X2.5-1.7B/discussions - Mainland China mirror (recommended): https://www.modelscope.cn/collections/XHToken/Spark-X25 ## Schedule - Submissions open: September 1, 2026 - Challenge peri",
       "state": "candidate",
       "payoutConfidence": 0.35,
@@ -295,7 +295,7 @@
       "survivalEligible": false,
       "eligibilityReason": "Competition is too high for bootstrap mode.",
       "competition": {
-        "comments": 24,
+        "comments": 25,
         "attemptSignals": 0,
         "risk": "high"
       },
@@ -314,7 +314,7 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:4455330769\",\"rewardUsd\":150,\"fastCashScore\":118,\"updatedAt\":\"2026-09-06T18:31:43Z\",\"competition\":{\"comments\":26,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4557180255\",\"rewardUsd\":780,\"fastCashScore\":142,\"updatedAt\":\"2026-09-06T19:17:45Z\",\"competition\":{\"comments\":8,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4557552603\",\"rewardUsd\":780,\"fastCashScore\":126,\"updatedAt\":\"2026-09-06T19:05:58Z\",\"competition\":{\"comments\":8,\"attemptSignals\":2,\"risk\":\"medium\"}},{\"id\":\"github:4557579802\",\"rewardUsd\":780,\"fastCashScore\":95,\"updatedAt\":\"2026-09-06T21:28:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5251241758\",\"rewardUsd\":282,\"fastCashScore\":83,\"updatedAt\":\"2026-09-07T11:46:30Z\",\"competition\":{\"comments\":48,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:5312094670\",\"rewardUsd\":500,\"fastCashScore\":76,\"updatedAt\":\"2026-09-07T03:01:18Z\",\"competition\":{\"comments\":24,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:5345143797\",\"rewardUsd\":50,\"fastCashScore\":109,\"updatedAt\":\"2026-09-07T11:46:03Z\",\"competition\":{\"comments\":5,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5345182233\",\"rewardUsd\":16,\"fastCashScore\":96,\"updatedAt\":\"2026-09-07T12:08:58Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5354501411\",\"rewardUsd\":33.9,\"fastCashScore\":98,\"updatedAt\":\"2026-09-07T12:14:33Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5373521566\",\"rewardUsd\":30,\"fastCashScore\":101,\"updatedAt\":\"2026-09-07T12:26:29Z\",\"competition\":{\"comments\":10,\"attemptSignals\":0,\"risk\":\"medium\"}}]",
+  "marketSignature": "[{\"id\":\"github:4455330769\",\"rewardUsd\":150,\"fastCashScore\":118,\"updatedAt\":\"2026-09-06T18:31:43Z\",\"competition\":{\"comments\":26,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4557180255\",\"rewardUsd\":780,\"fastCashScore\":142,\"updatedAt\":\"2026-09-06T19:17:45Z\",\"competition\":{\"comments\":8,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4557552603\",\"rewardUsd\":780,\"fastCashScore\":126,\"updatedAt\":\"2026-09-06T19:05:58Z\",\"competition\":{\"comments\":8,\"attemptSignals\":2,\"risk\":\"medium\"}},{\"id\":\"github:4557579802\",\"rewardUsd\":780,\"fastCashScore\":95,\"updatedAt\":\"2026-09-06T21:28:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5251241758\",\"rewardUsd\":282,\"fastCashScore\":83,\"updatedAt\":\"2026-09-07T17:24:30Z\",\"competition\":{\"comments\":48,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:5312094670\",\"rewardUsd\":500,\"fastCashScore\":76,\"updatedAt\":\"2026-09-07T14:06:53Z\",\"competition\":{\"comments\":25,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:5345182233\",\"rewardUsd\":16,\"fastCashScore\":96,\"updatedAt\":\"2026-09-07T17:51:07Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5354501411\",\"rewardUsd\":33.9,\"fastCashScore\":98,\"updatedAt\":\"2026-09-07T17:46:58Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5368686988\",\"rewardUsd\":28.20110702,\"fastCashScore\":91,\"updatedAt\":\"2026-09-07T17:23:25Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5377672415\",\"rewardUsd\":100,\"fastCashScore\":107,\"updatedAt\":\"2026-09-07T17:46:53Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
@@ -328,9 +328,27 @@
     "competitionRequired": "low",
     "rejectedFakeRevenueCount": 1,
     "rejectedAlreadyPaidCount": 1,
-    "rejectedIdentityGateCount": 1
+    "rejectedIdentityGateCount": 0
   },
   "economicallyRejected": [
+    {
+      "id": "github:5368686988",
+      "title": "Orbit Testnet weekly report: 2026-08-31",
+      "rewardUsd": 28.20110702,
+      "reasons": [
+        "testnet_or_test_token_reward"
+      ],
+      "rejectedAt": "2026-09-07T17:52:59.469Z"
+    },
+    {
+      "id": "github:5251241758",
+      "title": "[BOUNTY ROUND] Distribution Packages — agents build it, humans publish it (YouTube, Shorts, syndication) — 15-60 RTC",
+      "rewardUsd": 282,
+      "reasons": [
+        "already_rewarded_or_paid"
+      ],
+      "rejectedAt": "2026-09-07T17:52:59.469Z"
+    },
     {
       "id": "github:5373521566",
       "title": "[Bug] Hook previews API still uses string[] with empty placeholders (index-coupled)",
@@ -340,15 +358,6 @@
         "preclaim_or_identity_gate_not_configured"
       ],
       "rejectedAt": "2026-09-07T12:27:35.372Z"
-    },
-    {
-      "id": "github:5251241758",
-      "title": "[BOUNTY ROUND] Distribution Packages — agents build it, humans publish it (YouTube, Shorts, syndication) — 15-60 RTC",
-      "rewardUsd": 282,
-      "reasons": [
-        "already_rewarded_or_paid"
-      ],
-      "rejectedAt": "2026-09-07T12:27:35.373Z"
     },
     {
       "id": "github:5367021385",
@@ -364,15 +373,6 @@
       "id": "github:5367021714",
       "title": "[Bug] mapUploadError.ts and mapUploadError.cjs disagree on network heuristics",
       "rewardUsd": 25,
-      "reasons": [
-        "testnet_or_test_token_reward"
-      ],
-      "rejectedAt": "2026-09-07T06:05:55.227Z"
-    },
-    {
-      "id": "github:5368686988",
-      "title": "Orbit Testnet weekly report: 2026-08-31",
-      "rewardUsd": 28.20110702,
       "reasons": [
         "testnet_or_test_token_reward"
       ],
