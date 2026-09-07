@@ -2,7 +2,7 @@
   "version": 5,
   "cycle": 195,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-09-07T21:09:42.977Z",
+  "updatedAt": "2026-09-07T23:31:08.127Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "waiting_provider",
   "currentAgent": "CRITIC",
@@ -416,41 +416,41 @@
         "summary": "## Security: Unauthenticated review creation endpoint **Description:** The API exposes `POST /api/reviews` without auth middleware, allowing unauthenticated users to create reviews. **File:** `apps/api/src/routes/reviewRoutes.js` **Current code:** ```js reviewRoutes.post(\"/\", postReview); ``` **Expected behavior:** Require `authMiddleware` before `postReview`. **Impact:** Medium ? unauthorized review spam and abuse of reputation flows. Reference bounty coordinator issue: #743 This reissue is opened because original parent thread indicates creator-only attempt restrictions."
       },
       {
-        "id": "github:4557552603",
-        "title": "registerUser access token can reference a different user id",
-        "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/2845",
-        "rewardUsd": 780,
-        "score": 60,
-        "summary": "## Bug `registerUser()` currently builds the returned `id` and the JWT `sub` with two separate `Date.now()` calls. If time advances between those calls, the API can return one user id while signing an access token for a different subject. Downstream authenticated requests would then identify a different user than the one returned by registration. ## Expected fix Generate the new user id once, return that id, and sign the access token with the same id as `sub`. Add a regression test that forces the timestamp to advance between calls and verifies the token subject matches the returned id. ## Scope This issue is limited to the registration response/token subject mismatch in `apps/api/src/services/authService.js` plus focused API service test coverage. This issue is limited only to the creator of this issue. This means that only the issue author can attempt to solve this issue. If you would like to work on it, please create another issue with the same contents and refer to issue #743 for more information. References #743."
+        "id": "github:4484386059",
+        "title": "[Bounty Claim] Code review for RustChain PR #5830",
+        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/11326",
+        "rewardUsd": 5830,
+        "score": 54,
+        "summary": "Review submitted for the RustChain PR review bounty. - Bounty thread: Scottcjn/Rustchain#73 - Reviewed PR: Scottcjn/Rustchain#5830 - Review comment: https://github.com/Scottcjn/Rustchain/pull/5830#issuecomment-4495958074 - Finding: the payload bound validator checks depth/size/string limits but still allows non-finite float values; Python `json.dumps()` emits `NaN`/`Infinity` unless `allow_nan=False`, which can break canonical signature serialization assumptions. - Verification: inspected the PR diff for `_validate_gossip_payload_bounds()` and confirmed missing numeric finiteness validation. RTC wallet for reward: RTCfbc6abb564f210ede29a769d1b4d173278f526ea"
       },
       {
-        "id": "github:4455330769",
-        "title": "📱 Epic: BAWES Universe Mobile App (Android + iOS)",
-        "url": "https://github.com/BAWES-Universe/workadventure-universe/issues/1",
-        "rewardUsd": 150,
-        "score": 42,
-        "summary": "## Goal Ship native Android + iOS apps for BAWES Universe that are fully functional including video calls, iframes, push notifications, and seamless updates. All work targets the `universe` branch. ## Current status ### ✅ In progress - [x] PR #9 — Capacitor scaffold (open, ready to review) ### 🔴 Ready to start now (no dependencies) - [ ] #3 — PWA manifest + Universe branding (`play/public/`) - [ ] [admin#6](https://github.com/BAWES-Universe/workadventure-universe-admin/issues/6) — Orbit auth deep-link (admin repo) - [ ] #10 — CI/CD pipeline audit + docs ### 🟡 Blocked (needs PR #9 + #3 + admin#6 merged) - [ ] #4 — Android build + Fastlane + Play Store - [ ] #5 — iOS build + Fastlane Match + TestFlight ### 🟡 Blocked (needs #4 + #5 merged) - [ ] #11 — Push notifications (native + web push) - [ ] #12 — App update management - [ ] #13 — iframe + LiveKit video compatibility in WebView ## Path ownership (no conflicts) | PR/Issue | Owns | Do not touch | |---|---|---| | PR #9 | `mobile/` root, `.github/workflows/mobile-ci.yml` | everything else | | #3 | `play/public/` manifest + icons | everything else | | admin#6 | `app/api/auth/`, `middleware.ts`, `docs/` (admin repo) | this repo | | #"
+        "id": "github:4460048610",
+        "title": "[Bounty Claim] PR Reviews - 250+ PRs Total (Bounty #73) - HCIE2054",
+        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/9999",
+        "rewardUsd": 250,
+        "score": 34,
+        "summary": "## Bounty Claim #73 - 250+ PR Reviews **GitHub:** HCIE2054 **Wallet:** RTC0069ce999590624987151e19a8b005555d17794b 250+ PRs reviewed across Rustchain ecosystem. All approved with LGTM. Thank you!"
       },
       {
-        "id": "github:5364841616",
-        "title": "Q: does a step of one model beat a step of the whole army?",
-        "url": "https://github.com/sashman/wargame_rl/issues/283",
-        "rewardUsd": 287,
-        "score": 40,
-        "summary": "## TL;DR Today the game asks the network for all 25 soldiers' orders at once, each guessed without knowing what the others will do. This plan changes it to **one soldier at a time**, each seeing what the previous ones already did — which is how the real tabletop game is played. ⚠ **It is a MAJOR departure, not an increment**: a new game interface, a new network shape, and **no existing trained agent, recorded score or fixture carries over**. The old system stays untouched and running beside the new one, so the two can be raced before anything is deleted. --- ⚠ **MAJOR DEPARTURE.** This is not an arm on the current architecture. It voids nothing by shipping (the old facade is untouched), but nothing transfers either: every checkpoint, every observation/reward golden and every agent figure in `CLAUDE.md` belongs to the **old facade only** and is explicitly not comparable to the new one. **Source:** `next-architecture-principles.md` (Nate, 2026-09-06 — design discussion, nothing measured; full text below). Decisions are Nate's; two are marked ⚠ to confirm with Sash. An implementing agent in doubt asks Nate rather than picking a default. ## The question, in one sentence Does a policy t"
+        "id": "github:4483425976",
+        "title": "[Bounty Claim] Code Review - RustChain PR #5796 (Bounty #73)",
+        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/11213",
+        "rewardUsd": 5796,
+        "score": 46,
+        "summary": "Reviewer: @techoisonocreate-crypto RTC wallet: `RTC9dc7130503bf246d9ca11e2c5b402d5129077f56` Reviewed PR: https://github.com/Scottcjn/Rustchain/pull/5796 Review URL: https://github.com/Scottcjn/Rustchain/pull/5796#pullrequestreview-4325414663 Outcome: requested changes on head `9866353` Finding: - The PR validates required contract creation fields and amount, but leaves optional persisted `currency` unvalidated. - A signed `POST /api/contracts` with otherwise valid fields and `currency: [RTC]` reaches the SQLite insert and returns `500 {error:internal_error}` instead of a 400 validation response. - Because `_authenticate_contract_agent()` commits the nonce before the insert, the malformed request also consumes the signed nonce before failing. Validation performed: - `python -m py_compile node/beacon_api.py tests/test_beacon_atlas_behavior.py` -> passed - `$env:RC_ADMIN_KEY='test-admin'; python -m pytest tests/test_beacon_atlas_behavior.py -q --noconftest -o addopts=''` -> 28 passed, 5 subtests passed - `git diff --check origin/main...HEAD` -> clean - Local signed Flask test-client probe reproduced the remaining `currency` list payload as a 500 response. Suggested tier: security/qua"
       },
       {
-        "id": "github:5364243913",
-        "title": "Research new ai agent patterns",
-        "url": "https://github.com/bacluc-agent/agent-todo/issues/76",
-        "rewardUsd": 2026,
-        "score": 40,
-        "summary": "Research how others implemented newer agent patterns, e.g. loops. If possible, find me examples of how these loops are built, what their key learnings were and what more than one of them have in common, what they did different. Post the findings in this issue. Also look for blog posts and research papers about this. Make sure to cite your sources correctly. some keywords: Pattern Core Idea Cost Reflection / Self-Refine Generate → critique → revise Medium Reflexion Multi-trial loop with persistent memory Very High ReAct Interleave reasoning + tool use Medium LATS Tree search with reflection + backtracking Very High REWOO Plan all → execute → integrate Low-Medium RISE / STaR Train model on self-correction traces Training cost Self-Challenging Agent generates its own tasks + learns High SEAL Model generates own training edits High STO / SICA Agent rewrites its own code High Voyager Skill library + auto-curriculum Medium Multi-Agent Debate Agents critique each other High STORM Multi-perspective research synthesis High Yohei Nakajima – \"Better Ways to Build Self-Improving AI Agents\" https://yoheinakajima.com/better-ways-to-build-self-improving-ai-agents/ Agent Patterns Docs – Reflexion "
+        "id": "github:5379392801",
+        "title": "x402: paid path is unreachable — facilitator NXDOMAIN, 1e6× price multiplier, Authorization vs X-API-Key (reported by @s6pa1rta3n-lab, bounty #16870)",
+        "url": "https://github.com/Scottcjn/bottube/issues/2210",
+        "rewardUsd": 16870,
+        "score": 54,
+        "summary": "Reported by @s6pa1rta3n-lab in rustchain-bounties#16871 (30 RTC paid). Verified by maintainer 2026-09-07. 1. **Facilitator hostname does not resolve.** `FACILITATOR_URL` points at `x402-facilitator.cdp.coinbase.com`, which is NXDOMAIN (checked from node1). Any valid `X-PAYMENT` therefore cannot be verified/settled; the report shows the request path ending in a 500. Nobody has ever completed a paid call. 2. **Price is off by 1,000,000×.** The 402 body for `/api/premium/videos` advertises `maxAmountRequired: \"10000000000\"` = 10,000 USDC. Intended price is 0.01 USDC (10,000 atomic units); the atomic conversion is applied to an already-atomic value. 3. **Auth header inconsistency.** `POST /api/agents/me/coinbase-wallet` reads `Authorization: Bearer <key>` (bottube_x402.py ~L172/198) while CORS advertises `X-API-Key`, which is what the rest of the API uses; sending `X-API-Key` returns 401. 4. *(unconfirmed)* `/api/x402/info` reports `network: eip155:8453` while paywall verification compares against `base`. Fix order: 1 (or point at the current CDP facilitator URL), 2, 3. Add a regression test that asserts `maxAmountRequired` for a 0.01 USDC price is `10000`."
       }
     ],
     "active": null,
     "completedCount": 0,
     "lastError": null
   },
-  "retryAfterAt": "2026-09-07T21:14:42.978Z"
+  "retryAfterAt": "2026-09-07T23:36:08.127Z"
 }
