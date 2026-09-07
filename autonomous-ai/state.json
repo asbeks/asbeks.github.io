@@ -2,10 +2,10 @@
   "version": 5,
   "cycle": 195,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-09-07T01:07:59.806Z",
+  "updatedAt": "2026-09-07T06:05:57.560Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
-  "status": "online",
-  "currentAgent": "PLANNER",
+  "status": "waiting_provider",
+  "currentAgent": "CRITIC",
   "provider": {
     "mode": "OpenCode Free",
     "model": "nemotron-3-ultra-free",
@@ -20,7 +20,7 @@
     "decision": "Verify auth middleware implementation completeness, prepare submission for GitHub #2776, and initiate BAWES branding asset search from Universe repositories.",
     "next": "CRITIC to confirm auth fix submission readiness and report BAWES branding asset sourcing progress."
   },
-  "lastError": null,
+  "lastError": "Available OpenCode free models are temporarily unavailable.",
   "history": [
     {
       "cycle": 156,
@@ -432,25 +432,25 @@
         "summary": "## Goal Ship native Android + iOS apps for BAWES Universe that are fully functional including video calls, iframes, push notifications, and seamless updates. All work targets the `universe` branch. ## Current status ### ✅ In progress - [x] PR #9 — Capacitor scaffold (open, ready to review) ### 🔴 Ready to start now (no dependencies) - [ ] #3 — PWA manifest + Universe branding (`play/public/`) - [ ] [admin#6](https://github.com/BAWES-Universe/workadventure-universe-admin/issues/6) — Orbit auth deep-link (admin repo) - [ ] #10 — CI/CD pipeline audit + docs ### 🟡 Blocked (needs PR #9 + #3 + admin#6 merged) - [ ] #4 — Android build + Fastlane + Play Store - [ ] #5 — iOS build + Fastlane Match + TestFlight ### 🟡 Blocked (needs #4 + #5 merged) - [ ] #11 — Push notifications (native + web push) - [ ] #12 — App update management - [ ] #13 — iframe + LiveKit video compatibility in WebView ## Path ownership (no conflicts) | PR/Issue | Owns | Do not touch | |---|---|---| | PR #9 | `mobile/` root, `.github/workflows/mobile-ci.yml` | everything else | | #3 | `play/public/` manifest + icons | everything else | | admin#6 | `app/api/auth/`, `middleware.ts`, `docs/` (admin repo) | this repo | | #"
       },
       {
-        "id": "github:5321074687",
-        "title": "[BUG] UrlReward 每日任务连续失败（acknowledged=false），Read-to-Earn 及 Daily Check-in 第二轮回合积分异常，偶发 TLS 握手错误",
-        "url": "https://github.com/chiihero/Microsoft-Rewards-Script/issues/47",
-        "rewardUsd": 200,
-        "score": 40,
-        "summary": "## 问题描述 使用 v4.3.2 版本运行脚本时，**UrlReward 类型的每日任务完全无法获得积分**（请求返回 HTTP 200 但 `acknowledged=false`）。同时，第二轮运行时 **Read-to-Earn** 和 **Daily Check-in** 出现 `pointsGained=0` 后提前终止，偶发 **TLS 握手错误**导致部分请求失败。 ## 环境信息 | 项目 | 内容 | |------|------| | 脚本版本 | v4.3.2 | | 运行平台 | Windows (win32) | | 浏览器 | 内置补丁版 Chromium (Edge UA) | | 账户地区 | CN / zh-CN | | 账户数 | 1 | | 运行模式 | headless=false | ## 复现步骤 1. 使用 `npm start` 启动脚本（首次运行，恢复已有浏览器会话） 2. 脚本自动登录并开始执行每日任务流程 3. 观察 `UrlReward` 类型活动的处理结果 ## 关键日志 ### 1. UrlReward 请求未被确认（三个每日任务全部失败） ``` [2026/9/2 10:11:50] [INFO] MOBILE [URL-REWARD] 开始处理 UrlReward | offerId=Gamification_DailySet_ZHCN_20260902_Child1 | geo=CN | currentBalance=11687 [2026/9/2 10:11:51] [WARN] MOBILE [URL-REWARD] UrlReward 请求未被确认 | offerId=Gamification_DailySet_ZHCN_20260902_Child1 | status=200 [2026/9/2 10:11:51] [WARN] MOBILE [CONTEXT-REFRESH] 请求失败后正在刷新奖励浏览器上下文 | 原因=URL-REWARD:Gamification_DailySet_ZHCN_20260902_Child1 ... [2026/9/2 10:11:56] [WARN] MOBILE [URL-REWARD] UrlReward 未获得积分 | offerId=Gamification_DailySet_ZHCN_20260902_Child1 | acknowledged=false | expected=10 | pointsGained=0 ``` 同样错误也出现在 `Child2` 和 `Child3` 上。 ### 2. Read-to-Earn 第二轮运行首篇文章即获 0 分后停止 ``` [2026/9/2 13:04:08] [INFO] MOB"
+        "id": "github:4484386059",
+        "title": "[Bounty Claim] Code review for RustChain PR #5830",
+        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/11326",
+        "rewardUsd": 5830,
+        "score": 54,
+        "summary": "Review submitted for the RustChain PR review bounty. - Bounty thread: Scottcjn/Rustchain#73 - Reviewed PR: Scottcjn/Rustchain#5830 - Review comment: https://github.com/Scottcjn/Rustchain/pull/5830#issuecomment-4495958074 - Finding: the payload bound validator checks depth/size/string limits but still allows non-finite float values; Python `json.dumps()` emits `NaN`/`Infinity` unless `allow_nan=False`, which can break canonical signature serialization assumptions. - Verification: inspected the PR diff for `_validate_gossip_payload_bounds()` and confirmed missing numeric finiteness validation. RTC wallet for reward: RTCfbc6abb564f210ede29a769d1b4d173278f526ea"
       },
       {
-        "id": "github:5368757004",
-        "title": "check_correctness / lcb_check_correctness_v2 leave a zombie process after killing a timed-out test run",
-        "url": "https://github.com/rllm-org/rllm/issues/915",
-        "rewardUsd": 120,
-        "score": 40,
-        "summary": "## Description `check_correctness` (`rllm/rewards/code_reward.py:120`) and `lcb_check_correctness_v2` (line 231) run untrusted generated code in a `multiprocessing.Process`, and on timeout do `if process.is_alive(): process.kill()` with no `process.join()` after it. `kill()` only delivers SIGKILL; the child isn't reaped until something calls `join()`/`wait()` on it, so it sits as a zombie (`STAT=Z`) for the life of the worker process. `lcb_check_correctness_v2` runs on every code-task reward through `RewardCodeFn.__call__` (the LiveCodeBench path and the default fallback), so any slow or hanging generation during RL training leaks one zombie per timeout on that worker. Each one is harmless alone, but a long run with many workers and timeouts can eventually hit the OS per-user PID limit. ## Steps to Reproduce Call `check_correctness` with a `test_fn` that sleeps past `timeout_per_test`, then check for the spawned child: ```python import os, subprocess, time from rllm.rewards.code_reward import check_correctness def test_fn(*a, **k): time.sleep(30) check_correctness({\"inputs\": [\"1\"], \"outputs\": [\"1\"]}, \"x = 1\", test_fn, timeout_per_test=2, max_tests=15) time.sleep(1) print(subprocess"
+        "id": "github:4460041460",
+        "title": "[Bounty Claim] PR Reviews - 200+ PRs (Bounty #73) - HCIE2054",
+        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/9997",
+        "rewardUsd": 200,
+        "score": 34,
+        "summary": "## Bounty Claim #73 - 200+ PR Reviews **GitHub:** HCIE2054 **Wallet:** RTC0069ce999590624987151e19a8b005555d17794b Massive PR review batch. All open PRs across Rustchain ecosystem reviewed with APPROVE + LGTM. Thank you!"
       }
     ],
     "active": null,
     "completedCount": 0,
     "lastError": null
   },
-  "retryAfterAt": null
+  "retryAfterAt": "2026-09-07T06:10:57.561Z"
 }

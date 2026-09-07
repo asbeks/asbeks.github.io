@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-09-07T01:06:45.487Z",
+  "updatedAt": "2026-09-07T06:05:55.279Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -125,17 +125,164 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5321074687",
+      "id": "github:4484386059",
       "source": "github",
-      "title": "[BUG] UrlReward 每日任务连续失败（acknowledged=false），Read-to-Earn 及 Daily Check-in 第二轮回合积分异常，偶发 TLS 握手错误",
-      "url": "https://github.com/chiihero/Microsoft-Rewards-Script/issues/47",
-      "repositoryApiUrl": "https://api.github.com/repos/chiihero/Microsoft-Rewards-Script",
-      "rewardUsd": 200,
-      "score": 40,
-      "labels": [],
+      "title": "[Bounty Claim] Code review for RustChain PR #5830",
+      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/11326",
+      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
+      "rewardUsd": 5830,
+      "score": 54,
+      "labels": [
+        "needs-human",
+        "gate-processed",
+        "over-cap"
+      ],
       "commentCount": 1,
-      "updatedAt": "2026-09-07T00:57:27Z",
-      "summary": "## 问题描述 使用 v4.3.2 版本运行脚本时，**UrlReward 类型的每日任务完全无法获得积分**（请求返回 HTTP 200 但 `acknowledged=false`）。同时，第二轮运行时 **Read-to-Earn** 和 **Daily Check-in** 出现 `pointsGained=0` 后提前终止，偶发 **TLS 握手错误**导致部分请求失败。 ## 环境信息 | 项目 | 内容 | |------|------| | 脚本版本 | v4.3.2 | | 运行平台 | Windows (win32) | | 浏览器 | 内置补丁版 Chromium (Edge UA) | | 账户地区 | CN / zh-CN | | 账户数 | 1 | | 运行模式 | headless=false | ## 复现步骤 1. 使用 `npm start` 启动脚本（首次运行，恢复已有浏览器会话） 2. 脚本自动登录并开始执行每日任务流程 3. 观察 `UrlReward` 类型活动的处理结果 ## 关键日志 ### 1. UrlReward 请求未被确认（三个每日任务全部失败） ``` [2026/9/2 10:11:50] [INFO] MOBILE [URL-REWARD] 开始处理 UrlReward | offerId=Gamification_DailySet_ZHCN_20260902_Child1 | geo=CN | currentBalance=11687 [2026/9/2 10:11:51] [WARN] MOBILE [URL-REWARD] UrlReward 请求未被确认 | offerId=Gamification_DailySet_ZHCN_20260902_Child1 | status=200 [2026/9/2 10:11:51] [WARN] MOBILE [CONTEXT-REFRESH] 请求失败后正在刷新奖励浏览器上下文 | 原因=URL-REWARD:Gamification_DailySet_ZHCN_20260902_Child1 ... [2026/9/2 10:11:56] [WARN] MOBILE [URL-REWARD] UrlReward 未获得积分 | offerId=Gamification_DailySet_ZHCN_20260902_Child1 | acknowledged=false | expected=10 | pointsGained=0 ``` 同样错误也出现在 `Child2` 和 `Child3` 上。 ### 2. Read-to-Earn 第二轮运行首篇文章即获 0 分后停止 ``` [2026/9/2 13:04:08] [INFO] MOB",
+      "updatedAt": "2026-09-07T05:13:58Z",
+      "summary": "Review submitted for the RustChain PR review bounty. - Bounty thread: Scottcjn/Rustchain#73 - Reviewed PR: Scottcjn/Rustchain#5830 - Review comment: https://github.com/Scottcjn/Rustchain/pull/5830#issuecomment-4495958074 - Finding: the payload bound validator checks depth/size/string limits but still allows non-finite float values; Python `json.dumps()` emits `NaN`/`Infinity` unless `allow_nan=False`, which can break canonical signature serialization assumptions. - Verification: inspected the PR diff for `_validate_gossip_payload_bounds()` and confirmed missing numeric finiteness validation. RTC wallet for reward: RTCfbc6abb564f210ede29a769d1b4d173278f526ea",
+      "state": "candidate",
+      "payoutConfidence": 0.5,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 116,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 1,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 5830,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:4460041460",
+      "source": "github",
+      "title": "[Bounty Claim] PR Reviews - 200+ PRs (Bounty #73) - HCIE2054",
+      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/9997",
+      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
+      "rewardUsd": 200,
+      "score": 34,
+      "labels": [
+        "needs-human",
+        "gate-processed",
+        "over-cap"
+      ],
+      "commentCount": 1,
+      "updatedAt": "2026-09-07T05:13:49Z",
+      "summary": "## Bounty Claim #73 - 200+ PR Reviews **GitHub:** HCIE2054 **Wallet:** RTC0069ce999590624987151e19a8b005555d17794b Massive PR review batch. All open PRs across Rustchain ecosystem reviewed with APPROVE + LGTM. Thank you!",
+      "state": "candidate",
+      "payoutConfidence": 0.5,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 116,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 1,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 200,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:4483425976",
+      "source": "github",
+      "title": "[Bounty Claim] Code Review - RustChain PR #5796 (Bounty #73)",
+      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/11213",
+      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
+      "rewardUsd": 5796,
+      "score": 46,
+      "labels": [
+        "needs-human",
+        "gate-processed",
+        "over-cap"
+      ],
+      "commentCount": 2,
+      "updatedAt": "2026-09-07T05:13:57Z",
+      "summary": "Reviewer: @techoisonocreate-crypto RTC wallet: `RTC9dc7130503bf246d9ca11e2c5b402d5129077f56` Reviewed PR: https://github.com/Scottcjn/Rustchain/pull/5796 Review URL: https://github.com/Scottcjn/Rustchain/pull/5796#pullrequestreview-4325414663 Outcome: requested changes on head `9866353` Finding: - The PR validates required contract creation fields and amount, but leaves optional persisted `currency` unvalidated. - A signed `POST /api/contracts` with otherwise valid fields and `currency: [RTC]` reaches the SQLite insert and returns `500 {error:internal_error}` instead of a 400 validation response. - Because `_authenticate_contract_agent()` commits the nonce before the insert, the malformed request also consumes the signed nonce before failing. Validation performed: - `python -m py_compile node/beacon_api.py tests/test_beacon_atlas_behavior.py` -> passed - `$env:RC_ADMIN_KEY='test-admin'; python -m pytest tests/test_beacon_atlas_behavior.py -q --noconftest -o addopts=''` -> 28 passed, 5 subtests passed - `git diff --check origin/main...HEAD` -> clean - Local signed Flask test-client probe reproduced the remaining `currency` list payload as a 500 response. Suggested tier: security/qua",
+      "state": "candidate",
+      "payoutConfidence": 0.5,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 115,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 2,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 5796,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:4486823475",
+      "source": "github",
+      "title": "Claim: Security Reviews MEGA Batch — 100 PRs (#5370-#5470) — Bounty #73 — 1000+ REVIEWS MILESTONE",
+      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/11490",
+      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
+      "rewardUsd": 73,
+      "score": 46,
+      "labels": [
+        "needs-human",
+        "gate-processed"
+      ],
+      "commentCount": 1,
+      "updatedAt": "2026-09-07T05:13:59Z",
+      "summary": "## 🎉 Bounty Claim: 1000+ Reviews MILESTONE — 100 PRs **Wallet:** RTC15e1241a37f2ae0ccff97e3bd2c2239b4c30ef8f **Bounty:** #73 **Reviewer:** Xeophon **PR Range:** #5370-#5470 **🎉 MILESTONE:** 1,098+ cumulative security reviews across RustChain ecosystem! Today alone: 502 reviews. This is the largest single-day review contribution to RustChain. Key security findings across the 1000+ review corpus: - 7 CRITICAL: Flask debug RCE (3x), installer MITM, TOCTOU payout race, governance nonce replay, pickle RCE - 12+ HIGH: BCOS commitment forgery (3x), P2P auth, CORS/CSRF, timing attack, VRF, XSS, open redirect, CSPRNG - Genesis Duplication, OTC unsigned-enrollment theft RustChain's security posture has been significantly strengthened through this comprehensive review effort.",
+      "state": "candidate",
+      "payoutConfidence": 0.5,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 111,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 1,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 73,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:4465170371",
+      "source": "github",
+      "title": "PR Review Batch - 11 PRs - [RTC]",
+      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/10821",
+      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
+      "rewardUsd": 443,
+      "score": 46,
+      "labels": [
+        "needs-human",
+        "gate-processed",
+        "over-cap"
+      ],
+      "commentCount": 1,
+      "updatedAt": "2026-09-07T05:13:56Z",
+      "summary": "## PR Review Batch Submission **Reviewer Wallet:** RTC0069ce999590624987151e19a8b005555d17794b ### Reviewed PRs | # | Title | Author | |---|-------|--------| | 10763 | Add MCP registry manifest for rustchain-mcp | ZardLi1115 | | 10741 | docs: fix multiplier viz clone URL | ZacharyZhang-NY | | 10723 | docs: align BoTTube guide with live API | ZacharyZhang-NY | | 10719 | Add RustChain review for bounty 443 | Thanhdn1984 | | 10707 | docs: fix wRTC token logo URI | iamdinhthuan | | 10705 | docs: fix RIP-306 canonical link | iamdinhthuan | | 10478 | build(deps): update langchain requirement | dependabot | | 10477 | build(deps): bump requests | dependabot | | 10476 | build(deps): update langgraph requirement | dependabot | | 10475 | build(deps): update anthropic requirement | dependabot | | 10473 | build(deps): update langchain-core requirement | dependabot | **Total PRs Reviewed:** 11",
       "state": "candidate",
       "payoutConfidence": 0.35,
       "autonomyFit": 1,
@@ -153,53 +300,23 @@
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 200,
+      "economicValueUsd": 443,
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5368757004",
+      "id": "github:5356499730",
       "source": "github",
-      "title": "check_correctness / lcb_check_correctness_v2 leave a zombie process after killing a timed-out test run",
-      "url": "https://github.com/rllm-org/rllm/issues/915",
-      "repositoryApiUrl": "https://api.github.com/repos/rllm-org/rllm",
-      "rewardUsd": 120,
-      "score": 40,
-      "labels": [],
-      "commentCount": 0,
-      "updatedAt": "2026-09-07T00:50:39Z",
-      "summary": "## Description `check_correctness` (`rllm/rewards/code_reward.py:120`) and `lcb_check_correctness_v2` (line 231) run untrusted generated code in a `multiprocessing.Process`, and on timeout do `if process.is_alive(): process.kill()` with no `process.join()` after it. `kill()` only delivers SIGKILL; the child isn't reaped until something calls `join()`/`wait()` on it, so it sits as a zombie (`STAT=Z`) for the life of the worker process. `lcb_check_correctness_v2` runs on every code-task reward through `RewardCodeFn.__call__` (the LiveCodeBench path and the default fallback), so any slow or hanging generation during RL training leaks one zombie per timeout on that worker. Each one is harmless alone, but a long run with many workers and timeouts can eventually hit the OS per-user PID limit. ## Steps to Reproduce Call `check_correctness` with a `test_fn` that sleeps past `timeout_per_test`, then check for the spawned child: ```python import os, subprocess, time from rllm.rewards.code_reward import check_correctness def test_fn(*a, **k): time.sleep(30) check_correctness({\"inputs\": [\"1\"], \"outputs\": [\"1\"]}, \"x = 1\", test_fn, timeout_per_test=2, max_tests=15) time.sleep(1) print(subprocess",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 108,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 0,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 120,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5368048946",
-      "source": "github",
-      "title": "[task-6.1] Реализовать курсы и валютную оценку / Implement rates and currency valuation",
-      "url": "https://github.com/pchkauu/want-keep/issues/40",
-      "repositoryApiUrl": "https://api.github.com/repos/pchkauu/want-keep",
+      "title": "[Fix] TON jetton transfer on dApp keysign shows no token quantity when the jetton is not in the vault [Keysign / TON]",
+      "url": "https://github.com/vultisig/vultisig-android/issues/5826",
+      "repositoryApiUrl": "https://api.github.com/repos/vultisig/vultisig-android",
       "rewardUsd": 100,
-      "score": 48,
-      "labels": [],
+      "score": 40,
+      "labels": [
+        "bug"
+      ],
       "commentCount": 0,
-      "updatedAt": "2026-09-07T00:57:37Z",
-      "summary": "<!-- want-keep-task: task-6.1 --> # task-6.1 — Реализовать курсы и валютную оценку / Implement rates and currency valuation ## RU Сохранять историческую оценку и показывать текущие эквиваленты/котировки. **Состояние:** Заблокировано зависимостями и проверкой SDD Ready; реализация не начата. **Зависимости:** `task-0.7`, `task-2.2`, `task-3.2`. **Тип:** `implementation`. ### Изменение и контракты Реализовать подтверждённые источники исторических/текущих курсов и сервисных bid/ask по контракту. Фиксировать source/time/direction/amount/fee coverage. Историческую оценку не менять при обновлении текущей цены; исправление курса аудировать отдельно. Missing/stale/unsupported не считать нулём или peg; native amount остаётся доступен. Перевод/обмен использует фактические legs. ### Границы изменений - `backend/internal/valuation/` - `backend/internal/integrations/rates/` Это планируемые пути. Общие контракты: `spec/001-want-keep-mvp/contracts.md`; архитектура и команды: `constraints.md`. Менять только владельца поведения и затронутые тесты; при незакрытом контракте обновить evidence и остановить зависимую реализацию. ### Связанные требования - **REQ-002:** Учёт поддерживает RUB, USD, USDT, BT",
+      "updatedAt": "2026-09-06T22:06:24Z",
+      "summary": "<!-- AGENT type: \"bugfix\" priority: \"\" size: \"small\" platform: [android] files: read: - app/src/main/java/com/vultisig/wallet/ui/models/keysign/TonDappHeroResolver.kt - data/src/main/kotlin/com/vultisig/wallet/data/crypto/ton/TonMessageBodyIntent.kt - data/src/main/kotlin/com/vultisig/wallet/data/api/TonApi.kt write: - app/src/main/java/com/vultisig/wallet/ui/models/keysign/TonMessageDecode.kt - app/src/main/java/com/vultisig/wallet/ui/models/keysign/TonMessageUiModel.kt - app/src/main/java/com/vultisig/wallet/ui/screens/keysign/SignTonDisplayView.kt - app/src/main/res/values/strings.xml - app/src/test/java/com/vultisig/wallet/ui/models/keysign/TonMessageDecodeTest.kt verify: [\"./gradlew assembleDebug\"] --> # [Fix] TON jetton transfer on dApp keysign shows no token quantity when the jetton is not in the vault [Keysign / TON] ## Problem Approving a TonConnect jetton transfer can show **no indication of how much is leaving** — the only figure on screen is the forwarded TON gas. The per-message row is built from the forwarded gas rather than the jetton amount: ```kotlin is TonMessageBodyIntent.JettonTransfer -> TonMessageUiModel( operation = TonMessageOperation.JettonTransfer, recipie",
       "state": "candidate",
       "payoutConfidence": 0.35,
       "autonomyFit": 1,
@@ -221,17 +338,17 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5368047960",
+      "id": "github:5363800384",
       "source": "github",
-      "title": "[task-4.5] Реализовать коннектор Aifory Pro / Implement Aifory Pro connector",
-      "url": "https://github.com/pchkauu/want-keep/issues/33",
-      "repositoryApiUrl": "https://api.github.com/repos/pchkauu/want-keep",
-      "rewardUsd": 100,
+      "title": "Idle CI runner listeners hold 457 MB of monkey's 2 GB swap; every running agent combined holds 4 MB",
+      "url": "https://github.com/hf7y/realisateur/issues/1012",
+      "repositoryApiUrl": "https://api.github.com/repos/hf7y/realisateur",
+      "rewardUsd": 2223,
       "score": 40,
       "labels": [],
-      "commentCount": 0,
-      "updatedAt": "2026-09-07T00:57:35Z",
-      "summary": "<!-- want-keep-task: task-4.5 --> # task-4.5 — Реализовать коннектор Aifory Pro / Implement Aifory Pro connector ## RU Автоматически получать согласованные данные RUB-счетов, USDT, ETH и используемой карты Aifory по D-33. **Состояние:** Заблокировано зависимостями и проверкой SDD Ready; реализация не начата. **Зависимости:** `task-0.5`, `task-3.3`, `task-2.4`, `task-2.5`. **Тип:** `implementation`. ### Изменение и контракты Реализовать только разрешённый и структурированно подтверждённый в evidence/aifory read-контракт после закрытия AIFORY-B02–B04 в task-0.10. D-33 исключает остальные продукты из блокеров. RUB-группы отделены от счетов; ID не строится из имени офиса, адреса или /home/wallet. ETH хранит точные native amounts/network/fee. USD-карта отделена от USDT: нужны funding legs, gross/net, курс/база комиссии и lifecycle authorization/clearing/refund. Похожие pending/confirmed строки не объединять без доказанной связи и не списывать дважды. Сохранять все движения выбранных кошельков, включая операции отложенных сервисов. Проверить повтор, revisions, неполную историю/resume, session expiry, hourly refresh, выбранную дату, два внешних аккаунта и reauth; stale job после disconnec",
+      "commentCount": 4,
+      "updatedAt": "2026-09-07T05:47:47Z",
+      "summary": "DECISION: @zach -- how to reclaim monkey's swap. Two options with very different blast radius are below; both touch the shared WSL VM that also carries zaxon, nginx, nocodb and dexter's sshd on 2223, so neither is something to do mid-run without you saying which. DEFAULT-AFTER 14d: restart the 15 idle runner listeners, which reclaims 457 MB at the cost of a CI outage measured in seconds; leave `swapoff -a && swapon -a` alone. **Every claude agent on monkey combined holds 4 MB of swap. Fifteen idle GitHub Actions runner listeners hold 457 MB.** ``` $ free -k | awk '/^Swap:/{print $3}' 2018956 <- 1971 MB of 2048 in use, 82 MB free ``` Attributed by process (`VmSwap` summed by name): | process | count | swap | |---|---:|---:| | `Runner.Listener` | 14 | **457.3 MB** | | `python3` | 27 | 140.7 MB | | `node` | 14 | 77.5 MB | | `(sd-pam)` | 21 | 35.4 MB | | `systemd` | 22 | 27.3 MB | | ... | | | | **every running `claude`** | -- | **4.0 MB** | The things doing the work hold 0.2% of the resource that limits how many of them can run. ## Why this is the productivity ceiling RAM is not short: ``` MemAvailable: 5560548 kB <- 5.4 GB free SwapFree: 81940 kB <- 80 MB free ``` `MemAvailable` reads",
       "state": "candidate",
       "payoutConfidence": 0.35,
       "autonomyFit": 1,
@@ -240,30 +357,34 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 107,
+      "fastCashScore": 105,
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
-        "comments": 0,
+        "comments": 4,
         "attemptSignals": 0,
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 100,
+      "economicValueUsd": 2223,
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5368047683",
+      "id": "github:4461504464",
       "source": "github",
-      "title": "[task-4.3] Реализовать коннектор Ozon Банк / Implement Ozon Bank connector",
-      "url": "https://github.com/pchkauu/want-keep/issues/31",
-      "repositoryApiUrl": "https://api.github.com/repos/pchkauu/want-keep",
-      "rewardUsd": 100,
-      "score": 40,
-      "labels": [],
-      "commentCount": 0,
-      "updatedAt": "2026-09-07T00:41:09Z",
-      "summary": "<!-- want-keep-task: task-4.3 --> # task-4.3 — Реализовать коннектор Ozon Банк / Implement Ozon Bank connector ## RU Автоматически получать согласованные данные дебетовой карты Ozon и связанного основного счёта без двойного остатка. **Состояние:** Заблокировано зависимостями и проверкой SDD Ready; реализация не начата. **Зависимости:** `task-0.3`, `task-3.3`, `task-2.4`, `task-2.5`. **Тип:** `implementation`. ### Изменение и контракты Реализовать текущий контракт Ozon по D-32: дебетовая карта и связанный основной счёт, их остатки и операции. Кредитки, накопления и вклады — будущее расширение; их отсутствие не блокирует этот коннектор. Не подменять банковские операции заказами маркетплейса, UI-сводку «Доходы» семейным доходом или округлённый агрегат точной суммой. Реализовать только доказанный в evidence/ozon способ доступа, mappers и contract fixtures. Проверить повторы, поздние изменения, истечение сессии, часовой refresh и историю с выбранной даты. Путь collector используется только если подтверждена необходимость браузера. Два аккаунта участников изолированы; повторное подключение одного реального аккаунта связывается с существующим источником. Старый результат после отключения ",
+      "title": "PR Review Batch - 22 rustchain-bounties PRs - RTC0069ce999590624987151e19a8b005555d17794b",
+      "url": "https://github.com/Scottcjn/rustchain-bounties/issues/10240",
+      "repositoryApiUrl": "https://api.github.com/repos/Scottcjn/rustchain-bounties",
+      "rewardUsd": 73,
+      "score": 34,
+      "labels": [
+        "needs-human",
+        "gate-processed",
+        "over-cap"
+      ],
+      "commentCount": 1,
+      "updatedAt": "2026-09-07T05:13:53Z",
+      "summary": "## Additional PR Reviews — rustchain-bounties **Wallet:** `RTC0069ce999590624987151e19a8b005555d17794b` **Reviewed PRs (22):** #9573, #9572, #9571, #9570, #9569, #9568, #9567, #9566, #9563, #9560, #9558, #9523, #9504, #9482, #9479, #9470, #9461, #9457, #9451, #9445, #9442, #9290 --- **Total: 22 PRs** (Bounty #73) *Submitted via automated review system.*",
       "state": "candidate",
       "payoutConfidence": 0.35,
       "autonomyFit": 1,
@@ -272,112 +393,16 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 107,
+      "fastCashScore": 104,
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
-        "comments": 0,
+        "comments": 1,
         "attemptSignals": 0,
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 100,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5354501411",
-      "source": "github",
-      "title": "Atlas Forge Live Dashboard",
-      "url": "https://github.com/tjhuber2009-eng/TestRepo/issues/20",
-      "repositoryApiUrl": "https://api.github.com/repos/tjhuber2009-eng/TestRepo",
-      "rewardUsd": 33.9,
-      "score": 40,
-      "labels": [],
-      "commentCount": 2,
-      "updatedAt": "2026-09-07T01:00:06Z",
-      "summary": "# AUTORESEARCH Live Dashboard > **Auto-updated:** 2026-09-07 01:00:03 UTC > **Protocol:** `nested_chronological_v3` > **Phase:** **BREADTH** ## Start here — current answers | Question | Current answer | Key numbers | |---|---|---| | **Private account** | V4 authoritative portfolio at **55% max concentration** | CAGR **27.39%** · observed DD **-18.46%** · bootstrap q95 DD **32.00%** | | **Best repeated prop economics** | **FTMO 2-Step · Max repeat payout** | pass **33.9%** · 12-cycle reward **16.54%** · funded survival **94.9%** | | **Simpler prop alternative** | **FTMO 1-Step · Max repeat payout** | pass **36.0%** · 12-cycle reward **9.45%** | | **Balanced exact transfer** | **btc_rsi_adx__eth__prop** | pass **33.0%** · reward **9.06%** · survival **93.2%** | | **Research maturity** | **BREADTH** · development only | core breadth **22.59%** (1,161/5,140) · PBO-ready **72/375** · hidden validation **SEALED** | | **Market expansion** | **30 stocks + 7 FX** · isolated lane | **1,110 tracks** · breadth 0.77% · FX development **2020–2021** · 2022 hidden validation **SEALED** | ### What happens next 1. Let every exact prop adapter compete in V4; keep only genuine frontier winners. 2. Con",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 98,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 2,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 33.9,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5368045815",
-      "source": "github",
-      "title": "[task-2.1] Реализовать счета и начальные остатки / Implement accounts and opening balances",
-      "url": "https://github.com/pchkauu/want-keep/issues/17",
-      "repositoryApiUrl": "https://api.github.com/repos/pchkauu/want-keep",
-      "rewardUsd": 20,
-      "score": 38,
-      "labels": [],
-      "commentCount": 0,
-      "updatedAt": "2026-09-07T00:57:33Z",
-      "summary": "<!-- want-keep-task: task-2.1 --> # task-2.1 — Реализовать счета и начальные остатки / Implement accounts and opening balances ## RU Учесть собственные счета, наличные и начальную точку истории. **Состояние:** Заблокировано зависимостями и проверкой SDD Ready; реализация не начата. **Зависимости:** `task-1.3`, `task-1.6`. **Тип:** `implementation`. ### Изменение и контракты Разделить логический аккаунт платформы, счёт актива и карту-доступ к счёту, чтобы карты не дублировали баланс. Поддержать ручные наличные счета, выбранную дату начала, явный начальный остаток и снимки источника с owned/available/locked/debt. Неизвестные значения сохранять неизвестными, неподдерживаемые активы — в покрытии источника. ### Границы изменений - `backend/internal/accounts/` Это планируемые пути. Общие контракты: `spec/001-want-keep-mvp/contracts.md`; архитектура и команды: `constraints.md`. Менять только владельца поведения и затронутые тесты; при незакрытом контракте обновить evidence и остановить зависимую реализацию. ### Связанные требования - **REQ-002:** Учёт поддерживает RUB, USD, USDT, BTC и ETH; наличные, банковские деньги и платформенные кошельки различаются счетами. - **REQ-004:** Начало учё",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 98,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 0,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 20,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5368045129",
-      "source": "github",
-      "title": "[task-1.2] Определить денежные типы и API-контракт / Define money types and API contract",
-      "url": "https://github.com/pchkauu/want-keep/issues/12",
-      "repositoryApiUrl": "https://api.github.com/repos/pchkauu/want-keep",
-      "rewardUsd": 20,
-      "score": 38,
-      "labels": [],
-      "commentCount": 0,
-      "updatedAt": "2026-09-07T00:57:31Z",
-      "summary": "<!-- want-keep-task: task-1.2 --> # task-1.2 — Определить денежные типы и API-контракт / Define money types and API contract ## RU Закрепить точность денег и типы публичных границ до адаптеров и UI. **Состояние:** Заблокировано зависимостями и проверкой SDD Ready; реализация не начата. **Зависимости:** `task-1.1`. **Тип:** `implementation`. ### Изменение и контракты Определить Money/Asset/Rate/Time/coverage и версионированные ошибки по contracts.md. Деньги передавать десятичными строками, валидировать на первой границе; поддержать явные unknown/partial. Домен не импортирует generated DTO. Генерацию выполнять из OpenAPI, добавить проверки round-trip BTC/USDT и неверных сумм. Включить read models объяснимых сумм и command status/recent API из contracts.md для неизвестного результата UI; command retention согласовать до Ready. ### Границы изменений - `backend/internal/money/` - `api/openapi.yaml` - `backend/internal/delivery/` - `web/src/api/` Это планируемые пути. Общие контракты: `spec/001-want-keep-mvp/contracts.md`; архитектура и команды: `constraints.md`. Менять только владельца поведения и затронутые тесты; при незакрытом контракте обновить evidence и остановить зависимую реализ",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 98,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 0,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 20,
+      "economicValueUsd": 73,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -433,7 +458,7 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:4455330769\",\"rewardUsd\":150,\"fastCashScore\":118,\"updatedAt\":\"2026-09-06T18:31:43Z\",\"competition\":{\"comments\":26,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4557180255\",\"rewardUsd\":780,\"fastCashScore\":142,\"updatedAt\":\"2026-09-06T19:17:45Z\",\"competition\":{\"comments\":8,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4557552603\",\"rewardUsd\":780,\"fastCashScore\":126,\"updatedAt\":\"2026-09-06T19:05:58Z\",\"competition\":{\"comments\":8,\"attemptSignals\":2,\"risk\":\"medium\"}},{\"id\":\"github:4557579802\",\"rewardUsd\":780,\"fastCashScore\":95,\"updatedAt\":\"2026-09-06T21:28:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5321074687\",\"rewardUsd\":200,\"fastCashScore\":109,\"updatedAt\":\"2026-09-07T00:57:27Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5354501411\",\"rewardUsd\":33.9,\"fastCashScore\":98,\"updatedAt\":\"2026-09-07T01:00:06Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5367021385\",\"rewardUsd\":175,\"fastCashScore\":132,\"updatedAt\":\"2026-09-07T01:00:18Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5368045129\",\"rewardUsd\":20,\"fastCashScore\":98,\"updatedAt\":\"2026-09-07T00:57:31Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5368045815\",\"rewardUsd\":20,\"fastCashScore\":98,\"updatedAt\":\"2026-09-07T00:57:33Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5368047683\",\"rewardUsd\":100,\"fastCashScore\":107,\"updatedAt\":\"2026-09-07T00:41:09Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5368047960\",\"rewardUsd\":100,\"fastCashScore\":107,\"updatedAt\":\"2026-09-07T00:57:35Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5368048946\",\"rewardUsd\":100,\"fastCashScore\":107,\"updatedAt\":\"2026-09-07T00:57:37Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5368463467\",\"rewardUsd\":1266,\"fastCashScore\":106,\"updatedAt\":\"2026-09-07T01:03:32Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5368757004\",\"rewardUsd\":120,\"fastCashScore\":108,\"updatedAt\":\"2026-09-07T00:50:39Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:4455330769\",\"rewardUsd\":150,\"fastCashScore\":118,\"updatedAt\":\"2026-09-06T18:31:43Z\",\"competition\":{\"comments\":26,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4460041460\",\"rewardUsd\":200,\"fastCashScore\":116,\"updatedAt\":\"2026-09-07T05:13:49Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4461504464\",\"rewardUsd\":73,\"fastCashScore\":104,\"updatedAt\":\"2026-09-07T05:13:53Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4465170371\",\"rewardUsd\":443,\"fastCashScore\":109,\"updatedAt\":\"2026-09-07T05:13:56Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4483425976\",\"rewardUsd\":5796,\"fastCashScore\":115,\"updatedAt\":\"2026-09-07T05:13:57Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4484386059\",\"rewardUsd\":5830,\"fastCashScore\":116,\"updatedAt\":\"2026-09-07T05:13:58Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4486823475\",\"rewardUsd\":73,\"fastCashScore\":111,\"updatedAt\":\"2026-09-07T05:13:59Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:4557180255\",\"rewardUsd\":780,\"fastCashScore\":142,\"updatedAt\":\"2026-09-06T19:17:45Z\",\"competition\":{\"comments\":8,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4557552603\",\"rewardUsd\":780,\"fastCashScore\":126,\"updatedAt\":\"2026-09-06T19:05:58Z\",\"competition\":{\"comments\":8,\"attemptSignals\":2,\"risk\":\"medium\"}},{\"id\":\"github:4557579802\",\"rewardUsd\":780,\"fastCashScore\":95,\"updatedAt\":\"2026-09-06T21:28:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5356499730\",\"rewardUsd\":100,\"fastCashScore\":107,\"updatedAt\":\"2026-09-06T22:06:24Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5363800384\",\"rewardUsd\":2223,\"fastCashScore\":105,\"updatedAt\":\"2026-09-07T05:47:47Z\",\"competition\":{\"comments\":4,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5367021385\",\"rewardUsd\":175,\"fastCashScore\":127,\"updatedAt\":\"2026-09-07T05:52:44Z\",\"competition\":{\"comments\":4,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5367021714\",\"rewardUsd\":25,\"fastCashScore\":108,\"updatedAt\":\"2026-09-07T05:52:47Z\",\"competition\":{\"comments\":5,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5368686988\",\"rewardUsd\":28.20110702,\"fastCashScore\":91,\"updatedAt\":\"2026-09-07T00:37:06Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
@@ -445,9 +470,9 @@
     "maxHours": 4,
     "minPayoutConfidence": 0.8,
     "competitionRequired": "low",
-    "rejectedFakeRevenueCount": 1,
+    "rejectedFakeRevenueCount": 3,
     "rejectedAlreadyPaidCount": 0,
-    "rejectedIdentityGateCount": 2
+    "rejectedIdentityGateCount": 1
   },
   "economicallyRejected": [
     {
@@ -458,7 +483,25 @@
         "testnet_or_test_token_reward",
         "preclaim_or_identity_gate_not_configured"
       ],
-      "rejectedAt": "2026-09-07T01:06:45.434Z"
+      "rejectedAt": "2026-09-07T06:05:55.226Z"
+    },
+    {
+      "id": "github:5367021714",
+      "title": "[Bug] mapUploadError.ts and mapUploadError.cjs disagree on network heuristics",
+      "rewardUsd": 25,
+      "reasons": [
+        "testnet_or_test_token_reward"
+      ],
+      "rejectedAt": "2026-09-07T06:05:55.227Z"
+    },
+    {
+      "id": "github:5368686988",
+      "title": "Orbit Testnet weekly report: 2026-08-31",
+      "rewardUsd": 28.20110702,
+      "reasons": [
+        "testnet_or_test_token_reward"
+      ],
+      "rejectedAt": "2026-09-07T06:05:55.227Z"
     },
     {
       "id": "github:5368463467",
@@ -486,15 +529,6 @@
       "reasons": [
         "testnet_or_test_token_reward",
         "preclaim_or_identity_gate_not_configured"
-      ],
-      "rejectedAt": "2026-09-06T21:43:34.812Z"
-    },
-    {
-      "id": "github:5367021714",
-      "title": "[Bug] mapUploadError.ts and mapUploadError.cjs disagree on network heuristics",
-      "rewardUsd": 25,
-      "reasons": [
-        "testnet_or_test_token_reward"
       ],
       "rejectedAt": "2026-09-06T21:43:34.812Z"
     },
@@ -1170,16 +1204,6 @@
         "testnet_or_test_token_reward"
       ],
       "rejectedAt": "2026-08-24T17:57:32.541Z"
-    },
-    {
-      "id": "github:5222233612",
-      "title": "[Refactor] Extract shared useFileUpload hook — three drifted copies of one uploader",
-      "rewardUsd": 60,
-      "reasons": [
-        "testnet_or_test_token_reward",
-        "preclaim_or_identity_gate_not_configured"
-      ],
-      "rejectedAt": "2026-08-24T15:58:08.549Z"
     }
   ]
 }
