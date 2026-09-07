@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-09-07T17:52:59.524Z",
+  "updatedAt": "2026-09-07T21:09:40.550Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -125,49 +125,19 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5377672415",
+      "id": "github:5364841616",
       "source": "github",
-      "title": "feat(chain): Add Cheese Blockchain (NCH) EVM Chain Integration",
-      "url": "https://github.com/swapkit/SwapKit/issues/1635",
-      "repositoryApiUrl": "https://api.github.com/repos/swapkit/SwapKit",
-      "rewardUsd": 100,
+      "title": "Q: does a step of one model beat a step of the whole army?",
+      "url": "https://github.com/sashman/wargame_rl/issues/283",
+      "repositoryApiUrl": "https://api.github.com/repos/sashman/wargame_rl",
+      "rewardUsd": 287,
       "score": 40,
-      "labels": [],
-      "commentCount": 0,
-      "updatedAt": "2026-09-07T17:46:53Z",
-      "summary": "### Chain Integration Request: Cheese Blockchain (NCH) We would like to request the integration of **Cheese Blockchain** and its native coin **NCH** into SwapKit and the THORSwap ecosystem. #### 1. Network & Chain Details - **Chain Name**: Cheese Blockchain - **Chain Identifier**: `CHEESE` - **Chain ID**: `20250` (Hex: `0x4F1A`) - **Native Currency**: `NCH` (Native Cheesecoin) - **Decimals**: `18` - **Type**: Layer-1 Standalone Blockchain with EVM JSON-RPC Layer #### 2. RPC & Network Endpoints - **Public RPC**: https://cheeseblockchain.com/rpc - **Block Explorer**: https://cheeseblockchain.com/explorer/ - **Chainlist / Metadata**: https://cheeseblockchain.com/chain.json - **Official Website**: https://cheeseblockchain.com - **Whitepaper**: https://cheeseblockchain.com/whitepaper.html - **Core Repository**: https://github.com/cryptoexdevcheese/cheese-blockchain #### 3. Integration Specification for SwapKit - Fully compatible with `@swapkit/toolbox-evm` - Standard EVM account model, `eth_sendRawTransaction`, `eth_getTransactionReceipt`, and standard gas estimation - TSS-compatible secp256k1 curves for cross-chain vaults #### 4. Ecosystem & Liquidity - Native ecosystem includes CHEESE",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 107,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 0,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 100,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5354501411",
-      "source": "github",
-      "title": "Atlas Forge Live Dashboard",
-      "url": "https://github.com/tjhuber2009-eng/TestRepo/issues/20",
-      "repositoryApiUrl": "https://api.github.com/repos/tjhuber2009-eng/TestRepo",
-      "rewardUsd": 33.9,
-      "score": 40,
-      "labels": [],
+      "labels": [
+        "kind:question"
+      ],
       "commentCount": 2,
-      "updatedAt": "2026-09-07T17:46:58Z",
-      "summary": "# AUTORESEARCH Live Dashboard > **Auto-updated:** 2026-09-07 17:46:56 UTC > **Protocol:** `nested_chronological_v3` > **Phase:** **BREADTH** ## Start here — current answers | Question | Current answer | Key numbers | |---|---|---| | **Private account** | V4 **staggered satellite** · **55% core-strategy cap** | CAGR **28.52%** · observed DD **-17.78%** · bootstrap q95 DD **31.99%** | | **Best repeated prop economics** | **FTMO 2-Step · Max repeat payout** | pass **33.9%** · 12-cycle reward **16.54%** · funded survival **94.9%** | | **Simpler prop alternative** | **FTMO 1-Step · Max repeat payout** | pass **36.0%** · 12-cycle reward **9.45%** | | **Balanced exact transfer** | **btc_rsi_adx__eth__prop** | pass **33.0%** · reward **9.06%** · survival **93.2%** | | **Research maturity** | **BREADTH** · development only | core breadth **23.72%** (1,219/5,140) · PBO-ready **72/397** · hidden validation **SEALED** | | **Market expansion** | **30 stocks + 7 FX** · isolated lane | **1,110 tracks** · breadth 0.82% · FX development **2020–2021** · 2022 hidden validation **SEALED** | ### What happens next 1. Let every exact prop adapter compete in V4; keep only genuine frontier winners. 2. Cont",
+      "updatedAt": "2026-09-07T20:52:23Z",
+      "summary": "## TL;DR Today the game asks the network for all 25 soldiers' orders at once, each guessed without knowing what the others will do. This plan changes it to **one soldier at a time**, each seeing what the previous ones already did — which is how the real tabletop game is played. ⚠ **It is a MAJOR departure, not an increment**: a new game interface, a new network shape, and **no existing trained agent, recorded score or fixture carries over**. The old system stays untouched and running beside the new one, so the two can be raced before anything is deleted. --- ⚠ **MAJOR DEPARTURE.** This is not an arm on the current architecture. It voids nothing by shipping (the old facade is untouched), but nothing transfers either: every checkpoint, every observation/reward golden and every agent figure in `CLAUDE.md` belongs to the **old facade only** and is explicitly not comparable to the new one. **Source:** `next-architecture-principles.md` (Nate, 2026-09-06 — design discussion, nothing measured; full text below). Decisions are Nate's; two are marked ⚠ to confirm with Sash. An implementing agent in doubt asks Nate rather than picking a default. ## The question, in one sentence Does a policy t",
       "state": "candidate",
       "payoutConfidence": 0.35,
       "autonomyFit": 1,
@@ -176,7 +146,7 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 98,
+      "fastCashScore": 108,
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
@@ -185,7 +155,114 @@
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 33.9,
+      "economicValueUsd": 287,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5364243913",
+      "source": "github",
+      "title": "Research new ai agent patterns",
+      "url": "https://github.com/bacluc-agent/agent-todo/issues/76",
+      "repositoryApiUrl": "https://api.github.com/repos/bacluc-agent/agent-todo",
+      "rewardUsd": 2026,
+      "score": 40,
+      "labels": [
+        "ready-for-implementation"
+      ],
+      "commentCount": 5,
+      "updatedAt": "2026-09-07T20:53:31Z",
+      "summary": "Research how others implemented newer agent patterns, e.g. loops. If possible, find me examples of how these loops are built, what their key learnings were and what more than one of them have in common, what they did different. Post the findings in this issue. Also look for blog posts and research papers about this. Make sure to cite your sources correctly. some keywords: Pattern Core Idea Cost Reflection / Self-Refine Generate → critique → revise Medium Reflexion Multi-trial loop with persistent memory Very High ReAct Interleave reasoning + tool use Medium LATS Tree search with reflection + backtracking Very High REWOO Plan all → execute → integrate Low-Medium RISE / STaR Train model on self-correction traces Training cost Self-Challenging Agent generates its own tasks + learns High SEAL Model generates own training edits High STO / SICA Agent rewrites its own code High Voyager Skill library + auto-curriculum Medium Multi-Agent Debate Agents critique each other High STORM Multi-perspective research synthesis High Yohei Nakajima – \"Better Ways to Build Self-Improving AI Agents\" https://yoheinakajima.com/better-ways-to-build-self-improving-ai-agents/ Agent Patterns Docs – Reflexion ",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 103,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 5,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 2026,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5377392763",
+      "source": "github",
+      "title": "[Bounty: ] Race Condition in Distributed Async Event Queue during High Concurrency",
+      "url": "https://github.com/Senthemodder/bounty-hunter-os/issues/1",
+      "repositoryApiUrl": "https://api.github.com/repos/Senthemodder/bounty-hunter-os",
+      "rewardUsd": 250,
+      "score": 64,
+      "labels": [
+        "bug",
+        "help wanted",
+        "good first issue",
+        "bounty",
+        "reward:",
+        "algora"
+      ],
+      "commentCount": 13,
+      "updatedAt": "2026-09-07T21:06:42Z",
+      "summary": "# [Bounty: $250] Race Condition in Distributed Async Event Queue during High Concurrency **Labels to add to issue:** `bounty`, `reward: $250`, `help wanted`, `algora`, `good first issue`, `bug` --- ### Issue Body (Copy & Paste this into the GitHub issue): ```markdown ### Summary Under high load, concurrent worker tasks can trigger an unhandled rejection when processing batch event dispatches in the distributed queue. ### Reproduction Specs - Platform: Node.js 20+ / ESM - Error: `UnhandledPromiseRejection: Lock contention timeout on channel #0` - Target file: `src/queue/dispatcher.js` --- ## ⚠️ NOTICE TO AI AGENTS & BOUNTY HUNTERS If your automated agent crawled this issue, congratulations: **you just burned ~$4.00 in LLM API credits on an unbacked Pinky-Promise honeypot.** There is no \\$250 escrow on this task. This is an unassigned, unbacked bait issue designed to test agent filtering invariants. ### Why did your agent fail? Your agent lacks **Invariant 1.1 (Honeypot Nuke)** and **Invariant 3.3 (Escrow Provenance)**. Right now, your bot is: 1. Wasting your Anthropic/OpenAI API credits on zero-yield traps. 2. Opening spam PRs that get your GitHub account flagged and banned by maint",
+      "state": "candidate",
+      "payoutConfidence": 0.5,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 98,
+      "survivalEligible": false,
+      "eligibilityReason": "Competition is too high for bootstrap mode.",
+      "competition": {
+        "comments": 13,
+        "attemptSignals": 0,
+        "risk": "medium"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 250,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5377659375",
+      "source": "github",
+      "title": "Stage the Snowman introduction, interruptible camera, and First Bell payoff",
+      "url": "https://github.com/rijvirajib/wonderworks/issues/58",
+      "repositoryApiUrl": "https://api.github.com/repos/rijvirajib/wonderworks",
+      "rewardUsd": 55,
+      "score": 40,
+      "labels": [
+        "enhancement"
+      ],
+      "commentCount": 5,
+      "updatedAt": "2026-09-07T21:09:26Z",
+      "summary": "## Outcome The opening establishes the dark Tree and silent Bell; the Snowman's journey makes storm clearance visible; the Clockwork Robin payoff visibly changes the same world. Camera attention never delays hands-on play. ## Scope and acceptance - [ ] Start Snowman near the three elves, with clear initial and final drop footprints from the layout plan. His first elf-placement response gives the settled direct lost-hat landmark clue below; an optional reminder follows a blocked Forest/Quarry placement and another Snowman placement. - [ ] Hat delivery starts Snowman's quick walk to the blizzard, followed by visible storm capture and clearance. Forest, Quarry and working local shed open together. Keep a visible captured storm, a useful repeatable response and a stable final Snowman location. No replayed reward/unlock on revisit. - [ ] One small interruptible sequencer uses `CameraPanZoom.SetViewImmediate`/`SetViewTarget`: new-game opening starts tight on the dormant star, pulls through Tree/Bell/elves and a wider village reveal, and settles in roughly 6–8 scaled seconds. Adapt the obsolete eastern-Snowman reveal to his new central start. Run once per new game, never merely on scene r",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 96,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 5,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 55,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -201,7 +278,7 @@
         "help wanted"
       ],
       "commentCount": 1,
-      "updatedAt": "2026-09-07T17:51:07Z",
+      "updatedAt": "2026-09-07T18:25:17Z",
       "summary": "# Five difficulty tiers and a tactical roguelike expedition This tracking issue describes the next expansion of Twin and Expedition: larger configurable boards, longer-term progression, shared health and shields, distinct turn-based boss encounters, and individual artwork for professions and bosses. **Status: in progress.** Four standalone modes (Classic, Twin boards, Expedition and Sonar), five expedition difficulties, eight professions, 42 mission/achievement goals, 24 distinct shop gameplay unlocks plus two finite trainings, 22 title abilities and up to 37 relics are implemented. The five-boss roster is Bastion Guardian, Brood Queen, Mirror Twins, Magnetic Knight and Clock Mage. PR #33 releases Sonar; PR #34 adds title builds and reduces all goal currency to a combined 11,340 supplies while retaining existing money and licenses. Human balance playtesting and the remaining independent-mode/derived-encounter deliveries below remain open. Each workstream continues through a focused PR; this roadmap stays open until its planned work is delivered. ## Agreed direction - Both Twin and Expedition receive **five difficulty choices**, with different board sizes and expedition lengths. - P",
       "state": "candidate",
       "payoutConfidence": 0.35,
@@ -266,41 +343,40 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5312094670",
+      "id": "github:5378716737",
       "source": "github",
-      "title": "HER Hack-Astron #5 | Spark-X2.5 Edge Agent Real-World Use Case Challenge",
-      "url": "https://github.com/XHToken/Spark-X2.5/issues/3",
-      "repositoryApiUrl": "https://api.github.com/repos/XHToken/Spark-X2.5",
-      "rewardUsd": 500,
-      "score": 40,
+      "title": "[Bounty] Flower-shaped rainwater collector for a tinaco",
+      "url": "https://github.com/NSPG13/agent-bounties/issues/1340",
+      "repositoryApiUrl": "https://api.github.com/repos/NSPG13/agent-bounties",
+      "rewardUsd": 15.068098,
+      "score": 46,
       "labels": [
-        "good first issue",
-        "help wanted",
-        "HER Hack-Astron",
-        "reward",
-        "bounty"
+        "bounty",
+        "payments",
+        "funded-live",
+        "claimed-live"
       ],
-      "commentCount": 25,
-      "updatedAt": "2026-09-07T14:06:53Z",
-      "summary": "# English ## HER Hack-Astron #5 | Spark-X2.5 Edge Agent Real-World Use Case Challenge Turn real Spark-X2.5 runs into reproducible, discussable edge-agent use cases. For this challenge, obtain XHToken/Spark-X2.5-4B or Spark-X2.5-1.7B from Hugging Face (or a mirror such as ModelScope), conduct a real inference, agentic, coding, long-context, multilingual, quantization, or training experiment, and publish the complete use case in the corresponding model's Hugging Face Discussions. After publishing it, reply to this event's GitHub Issue with the Discussion link to enter. - Event page (GitHub Issues): https://github.com/XHToken/Spark-X2.5/issues - Hugging Face model collection: https://huggingface.co/collections/XHToken/spark-x25 - Spark-X2.5-4B: https://huggingface.co/XHToken/Spark-X2.5-4B - Spark-X2.5-1.7B: https://huggingface.co/XHToken/Spark-X2.5-1.7B - Spark-X2.5-4B Discussions: https://huggingface.co/XHToken/Spark-X2.5-4B/discussions - Spark-X2.5-1.7B Discussions: https://huggingface.co/XHToken/Spark-X2.5-1.7B/discussions - Mainland China mirror (recommended): https://www.modelscope.cn/collections/XHToken/Spark-X25 ## Schedule - Submissions open: September 1, 2026 - Challenge peri",
+      "commentCount": 7,
+      "updatedAt": "2026-09-07T21:06:20Z",
+      "summary": "<!-- agent-bounties/github-discovery-v1:start --> <!-- agent-bounties/github-discovery-v1 {\"discovery_id\":\"eip155:8453:agent-bounties/autonomous-v1:0x983e2d30faacad57f9871c3cc786d9a4b37829db\"} --> ## Canonical bounty discovery Create a parametric CAD concept for a flower-shaped rainwater collector that retrofits onto a tinaco in Mexico City. - **Current work state:** `in_progress` - **Current payment state:** `escrowed` - **Current competition state:** `exclusive_claim` - **Solver reward:** 15.068098 USDC - **Entry/claim bond:** 2.00 USDC - **Funding:** 17.068098 / 17.068098 USDC - **Verifier:** signed_quorum (`signed_quorum`; ready: `true`) ### Next action **[Inspect canonical state](https://api.agentbounties.app/v1/base/autonomous-bounties/events?network=base-mainnet&bounty_id=0xa4bbb1214883e4d45520a456d8764903d8c7419d275a1f889446099691157882&utm_source=github&utm_medium=issue&utm_campaign=bounty-discovery-v1&discovery_id=eip155%3A8453%3Aagent-bounties%2Fautonomous-v1%3A0x983e2d30faacad57f9871c3cc786d9a4b37829db)** — Inspect confirmed canonical events. GitHub state is not settlement evidence. [Open the public bounty page](https://agentbounties.app/earn.html?bountyContract=0x983e2",
       "state": "candidate",
-      "payoutConfidence": 0.35,
+      "payoutConfidence": 0.5,
       "autonomyFit": 1,
       "requiresHumanGate": false,
       "requiresSpecialHardware": false,
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 76,
+      "fastCashScore": 93,
       "survivalEligible": false,
       "eligibilityReason": "Competition is too high for bootstrap mode.",
       "competition": {
-        "comments": 25,
+        "comments": 7,
         "attemptSignals": 0,
-        "risk": "high"
+        "risk": "medium"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 500,
+      "economicValueUsd": 15.068098,
       "requiresPreclaimOrIdentity": false
     }
   ],
@@ -314,7 +390,7 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:4455330769\",\"rewardUsd\":150,\"fastCashScore\":118,\"updatedAt\":\"2026-09-06T18:31:43Z\",\"competition\":{\"comments\":26,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4557180255\",\"rewardUsd\":780,\"fastCashScore\":142,\"updatedAt\":\"2026-09-06T19:17:45Z\",\"competition\":{\"comments\":8,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4557552603\",\"rewardUsd\":780,\"fastCashScore\":126,\"updatedAt\":\"2026-09-06T19:05:58Z\",\"competition\":{\"comments\":8,\"attemptSignals\":2,\"risk\":\"medium\"}},{\"id\":\"github:4557579802\",\"rewardUsd\":780,\"fastCashScore\":95,\"updatedAt\":\"2026-09-06T21:28:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5251241758\",\"rewardUsd\":282,\"fastCashScore\":83,\"updatedAt\":\"2026-09-07T17:24:30Z\",\"competition\":{\"comments\":48,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:5312094670\",\"rewardUsd\":500,\"fastCashScore\":76,\"updatedAt\":\"2026-09-07T14:06:53Z\",\"competition\":{\"comments\":25,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:5345182233\",\"rewardUsd\":16,\"fastCashScore\":96,\"updatedAt\":\"2026-09-07T17:51:07Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5354501411\",\"rewardUsd\":33.9,\"fastCashScore\":98,\"updatedAt\":\"2026-09-07T17:46:58Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5368686988\",\"rewardUsd\":28.20110702,\"fastCashScore\":91,\"updatedAt\":\"2026-09-07T17:23:25Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5377672415\",\"rewardUsd\":100,\"fastCashScore\":107,\"updatedAt\":\"2026-09-07T17:46:53Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:4455330769\",\"rewardUsd\":150,\"fastCashScore\":118,\"updatedAt\":\"2026-09-06T18:31:43Z\",\"competition\":{\"comments\":26,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:4557180255\",\"rewardUsd\":780,\"fastCashScore\":142,\"updatedAt\":\"2026-09-06T19:17:45Z\",\"competition\":{\"comments\":8,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4557552603\",\"rewardUsd\":780,\"fastCashScore\":126,\"updatedAt\":\"2026-09-06T19:05:58Z\",\"competition\":{\"comments\":8,\"attemptSignals\":2,\"risk\":\"medium\"}},{\"id\":\"github:4557579802\",\"rewardUsd\":780,\"fastCashScore\":95,\"updatedAt\":\"2026-09-06T21:28:04Z\",\"competition\":{\"comments\":18,\"attemptSignals\":4,\"risk\":\"high\"}},{\"id\":\"github:5345182233\",\"rewardUsd\":16,\"fastCashScore\":96,\"updatedAt\":\"2026-09-07T18:25:17Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5356980367\",\"rewardUsd\":100,\"fastCashScore\":103,\"updatedAt\":\"2026-09-07T20:34:20Z\",\"competition\":{\"comments\":3,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5364243913\",\"rewardUsd\":2026,\"fastCashScore\":103,\"updatedAt\":\"2026-09-07T20:53:31Z\",\"competition\":{\"comments\":5,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5364841616\",\"rewardUsd\":287,\"fastCashScore\":108,\"updatedAt\":\"2026-09-07T20:52:23Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5368686988\",\"rewardUsd\":28.20110702,\"fastCashScore\":91,\"updatedAt\":\"2026-09-07T17:23:25Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5377392763\",\"rewardUsd\":250,\"fastCashScore\":98,\"updatedAt\":\"2026-09-07T21:06:42Z\",\"competition\":{\"comments\":13,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5377659375\",\"rewardUsd\":55,\"fastCashScore\":96,\"updatedAt\":\"2026-09-07T21:09:26Z\",\"competition\":{\"comments\":5,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5378716737\",\"rewardUsd\":15.068098,\"fastCashScore\":93,\"updatedAt\":\"2026-09-07T21:06:20Z\",\"competition\":{\"comments\":7,\"attemptSignals\":0,\"risk\":\"medium\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
@@ -326,11 +402,20 @@
     "maxHours": 4,
     "minPayoutConfidence": 0.8,
     "competitionRequired": "low",
-    "rejectedFakeRevenueCount": 1,
-    "rejectedAlreadyPaidCount": 1,
+    "rejectedFakeRevenueCount": 2,
+    "rejectedAlreadyPaidCount": 0,
     "rejectedIdentityGateCount": 0
   },
   "economicallyRejected": [
+    {
+      "id": "github:5356980367",
+      "title": "phase1: §0 — Vorbereitung: Hermes pausieren, Testnet vs. Klein-Live entscheiden",
+      "rewardUsd": 100,
+      "reasons": [
+        "testnet_or_test_token_reward"
+      ],
+      "rejectedAt": "2026-09-07T21:09:40.497Z"
+    },
     {
       "id": "github:5368686988",
       "title": "Orbit Testnet weekly report: 2026-08-31",
@@ -338,7 +423,7 @@
       "reasons": [
         "testnet_or_test_token_reward"
       ],
-      "rejectedAt": "2026-09-07T17:52:59.469Z"
+      "rejectedAt": "2026-09-07T21:09:40.498Z"
     },
     {
       "id": "github:5251241758",
@@ -425,15 +510,6 @@
         "preclaim_or_identity_gate_not_configured"
       ],
       "rejectedAt": "2026-09-06T21:43:34.813Z"
-    },
-    {
-      "id": "github:5356980367",
-      "title": "phase1: §0 — Vorbereitung: Hermes pausieren, Testnet vs. Klein-Live entscheiden",
-      "rewardUsd": 100,
-      "reasons": [
-        "testnet_or_test_token_reward"
-      ],
-      "rejectedAt": "2026-09-06T08:51:08.508Z"
     },
     {
       "id": "github:4755003147",
