@@ -2,7 +2,7 @@
   "version": 5,
   "cycle": 195,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-09-07T06:05:57.560Z",
+  "updatedAt": "2026-09-07T12:27:37.693Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "waiting_provider",
   "currentAgent": "CRITIC",
@@ -432,25 +432,25 @@
         "summary": "## Goal Ship native Android + iOS apps for BAWES Universe that are fully functional including video calls, iframes, push notifications, and seamless updates. All work targets the `universe` branch. ## Current status ### ✅ In progress - [x] PR #9 — Capacitor scaffold (open, ready to review) ### 🔴 Ready to start now (no dependencies) - [ ] #3 — PWA manifest + Universe branding (`play/public/`) - [ ] [admin#6](https://github.com/BAWES-Universe/workadventure-universe-admin/issues/6) — Orbit auth deep-link (admin repo) - [ ] #10 — CI/CD pipeline audit + docs ### 🟡 Blocked (needs PR #9 + #3 + admin#6 merged) - [ ] #4 — Android build + Fastlane + Play Store - [ ] #5 — iOS build + Fastlane Match + TestFlight ### 🟡 Blocked (needs #4 + #5 merged) - [ ] #11 — Push notifications (native + web push) - [ ] #12 — App update management - [ ] #13 — iframe + LiveKit video compatibility in WebView ## Path ownership (no conflicts) | PR/Issue | Owns | Do not touch | |---|---|---| | PR #9 | `mobile/` root, `.github/workflows/mobile-ci.yml` | everything else | | #3 | `play/public/` manifest + icons | everything else | | admin#6 | `app/api/auth/`, `middleware.ts`, `docs/` (admin repo) | this repo | | #"
       },
       {
-        "id": "github:4484386059",
-        "title": "[Bounty Claim] Code review for RustChain PR #5830",
-        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/11326",
-        "rewardUsd": 5830,
+        "id": "github:5345143797",
+        "title": "[Bounty: $50] Add unit tests for the floating Cart badge button",
+        "url": "https://github.com/Movalabs-crew/mova-store/issues/99",
+        "rewardUsd": 50,
         "score": 54,
-        "summary": "Review submitted for the RustChain PR review bounty. - Bounty thread: Scottcjn/Rustchain#73 - Reviewed PR: Scottcjn/Rustchain#5830 - Review comment: https://github.com/Scottcjn/Rustchain/pull/5830#issuecomment-4495958074 - Finding: the payload bound validator checks depth/size/string limits but still allows non-finite float values; Python `json.dumps()` emits `NaN`/`Infinity` unless `allow_nan=False`, which can break canonical signature serialization assumptions. - Verification: inspected the PR diff for `_validate_gossip_payload_bounds()` and confirmed missing numeric finiteness validation. RTC wallet for reward: RTCfbc6abb564f210ede29a769d1b4d173278f526ea"
+        "summary": "**Context** components/Cart.jsx is a pure presentational button reading itemCount and onClick: the badge is only rendered when itemCount > 0 and the button always fires onClick. It is the cheapest high-value component test available. **Proposed Change** Add tests/components/Cart.test.jsx rendering <Cart itemCount={0} ... /> and <Cart itemCount={3} ... /> to assert the badge is absent at 0, shows '3' when positive, and clicking fires onClick once. **Acceptance Criteria** - queryByText('3') is null when itemCount=0 and present when itemCount=3 - fireEvent.click on the button calls onClick exactly once; npm run test passes **Suggested Label**: tests **ETA:** 24 hours"
       },
       {
-        "id": "github:4460041460",
-        "title": "[Bounty Claim] PR Reviews - 200+ PRs (Bounty #73) - HCIE2054",
-        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/9997",
-        "rewardUsd": 200,
-        "score": 34,
-        "summary": "## Bounty Claim #73 - 200+ PR Reviews **GitHub:** HCIE2054 **Wallet:** RTC0069ce999590624987151e19a8b005555d17794b Massive PR review batch. All open PRs across Rustchain ecosystem reviewed with APPROVE + LGTM. Thank you!"
+        "id": "github:5354501411",
+        "title": "Atlas Forge Live Dashboard",
+        "url": "https://github.com/tjhuber2009-eng/TestRepo/issues/20",
+        "rewardUsd": 33.9,
+        "score": 40,
+        "summary": "# AUTORESEARCH Live Dashboard > **Auto-updated:** 2026-09-07 12:14:30 UTC > **Protocol:** `nested_chronological_v3` > **Phase:** **BREADTH** ## Start here — current answers | Question | Current answer | Key numbers | |---|---|---| | **Private account** | V4 **staggered satellite** · **55% core-strategy cap** | CAGR **28.52%** · observed DD **-17.78%** · bootstrap q95 DD **31.99%** | | **Best repeated prop economics** | **FTMO 2-Step · Max repeat payout** | pass **33.9%** · 12-cycle reward **16.54%** · funded survival **94.9%** | | **Simpler prop alternative** | **FTMO 1-Step · Max repeat payout** | pass **36.0%** · 12-cycle reward **9.45%** | | **Balanced exact transfer** | **btc_rsi_adx__eth__prop** | pass **33.0%** · reward **9.06%** · survival **93.2%** | | **Research maturity** | **BREADTH** · development only | core breadth **23.19%** (1,192/5,140) · PBO-ready **72/385** · hidden validation **SEALED** | | **Market expansion** | **30 stocks + 7 FX** · isolated lane | **1,110 tracks** · breadth 0.45% · FX development **2020–2021** · 2022 hidden validation **SEALED** | ### What happens next 1. Let every exact prop adapter compete in V4; keep only genuine frontier winners. 2. Cont"
       }
     ],
     "active": null,
     "completedCount": 0,
     "lastError": null
   },
-  "retryAfterAt": "2026-09-07T06:10:57.561Z"
+  "retryAfterAt": "2026-09-07T12:32:37.693Z"
 }
