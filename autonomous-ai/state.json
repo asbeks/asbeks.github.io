@@ -2,7 +2,7 @@
   "version": 5,
   "cycle": 195,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-09-08T15:16:12.824Z",
+  "updatedAt": "2026-09-08T18:48:37.862Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "waiting_provider",
   "currentAgent": "CRITIC",
@@ -408,49 +408,49 @@
     "selected": null,
     "opportunities": [
       {
-        "id": "github:5388464143",
-        "title": "Concept approval: opt-in crypto payment auto-confirmation (community bounty #185)",
-        "url": "https://github.com/haveno-dex/haveno/issues/2596",
-        "rewardUsd": 185,
-        "score": 54,
-        "summary": "The community bounty at https://bounties.monero.social/posts/185/0-240m-restoring-auto-confirm-bisqs-feature-for-haveno requests opt-in automatic payment confirmation for BTC, BCH, LTC, ETH and ERC tokens. Before starting implementation, is this a feature Haveno would accept upstream? The bounty board requires public project approval for established projects; I haven't found an existing upstream issue or PR for this scope. The proposed acceptance scope would preserve manual confirmation by default and validate the payment chain, recipient, amount and required confirmations before allowing automatic confirmation. Token contract identity and preventing an old payment from satisfying another trade would be mandatory, with fail-closed behavior for unavailable or inconsistent RPC responses. Validation would use local fixtures/test networks only, not real trades or funds. This is a plan, not a claim that the code or tests exist. Could a maintainer confirm concept approval, any existing work to coordinate with, and whether the full multi-chain scope above is appropriate? The community board records 0.240 XMR; I am not asking Haveno to fund an additional reward or assuming that the communi"
-      },
-      {
-        "id": "github:5387632050",
-        "title": "[Bounty: $450] Deploy Script Fails with ENOENT on Windows 11 (Development Pack Path Missing)",
-        "url": "https://github.com/Senthemodder/claude-bounties/issues/1",
+        "id": "github:5390080859",
+        "title": "[Bounty] [Bounty: $450] Deploy Script Fails with ENOENT on Windows 11 (Development Pack P",
+        "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1235",
         "rewardUsd": 450,
-        "score": 72,
-        "summary": "### Description & Bug Report In our automated addon build and live-reload CLI (`scripts/deploy.ts`), our path resolution logic throws an `ENOENT` error on several fresh Windows 11 testbeds: ```text Error: ENOENT: no such file or directory, scandir 'C:\\Users\\Developer\\AppData\\Local\\Packages\\Microsoft.MinecraftUWP_8wekyb3d8bbwe\\LocalState\\games\\com.mojang\\development_behavior_packs' at Object.readdirSync (node:fs:1525:3) at resolveDevPacks (scripts/deploy.ts:42:15) ``` The user has Minecraft Bedrock officially installed from the Microsoft Store / Xbox App, and the game launches and plays normally. However, the entire `Microsoft.MinecraftUWP_8wekyb3d8bbwe` package folder is completely missing from `AppData\\Local\\Packages`. ### Current Code Snippet ```typescript // scripts/deploy.ts import path from 'path'; import fs from 'fs'; export function getDevelopmentPacksPath(): string { const localAppData = process.env.LOCALAPPDATA || ''; // Standard Bedrock packages path: const uwpPath = path.join( localAppData, 'Packages', 'Microsoft.MinecraftUWP_8wekyb3d8bbwe', 'LocalState', 'games', 'com.mojang', 'development_behavior_packs' ); if (!fs.existsSync(uwpPath)) { throw new Error(`ENOENT: no suc"
+        "score": 64,
+        "summary": "### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/Senthemodder/claude-bounties/issues/1 ### 漏洞描述 / Description [Bounty: $450] Deploy Script Fails with ENOENT on Windows 11 (Development Pack Path Missing) ### Description & Bug Report In our automated addon build and live-reload CLI (`scripts/deploy.ts`), our path resolution logic throws an `ENOENT` error on several fresh Windows 11 testbeds: ```text Error: ENOENT: no such file or directory, scandir 'C:\\Users\\Developer\\AppData\\Local\\Packages\\Microsoft.MinecraftUWP_8wekyb3d8bbwe\\LocalState\\games\\com.mojang\\development_behavior_packs' at Object.readdirSync (node:fs:1525:3) at resolveDevPacks (scripts/deploy.ts:42:15) ``` The user has Minecraft Bedrock officially installed from the Microsoft Store / Xbox App, and the game launches and plays normally. However, the entire `Microsoft.MinecraftUWP_8wekyb3d8bbwe` package folder is completely missing from `AppData\\Local\\Packages`. ### Current Code Snippet ```typescript // scripts/deploy.ts import path from 'path'; import fs from 'fs'; export function getDevelopmentPacksPath(): string { const localAppData = process.env.LOCALAPPDATA || ''; // Standard Bedrock packages path: co"
       },
       {
-        "id": "github:5387632913",
-        "title": "[Bounty: $400] Script API Custom Slash Command Throws Unhandled Startup Exception",
-        "url": "https://github.com/Senthemodder/claude-bounties/issues/5",
-        "rewardUsd": 400,
-        "score": 72,
-        "summary": "### Bug Description We are migrating our administration scripts to the modern Bedrock Script API (`@minecraft/server` 2.x). When registering custom slash commands (e.g. `/inspect`), our script crashes during world load with: ```text [Scripting][ERROR] TypeError: Cannot read properties of undefined (reading 'registerCommand') at initCommands (scripts/commands.ts:12:20) ``` ### Current Implementation (`scripts/commands.ts`) ```typescript import { world, system } from '@minecraft/server'; export function registerCustomCommands() { system.runInterval(() => { // Attempting registration once world ticks world.beforeEvents.chatSend.subscribe((event) => { if (event.message.startsWith('/inspect')) { event.cancel = true; // handle logic } }); }); } ``` ### Requirements 1. Refactor command registration to use the official, stable custom command API in modern `@minecraft/server`. 2. Do not use deprecated chat-interception hacks (`chatSend`). 3. Must register commands during the proper startup lifecycle event with correct permission enums."
+        "id": "github:5390537099",
+        "title": "Shopify analytics subtracts discounts twice from net sales",
+        "url": "https://github.com/BasedHardware/omi/issues/13180",
+        "rewardUsd": 25,
+        "score": 54,
+        "summary": "`plugins/omi-shopify-app/main.py` currently sums `subtotal_price` as `gross_sales`, then computes `net_sales = gross_sales - total_discounts - total_refunds` ([pinned source](https://github.com/BasedHardware/omi/blob/9ff63a63b047ec756b6a4e3d726bac5bf5d6440e/plugins/omi-shopify-app/main.py#L475)). Shopify's [REST Order documentation](https://shopify.dev/docs/api/admin-rest/latest/resources/order#resource-object) defines `subtotal_price` as “The price of the order in the shop currency after discounts but before shipping, duties, taxes, and tips.” The discount is therefore counted twice for an ordinary discounted order. I reproduced this offline by executing the full unchanged `tool_get_analytics` and `format_currency` function bodies with request/auth/provider/response stubs, without a live Shopify store. For one USD order with pre-discount merchandise value 100, `subtotal_price=\"90.00\"`, `total_discounts=\"10.00\"`, zero tax/shipping and no refunds, the output reports Gross Sales $90, Discounts $10 (11.1%), and Net Sales $80. The expected net sales for that fixture is $90; a before-discount gross label would correspond to $100 and a 10% discount. Undiscounted ($100/$0) and empty-order"
       },
       {
-        "id": "github:5387155512",
-        "title": "05: Refusal — supertet proposes a trade and the mandate stops it",
-        "url": "https://github.com/CaptainDiv/supertet/issues/6",
-        "rewardUsd": 400,
-        "score": 48,
-        "summary": "## Parent PRD #1 ## What to build The claim the whole entry rests on, made visible. The Principal asks supertet to buy 400 USDT of BTC against a mandate that permits 250 an order. supertet works out what it would do, the policy engine refuses it, and **nothing reaches Binance**. The Principal sees the refusal, the rule that produced it, and the headroom that remains. supertet explains the limit in its own words, because the denial came back to the model as a tool result rather than an exception. This slice introduces the Steward role — the only caller that may reach write tools — but stops short of placing anything. A refusal is a complete, demoable outcome on its own, and it is the one moment in the demo that proves the product is not a wrapper. The refusal is recorded as durably as a fill. An audit trail that shows only what ran proves nothing; the ledger has to show what supertet was stopped from doing. ## Acceptance criteria - [ ] Asking for an order inside the mandate produces a proposal naming size, venue, quote price and the mandate it draws on. - [ ] Asking for an order beyond the per-order ceiling is refused, and no order-placing call reaches Binance — proven by a test, no"
-      },
-      {
-        "id": "github:5387168882",
-        "title": "09: Submission - README, demo recording, and the entry itself",
-        "url": "https://github.com/CaptainDiv/supertet/issues/10",
-        "rewardUsd": 400,
+        "id": "github:5390422204",
+        "title": "Go device SDK appends the Parakeet stream endpoint inside existing URL query parameters",
+        "url": "https://github.com/BasedHardware/omi/issues/13177",
+        "rewardUsd": 19,
         "score": 36,
-        "summary": "## Parent PRD #1 ## What to build The actual Track A entry. The build is not the deliverable; the submission is. Deadline is **8 September 2026, 23:59 UTC** — treat this ticket as having a hard stop rather than a definition of done, and start it before the build feels finished. **The README** has to let a judge get from clone to running in a few minutes: what supertet is in two sentences, exactly how the MCP client was authorized, how to open and fund an Agentic sub-account, and how to run it. State plainly what supertet cannot do — it holds no keys, it cannot withdraw, and every write is approved by a person — because the honest containment story is the strong one and an overclaim gets checked. **The demo** is roughly ninety seconds and must hit the refusal on camera. Suggested beats: issue a mandate capped at 250 an order; ask a market question and get a real answer; ask for 400 USDT of BTC and watch it refused with the headroom named; ask for 180 and approve it; watch the ceiling drain and the ledger line land; revoke the mandate and watch supertet stop. **The entry** is the X post plus the survey, per the announced rules: follow and repost @Binance, then reply or quote-repost w"
+        "summary": "Note by the human: And this is why you should not allow codex, to work unsupervised on your remote machine - apologies for the (potential) slop, I will take a look at this tomorrow if possible. On main `9ff63a63b047ec756b6a4e3d726bac5bf5d6440e`, the exported Go device SDK helper `stt.ParakeetWSURL(\"https://parakeet.example/gateway?token=synthetic\", 16000)` returns `wss://parakeet.example/gateway?token=synthetic/v3/stream?sample_rate=16000`: the streaming path and sample-rate parameter become part of the existing query value. `NewParakeet` uses that result for its dial, so a base URL carrying gateway query parameters targets the wrong path. A fragment similarly swallows the appended endpoint, and an existing sample_rate query becomes malformed. I reproduced the helper output locally; three regression cases fail on current code, with an escaped-path control passing. A small local candidate constructs the endpoint through Go's `net/url`, preserves the base path/query and escaped path, replaces sample_rate, and removes the fragment. The full Go device SDK suite passes with `go test -race ./...`; `go vet ./...` and `git diff --check` pass. No live provider, device, real token, or produc"
+      },
+      {
+        "id": "github:5345182233",
+        "title": "Roadmap: five difficulty tiers and tactical roguelike expansion",
+        "url": "https://github.com/shipiyouniao/Minesweeper-2.0/issues/1",
+        "rewardUsd": 16,
+        "score": 46,
+        "summary": "# Five difficulty tiers and a tactical roguelike expedition This tracking issue describes the next expansion of Twin and Expedition: larger configurable boards, longer-term progression, shared health and shields, distinct turn-based boss encounters, and individual artwork for professions and bosses. **Status: in progress.** Five standalone modes (Classic, Twin boards, Expedition, Sonar and Survey), five expedition difficulties, eight professions, 47 mission/achievement goals, 25 distinct shop gameplay unlocks plus two finite trainings, 25 title abilities and up to 37 relics are released. The seven-boss roster now includes Matrix Overseer, revised around a crystal hunt in PR #50. Shared UI Tailwind migration is complete through PR #43; Survey controls and layout fixes are live through PR #48. Tides is the next planned mode. Deliveries continue through focused PRs, with this issue and its existing progress comment tracking the current state. ### Boss feedback and battlefield observation — PR #51 [PR #51](https://github.com/shipiyouniao/Minesweeper-2.0/pull/51) merged as `103ada3` after Codex reviewed final head `be92144` with no major issues and both CI checks passed. Matrix observat"
+      },
+      {
+        "id": "github:4454365930",
+        "title": "[ Crypto ] Fix first-depositor price manipulation in LiquidityPool",
+        "url": "https://github.com/UnsafeLabs/Bounty-Hunters/issues/918",
+        "rewardUsd": 600,
+        "score": 60,
+        "summary": "The liquidity pool contract `solidity/contracts/LiquidityPool.sol` mints LP tokens proportional to deposited assets but the initial deposit has no minimum liquidity lock, allowing an attacker to manipulate the LP token price by being the first depositor with a tiny amount then donating a large amount to the pool. ### Fix - On the first deposit, require a minimum liquidity of `MINIMUM_LIQUIDITY = 1000` and permanently lock it by sending to address(0) - This follows the Uniswap V2 pattern to prevent the first-depositor price manipulation attack - Fix the `removeLiquidity` function at line 73 that uses `balanceOf(address(this))` for the pool balance — this is manipulable via direct token transfers. Use internal accounting variables instead - Add `sync` function that updates internal reserves to match actual balances for recovery from donation attacks ### Acceptance Criteria - First deposit locks MINIMUM_LIQUIDITY tokens at address(0) - First depositor receives LP tokens minus the locked amount - Subsequent deposits use the correct proportional formula - removeLiquidity uses internal reserves, not balanceOf - sync function updates reserves and emits a Sync event - Direct token transfer"
       }
     ],
     "active": null,
     "completedCount": 0,
     "lastError": null
   },
-  "retryAfterAt": "2026-09-08T15:21:12.825Z"
+  "retryAfterAt": "2026-09-08T18:53:37.862Z"
 }
