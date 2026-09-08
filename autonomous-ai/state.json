@@ -2,7 +2,7 @@
   "version": 5,
   "cycle": 195,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-09-08T18:48:37.862Z",
+  "updatedAt": "2026-09-08T21:29:50.214Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "waiting_provider",
   "currentAgent": "CRITIC",
@@ -408,49 +408,49 @@
     "selected": null,
     "opportunities": [
       {
-        "id": "github:5390080859",
-        "title": "[Bounty] [Bounty: $450] Deploy Script Fails with ENOENT on Windows 11 (Development Pack P",
-        "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1235",
-        "rewardUsd": 450,
+        "id": "github:5387633141",
+        "title": "[Bounty: $550] Build Script Deploys Unexpanded Templates Directly to Com.mojang",
+        "url": "https://github.com/Senthemodder/claude-bounties/issues/6",
+        "rewardUsd": 550,
         "score": 64,
-        "summary": "### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/Senthemodder/claude-bounties/issues/1 ### 漏洞描述 / Description [Bounty: $450] Deploy Script Fails with ENOENT on Windows 11 (Development Pack Path Missing) ### Description & Bug Report In our automated addon build and live-reload CLI (`scripts/deploy.ts`), our path resolution logic throws an `ENOENT` error on several fresh Windows 11 testbeds: ```text Error: ENOENT: no such file or directory, scandir 'C:\\Users\\Developer\\AppData\\Local\\Packages\\Microsoft.MinecraftUWP_8wekyb3d8bbwe\\LocalState\\games\\com.mojang\\development_behavior_packs' at Object.readdirSync (node:fs:1525:3) at resolveDevPacks (scripts/deploy.ts:42:15) ``` The user has Minecraft Bedrock officially installed from the Microsoft Store / Xbox App, and the game launches and plays normally. However, the entire `Microsoft.MinecraftUWP_8wekyb3d8bbwe` package folder is completely missing from `AppData\\Local\\Packages`. ### Current Code Snippet ```typescript // scripts/deploy.ts import path from 'path'; import fs from 'fs'; export function getDevelopmentPacksPath(): string { const localAppData = process.env.LOCALAPPDATA || ''; // Standard Bedrock packages path: co"
+        "summary": "### Issue Description Our development watch script (`scripts/watch.js`) uses `fs.cpSync` to mirror files directly from `source/resources/data` to the development behavior packs directory. However, Bedrock fails to load the behavior pack with syntax errors because raw JSONTE template syntax (`$extend`, `{{#each}}`) is copied directly into the game folder without being compiled by the pipeline filters. ```javascript // scripts/watch.js import fs from 'fs'; import path from 'path'; export function deployDirect(srcDir, destDir) { // Directly copies source to game folder, breaking filter pipeline: fs.cpSync(srcDir, destDir, { recursive: true, force: true }); } ``` ### Acceptance Criteria 1. Fix the deployment architecture so all intermediate build filters (JSONTE expansion, sound compilation) execute properly before files hit the game directory. 2. Ensure source files under `source/` remain unmodified while the compiled output in the game directory is 100% valid Bedrock JSON. 3. Fast incremental compilation suitable for live development."
       },
       {
-        "id": "github:5390537099",
-        "title": "Shopify analytics subtracts discounts twice from net sales",
-        "url": "https://github.com/BasedHardware/omi/issues/13180",
+        "id": "github:5391784341",
+        "title": "Proposed bounty: public Quiver metrics page from approved aggregate data",
+        "url": "https://github.com/Arrow-air/website/issues/232",
+        "rewardUsd": 750,
+        "score": 62,
+        "summary": "### Category Design ### Project Project Quiver ### USDC reward, optional 750 ### ARROW reward, optional _No response_ ### Expected completion window ~1 week after assignment ### Disciplines - [X] Design: Interface - [X] Operations: Tooling ### Short bounty board description Proposed implementation of Quiver's public metrics page from a maintainer-approved aggregate snapshot: validated flight hours, flights without intervention, and demonstrated endurance, with definitions, coverage and update dates. ### Reference material - [September-November proposal, commercial readiness and Phase 3](https://dao.arrowair.com/t/project-quiver-phased-project-proposal-september-to-november-2026/187) - [Current flight-tracking repository](https://github.com/Arrow-air/flight-tracking) - [Arrow contribution and payment process](https://arrowair.com/bounty/bounties/how-to-claim) ### Scope I would like to discuss taking the metrics-display slice of the proposed commercial-readiness work for 750 USDC. Please confirm whether it remains unassigned and whether delivery before November would be useful. The proposed slice is one responsive page using the existing Vue/TypeScript stack and one maintainer-approv"
+      },
+      {
+        "id": "github:5387632913",
+        "title": "[Bounty: $400] Script API Custom Slash Command Throws Unhandled Startup Exception",
+        "url": "https://github.com/Senthemodder/claude-bounties/issues/5",
+        "rewardUsd": 400,
+        "score": 64,
+        "summary": "### Bug Description We are migrating our administration scripts to the modern Bedrock Script API (`@minecraft/server` 2.x). When registering custom slash commands (e.g. `/inspect`), our script crashes during world load with: ```text [Scripting][ERROR] TypeError: Cannot read properties of undefined (reading 'registerCommand') at initCommands (scripts/commands.ts:12:20) ``` ### Current Implementation (`scripts/commands.ts`) ```typescript import { world, system } from '@minecraft/server'; export function registerCustomCommands() { system.runInterval(() => { // Attempting registration once world ticks world.beforeEvents.chatSend.subscribe((event) => { if (event.message.startsWith('/inspect')) { event.cancel = true; // handle logic } }); }); } ``` ### Requirements 1. Refactor command registration to use the official, stable custom command API in modern `@minecraft/server`. 2. Do not use deprecated chat-interception hacks (`chatSend`). 3. Must register commands during the proper startup lifecycle event with correct permission enums."
+      },
+      {
+        "id": "github:5391819485",
+        "title": "Hacker News: preserve escaped angle-bracket text when cleaning discussions",
+        "url": "https://github.com/BasedHardware/omi/issues/13211",
         "rewardUsd": 25,
-        "score": 54,
-        "summary": "`plugins/omi-shopify-app/main.py` currently sums `subtotal_price` as `gross_sales`, then computes `net_sales = gross_sales - total_discounts - total_refunds` ([pinned source](https://github.com/BasedHardware/omi/blob/9ff63a63b047ec756b6a4e3d726bac5bf5d6440e/plugins/omi-shopify-app/main.py#L475)). Shopify's [REST Order documentation](https://shopify.dev/docs/api/admin-rest/latest/resources/order#resource-object) defines `subtotal_price` as “The price of the order in the shop currency after discounts but before shipping, duties, taxes, and tips.” The discount is therefore counted twice for an ordinary discounted order. I reproduced this offline by executing the full unchanged `tool_get_analytics` and `format_currency` function bodies with request/auth/provider/response stubs, without a live Shopify store. For one USD order with pre-discount merchandise value 100, `subtotal_price=\"90.00\"`, `total_discounts=\"10.00\"`, zero tax/shipping and no refunds, the output reports Gross Sales $90, Discounts $10 (11.1%), and Net Sales $80. The expected net sales for that fixture is $90; a before-discount gross label would correspond to $100 and a 10% discount. Undiscounted ($100/$0) and empty-order"
-      },
-      {
-        "id": "github:5390422204",
-        "title": "Go device SDK appends the Parakeet stream endpoint inside existing URL query parameters",
-        "url": "https://github.com/BasedHardware/omi/issues/13177",
-        "rewardUsd": 19,
-        "score": 36,
-        "summary": "Note by the human: And this is why you should not allow codex, to work unsupervised on your remote machine - apologies for the (potential) slop, I will take a look at this tomorrow if possible. On main `9ff63a63b047ec756b6a4e3d726bac5bf5d6440e`, the exported Go device SDK helper `stt.ParakeetWSURL(\"https://parakeet.example/gateway?token=synthetic\", 16000)` returns `wss://parakeet.example/gateway?token=synthetic/v3/stream?sample_rate=16000`: the streaming path and sample-rate parameter become part of the existing query value. `NewParakeet` uses that result for its dial, so a base URL carrying gateway query parameters targets the wrong path. A fragment similarly swallows the appended endpoint, and an existing sample_rate query becomes malformed. I reproduced the helper output locally; three regression cases fail on current code, with an escaped-path control passing. A small local candidate constructs the endpoint through Go's `net/url`, preserves the base path/query and escaped path, replaces sample_rate, and removes the fragment. The full Go device SDK suite passes with `go test -race ./...`; `go vet ./...` and `git diff --check` pass. No live provider, device, real token, or produc"
-      },
-      {
-        "id": "github:5345182233",
-        "title": "Roadmap: five difficulty tiers and tactical roguelike expansion",
-        "url": "https://github.com/shipiyouniao/Minesweeper-2.0/issues/1",
-        "rewardUsd": 16,
         "score": 46,
-        "summary": "# Five difficulty tiers and a tactical roguelike expedition This tracking issue describes the next expansion of Twin and Expedition: larger configurable boards, longer-term progression, shared health and shields, distinct turn-based boss encounters, and individual artwork for professions and bosses. **Status: in progress.** Five standalone modes (Classic, Twin boards, Expedition, Sonar and Survey), five expedition difficulties, eight professions, 47 mission/achievement goals, 25 distinct shop gameplay unlocks plus two finite trainings, 25 title abilities and up to 37 relics are released. The seven-boss roster now includes Matrix Overseer, revised around a crystal hunt in PR #50. Shared UI Tailwind migration is complete through PR #43; Survey controls and layout fixes are live through PR #48. Tides is the next planned mode. Deliveries continue through focused PRs, with this issue and its existing progress comment tracking the current state. ### Boss feedback and battlefield observation — PR #51 [PR #51](https://github.com/shipiyouniao/Minesweeper-2.0/pull/51) merged as `103ada3` after Codex reviewed final head `be92144` with no major issues and both CI checks passed. Matrix observat"
+        "summary": "## Problem The Hacker News integration's `_clean_text` decodes HTML entities before removing tags. Escaped literal text therefore becomes markup and is deleted, changing the meaning of technical discussions returned by `get_discussion`. Source: [`plugins/omi-hacker-news-app/main.py`, lines 36–50](https://github.com/BasedHardware/omi/blob/f42089f53c8010dd971b3702ece05a231c9c0c66/plugins/omi-hacker-news-app/main.py#L36). The same helper cleans both post text and top-level comments. Pinned source and current `main` were byte-equal when checked. A real public example is [HN comment 9995409](https://news.ycombinator.com/item?id=9995409), also available from [the Algolia item endpoint](https://hn.algolia.com/api/v1/items/9995409): its escaped `vector&lt;const char * &gt;` and `vector&lt;char * &gt;` lose their type arguments when passed through the unchanged helper, both becoming `vector`. ## Reproduction Executing only the unchanged `_clean_text` function with Python's standard-library dependencies gives: | Input | Current output | Expected text | |---|---|---| | `Use &lt;vector&gt; for this.` | `Use for this.` | `Use <vector> for this.` | | `if a &lt; b and c &gt; d` | `if a d` | `if a"
       },
       {
-        "id": "github:4454365930",
-        "title": "[ Crypto ] Fix first-depositor price manipulation in LiquidityPool",
-        "url": "https://github.com/UnsafeLabs/Bounty-Hunters/issues/918",
-        "rewardUsd": 600,
-        "score": 60,
-        "summary": "The liquidity pool contract `solidity/contracts/LiquidityPool.sol` mints LP tokens proportional to deposited assets but the initial deposit has no minimum liquidity lock, allowing an attacker to manipulate the LP token price by being the first depositor with a tiny amount then donating a large amount to the pool. ### Fix - On the first deposit, require a minimum liquidity of `MINIMUM_LIQUIDITY = 1000` and permanently lock it by sending to address(0) - This follows the Uniswap V2 pattern to prevent the first-depositor price manipulation attack - Fix the `removeLiquidity` function at line 73 that uses `balanceOf(address(this))` for the pool balance — this is manipulable via direct token transfers. Use internal accounting variables instead - Add `sync` function that updates internal reserves to match actual balances for recovery from donation attacks ### Acceptance Criteria - First deposit locks MINIMUM_LIQUIDITY tokens at address(0) - First depositor receives LP tokens minus the locked amount - Subsequent deposits use the correct proportional formula - removeLiquidity uses internal reserves, not balanceOf - sync function updates reserves and emits a Sync event - Direct token transfer"
+        "id": "github:4396331672",
+        "title": "Hadronax Boss - Roll of the dice",
+        "url": "https://github.com/chromiecraft/chromiecraft/issues/9463",
+        "rewardUsd": 55,
+        "score": 40,
+        "summary": "### Current Behaviour Hadornax boss in Azjol-Nerub is a roll of the dice whether he bugs or not. Suggestion just remove the scripted event and have the boss stay down at the bottom for a normal pull. ### Expected Behaviour Not spawning mobs for ever and remaining invincible. ### Official Sources (that prove or disprove) the issue being reported WolTK servers ### Steps to reproduce the problem Pull boss delayed or normally doesn't matter. ### Extra Notes _No response_ ### Customizations _No response_ ### AC rev. hash/commit https://github.com/chromiecraft/azerothcore-wotlk/commit/6d83e35d19f65a0124b7f6e9588289db05eda0df ### Operating system Ubuntu 22.04 ### Modules - [mod-1v1-arena](https://github.com/azerothcore/mod-1v1-arena) - [mod-ah-bot](https://github.com/azerothcore/mod-ah-bot) - [mod-anticheat](https://github.com/azerothcore/mod-anticheat) - [mod-arena-3v3-solo-queue](https://github.com/azerothcore/mod-arena-3v3-solo-queue) - [mod-arena-replay](https://github.com/azerothcore/mod-arena-replay) - [mod-bg-item-reward](https://github.com/azerothcore/mod-bg-item-reward) - [mod-breaking-news-override](https://github.com/azerothcore/mod-breaking-news-override) - [mod-cfbg](https://"
       }
     ],
     "active": null,
     "completedCount": 0,
     "lastError": null
   },
-  "retryAfterAt": "2026-09-08T18:53:37.862Z"
+  "retryAfterAt": "2026-09-08T21:34:50.214Z"
 }
