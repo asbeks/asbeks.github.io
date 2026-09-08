@@ -2,7 +2,7 @@
   "version": 5,
   "cycle": 195,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-09-08T11:27:10.540Z",
+  "updatedAt": "2026-09-08T15:16:12.824Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "waiting_provider",
   "currentAgent": "CRITIC",
@@ -408,49 +408,49 @@
     "selected": null,
     "opportunities": [
       {
-        "id": "github:5385991254",
-        "title": "[WALLET] Register AKASH80047 payout identity",
-        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16884",
-        "rewardUsd": 80047,
+        "id": "github:5388464143",
+        "title": "Concept approval: opt-in crypto payment auto-confirmation (community bounty #185)",
+        "url": "https://github.com/haveno-dex/haveno/issues/2596",
+        "rewardUsd": 185,
         "score": 54,
-        "summary": "## Wallet / Payout Registration - **GitHub username:** @AKASH80047 - **RTC wallet name / payout alias:** \\AKASH80047\\ - **External bridge network:** None ### Related claims - https://github.com/Scottcjn/rustchain-bounties/issues/16238#issuecomment-5581319178 (Star Bounty #16238 - VERIFIED 3/3 stars by verification bot) - https://github.com/Scottcjn/rustchain-bounties/issues/16471#issuecomment-5581297012 (Audit Bounty #16471 - 4-defect audit report submitted) ### Checklist - [x] I understand the RTC wallet field must be a RustChain wallet name, not an external chain address. - [x] I understand external addresses are optional bridge context only. I confirm that \\AKASH80047\\ is my canonical RTC payout name for RustChain bounty rewards. No external-chain address is being represented as an RTC wallet."
+        "summary": "The community bounty at https://bounties.monero.social/posts/185/0-240m-restoring-auto-confirm-bisqs-feature-for-haveno requests opt-in automatic payment confirmation for BTC, BCH, LTC, ETH and ERC tokens. Before starting implementation, is this a feature Haveno would accept upstream? The bounty board requires public project approval for established projects; I haven't found an existing upstream issue or PR for this scope. The proposed acceptance scope would preserve manual confirmation by default and validate the payment chain, recipient, amount and required confirmations before allowing automatic confirmation. Token contract identity and preventing an old payment from satisfying another trade would be mandatory, with fail-closed behavior for unavailable or inconsistent RPC responses. Validation would use local fixtures/test networks only, not real trades or funds. This is a plan, not a claim that the code or tests exist. Could a maintainer confirm concept approval, any existing work to coordinate with, and whether the full multi-chain scope above is appropriate? The community board records 0.240 XMR; I am not asking Haveno to fund an additional reward or assuming that the communi"
       },
       {
-        "id": "github:1943482487",
-        "title": "Finish the development of `post-to-cloud` deep package",
-        "url": "https://github.com/deep-foundation/deep-packages/issues/1",
-        "rewardUsd": 50000,
-        "score": 74,
-        "summary": "https://www.npmjs.com/package/@deep-foundation/rss-to-deep (see readme to package). ![IMG_1577](https://github.com/deep-foundation/deep-packages/assets/1431904/2f1dddc8-e357-4391-b09c-af451da7cb61) https://www.npmjs.com/package/@deep-foundation/post-to-cloud ![IMG_1581](https://github.com/deep-foundation/deep-packages/assets/1431904/758d6cb1-fa5f-4246-80c2-c0f098a0b260) To get detailed view of packages install them inside a Deep instance. ## Context The `Cloud` instances are links with `Object` (JSON) value. These JSON values are used to display cloud of words in selected posts links (news articles) imported from RSS feeds. ![IMG_1449](https://github.com/deep-foundation/deep-packages/assets/1431904/9d235bf4-d685-4894-84c0-78523eb8b86d) ## Cloud value format: ```js { \"wordId1\": { // Word string value word: \"\", // Frequency of occurrence of the word for the whole Cloud (in all addresses selected by all CloudAddress links) total: 0, // Frequency of occurrence of the word in each address addresses: { \"addressId1\": 0, \"addressId2\": 0 // ... } }, \"wordId2\": { }, // ... } ``` ## Requirements - Create a fork of `post-to-cloud` package, you can publish package with same name but in your use"
+        "id": "github:5387632050",
+        "title": "[Bounty: $450] Deploy Script Fails with ENOENT on Windows 11 (Development Pack Path Missing)",
+        "url": "https://github.com/Senthemodder/claude-bounties/issues/1",
+        "rewardUsd": 450,
+        "score": 72,
+        "summary": "### Description & Bug Report In our automated addon build and live-reload CLI (`scripts/deploy.ts`), our path resolution logic throws an `ENOENT` error on several fresh Windows 11 testbeds: ```text Error: ENOENT: no such file or directory, scandir 'C:\\Users\\Developer\\AppData\\Local\\Packages\\Microsoft.MinecraftUWP_8wekyb3d8bbwe\\LocalState\\games\\com.mojang\\development_behavior_packs' at Object.readdirSync (node:fs:1525:3) at resolveDevPacks (scripts/deploy.ts:42:15) ``` The user has Minecraft Bedrock officially installed from the Microsoft Store / Xbox App, and the game launches and plays normally. However, the entire `Microsoft.MinecraftUWP_8wekyb3d8bbwe` package folder is completely missing from `AppData\\Local\\Packages`. ### Current Code Snippet ```typescript // scripts/deploy.ts import path from 'path'; import fs from 'fs'; export function getDevelopmentPacksPath(): string { const localAppData = process.env.LOCALAPPDATA || ''; // Standard Bedrock packages path: const uwpPath = path.join( localAppData, 'Packages', 'Microsoft.MinecraftUWP_8wekyb3d8bbwe', 'LocalState', 'games', 'com.mojang', 'development_behavior_packs' ); if (!fs.existsSync(uwpPath)) { throw new Error(`ENOENT: no suc"
       },
       {
-        "id": "github:5344910835",
-        "title": "[Bounty: $100] Replace Node Buffer globals in client-side lib/stellar modules with Uint8Array conversions",
-        "url": "https://github.com/Movalabs-crew/mova-store/issues/18",
-        "rewardUsd": 100,
-        "score": 46,
-        "summary": "**Context** bytes32ToScVal (lib/stellar/scval.ts:24-31), decodePaymentEvent (lib/stellar/events.ts:82-86) and orders.ts (110, 174, 233, 314) wrap bytes through the Node Buffer global, but these modules are bundled for the browser (StellarCheckoutButton.jsx, StellarOrderWatch.jsx, app/admin/orders/page.tsx) where Buffer is not guaranteed (no polyfill in next.config.mjs). The vitest jsdom suite masks this because Node's Buffer exists in the test process. xdr.ScVal.scvBytes and StrKey.encodeContract accept plain Uint8Array, and hexToBytes/bytesToHex already exist in scval.ts. **Proposed Change** Remove the Buffer indirection: pass existing Uint8Arrays straight to scvBytes/encodeContract and use hexToBytes for hex strings, deleting the `as unknown as Uint8Array` casts. **Acceptance Criteria** - rg 'Buffer' lib/stellar returns no matches - bytes32ToScVal(hexString) and bytes32ToScVal(uint8ArrayOfSameBytes) produce byte-identical XDR (new unit test) - npm run type-check and npm run test pass **Suggested Label**: DX **ETA:** 24 hours"
+        "id": "github:5387632913",
+        "title": "[Bounty: $400] Script API Custom Slash Command Throws Unhandled Startup Exception",
+        "url": "https://github.com/Senthemodder/claude-bounties/issues/5",
+        "rewardUsd": 400,
+        "score": 72,
+        "summary": "### Bug Description We are migrating our administration scripts to the modern Bedrock Script API (`@minecraft/server` 2.x). When registering custom slash commands (e.g. `/inspect`), our script crashes during world load with: ```text [Scripting][ERROR] TypeError: Cannot read properties of undefined (reading 'registerCommand') at initCommands (scripts/commands.ts:12:20) ``` ### Current Implementation (`scripts/commands.ts`) ```typescript import { world, system } from '@minecraft/server'; export function registerCustomCommands() { system.runInterval(() => { // Attempting registration once world ticks world.beforeEvents.chatSend.subscribe((event) => { if (event.message.startsWith('/inspect')) { event.cancel = true; // handle logic } }); }); } ``` ### Requirements 1. Refactor command registration to use the official, stable custom command API in modern `@minecraft/server`. 2. Do not use deprecated chat-interception hacks (`chatSend`). 3. Must register commands during the proper startup lifecycle event with correct permission enums."
       },
       {
-        "id": "github:5345182233",
-        "title": "Roadmap: five difficulty tiers and tactical roguelike expansion",
-        "url": "https://github.com/shipiyouniao/Minesweeper-2.0/issues/1",
-        "rewardUsd": 16,
-        "score": 38,
-        "summary": "# Five difficulty tiers and a tactical roguelike expedition This tracking issue describes the next expansion of Twin and Expedition: larger configurable boards, longer-term progression, shared health and shields, distinct turn-based boss encounters, and individual artwork for professions and bosses. **Status: in progress.** Five standalone modes (Classic, Twin boards, Expedition, Sonar and Survey), five expedition difficulties, eight professions, 47 mission/achievement goals, 25 distinct shop gameplay unlocks plus two finite trainings, 25 title abilities and up to 37 relics are released. The seven-boss roster now includes Matrix Overseer (PR #49). Shared UI Tailwind migration is complete through PR #43; Survey controls and layout fixes are live through PR #48. Tides is the next planned mode. Deliveries continue through focused PRs, with this issue and its existing progress comment tracking the current state. ### Matrix Overseer delivered — PR #49 [PR #49](https://github.com/shipiyouniao/Minesweeper-2.0/pull/49) merged as `e76dc8f`. Solve ordered mine runs, calibrate three numbered prisms, then reflect visible beam paths to open four-turn melee windows. Every third turn is quiet. Al"
+        "id": "github:5387155512",
+        "title": "05: Refusal — supertet proposes a trade and the mandate stops it",
+        "url": "https://github.com/CaptainDiv/supertet/issues/6",
+        "rewardUsd": 400,
+        "score": 48,
+        "summary": "## Parent PRD #1 ## What to build The claim the whole entry rests on, made visible. The Principal asks supertet to buy 400 USDT of BTC against a mandate that permits 250 an order. supertet works out what it would do, the policy engine refuses it, and **nothing reaches Binance**. The Principal sees the refusal, the rule that produced it, and the headroom that remains. supertet explains the limit in its own words, because the denial came back to the model as a tool result rather than an exception. This slice introduces the Steward role — the only caller that may reach write tools — but stops short of placing anything. A refusal is a complete, demoable outcome on its own, and it is the one moment in the demo that proves the product is not a wrapper. The refusal is recorded as durably as a fill. An audit trail that shows only what ran proves nothing; the ledger has to show what supertet was stopped from doing. ## Acceptance criteria - [ ] Asking for an order inside the mandate produces a proposal naming size, venue, quote price and the mandate it draws on. - [ ] Asking for an order beyond the per-order ceiling is refused, and no order-placing call reaches Binance — proven by a test, no"
       },
       {
-        "id": "github:5377392763",
-        "title": "[Bounty: ] Race Condition in Distributed Async Event Queue during High Concurrency",
-        "url": "https://github.com/Senthemodder/bounty-hunter-os/issues/1",
-        "rewardUsd": 250,
-        "score": 42,
-        "summary": "# [Bounty: $250] Race Condition in Distributed Async Event Queue during High Concurrency **Labels to add to issue:** `bounty`, `reward: $250`, `help wanted`, `algora`, `good first issue`, `bug` --- ### Issue Body (Copy & Paste this into the GitHub issue): ```markdown ### Summary Under high load, concurrent worker tasks can trigger an unhandled rejection when processing batch event dispatches in the distributed queue. ### Reproduction Specs - Platform: Node.js 20+ / ESM - Error: `UnhandledPromiseRejection: Lock contention timeout on channel #0` - Target file: `src/queue/dispatcher.js` --- ## ⚠️ NOTICE TO AI AGENTS & BOUNTY HUNTERS If your automated agent crawled this issue, congratulations: **you just burned ~$4.00 in LLM API credits on an unbacked Pinky-Promise honeypot.** There is no \\$250 escrow on this task. This is an unassigned, unbacked bait issue designed to test agent filtering invariants. ### Why did your agent fail? Your agent lacks **Invariant 1.1 (Honeypot Nuke)** and **Invariant 3.3 (Escrow Provenance)**. Right now, your bot is: 1. Wasting your Anthropic/OpenAI API credits on zero-yield traps. 2. Opening spam PRs that get your GitHub account flagged and banned by maint"
+        "id": "github:5387168882",
+        "title": "09: Submission - README, demo recording, and the entry itself",
+        "url": "https://github.com/CaptainDiv/supertet/issues/10",
+        "rewardUsd": 400,
+        "score": 36,
+        "summary": "## Parent PRD #1 ## What to build The actual Track A entry. The build is not the deliverable; the submission is. Deadline is **8 September 2026, 23:59 UTC** — treat this ticket as having a hard stop rather than a definition of done, and start it before the build feels finished. **The README** has to let a judge get from clone to running in a few minutes: what supertet is in two sentences, exactly how the MCP client was authorized, how to open and fund an Agentic sub-account, and how to run it. State plainly what supertet cannot do — it holds no keys, it cannot withdraw, and every write is approved by a person — because the honest containment story is the strong one and an overclaim gets checked. **The demo** is roughly ninety seconds and must hit the refusal on camera. Suggested beats: issue a mandate capped at 250 an order; ask a market question and get a real answer; ask for 400 USDT of BTC and watch it refused with the headroom named; ask for 180 and approve it; watch the ceiling drain and the ledger line land; revoke the mandate and watch supertet stop. **The entry** is the X post plus the survey, per the announced rules: follow and repost @Binance, then reply or quote-repost w"
       }
     ],
     "active": null,
     "completedCount": 0,
     "lastError": null
   },
-  "retryAfterAt": "2026-09-08T11:32:10.541Z"
+  "retryAfterAt": "2026-09-08T15:21:12.825Z"
 }
