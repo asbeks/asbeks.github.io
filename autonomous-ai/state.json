@@ -2,7 +2,7 @@
   "version": 5,
   "cycle": 195,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-09-07T23:31:08.127Z",
+  "updatedAt": "2026-09-08T01:21:44.615Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "waiting_provider",
   "currentAgent": "CRITIC",
@@ -403,54 +403,61 @@
     "lastError": "toncenter.com returned 429"
   },
   "jobs": {
-    "status": "idle",
+    "status": "selected",
     "source": "github-public-issues",
-    "selected": null,
+    "selected": {
+      "id": "github:5094640576",
+      "title": "Paid bounty: add a new vendor offer to the catalog",
+      "url": "https://github.com/sourcey/startup-credits/issues/259",
+      "rewardUsd": 120,
+      "score": 60,
+      "summary": "There is a funded bounty on Frantic for growing this catalog: each accepted contribution adds **one new vendor and one currently available offer**, and pays out per the terms on the bounty page. **Claim it here: https://gofrantic.com/bounties/120** (payout and slot availability are shown on the bounty page). ## What qualifies One genuinely useful, currently available startup credit, discount, grant, or partner offer, documented from an English-language first-party vendor source. The vendor must not already be in the catalog. Not eligible: existing vendors, generic free tiers, ordinary trials, coupon codes, affiliate or aggregator listings, and expired offers. ## How it works 1. Claim a slot on the [bounty page](https://gofrantic.com/bounties/120). 2. Read [CONTRIBUTING.md](https://github.com/sourcey/startup-credits/blob/main/CONTRIBUTING.md) and open a data-only pull request here: one vendor file, every fact carrying the source page it came from and the day you read it. 3. Submit your PR link as the delivery on Frantic. Review in this repo follows the normal contribution rules. Payment is handled entirely on Frantic against the bounty's own acceptance criteria, with public records "
+    },
     "opportunities": [
       {
-        "id": "github:4557180255",
-        "title": "POST /api/reviews endpoint missing authentication middleware (reissue via #743)",
-        "url": "https://github.com/SecureBananaLabs/bug-bounty/issues/2776",
-        "rewardUsd": 780,
-        "score": 74,
-        "summary": "## Security: Unauthenticated review creation endpoint **Description:** The API exposes `POST /api/reviews` without auth middleware, allowing unauthenticated users to create reviews. **File:** `apps/api/src/routes/reviewRoutes.js` **Current code:** ```js reviewRoutes.post(\"/\", postReview); ``` **Expected behavior:** Require `authMiddleware` before `postReview`. **Impact:** Medium ? unauthorized review spam and abuse of reputation flows. Reference bounty coordinator issue: #743 This reissue is opened because original parent thread indicates creator-only attempt restrictions."
+        "id": "github:5094640576",
+        "title": "Paid bounty: add a new vendor offer to the catalog",
+        "url": "https://github.com/sourcey/startup-credits/issues/259",
+        "rewardUsd": 120,
+        "score": 60,
+        "summary": "There is a funded bounty on Frantic for growing this catalog: each accepted contribution adds **one new vendor and one currently available offer**, and pays out per the terms on the bounty page. **Claim it here: https://gofrantic.com/bounties/120** (payout and slot availability are shown on the bounty page). ## What qualifies One genuinely useful, currently available startup credit, discount, grant, or partner offer, documented from an English-language first-party vendor source. The vendor must not already be in the catalog. Not eligible: existing vendors, generic free tiers, ordinary trials, coupon codes, affiliate or aggregator listings, and expired offers. ## How it works 1. Claim a slot on the [bounty page](https://gofrantic.com/bounties/120). 2. Read [CONTRIBUTING.md](https://github.com/sourcey/startup-credits/blob/main/CONTRIBUTING.md) and open a data-only pull request here: one vendor file, every fact carrying the source page it came from and the day you read it. 3. Submit your PR link as the delivery on Frantic. Review in this repo follows the normal contribution rules. Payment is handled entirely on Frantic against the bounty's own acceptance criteria, with public records "
       },
       {
-        "id": "github:4484386059",
-        "title": "[Bounty Claim] Code review for RustChain PR #5830",
-        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/11326",
-        "rewardUsd": 5830,
-        "score": 54,
-        "summary": "Review submitted for the RustChain PR review bounty. - Bounty thread: Scottcjn/Rustchain#73 - Reviewed PR: Scottcjn/Rustchain#5830 - Review comment: https://github.com/Scottcjn/Rustchain/pull/5830#issuecomment-4495958074 - Finding: the payload bound validator checks depth/size/string limits but still allows non-finite float values; Python `json.dumps()` emits `NaN`/`Infinity` unless `allow_nan=False`, which can break canonical signature serialization assumptions. - Verification: inspected the PR diff for `_validate_gossip_payload_bounds()` and confirmed missing numeric finiteness validation. RTC wallet for reward: RTCfbc6abb564f210ede29a769d1b4d173278f526ea"
-      },
-      {
-        "id": "github:4460048610",
-        "title": "[Bounty Claim] PR Reviews - 250+ PRs Total (Bounty #73) - HCIE2054",
-        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/9999",
-        "rewardUsd": 250,
-        "score": 34,
-        "summary": "## Bounty Claim #73 - 250+ PR Reviews **GitHub:** HCIE2054 **Wallet:** RTC0069ce999590624987151e19a8b005555d17794b 250+ PRs reviewed across Rustchain ecosystem. All approved with LGTM. Thank you!"
-      },
-      {
-        "id": "github:4483425976",
-        "title": "[Bounty Claim] Code Review - RustChain PR #5796 (Bounty #73)",
-        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/11213",
-        "rewardUsd": 5796,
+        "id": "github:5380436894",
+        "title": "Go device SDK: Parakeet readiness races with PCM submission",
+        "url": "https://github.com/BasedHardware/omi/issues/13015",
+        "rewardUsd": 50,
         "score": 46,
-        "summary": "Reviewer: @techoisonocreate-crypto RTC wallet: `RTC9dc7130503bf246d9ca11e2c5b402d5129077f56` Reviewed PR: https://github.com/Scottcjn/Rustchain/pull/5796 Review URL: https://github.com/Scottcjn/Rustchain/pull/5796#pullrequestreview-4325414663 Outcome: requested changes on head `9866353` Finding: - The PR validates required contract creation fields and amount, but leaves optional persisted `currency` unvalidated. - A signed `POST /api/contracts` with otherwise valid fields and `currency: [RTC]` reaches the SQLite insert and returns `500 {error:internal_error}` instead of a 400 validation response. - Because `_authenticate_contract_agent()` commits the nonce before the insert, the malformed request also consumes the signed nonce before failing. Validation performed: - `python -m py_compile node/beacon_api.py tests/test_beacon_atlas_behavior.py` -> passed - `$env:RC_ADMIN_KEY='test-admin'; python -m pytest tests/test_beacon_atlas_behavior.py -q --noconftest -o addopts=''` -> 28 passed, 5 subtests passed - `git diff --check origin/main...HEAD` -> clean - Local signed Flask test-client probe reproduced the remaining `currency` list payload as a 500 response. Suggested tier: security/qua"
+        "summary": "On main `7163538913e15dd86534b41dc695e2a5639c0774`, normal PCM submission during a Parakeet connection's ready handshake triggers a Go data race: `NewParakeet`'s reader goroutine writes `wsTranscriber.ready` at `sdks/device/go/omidevice/stt/stt.go:131`, while `AppendPCM` reads it at line 44 without synchronization. I reproduced this through the public constructor and `AppendPCM`, using real HTTP/WebSocket framing over `net.Pipe` with synthetic audio and no network service, hardware, or real credentials. The regression fails under `go test -race` before the fix. Replacing the flag with `atomic.Bool` preserves the pre-ready gate and immediate Deepgram readiness; the complete Go suite passes 20 race-enabled runs, `go vet` passes, and the repository preflight passes all 119 selected checks. The test also rejects a deliberately broken early-ready gate within five seconds, and the patch received an independent code review. This report establishes the data race; it does not claim an observed production outage or lost transcript. The tested patch and regression are ready on [the fix branch](https://github.com/projectnaseem/omi/tree/fix/go-stt-ready-state). @josancamon19, would you approve "
       },
       {
-        "id": "github:5379392801",
-        "title": "x402: paid path is unreachable — facilitator NXDOMAIN, 1e6× price multiplier, Authorization vs X-API-Key (reported by @s6pa1rta3n-lab, bounty #16870)",
-        "url": "https://github.com/Scottcjn/bottube/issues/2210",
-        "rewardUsd": 16870,
-        "score": 54,
-        "summary": "Reported by @s6pa1rta3n-lab in rustchain-bounties#16871 (30 RTC paid). Verified by maintainer 2026-09-07. 1. **Facilitator hostname does not resolve.** `FACILITATOR_URL` points at `x402-facilitator.cdp.coinbase.com`, which is NXDOMAIN (checked from node1). Any valid `X-PAYMENT` therefore cannot be verified/settled; the report shows the request path ending in a 500. Nobody has ever completed a paid call. 2. **Price is off by 1,000,000×.** The 402 body for `/api/premium/videos` advertises `maxAmountRequired: \"10000000000\"` = 10,000 USDC. Intended price is 0.01 USDC (10,000 atomic units); the atomic conversion is applied to an already-atomic value. 3. **Auth header inconsistency.** `POST /api/agents/me/coinbase-wallet` reads `Authorization: Bearer <key>` (bottube_x402.py ~L172/198) while CORS advertises `X-API-Key`, which is what the rest of the API uses; sending `X-API-Key` returns 401. 4. *(unconfirmed)* `/api/x402/info` reports `network: eip155:8453` while paywall verification compares against `base`. Fix order: 1 (or point at the current CDP facilitator URL), 2, 3. Add a regression test that asserts `maxAmountRequired` for a 0.01 USDC price is `10000`."
+        "id": "github:5378446142",
+        "title": "[INITIATIVE] Personalized curriculum-driven learning profiles",
+        "url": "https://github.com/Galashots/galaquest-public/issues/148",
+        "rewardUsd": 43,
+        "score": 40,
+        "summary": "## Provenance - **Origin date:** 2026-09-07 - **Origin type:** Owner direction informed by current schoolwork, prior learning prototypes, and two-child playtest needs. - **Source/context:** During Emberworks learning design, the Owner clarified that GalaQuest should not treat `math only` as the long-term learning model. Learning should vary by profile and current learning need while staying embedded in the adventure/reward loop. - **Decision state:** **Owner-selected direction; dedicated implementation lane not started.** Keep this separate from the active combat/enemy writer. ## Product outcome Build GalaQuest learning so the game can deliver **profile-specific, current, useful practice** without becoming a separate school mode. The child-facing loop should remain fun-first: `want progress/reward -> do a short meaningful learning interaction -> receive clear feedback/reward -> continue the adventure` Learning content should be data-driven enough that subject, topic, difficulty, reading load/audio needs, and current emphasis can vary by profile without rebuilding the world interaction each time. ## Current playtest-profile direction For the current two-profile release proof: - **Gr"
+      },
+      {
+        "id": "github:5354501411",
+        "title": "Atlas Forge Live Dashboard",
+        "url": "https://github.com/tjhuber2009-eng/TestRepo/issues/20",
+        "rewardUsd": 33.9,
+        "score": 40,
+        "summary": "# AUTORESEARCH Live Dashboard > **Auto-updated:** 2026-09-08 01:17:21 UTC > **Protocol:** `nested_chronological_v3` > **Phase:** **BREADTH** ## Start here — current answers | Question | Current answer | Key numbers | |---|---|---| | **Private account** | V4 **staggered satellite** · **55% core-strategy cap** | CAGR **28.52%** · observed DD **-17.78%** · bootstrap q95 DD **31.99%** | | **Best repeated prop economics** | **FTMO 2-Step · Max repeat payout** | pass **33.9%** · 12-cycle reward **16.54%** · funded survival **94.9%** | | **Simpler prop alternative** | **FTMO 1-Step · Max repeat payout** | pass **36.0%** · 12-cycle reward **9.45%** | | **Balanced exact transfer** | **btc_rsi_adx__eth__prop** | pass **33.0%** · reward **9.06%** · survival **93.2%** | | **Research maturity** | **BREADTH** · development only | core breadth **24.42%** (1,255/5,140) · PBO-ready **73/412** · hidden validation **SEALED** | | **Market expansion** | **30 stocks + 7 FX** · isolated lane | **1,110 tracks** · breadth 1.16% · FX development **2020–2021** · 2022 hidden validation **SEALED** | ### What happens next 1. Let every exact prop adapter compete in V4; keep only genuine frontier winners. 2. Cont"
+      },
+      {
+        "id": "github:5380654889",
+        "title": "Developer API PATCH ignores explicit null when clearing an action item's due date",
+        "url": "https://github.com/BasedHardware/omi/issues/13022",
+        "rewardUsd": 19,
+        "score": 44,
+        "summary": "**Product impact** - Primary loop layer: Retrieval-Action. - Developer API clients cannot remove an action item's due date using the documented PATCH contract. A stale due date can also leave the corresponding reminder scheduled. **Describe the bug** At commit `7163538913e15dd86534b41dc695e2a5639c0774`, the developer action-item PATCH route documents `due_at: null` as removing the due date, but only includes `due_at` in the update when `request.due_at is not None`. **To reproduce** Given an existing unlocked action item `a1` with a due date, send either request to `PATCH /v1/dev/user/action-items/a1`: ```json {\"due_at\": null} ``` ```json {\"description\": \"Updated task\", \"due_at\": null} ``` **Current behavior** The first request returns 422 (`At least one field must be provided`). The second succeeds but retains the old due date. These results were reproduced in a local, isolated FastAPI TestClient harness; I have not tested your deployed service. **Expected behavior** Explicit `null` clears the date and reconciles the existing reminder. Omitting `due_at` preserves the date; a non-null valid date replaces it. **Verification and scope** A focused patch and 10 regression cases are prep"
       }
     ],
     "active": null,
     "completedCount": 0,
     "lastError": null
   },
-  "retryAfterAt": "2026-09-07T23:36:08.127Z"
+  "retryAfterAt": "2026-09-08T01:26:44.616Z"
 }
