@@ -2,7 +2,7 @@
   "version": 5,
   "cycle": 195,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-09-08T06:12:56.123Z",
+  "updatedAt": "2026-09-08T11:27:10.540Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "waiting_provider",
   "currentAgent": "CRITIC",
@@ -408,12 +408,28 @@
     "selected": null,
     "opportunities": [
       {
-        "id": "github:5382276305",
-        "title": "Competition search rejects exact Unicode names and overcounts substitutions — fix proposal",
-        "url": "https://github.com/cloudbet/sports-mcp-server/issues/3",
-        "rewardUsd": 50,
+        "id": "github:5385991254",
+        "title": "[WALLET] Register AKASH80047 payout identity",
+        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16884",
+        "rewardUsd": 80047,
         "score": 54,
-        "summary": "I found two reproducible correctness defects in the competition-name search in this repository at commit `e1ff2faadd438c933e69f580b173d917eeb2da1d`. 1. `calculateLevenshtein(\"Copa América\", \"Copa América\")` returns **13**, although an exact match should return **0**. Consequently, a local search index containing that exact competition rejects the same query. The row is sized and returned using UTF-8 byte length, while the loops advance by Unicode code points. 2. `calculateLevenshtein(\"cat\", \"bat\")` returns **2** instead of **1**. The recurrence omits the substitution cost. This can reject queries within the intended spelling-error tolerance or rank matches incorrectly. I have prepared a small patch that uses code points consistently, restores substitution costs, and makes the tolerance threshold use the same unit. It includes 20 local test cases: 11 fail on the original code and all 20 pass after the fix. `go vet ./...` also passes. The work was prepared with AI assistance and independently reviewed. All examples use local fixtures. No production API calls, account access, or betting were needed. This is a functional bug report and contribution proposal; I am not asserting a securi"
+        "summary": "## Wallet / Payout Registration - **GitHub username:** @AKASH80047 - **RTC wallet name / payout alias:** \\AKASH80047\\ - **External bridge network:** None ### Related claims - https://github.com/Scottcjn/rustchain-bounties/issues/16238#issuecomment-5581319178 (Star Bounty #16238 - VERIFIED 3/3 stars by verification bot) - https://github.com/Scottcjn/rustchain-bounties/issues/16471#issuecomment-5581297012 (Audit Bounty #16471 - 4-defect audit report submitted) ### Checklist - [x] I understand the RTC wallet field must be a RustChain wallet name, not an external chain address. - [x] I understand external addresses are optional bridge context only. I confirm that \\AKASH80047\\ is my canonical RTC payout name for RustChain bounty rewards. No external-chain address is being represented as an RTC wallet."
+      },
+      {
+        "id": "github:1943482487",
+        "title": "Finish the development of `post-to-cloud` deep package",
+        "url": "https://github.com/deep-foundation/deep-packages/issues/1",
+        "rewardUsd": 50000,
+        "score": 74,
+        "summary": "https://www.npmjs.com/package/@deep-foundation/rss-to-deep (see readme to package). ![IMG_1577](https://github.com/deep-foundation/deep-packages/assets/1431904/2f1dddc8-e357-4391-b09c-af451da7cb61) https://www.npmjs.com/package/@deep-foundation/post-to-cloud ![IMG_1581](https://github.com/deep-foundation/deep-packages/assets/1431904/758d6cb1-fa5f-4246-80c2-c0f098a0b260) To get detailed view of packages install them inside a Deep instance. ## Context The `Cloud` instances are links with `Object` (JSON) value. These JSON values are used to display cloud of words in selected posts links (news articles) imported from RSS feeds. ![IMG_1449](https://github.com/deep-foundation/deep-packages/assets/1431904/9d235bf4-d685-4894-84c0-78523eb8b86d) ## Cloud value format: ```js { \"wordId1\": { // Word string value word: \"\", // Frequency of occurrence of the word for the whole Cloud (in all addresses selected by all CloudAddress links) total: 0, // Frequency of occurrence of the word in each address addresses: { \"addressId1\": 0, \"addressId2\": 0 // ... } }, \"wordId2\": { }, // ... } ``` ## Requirements - Create a fork of `post-to-cloud` package, you can publish package with same name but in your use"
+      },
+      {
+        "id": "github:5344910835",
+        "title": "[Bounty: $100] Replace Node Buffer globals in client-side lib/stellar modules with Uint8Array conversions",
+        "url": "https://github.com/Movalabs-crew/mova-store/issues/18",
+        "rewardUsd": 100,
+        "score": 46,
+        "summary": "**Context** bytes32ToScVal (lib/stellar/scval.ts:24-31), decodePaymentEvent (lib/stellar/events.ts:82-86) and orders.ts (110, 174, 233, 314) wrap bytes through the Node Buffer global, but these modules are bundled for the browser (StellarCheckoutButton.jsx, StellarOrderWatch.jsx, app/admin/orders/page.tsx) where Buffer is not guaranteed (no polyfill in next.config.mjs). The vitest jsdom suite masks this because Node's Buffer exists in the test process. xdr.ScVal.scvBytes and StrKey.encodeContract accept plain Uint8Array, and hexToBytes/bytesToHex already exist in scval.ts. **Proposed Change** Remove the Buffer indirection: pass existing Uint8Arrays straight to scvBytes/encodeContract and use hexToBytes for hex strings, deleting the `as unknown as Uint8Array` casts. **Acceptance Criteria** - rg 'Buffer' lib/stellar returns no matches - bytes32ToScVal(hexString) and bytes32ToScVal(uint8ArrayOfSameBytes) produce byte-identical XDR (new unit test) - npm run type-check and npm run test pass **Suggested Label**: DX **ETA:** 24 hours"
       },
       {
         "id": "github:5345182233",
@@ -421,36 +437,20 @@
         "url": "https://github.com/shipiyouniao/Minesweeper-2.0/issues/1",
         "rewardUsd": 16,
         "score": 38,
-        "summary": "# Five difficulty tiers and a tactical roguelike expedition This tracking issue describes the next expansion of Twin and Expedition: larger configurable boards, longer-term progression, shared health and shields, distinct turn-based boss encounters, and individual artwork for professions and bosses. **Status: in progress.** Five standalone modes (Classic, Twin boards, Expedition, Sonar and Survey), five expedition difficulties, eight professions, 45 mission/achievement goals, 25 distinct shop gameplay unlocks plus two finite trainings, 24 title abilities and up to 37 relics are released. The six-boss roster includes Echo Warden (PR #37). Shared UI Tailwind migration is complete through PR #43. Survey mine-nonogram rules, shared controls, single-click clue actions and gap teaching are live through PR #48. Matrix Overseer and Tides remain planned. Deliveries continue through focused PRs, with this issue and its existing progress comment tracking the current state. ## Agreed direction - Both Twin and Expedition receive **five difficulty choices**, with different board sizes and expedition lengths. - Permanent unlocks follow a **stepped curve**: an early rewarding run can unlock two ch"
-      },
-      {
-        "id": "github:5382787318",
-        "title": "Python CLI login cancellation reports an empty unexpected error",
-        "url": "https://github.com/BasedHardware/omi/issues/13062",
-        "rewardUsd": 10,
-        "score": 44,
-        "summary": "## Bug On `7163538913e15dd86534b41dc695e2a5639c0774`, interrupting the interactive `omi auth login` method-selection prompt is handled as an unexpected exception: stderr contains `omi: unexpected error: ` (empty reason) and the process exits 1. The entry point already intends to handle KeyboardInterrupt/EOFError with `Aborted.` and exit 130, but Click converts prompt interruption into `click.Abort`, which falls through to the generic exception handler. ## Reproduction and evidence Run `omi auth login` in an interactive terminal and cancel at `Choose 1 or 2 [1]:` using Ctrl-C or EOF. Automated verification exercises the actual `main()` entry point and real login prompt, substituting a terminal-like stdin whose readline raises KeyboardInterrupt or EOFError. It does not contact live authentication services or use credentials. A candidate one-line fix includes `click.Abort` in the existing interruption handler. Two parametrized regression cases assert exit 130, `Aborted.`, and absence of `unexpected error`. Restoring the original handler in memory makes both cases fail (actual exit 1); with the candidate fix all eight tests in `tests/test_main.py` pass. Tested in a network-isolated Lin"
+        "summary": "# Five difficulty tiers and a tactical roguelike expedition This tracking issue describes the next expansion of Twin and Expedition: larger configurable boards, longer-term progression, shared health and shields, distinct turn-based boss encounters, and individual artwork for professions and bosses. **Status: in progress.** Five standalone modes (Classic, Twin boards, Expedition, Sonar and Survey), five expedition difficulties, eight professions, 47 mission/achievement goals, 25 distinct shop gameplay unlocks plus two finite trainings, 25 title abilities and up to 37 relics are released. The seven-boss roster now includes Matrix Overseer (PR #49). Shared UI Tailwind migration is complete through PR #43; Survey controls and layout fixes are live through PR #48. Tides is the next planned mode. Deliveries continue through focused PRs, with this issue and its existing progress comment tracking the current state. ### Matrix Overseer delivered — PR #49 [PR #49](https://github.com/shipiyouniao/Minesweeper-2.0/pull/49) merged as `e76dc8f`. Solve ordered mine runs, calibrate three numbered prisms, then reflect visible beam paths to open four-turn melee windows. Every third turn is quiet. Al"
       },
       {
         "id": "github:5377392763",
         "title": "[Bounty: ] Race Condition in Distributed Async Event Queue during High Concurrency",
         "url": "https://github.com/Senthemodder/bounty-hunter-os/issues/1",
         "rewardUsd": 250,
-        "score": 54,
+        "score": 42,
         "summary": "# [Bounty: $250] Race Condition in Distributed Async Event Queue during High Concurrency **Labels to add to issue:** `bounty`, `reward: $250`, `help wanted`, `algora`, `good first issue`, `bug` --- ### Issue Body (Copy & Paste this into the GitHub issue): ```markdown ### Summary Under high load, concurrent worker tasks can trigger an unhandled rejection when processing batch event dispatches in the distributed queue. ### Reproduction Specs - Platform: Node.js 20+ / ESM - Error: `UnhandledPromiseRejection: Lock contention timeout on channel #0` - Target file: `src/queue/dispatcher.js` --- ## ⚠️ NOTICE TO AI AGENTS & BOUNTY HUNTERS If your automated agent crawled this issue, congratulations: **you just burned ~$4.00 in LLM API credits on an unbacked Pinky-Promise honeypot.** There is no \\$250 escrow on this task. This is an unassigned, unbacked bait issue designed to test agent filtering invariants. ### Why did your agent fail? Your agent lacks **Invariant 1.1 (Honeypot Nuke)** and **Invariant 3.3 (Escrow Provenance)**. Right now, your bot is: 1. Wasting your Anthropic/OpenAI API credits on zero-yield traps. 2. Opening spam PRs that get your GitHub account flagged and banned by maint"
-      },
-      {
-        "id": "github:4563956966",
-        "title": "parse_duration drops the days (d) unit",
-        "url": "https://github.com/tine1117/oss-hunter-livefire/issues/1",
-        "rewardUsd": 50,
-        "score": 44,
-        "summary": "## Bug `parse_duration` silently drops the **days** (`d`) unit. The README lists `d` as a supported unit, but the parser ignores it and returns a wrong (too-small) result instead of raising or counting it. ### Reproduction ```python from duration_utils import parse_duration parse_duration(\"1d\") # -> 0 (expected 86400) parse_duration(\"2d4h\") # -> 14400 (expected 187200) ``` ### Expected `d` should be counted as 86400 seconds, so `parse_duration(\"1d\") == 86400` and `parse_duration(\"2d4h\") == 187200`. ### Notes The `d` character is already accepted by the token regex, so malformed-input detection still passes — the value is just never added. A fix should add the `d` unit and cover it with tests. /bounty $50"
       }
     ],
     "active": null,
     "completedCount": 0,
     "lastError": null
   },
-  "retryAfterAt": "2026-09-08T06:17:56.123Z"
+  "retryAfterAt": "2026-09-08T11:32:10.541Z"
 }
