@@ -2,7 +2,7 @@
   "version": 5,
   "cycle": 195,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-09-09T06:39:17.746Z",
+  "updatedAt": "2026-09-09T11:53:57.217Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "waiting_provider",
   "currentAgent": "CRITIC",
@@ -408,49 +408,49 @@
     "selected": null,
     "opportunities": [
       {
-        "id": "github:5387633339",
-        "title": "[Bounty: $600] Write Node.js Script to Programmatically Generate Ruby Toolset Textures from Diamond",
-        "url": "https://github.com/Senthemodder/claude-bounties/issues/7",
-        "rewardUsd": 600,
-        "score": 64,
-        "summary": "### Objective We need an automated asset generation script (`scripts/recolor-tools.js`) that takes vanilla 16x16 diamond tool textures (pickaxe, sword, axe, shovel, hoe) and programmatically recolors them into high-quality Ruby variants. ### Current Attempt (Produces flat, ugly blocks) ```javascript // scripts/recolor-tools.js import sharp from 'sharp'; export async function recolorToRuby(inputBuffer) { // Simple RGB math flattens shading and looks terrible: const image = sharp(inputBuffer); // Multiplies Red by 1.6, cuts Green/Blue by 0.3... } ``` ### Acceptance Criteria 1. Script must execute in Node.js and output authentic, hand-shaded 16x16 Jappa-style pixel art. 2. Must preserve authentic depth, specular highlights, and hue shifting rather than applying flat monochrome multipliers. 3. Handle transparent alpha masking cleanly without jagged edges."
+        "id": "github:5399013171",
+        "title": "Availability and plan for the $300 pytest sanity-check bounty",
+        "url": "https://github.com/causify-ai/helpers/issues/1369",
+        "rewardUsd": 300,
+        "score": 54,
+        "summary": "Hi GP / Heanh, I am interested in the $300 “Check pytest sanity” task in the [official bounty sheet](https://docs.google.com/spreadsheets/d/1QiTCyydNQwftMWj3nTL5jWBqOq3UCziFChF08aRNBcE/edit#gid=0). Its GitHub-user cell currently says “Sandeep?” while the status is blank. I also see the newer plans in #1362 and #1363. Given your two-contributor limit, is there any remaining slot or waiting-list opportunity? I will hold implementation unless a slot is confirmed. I read the task specification and bounty onboarding guide, and inspected the current `pytest.ini` and `conftest.py`. One repository-specific case is the `pytest_ignore_collect` hook that excludes directories containing a `runnable_dir` marker. Comparing collected IDs with test outcomes alone would miss these excluded source tests. My proposed approach is to: 1. Compare the existing pytest hooks and `pytest-json-report` against the requirements before choosing a reporting implementation, and document the findings. 2. Build a conservative source inventory and compare it with collected node IDs and actual setup/call/teardown reports. Preserve parameterized cases and explicitly report unsupported dynamic discovery. 3. Distinguish"
       },
       {
-        "id": "github:5394429832",
-        "title": "[SMC-V2] 4H/15m 正式全期間公平回測",
-        "url": "https://github.com/xx7893405-bit/v8_project/issues/141",
-        "rewardUsd": 10000,
-        "score": 40,
-        "summary": "Parent spec: #135 Depends on: #140 ## Goal 由 Backtest Agent 唯一執行正式全期間公平回測，產生不可覆寫基準與候選產物。 ## Public seam - Approved comparison CLI and run-artifact/v1 outputs ## Acceptance - 標準 BTCUSDT USDT-M perpetual dataset manifest/fingerprint 先核對，內容未變則不重跑 data certification。 - 10,000 USD、risk-based 5%、20x、maker 0.02%、taker 0.05%，其餘 execution/cost config 完全相同。 - 比較 return、MDD、trades、win rate、Profit Factor，並輸出年度、方向、集中度摘要。 - 完整 ledger/equity 留在 Parquet，Agent 只讀 compact summary 與最多 20 筆異常樣本。 - 記錄命令、commit、dirty state、runtime、hashes、token/cache/file metrics。 - 低樣本或單一區間集中不得宣稱改善。 ## Ownership Formal execution and new immutable artifacts only. No strategy、engine、Manager state or website edits."
+        "id": "github:5398659628",
+        "title": "[radar] SN open bounty 2026-09-09T11:13",
+        "url": "https://github.com/relayhop/sn-monetization-runtime/issues/820",
+        "rewardUsd": 2026,
+        "score": 44,
+        "summary": "New SN OPEN_BOUNTY detected: ``` 1564991 Stacker_Sports 3 1894 3000 14 27.0 54354 6647 recent@Stacker_Sports OPEN_BOUNTY,HOT,SELF_POST_OPP AFL Finals Week Three Pickem! ```"
       },
       {
-        "id": "github:5388404215",
-        "title": "BTC/ETH 永续自主研究 V1：范围迁移、首轮因子对照与真实调度",
-        "url": "https://github.com/He1met/freqtrade-lab/issues/162",
-        "rewardUsd": 1000,
-        "score": 40,
-        "summary": "用户授权按附件实施 BTC/ETH USDT 线性永续自主研究、数据获取与调度迁移，随后授权预算分离、双待办、维护后同次承接及有界主动发现。本Issue统一承接，旧冻结批次和历史证据保留。 范围：BTC/ETH、1h、初始1x、完整Taker/滑点/真实资金费；约20%为风险目标，略超需解释，不扩张实际账户风险。1000USDT只是研究假设，公开Binance USD-M为研究源，执行场所未确认。不访问密钥、敏感DB、真实账户，不下单、实盘、付费或另建平台/服务/业务表。 已完成实际迁移：原cf33eb9目录及用户文档保留，使用隔离worktree；现货#139/#155/#161与其他币活动计划停止、历史归档。唯一研究执行heartbeat freqtrade-lab-2 ACTIVE/30分钟，btc-eth保留监督职责，旧freqtrade-lab和automation-2 PAUSED。新dispatcher允许一个固定确认预约和一个优先开发探索并存，复用单writer锁，UNKNOWN占用、确认优先、必要维护及UTC日8/周28变体预算保持；每3个终态轮作检查点。原V3、候选、观察器及确认19代码SHA不变。 当前已完成5轮12个真实原生开发变体，0市场重试，所有18个月历史明确为已曝光开发证据。包括方向持续性、波动、退出尺度、资金费/premium、主动成交转换及资金费变化。carry_nonpaying净+80.18USDT、DD21.45%、压力后+5.56，仅有限开发支持；flow两对照净−363.26/−348.51，已终止。 第五轮资金费水平/变化两对照已实际完成：先无收益标签核时点和728/691个方向分歧，再冻结2对照/900秒/0重试，严格已结算可用后的首小时入场、8h持有、占用小时事件永久跳过、尾部排除。毛+608.77/+156.87USDT，完整成本后净−161.28/−473.08，DD49.47%/49.75%；变化劣化311.80USDT，按预登记停止，不倒置方向或扫持有期。自动heartbeat在02:10维护后0.052秒claim，同次完成2native及finish，整链21.234秒，原生子进程15.855秒。独立3124持仓、两ZIP、3226事件/对照、钱包与逐资金费核账PASS。新增仅10+8项定向纯检查，未重复旧回归/市场对照。 7小时真实自动工程native、finish、提前激活和正式确认预约已完成：7/7完整及时双币小时、0交易、LIMITED_PASS，经济结果null；验收1次/重试0，SHA c280a739fed8d96270ff11c6debfa7b041238992b99ef5a1ec38ec177a633946。正式确认仍carry_nonpaying，2026-09-10T00Z"
-      },
-      {
-        "id": "github:5147529298",
-        "title": "[Bug Skip]: AssertionError: False is not true in profiler/test_profiler_xpu.py",
-        "url": "https://github.com/intel/torch-xpu-ops/issues/4959",
+        "id": "github:5396779410",
+        "title": "Investigate whether NewPay / XinbiPay offers an in-scope Earn or yield product",
+        "url": "https://github.com/badjoke-lab/crypto-yield-archive/issues/403",
         "rewardUsd": 2026,
         "score": 40,
-        "summary": "### 🐛 Describe the bug with skip template Cases: op_ut,third_party.torch-xpu-ops.test.xpu.profiler.test_profiler_xpu.TestProfiler,test_cpu_annotation_overlap ## Errorlog ```bash (kaileiyx) gta@DUT1024PVC:~/kaileiyx/pytorch/third_party/torch-xpu-ops/test/xpu/profiler$ pytest -v test_profiler_xpu.py -k test_cpu_annotation_overlap ====================================================================================== test session starts ====================================================================================== platform linux -- Python 3.10.20, pytest-9.1.1, pluggy-1.6.0 -- /home/gta/miniforge3/envs/kaileiyx/bin/python3.10 cachedir: .pytest_cache hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase('/home/gta/kaileiyx/pytorch/third_party/torch-xpu-ops/test/xpu/profiler/.hypothesis/examples') rootdir: /home/gta/kaileiyx/pytorch configfile: pytest.ini plugins: cpp-2.3.0, flakefinder-1.1.0, xdoctest-1.3.0, rerunfailures-14.0, timeout-2.4.0, xdist-3.8.0, hypothesis-6.56.4 collected 94 items / 93 deselected / 1 selected test_profiler_xpu.py::TestProfiler::test_cpu_annotation_overlap USDT:2026-08-14 02:03:11 421306:421306 SyncActivityProfilerHandler.cpp:39] prof"
+        "summary": "## Why this is a CYA review candidate NewPay / XinbiPay is primarily a wallet/payment/exchange application, so it is not automatically in CYA scope. However, current product materials should be reviewed to determine whether it offers a real crypto Earn/yield/lending product rather than generic asset-management language. Sources: - https://www.trmlabs.com/resources/intel-library/xinbi-guarantee - https://apps.apple.com/jp/app/%E6%96%B0%E5%B8%81pay/id6748305154 - https://blog.bitrace.io/behind-the-1-7-million-usdt-gate-user-theft-how-newpay-is-taking-over-huione-pays-legacy/ ## Review tasks 1. Find first-party NewPay/XinbiPay product pages/terms for any `理財`, Earn, yield, interest, staking, lending, savings, or deposit-like product. 2. Determine whether users commit crypto assets in exchange for yield/interest and whether redemption/access conditions are documented. 3. If yes, model at platform/product level under existing CYA scope and research the September 2026 USDT-freeze impact only if it materially affected user access or product operation. 4. If the feature is only generic asset management, exchange, transfer, card, or payment functionality, close as out of scope. ## Boundary "
       },
       {
-        "id": "github:4318279838",
-        "title": "Add unit tests for `src.services.service_utils`",
-        "url": "https://github.com/HHS/simpler-grants-gov/issues/9814",
-        "rewardUsd": 200,
-        "score": 72,
-        "summary": "### Summary Add unit tests for `src.services.service_utils`, the shared utility module that powers sorting and search-filter translation across multiple v1 services. The module has two public helpers (`apply_sorting` and `_add_search_filters`) but has no direct test file — coverage is only incidental through integration tests. ## Background & Context `api/src/services/service_utils.py` exposes `apply_sorting(stmt, model, sort_order)` which translates sort orders into SQLAlchemy `asc()`/`desc()` calls. `_add_search_filters` maps the project's search filter types onto an OpenSearch query builder. The sorting helper is pure SQLAlchemy statement construction — no database required. The filter helper requires a mock `SearchQueryBuilder` but does not require running OpenSearch. Rule reference: `documentation/rules/api-services.md` (\"Extract Shared Logic to Utility Files\") and `documentation/rules/cross-domain.md` (CCP-3). ## Getting Started - File under test: `api/src/services/service_utils.py` - New test file: `api/tests/src/services/test_service_utils.py` - Types: `src.pagination.pagination_models.SortDirection`, `src.search.search_models.{Str,Bool,Int,Date}SearchFilter` - Local setup:"
+        "id": "github:5396777646",
+        "title": "Investigate NewPay card program, ANWEN provider role, and lifecycle evidence",
+        "url": "https://github.com/badjoke-lab/crypto-card-lifecycle-registry/issues/47",
+        "rewardUsd": 2026,
+        "score": 40,
+        "summary": "## Candidate NewPay card functionality appears to be directly relevant to CCLR. Apple App Store version history for `NewPay-wallet` by ANWEN TECHNOLOGY CO., LTD. states that version 1.4.0 on 2026-01-14 added credit-card features. Current NewPay materials should be reviewed for the actual card network, issuer/BIN sponsor, program manager, regions, virtual/physical card availability, and funding/custody model. Sources: - https://apps.apple.com/jp/app/%E6%96%B0%E5%B8%81pay/id6748305154 - https://www.trmlabs.com/resources/intel-library/xinbi-guarantee ## Proposed CCLR review scope 1. Program candidate: NewPay card. 2. Provider candidate: ANWEN TECHNOLOGY CO., LTD. with only roles directly supported by evidence. 3. Relations: network / issuer / processor / program manager / settlement only after first-party terms establish them. 4. Event candidate: card functionality added by 2026-01-14. 5. Review whether September 2026 USDT freezes affected a card-related funding/settlement component; only add an incident if the connection to the card program is evidenced. ## Boundary Do not infer Visa/Mastercard issuer or processor roles from marketing alone. Do not map Xinbi Guarantee itself as a car"
+      },
+      {
+        "id": "github:5390080397",
+        "title": "[Bounty] [Bounty: $450] Custom Humanoid NPC Texture Scrambled / Left Arm & Leg Mirrored I",
+        "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1228",
+        "rewardUsd": 450,
+        "score": 64,
+        "summary": "### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/Senthemodder/claude-bounties/issues/8 ### 漏洞描述 / Description [Bounty: $450] Custom Humanoid NPC Texture Scrambled / Left Arm & Leg Mirrored In-Game ### Issue Description We imported a standard 64x64 dual-layer player skin exported from Blockbench into our Bedrock addon. In Blockbench, all limbs have unique textures (left arm has a tattoo, right arm does not). However, in-game: - The left arm and left leg textures are completely scrambled. - The right arm texture is mirrored onto the left arm. - Outer skin jacket layers are not rendering correctly. ### Current Entity Client Definition (`RP/entity/custom_npc.entity.json`) ```json { \"format_version\": \"1.10.0\", \"minecraft:client_entity\": { \"description\": { \"identifier\": \"custom:npc\", \"materials\": { \"default\": \"entity_alphatest\" }, \"textures\": { \"default\": \"textures/entity/custom_npc\" }, \"geometry\": { \"default\": \"geometry.zombie.v1.8\" }, \"render_controllers\": [ \"controller.render.zombie\" ] } } } ``` ### Acceptance Criteria 1. Fix the client entity definition so the 64x64 skin renders all unique asymmetric arm/leg textures without UV mirroring. 2. Ensure full dual-layer "
       }
     ],
     "active": null,
     "completedCount": 0,
     "lastError": null
   },
-  "retryAfterAt": "2026-09-09T06:44:17.746Z"
+  "retryAfterAt": "2026-09-09T11:58:57.217Z"
 }
