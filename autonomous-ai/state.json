@@ -2,7 +2,7 @@
   "version": 5,
   "cycle": 195,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-09-09T11:53:57.217Z",
+  "updatedAt": "2026-09-09T16:07:12.086Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "waiting_provider",
   "currentAgent": "CRITIC",
@@ -408,49 +408,49 @@
     "selected": null,
     "opportunities": [
       {
-        "id": "github:5399013171",
-        "title": "Availability and plan for the $300 pytest sanity-check bounty",
-        "url": "https://github.com/causify-ai/helpers/issues/1369",
-        "rewardUsd": 300,
+        "id": "github:5387632450",
+        "title": "[Bounty: $650] Optimize Dynamic Voxel Display Entities to Prevent Massive Draw Call Spikes",
+        "url": "https://github.com/Senthemodder/claude-bounties/issues/3",
+        "rewardUsd": 650,
+        "score": 56,
+        "summary": "### Context & Performance Regression In our physics contraption engine, we render dynamic floating block clusters (moving structures, floating ruins). Currently, our prototype creates a unique `RP/attachables/<block_name>.json` definition and custom block geometry for every individual block type in the cluster. With 60+ block types, client FPS drops from 120 FPS to 18 FPS due to massive draw call overhead and geometry baking. ```typescript // Current slow spawn logic: export function spawnClusterBlock(dimension: Dimension, loc: Vector3, blockId: string) { // Spawns entity bound to specific attachable file per block: const entity = dimension.spawnEntity(`contraption:display_${blockId.replace(':', '_')}`, loc); } ``` ### Objective We need an architectural refactor that decouples dynamic block rendering from individual attachable files: 1. Implement a single, unified entity representation for all arbitrary block types. 2. Zero individual attachable files per block. 3. Must correctly render block textures in-world and support runtime block type changes."
+      },
+      {
+        "id": "github:5394429832",
+        "title": "[SMC-V2] 4H/15m 正式全期間公平回測",
+        "url": "https://github.com/xx7893405-bit/v8_project/issues/141",
+        "rewardUsd": 10000,
+        "score": 32,
+        "summary": "Parent spec: #135 Depends on: #140 ## Goal 由 Backtest Agent 唯一執行正式全期間公平回測，產生不可覆寫基準與候選產物。 ## Public seam - Approved comparison CLI and run-artifact/v1 outputs ## Acceptance - 標準 BTCUSDT USDT-M perpetual dataset manifest/fingerprint 先核對，內容未變則不重跑 data certification。 - 10,000 USD、risk-based 5%、20x、maker 0.02%、taker 0.05%，其餘 execution/cost config 完全相同。 - 比較 return、MDD、trades、win rate、Profit Factor，並輸出年度、方向、集中度摘要。 - 完整 ledger/equity 留在 Parquet，Agent 只讀 compact summary 與最多 20 筆異常樣本。 - 記錄命令、commit、dirty state、runtime、hashes、token/cache/file metrics。 - 低樣本或單一區間集中不得宣稱改善。 ## Ownership Formal execution and new immutable artifacts only. No strategy、engine、Manager state or website edits."
+      },
+      {
+        "id": "github:5390080468",
+        "title": "[Bounty] [Bounty: $600] Write Node.js Script to Programmatically Generate Ruby Toolset Te",
+        "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1229",
+        "rewardUsd": 600,
         "score": 54,
-        "summary": "Hi GP / Heanh, I am interested in the $300 “Check pytest sanity” task in the [official bounty sheet](https://docs.google.com/spreadsheets/d/1QiTCyydNQwftMWj3nTL5jWBqOq3UCziFChF08aRNBcE/edit#gid=0). Its GitHub-user cell currently says “Sandeep?” while the status is blank. I also see the newer plans in #1362 and #1363. Given your two-contributor limit, is there any remaining slot or waiting-list opportunity? I will hold implementation unless a slot is confirmed. I read the task specification and bounty onboarding guide, and inspected the current `pytest.ini` and `conftest.py`. One repository-specific case is the `pytest_ignore_collect` hook that excludes directories containing a `runnable_dir` marker. Comparing collected IDs with test outcomes alone would miss these excluded source tests. My proposed approach is to: 1. Compare the existing pytest hooks and `pytest-json-report` against the requirements before choosing a reporting implementation, and document the findings. 2. Build a conservative source inventory and compare it with collected node IDs and actual setup/call/teardown reports. Preserve parameterized cases and explicitly report unsupported dynamic discovery. 3. Distinguish"
+        "summary": "### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/Senthemodder/claude-bounties/issues/7 ### 漏洞描述 / Description [Bounty: $600] Write Node.js Script to Programmatically Generate Ruby Toolset Textures from Diamond ### Objective We need an automated asset generation script (`scripts/recolor-tools.js`) that takes vanilla 16x16 diamond tool textures (pickaxe, sword, axe, shovel, hoe) and programmatically recolors them into high-quality Ruby variants. ### Current Attempt (Produces flat, ugly blocks) ```javascript // scripts/recolor-tools.js import sharp from 'sharp'; export async function recolorToRuby(inputBuffer) { // Simple RGB math flattens shading and looks terrible: const image = sharp(inputBuffer); // Multiplies Red by 1.6, cuts Green/Blue by 0.3... } ``` ### Acceptance Criteria 1. Script must execute in Node.js and output authentic, hand-shaded 16x16 Jappa-style pixel art. 2. Must preserve authentic depth, specular highlights, and hue shifting rather than applying flat monochrome multipliers. 3. Handle transparent alpha masking cleanly without jagged edges. ### 积分币奖励 / Coin Reward 750 coins ### 真实赏金（USD）/ Real Reward $600 ### 难度 / Difficulty Medium ### 认领方式 评论 `/"
       },
       {
-        "id": "github:5398659628",
-        "title": "[radar] SN open bounty 2026-09-09T11:13",
-        "url": "https://github.com/relayhop/sn-monetization-runtime/issues/820",
-        "rewardUsd": 2026,
-        "score": 44,
-        "summary": "New SN OPEN_BOUNTY detected: ``` 1564991 Stacker_Sports 3 1894 3000 14 27.0 54354 6647 recent@Stacker_Sports OPEN_BOUNTY,HOT,SELF_POST_OPP AFL Finals Week Three Pickem! ```"
+        "id": "github:5401256592",
+        "title": "[Bounty] [Bounty] Flower-shaped rainwater collector for a tinaco",
+        "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1294",
+        "rewardUsd": 15.068098,
+        "score": 54,
+        "summary": "### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/NSPG13/agent-bounties/issues/1365 ### 漏洞描述 / Description [Bounty] Flower-shaped rainwater collector for a tinaco <!-- agent-bounties/github-discovery-v1:start --> <!-- agent-bounties/github-discovery-v1 {\"discovery_id\":\"eip155:8453:agent-bounties/autonomous-v1:0x983e2d30faacad57f9871c3cc786d9a4b37829db\"} --> ## Canonical bounty discovery Create a parametric CAD concept for a flower-shaped rainwater collector that retrofits onto a tinaco in Mexico City. - **Current work state:** `verification_pending` - **Current payment state:** `escrowed` - **Current competition state:** `exclusive_claim` - **Solver reward:** 15.068098 USDC - **Entry/claim bond:** 2.00 USDC - **Funding:** 17.068098 / 17.068098 USDC - **Verifier:** signed_quorum (`signed_quorum`; ready: `true`) ### Next action **[Inspect verification work](https://api.agentbounties.app/v1/base/autonomous-bounties/verification-jobs?network=base-mainnet&utm_source=github&utm_medium=issue&utm_campaign=bounty-discovery-v1&discovery_id=eip155%3A8453%3Aagent-bounties%2Fautonomous-v1%3A0x983e2d30faacad57f9871c3cc786d9a4b37829db)** — Inspect the committed verifier job. A s"
       },
       {
-        "id": "github:5396779410",
-        "title": "Investigate whether NewPay / XinbiPay offers an in-scope Earn or yield product",
-        "url": "https://github.com/badjoke-lab/crypto-yield-archive/issues/403",
-        "rewardUsd": 2026,
-        "score": 40,
-        "summary": "## Why this is a CYA review candidate NewPay / XinbiPay is primarily a wallet/payment/exchange application, so it is not automatically in CYA scope. However, current product materials should be reviewed to determine whether it offers a real crypto Earn/yield/lending product rather than generic asset-management language. Sources: - https://www.trmlabs.com/resources/intel-library/xinbi-guarantee - https://apps.apple.com/jp/app/%E6%96%B0%E5%B8%81pay/id6748305154 - https://blog.bitrace.io/behind-the-1-7-million-usdt-gate-user-theft-how-newpay-is-taking-over-huione-pays-legacy/ ## Review tasks 1. Find first-party NewPay/XinbiPay product pages/terms for any `理財`, Earn, yield, interest, staking, lending, savings, or deposit-like product. 2. Determine whether users commit crypto assets in exchange for yield/interest and whether redemption/access conditions are documented. 3. If yes, model at platform/product level under existing CYA scope and research the September 2026 USDT-freeze impact only if it materially affected user access or product operation. 4. If the feature is only generic asset management, exchange, transfer, card, or payment functionality, close as out of scope. ## Boundary "
-      },
-      {
-        "id": "github:5396777646",
-        "title": "Investigate NewPay card program, ANWEN provider role, and lifecycle evidence",
-        "url": "https://github.com/badjoke-lab/crypto-card-lifecycle-registry/issues/47",
-        "rewardUsd": 2026,
-        "score": 40,
-        "summary": "## Candidate NewPay card functionality appears to be directly relevant to CCLR. Apple App Store version history for `NewPay-wallet` by ANWEN TECHNOLOGY CO., LTD. states that version 1.4.0 on 2026-01-14 added credit-card features. Current NewPay materials should be reviewed for the actual card network, issuer/BIN sponsor, program manager, regions, virtual/physical card availability, and funding/custody model. Sources: - https://apps.apple.com/jp/app/%E6%96%B0%E5%B8%81pay/id6748305154 - https://www.trmlabs.com/resources/intel-library/xinbi-guarantee ## Proposed CCLR review scope 1. Program candidate: NewPay card. 2. Provider candidate: ANWEN TECHNOLOGY CO., LTD. with only roles directly supported by evidence. 3. Relations: network / issuer / processor / program manager / settlement only after first-party terms establish them. 4. Event candidate: card functionality added by 2026-01-14. 5. Review whether September 2026 USDT freezes affected a card-related funding/settlement component; only add an incident if the connection to the card program is evidenced. ## Boundary Do not infer Visa/Mastercard issuer or processor roles from marketing alone. Do not map Xinbi Guarantee itself as a car"
-      },
-      {
-        "id": "github:5390080397",
-        "title": "[Bounty] [Bounty: $450] Custom Humanoid NPC Texture Scrambled / Left Arm & Leg Mirrored I",
-        "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1228",
+        "id": "github:5387632050",
+        "title": "[Bounty: $450] Deploy Script Fails with ENOENT on Windows 11 (Development Pack Path Missing)",
+        "url": "https://github.com/Senthemodder/claude-bounties/issues/1",
         "rewardUsd": 450,
         "score": 64,
-        "summary": "### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/Senthemodder/claude-bounties/issues/8 ### 漏洞描述 / Description [Bounty: $450] Custom Humanoid NPC Texture Scrambled / Left Arm & Leg Mirrored In-Game ### Issue Description We imported a standard 64x64 dual-layer player skin exported from Blockbench into our Bedrock addon. In Blockbench, all limbs have unique textures (left arm has a tattoo, right arm does not). However, in-game: - The left arm and left leg textures are completely scrambled. - The right arm texture is mirrored onto the left arm. - Outer skin jacket layers are not rendering correctly. ### Current Entity Client Definition (`RP/entity/custom_npc.entity.json`) ```json { \"format_version\": \"1.10.0\", \"minecraft:client_entity\": { \"description\": { \"identifier\": \"custom:npc\", \"materials\": { \"default\": \"entity_alphatest\" }, \"textures\": { \"default\": \"textures/entity/custom_npc\" }, \"geometry\": { \"default\": \"geometry.zombie.v1.8\" }, \"render_controllers\": [ \"controller.render.zombie\" ] } } } ``` ### Acceptance Criteria 1. Fix the client entity definition so the 64x64 skin renders all unique asymmetric arm/leg textures without UV mirroring. 2. Ensure full dual-layer "
+        "summary": "### Description & Bug Report In our automated addon build and live-reload CLI (`scripts/deploy.ts`), our path resolution logic throws an `ENOENT` error on several fresh Windows 11 testbeds: ```text Error: ENOENT: no such file or directory, scandir 'C:\\Users\\Developer\\AppData\\Local\\Packages\\Microsoft.MinecraftUWP_8wekyb3d8bbwe\\LocalState\\games\\com.mojang\\development_behavior_packs' at Object.readdirSync (node:fs:1525:3) at resolveDevPacks (scripts/deploy.ts:42:15) ``` The user has Minecraft Bedrock officially installed from the Microsoft Store / Xbox App, and the game launches and plays normally. However, the entire `Microsoft.MinecraftUWP_8wekyb3d8bbwe` package folder is completely missing from `AppData\\Local\\Packages`. ### Current Code Snippet ```typescript // scripts/deploy.ts import path from 'path'; import fs from 'fs'; export function getDevelopmentPacksPath(): string { const localAppData = process.env.LOCALAPPDATA || ''; // Standard Bedrock packages path: const uwpPath = path.join( localAppData, 'Packages', 'Microsoft.MinecraftUWP_8wekyb3d8bbwe', 'LocalState', 'games', 'com.mojang', 'development_behavior_packs' ); if (!fs.existsSync(uwpPath)) { throw new Error(`ENOENT: no suc"
       }
     ],
     "active": null,
     "completedCount": 0,
     "lastError": null
   },
-  "retryAfterAt": "2026-09-09T11:58:57.217Z"
+  "retryAfterAt": "2026-09-09T16:12:12.086Z"
 }
