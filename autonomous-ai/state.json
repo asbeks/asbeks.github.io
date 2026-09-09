@@ -2,7 +2,7 @@
   "version": 5,
   "cycle": 195,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-09-08T23:38:05.401Z",
+  "updatedAt": "2026-09-09T01:33:14.901Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "waiting_provider",
   "currentAgent": "CRITIC",
@@ -403,54 +403,61 @@
     "lastError": "toncenter.com returned 429"
   },
   "jobs": {
-    "status": "idle",
+    "status": "selected",
     "source": "github-public-issues",
-    "selected": null,
+    "selected": {
+      "id": "github:5390080532",
+      "title": "[Bounty] [Bounty: $550] Build Script Deploys Unexpanded Templates Directly to Com.mojang",
+      "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1230",
+      "rewardUsd": 550,
+      "score": 72,
+      "summary": "### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/Senthemodder/claude-bounties/issues/6 ### 漏洞描述 / Description [Bounty: $550] Build Script Deploys Unexpanded Templates Directly to Com.mojang ### Issue Description Our development watch script (`scripts/watch.js`) uses `fs.cpSync` to mirror files directly from `source/resources/data` to the development behavior packs directory. However, Bedrock fails to load the behavior pack with syntax errors because raw JSONTE template syntax (`$extend`, `{{#each}}`) is copied directly into the game folder without being compiled by the pipeline filters. ```javascript // scripts/watch.js import fs from 'fs'; import path from 'path'; export function deployDirect(srcDir, destDir) { // Directly copies source to game folder, breaking filter pipeline: fs.cpSync(srcDir, destDir, { recursive: true, force: true }); } ``` ### Acceptance Criteria 1. Fix the deployment architecture so all intermediate build filters (JSONTE expansion, sound compilation) execute properly before files hit the game directory. 2. Ensure source files under `source/` remain unmodified while the compiled output in the game directory is 100% valid Bedrock JSON. 3. Fa"
+    },
     "opportunities": [
       {
-        "id": "github:4484386059",
-        "title": "[Bounty Claim] Code review for RustChain PR #5830",
-        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/11326",
-        "rewardUsd": 5830,
-        "score": 54,
-        "summary": "Review submitted for the RustChain PR review bounty. - Bounty thread: Scottcjn/Rustchain#73 - Reviewed PR: Scottcjn/Rustchain#5830 - Review comment: https://github.com/Scottcjn/Rustchain/pull/5830#issuecomment-4495958074 - Finding: the payload bound validator checks depth/size/string limits but still allows non-finite float values; Python `json.dumps()` emits `NaN`/`Infinity` unless `allow_nan=False`, which can break canonical signature serialization assumptions. - Verification: inspected the PR diff for `_validate_gossip_payload_bounds()` and confirmed missing numeric finiteness validation. RTC wallet for reward: RTCfbc6abb564f210ede29a769d1b4d173278f526ea"
+        "id": "github:5390080532",
+        "title": "[Bounty] [Bounty: $550] Build Script Deploys Unexpanded Templates Directly to Com.mojang",
+        "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1230",
+        "rewardUsd": 550,
+        "score": 72,
+        "summary": "### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/Senthemodder/claude-bounties/issues/6 ### 漏洞描述 / Description [Bounty: $550] Build Script Deploys Unexpanded Templates Directly to Com.mojang ### Issue Description Our development watch script (`scripts/watch.js`) uses `fs.cpSync` to mirror files directly from `source/resources/data` to the development behavior packs directory. However, Bedrock fails to load the behavior pack with syntax errors because raw JSONTE template syntax (`$extend`, `{{#each}}`) is copied directly into the game folder without being compiled by the pipeline filters. ```javascript // scripts/watch.js import fs from 'fs'; import path from 'path'; export function deployDirect(srcDir, destDir) { // Directly copies source to game folder, breaking filter pipeline: fs.cpSync(srcDir, destDir, { recursive: true, force: true }); } ``` ### Acceptance Criteria 1. Fix the deployment architecture so all intermediate build filters (JSONTE expansion, sound compilation) execute properly before files hit the game directory. 2. Ensure source files under `source/` remain unmodified while the compiled output in the game directory is 100% valid Bedrock JSON. 3. Fa"
       },
       {
-        "id": "github:4460048610",
-        "title": "[Bounty Claim] PR Reviews - 250+ PRs Total (Bounty #73) - HCIE2054",
-        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/9999",
-        "rewardUsd": 250,
-        "score": 34,
-        "summary": "## Bounty Claim #73 - 250+ PR Reviews **GitHub:** HCIE2054 **Wallet:** RTC0069ce999590624987151e19a8b005555d17794b 250+ PRs reviewed across Rustchain ecosystem. All approved with LGTM. Thank you!"
+        "id": "github:5388404215",
+        "title": "BTC/ETH 永续自主研究 V1：范围迁移、首轮因子对照与真实调度",
+        "url": "https://github.com/He1met/freqtrade-lab/issues/162",
+        "rewardUsd": 1000,
+        "score": 40,
+        "summary": "用户授权按附件实施 BTC/ETH USDT 线性永续自主研究、数据获取与调度迁移，随后明确授权预算分离、双待办调度、维护后同次承接及有界主动发现。此 Issue 统一承接，旧冻结批次和历史证据保留。 研究范围：BTC/ETH、1h、初始1x、完整Taker/滑点/真实资金费。约20%是风险目标，略超需解释；不扩张真实账户风险。1000USDT仅为研究假设，数据源暂用公开Binance USD-M，执行场所尚未确认。无密钥、敏感数据库、账户、订单、实盘或付费资源权限。优先复用原生Freqtrade和轻量文件组件，不建新平台、服务或表。 实施前审计：原工作目录cf33eb9并有用户文档，保留且使用隔离工作区。旧活跃heartbeat含现货职责；现已迁移为本永续范围，#139/#155/#161及其他币活动计划停止、历史归档。唯一freqtrade-lab-2 ACTIVE/30分钟，freqtrade-lab及automation-2 PAUSED。 已交付： - 4轮10个真实原生开发变体，0市场重试；包含方向持续性、波动风险、退出尺度、资金费/premium、主动成交转换。全部18个月历史明确为已曝光开发数据。 - carry_nonpaying开发净+80.18USDT、回撤21.45%，压力后仅+5.56且集中ETH空头，只具有限开发支持。本轮shock_rebound/flow_turn净−363.26/−348.51USDT，DD42.59%/39.66%，关闭该分支。 - 固定7小时真实自动native验收、finish、提前激活、正式确认入队已完成：7/7完整及时双币小时、0交易、LIMITED_PASS；经济结果null。原生验收1次、重试0。验收SHA c280a739fed8d96270ff11c6debfa7b041238992b99ef5a1ec38ec177a633946。 - 新追加dispatcher实际安装。固定确认可与最多一个优先探索并存，最多两个活跃机制；单writer共享锁、RUNNING/UNKNOWN占用、确认到期优先、必要数据/意图维护优先。原V3 policy、6旧任务、候选/观察器/确认19代码SHA不变。 - 原预算保留：UTC日8/周28探索变体，每3终态轮检查点；固定候选工程验收1次+明确技术重试最多1次；同候选同固定90日确认一次/2400秒。待办上限不算已消费native。 - 实际同次维护→claim→两native→finish于2026-09-09T01:10:22至01:10:35完成，全链13.190秒，observer后0.058秒领取。900秒上限+300秒维护余量未缩小。两次真实native和独立780持仓/钱包/资金费核账通过。 - 新只读状态分列确认、观察、实际计算、唯一探索及具体"
       },
       {
-        "id": "github:4460041460",
-        "title": "[Bounty Claim] PR Reviews - 200+ PRs (Bounty #73) - HCIE2054",
-        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/9997",
+        "id": "github:5390080732",
+        "title": "[Bounty] [Bounty: $850] Hitbox Collision Dropout during Rapid Contraption Kinematic Telep",
+        "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1233",
+        "rewardUsd": 850,
+        "score": 72,
+        "summary": "### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/Senthemodder/claude-bounties/issues/4 ### 漏洞描述 / Description [Bounty: $850] Hitbox Collision Dropout during Rapid Contraption Kinematic Teleportation ### System Architecture & Issue Summary In our custom physics contraption engine, players experience a severe **1-tick collision dropout** when standing on ascending or teleporting block colliders (using shulker composite assemblies). As the assembly ascends, players periodically fall through the floor into the void. ### Telemetry & Current Implementation Here is the active tick-loop responsible for updating the collider positions: ```typescript // src/physics/ContraptionKinematics.ts export function updateColliderKinematics(entity: Entity, targetPos: Vector3): void { // 1. Maintain visual camouflage entity.addEffect(\"invisibility\", 20000, { showParticles: false }); // 2. Continuous kinematic transform const smoothY = Math.floor(targetPos.y * 100) / 100; entity.teleport({ x: targetPos.x, y: smoothY, z: targetPos.z }); } ``` ### Suspected Root Cause We believe this is an asynchronous floating-point phase desync between the client-side prediction and the server-side spa"
+      },
+      {
+        "id": "github:4318279838",
+        "title": "Add unit tests for `src.services.service_utils`",
+        "url": "https://github.com/HHS/simpler-grants-gov/issues/9814",
         "rewardUsd": 200,
-        "score": 34,
-        "summary": "## Bounty Claim #73 - 200+ PR Reviews **GitHub:** HCIE2054 **Wallet:** RTC0069ce999590624987151e19a8b005555d17794b Massive PR review batch. All open PRs across Rustchain ecosystem reviewed with APPROVE + LGTM. Thank you!"
+        "score": 72,
+        "summary": "### Summary Add unit tests for `src.services.service_utils`, the shared utility module that powers sorting and search-filter translation across multiple v1 services. The module has two public helpers (`apply_sorting` and `_add_search_filters`) but has no direct test file — coverage is only incidental through integration tests. ## Background & Context `api/src/services/service_utils.py` exposes `apply_sorting(stmt, model, sort_order)` which translates sort orders into SQLAlchemy `asc()`/`desc()` calls. `_add_search_filters` maps the project's search filter types onto an OpenSearch query builder. The sorting helper is pure SQLAlchemy statement construction — no database required. The filter helper requires a mock `SearchQueryBuilder` but does not require running OpenSearch. Rule reference: `documentation/rules/api-services.md` (\"Extract Shared Logic to Utility Files\") and `documentation/rules/cross-domain.md` (CCP-3). ## Getting Started - File under test: `api/src/services/service_utils.py` - New test file: `api/tests/src/services/test_service_utils.py` - Types: `src.pagination.pagination_models.SortDirection`, `src.search.search_models.{Str,Bool,Int,Date}SearchFilter` - Local setup:"
       },
       {
-        "id": "github:4483425976",
-        "title": "[Bounty Claim] Code Review - RustChain PR #5796 (Bounty #73)",
-        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/11213",
-        "rewardUsd": 5796,
-        "score": 46,
-        "summary": "Reviewer: @techoisonocreate-crypto RTC wallet: `RTC9dc7130503bf246d9ca11e2c5b402d5129077f56` Reviewed PR: https://github.com/Scottcjn/Rustchain/pull/5796 Review URL: https://github.com/Scottcjn/Rustchain/pull/5796#pullrequestreview-4325414663 Outcome: requested changes on head `9866353` Finding: - The PR validates required contract creation fields and amount, but leaves optional persisted `currency` unvalidated. - A signed `POST /api/contracts` with otherwise valid fields and `currency: [RTC]` reaches the SQLite insert and returns `500 {error:internal_error}` instead of a 400 validation response. - Because `_authenticate_contract_agent()` commits the nonce before the insert, the malformed request also consumes the signed nonce before failing. Validation performed: - `python -m py_compile node/beacon_api.py tests/test_beacon_atlas_behavior.py` -> passed - `$env:RC_ADMIN_KEY='test-admin'; python -m pytest tests/test_beacon_atlas_behavior.py -q --noconftest -o addopts=''` -> 28 passed, 5 subtests passed - `git diff --check origin/main...HEAD` -> clean - Local signed Flask test-client probe reproduced the remaining `currency` list payload as a 500 response. Suggested tier: security/qua"
-      },
-      {
-        "id": "github:4459678719",
-        "title": "[Bounty Claim] Star + Review Open PR (Bounty #2782) - HCIE2054",
-        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/9962",
-        "rewardUsd": 2782,
-        "score": 34,
-        "summary": "## Bounty Claim #2782 - Star + Review Open PR **GitHub Username:** HCIE2054 **Wallet:** RTC02811ff5e2bb4bb4b95eee44c5429cd9525496e7 ### Completed Tasks - Starred RustChain repo - Reviewed 70+ open PRs across RustChain, BoTTube, ram-coffers, and other ecosystem repos - All reviews were APPROVE (LGTM) Thank you!"
+        "id": "github:5393428987",
+        "title": "Archetypes should vary the ECONOMY, not the dice — and they are where 'how much walking' stops being one global guess",
+        "url": "https://github.com/TortoiseWolfe/geolarp/issues/119",
+        "rewardUsd": 32,
+        "score": 48,
+        "summary": "Owner's question, 2026-09-08: *\"I thought classes or archetypes might include different play styles for field reporters, cartographers, photographers, etc. What other character types might influence different play styles?\"* ## What exists today There are no classes. `character.ts` has 5 attributes, **20 skills**, and **7D (21 pips)** to spend at creation — the file's own comment says twenty skills \"leaves roughly two thirds of the sheet untrained, so what a player has is a CHOICE\". `encounter.ts` has 5 kinds (monster, trader, cache, shrine, trap), each listing 3 skills that can plausibly resolve it. **So geoLARP already has archetypes — they are implicit in where 21 pips go.** A sheet with pips in Brawl/Dodge/Willpower is a different character from one with Search/Scavenge/Climb, and the encounter table already rewards that difference. ## The trap: a class that only changes dice is a pre-filled sheet If an archetype just hands out starting pips, it changes what you are GOOD AT. It does not change how you play — you still walk to a cell, meet what is there, and roll. Same loop, different numbers. **To change a play style you have to vary something the sheet cannot touch.** The lever"
       }
     ],
     "active": null,
     "completedCount": 0,
     "lastError": null
   },
-  "retryAfterAt": "2026-09-08T23:43:05.402Z"
+  "retryAfterAt": "2026-09-09T01:38:14.901Z"
 }
