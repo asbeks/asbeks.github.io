@@ -2,7 +2,7 @@
   "version": 5,
   "cycle": 195,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-09-09T01:33:14.901Z",
+  "updatedAt": "2026-09-09T06:39:17.746Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "waiting_provider",
   "currentAgent": "CRITIC",
@@ -403,24 +403,25 @@
     "lastError": "toncenter.com returned 429"
   },
   "jobs": {
-    "status": "selected",
+    "status": "idle",
     "source": "github-public-issues",
-    "selected": {
-      "id": "github:5390080532",
-      "title": "[Bounty] [Bounty: $550] Build Script Deploys Unexpanded Templates Directly to Com.mojang",
-      "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1230",
-      "rewardUsd": 550,
-      "score": 72,
-      "summary": "### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/Senthemodder/claude-bounties/issues/6 ### 漏洞描述 / Description [Bounty: $550] Build Script Deploys Unexpanded Templates Directly to Com.mojang ### Issue Description Our development watch script (`scripts/watch.js`) uses `fs.cpSync` to mirror files directly from `source/resources/data` to the development behavior packs directory. However, Bedrock fails to load the behavior pack with syntax errors because raw JSONTE template syntax (`$extend`, `{{#each}}`) is copied directly into the game folder without being compiled by the pipeline filters. ```javascript // scripts/watch.js import fs from 'fs'; import path from 'path'; export function deployDirect(srcDir, destDir) { // Directly copies source to game folder, breaking filter pipeline: fs.cpSync(srcDir, destDir, { recursive: true, force: true }); } ``` ### Acceptance Criteria 1. Fix the deployment architecture so all intermediate build filters (JSONTE expansion, sound compilation) execute properly before files hit the game directory. 2. Ensure source files under `source/` remain unmodified while the compiled output in the game directory is 100% valid Bedrock JSON. 3. Fa"
-    },
+    "selected": null,
     "opportunities": [
       {
-        "id": "github:5390080532",
-        "title": "[Bounty] [Bounty: $550] Build Script Deploys Unexpanded Templates Directly to Com.mojang",
-        "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1230",
-        "rewardUsd": 550,
-        "score": 72,
-        "summary": "### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/Senthemodder/claude-bounties/issues/6 ### 漏洞描述 / Description [Bounty: $550] Build Script Deploys Unexpanded Templates Directly to Com.mojang ### Issue Description Our development watch script (`scripts/watch.js`) uses `fs.cpSync` to mirror files directly from `source/resources/data` to the development behavior packs directory. However, Bedrock fails to load the behavior pack with syntax errors because raw JSONTE template syntax (`$extend`, `{{#each}}`) is copied directly into the game folder without being compiled by the pipeline filters. ```javascript // scripts/watch.js import fs from 'fs'; import path from 'path'; export function deployDirect(srcDir, destDir) { // Directly copies source to game folder, breaking filter pipeline: fs.cpSync(srcDir, destDir, { recursive: true, force: true }); } ``` ### Acceptance Criteria 1. Fix the deployment architecture so all intermediate build filters (JSONTE expansion, sound compilation) execute properly before files hit the game directory. 2. Ensure source files under `source/` remain unmodified while the compiled output in the game directory is 100% valid Bedrock JSON. 3. Fa"
+        "id": "github:5387633339",
+        "title": "[Bounty: $600] Write Node.js Script to Programmatically Generate Ruby Toolset Textures from Diamond",
+        "url": "https://github.com/Senthemodder/claude-bounties/issues/7",
+        "rewardUsd": 600,
+        "score": 64,
+        "summary": "### Objective We need an automated asset generation script (`scripts/recolor-tools.js`) that takes vanilla 16x16 diamond tool textures (pickaxe, sword, axe, shovel, hoe) and programmatically recolors them into high-quality Ruby variants. ### Current Attempt (Produces flat, ugly blocks) ```javascript // scripts/recolor-tools.js import sharp from 'sharp'; export async function recolorToRuby(inputBuffer) { // Simple RGB math flattens shading and looks terrible: const image = sharp(inputBuffer); // Multiplies Red by 1.6, cuts Green/Blue by 0.3... } ``` ### Acceptance Criteria 1. Script must execute in Node.js and output authentic, hand-shaded 16x16 Jappa-style pixel art. 2. Must preserve authentic depth, specular highlights, and hue shifting rather than applying flat monochrome multipliers. 3. Handle transparent alpha masking cleanly without jagged edges."
+      },
+      {
+        "id": "github:5394429832",
+        "title": "[SMC-V2] 4H/15m 正式全期間公平回測",
+        "url": "https://github.com/xx7893405-bit/v8_project/issues/141",
+        "rewardUsd": 10000,
+        "score": 40,
+        "summary": "Parent spec: #135 Depends on: #140 ## Goal 由 Backtest Agent 唯一執行正式全期間公平回測，產生不可覆寫基準與候選產物。 ## Public seam - Approved comparison CLI and run-artifact/v1 outputs ## Acceptance - 標準 BTCUSDT USDT-M perpetual dataset manifest/fingerprint 先核對，內容未變則不重跑 data certification。 - 10,000 USD、risk-based 5%、20x、maker 0.02%、taker 0.05%，其餘 execution/cost config 完全相同。 - 比較 return、MDD、trades、win rate、Profit Factor，並輸出年度、方向、集中度摘要。 - 完整 ledger/equity 留在 Parquet，Agent 只讀 compact summary 與最多 20 筆異常樣本。 - 記錄命令、commit、dirty state、runtime、hashes、token/cache/file metrics。 - 低樣本或單一區間集中不得宣稱改善。 ## Ownership Formal execution and new immutable artifacts only. No strategy、engine、Manager state or website edits."
       },
       {
         "id": "github:5388404215",
@@ -428,15 +429,15 @@
         "url": "https://github.com/He1met/freqtrade-lab/issues/162",
         "rewardUsd": 1000,
         "score": 40,
-        "summary": "用户授权按附件实施 BTC/ETH USDT 线性永续自主研究、数据获取与调度迁移，随后明确授权预算分离、双待办调度、维护后同次承接及有界主动发现。此 Issue 统一承接，旧冻结批次和历史证据保留。 研究范围：BTC/ETH、1h、初始1x、完整Taker/滑点/真实资金费。约20%是风险目标，略超需解释；不扩张真实账户风险。1000USDT仅为研究假设，数据源暂用公开Binance USD-M，执行场所尚未确认。无密钥、敏感数据库、账户、订单、实盘或付费资源权限。优先复用原生Freqtrade和轻量文件组件，不建新平台、服务或表。 实施前审计：原工作目录cf33eb9并有用户文档，保留且使用隔离工作区。旧活跃heartbeat含现货职责；现已迁移为本永续范围，#139/#155/#161及其他币活动计划停止、历史归档。唯一freqtrade-lab-2 ACTIVE/30分钟，freqtrade-lab及automation-2 PAUSED。 已交付： - 4轮10个真实原生开发变体，0市场重试；包含方向持续性、波动风险、退出尺度、资金费/premium、主动成交转换。全部18个月历史明确为已曝光开发数据。 - carry_nonpaying开发净+80.18USDT、回撤21.45%，压力后仅+5.56且集中ETH空头，只具有限开发支持。本轮shock_rebound/flow_turn净−363.26/−348.51USDT，DD42.59%/39.66%，关闭该分支。 - 固定7小时真实自动native验收、finish、提前激活、正式确认入队已完成：7/7完整及时双币小时、0交易、LIMITED_PASS；经济结果null。原生验收1次、重试0。验收SHA c280a739fed8d96270ff11c6debfa7b041238992b99ef5a1ec38ec177a633946。 - 新追加dispatcher实际安装。固定确认可与最多一个优先探索并存，最多两个活跃机制；单writer共享锁、RUNNING/UNKNOWN占用、确认到期优先、必要数据/意图维护优先。原V3 policy、6旧任务、候选/观察器/确认19代码SHA不变。 - 原预算保留：UTC日8/周28探索变体，每3终态轮检查点；固定候选工程验收1次+明确技术重试最多1次；同候选同固定90日确认一次/2400秒。待办上限不算已消费native。 - 实际同次维护→claim→两native→finish于2026-09-09T01:10:22至01:10:35完成，全链13.190秒，observer后0.058秒领取。900秒上限+300秒维护余量未缩小。两次真实native和独立780持仓/钱包/资金费核账通过。 - 新只读状态分列确认、观察、实际计算、唯一探索及具体"
+        "summary": "用户授权按附件实施 BTC/ETH USDT 线性永续自主研究、数据获取与调度迁移，随后授权预算分离、双待办、维护后同次承接及有界主动发现。本Issue统一承接，旧冻结批次和历史证据保留。 范围：BTC/ETH、1h、初始1x、完整Taker/滑点/真实资金费；约20%为风险目标，略超需解释，不扩张实际账户风险。1000USDT只是研究假设，公开Binance USD-M为研究源，执行场所未确认。不访问密钥、敏感DB、真实账户，不下单、实盘、付费或另建平台/服务/业务表。 已完成实际迁移：原cf33eb9目录及用户文档保留，使用隔离worktree；现货#139/#155/#161与其他币活动计划停止、历史归档。唯一研究执行heartbeat freqtrade-lab-2 ACTIVE/30分钟，btc-eth保留监督职责，旧freqtrade-lab和automation-2 PAUSED。新dispatcher允许一个固定确认预约和一个优先开发探索并存，复用单writer锁，UNKNOWN占用、确认优先、必要维护及UTC日8/周28变体预算保持；每3个终态轮作检查点。原V3、候选、观察器及确认19代码SHA不变。 当前已完成5轮12个真实原生开发变体，0市场重试，所有18个月历史明确为已曝光开发证据。包括方向持续性、波动、退出尺度、资金费/premium、主动成交转换及资金费变化。carry_nonpaying净+80.18USDT、DD21.45%、压力后+5.56，仅有限开发支持；flow两对照净−363.26/−348.51，已终止。 第五轮资金费水平/变化两对照已实际完成：先无收益标签核时点和728/691个方向分歧，再冻结2对照/900秒/0重试，严格已结算可用后的首小时入场、8h持有、占用小时事件永久跳过、尾部排除。毛+608.77/+156.87USDT，完整成本后净−161.28/−473.08，DD49.47%/49.75%；变化劣化311.80USDT，按预登记停止，不倒置方向或扫持有期。自动heartbeat在02:10维护后0.052秒claim，同次完成2native及finish，整链21.234秒，原生子进程15.855秒。独立3124持仓、两ZIP、3226事件/对照、钱包与逐资金费核账PASS。新增仅10+8项定向纯检查，未重复旧回归/市场对照。 7小时真实自动工程native、finish、提前激活和正式确认预约已完成：7/7完整及时双币小时、0交易、LIMITED_PASS，经济结果null；验收1次/重试0，SHA c280a739fed8d96270ff11c6debfa7b041238992b99ef5a1ec38ec177a633946。正式确认仍carry_nonpaying，2026-09-10T00Z"
       },
       {
-        "id": "github:5390080732",
-        "title": "[Bounty] [Bounty: $850] Hitbox Collision Dropout during Rapid Contraption Kinematic Telep",
-        "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1233",
-        "rewardUsd": 850,
-        "score": 72,
-        "summary": "### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/Senthemodder/claude-bounties/issues/4 ### 漏洞描述 / Description [Bounty: $850] Hitbox Collision Dropout during Rapid Contraption Kinematic Teleportation ### System Architecture & Issue Summary In our custom physics contraption engine, players experience a severe **1-tick collision dropout** when standing on ascending or teleporting block colliders (using shulker composite assemblies). As the assembly ascends, players periodically fall through the floor into the void. ### Telemetry & Current Implementation Here is the active tick-loop responsible for updating the collider positions: ```typescript // src/physics/ContraptionKinematics.ts export function updateColliderKinematics(entity: Entity, targetPos: Vector3): void { // 1. Maintain visual camouflage entity.addEffect(\"invisibility\", 20000, { showParticles: false }); // 2. Continuous kinematic transform const smoothY = Math.floor(targetPos.y * 100) / 100; entity.teleport({ x: targetPos.x, y: smoothY, z: targetPos.z }); } ``` ### Suspected Root Cause We believe this is an asynchronous floating-point phase desync between the client-side prediction and the server-side spa"
+        "id": "github:5147529298",
+        "title": "[Bug Skip]: AssertionError: False is not true in profiler/test_profiler_xpu.py",
+        "url": "https://github.com/intel/torch-xpu-ops/issues/4959",
+        "rewardUsd": 2026,
+        "score": 40,
+        "summary": "### 🐛 Describe the bug with skip template Cases: op_ut,third_party.torch-xpu-ops.test.xpu.profiler.test_profiler_xpu.TestProfiler,test_cpu_annotation_overlap ## Errorlog ```bash (kaileiyx) gta@DUT1024PVC:~/kaileiyx/pytorch/third_party/torch-xpu-ops/test/xpu/profiler$ pytest -v test_profiler_xpu.py -k test_cpu_annotation_overlap ====================================================================================== test session starts ====================================================================================== platform linux -- Python 3.10.20, pytest-9.1.1, pluggy-1.6.0 -- /home/gta/miniforge3/envs/kaileiyx/bin/python3.10 cachedir: .pytest_cache hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase('/home/gta/kaileiyx/pytorch/third_party/torch-xpu-ops/test/xpu/profiler/.hypothesis/examples') rootdir: /home/gta/kaileiyx/pytorch configfile: pytest.ini plugins: cpp-2.3.0, flakefinder-1.1.0, xdoctest-1.3.0, rerunfailures-14.0, timeout-2.4.0, xdist-3.8.0, hypothesis-6.56.4 collected 94 items / 93 deselected / 1 selected test_profiler_xpu.py::TestProfiler::test_cpu_annotation_overlap USDT:2026-08-14 02:03:11 421306:421306 SyncActivityProfilerHandler.cpp:39] prof"
       },
       {
         "id": "github:4318279838",
@@ -445,19 +446,11 @@
         "rewardUsd": 200,
         "score": 72,
         "summary": "### Summary Add unit tests for `src.services.service_utils`, the shared utility module that powers sorting and search-filter translation across multiple v1 services. The module has two public helpers (`apply_sorting` and `_add_search_filters`) but has no direct test file — coverage is only incidental through integration tests. ## Background & Context `api/src/services/service_utils.py` exposes `apply_sorting(stmt, model, sort_order)` which translates sort orders into SQLAlchemy `asc()`/`desc()` calls. `_add_search_filters` maps the project's search filter types onto an OpenSearch query builder. The sorting helper is pure SQLAlchemy statement construction — no database required. The filter helper requires a mock `SearchQueryBuilder` but does not require running OpenSearch. Rule reference: `documentation/rules/api-services.md` (\"Extract Shared Logic to Utility Files\") and `documentation/rules/cross-domain.md` (CCP-3). ## Getting Started - File under test: `api/src/services/service_utils.py` - New test file: `api/tests/src/services/test_service_utils.py` - Types: `src.pagination.pagination_models.SortDirection`, `src.search.search_models.{Str,Bool,Int,Date}SearchFilter` - Local setup:"
-      },
-      {
-        "id": "github:5393428987",
-        "title": "Archetypes should vary the ECONOMY, not the dice — and they are where 'how much walking' stops being one global guess",
-        "url": "https://github.com/TortoiseWolfe/geolarp/issues/119",
-        "rewardUsd": 32,
-        "score": 48,
-        "summary": "Owner's question, 2026-09-08: *\"I thought classes or archetypes might include different play styles for field reporters, cartographers, photographers, etc. What other character types might influence different play styles?\"* ## What exists today There are no classes. `character.ts` has 5 attributes, **20 skills**, and **7D (21 pips)** to spend at creation — the file's own comment says twenty skills \"leaves roughly two thirds of the sheet untrained, so what a player has is a CHOICE\". `encounter.ts` has 5 kinds (monster, trader, cache, shrine, trap), each listing 3 skills that can plausibly resolve it. **So geoLARP already has archetypes — they are implicit in where 21 pips go.** A sheet with pips in Brawl/Dodge/Willpower is a different character from one with Search/Scavenge/Climb, and the encounter table already rewards that difference. ## The trap: a class that only changes dice is a pre-filled sheet If an archetype just hands out starting pips, it changes what you are GOOD AT. It does not change how you play — you still walk to a cell, meet what is there, and roll. Same loop, different numbers. **To change a play style you have to vary something the sheet cannot touch.** The lever"
       }
     ],
     "active": null,
     "completedCount": 0,
     "lastError": null
   },
-  "retryAfterAt": "2026-09-09T01:38:14.901Z"
+  "retryAfterAt": "2026-09-09T06:44:17.746Z"
 }
