@@ -2,7 +2,7 @@
   "version": 5,
   "cycle": 195,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-09-09T19:16:28.894Z",
+  "updatedAt": "2026-09-09T21:46:13.637Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "waiting_provider",
   "currentAgent": "CRITIC",
@@ -406,58 +406,58 @@
     "status": "selected",
     "source": "github-public-issues",
     "selected": {
-      "id": "github:5403615997",
-      "title": "[Bounty: $650] JSON UI: Dynamic Container Inventory Text Slicing Overflow in hud_screen.json",
-      "url": "https://github.com/Senthemodder/vat-of-dummies/issues/1",
+      "id": "github:5404802417",
+      "title": "[Bounty] [Bounty: $650] JSON UI: Dynamic Container Inventory Text Slicing Overflow in hud",
+      "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1310",
       "rewardUsd": 650,
       "score": 72,
-      "summary": "### Summary We have an inventory projection HUD module that renders live player inventory slot names dynamically above hotbar containers in Bedrock JSON UI. In ui/hud_screen.json, the text slicing binding occasionally overflows when item names exceed 16 characters, causing layout truncation and client HUD desync on mobile viewport resolutions. ### Error Trace ` [JSON UI Engine][Warning] Binding resolution failed for #inventory_text_slice in panel 'hud_custom_container_root'. [JSON UI Engine][Error] Expression '%.16s' failed: invalid binding format specifier in target namespace 'common_dialogs'. ` ### Steps to Reproduce 1. Bind item name raw AST text to a custom label within hud_screen.json. 2. Attempt string truncation using standard format bindings. 3. Observe crash or visual layout overflow when opening container screens on Pocket UI profile. ### Acceptance Criteria - Clean 16-character string truncation implemented using native JSON UI binding techniques (e.g. \binding_name: '#item_name', preserved text / string slicing rules). - Fully responsive across Desktop, Pocket, and Console GUI scales without throwing JSON UI binding warnings. - Pull request must include JSON UI definitio"
+      "summary": "### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/Senthemodder/vat-of-dummies/issues/1 ### 漏洞描述 / Description [Bounty: $650] JSON UI: Dynamic Container Inventory Text Slicing Overflow in hud_screen.json ### Summary We have an inventory projection HUD module that renders live player inventory slot names dynamically above hotbar containers in Bedrock JSON UI. In ui/hud_screen.json, the text slicing binding occasionally overflows when item names exceed 16 characters, causing layout truncation and client HUD desync on mobile viewport resolutions. ### Error Trace ` [JSON UI Engine][Warning] Binding resolution failed for #inventory_text_slice in panel 'hud_custom_container_root'. [JSON UI Engine][Error] Expression '%.16s' failed: invalid binding format specifier in target namespace 'common_dialogs'. ` ### Steps to Reproduce 1. Bind item name raw AST text to a custom label within hud_screen.json. 2. Attempt string truncation using standard format bindings. 3. Observe crash or visual layout overflow when opening container screens on Pocket UI profile. ### Acceptance Criteria - Clean 16-character string truncation implemented using native JSON UI binding techniques (e.g. \b"
     },
     "opportunities": [
       {
-        "id": "github:5403616676",
-        "title": "[Bounty: $600] Bedrock 1.26.x: Custom Block Definition Fails Schema Validation with 'minecraft:material_instances'",
-        "url": "https://github.com/Senthemodder/vat-of-dummies/issues/5",
-        "rewardUsd": 600,
-        "score": 64,
-        "summary": "### Summary When loading custom ore blocks (custom:void_crystal_ore) defined under ormat_version: \"1.21.40\", Bedrock dedicated server throws a schema validation failure on minecraft:material_instances. Specifically, multi-face directional textures fail to bind with \u0007lpha_test transparency. ### Validation Log ` [BlockSchemaValidator][Error] Failed to validate block definition 'custom:void_crystal_ore': Property 'minecraft:material_instances' contains invalid face definition '*'. Render method 'alpha_test_single_side' is unsupported under schema 1.21.40. ` ### Acceptance Criteria - Update block component definition to conform to modern Bedrock block schemas. - Correctly configure minecraft:material_instances for isotropic/face-specific rendering. - Provide sample geometry binding ensuring seamless block outline rendering. **Bounty:** bounty upon validated PR."
-      },
-      {
-        "id": "github:5403616506",
-        "title": "[Bounty: $550] Animation Controller: query.anim_time Cyclic Transition Causes Molang Watchdog Lockout",
-        "url": "https://github.com/Senthemodder/vat-of-dummies/issues/4",
+        "id": "github:5404802183",
+        "title": "[Bounty] [Bounty: $550] Animation Controller: query.anim_time Cyclic Transition Causes Mo",
+        "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1307",
         "rewardUsd": 550,
-        "score": 64,
-        "summary": "### Summary In our custom entity behavior pack, entities/boss_golem.json binds to animation controller controller.animation.boss_golem.state_machine. When transitioning between the charging and slam_attack states, a cyclic Molang evaluation on query.anim_time trips the Bedrock client Molang watchdog timer, locking up client-side entity animation rendering. ### Client Log ` [Molang][Watchdog][Error] Maximum Molang execution depth exceeded in controller 'controller.animation.boss_golem.state_machine' state 'eval_charge'. Cyclic dependency detected: query.anim_time -> state.transition -> query.anim_time. ` ### Acceptance Criteria - Refactor the animation controller transition conditions into acyclic Molang expressions. - Utilize blend transitions (\blend_transition) and discrete state flags ( ariable.state_flag) to prevent tick-level oscillation. - Ensure Molang syntax complies with Bedrock strict parser standards. **Bounty:** settled via PR merge."
+        "score": 72,
+        "summary": "### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/Senthemodder/vat-of-dummies/issues/4 ### 漏洞描述 / Description [Bounty: $550] Animation Controller: query.anim_time Cyclic Transition Causes Molang Watchdog Lockout ### Summary In our custom entity behavior pack, entities/boss_golem.json binds to animation controller controller.animation.boss_golem.state_machine. When transitioning between the charging and slam_attack states, a cyclic Molang evaluation on query.anim_time trips the Bedrock client Molang watchdog timer, locking up client-side entity animation rendering. ### Client Log ` [Molang][Watchdog][Error] Maximum Molang execution depth exceeded in controller 'controller.animation.boss_golem.state_machine' state 'eval_charge'. Cyclic dependency detected: query.anim_time -> state.transition -> query.anim_time. ` ### Acceptance Criteria - Refactor the animation controller transition conditions into acyclic Molang expressions. - Utilize blend transitions (\blend_transition) and discrete state flags ( ariable.state_flag) to prevent tick-level oscillation. - Ensure Molang syntax complies with Bedrock strict parser standards. **Bounty:** settled via PR merge. ### 积分币奖励 /"
       },
       {
-        "id": "github:5403616191",
-        "title": "[Bounty: $500] Critical: system.beforeEvents.startup Throws CommandRegistrationError on Bedrock 1.21.70",
-        "url": "https://github.com/Senthemodder/vat-of-dummies/issues/2",
+        "id": "github:5404802338",
+        "title": "[Bounty] [Bounty: $500] Critical: system.beforeEvents.startup Throws CommandRegistrationE",
+        "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1309",
         "rewardUsd": 500,
-        "score": 64,
-        "summary": "### Summary Our administrative inspection system hooks into the Bedrock Custom Command API. When registering /engine:inspect in scripts/commands/inspect.ts inside system.beforeEvents.startup, the dedicated server crashes on world initialization. ### Error Log ` [ScriptEngine][Error] Unhandled exception in system.beforeEvents.startup: TypeError: CustomCommandRegistry.registerCommand is not a function at registerInspectCommand (scripts/commands/inspect.ts:24) at startup.ts:12 ` ### Steps to Reproduce 1. Launch Bedrock Dedicated Server (BDS) 1.21.70 with @minecraft/server 2.8.0. 2. Hook custom slash command registration into system.beforeEvents.startup. 3. Server fails startup assertions and enters crash loop. ### Acceptance Criteria - Refactor custom command registration to use the correct stable @minecraft/server API signature. - Implement permission gating utilizing the standard CommandPermissionLevel enum. - Ensure commands handle both Player and Server/Console invocation contexts cleanly. **Bounty:** settled upon verification."
+        "score": 72,
+        "summary": "### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/Senthemodder/vat-of-dummies/issues/2 ### 漏洞描述 / Description [Bounty: $500] Critical: system.beforeEvents.startup Throws CommandRegistrationError on Bedrock 1.21.70 ### Summary Our administrative inspection system hooks into the Bedrock Custom Command API. When registering /engine:inspect in scripts/commands/inspect.ts inside system.beforeEvents.startup, the dedicated server crashes on world initialization. ### Error Log ` [ScriptEngine][Error] Unhandled exception in system.beforeEvents.startup: TypeError: CustomCommandRegistry.registerCommand is not a function at registerInspectCommand (scripts/commands/inspect.ts:24) at startup.ts:12 ` ### Steps to Reproduce 1. Launch Bedrock Dedicated Server (BDS) 1.21.70 with @minecraft/server 2.8.0. 2. Hook custom slash command registration into system.beforeEvents.startup. 3. Server fails startup assertions and enters crash loop. ### Acceptance Criteria - Refactor custom command registration to use the correct stable @minecraft/server API signature. - Implement permission gating utilizing the standard CommandPermissionLevel enum. - Ensure commands handle both Player and Server"
       },
       {
-        "id": "github:5403615997",
-        "title": "[Bounty: $650] JSON UI: Dynamic Container Inventory Text Slicing Overflow in hud_screen.json",
-        "url": "https://github.com/Senthemodder/vat-of-dummies/issues/1",
+        "id": "github:5404802417",
+        "title": "[Bounty] [Bounty: $650] JSON UI: Dynamic Container Inventory Text Slicing Overflow in hud",
+        "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1310",
         "rewardUsd": 650,
         "score": 72,
-        "summary": "### Summary We have an inventory projection HUD module that renders live player inventory slot names dynamically above hotbar containers in Bedrock JSON UI. In ui/hud_screen.json, the text slicing binding occasionally overflows when item names exceed 16 characters, causing layout truncation and client HUD desync on mobile viewport resolutions. ### Error Trace ` [JSON UI Engine][Warning] Binding resolution failed for #inventory_text_slice in panel 'hud_custom_container_root'. [JSON UI Engine][Error] Expression '%.16s' failed: invalid binding format specifier in target namespace 'common_dialogs'. ` ### Steps to Reproduce 1. Bind item name raw AST text to a custom label within hud_screen.json. 2. Attempt string truncation using standard format bindings. 3. Observe crash or visual layout overflow when opening container screens on Pocket UI profile. ### Acceptance Criteria - Clean 16-character string truncation implemented using native JSON UI binding techniques (e.g. \binding_name: '#item_name', preserved text / string slicing rules). - Fully responsive across Desktop, Pocket, and Console GUI scales without throwing JSON UI binding warnings. - Pull request must include JSON UI definitio"
+        "summary": "### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/Senthemodder/vat-of-dummies/issues/1 ### 漏洞描述 / Description [Bounty: $650] JSON UI: Dynamic Container Inventory Text Slicing Overflow in hud_screen.json ### Summary We have an inventory projection HUD module that renders live player inventory slot names dynamically above hotbar containers in Bedrock JSON UI. In ui/hud_screen.json, the text slicing binding occasionally overflows when item names exceed 16 characters, causing layout truncation and client HUD desync on mobile viewport resolutions. ### Error Trace ` [JSON UI Engine][Warning] Binding resolution failed for #inventory_text_slice in panel 'hud_custom_container_root'. [JSON UI Engine][Error] Expression '%.16s' failed: invalid binding format specifier in target namespace 'common_dialogs'. ` ### Steps to Reproduce 1. Bind item name raw AST text to a custom label within hud_screen.json. 2. Attempt string truncation using standard format bindings. 3. Observe crash or visual layout overflow when opening container screens on Pocket UI profile. ### Acceptance Criteria - Clean 16-character string truncation implemented using native JSON UI binding techniques (e.g. \b"
       },
       {
-        "id": "github:5403665604",
-        "title": "Bounty plan: improve unit test framework documentation (continue #823, $200)",
-        "url": "https://github.com/causify-ai/helpers/issues/1387",
-        "rewardUsd": 823,
-        "score": 70,
-        "summary": "## Bounty and availability I would like to take the **$200 \"Improve documentation of unit test framework\"** bounty (the unclaimed slot continuing #823, listed in the public bounty sheet with an empty Status/Github user). I checked the sheet before posting: the row is not marked assigned, paid, or associated with a GitHub user, and I did not find an open plan issue for this specific task. ## Understanding of the current state #823 improved the unit test framework docs (merged PR, plus follow-up feedback that more iterations are needed to get the docs to the right place). The remaining gaps per the issue and maintainer feedback: - `helpers_root/docs/tools/unit_test/all.run_unit_tests.how_to_guide.md` and `all.write_unit_tests.how_to_guide.md` need to fully reflect the current behavior of `helpers/hunit_test_utils.py`, `helpers/hunit_test.py`, `helpers/unit_test_template.py` and `helpers/template_unit_test.py` - Architecture explanation with diagrams (mermaid), following the Diataxis style used in `docs/documentation_meta/all.diataxis.explanation.md` - Consolidating the redundancy between `unit_test_template.py` and `template_unit_test.py` (documenting the canonical entry point) ## Bo"
+        "id": "github:5350817308",
+        "title": "[RADAR] High-value blockchain bounty discovery",
+        "url": "https://github.com/markabramov1993/arbitr/issues/2",
+        "rewardUsd": 2026,
+        "score": 42,
+        "summary": "# Blockchain bounty radar UTC: 2026-09-09T21:16:39.744166+00:00 ## High-value verified/discovery hits (>=500 nominal) - GitHub | nominal 1500 | UPSTREAM_UNASSIGNED | https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1301 | [Bounty] [Bounty: $1,500] Critical: Missing Account Ownership Validation in Anchor CPI Di - GitHub | nominal 1400 | UPSTREAM_UNASSIGNED | https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1304 | [Bounty] [Bounty: $1,400] Critical: Reentrancy and Share Inflation in ERC-4626 Deposit Me - GitHub | nominal 1200 | UPSTREAM_UNASSIGNED | https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1300 | [Bounty] [Bounty: $1,200] High: Integer Overflow in Staking Reward Accrual Engine - GitHub | nominal 1100 | UPSTREAM_UNASSIGNED | https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1303 | [Bounty] [Bounty: $1,100] High: Slippage Rounding Error in Flash Loan Fee Calculation - GitHub | nominal 950 | UPSTREAM_UNASSIGNED | https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1302 | [Bounty] [Bounty: $950] Medium: Unchecked Return Value in ERC-20 Transfer Callback - GitHub | nominal 800 | UPSTREAM_UNASSIGNED | https://github.com/z"
+      },
+      {
+        "id": "github:5404801661",
+        "title": "[Bounty] [Bounty: $1,500] Critical: Missing Account Ownership Validation in Anchor CPI Di",
+        "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1301",
+        "rewardUsd": 1500,
+        "score": 72,
+        "summary": "### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/Senthemodder/solana-anchor-runtime/issues/1 ### 漏洞描述 / Description [Bounty: $1,500] Critical: Missing Account Ownership Validation in Anchor CPI Dispatcher ### Severity: Critical ### Reward: ,500 USDC (Escrow Locked) ### Description In programs/core/src/instructions/dispatcher.rs, deserializing user-supplied AccountInfo before invoking Cross-Program Invocations (CPI) omits validating \u0007ccount.owner == expected_program_id. An attacker can pass a counterfeit state account to mint unbacked synthetic liquidity. ### Requirements - Replace raw AccountInfo with typed Anchor Account<'info, T> wrappers. - Enforce strict has_one constraint validations on vault authority PDA. - Deliver passing integration test in ests/dispatcher.ts. **Bounty Settlement:** Release upon PR merge and gateway deliverable verification. ### 积分币奖励 / Coin Reward 1875 coins ### 真实赏金（USD）/ Real Reward $1,500 ### 难度 / Difficulty Medium ### 认领方式 评论 `/claim` 锁定任务 24h ### 兑换说明 > 查看 [REWARD_POLICY.md](REWARD_POLICY.md) 了解兑换规则"
       }
     ],
     "active": null,
     "completedCount": 0,
     "lastError": null
   },
-  "retryAfterAt": "2026-09-09T19:21:28.894Z"
+  "retryAfterAt": "2026-09-09T21:51:13.637Z"
 }
