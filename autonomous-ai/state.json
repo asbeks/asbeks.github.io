@@ -2,7 +2,7 @@
   "version": 5,
   "cycle": 195,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-09-10T15:19:11.708Z",
+  "updatedAt": "2026-09-10T18:35:14.197Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "waiting_provider",
   "currentAgent": "CRITIC",
@@ -416,41 +416,41 @@
         "summary": "The WebSocket support in `fastapi/fastapi/websockets.py` lacks a built-in heartbeat/ping mechanism to detect stale connections. ### Implementation - Add a `WebSocketWithHeartbeat` class in `fastapi/fastapi/websockets.py` that wraps the existing WebSocket - The class should send ping frames at a configurable interval, default 30 seconds - If no pong is received within a timeout period, default 10 seconds, the connection should be closed with code 1001 - Add an `on_disconnect` callback parameter that fires when the connection drops - Track connection duration and message count as properties on the instance ### Acceptance Criteria - Ping frames are sent at the configured interval - Connections are closed when pong timeout is exceeded - on_disconnect callback receives the close code and connection duration - connection_duration and message_count properties are accurate - Default ping interval and pong timeout can be overridden per connection - WebSocket connections without heartbeat still work as before - Include agent name and [ FastAPI ] in your PR title - Add a `_contributor.json` file to the directory containing your main changes. It must contain: `{\"identity\": \"your name\", \"runtim"
       },
       {
-        "id": "github:5379392801",
-        "title": "x402: paid path is unreachable — facilitator NXDOMAIN, 1e6× price multiplier, Authorization vs X-API-Key (reported by @s6pa1rta3n-lab, bounty #16870)",
-        "url": "https://github.com/Scottcjn/bottube/issues/2210",
-        "rewardUsd": 16870,
+        "id": "github:5415826401",
+        "title": "[radar] SN open bounty 2026-09-10T18:20",
+        "url": "https://github.com/relayhop/sn-monetization-runtime/issues/841",
+        "rewardUsd": 2026,
+        "score": 44,
+        "summary": "New SN OPEN_BOUNTY detected: ``` 1567486 math 2 5944 700000 25 2.0 48657 15192 recent@math|top@math OPEN_BOUNTY,HOT,SIGNAL [Math Puzzle] Does every sequence terminate in a loop? 1566212 news 2 1259 1000 6 28.3 51481 4215 recent@news OPEN_BOUNTY,HOT,SELF_POST_OPP Iceberg Ahead - Finding the small news story before it changes the world ```"
+      },
+      {
+        "id": "github:4933179396",
+        "title": "$5,000 clean-room reproduction bounty: Bernstein obstacle and curved Hertz results",
+        "url": "https://github.com/DomTheDeveloper/crl/issues/103",
+        "rewardUsd": 5000,
         "score": 54,
-        "summary": "Reported by @s6pa1rta3n-lab in rustchain-bounties#16871 (30 RTC paid). Verified by maintainer 2026-09-07. 1. **Facilitator hostname does not resolve.** `FACILITATOR_URL` points at `x402-facilitator.cdp.coinbase.com`, which is NXDOMAIN (checked from node1). Any valid `X-PAYMENT` therefore cannot be verified/settled; the report shows the request path ending in a 500. Nobody has ever completed a paid call. 2. **Price is off by 1,000,000×.** The 402 body for `/api/premium/videos` advertises `maxAmountRequired: \"10000000000\"` = 10,000 USDC. Intended price is 0.01 USDC (10,000 atomic units); the atomic conversion is applied to an already-atomic value. 3. **Auth header inconsistency.** `POST /api/agents/me/coinbase-wallet` reads `Authorization: Bearer <key>` (bottube_x402.py ~L172/198) while CORS advertises `X-API-Key`, which is what the rest of the API uses; sending `X-API-Key` returns 401. 4. *(unconfirmed)* `/api/x402/info` reports `network: eip155:8453` while paywall verification compares against `base`. Fix order: 1 (or point at the current CDP facilitator URL), 2, 3. Add a regression test that asserts `maxAmountRequired` for a 0.01 USDC price is `10000`."
+        "summary": "## Goal Obtain a genuinely independent third-party reproduction of the corrected computational claims associated with the Bernstein obstacle package. ## Corrected frozen target - Branch: `replication/bernstein-obstacle-v2-corrected` - Commit: `f2bd41f19ff5afbcca8a23f9afdcdf084364dae4` - Correction PR: #106 - Existing in-project reproduction workflow: `Bernstein obstacle full reproduction` The branch is immutable for this replication challenge. The original `replication/bernstein-obstacle-v1` branch remains available for provenance but is not the target for new reproductions. ## Required clean-room protocol 1. Use a machine/account not controlled by the repository owner. 2. Clone the corrected frozen branch without accepting generated result files as evidence. 3. Run the one-command reproduction workflow or independently reconstruct the same tests. 4. Record OS, Python, BLAS/LAPACK, package versions and hardware. 5. Preserve stdout/stderr, generated CSV/JSON files and SHA-256 digests. 6. Report every tolerance pass/failure, including: - simplex certificate stress tests; - face-orientation/conformity tests; - clipping projection/KKT tests; - codimension-one strip-scaling fit; - cut-e"
       },
       {
-        "id": "github:5412222231",
-        "title": "T9B DonchianLong: IOST/USDT 2026-09-09",
-        "url": "https://github.com/brasdor/UngerFink-TREND/issues/47",
-        "rewardUsd": 2026,
-        "score": 40,
-        "summary": "## T9B Paper Signal -- DonchianLong_UniverseV2_ExitV2 | Field | Value | |---|---| | **Symbol** | `IOST/USDT` | | **Date** | 2026-09-09 | | **Status** | ACCEPTED -- paper entry placed in state.json | | **Entry price (close)** | 0.001886 | | **Donchian breakout level** | 0.001189 | | **Initial stop (ATR x2)** | 0.0014901 | | **ATR at signal** | 0.00019795 | | **EMA200** | 0.00099058 | --- ### Config ``` System : DonchianLong UniverseV2 ExitV2 -- T9B Paper Engine Entry : Donchian N=20 breakout above EMA200 Stop : ATR(14) x 2.0 below entry close Exit : Donchian N=10 OR Chandelier (ACT=6R trail=5.0xATR) Risk : 0.25% of paper equity per trade Max pos : 8 concurrent ``` _Automated paper trading signal. No real trade was placed._ _Do not act on this signal until T9B has run for at least 3 months._"
+        "id": "github:5287203806",
+        "title": "[T03] Notifications on state changes (email, via Resend)",
+        "url": "https://github.com/Astrea-Payouts/astrea/issues/72",
+        "rewardUsd": 27,
+        "score": 56,
+        "summary": "### T03 — Notifications on state changes (email, via Resend) | Field | Value | |-------|-------| | **Code** | T03 | | **Phase** | Phase 4 — trust & edge cases | | **Size** | M — GFI-able parts (individual trigger implementations, once the Resend wiring lands, are independently pickable) | | **Depends on** | #11 (E03, event/prize state machine — the state changes this listens to), #27 (S07, optional email field on Wallet). **Also requires Astrea owning a verified custom domain** (SPF/DKIM/DMARC) — a cheap, no-dependency task with no GitHub issue of its own; see ADR-007 | | **Money path** | No | **Executive summary** Email notifications triggered from `services/core-go` on state changes, sent via [Resend](https://resend.com)'s HTTP API per ADR-007 — not Nodemailer, since Go calling back into `apps/web` just to send an email is an extra hop with no benefit. Covers the full trigger list in ADR-007 across participants, organizers, judges, the resolver, and Astrea's own internal alerts. **Product context** [docs/architecture.md](https://github.com/Astrea-Payouts/astrea/blob/develop/docs/architecture.md) ADR-007 is the complete spec for this issue: the provider choice and why, the domain "
       },
       {
-        "id": "github:5295460477",
-        "title": "리뷰 보상 정책 재설계 — 발행 재개 전 방향 확정",
-        "url": "https://github.com/LCNINE/almondyoung-server/issues/767",
-        "rewardUsd": 2026,
-        "score": 40,
-        "summary": "> 아래 「아이디어 후보」는 **예시이고 확정안이 아니다.** 방향을 고르는 게 이 이슈의 목적이고, 구현 스펙은 그 다음이다. ## 현황 (코드 기준) — ⚠️ 2026-09-10 정정, PR #801·#817 MERGED 로 아래 서술은 낡았다 - **더 이상 주석으로 막혀 있지 않다.** `apps/ugc-service/src/reviews/services/reviews.service.ts` 의 「카프카 이벤트 발행 임시로 막음」 주석은 사라졌다(전수 검색 0건). 지금은 리뷰 insert → 자격 소비 → **규칙 판정(`ReviewRewardGrantService.evaluateForNewReview`) → 지급 원장(`review_reward_grants`) → 적립 명령(`enqueueEarnPointsCommand`)** 이 `create()` 의 `inTx` **한 트랜잭션** 안에서 전부 처리된다. - 아래 후보 중 **A(주간 베스트)·C(정률+캡, `everyNthReview`)·E(누적/등급형)·F(비금전)** 가 아이디어 단계를 지나 **스키마가 됐다**: `apps/ugc-service/src/db/schema.ts` 의 `reviewRewardTriggerEnum`(`ON_REVIEW_CREATED`|`WEEKLY_BEST`)·`reviewRewardKindEnum`(`NONE`|`POINT_FIXED`|`POINT_RATE`|`BADGE`)·`reviewBestSelectionStatusEnum`, `reviews/rewards/reward-rule.types.ts` 의 `everyNthReview` 필드. `review_reward_rules.active` 는 **기본값 false** — 스키마 주석이 이유를 그대로 적는다: \"활성 규칙이 한 건도 없으면 아무 보상도 나가지 않는다\". - 옛 flat-rate 테이블 `review_reward_policies`(TEXT/PHOTO 정액)는 남아 있지만, 새 규칙 엔진(`review_reward_rules`/`review_reward_grants`)이 대신한다. - 작성 자격: `review_eligibilities` (주문 라인 1건 = 리뷰 1건, `consumed_at` 으로 1회 소비) — 이 부분은 그대로다. - 추천/반응은 이미 쌓인다: `reactions` 테이블 (`target_type='review'`, `react"
-      },
-      {
-        "id": "github:5413361808",
-        "title": "[radar] SN open bounty 2026-09-10T14:19",
-        "url": "https://github.com/relayhop/sn-monetization-runtime/issues/837",
-        "rewardUsd": 2026,
-        "score": 36,
-        "summary": "New SN OPEN_BOUNTY detected: ``` 1566212 news 2 1259 1000 6 24.3 51481 4215 recent@news OPEN_BOUNTY,HOT,SELF_POST_OPP Iceberg Ahead - Finding the small news story before it changes the world ```"
+        "id": "github:2208865682",
+        "title": "Crafting a Comprehensive Tutorial for Vectara Chat",
+        "url": "https://github.com/lablab-ai/community-content/issues/462",
+        "rewardUsd": 60,
+        "score": 74,
+        "summary": "We're seeking talented individual to develop a comprehensive tutorial for Vectara Chat, a cutting-edge conversational AI platform. If you're passionate about AI and love sharing knowledge, this opportunity is for you! ### The Plan and Structure of the Tutorial (recommended) Here's an outline of what we're looking for in the tutorial: **Introduction to Vectara Chat** **Getting Started with Vectara Chat** **Building a Chatbot with Vectara** **Enhancing Chatbot Intelligence** **Deploying and Testing Chatbots** **Conclusion / Tips for Hackathon participants on use cases for the models** Focus on original, personalized content with descriptive details and code samples as needed. Feel free to use your personal author style, with wording \"In this tutorial I will show you...\", \"this time I want to show you...\" etc. Refer to our [Tutorial Guidelines](https://github.com/lablab-ai/community-content/blob/main/tutorials/README.md) for requirements. If you're interested in creating this tutorial, please submit a proposal outlining your approach, including a breakdown of the topics you plan to cover and any additional resources or support you may need. We're excited to work with passionate freela"
       }
     ],
     "active": null,
     "completedCount": 0,
     "lastError": null
   },
-  "retryAfterAt": "2026-09-10T15:24:11.708Z"
+  "retryAfterAt": "2026-09-10T18:40:14.197Z"
 }
