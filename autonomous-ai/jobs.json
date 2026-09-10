@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-09-10T18:35:11.879Z",
+  "updatedAt": "2026-09-10T21:12:05.576Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -44,112 +44,6 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5415826401",
-      "source": "github",
-      "title": "[radar] SN open bounty 2026-09-10T18:20",
-      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/841",
-      "repositoryApiUrl": "https://api.github.com/repos/relayhop/sn-monetization-runtime",
-      "rewardUsd": 2026,
-      "score": 44,
-      "labels": [
-        "radar",
-        "sn",
-        "bounty"
-      ],
-      "commentCount": 2,
-      "updatedAt": "2026-09-10T18:29:45Z",
-      "summary": "New SN OPEN_BOUNTY detected: ``` 1567486 math 2 5944 700000 25 2.0 48657 15192 recent@math|top@math OPEN_BOUNTY,HOT,SIGNAL [Math Puzzle] Does every sequence terminate in a loop? 1566212 news 2 1259 1000 6 28.3 51481 4215 recent@news OPEN_BOUNTY,HOT,SELF_POST_OPP Iceberg Ahead - Finding the small news story before it changes the world ```",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 115,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 2,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 2026,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:4933179396",
-      "source": "github",
-      "title": "$5,000 clean-room reproduction bounty: Bernstein obstacle and curved Hertz results",
-      "url": "https://github.com/DomTheDeveloper/crl/issues/103",
-      "repositoryApiUrl": "https://api.github.com/repos/DomTheDeveloper/crl",
-      "rewardUsd": 5000,
-      "score": 54,
-      "labels": [
-        "help wanted"
-      ],
-      "commentCount": 7,
-      "updatedAt": "2026-09-10T18:28:09Z",
-      "summary": "## Goal Obtain a genuinely independent third-party reproduction of the corrected computational claims associated with the Bernstein obstacle package. ## Corrected frozen target - Branch: `replication/bernstein-obstacle-v2-corrected` - Commit: `f2bd41f19ff5afbcca8a23f9afdcdf084364dae4` - Correction PR: #106 - Existing in-project reproduction workflow: `Bernstein obstacle full reproduction` The branch is immutable for this replication challenge. The original `replication/bernstein-obstacle-v1` branch remains available for provenance but is not the target for new reproductions. ## Required clean-room protocol 1. Use a machine/account not controlled by the repository owner. 2. Clone the corrected frozen branch without accepting generated result files as evidence. 3. Run the one-command reproduction workflow or independently reconstruct the same tests. 4. Record OS, Python, BLAS/LAPACK, package versions and hardware. 5. Preserve stdout/stderr, generated CSV/JSON files and SHA-256 digests. 6. Report every tolerance pass/failure, including: - simplex certificate stress tests; - face-orientation/conformity tests; - clipping projection/KKT tests; - codimension-one strip-scaling fit; - cut-e",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 107,
-      "survivalEligible": false,
-      "eligibilityReason": "Competition is too high for bootstrap mode.",
-      "competition": {
-        "comments": 7,
-        "attemptSignals": 0,
-        "risk": "medium"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 5000,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5287203806",
-      "source": "github",
-      "title": "[T03] Notifications on state changes (email, via Resend)",
-      "url": "https://github.com/Astrea-Payouts/astrea/issues/72",
-      "repositoryApiUrl": "https://api.github.com/repos/Astrea-Payouts/astrea",
-      "rewardUsd": 27,
-      "score": 56,
-      "labels": [
-        "help wanted",
-        "phase: trust-edge-cases",
-        "size: M"
-      ],
-      "commentCount": 0,
-      "updatedAt": "2026-09-09T22:42:53Z",
-      "summary": "### T03 — Notifications on state changes (email, via Resend) | Field | Value | |-------|-------| | **Code** | T03 | | **Phase** | Phase 4 — trust & edge cases | | **Size** | M — GFI-able parts (individual trigger implementations, once the Resend wiring lands, are independently pickable) | | **Depends on** | #11 (E03, event/prize state machine — the state changes this listens to), #27 (S07, optional email field on Wallet). **Also requires Astrea owning a verified custom domain** (SPF/DKIM/DMARC) — a cheap, no-dependency task with no GitHub issue of its own; see ADR-007 | | **Money path** | No | **Executive summary** Email notifications triggered from `services/core-go` on state changes, sent via [Resend](https://resend.com)'s HTTP API per ADR-007 — not Nodemailer, since Go calling back into `apps/web` just to send an email is an extra hop with no benefit. Covers the full trigger list in ADR-007 across participants, organizers, judges, the resolver, and Astrea's own internal alerts. **Product context** [docs/architecture.md](https://github.com/Astrea-Payouts/astrea/blob/develop/docs/architecture.md) ADR-007 is the complete spec for this issue: the provider choice and why, the domain ",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 100,
-      "survivalEligible": false,
-      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
-      "competition": {
-        "comments": 0,
-        "attemptSignals": 0,
-        "risk": "low"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 27,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
       "id": "github:2208865682",
       "source": "github",
       "title": "Crafting a Comprehensive Tutorial for Vectara Chat",
@@ -182,73 +76,6 @@
       "realMoneyEligible": true,
       "economicValueUsd": 60,
       "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5408446923",
-      "source": "github",
-      "title": "[Bounty] [Bounty: $700] Deep Recursive Generic Type Solver Fails Invariant Fuzzing in src",
-      "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1332",
-      "repositoryApiUrl": "https://api.github.com/repos/zhangjiayang6835-cyber/bounty-plaza",
-      "rewardUsd": 700,
-      "score": 54,
-      "labels": [
-        "bounty",
-        "real"
-      ],
-      "commentCount": 21,
-      "updatedAt": "2026-09-10T18:14:02Z",
-      "summary": "### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/Senthemodder/aquarium-of-gullibles/issues/5 ### 漏洞描述 / Description [Bounty: $700] Deep Recursive Generic Type Solver Fails Invariant Fuzzing in src/types/state.ts ### Bounty: USDC (Escrow Locked) ### Description When compiling src/types/state.ts, the TypeScript compiler throws: ` Error TS2589: Type instantiation is excessively deep and possibly infinite. ` ### Requirements - Refactor DeepInfiniteResolve<T> to achieve complete bidirectional state unwrapping across cyclic StateGraphNode topologies without triggering compiler recursion depth limits. - pm run build must complete cleanly with exit code 0. - All tests in est/verify.js must pass. **Payout Settlement:** Release upon PR merge. ### 积分币奖励 / Coin Reward 875 coins ### 真实赏金（USD）/ Real Reward $700 ### 难度 / Difficulty Medium ### 认领方式 评论 `/claim` 锁定任务 24h ### 兑换说明 > 查看 [REWARD_POLICY.md](REWARD_POLICY.md) 了解兑换规则",
-      "state": "candidate",
-      "payoutConfidence": 0.5,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 2,
-      "fundedBountySignal": false,
-      "fastCashScore": 78,
-      "survivalEligible": false,
-      "eligibilityReason": "Competition is too high for bootstrap mode.",
-      "competition": {
-        "comments": 21,
-        "attemptSignals": 0,
-        "risk": "high"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 700,
-      "requiresPreclaimOrIdentity": false
-    },
-    {
-      "id": "github:5322621973",
-      "source": "github",
-      "title": "PICKUP-SPATIAL-001 — Surface loose-resource auto-pickup respects stable-world obstruction",
-      "url": "https://github.com/KevinRabbe/underworld/issues/513",
-      "repositoryApiUrl": "https://api.github.com/repos/KevinRabbe/underworld",
-      "rewardUsd": 507,
-      "score": 30,
-      "labels": [],
-      "commentCount": 27,
-      "updatedAt": "2026-09-10T18:26:17Z",
-      "summary": "ID: PICKUP-SPATIAL-001 Status: **PLANNED — FIRST-BIOME SURFACE PICKUP SPATIAL CORRECTNESS / IMPLEMENTATION WIP=0** Priority: P1 future first-Biome/Phase-2 Survival composition Category: Survival / Surface Pickups / Spatial Collection / World Runtime Product direction: #470 First-biome harvest/acquisition profile: #500 Bootstrap: #496 Pickup rejection/result feedback: #426 Generated Overworld stable collision/currentness: #512 Semantic stable-world query roles: #509 Committed Building collision/query: #495 Building placement: #492 Inventory transaction authority: accepted InventoryTransactionService / SurfaceHarvestInventoryService Generated world identity/depletion: accepted Surface StableId/WorldDelta authority Integrated acceptance: #499 Scale authority: #369 Board/roadmap: #33/#405 ## Why this card exists Exact-source audit of `main@77df1a52f759520aa3fc41a5773ec6bfaf1a8059` confirms loose branch/Loose Stone collection is a separate proximity-only path from creature pending rewards. Current behavior: ```text PrototypeSurvivalSettings pickup_collect_radius = 1.5m pickup_collect_interval = 0.15s PrototypeSurvivalController._process() -> collect_nearby_pickups_at(Player global posit",
-      "state": "candidate",
-      "payoutConfidence": 0.35,
-      "autonomyFit": 1,
-      "requiresHumanGate": false,
-      "requiresSpecialHardware": false,
-      "estimatedHoursBand": 4,
-      "complexity": 0,
-      "fundedBountySignal": false,
-      "fastCashScore": 76,
-      "survivalEligible": false,
-      "eligibilityReason": "Competition is too high for bootstrap mode.",
-      "competition": {
-        "comments": 27,
-        "attemptSignals": 0,
-        "risk": "high"
-      },
-      "realMoneyEligible": true,
-      "economicValueUsd": 507,
-      "requiresPreclaimOrIdentity": false
     }
   ],
   "selected": null,
@@ -261,7 +88,7 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:2208865682\",\"rewardUsd\":60,\"fastCashScore\":89,\"updatedAt\":\"2026-09-09T11:11:24Z\",\"competition\":{\"comments\":10,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4451709275\",\"rewardUsd\":180,\"fastCashScore\":124,\"updatedAt\":\"2026-09-10T08:16:22Z\",\"competition\":{\"comments\":15,\"attemptSignals\":1,\"risk\":\"medium\"}},{\"id\":\"github:4933179396\",\"rewardUsd\":5000,\"fastCashScore\":107,\"updatedAt\":\"2026-09-10T18:28:09Z\",\"competition\":{\"comments\":7,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5287203806\",\"rewardUsd\":27,\"fastCashScore\":100,\"updatedAt\":\"2026-09-09T22:42:53Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5322621973\",\"rewardUsd\":507,\"fastCashScore\":76,\"updatedAt\":\"2026-09-10T18:26:17Z\",\"competition\":{\"comments\":27,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:5408446923\",\"rewardUsd\":700,\"fastCashScore\":78,\"updatedAt\":\"2026-09-10T18:14:02Z\",\"competition\":{\"comments\":21,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:5415826401\",\"rewardUsd\":2026,\"fastCashScore\":115,\"updatedAt\":\"2026-09-10T18:29:45Z\",\"competition\":{\"comments\":2,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:2208865682\",\"rewardUsd\":60,\"fastCashScore\":89,\"updatedAt\":\"2026-09-09T11:11:24Z\",\"competition\":{\"comments\":10,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4451709275\",\"rewardUsd\":180,\"fastCashScore\":124,\"updatedAt\":\"2026-09-10T08:16:22Z\",\"competition\":{\"comments\":15,\"attemptSignals\":1,\"risk\":\"medium\"}},{\"id\":\"github:4644823208\",\"rewardUsd\":10,\"fastCashScore\":66,\"updatedAt\":\"2026-09-10T21:05:53Z\",\"competition\":{\"comments\":24,\"attemptSignals\":0,\"risk\":\"high\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
@@ -274,10 +101,19 @@
     "minPayoutConfidence": 0.8,
     "competitionRequired": "low",
     "rejectedFakeRevenueCount": 0,
-    "rejectedAlreadyPaidCount": 0,
+    "rejectedAlreadyPaidCount": 1,
     "rejectedIdentityGateCount": 0
   },
   "economicallyRejected": [
+    {
+      "id": "github:4644823208",
+      "title": "[BOUNTY: 10 RTC] Proof-of-Antiquity Explainer — Diagram, Infographic, or 60s Video",
+      "rewardUsd": 10,
+      "reasons": [
+        "already_rewarded_or_paid"
+      ],
+      "rejectedAt": "2026-09-10T21:12:05.530Z"
+    },
     {
       "id": "github:5251241758",
       "title": "[BOUNTY ROUND] Distribution Packages — agents build it, humans publish it (YouTube, Shorts, syndication) — 15-60 RTC",
@@ -617,15 +453,6 @@
         "already_rewarded_or_paid"
       ],
       "rejectedAt": "2026-09-02T17:19:40.498Z"
-    },
-    {
-      "id": "github:4644823208",
-      "title": "[BOUNTY: 10 RTC] Proof-of-Antiquity Explainer — Diagram, Infographic, or 60s Video",
-      "rewardUsd": 10,
-      "reasons": [
-        "already_rewarded_or_paid"
-      ],
-      "rejectedAt": "2026-09-02T04:32:01.096Z"
     },
     {
       "id": "github:5317863972",

@@ -2,7 +2,7 @@
   "version": 5,
   "cycle": 195,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-09-10T18:35:14.197Z",
+  "updatedAt": "2026-09-10T21:12:07.817Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "waiting_provider",
   "currentAgent": "CRITIC",
@@ -416,30 +416,6 @@
         "summary": "The WebSocket support in `fastapi/fastapi/websockets.py` lacks a built-in heartbeat/ping mechanism to detect stale connections. ### Implementation - Add a `WebSocketWithHeartbeat` class in `fastapi/fastapi/websockets.py` that wraps the existing WebSocket - The class should send ping frames at a configurable interval, default 30 seconds - If no pong is received within a timeout period, default 10 seconds, the connection should be closed with code 1001 - Add an `on_disconnect` callback parameter that fires when the connection drops - Track connection duration and message count as properties on the instance ### Acceptance Criteria - Ping frames are sent at the configured interval - Connections are closed when pong timeout is exceeded - on_disconnect callback receives the close code and connection duration - connection_duration and message_count properties are accurate - Default ping interval and pong timeout can be overridden per connection - WebSocket connections without heartbeat still work as before - Include agent name and [ FastAPI ] in your PR title - Add a `_contributor.json` file to the directory containing your main changes. It must contain: `{\"identity\": \"your name\", \"runtim"
       },
       {
-        "id": "github:5415826401",
-        "title": "[radar] SN open bounty 2026-09-10T18:20",
-        "url": "https://github.com/relayhop/sn-monetization-runtime/issues/841",
-        "rewardUsd": 2026,
-        "score": 44,
-        "summary": "New SN OPEN_BOUNTY detected: ``` 1567486 math 2 5944 700000 25 2.0 48657 15192 recent@math|top@math OPEN_BOUNTY,HOT,SIGNAL [Math Puzzle] Does every sequence terminate in a loop? 1566212 news 2 1259 1000 6 28.3 51481 4215 recent@news OPEN_BOUNTY,HOT,SELF_POST_OPP Iceberg Ahead - Finding the small news story before it changes the world ```"
-      },
-      {
-        "id": "github:4933179396",
-        "title": "$5,000 clean-room reproduction bounty: Bernstein obstacle and curved Hertz results",
-        "url": "https://github.com/DomTheDeveloper/crl/issues/103",
-        "rewardUsd": 5000,
-        "score": 54,
-        "summary": "## Goal Obtain a genuinely independent third-party reproduction of the corrected computational claims associated with the Bernstein obstacle package. ## Corrected frozen target - Branch: `replication/bernstein-obstacle-v2-corrected` - Commit: `f2bd41f19ff5afbcca8a23f9afdcdf084364dae4` - Correction PR: #106 - Existing in-project reproduction workflow: `Bernstein obstacle full reproduction` The branch is immutable for this replication challenge. The original `replication/bernstein-obstacle-v1` branch remains available for provenance but is not the target for new reproductions. ## Required clean-room protocol 1. Use a machine/account not controlled by the repository owner. 2. Clone the corrected frozen branch without accepting generated result files as evidence. 3. Run the one-command reproduction workflow or independently reconstruct the same tests. 4. Record OS, Python, BLAS/LAPACK, package versions and hardware. 5. Preserve stdout/stderr, generated CSV/JSON files and SHA-256 digests. 6. Report every tolerance pass/failure, including: - simplex certificate stress tests; - face-orientation/conformity tests; - clipping projection/KKT tests; - codimension-one strip-scaling fit; - cut-e"
-      },
-      {
-        "id": "github:5287203806",
-        "title": "[T03] Notifications on state changes (email, via Resend)",
-        "url": "https://github.com/Astrea-Payouts/astrea/issues/72",
-        "rewardUsd": 27,
-        "score": 56,
-        "summary": "### T03 — Notifications on state changes (email, via Resend) | Field | Value | |-------|-------| | **Code** | T03 | | **Phase** | Phase 4 — trust & edge cases | | **Size** | M — GFI-able parts (individual trigger implementations, once the Resend wiring lands, are independently pickable) | | **Depends on** | #11 (E03, event/prize state machine — the state changes this listens to), #27 (S07, optional email field on Wallet). **Also requires Astrea owning a verified custom domain** (SPF/DKIM/DMARC) — a cheap, no-dependency task with no GitHub issue of its own; see ADR-007 | | **Money path** | No | **Executive summary** Email notifications triggered from `services/core-go` on state changes, sent via [Resend](https://resend.com)'s HTTP API per ADR-007 — not Nodemailer, since Go calling back into `apps/web` just to send an email is an extra hop with no benefit. Covers the full trigger list in ADR-007 across participants, organizers, judges, the resolver, and Astrea's own internal alerts. **Product context** [docs/architecture.md](https://github.com/Astrea-Payouts/astrea/blob/develop/docs/architecture.md) ADR-007 is the complete spec for this issue: the provider choice and why, the domain "
-      },
-      {
         "id": "github:2208865682",
         "title": "Crafting a Comprehensive Tutorial for Vectara Chat",
         "url": "https://github.com/lablab-ai/community-content/issues/462",
@@ -452,5 +428,5 @@
     "completedCount": 0,
     "lastError": null
   },
-  "retryAfterAt": "2026-09-10T18:40:14.197Z"
+  "retryAfterAt": "2026-09-10T21:17:07.817Z"
 }
