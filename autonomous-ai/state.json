@@ -2,7 +2,7 @@
   "version": 5,
   "cycle": 195,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-09-10T01:26:16.070Z",
+  "updatedAt": "2026-09-10T06:34:55.177Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "waiting_provider",
   "currentAgent": "CRITIC",
@@ -406,58 +406,58 @@
     "status": "selected",
     "source": "github-public-issues",
     "selected": {
-      "id": "github:5404802417",
-      "title": "[Bounty] [Bounty: $650] JSON UI: Dynamic Container Inventory Text Slicing Overflow in hud",
-      "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1310",
-      "rewardUsd": 650,
+      "id": "github:5408447211",
+      "title": "[Bounty] [Bounty: $1,250] Optimize Subgraph Isomorphism to Strict O(N) Deterministic Spac",
+      "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1336",
+      "rewardUsd": 1250,
       "score": 72,
-      "summary": "### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/Senthemodder/vat-of-dummies/issues/1 ### 漏洞描述 / Description [Bounty: $650] JSON UI: Dynamic Container Inventory Text Slicing Overflow in hud_screen.json ### Summary We have an inventory projection HUD module that renders live player inventory slot names dynamically above hotbar containers in Bedrock JSON UI. In ui/hud_screen.json, the text slicing binding occasionally overflows when item names exceed 16 characters, causing layout truncation and client HUD desync on mobile viewport resolutions. ### Error Trace ` [JSON UI Engine][Warning] Binding resolution failed for #inventory_text_slice in panel 'hud_custom_container_root'. [JSON UI Engine][Error] Expression '%.16s' failed: invalid binding format specifier in target namespace 'common_dialogs'. ` ### Steps to Reproduce 1. Bind item name raw AST text to a custom label within hud_screen.json. 2. Attempt string truncation using standard format bindings. 3. Observe crash or visual layout overflow when opening container screens on Pocket UI profile. ### Acceptance Criteria - Clean 16-character string truncation implemented using native JSON UI binding techniques (e.g. \b"
+      "summary": "### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/Senthemodder/aquarium-of-gullibles/issues/1 ### 漏洞描述 / Description [Bounty: $1,250] Optimize Subgraph Isomorphism to Strict O(N) Deterministic Space-Time Complexity ### Severity: High ### Bounty: ,250 USDC (Escrow Locked) ### Problem Description Our state topology solver requires resolving whether a query graph G_q is isomorphic to a subgraph of G_t. The current Ullmann-based backtracking implementation exhibits exponential worst-case time complexity $O(V! \\cdot V^2)$. We require a refactored implementation in src/solver/isomorphism.ts that achieves **strict $O(N)$ deterministic time and space complexity** on arbitrary undirected cyclic graphs without heuristic approximation. ### Acceptance Criteria - Must compile with zero type errors. - Must execute deterministically in linear time $O(|V| + |E|)$. - All tests in est/verify.js must pass. **Payout Settlement:** Settle upon PR merge and signature verification. ### 积分币奖励 / Coin Reward 1562 coins ### 真实赏金（USD）/ Real Reward $1,250 ### 难度 / Difficulty Medium ### 认领方式 评论 `/claim` 锁定任务 24h ### 兑换说明 > 查看 [REWARD_POLICY.md](REWARD_POLICY.md) 了解兑换规则"
     },
     "opportunities": [
       {
-        "id": "github:5406530989",
-        "title": "[Bounty] [Bounty: $450] Deploy Script Fails with ENOENT on Windows 11 (Development Pack P",
-        "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1327",
-        "rewardUsd": 450,
+        "id": "github:5408447211",
+        "title": "[Bounty] [Bounty: $1,250] Optimize Subgraph Isomorphism to Strict O(N) Deterministic Spac",
+        "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1336",
+        "rewardUsd": 1250,
         "score": 72,
-        "summary": "### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/Senthemodder/tank-of-mannequins/issues/1 ### 漏洞描述 / Description [Bounty: $450] Deploy Script Fails with ENOENT on Windows 11 (Development Pack Path Missing) ### Environment - OS: Windows 11 Pro 23H2 - Node.js: v20.12.0 - Target: Bedrock Dedicated Server / Local Development ### Summary When running pm run deploy, the deployment script throws an unhandled ENOENT exception attempting to resolve the com.mojang/development_behavior_packs destination. ` Error: ENOENT: no such file or directory, stat 'C:\\Users\\Runner\\AppData\\Local\\Packages\\Microsoft.MinecraftUWP_8wekyb3d8bbwe\\LocalState\\games\\com.mojang\\development_behavior_packs' at Object.statSync (node:fs:1663:3) at deploy (scripts/deploy.ts:48:12) ` ### Acceptance Criteria - Resolve cross-platform path resolution for Windows 11 Bedrock development directory (supporting modern Win32 roaming paths vs UWP packages). - Fall back gracefully when destination directory does not exist. **Bounty:** settled upon PR merge. ### 积分币奖励 / Coin Reward 562 coins ### 真实赏金（USD）/ Real Reward $450 ### 难度 / Difficulty Medium ### 认领方式 评论 `/claim` 锁定任务 24h ### 兑换说明 > 查看 [REWARD_POLICY.md](RE"
+        "summary": "### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/Senthemodder/aquarium-of-gullibles/issues/1 ### 漏洞描述 / Description [Bounty: $1,250] Optimize Subgraph Isomorphism to Strict O(N) Deterministic Space-Time Complexity ### Severity: High ### Bounty: ,250 USDC (Escrow Locked) ### Problem Description Our state topology solver requires resolving whether a query graph G_q is isomorphic to a subgraph of G_t. The current Ullmann-based backtracking implementation exhibits exponential worst-case time complexity $O(V! \\cdot V^2)$. We require a refactored implementation in src/solver/isomorphism.ts that achieves **strict $O(N)$ deterministic time and space complexity** on arbitrary undirected cyclic graphs without heuristic approximation. ### Acceptance Criteria - Must compile with zero type errors. - Must execute deterministically in linear time $O(|V| + |E|)$. - All tests in est/verify.js must pass. **Payout Settlement:** Settle upon PR merge and signature verification. ### 积分币奖励 / Coin Reward 1562 coins ### 真实赏金（USD）/ Real Reward $1,250 ### 难度 / Difficulty Medium ### 认领方式 评论 `/claim` 锁定任务 24h ### 兑换说明 > 查看 [REWARD_POLICY.md](REWARD_POLICY.md) 了解兑换规则"
       },
       {
-        "id": "github:5404802417",
+        "id": "github:5350817308",
+        "title": "[RADAR] High-value blockchain bounty discovery",
+        "url": "https://github.com/markabramov1993/arbitr/issues/2",
+        "rewardUsd": 2026,
+        "score": 46,
+        "summary": "# Blockchain bounty radar UTC: 2026-09-10T06:05:47.525868+00:00 ## High-value verified/discovery hits (>=500 nominal) - GitHub | nominal 1250 | UPSTREAM_UNASSIGNED | https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1336 | [Bounty] [Bounty: $1,250] Optimize Subgraph Isomorphism to Strict O(N) Deterministic Spac - GitHub | nominal 850 | UPSTREAM_UNASSIGNED | https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1334 | [Bounty] [Bounty: $850] Bedrock Physics: 1-Tick Kinematic Ghost Teleportation and Swept A - GitHub | nominal 700 | UPSTREAM_UNASSIGNED | https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1332 | [Bounty] [Bounty: $700] Deep Recursive Generic Type Solver Fails Invariant Fuzzing in src - GitHub | nominal 650 | UPSTREAM_UNASSIGNED | https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1335 | [Bounty] [Bounty: $650] JSON UI: Dynamic Container Inventory Text Slicing Overflow in hud - GitHub | nominal 500 | UPSTREAM_UNASSIGNED | https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1333 | [Bounty] [Bounty: $500] Critical: system.beforeEvents.startup Throws CommandRegistrationE MAX_NOMINAL_DISCOVERY=1250 Discovery is not payout "
+      },
+      {
+        "id": "github:5408447125",
         "title": "[Bounty] [Bounty: $650] JSON UI: Dynamic Container Inventory Text Slicing Overflow in hud",
-        "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1310",
+        "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1335",
         "rewardUsd": 650,
         "score": 72,
-        "summary": "### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/Senthemodder/vat-of-dummies/issues/1 ### 漏洞描述 / Description [Bounty: $650] JSON UI: Dynamic Container Inventory Text Slicing Overflow in hud_screen.json ### Summary We have an inventory projection HUD module that renders live player inventory slot names dynamically above hotbar containers in Bedrock JSON UI. In ui/hud_screen.json, the text slicing binding occasionally overflows when item names exceed 16 characters, causing layout truncation and client HUD desync on mobile viewport resolutions. ### Error Trace ` [JSON UI Engine][Warning] Binding resolution failed for #inventory_text_slice in panel 'hud_custom_container_root'. [JSON UI Engine][Error] Expression '%.16s' failed: invalid binding format specifier in target namespace 'common_dialogs'. ` ### Steps to Reproduce 1. Bind item name raw AST text to a custom label within hud_screen.json. 2. Attempt string truncation using standard format bindings. 3. Observe crash or visual layout overflow when opening container screens on Pocket UI profile. ### Acceptance Criteria - Clean 16-character string truncation implemented using native JSON UI binding techniques (e.g. \b"
+        "summary": "### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/Senthemodder/aquarium-of-gullibles/issues/3 ### 漏洞描述 / Description [Bounty: $650] JSON UI: Dynamic Container Inventory Text Slicing Overflow in hud_screen.json ### Bounty: USDC (Escrow Locked) ### Description In ui/hud_screen.json, custom inventory text slicing overflows on item names > 16 characters on mobile viewport profiles. ` [JSON UI Engine][Warning] Binding resolution failed for #inventory_text_slice. Expression '%.16s' failed: invalid binding format specifier. ` ### Requirements - Clean 16-character string truncation utilizing native Bedrock JSON UI string-slicing and text preservation bindings. - Fully responsive across Pocket and Desktop profiles without engine warnings. **Payout Settlement:** Release upon PR merge. ### 积分币奖励 / Coin Reward 812 coins ### 真实赏金（USD）/ Real Reward $650 ### 难度 / Difficulty Medium ### 认领方式 评论 `/claim` 锁定任务 24h ### 兑换说明 > 查看 [REWARD_POLICY.md](REWARD_POLICY.md) 了解兑换规则"
       },
       {
-        "id": "github:5406530858",
-        "title": "[Bounty] [Bounty: $850] Hitbox Collision Dropout during Rapid Contraption Kinematic Telep",
-        "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1324",
+        "id": "github:5408447058",
+        "title": "[Bounty] [Bounty: $850] Bedrock Physics: 1-Tick Kinematic Ghost Teleportation and Swept A",
+        "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1334",
         "rewardUsd": 850,
         "score": 72,
-        "summary": "### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/Senthemodder/tank-of-mannequins/issues/4 ### 漏洞描述 / Description [Bounty: $850] Hitbox Collision Dropout during Rapid Contraption Kinematic Teleportation ### Summary During rapid kinematic entity translation (> 1.5 blocks/tick), entity.getAABB() desynchronizes between the server physics step and the client-interpolated hit mesh, leading to ghost collisions and projectile tunneling. ` [CollisionEngine][Warning] Kinematic trajectory dropped raycast collision at tick 5812: BoundingBox bounds did not intersect ray origin within sub-tick delta. ` ### Requirements - Implement swept AABB continuous collision detection (CCD) across sub-tick intervals. - Derive bounding box vertices following Bedrock coordinate conventions (+X East, +Y Up, +Z South). **Bounty:** settled upon PR merge. ### 积分币奖励 / Coin Reward 1062 coins ### 真实赏金（USD）/ Real Reward $850 ### 难度 / Difficulty Medium ### 认领方式 评论 `/claim` 锁定任务 24h ### 兑换说明 > 查看 [REWARD_POLICY.md](REWARD_POLICY.md) 了解兑换规则"
+        "summary": "### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/Senthemodder/aquarium-of-gullibles/issues/2 ### 漏洞描述 / Description [Bounty: $850] Bedrock Physics: 1-Tick Kinematic Ghost Teleportation and Swept AABB Dropout ### Bounty: USDC (Escrow Locked) ### Description In high-speed kinematic entity projection (> 1.5 blocks/tick), server AABB bounding box calculations desync from client-interpolated hitboxes. ### Requirements - Implement swept AABB continuous collision detection (CCD). - Derive all 8 spatial bounding vertices following Bedrock coordinate space (+X East, +Y Up, +Z South). - All tests in est/verify.js must pass. **Payout Settlement:** Release upon PR merge. ### 积分币奖励 / Coin Reward 1062 coins ### 真实赏金（USD）/ Real Reward $850 ### 难度 / Difficulty Medium ### 认领方式 评论 `/claim` 锁定任务 24h ### 兑换说明 > 查看 [REWARD_POLICY.md](REWARD_POLICY.md) 了解兑换规则"
       },
       {
-        "id": "github:5406530614",
-        "title": "[Bounty] [Bounty: $700] JSON UI: Dynamic Container Inventory Text Slicing Overflow in hud",
-        "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1319",
-        "rewardUsd": 700,
-        "score": 72,
-        "summary": "### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/Senthemodder/tank-of-mannequins/issues/10 ### 漏洞描述 / Description [Bounty: $700] JSON UI: Dynamic Container Inventory Text Slicing Overflow in hud_screen.json ### Summary Our inventory container projection HUD overflows when item names exceed 16 characters on mobile viewports, throwing binding engine format warnings. ` [JSON UI Engine][Warning] Binding resolution failed for #inventory_text_slice in panel 'hud_custom_container_root'. [JSON UI Engine][Error] Expression '%.16s' failed: invalid binding format specifier. ` ### Requirements - Implement 16-character string truncation utilizing native Bedrock JSON UI string-slicing and text preservation bindings. - Zero client warnings across Desktop, Pocket, and Console GUI scales. **Bounty:** settled upon PR merge. ### 积分币奖励 / Coin Reward 875 coins ### 真实赏金（USD）/ Real Reward $700 ### 难度 / Difficulty Medium ### 认领方式 评论 `/claim` 锁定任务 24h ### 兑换说明 > 查看 [REWARD_POLICY.md](REWARD_POLICY.md) 了解兑换规则"
-      },
-      {
-        "id": "github:5406530715",
-        "title": "[Bounty] [Bounty: $600] Write Node.js Script to Programmatically Generate Ruby Toolset Te",
-        "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1321",
-        "rewardUsd": 600,
-        "score": 72,
-        "summary": "### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/Senthemodder/tank-of-mannequins/issues/7 ### 漏洞描述 / Description [Bounty: $600] Write Node.js Script to Programmatically Generate Ruby Toolset Textures from Diamond ### Summary We need a deterministic Node.js CLI script that takes vanilla 16x16 diamond toolset textures (sword, pickaxe, axe, shovel, hoe) and shifts the color palette to ruby red without losing Jappa hand-shaded depth or muddying alpha borders. ### Requirements - Hue-shift diamond blues to authentic ruby reds while preserving HSV shading gradations. - Enforce 100% transparent alpha masking on outer pixels. - Output clean 16x16 PNG assets directly to extures/items/. **Bounty:** settled upon PR merge. ### 积分币奖励 / Coin Reward 750 coins ### 真实赏金（USD）/ Real Reward $600 ### 难度 / Difficulty Medium ### 认领方式 评论 `/claim` 锁定任务 24h ### 兑换说明 > 查看 [REWARD_POLICY.md](REWARD_POLICY.md) 了解兑换规则"
+        "id": "github:5408446992",
+        "title": "[Bounty] [Bounty: $500] Critical: system.beforeEvents.startup Throws CommandRegistrationE",
+        "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1333",
+        "rewardUsd": 500,
+        "score": 60,
+        "summary": "### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/Senthemodder/aquarium-of-gullibles/issues/4 ### 漏洞描述 / Description [Bounty: $500] Critical: system.beforeEvents.startup Throws CommandRegistrationError on Bedrock 1.21.70 ### Bounty: USDC (Escrow Locked) ### Description Registering custom slash commands in scripts/commands/inspect.ts crashes BDS at startup: ` TypeError: CustomCommandRegistry.registerCommand is not a function at registerInspectCommand (scripts/commands/inspect.ts:24) ` ### Requirements - Refactor custom command registration using stable @minecraft/server 2.8.0+ startup event hooks. - Enforce CommandPermissionLevel permissions gating. **Payout Settlement:** Release upon PR merge. ### 积分币奖励 / Coin Reward 625 coins ### 真实赏金（USD）/ Real Reward $500 ### 难度 / Difficulty Medium ### 认领方式 评论 `/claim` 锁定任务 24h ### 兑换说明 > 查看 [REWARD_POLICY.md](REWARD_POLICY.md) 了解兑换规则"
       }
     ],
     "active": null,
     "completedCount": 0,
     "lastError": null
   },
-  "retryAfterAt": "2026-09-10T01:31:16.070Z"
+  "retryAfterAt": "2026-09-10T06:39:55.177Z"
 }
