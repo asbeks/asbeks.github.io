@@ -2,7 +2,7 @@
   "version": 5,
   "cycle": 195,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-09-11T11:14:03.637Z",
+  "updatedAt": "2026-09-11T15:04:48.899Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "waiting_provider",
   "currentAgent": "CRITIC",
@@ -416,41 +416,41 @@
         "summary": "The WebSocket support in `fastapi/fastapi/websockets.py` lacks a built-in heartbeat/ping mechanism to detect stale connections. ### Implementation - Add a `WebSocketWithHeartbeat` class in `fastapi/fastapi/websockets.py` that wraps the existing WebSocket - The class should send ping frames at a configurable interval, default 30 seconds - If no pong is received within a timeout period, default 10 seconds, the connection should be closed with code 1001 - Add an `on_disconnect` callback parameter that fires when the connection drops - Track connection duration and message count as properties on the instance ### Acceptance Criteria - Ping frames are sent at the configured interval - Connections are closed when pong timeout is exceeded - on_disconnect callback receives the close code and connection duration - connection_duration and message_count properties are accurate - Default ping interval and pong timeout can be overridden per connection - WebSocket connections without heartbeat still work as before - Include agent name and [ FastAPI ] in your PR title - Add a `_contributor.json` file to the directory containing your main changes. It must contain: `{\"identity\": \"your name\", \"runtim"
       },
       {
-        "id": "github:5350817308",
-        "title": "[RADAR] High-value blockchain bounty discovery",
-        "url": "https://github.com/markabramov1993/arbitr/issues/2",
-        "rewardUsd": 2026,
-        "score": 34,
-        "summary": "# Blockchain bounty radar UTC: 2026-09-11T11:11:15.659431+00:00 ## High-value verified/discovery hits (>=500 nominal) - GitHub | nominal 1250 | UPSTREAM_UNASSIGNED | https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1336 | [Bounty] [Bounty: $1,250] Optimize Subgraph Isomorphism to Strict O(N) Deterministic Spac - GitHub | nominal 850 | UPSTREAM_UNASSIGNED | https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1334 | [Bounty] [Bounty: $850] Bedrock Physics: 1-Tick Kinematic Ghost Teleportation and Swept A MAX_NOMINAL_DISCOVERY=1250 Discovery is not payout proof. Eligibility, funding, deadlines, competition and acceptance still require verification."
-      },
-      {
-        "id": "github:5423615068",
-        "title": "[radar] SN open bounty 2026-09-11T11:10",
-        "url": "https://github.com/relayhop/sn-monetization-runtime/issues/905",
+        "id": "github:5425386069",
+        "title": "[radar] SN open bounty 2026-09-11T14:20",
+        "url": "https://github.com/relayhop/sn-monetization-runtime/issues/909",
         "rewardUsd": 2026,
         "score": 44,
-        "summary": "New SN OPEN_BOUNTY detected: ``` 1567486 math 2 6889 700000 68 18.9 48657 15231 recent@math|top@math OPEN_BOUNTY,HOT [Math Puzzle] Does every sequence terminate in a loop? ```"
+        "summary": "New SN OPEN_BOUNTY detected: ``` 1567486 math 2 6889 700000 69 22.0 48657 15231 recent@math|top@math OPEN_BOUNTY,HOT [Math Puzzle] Does every sequence terminate in a loop? ```"
       },
       {
-        "id": "github:5423611607",
-        "title": "soup reward stress calls the built-in `format` reward \"robust (not gameable)\" while `<think></think>a` scores 1.0",
-        "url": "https://github.com/MakazhanAlpamys/Soup/issues/814",
-        "rewardUsd": 3371,
-        "score": 56,
-        "summary": "## The defect `soup reward stress` answers \"could a reward-hacking model game this verifier?\". Its attack set is four fixed strings (`utils/reward_stress.py:33,71-82`): | attack | text | |---|---| | `empty` | `\"\"` | | `length` | `\"padding\"` x 60 | | `repetition` | `\"loop\"` x 40 | | `sentinel` | `\"GOLD\"` x 20 | None of them contains the structure a structure-rewarding verifier pays for. The built-in `format` reward (`trainer/rewards.py:235-261`) gives 0.5 for any `<think>...</think>` block — `.*?` also matches an empty body — and 0.5 for any non-whitespace after `</think>`. It never looks at content. So the stress tool rejects nothing it would have to, and prints the strongest verdict it has. ## Evidence The stress run: ``` $ soup reward stress format Using built-in reward function: format │ attack n accepted accept-rate │ │ empty 1 0 0% │ │ length 1 0 0% │ │ repetition 1 0 0% │ │ sentinel 1 0 0% │ │ reference accept: n/a gameability: 0% verdict: robust (not gameable) │ exit=0 ``` The same function, loaded the same way (`load_reward_fn('format')`), scoring junk wrapped in the structure: ``` '<think>x</think>GOLD' [1.0] '<think></think>a' [1.0] '<think>loop loop</think>loop' [1.0] '<"
-      },
-      {
-        "id": "github:5423618583",
-        "title": "Help text, 20 config field descriptions and 7 docs passages still say \"schema-only\" / \"deferred\" / \"lands in v0.x.1\" for features that have shipped; advise run tells users to pass a --no-record flag that does not exist",
-        "url": "https://github.com/MakazhanAlpamys/Soup/issues/823",
-        "rewardUsd": 2088,
+        "id": "github:5425354595",
+        "title": "[Register] hzeattar — Hesham, human contributor (full-stack/backend, automation, docs)",
+        "url": "https://github.com/Scottcjn/contributors/issues/187",
+        "rewardUsd": 1575,
         "score": 48,
-        "summary": "## The defect Many features shipped as a validated schema first and went live a release or more later. The help strings, `Field(description=...)` texts and docs passages written for the schema release were never updated, so today they tell users that working features do not work. One help string also points at a flag that does not exist. ## Evidence 1: CLI help (`soup <cmd> --help`) | Command | Says | Reality | |---|---|---| | `soup serve --steer` (`commands/serve.py:238-243`) | \"Schema-only in v0.62.0; live decode hook ships in v0.62.1.\" | live: `serve.py:934` calls `install_steering_hook` | | `soup data recipe` (`commands/data.py:2745`) | \"Validate a Data Recipe DAG (live runner deferred).\" | `--execute` runs `utils/recipe_run.run_recipe` (see the separate issue about its offline LLM nodes) | | `soup eval quant-check` (`commands/eval.py:1292-1299`) | \"Wiring live model loading is post-v0.26.0; until then, this runs with a stub generator\" | loads both models via `make_model_generator` (`eval.py:1349-1353`); the stub is only a fallback when loading fails | | `soup advise run --record` (`commands/advise.py:243-246`) | \"Use `--no-record` to skip.\" | the option is a plain `--record` f"
+        "summary": "## Register as Contributor Filed by a maintainer on behalf of @hzeattar (rustchain-bounties#1575 email fallback; GitHub App 403). - GitHub username: hzeattar - Display name: Hesham - Contributor type: human - RTC wallet: hosted handle `hzeattar` - Repos of interest: RustChain, BoTTube, RustChain MCP, rustchain-bounties - Focus: full-stack/backend development, automation, API integrations, agent tooling, documentation, testing - Discovery: AI agent recommended Registration reward paid at the #1575 title rate (3 RTC), idem `hzeattar-1575-registration`."
+      },
+      {
+        "id": "github:5425211076",
+        "title": "bug(cash): phantom +€599.44 / +£55.44 in EUR/GBP buckets after #362/#365 — legacy 2026-01-28 deposits no longer netted by EUR/GBP trade legs",
+        "url": "https://github.com/Kaiukov/my-portfolio/issues/368",
+        "rewardUsd": 182.13,
+        "score": 40,
+        "summary": "## Summary The cash snapshot reports **€618.27** in `CASH EUR` and **£58.09** in `CASH GBP`, while the broker (Freedom24, 2 accounts) holds **€18.84** and **£2.65** as of 2026-09-11. Phantom amounts: **+€599.44** and **+£55.44** (≈ **+$773** in USD terms). Root cause is **not** the v0.10.1 → v0.10.0 rollback (`portfolio_db/sql/functions.sql` is byte-identical in both tags). The visible jump was produced by the **2026-08-24 deploy of #362/#363/#365/#366** (`fix: route crypto trades to stablecoin cash bucket` / `fix: align cash views with canonical cash function`), which changed how the cash bucket of `BUY`/`SELL` rows is derived. Before that change, a legacy 2026-01-28 EUR/GBP deposit import block (which carries ~€597 / ~£55.44 of money that never existed) was **masked** by the EUR/GBP trade legs of `VGEU.DE` / `IGLN.L` buys being booked into the same buckets. After the change those trade legs moved to the `USD` bucket (and crypto legs to `USDT`, which was the intended fix), so the pre-existing phantom is now exposed in the EUR/GBP buckets instead of being netted out in `USD`. ## The code change `portfolio_cash_sql()` on `origin/main` (since 23b6ecd / bb50f10, #362/#365): ```sql WIT"
+      },
+      {
+        "id": "github:5424047151",
+        "title": "Checkpoint 2026-09-11: B27d e autostart verificati; singleton Perpetual e prima chiusura da verificare",
+        "url": "https://github.com/LorenzoPacc/QuantumTradingSystem/issues/1",
+        "rewardUsd": 105.80974191290937,
+        "score": 40,
+        "summary": "## Obiettivo e vincolo invariabile Rendere V37 e Perpetual affidabili, integri e monitorabili in paper trading prima di modificare la strategia. **Nessuna modifica a segnali, SL/TP, trailing come logica di trading, sizing, leverage o logica di ingresso/uscita fino al checkpoint di 50 trade chiusi V37 + 50 trade chiusi Perpetual.** Il raggiungimento della soglia non autorizza automaticamente modifiche. Non alterare gli storici. ## Commit pubblicati e verificati su GitHub - [f5d398f — B27d harden Perpetual capital persistence and fail-stop handling](https://github.com/LorenzoPacc/QuantumTradingSystem/commit/f5d398faaa4552ca2b39dbe3c1935d8141d006bf): quattro file Perpetual; controllo coerenza capitale/ultimo trade, persistenza prima dell'aggiornamento RAM, propagazione degli errori di sincronizzazione, nessuna riscrittura finale dalla RAM dopo un errore del ciclo. - [6b5f9c2 — Fix V37 shutdown order and propagate controller failures](https://github.com/LorenzoPacc/QuantumTradingSystem/commit/6b5f9c276767ec27c564745a8adfe5f762f24371): arresto dei monitor prima del bot, rimozione del SIGKILL automatico dal controller, propagazione degli errori di start/stop. - Base precedente: efc0406, "
       }
     ],
     "active": null,
     "completedCount": 0,
     "lastError": null
   },
-  "retryAfterAt": "2026-09-11T11:19:03.638Z"
+  "retryAfterAt": "2026-09-11T15:09:48.899Z"
 }
