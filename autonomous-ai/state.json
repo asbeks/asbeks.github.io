@@ -2,7 +2,7 @@
   "version": 5,
   "cycle": 195,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-09-11T15:04:48.899Z",
+  "updatedAt": "2026-09-11T18:28:38.590Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "waiting_provider",
   "currentAgent": "CRITIC",
@@ -416,41 +416,41 @@
         "summary": "The WebSocket support in `fastapi/fastapi/websockets.py` lacks a built-in heartbeat/ping mechanism to detect stale connections. ### Implementation - Add a `WebSocketWithHeartbeat` class in `fastapi/fastapi/websockets.py` that wraps the existing WebSocket - The class should send ping frames at a configurable interval, default 30 seconds - If no pong is received within a timeout period, default 10 seconds, the connection should be closed with code 1001 - Add an `on_disconnect` callback parameter that fires when the connection drops - Track connection duration and message count as properties on the instance ### Acceptance Criteria - Ping frames are sent at the configured interval - Connections are closed when pong timeout is exceeded - on_disconnect callback receives the close code and connection duration - connection_duration and message_count properties are accurate - Default ping interval and pong timeout can be overridden per connection - WebSocket connections without heartbeat still work as before - Include agent name and [ FastAPI ] in your PR title - Add a `_contributor.json` file to the directory containing your main changes. It must contain: `{\"identity\": \"your name\", \"runtim"
       },
       {
-        "id": "github:5425386069",
-        "title": "[radar] SN open bounty 2026-09-11T14:20",
-        "url": "https://github.com/relayhop/sn-monetization-runtime/issues/909",
+        "id": "github:5427687667",
+        "title": "[radar] SN open bounty 2026-09-11T18:24",
+        "url": "https://github.com/relayhop/sn-monetization-runtime/issues/922",
         "rewardUsd": 2026,
         "score": 44,
-        "summary": "New SN OPEN_BOUNTY detected: ``` 1567486 math 2 6889 700000 69 22.0 48657 15231 recent@math|top@math OPEN_BOUNTY,HOT [Math Puzzle] Does every sequence terminate in a loop? ```"
+        "summary": "New SN OPEN_BOUNTY detected: ``` 1567486 math 2 6889 700000 70 26.1 48657 15259 recent@math OPEN_BOUNTY,HOT [Math Puzzle] Does every sequence terminate in a loop? ```"
       },
       {
-        "id": "github:5425354595",
-        "title": "[Register] hzeattar — Hesham, human contributor (full-stack/backend, automation, docs)",
-        "url": "https://github.com/Scottcjn/contributors/issues/187",
-        "rewardUsd": 1575,
+        "id": "github:5427630394",
+        "title": "[Bug]: A warning...",
+        "url": "https://github.com/BeestoXd/UltimateDonutSMP/issues/474",
+        "rewardUsd": 895,
+        "score": 40,
+        "summary": "### Server Environment & Versions Leaf 26.1.2 | UDS 1.5 ### Bug Description [18:15:36 WARN]: [UltimateDonutSmp] Failed to deserialize item data for crate reward 'iron_golem_spawner' in crate 'gold'. Falling back to legacy item fields. java.io.IOException: Failed to deserialize item using byte serialization at UltimateDonutSmp-1.5.jar//com.bx.ultimateDonutSmp.utils.ItemSerializationUtils.deserializeBytes(ItemSerializationUtils.java:156) ~[?:?] at UltimateDonutSmp-1.5.jar//com.bx.ultimateDonutSmp.utils.ItemSerializationUtils.deserialize(ItemSerializationUtils.java:70) ~[?:?] at UltimateDonutSmp-1.5.jar//com.bx.ultimateDonutSmp.managers.CrateManager.deserializeGrantItem(CrateManager.java:1092) ~[?:?] at UltimateDonutSmp-1.5.jar//com.bx.ultimateDonutSmp.managers.CrateManager.createRewardDisplayItem(CrateManager.java:895) ~[?:?] at UltimateDonutSmp-1.5.jar//com.bx.ultimateDonutSmp.managers.CrateVisualManager.lambda$animatePreviews$0(CrateVisualManager.java:1184) ~[?:?] at org.bukkit.craftbukkit.scheduler.CraftTask.run(CraftTask.java:78) ~[leaf-26.1.2.jar:26.1.2-3-3c591d7] at org.bukkit.craftbukkit.scheduler.CraftScheduler.mainThreadHeartbeat(CraftScheduler.java:474) ~[leaf-26.1.2.jar:26"
+      },
+      {
+        "id": "github:5426370982",
+        "title": "feat(syndicate): Launch ONTON Web3 Partnership & Promotion Marketplace (Campaign Syndication & Cohorts)",
+        "url": "https://github.com/ExecutESG/onton/issues/971",
+        "rewardUsd": 550,
         "score": 48,
-        "summary": "## Register as Contributor Filed by a maintainer on behalf of @hzeattar (rustchain-bounties#1575 email fallback; GitHub App 403). - GitHub username: hzeattar - Display name: Hesham - Contributor type: human - RTC wallet: hosted handle `hzeattar` - Repos of interest: RustChain, BoTTube, RustChain MCP, rustchain-bounties - Focus: full-stack/backend development, automation, API integrations, agent tooling, documentation, testing - Discovery: AI agent recommended Registration reward paid at the #1575 title rate (3 RTC), idem `hzeattar-1575-registration`."
+        "summary": "## Executive Summary & Objective Transform ONTON's gathered network of **240+ crypto marketing managers/channels** and **41 existing partner project groups** in `@ontonadmin` into a high-margin B2B **Web3 Partnership & Promotion Marketplace & Syndicate**. Instead of founders dealing with fragmented, scam-filled Telegram cold DMs, ONTON acts as the trusted campaign manager and escrow aggregator: - Bundling multi-exchange live AMAs (Binance Live, X-Spaces, Telegram) - Cross-distributing pinned announcements across partner channels + official ONTON channels (300k+ ecosystem) - Converting live listeners into verified holders via native **ONTON Mini App 1-Tap Free RSVPs, social quests, and Proof-of-Attendance SBT badges**. - Target Net Gross Margin: **40% – 46%** per campaign cohort. --- ## Relevant Documentation in Repository All operational manuals, sales copy, SLA contracts, and partner directories are committed in the repository: - **Curated Partner Directory (55 Entries):** [`data/syndicate/partner_network_directory.json`](file:///data/syndicate/partner_network_directory.json) | [`partner_network_directory.csv`](file:///data/syndicate/partner_network_directory.csv) - **Supply Onboa"
       },
       {
-        "id": "github:5425211076",
-        "title": "bug(cash): phantom +€599.44 / +£55.44 in EUR/GBP buckets after #362/#365 — legacy 2026-01-28 deposits no longer netted by EUR/GBP trade legs",
-        "url": "https://github.com/Kaiukov/my-portfolio/issues/368",
-        "rewardUsd": 182.13,
-        "score": 40,
-        "summary": "## Summary The cash snapshot reports **€618.27** in `CASH EUR` and **£58.09** in `CASH GBP`, while the broker (Freedom24, 2 accounts) holds **€18.84** and **£2.65** as of 2026-09-11. Phantom amounts: **+€599.44** and **+£55.44** (≈ **+$773** in USD terms). Root cause is **not** the v0.10.1 → v0.10.0 rollback (`portfolio_db/sql/functions.sql` is byte-identical in both tags). The visible jump was produced by the **2026-08-24 deploy of #362/#363/#365/#366** (`fix: route crypto trades to stablecoin cash bucket` / `fix: align cash views with canonical cash function`), which changed how the cash bucket of `BUY`/`SELL` rows is derived. Before that change, a legacy 2026-01-28 EUR/GBP deposit import block (which carries ~€597 / ~£55.44 of money that never existed) was **masked** by the EUR/GBP trade legs of `VGEU.DE` / `IGLN.L` buys being booked into the same buckets. After the change those trade legs moved to the `USD` bucket (and crypto legs to `USDT`, which was the intended fix), so the pre-existing phantom is now exposed in the EUR/GBP buckets instead of being netted out in `USD`. ## The code change `portfolio_cash_sql()` on `origin/main` (since 23b6ecd / bb50f10, #362/#365): ```sql WIT"
-      },
-      {
-        "id": "github:5424047151",
-        "title": "Checkpoint 2026-09-11: B27d e autostart verificati; singleton Perpetual e prima chiusura da verificare",
-        "url": "https://github.com/LorenzoPacc/QuantumTradingSystem/issues/1",
-        "rewardUsd": 105.80974191290937,
-        "score": 40,
-        "summary": "## Obiettivo e vincolo invariabile Rendere V37 e Perpetual affidabili, integri e monitorabili in paper trading prima di modificare la strategia. **Nessuna modifica a segnali, SL/TP, trailing come logica di trading, sizing, leverage o logica di ingresso/uscita fino al checkpoint di 50 trade chiusi V37 + 50 trade chiusi Perpetual.** Il raggiungimento della soglia non autorizza automaticamente modifiche. Non alterare gli storici. ## Commit pubblicati e verificati su GitHub - [f5d398f — B27d harden Perpetual capital persistence and fail-stop handling](https://github.com/LorenzoPacc/QuantumTradingSystem/commit/f5d398faaa4552ca2b39dbe3c1935d8141d006bf): quattro file Perpetual; controllo coerenza capitale/ultimo trade, persistenza prima dell'aggiornamento RAM, propagazione degli errori di sincronizzazione, nessuna riscrittura finale dalla RAM dopo un errore del ciclo. - [6b5f9c2 — Fix V37 shutdown order and propagate controller failures](https://github.com/LorenzoPacc/QuantumTradingSystem/commit/6b5f9c276767ec27c564745a8adfe5f762f24371): arresto dei monitor prima del bot, rimozione del SIGKILL automatico dal controller, propagazione degli errori di start/stop. - Base precedente: efc0406, "
+        "id": "github:5427588956",
+        "title": "SECURITY: IDOR — Unauthenticated Wallet Balance & Transaction History Disclosure",
+        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16941",
+        "rewardUsd": 2026,
+        "score": 54,
+        "summary": "## Security Vulnerability Report: IDOR on Wallet Balance & Transaction History **Bounty:** rustchain-bounties (security bounty program) **Reporter:** kyg **Date:** 2026-09-12 **Severity:** HIGH **CWE:** CWE-639 (Authorization Bypass Through User-Controlled Key) **Reward Request:** 25 RTC (per HIGH tier) --- ### Vulnerability Summary The RustChain live attestation node at `rustchain.org` exposes two unauthenticated endpoints that allow any anonymous user to query the **exact RTC balance** and **full transaction history** of ANY enrolled miner by providing their `miner_id`. This is sensitive financial data that is NOT available through the public `/api/miners` API. ### Affected Endpoints (Deployed, Reachable Surface) | Endpoint | Method | Auth Required | Data Exposed | |----------|--------|---------------|--------------| | `/wallet/balance?miner_id=<id>` | GET | **None** | Exact RTC balance (i64 + float) | | `/wallet/history?miner_id=<id>` | GET | **None** | Full transaction history (epoch rewards, amounts, timestamps, tx hashes) | **Target:** `https://rustchain.org` — live attestation node (in-scope per SECURITY.md) ### Proof of Concept **Step 1:** Enumerate miner IDs from the publi"
       }
     ],
     "active": null,
     "completedCount": 0,
     "lastError": null
   },
-  "retryAfterAt": "2026-09-11T15:09:48.899Z"
+  "retryAfterAt": "2026-09-11T18:33:38.590Z"
 }
