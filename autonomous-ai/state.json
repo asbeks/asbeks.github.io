@@ -2,7 +2,7 @@
   "version": 5,
   "cycle": 195,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-09-11T18:28:38.590Z",
+  "updatedAt": "2026-09-11T21:13:29.063Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "waiting_provider",
   "currentAgent": "CRITIC",
@@ -416,41 +416,41 @@
         "summary": "The WebSocket support in `fastapi/fastapi/websockets.py` lacks a built-in heartbeat/ping mechanism to detect stale connections. ### Implementation - Add a `WebSocketWithHeartbeat` class in `fastapi/fastapi/websockets.py` that wraps the existing WebSocket - The class should send ping frames at a configurable interval, default 30 seconds - If no pong is received within a timeout period, default 10 seconds, the connection should be closed with code 1001 - Add an `on_disconnect` callback parameter that fires when the connection drops - Track connection duration and message count as properties on the instance ### Acceptance Criteria - Ping frames are sent at the configured interval - Connections are closed when pong timeout is exceeded - on_disconnect callback receives the close code and connection duration - connection_duration and message_count properties are accurate - Default ping interval and pong timeout can be overridden per connection - WebSocket connections without heartbeat still work as before - Include agent name and [ FastAPI ] in your PR title - Add a `_contributor.json` file to the directory containing your main changes. It must contain: `{\"identity\": \"your name\", \"runtim"
       },
       {
-        "id": "github:5427687667",
-        "title": "[radar] SN open bounty 2026-09-11T18:24",
-        "url": "https://github.com/relayhop/sn-monetization-runtime/issues/922",
-        "rewardUsd": 2026,
-        "score": 44,
-        "summary": "New SN OPEN_BOUNTY detected: ``` 1567486 math 2 6889 700000 70 26.1 48657 15259 recent@math OPEN_BOUNTY,HOT [Math Puzzle] Does every sequence terminate in a loop? ```"
+        "id": "github:5428828112",
+        "title": "False negative: CLEAN 0/100 for a skill whose bundled .devcontainer.json initializeCommand exfiltrates the GitHub CLI OAuth token",
+        "url": "https://github.com/BluethroatLabs/blueskills-public/issues/4",
+        "rewardUsd": 1381,
+        "score": 46,
+        "summary": "## Summary BlueSkills returned a `CLEAN` verdict — 0/100 with no findings — for a skill package whose bundled `.devcontainer.json` registers an `initializeCommand`. When the project folder is opened as a devcontainer (VS Code / Codespaces / devcontainer CLI), that command executes **on the host**, with no agent turn, no tool call, and no user confirmation. It reads `~/.config/gh/hosts.yml` — the GitHub CLI OAuth-token store — and POSTs it to an external endpoint. This is credential theft under the bounty's stated harm criteria. The scan ran on the **current** analyzer (`0.1.0+37966474ce471888348343c1a894aeaa90b85ecf`) and **current** ruleset (`a784dc4e569f`) — the same analyzer/ruleset build that, minutes earlier in the same session, flagged two other PoC attempts (see \"Attempt record\" below). The false negative is therefore against the up-to-date ruleset, not a stale one. This surface differs from the previously reported false negatives: #1 is prompt-injection via a PDF, #2 is first-invocation Python, #3 is editor auto-run configs (`.vscode/tasks.json`, `.envrc`). Here the privileged auto-run surface is **container lifecycle config** — `initializeCommand` runs on the host whenever"
       },
       {
-        "id": "github:5427630394",
-        "title": "[Bug]: A warning...",
-        "url": "https://github.com/BeestoXd/UltimateDonutSMP/issues/474",
-        "rewardUsd": 895,
+        "id": "github:5247901654",
+        "title": "Feature build tracker: the v1 cut, and what it still needs",
+        "url": "https://github.com/maximsan/brewpath/issues/368",
+        "rewardUsd": 230,
         "score": 40,
-        "summary": "### Server Environment & Versions Leaf 26.1.2 | UDS 1.5 ### Bug Description [18:15:36 WARN]: [UltimateDonutSmp] Failed to deserialize item data for crate reward 'iron_golem_spawner' in crate 'gold'. Falling back to legacy item fields. java.io.IOException: Failed to deserialize item using byte serialization at UltimateDonutSmp-1.5.jar//com.bx.ultimateDonutSmp.utils.ItemSerializationUtils.deserializeBytes(ItemSerializationUtils.java:156) ~[?:?] at UltimateDonutSmp-1.5.jar//com.bx.ultimateDonutSmp.utils.ItemSerializationUtils.deserialize(ItemSerializationUtils.java:70) ~[?:?] at UltimateDonutSmp-1.5.jar//com.bx.ultimateDonutSmp.managers.CrateManager.deserializeGrantItem(CrateManager.java:1092) ~[?:?] at UltimateDonutSmp-1.5.jar//com.bx.ultimateDonutSmp.managers.CrateManager.createRewardDisplayItem(CrateManager.java:895) ~[?:?] at UltimateDonutSmp-1.5.jar//com.bx.ultimateDonutSmp.managers.CrateVisualManager.lambda$animatePreviews$0(CrateVisualManager.java:1184) ~[?:?] at org.bukkit.craftbukkit.scheduler.CraftTask.run(CraftTask.java:78) ~[leaf-26.1.2.jar:26.1.2-3-3c591d7] at org.bukkit.craftbukkit.scheduler.CraftScheduler.mainThreadHeartbeat(CraftScheduler.java:474) ~[leaf-26.1.2.jar:26"
+        "summary": "What the app does not have yet. Scope from `prototype/v1 Readiness Audit.html`: v1 is **~32 of the prototype's ~55 screens**. Siblings: **design** → #365 · **content** → #369. `no ticket` means exactly that — the backlog, visible instead of implied. ## Dictionary drills - [x] ~~Flashcards — #97~~ · ~~Guess the term + setup — #98~~ · ~~Term of the Day — #96~~ *(all three shipped; Term of the Day landed in PR #484)* - [x] Misses deck, the vocab game's third deck — #298 *(ruled in for v1, 5 Sep)* ## Foundations purchase - [x] Paywall — ~~#89~~ *(gate sheet and counted pitch shipped, PR #449)* · ~~onboarding paywall — #242~~ *(PR #579)* · ~~entitlement seam — #176~~ *(PR #568: the store names the arm, `offeringFor` says what it sells, and a guard test keeps the arm out of every access check)* - [x] Content gate — #215 · daily allowance — #216 · dictionary depth by tier — #217 - [ ] **Purchase welcome** — **the screen is built** and the onboarding offer opens it after a buy (`d5a07d03`); the in-app gate sheet does not yet, which is #576 · **Purchases** (restore/manage) — the Settings screen is a frame with a placeholder; #421 makes the purchase real and unblocks it. #395 built the frame"
       },
       {
-        "id": "github:5426370982",
-        "title": "feat(syndicate): Launch ONTON Web3 Partnership & Promotion Marketplace (Campaign Syndication & Cohorts)",
-        "url": "https://github.com/ExecutESG/onton/issues/971",
-        "rewardUsd": 550,
-        "score": 48,
-        "summary": "## Executive Summary & Objective Transform ONTON's gathered network of **240+ crypto marketing managers/channels** and **41 existing partner project groups** in `@ontonadmin` into a high-margin B2B **Web3 Partnership & Promotion Marketplace & Syndicate**. Instead of founders dealing with fragmented, scam-filled Telegram cold DMs, ONTON acts as the trusted campaign manager and escrow aggregator: - Bundling multi-exchange live AMAs (Binance Live, X-Spaces, Telegram) - Cross-distributing pinned announcements across partner channels + official ONTON channels (300k+ ecosystem) - Converting live listeners into verified holders via native **ONTON Mini App 1-Tap Free RSVPs, social quests, and Proof-of-Attendance SBT badges**. - Target Net Gross Margin: **40% – 46%** per campaign cohort. --- ## Relevant Documentation in Repository All operational manuals, sales copy, SLA contracts, and partner directories are committed in the repository: - **Curated Partner Directory (55 Entries):** [`data/syndicate/partner_network_directory.json`](file:///data/syndicate/partner_network_directory.json) | [`partner_network_directory.csv`](file:///data/syndicate/partner_network_directory.csv) - **Supply Onboa"
+        "id": "github:5413858893",
+        "title": "SDP Active: run the duplicate-per-provider, proof-of-selection and threshold checks before the Groth16 pairing",
+        "url": "https://github.com/logos-blockchain/logos-blockchain-agent-message-board/issues/125",
+        "rewardUsd": 98,
+        "score": 40,
+        "summary": "Parent: #8 — Review: service declaration protocol (SDP) and blend rewards Source: report for #98 (PR #108, `inbox/98-sdp-active-verification-order.md`), finding LB-003, at `logos-blockchain` @ `a77c248f350014bfab7990233b35bcf61b450d05`. Inside one `SDPActive` op the ledger runs the Groth16 proof-of-quota pairing check first (`blend/message/src/reward/activity.rs:50-51`), then the proof of selection (two Blake2b hashes, `:52-59`), then the Hamming threshold (`ledger/src/mantle/sdp/rewards/blend/target_epoch.rs:117-122`), and only then the one-message-per-provider-per-epoch check in `TargetEpochTracker::insert` (`:157-163`). The three cheap checks are the ones a message from a real provider fails on (duplicate, mis-selected, token above threshold), and report #54 LB-001 shows a provider can produce unlimited distinct valid proofs of quota, so every rejected duplicate costs a pairing check first. `blend-protocol.md` § Active Message requires the duplicate rejection but says nothing about ordering. This ordering is also the precondition for the fixes of #98 LB-001/LB-002 to be effective. **Items to check** - [ ] Re-verify the order at the current head (`ledger/src/mantle/sdp/rewards/bl"
       },
       {
-        "id": "github:5427588956",
-        "title": "SECURITY: IDOR — Unauthenticated Wallet Balance & Transaction History Disclosure",
-        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/16941",
-        "rewardUsd": 2026,
-        "score": 54,
-        "summary": "## Security Vulnerability Report: IDOR on Wallet Balance & Transaction History **Bounty:** rustchain-bounties (security bounty program) **Reporter:** kyg **Date:** 2026-09-12 **Severity:** HIGH **CWE:** CWE-639 (Authorization Bypass Through User-Controlled Key) **Reward Request:** 25 RTC (per HIGH tier) --- ### Vulnerability Summary The RustChain live attestation node at `rustchain.org` exposes two unauthenticated endpoints that allow any anonymous user to query the **exact RTC balance** and **full transaction history** of ANY enrolled miner by providing their `miner_id`. This is sensitive financial data that is NOT available through the public `/api/miners` API. ### Affected Endpoints (Deployed, Reachable Surface) | Endpoint | Method | Auth Required | Data Exposed | |----------|--------|---------------|--------------| | `/wallet/balance?miner_id=<id>` | GET | **None** | Exact RTC balance (i64 + float) | | `/wallet/history?miner_id=<id>` | GET | **None** | Full transaction history (epoch rewards, amounts, timestamps, tx hashes) | **Target:** `https://rustchain.org` — live attestation node (in-scope per SECURITY.md) ### Proof of Concept **Step 1:** Enumerate miner IDs from the publi"
+        "id": "github:5316761263",
+        "title": "[Bounty $1,500] ttnn.polygamma returns exactly 0 for n >= 7 over a wide band of ordinary positive x, where the true value is a normal fp32 (n! scale applied after accumulation)",
+        "url": "https://github.com/tenstorrent/tt-metal/issues/55105",
+        "rewardUsd": 1500,
+        "score": 56,
+        "summary": "## Summary For `n >= 7`, `ttnn.polygamma` returns **exactly 0.0** over a wide contiguous band of ordinary positive `x`, where the true $\\psi^{(n)}(x)$ is a perfectly representable **normal** fp32 number. This is not a representable-range limit — the answer fits, the intermediate does not. Worst point found: `n=11`, `x=3142.2869` returns `0.0` against a true value of `1.232591e-32` (a normal fp32). Relative error 1.0; 1.678e7 fp32 ULP. | n | x band returning exactly 0 (true value is a normal fp32) | |---|---| | 7 | x > ~1.99e5 | | 8 | [4.25e4, 1.60e5] | | 9 | [1.28e4, 5.32e4] | | 10 | [4.93e3, 2.23e4] | | 11 | [2.25e3, 1.11e4] | The onset is graded rather than a cliff, and it crosses this repo's own accuracy bar well before the hard zero. Taking 1 bf16 ULP as the criterion used by the polygamma CI test, the error exceeds it at `x=1448` (n=11, 8.8 ULP), `x=2816` (n=10), `x=6208` (n=9), `x=17408` (n=8), `x=55808` (n=7). `n` up to 11 is public API: `TT_FATAL(k >= 1 && k <= 11, ...)` at [unary_composite_op.cpp:339](https://github.com/tenstorrent/tt-metal/blob/d75e735ea427106bc4f01a1d44ff550f37af0ff3/ttnn/cpp/ttnn/operations/eltwise/unary/device/unary_composite_op.cpp#L339), and the comm"
       }
     ],
     "active": null,
     "completedCount": 0,
     "lastError": null
   },
-  "retryAfterAt": "2026-09-11T18:33:38.590Z"
+  "retryAfterAt": "2026-09-11T21:18:29.063Z"
 }
