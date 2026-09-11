@@ -2,7 +2,7 @@
   "version": 5,
   "cycle": 195,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-09-10T23:13:13.121Z",
+  "updatedAt": "2026-09-11T01:10:52.705Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "waiting_provider",
   "currentAgent": "CRITIC",
@@ -416,41 +416,41 @@
         "summary": "The WebSocket support in `fastapi/fastapi/websockets.py` lacks a built-in heartbeat/ping mechanism to detect stale connections. ### Implementation - Add a `WebSocketWithHeartbeat` class in `fastapi/fastapi/websockets.py` that wraps the existing WebSocket - The class should send ping frames at a configurable interval, default 30 seconds - If no pong is received within a timeout period, default 10 seconds, the connection should be closed with code 1001 - Add an `on_disconnect` callback parameter that fires when the connection drops - Track connection duration and message count as properties on the instance ### Acceptance Criteria - Ping frames are sent at the configured interval - Connections are closed when pong timeout is exceeded - on_disconnect callback receives the close code and connection duration - connection_duration and message_count properties are accurate - Default ping interval and pong timeout can be overridden per connection - WebSocket connections without heartbeat still work as before - Include agent name and [ FastAPI ] in your PR title - Add a `_contributor.json` file to the directory containing your main changes. It must contain: `{\"identity\": \"your name\", \"runtim"
       },
       {
-        "id": "github:4484386059",
-        "title": "[Bounty Claim] Code review for RustChain PR #5830",
-        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/11326",
-        "rewardUsd": 5830,
-        "score": 54,
-        "summary": "Review submitted for the RustChain PR review bounty. - Bounty thread: Scottcjn/Rustchain#73 - Reviewed PR: Scottcjn/Rustchain#5830 - Review comment: https://github.com/Scottcjn/Rustchain/pull/5830#issuecomment-4495958074 - Finding: the payload bound validator checks depth/size/string limits but still allows non-finite float values; Python `json.dumps()` emits `NaN`/`Infinity` unless `allow_nan=False`, which can break canonical signature serialization assumptions. - Verification: inspected the PR diff for `_validate_gossip_payload_bounds()` and confirmed missing numeric finiteness validation. RTC wallet for reward: RTCfbc6abb564f210ede29a769d1b4d173278f526ea"
-      },
-      {
-        "id": "github:4483425976",
-        "title": "[Bounty Claim] Code Review - RustChain PR #5796 (Bounty #73)",
-        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/11213",
-        "rewardUsd": 5796,
+        "id": "github:5350817308",
+        "title": "[RADAR] High-value blockchain bounty discovery",
+        "url": "https://github.com/markabramov1993/arbitr/issues/2",
+        "rewardUsd": 2026,
         "score": 46,
-        "summary": "Reviewer: @techoisonocreate-crypto RTC wallet: `RTC9dc7130503bf246d9ca11e2c5b402d5129077f56` Reviewed PR: https://github.com/Scottcjn/Rustchain/pull/5796 Review URL: https://github.com/Scottcjn/Rustchain/pull/5796#pullrequestreview-4325414663 Outcome: requested changes on head `9866353` Finding: - The PR validates required contract creation fields and amount, but leaves optional persisted `currency` unvalidated. - A signed `POST /api/contracts` with otherwise valid fields and `currency: [RTC]` reaches the SQLite insert and returns `500 {error:internal_error}` instead of a 400 validation response. - Because `_authenticate_contract_agent()` commits the nonce before the insert, the malformed request also consumes the signed nonce before failing. Validation performed: - `python -m py_compile node/beacon_api.py tests/test_beacon_atlas_behavior.py` -> passed - `$env:RC_ADMIN_KEY='test-admin'; python -m pytest tests/test_beacon_atlas_behavior.py -q --noconftest -o addopts=''` -> 28 passed, 5 subtests passed - `git diff --check origin/main...HEAD` -> clean - Local signed Flask test-client probe reproduced the remaining `currency` list payload as a 500 response. Suggested tier: security/qua"
+        "summary": "# Blockchain bounty radar UTC: 2026-09-11T01:02:31.513753+00:00 ## High-value verified/discovery hits (>=500 nominal) - GitHub | nominal 1250 | UPSTREAM_UNASSIGNED | https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1336 | [Bounty] [Bounty: $1,250] Optimize Subgraph Isomorphism to Strict O(N) Deterministic Spac - GitHub | nominal 850 | UPSTREAM_UNASSIGNED | https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1334 | [Bounty] [Bounty: $850] Bedrock Physics: 1-Tick Kinematic Ghost Teleportation and Swept A - GitHub | nominal 650 | UPSTREAM_UNASSIGNED | https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1335 | [Bounty] [Bounty: $650] JSON UI: Dynamic Container Inventory Text Slicing Overflow in hud - GitHub | nominal 500 | UPSTREAM_UNASSIGNED | https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1333 | [Bounty] [Bounty: $500] Critical: system.beforeEvents.startup Throws CommandRegistrationE MAX_NOMINAL_DISCOVERY=1250 Discovery is not payout proof. Eligibility, funding, deadlines, competition and acceptance still require verification."
       },
       {
-        "id": "github:4486823475",
-        "title": "Claim: Security Reviews MEGA Batch — 100 PRs (#5370-#5470) — Bounty #73 — 1000+ REVIEWS MILESTONE",
-        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/11490",
-        "rewardUsd": 73,
-        "score": 46,
-        "summary": "## 🎉 Bounty Claim: 1000+ Reviews MILESTONE — 100 PRs **Wallet:** RTC15e1241a37f2ae0ccff97e3bd2c2239b4c30ef8f **Bounty:** #73 **Reviewer:** Xeophon **PR Range:** #5370-#5470 **🎉 MILESTONE:** 1,098+ cumulative security reviews across RustChain ecosystem! Today alone: 502 reviews. This is the largest single-day review contribution to RustChain. Key security findings across the 1000+ review corpus: - 7 CRITICAL: Flask debug RCE (3x), installer MITM, TOCTOU payout race, governance nonce replay, pickle RCE - 12+ HIGH: BCOS commitment forgery (3x), P2P auth, CORS/CSRF, timing attack, VRF, XSS, open redirect, CSPRNG - Genesis Duplication, OTC unsigned-enrollment theft RustChain's security posture has been significantly strengthened through this comprehensive review effort."
+        "id": "github:5417551965",
+        "title": "[radar] SN open bounty 2026-09-10T21:34",
+        "url": "https://github.com/relayhop/sn-monetization-runtime/issues/893",
+        "rewardUsd": 2026,
+        "score": 44,
+        "summary": "New SN OPEN_BOUNTY detected: ``` 1567486 math 2 6444 700000 42 5.3 48657 15214 recent@math|top@math OPEN_BOUNTY,HOT,SIGNAL [Math Puzzle] Does every sequence terminate in a loop? 1566212 news 2 1259 1000 6 31.6 51481 4215 recent@news OPEN_BOUNTY,HOT,SELF_POST_OPP Iceberg Ahead - Finding the small news story before it changes the world ```"
       },
       {
-        "id": "github:5418125673",
-        "title": "[Core Loop UX] fresh B1F最初の1〜2戦で活路が消える原因を編成圧と行動機会に分解する",
-        "url": "https://github.com/y-krn/wiz-mobile-rpg/issues/1187",
-        "rewardUsd": 93.4,
-        "score": 48,
-        "summary": "## 親Issue - #1184 `[Core Loop UX] fresh開始B1Fでコアループ到達前にrunが終わる初期体験を解消する` 本Issueは #1184 Phase 2 の原因分解を担当する。 **シミュレーションを作ること自体は目的ではない。** 目的は、fresh開始の最初の1〜2戦でプレイヤーが「次に何を変えればよいか」を考える前に活路を失う原因を、production semanticsのまま切り分けること。 --- ## 背景 PR #1186 / merge `20db2bbb7b4cc0d48017ab34840782b8160aca33` のproduction-backed baselineでは、fresh save + `鋼の前線キット` + fight policyで: - B1F death: 89.6% - B2 arrival: 10.4% - encounter 1 生存: 65.0% - encounter 2 生存: 26.3% - encounter 3 生存: 8.5% - 1体encounter lethality: 25.7% - 2体encounter lethality: 72.8% - meaningful reward到達: 93.4% - accepted equipment opportunity: 88.5% したがって「Lootが来る前に何も起きず死ぬ」だけでは説明できない。一方で、最初の2戦までにrun populationの約3/4が消えている。 #1184のA: > **1〜2戦目の戦闘Costが高すぎる** が現時点の最有力候補である。 ただし、ここから即座に敵nerf・2体禁止・無料回復へ進まない。まず、何がプレイヤーの行動余地を奪っているかを分ける。 --- ## 上位契約 1. #973 Core Loop vNext 2. #1023 UI/UX vNext 3. #1039 Build commitment 4. #1184 初期体験阻害 5. current production semantics 維持すること: - `Character power != exploration safety` - `stronger != safer` - 敵は得意技を禁止せず「支払う値段」を変える - death自体を排除しない - starting kitをclass / 難易度選択にしない - measurement と tuning を分離する - simulationはproduction semanticsを再利用し、都合のよい架空playerや架空装備で答えを作らない --- ## Core question > fresh B1Fの最初の1〜2戦で活路が消える"
+        "id": "github:5418600345",
+        "title": "[radar] SN open bounty 2026-09-11T00:02",
+        "url": "https://github.com/relayhop/sn-monetization-runtime/issues/894",
+        "rewardUsd": 2026,
+        "score": 44,
+        "summary": "New SN OPEN_BOUNTY detected: ``` 1567486 math 2 6486 700000 63 7.7 48657 15223 recent@math|top@math OPEN_BOUNTY,HOT,SIGNAL [Math Puzzle] Does every sequence terminate in a loop? 1566212 news 2 1259 1000 6 34.0 51481 4215 recent@news OPEN_BOUNTY,HOT,SELF_POST_OPP Iceberg Ahead - Finding the small news story before it changes the world ```"
+      },
+      {
+        "id": "github:5418831126",
+        "title": "[DEFECT] Trade ledger binds replicated mixed-unit PnL",
+        "url": "https://github.com/ddawnlll/v8/issues/407",
+        "rewardUsd": 182.9,
+        "score": 40,
+        "summary": "## Objective Make the per-trade PnL published in the receipt-bound `native_trades` artifact carry *that trade's own* realized PnL in *one declared unit*, or publish it as unmeasured. Today the artifact's `pnl` column is another trade's realized PnL (replicated across rows) or a dimensionless MTM fraction in the same column, yet its sha256 is bound into the ledger receipt and the same series feeds G5 — i.e. the fabric publishes a verified digest over an unverified quantity. ## Owning authority - D-153 §76 / Benchmark Fabric receipt-artifact binding (`BenchmarkReceipt.artifact_bindings`, `v8-next/src/v8_next/evaluation/benchmark_receipt.py`). - D-152 §5 gate vector (G5 selection control consumes the same series). - Constitution Rule 12 / Rule 57; `.hermes.md` §4 (no artifact may certify what was not established; `SUPPORTED_EDGE` forbidden). ## Change class DEFECT_FIX ## Current state / Observed defect **Published evidence (no engine rerun; read from artifacts at HEAD, worktree clean for `runner.py`).** Latest canonical ledger entry 17 (`artifacts/benchmarks/benchmark_ledger.jsonl`, `entry_hash 7c4f48f2…`, `receipt_digest 3a1449b3a52b…`) binds exactly **one** physical artifact: `artif"
       }
     ],
     "active": null,
     "completedCount": 0,
     "lastError": null
   },
-  "retryAfterAt": "2026-09-10T23:18:13.121Z"
+  "retryAfterAt": "2026-09-11T01:15:52.705Z"
 }
