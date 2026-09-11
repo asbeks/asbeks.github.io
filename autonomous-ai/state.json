@@ -2,7 +2,7 @@
   "version": 5,
   "cycle": 195,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-09-11T01:10:52.705Z",
+  "updatedAt": "2026-09-11T06:03:30.831Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "waiting_provider",
   "currentAgent": "CRITIC",
@@ -416,41 +416,41 @@
         "summary": "The WebSocket support in `fastapi/fastapi/websockets.py` lacks a built-in heartbeat/ping mechanism to detect stale connections. ### Implementation - Add a `WebSocketWithHeartbeat` class in `fastapi/fastapi/websockets.py` that wraps the existing WebSocket - The class should send ping frames at a configurable interval, default 30 seconds - If no pong is received within a timeout period, default 10 seconds, the connection should be closed with code 1001 - Add an `on_disconnect` callback parameter that fires when the connection drops - Track connection duration and message count as properties on the instance ### Acceptance Criteria - Ping frames are sent at the configured interval - Connections are closed when pong timeout is exceeded - on_disconnect callback receives the close code and connection duration - connection_duration and message_count properties are accurate - Default ping interval and pong timeout can be overridden per connection - WebSocket connections without heartbeat still work as before - Include agent name and [ FastAPI ] in your PR title - Add a `_contributor.json` file to the directory containing your main changes. It must contain: `{\"identity\": \"your name\", \"runtim"
       },
       {
-        "id": "github:5350817308",
-        "title": "[RADAR] High-value blockchain bounty discovery",
-        "url": "https://github.com/markabramov1993/arbitr/issues/2",
-        "rewardUsd": 2026,
-        "score": 46,
-        "summary": "# Blockchain bounty radar UTC: 2026-09-11T01:02:31.513753+00:00 ## High-value verified/discovery hits (>=500 nominal) - GitHub | nominal 1250 | UPSTREAM_UNASSIGNED | https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1336 | [Bounty] [Bounty: $1,250] Optimize Subgraph Isomorphism to Strict O(N) Deterministic Spac - GitHub | nominal 850 | UPSTREAM_UNASSIGNED | https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1334 | [Bounty] [Bounty: $850] Bedrock Physics: 1-Tick Kinematic Ghost Teleportation and Swept A - GitHub | nominal 650 | UPSTREAM_UNASSIGNED | https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1335 | [Bounty] [Bounty: $650] JSON UI: Dynamic Container Inventory Text Slicing Overflow in hud - GitHub | nominal 500 | UPSTREAM_UNASSIGNED | https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1333 | [Bounty] [Bounty: $500] Critical: system.beforeEvents.startup Throws CommandRegistrationE MAX_NOMINAL_DISCOVERY=1250 Discovery is not payout proof. Eligibility, funding, deadlines, competition and acceptance still require verification."
+        "id": "github:5406530759",
+        "title": "[Bounty] [Bounty: $550] Build Script Deploys Unexpanded Templates Directly to Com.mojang",
+        "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1322",
+        "rewardUsd": 550,
+        "score": 72,
+        "summary": "### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/Senthemodder/tank-of-mannequins/issues/6 ### 漏洞描述 / Description [Bounty: $550] Build Script Deploys Unexpanded Templates Directly to Com.mojang ### Summary The prebuild asset pipeline fails to expand JSONTE/Jinja block template expressions before copying behavior pack files to the destination development folder, causing BDS to choke on raw template syntax. ` [PackValidator][Error] Failed to parse JSON in 'blocks/custom_stair.json': Syntax error: unexpected character '{' at line 4 column 12 ` ### Requirements - Fix build pipeline order so template expansion runs in _temp/ before file synchronization. - Support clean-slate builds without cached template contamination. **Bounty:** settled upon verification. ### 积分币奖励 / Coin Reward 687 coins ### 真实赏金（USD）/ Real Reward $550 ### 难度 / Difficulty Medium ### 认领方式 评论 `/claim` 锁定任务 24h ### 兑换说明 > 查看 [REWARD_POLICY.md](REWARD_POLICY.md) 了解兑换规则"
       },
       {
-        "id": "github:5417551965",
-        "title": "[radar] SN open bounty 2026-09-10T21:34",
-        "url": "https://github.com/relayhop/sn-monetization-runtime/issues/893",
-        "rewardUsd": 2026,
-        "score": 44,
-        "summary": "New SN OPEN_BOUNTY detected: ``` 1567486 math 2 6444 700000 42 5.3 48657 15214 recent@math|top@math OPEN_BOUNTY,HOT,SIGNAL [Math Puzzle] Does every sequence terminate in a loop? 1566212 news 2 1259 1000 6 31.6 51481 4215 recent@news OPEN_BOUNTY,HOT,SELF_POST_OPP Iceberg Ahead - Finding the small news story before it changes the world ```"
+        "id": "github:5406530661",
+        "title": "[Bounty] [Bounty: $450] Custom Humanoid NPC Texture Scrambled / Left Arm & Leg Mirrored I",
+        "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1320",
+        "rewardUsd": 450,
+        "score": 72,
+        "summary": "### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/Senthemodder/tank-of-mannequins/issues/8 ### 漏洞描述 / Description [Bounty: $450] Custom Humanoid NPC Texture Scrambled / Left Arm & Leg Mirrored In-Game ### Summary In Bedrock 1.21.50, custom 64x64 humanoid NPC geometry displays mirrored/inverted UV coordinates on the left arm and leg. ` [EntityRenderer][Warning] Model 'geometry.custom_npc' UV mapping mismatch on bone 'leftArm': Expected 64x64 layout, resolved inverted 32x64 legacy mapping. ` ### Requirements - Update geometry.json bone definitions to conform to modern Bedrock humanoid UV layouts. - Resolve texture mirroring across both classic and slim-arm player models. **Bounty:** settled upon PR merge. ### 积分币奖励 / Coin Reward 562 coins ### 真实赏金（USD）/ Real Reward $450 ### 难度 / Difficulty Medium ### 认领方式 评论 `/claim` 锁定任务 24h ### 兑换说明 > 查看 [REWARD_POLICY.md](REWARD_POLICY.md) 了解兑换规则"
       },
       {
-        "id": "github:5418600345",
-        "title": "[radar] SN open bounty 2026-09-11T00:02",
-        "url": "https://github.com/relayhop/sn-monetization-runtime/issues/894",
-        "rewardUsd": 2026,
-        "score": 44,
-        "summary": "New SN OPEN_BOUNTY detected: ``` 1567486 math 2 6486 700000 63 7.7 48657 15223 recent@math|top@math OPEN_BOUNTY,HOT,SIGNAL [Math Puzzle] Does every sequence terminate in a loop? 1566212 news 2 1259 1000 6 34.0 51481 4215 recent@news OPEN_BOUNTY,HOT,SELF_POST_OPP Iceberg Ahead - Finding the small news story before it changes the world ```"
-      },
-      {
-        "id": "github:5418831126",
-        "title": "[DEFECT] Trade ledger binds replicated mixed-unit PnL",
-        "url": "https://github.com/ddawnlll/v8/issues/407",
-        "rewardUsd": 182.9,
+        "id": "github:5420402921",
+        "title": "[Core Loop UX] early B1F composition pool・ordering・cadence候補比較",
+        "url": "https://github.com/y-krn/wiz-mobile-rpg/issues/1192",
+        "rewardUsd": 1151,
         "score": 40,
-        "summary": "## Objective Make the per-trade PnL published in the receipt-bound `native_trades` artifact carry *that trade's own* realized PnL in *one declared unit*, or publish it as unmeasured. Today the artifact's `pnl` column is another trade's realized PnL (replicated across rows) or a dimensionless MTM fraction in the same column, yet its sha256 is bound into the ledger receipt and the same series feeds G5 — i.e. the fabric publishes a verified digest over an unverified quantity. ## Owning authority - D-153 §76 / Benchmark Fabric receipt-artifact binding (`BenchmarkReceipt.artifact_bindings`, `v8-next/src/v8_next/evaluation/benchmark_receipt.py`). - D-152 §5 gate vector (G5 selection control consumes the same series). - Constitution Rule 12 / Rule 57; `.hermes.md` §4 (no artifact may certify what was not established; `SUPPORTED_EDGE` forbidden). ## Change class DEFECT_FIX ## Current state / Observed defect **Published evidence (no engine rerun; read from artifacts at HEAD, worktree clean for `runner.py`).** Latest canonical ledger entry 17 (`artifacts/benchmarks/benchmark_ledger.jsonl`, `entry_hash 7c4f48f2…`, `receipt_digest 3a1449b3a52b…`) binds exactly **one** physical artifact: `artif"
+        "summary": "## 親Issue - #1184 初期体験阻害 - #1187 原因分解 - #1191 診断PR ## 目的 #1187 の測定で、fresh B1F の pair exposure は強い寄与を示す一方、#1151 の同一 entry HP fixed-combat では composition identity 差がより大きく、enemy count と identity を分離しないまま pair reduction を仕様化できないことが分かった。本Issueでは、early B1F の composition pool / ordering / cadence の候補を比較し、最小の production candidate を決める。 ## 必須条件 - production encounter generation / combat / flee semantics を維持する - fresh save + vanguard を primary にする - matched world seed と同一 runner 契約で baseline / candidate を比較する - ordinal 1/2 の single・pair exposure、composition identity、normal damage、post-combat HP、encounter 2 reach、reward / Build opportunity を併記する - #1151 fixed composition × entry HP の差分を再利用して、count と identity の主張を混同しない - candidate は composition pool / ordering / cadence の比較に限定し、global enemy nerf、blanket two-enemy removal、free recovery、B1F-only combat rule は含めない - production変更前後に fresh save の manual playtest を行い、「なぜ死んだか」「次に何を変えるか」「Cost判断が残るか」を確認する ## 完了条件 - [ ] candidate の変更範囲と rollback 方針を明記 - [ ] production-backed matched measurement を添付 - [ ] B2到達率だけでなく pair lethality / composition identity / entry HP / first-action opportunity / reward opportunity を比較 - [ ] manual fresh-save playtest の結果を添付"
+      },
+      {
+        "id": "github:5398346190",
+        "title": "[Bug]: Entries in utility table disappearing",
+        "url": "https://github.com/equinor/prisma-decision-web/issues/800",
+        "rewardUsd": 960,
+        "score": 40,
+        "summary": "### Environment prod (public) ### Page URL https://prisma-demo.equinor.com/project/1834701a-1b2e-4806-865c-4e0e9b2f0a67/ ### Developer access - [x] I have given one of the developers access to the affected project. ### Problem description I have an influence diagram in the public version https://prisma-demo.equinor.com/project/1834701a-1b2e-4806-865c-4e0e9b2f0a67/ I have set the utility of seismic - yes to 0 and 2 of the utility table (reward) disappeared <img width=\"960\" height=\"504\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/df16945c-3a39-4d14-9ee1-5fb24934293c\" /> ### Proposed solution Modifications of values (probabilities or values) in the ID shouldn't be removed entries in any tables."
       }
     ],
     "active": null,
     "completedCount": 0,
     "lastError": null
   },
-  "retryAfterAt": "2026-09-11T01:15:52.705Z"
+  "retryAfterAt": "2026-09-11T06:08:30.832Z"
 }
