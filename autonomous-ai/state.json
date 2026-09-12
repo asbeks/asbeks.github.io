@@ -2,7 +2,7 @@
   "version": 5,
   "cycle": 195,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-09-11T23:20:47.804Z",
+  "updatedAt": "2026-09-12T01:19:06.594Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "waiting_provider",
   "currentAgent": "CRITIC",
@@ -416,41 +416,41 @@
         "summary": "The WebSocket support in `fastapi/fastapi/websockets.py` lacks a built-in heartbeat/ping mechanism to detect stale connections. ### Implementation - Add a `WebSocketWithHeartbeat` class in `fastapi/fastapi/websockets.py` that wraps the existing WebSocket - The class should send ping frames at a configurable interval, default 30 seconds - If no pong is received within a timeout period, default 10 seconds, the connection should be closed with code 1001 - Add an `on_disconnect` callback parameter that fires when the connection drops - Track connection duration and message count as properties on the instance ### Acceptance Criteria - Ping frames are sent at the configured interval - Connections are closed when pong timeout is exceeded - on_disconnect callback receives the close code and connection duration - connection_duration and message_count properties are accurate - Default ping interval and pong timeout can be overridden per connection - WebSocket connections without heartbeat still work as before - Include agent name and [ FastAPI ] in your PR title - Add a `_contributor.json` file to the directory containing your main changes. It must contain: `{\"identity\": \"your name\", \"runtim"
       },
       {
-        "id": "github:5429715105",
-        "title": "[Bug bounty] Negative GNU base-256 TAR size crashes Tarsnap",
-        "url": "https://github.com/Tarsnap/tarsnap/issues/888",
-        "rewardUsd": 256,
-        "score": 46,
-        "summary": "# Tarsnap client crash: negative GNU base-256 TAR size Status: locally reproduced against `ff046af1a24850475fb80bf89d197c9b46dca268` (`1.0.41-head`). ## Summary The current Tarsnap client crashes while importing a small TAR archive whose regular-file header uses the GNU TAR base-256 representation of `-1` in the 12-byte size field. The crash is deterministic with `--dry-run`, before any account or network access. The stock arm64 client exits with `SIGBUS` (status 138). The isolated AddressSanitizer/UndefinedBehaviorSanitizer build reports both the signed left-shift while decoding the negative base-256 value and a subsequent heap-buffer-overflow while copying the entry data. ## Reproduction ```console $ python3 reproduce-tar-negative-size.py \\ --base256-negative --output artifacts/negative-base256.tar bytes=2048 sha256=fee59a78ab9e818777444785ad3cd63afc0d80dbb82a017a5aa45faf8f7add76 \\ output=artifacts/negative-base256.tar $ ./tarsnap --no-default-config -c --dry-run @artifacts/negative-base256.tar Bus error: 10 $ echo $? 138 ``` The fixture can also be generated without any repository files: ```python from pathlib import Path h = bytearray(512) h[0:100] = b\"negative-size\".ljust(100,"
+        "id": "github:5430012951",
+        "title": "[radar] SN open bounty 2026-09-12T00:10",
+        "url": "https://github.com/relayhop/sn-monetization-runtime/issues/1053",
+        "rewardUsd": 2026,
+        "score": 44,
+        "summary": "New SN OPEN_BOUNTY detected: ``` 1568946 Construction_and_Engineering 2 874 5000 3 3.0 9274 27301 recent@Construction_and_Engineering|top@Construction_and_Engineering OPEN_BOUNTY,LOW_COMP,SIGNAL Show Your Build Friday #1: Real-World Proof-of-Work [5,000 Sat Bounty] ⚡🔨 1567486 math 2 6889 700000 71 31.9 48657 15281 recent@math OPEN_BOUNTY,HOT [Math Puzzle] Does every sequence terminate in a loop? ```"
       },
       {
-        "id": "github:4484386059",
-        "title": "[Bounty Claim] Code review for RustChain PR #5830",
-        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/11326",
-        "rewardUsd": 5830,
+        "id": "github:5429798912",
+        "title": "Acceptance: run and report the three-instrument equal-capital OKX Demo experiment",
+        "url": "https://github.com/tonywxx/adaq/issues/215",
+        "rewardUsd": 32694.76,
+        "score": 48,
+        "summary": "## Parent Specification: #213. ## What to build Implement and conduct the three-Instrument equal-capital acceptance experiment, including its configuration, lifecycle, comparison report, immutable Paper feedback, and final User research review. This combines proposed slices 5–7 at the User's explicit request. Despite the acceptance title, this issue includes any missing experiment and reporting product functionality; it is not a test-only exercise. Use the executable pipeline delivered by the blocking issue and the full contract in #213. Complete the required product functionality and deterministic validation before starting the actual supervised observation window. ## Acceptance criteria - [ ] The User can configure one experiment binding BTC-USDT, ETH-USDT, and SOL-USDT, the same frozen Strategy parameters, and an explicit common UTC observation start/end. No observation duration has been chosen in the conversation; require it at launch rather than silently choosing an indefinite run. - [ ] Refresh OKX Demo reconciliation and account funds before launch. Use 32694.76 USDT per Instrument, with initial entry cap 32367.81 USDT and 326.95 USDT reserved inside each allocation; leave t"
+      },
+      {
+        "id": "github:5393162589",
+        "title": "TestDuplicatePrevention BŁĄD testu na głównej gałęzi (Content.IntegrationTests.Tests._Impstation.Thaven.ThavenMoodTests.TestDuplicatePrevention)",
+        "url": "https://github.com/polonium14/polonium-station/issues/1006",
+        "rewardUsd": 2000,
         "score": 54,
-        "summary": "Review submitted for the RustChain PR review bounty. - Bounty thread: Scottcjn/Rustchain#73 - Reviewed PR: Scottcjn/Rustchain#5830 - Review comment: https://github.com/Scottcjn/Rustchain/pull/5830#issuecomment-4495958074 - Finding: the payload bound validator checks depth/size/string limits but still allows non-finite float values; Python `json.dumps()` emits `NaN`/`Infinity` unless `allow_nan=False`, which can break canonical signature serialization assumptions. - Verification: inspected the PR diff for `_validate_gossip_payload_bounds()` and confirmed missing numeric finiteness validation. RTC wallet for reward: RTCfbc6abb564f210ede29a769d1b4d173278f526ea"
+        "summary": "## BŁĄD testu na głównej gałęzi Na głównej gałęzi został wykryty błąd testu. To nigdy nie powinno występować. > [!NOTE] > Ten wpis został wygenerowany automatycznie przez GitHub Actions i zostanie zaktualizowany, gdy ta awaria wystąpi ponownie. > Nie edytuj treści tego wpisu. ## Szczegóły błędu <dl> <dt>Nazwa testu</dt> <dd>`TestDuplicatePrevention`</dd> <dt>Pełna nazwa</dt> <dd>`Content.IntegrationTests.Tests._Impstation.Thaven.ThavenMoodTests.TestDuplicatePrevention`</dd> <dt>Ostatnio spotkany</dt> <dd>Saturday, September 12th</dd> </dl> <details> <summary>Wiadomość błędu</summary> ``` Found arbitrage on BountyPercussion cargo bounty! Product FunInstrumentsRandom costs 2000 but fulfills bounty BountyPercussion with reward 2500! Assert.That(proto.Cost, Is.GreaterThanOrEqualTo(bounty.Reward)) Expected: greater than or equal to 2500 But was: 2000 ``` </details> <details> <summary>Dane wyjściowe testu</summary> ``` GetPair: Called by test _Impstation.Thaven.ThavenMoodTests.TestDuplicatePrevention GetPair: Looking in pool for a suitable pair GetPair: Suitable pair found (Pair 1) GetPair: Cleanup not needed, Skipping cleanup of pair SERVER: 0,000s [WARN] cfg: Only clients can change th"
       },
       {
-        "id": "github:4460048610",
-        "title": "[Bounty Claim] PR Reviews - 250+ PRs Total (Bounty #73) - HCIE2054",
-        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/9999",
-        "rewardUsd": 250,
-        "score": 34,
-        "summary": "## Bounty Claim #73 - 250+ PR Reviews **GitHub:** HCIE2054 **Wallet:** RTC0069ce999590624987151e19a8b005555d17794b 250+ PRs reviewed across Rustchain ecosystem. All approved with LGTM. Thank you!"
-      },
-      {
-        "id": "github:4460041460",
-        "title": "[Bounty Claim] PR Reviews - 200+ PRs (Bounty #73) - HCIE2054",
-        "url": "https://github.com/Scottcjn/rustchain-bounties/issues/9997",
-        "rewardUsd": 200,
-        "score": 34,
-        "summary": "## Bounty Claim #73 - 200+ PR Reviews **GitHub:** HCIE2054 **Wallet:** RTC0069ce999590624987151e19a8b005555d17794b Massive PR review batch. All open PRs across Rustchain ecosystem reviewed with APPROVE + LGTM. Thank you!"
+        "id": "github:4864221419",
+        "title": "[Bounty] [Bounty] [Bounty] [Bounty] [Bounty] [Bounty $1,500] Optimise `deg2rad` / `rad2de",
+        "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/248",
+        "rewardUsd": 1500,
+        "score": 42,
+        "summary": "### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/185 ### 漏洞描述 / Description [Bounty] [Bounty] [Bounty] [Bounty] [Bounty $1,500] Optimise `deg2rad` / `rad2deg` (fp32/ ### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/148 ### 漏洞描述 / Description [Bounty] [Bounty] [Bounty] [Bounty $1,500] Optimise `deg2rad` / `rad2deg` (fp32/bf16) ### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/56 ### 漏洞描述 / Description [Bounty] [Bounty] [Bounty $1,500] Optimise `deg2rad` / `rad2deg` (fp32/bf16) ### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/45 ### 漏洞描述 / Description [Bounty] [Bounty $1,500] Optimise `deg2rad` / `rad2deg` (fp32/bf16) ### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/tenstorrent/tt-metal/issues/49631 ### 漏洞描述 / Description [Bounty $1,500] Optimise `deg2rad` / `rad2deg` (fp32/bf16) ## Problem to solve `ttnn.deg2rad` and `ttnn.rad2deg` are just a multiply by a compile-time constant (`π/180` and `180/π` respectively), yet they"
       }
     ],
     "active": null,
     "completedCount": 0,
     "lastError": null
   },
-  "retryAfterAt": "2026-09-11T23:25:47.804Z"
+  "retryAfterAt": "2026-09-12T01:24:06.595Z"
 }
