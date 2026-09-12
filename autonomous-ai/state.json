@@ -2,7 +2,7 @@
   "version": 5,
   "cycle": 195,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-09-12T05:59:01.235Z",
+  "updatedAt": "2026-09-12T10:37:39.565Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "waiting_provider",
   "currentAgent": "CRITIC",
@@ -416,12 +416,20 @@
         "summary": "The WebSocket support in `fastapi/fastapi/websockets.py` lacks a built-in heartbeat/ping mechanism to detect stale connections. ### Implementation - Add a `WebSocketWithHeartbeat` class in `fastapi/fastapi/websockets.py` that wraps the existing WebSocket - The class should send ping frames at a configurable interval, default 30 seconds - If no pong is received within a timeout period, default 10 seconds, the connection should be closed with code 1001 - Add an `on_disconnect` callback parameter that fires when the connection drops - Track connection duration and message count as properties on the instance ### Acceptance Criteria - Ping frames are sent at the configured interval - Connections are closed when pong timeout is exceeded - on_disconnect callback receives the close code and connection duration - connection_duration and message_count properties are accurate - Default ping interval and pong timeout can be overridden per connection - WebSocket connections without heartbeat still work as before - Include agent name and [ FastAPI ] in your PR title - Add a `_contributor.json` file to the directory containing your main changes. It must contain: `{\"identity\": \"your name\", \"runtim"
       },
       {
-        "id": "github:5431374346",
-        "title": "Revenue artifact: RustChain Shorts Kit for bounty #16601",
-        "url": "https://github.com/stratumpraxis/vector-praxis-japan/issues/33",
-        "rewardUsd": 16601,
-        "score": 34,
-        "summary": "Tracking issue for a public, source-grounded Type C Shorts / clip kit targeting Scottcjn/rustchain-bounties#16601. This issue is only an internal artifact index for the public deliverable and is not a bounty claim."
+        "id": "github:5431675188",
+        "title": "[bounty ¥200 · 仅支付宝] SandboxRunner 适配器：吃 SandboxSpec，吐 SandboxRun + TestCaseResult[]",
+        "url": "https://github.com/lilei0311/yangong/issues/3",
+        "rewardUsd": 200,
+        "score": 88,
+        "summary": "## 支付（硬规则，先读再认领） | | | |---|---| | 币种 | **人民币 RMB**（¥200） | | 唯一通道 | **支付宝** | | 打款时机 | 验收清单全勾 **且** PR merge 之后 48h 内 | | 领款 | merge 后私信 `@lilei0311` 发**支付宝账号**（手机号或邮箱） | 不打、不换、不认： - ETH / BTC / USDC / USDT / 任何链上钱包（包括 `0x…`） - Stripe / PayPal / Wise / ACH / SWIFT - 微信 - 银行卡国际电汇 - Algora 自动结算 **贴了链上钱包 = 没有认领，也不是收款账号。** 维护者只有支付宝，没有换汇、没有链上钱。拿不到支付宝就拿不到这 ¥200。 Payout is **CNY via Alipay only**. No crypto, no Stripe, no PayPal, no WeChat Pay, no wire. Posting a `0x` wallet is not a claim and not a payout account. Winner ≠ Paid：合 PR 不算打款。验收不合格就递补。 认领口令：`claiming slot`。席位已给 `@koukahuo-source`。 --- ## Objective 把硬编码的语音沙箱脚本，收成可替换的 `SandboxRunner` 接口。 领域里已经有 `SandboxSpec` 和 `TestCaseResult`。这份合同只做适配器，不要接真容器。 ¥200 不买代码。适配器被合同写死之后模型能白写。这笔钱是验工第一次真实结算仪式：谁按协议走完认领 → 验收 → 支付宝，谁拿。 ## 交付边界 公开仓库是 **Protocol / Domain Spec**，没有托管控制台的 `src/store` / `package.json`。 本单**只交公开仓库**： - `src/domain/sandbox.ts`：`SandboxRunner` 接口 - `InMemoryVoiceRunner`（现有 `VOICE_RUN_SCRIPT` / `VOICE_CASE_SCRIPT` 搬进这个实现） - Node 原生测试（`--experimental-strip-types --test`）覆盖下面三席样例 - `docs/architecture.md` Connector 边界 控制台接线由维护者做。**不要把没跑过的托管预览三席流程标为通过。** ## Deliverables - `SandboxRunner` 类型 - input: submission + SandboxSpec + suiteI"
+      },
+      {
+        "id": "github:5432389604",
+        "title": "[Fix] TON: a plain send commented w reads as a pool unstake and hides the amount [TON / Keysign]",
+        "url": "https://github.com/vultisig/vultisig-windows/issues/4930",
+        "rewardUsd": 200,
+        "score": 48,
+        "summary": "<!-- AGENT type: \"bugfix\" priority: \"high\" size: \"small\" platform: [windows, extension] files: read: [\"core/ui/mpc/keysign/verify/VerifyTransactionOverview.tsx\", \"core/ui/mpc/keysign/verify/components/TransactionOverviewAmount.tsx\", \"core/ui/vault/send/memo/ManageMemo.tsx\"] write: [\"core/ui/mpc/keysign/transaction-decoding/decodeSignedTransaction.ts\", \"core/ui/mpc/keysign/transaction-decoding/decodeSignedTransaction.test.ts\"] verify: [\"yarn check:all\"] --> # [Fix] TON: a plain send commented `w` reads as a pool unstake and the amount disappears from Verify [TON / Keysign] ## Problem `decodeTonMemo` (`core/ui/mpc/keysign/transaction-decoding/decodeSignedTransaction.ts:787-811`) names a nominator-pool operation from the memo string alone. It never checks that `payload.toAddress` is a pool, that `payload.toAmount` is the fixed withdraw carrier, or that the coin is native — the only guards are the chain and the contract/swap/approve payloads. That is not cosmetic here, because the unstake reading **erases the amount**. `VerifyTransactionOverview.tsx:120-127` hides the payload amount when the operation has a verify title and the decoded amount cannot be shown: ```ts hidePayloadAmount={p"
       },
       {
         "id": "github:5431469352",
@@ -432,25 +440,17 @@
         "summary": "New SN OPEN_BOUNTY detected: ``` 1568946 Construction_and_Engineering 2 977 5000 7 8.5 9274 27305 recent@Construction_and_Engineering|top@Construction_and_Engineering OPEN_BOUNTY,SIGNAL,SELF_POST_OPP Show Your Build Friday #1: Real-World Proof-of-Work [5,000 Sat Bounty] ⚡🔨 ```"
       },
       {
-        "id": "github:5395634427",
-        "title": "[深度评审] 数据层与缓存：Postgres 返利 f64/NUMERIC 解码失败（功能失效）等",
-        "url": "https://github.com/JinPengGeng/aeris-token/issues/208",
-        "rewardUsd": 183,
-        "score": 32,
-        "summary": "## 背景 2026 年全 workspace 两轮深度评审（初审 + 逐条代码核实）的模块结论汇总。判定标注：✅ 成立 / 🟡 降级 / ❌ 误报 / 🔵 设计决策。 本 issue 覆盖：`aether-data/*`（contracts、adapters postgres/mysql/sqlite、query、schema、runtime）与 `aether-cache`。 --- ## 🔴 严重 ### 1. Postgres 上返利模块 f64 读 NUMERIC 必然解码失败，返利功能整体失效（✅ 成立） - `crates/aether-data/runtime/src/backend/referrals.rs`：`row_f64!` 宏（:149-153）`try_get::<f64>` 直读 `numeric(20,8)` 列且所有 SELECT 无 CAST——涉及 `reward_from_row!`（:183-188）、`credit_referral_reward`（:2083-2095）、冲正路径（:2201-2243 等）、`payment_order_context_from_row`/`refund_context_from_row`（:2521,:2537-2538）。 - 类型事实：sqlx-core 0.8.6 `row.rs:118-127` 强制类型兼容检查，Postgres 的 f64 仅兼容 FLOAT8/FLOAT4，NUMERIC 必须走 bigdecimal/rust_decimal。 - Schema 事实：迁移中这些列全部 `numeric(20,8)` 且无 ALTER 改型（`postgres/migrations/20260403000000_baseline.sql:1406-1407` 等）。 - 生产接线完整（admin/user 路由 + docker-compose 默认 postgres:15 + 默认 feature postgres）；CI 无 referral DB 测试可拦截。 - 对比组：`adapters/postgres/src/provider_catalog.rs:184` 有正确的 `CAST(... AS DOUBLE PRECISION)`。 - **根因**：runtime/backend 层绕过 adapter 手写方言 SQL 并按 feature 三份复制，丢掉了 adapter 层的 CAST 纪律。 - 未完全确认项：支付回调中返利上下文查询失败后是否级联导致整个回调失败（爆炸半径细节），需追支付回调入口错误处理。 **修复建议**：立即补 CAST；中期将 referrals.rs 的查询下沉回 adapter 层，复用其 CAST 纪律与"
-      },
-      {
-        "id": "github:5431064913",
-        "title": "Audit readiness: STRIDE threat model v1.0 open items (tracking)",
-        "url": "https://github.com/boundlessfi/boundless-contract/issues/143",
-        "rewardUsd": 11,
+        "id": "github:5427687667",
+        "title": "[radar] SN open bounty 2026-09-11T18:24",
+        "url": "https://github.com/relayhop/sn-monetization-runtime/issues/922",
+        "rewardUsd": 2026,
         "score": 44,
-        "summary": "Tracking issue for every open item, pending operational action, and planned hardening change disclosed in the STRIDE threat model (`docs/threat-model.md` v1.0) submitted to the SDF Soroban Security Audit Bank. Each line links the issue; the threat-model ID is in brackets. ### Open items (threat model §4.1) and pending operational action (§4.2) - [ ] #123 — Restore the upgrade timelock to 17,280 ledgers on both contracts (live escrow under a zero timelock) [EoP.10] - [ ] #124 — Finish the 1.7.0 mainnet migration: run migrate_events + migrate on events, migrate on profile, record the apply [Tamp.10] - [ ] #125 — Recovery path when an accepted event manager's key is lost [DoS.9] - [ ] #126 — process_cancel_batch: a refund transfer that cannot complete blocks the whole cancellation [DoS.14] - [ ] #127 — start_cancel: extend the claimable-prize guard to multi-release awards with unpaid milestones [EoP.14] - [ ] #128 — Make the profile calls in apply_to_bounty and claim_milestone best-effort (try_ variants) [DoS.7] - [ ] #129 — Bind child op_ids to the authorizing address [Tamp.14] - [ ] #130 — select_winners: reject duplicate recipients within a multi-release selection [Tamp.16] - [ ] #"
+        "summary": "New SN OPEN_BOUNTY detected: ``` 1567486 math 2 6889 700000 70 26.1 48657 15259 recent@math OPEN_BOUNTY,HOT [Math Puzzle] Does every sequence terminate in a loop? ```"
       }
     ],
     "active": null,
     "completedCount": 0,
     "lastError": null
   },
-  "retryAfterAt": "2026-09-12T06:04:01.236Z"
+  "retryAfterAt": "2026-09-12T10:42:39.565Z"
 }

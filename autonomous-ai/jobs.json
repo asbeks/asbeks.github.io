@@ -1,6 +1,6 @@
 {
   "version": 11,
-  "updatedAt": "2026-09-12T05:58:59.013Z",
+  "updatedAt": "2026-09-12T10:37:37.079Z",
   "status": "idle",
   "source": "github-public-issues",
   "opportunities": [
@@ -44,26 +44,66 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5431374346",
+      "id": "github:5431675188",
       "source": "github",
-      "title": "Revenue artifact: RustChain Shorts Kit for bounty #16601",
-      "url": "https://github.com/stratumpraxis/vector-praxis-japan/issues/33",
-      "repositoryApiUrl": "https://api.github.com/repos/stratumpraxis/vector-praxis-japan",
-      "rewardUsd": 16601,
-      "score": 34,
-      "labels": [],
-      "commentCount": 0,
-      "updatedAt": "2026-09-12T05:21:30Z",
-      "summary": "Tracking issue for a public, source-grounded Type C Shorts / clip kit targeting Scottcjn/rustchain-bounties#16601. This issue is only an internal artifact index for the public deliverable and is not a bounty claim.",
+      "title": "[bounty ¥200 · 仅支付宝] SandboxRunner 适配器：吃 SandboxSpec，吐 SandboxRun + TestCaseResult[]",
+      "url": "https://github.com/lilei0311/yangong/issues/3",
+      "repositoryApiUrl": "https://api.github.com/repos/lilei0311/yangong",
+      "rewardUsd": 200,
+      "score": 88,
+      "labels": [
+        "help wanted",
+        "contract",
+        "domain",
+        "v0.2",
+        "bounty"
+      ],
+      "commentCount": 8,
+      "updatedAt": "2026-09-12T10:36:37Z",
+      "summary": "## 支付（硬规则，先读再认领） | | | |---|---| | 币种 | **人民币 RMB**（¥200） | | 唯一通道 | **支付宝** | | 打款时机 | 验收清单全勾 **且** PR merge 之后 48h 内 | | 领款 | merge 后私信 `@lilei0311` 发**支付宝账号**（手机号或邮箱） | 不打、不换、不认： - ETH / BTC / USDC / USDT / 任何链上钱包（包括 `0x…`） - Stripe / PayPal / Wise / ACH / SWIFT - 微信 - 银行卡国际电汇 - Algora 自动结算 **贴了链上钱包 = 没有认领，也不是收款账号。** 维护者只有支付宝，没有换汇、没有链上钱。拿不到支付宝就拿不到这 ¥200。 Payout is **CNY via Alipay only**. No crypto, no Stripe, no PayPal, no WeChat Pay, no wire. Posting a `0x` wallet is not a claim and not a payout account. Winner ≠ Paid：合 PR 不算打款。验收不合格就递补。 认领口令：`claiming slot`。席位已给 `@koukahuo-source`。 --- ## Objective 把硬编码的语音沙箱脚本，收成可替换的 `SandboxRunner` 接口。 领域里已经有 `SandboxSpec` 和 `TestCaseResult`。这份合同只做适配器，不要接真容器。 ¥200 不买代码。适配器被合同写死之后模型能白写。这笔钱是验工第一次真实结算仪式：谁按协议走完认领 → 验收 → 支付宝，谁拿。 ## 交付边界 公开仓库是 **Protocol / Domain Spec**，没有托管控制台的 `src/store` / `package.json`。 本单**只交公开仓库**： - `src/domain/sandbox.ts`：`SandboxRunner` 接口 - `InMemoryVoiceRunner`（现有 `VOICE_RUN_SCRIPT` / `VOICE_CASE_SCRIPT` 搬进这个实现） - Node 原生测试（`--experimental-strip-types --test`）覆盖下面三席样例 - `docs/architecture.md` Connector 边界 控制台接线由维护者做。**不要把没跑过的托管预览三席流程标为通过。** ## Deliverables - `SandboxRunner` 类型 - input: submission + SandboxSpec + suiteI",
       "state": "candidate",
-      "payoutConfidence": 0.5,
+      "payoutConfidence": 0.85,
       "autonomyFit": 1,
       "requiresHumanGate": false,
       "requiresSpecialHardware": false,
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 118,
+      "fastCashScore": 121,
+      "survivalEligible": false,
+      "eligibilityReason": "Competition is too high for bootstrap mode.",
+      "competition": {
+        "comments": 8,
+        "attemptSignals": 0,
+        "risk": "medium"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 200,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5432389604",
+      "source": "github",
+      "title": "[Fix] TON: a plain send commented w reads as a pool unstake and hides the amount [TON / Keysign]",
+      "url": "https://github.com/vultisig/vultisig-windows/issues/4930",
+      "repositoryApiUrl": "https://api.github.com/repos/vultisig/vultisig-windows",
+      "rewardUsd": 200,
+      "score": 48,
+      "labels": [
+        "bug"
+      ],
+      "commentCount": 0,
+      "updatedAt": "2026-09-12T09:12:14Z",
+      "summary": "<!-- AGENT type: \"bugfix\" priority: \"high\" size: \"small\" platform: [windows, extension] files: read: [\"core/ui/mpc/keysign/verify/VerifyTransactionOverview.tsx\", \"core/ui/mpc/keysign/verify/components/TransactionOverviewAmount.tsx\", \"core/ui/vault/send/memo/ManageMemo.tsx\"] write: [\"core/ui/mpc/keysign/transaction-decoding/decodeSignedTransaction.ts\", \"core/ui/mpc/keysign/transaction-decoding/decodeSignedTransaction.test.ts\"] verify: [\"yarn check:all\"] --> # [Fix] TON: a plain send commented `w` reads as a pool unstake and the amount disappears from Verify [TON / Keysign] ## Problem `decodeTonMemo` (`core/ui/mpc/keysign/transaction-decoding/decodeSignedTransaction.ts:787-811`) names a nominator-pool operation from the memo string alone. It never checks that `payload.toAddress` is a pool, that `payload.toAmount` is the fixed withdraw carrier, or that the coin is native — the only guards are the chain and the contract/swap/approve payloads. That is not cosmetic here, because the unstake reading **erases the amount**. `VerifyTransactionOverview.tsx:120-127` hides the payload amount when the operation has a verify title and the decoded amount cannot be shown: ```ts hidePayloadAmount={p",
+      "state": "candidate",
+      "payoutConfidence": 0.35,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 111,
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
@@ -72,7 +112,7 @@
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 16601,
+      "economicValueUsd": 200,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -88,8 +128,8 @@
         "sn",
         "bounty"
       ],
-      "commentCount": 1,
-      "updatedAt": "2026-09-12T05:39:57Z",
+      "commentCount": 5,
+      "updatedAt": "2026-09-12T10:37:01Z",
       "summary": "New SN OPEN_BOUNTY detected: ``` 1568946 Construction_and_Engineering 2 977 5000 7 8.5 9274 27305 recent@Construction_and_Engineering|top@Construction_and_Engineering OPEN_BOUNTY,SIGNAL,SELF_POST_OPP Show Your Build Friday #1: Real-World Proof-of-Work [5,000 Sat Bounty] ⚡🔨 ```",
       "state": "candidate",
       "payoutConfidence": 0.5,
@@ -99,11 +139,11 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 116,
+      "fastCashScore": 110,
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
-        "comments": 1,
+        "comments": 5,
         "attemptSignals": 0,
         "risk": "low"
       },
@@ -112,59 +152,91 @@
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5395634427",
+      "id": "github:5427687667",
       "source": "github",
-      "title": "[深度评审] 数据层与缓存：Postgres 返利 f64/NUMERIC 解码失败（功能失效）等",
-      "url": "https://github.com/JinPengGeng/aeris-token/issues/208",
-      "repositoryApiUrl": "https://api.github.com/repos/JinPengGeng/aeris-token",
-      "rewardUsd": 183,
-      "score": 32,
+      "title": "[radar] SN open bounty 2026-09-11T18:24",
+      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/922",
+      "repositoryApiUrl": "https://api.github.com/repos/relayhop/sn-monetization-runtime",
+      "rewardUsd": 2026,
+      "score": 44,
       "labels": [
-        "type:bug",
-        "priority:P2",
-        "status:triage",
-        "area:data"
+        "radar",
+        "sn",
+        "bounty"
       ],
-      "commentCount": 7,
-      "updatedAt": "2026-09-12T05:58:31Z",
-      "summary": "## 背景 2026 年全 workspace 两轮深度评审（初审 + 逐条代码核实）的模块结论汇总。判定标注：✅ 成立 / 🟡 降级 / ❌ 误报 / 🔵 设计决策。 本 issue 覆盖：`aether-data/*`（contracts、adapters postgres/mysql/sqlite、query、schema、runtime）与 `aether-cache`。 --- ## 🔴 严重 ### 1. Postgres 上返利模块 f64 读 NUMERIC 必然解码失败，返利功能整体失效（✅ 成立） - `crates/aether-data/runtime/src/backend/referrals.rs`：`row_f64!` 宏（:149-153）`try_get::<f64>` 直读 `numeric(20,8)` 列且所有 SELECT 无 CAST——涉及 `reward_from_row!`（:183-188）、`credit_referral_reward`（:2083-2095）、冲正路径（:2201-2243 等）、`payment_order_context_from_row`/`refund_context_from_row`（:2521,:2537-2538）。 - 类型事实：sqlx-core 0.8.6 `row.rs:118-127` 强制类型兼容检查，Postgres 的 f64 仅兼容 FLOAT8/FLOAT4，NUMERIC 必须走 bigdecimal/rust_decimal。 - Schema 事实：迁移中这些列全部 `numeric(20,8)` 且无 ALTER 改型（`postgres/migrations/20260403000000_baseline.sql:1406-1407` 等）。 - 生产接线完整（admin/user 路由 + docker-compose 默认 postgres:15 + 默认 feature postgres）；CI 无 referral DB 测试可拦截。 - 对比组：`adapters/postgres/src/provider_catalog.rs:184` 有正确的 `CAST(... AS DOUBLE PRECISION)`。 - **根因**：runtime/backend 层绕过 adapter 手写方言 SQL 并按 feature 三份复制，丢掉了 adapter 层的 CAST 纪律。 - 未完全确认项：支付回调中返利上下文查询失败后是否级联导致整个回调失败（爆炸半径细节），需追支付回调入口错误处理。 **修复建议**：立即补 CAST；中期将 referrals.rs 的查询下沉回 adapter 层，复用其 CAST 纪律与",
+      "commentCount": 5,
+      "updatedAt": "2026-09-12T10:31:52Z",
+      "summary": "New SN OPEN_BOUNTY detected: ``` 1567486 math 2 6889 700000 70 26.1 48657 15259 recent@math OPEN_BOUNTY,HOT [Math Puzzle] Does every sequence terminate in a loop? ```",
       "state": "candidate",
-      "payoutConfidence": 0.35,
+      "payoutConfidence": 0.5,
       "autonomyFit": 1,
       "requiresHumanGate": false,
       "requiresSpecialHardware": false,
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 100,
+      "fastCashScore": 110,
+      "survivalEligible": false,
+      "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
+      "competition": {
+        "comments": 5,
+        "attemptSignals": 0,
+        "risk": "low"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 2026,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5430012951",
+      "source": "github",
+      "title": "[radar] SN open bounty 2026-09-12T00:10",
+      "url": "https://github.com/relayhop/sn-monetization-runtime/issues/1053",
+      "repositoryApiUrl": "https://api.github.com/repos/relayhop/sn-monetization-runtime",
+      "rewardUsd": 2026,
+      "score": 36,
+      "labels": [
+        "radar",
+        "sn",
+        "bounty"
+      ],
+      "commentCount": 6,
+      "updatedAt": "2026-09-12T10:37:22Z",
+      "summary": "New SN OPEN_BOUNTY detected: ``` 1568946 Construction_and_Engineering 2 874 5000 3 3.0 9274 27301 recent@Construction_and_Engineering|top@Construction_and_Engineering OPEN_BOUNTY,LOW_COMP,SIGNAL Show Your Build Friday #1: Real-World Proof-of-Work [5,000 Sat Bounty] ⚡🔨 1567486 math 2 6889 700000 71 31.9 48657 15281 recent@math OPEN_BOUNTY,HOT [Math Puzzle] Does every sequence terminate in a loop? ```",
+      "state": "candidate",
+      "payoutConfidence": 0.5,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 109,
       "survivalEligible": false,
       "eligibilityReason": "Competition is too high for bootstrap mode.",
       "competition": {
-        "comments": 7,
+        "comments": 6,
         "attemptSignals": 0,
         "risk": "medium"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 183,
+      "economicValueUsd": 2026,
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5431064913",
+      "id": "github:5432322975",
       "source": "github",
-      "title": "Audit readiness: STRIDE threat model v1.0 open items (tracking)",
-      "url": "https://github.com/boundlessfi/boundless-contract/issues/143",
-      "repositoryApiUrl": "https://api.github.com/repos/boundlessfi/boundless-contract",
-      "rewardUsd": 11,
-      "score": 44,
+      "title": "[Fix] TON: a jetton send commented Deposit decodes as a pool stake [TON / Keysign]",
+      "url": "https://github.com/vultisig/vultisig-ios/issues/5388",
+      "repositoryApiUrl": "https://api.github.com/repos/vultisig/vultisig-ios",
+      "rewardUsd": 100,
+      "score": 48,
       "labels": [
-        "contract",
-        "security",
-        "owner-contract",
-        "critical-path"
+        "bug"
       ],
-      "commentCount": 1,
-      "updatedAt": "2026-09-12T05:54:33Z",
-      "summary": "Tracking issue for every open item, pending operational action, and planned hardening change disclosed in the STRIDE threat model (`docs/threat-model.md` v1.0) submitted to the SDF Soroban Security Audit Bank. Each line links the issue; the threat-model ID is in brackets. ### Open items (threat model §4.1) and pending operational action (§4.2) - [ ] #123 — Restore the upgrade timelock to 17,280 ledgers on both contracts (live escrow under a zero timelock) [EoP.10] - [ ] #124 — Finish the 1.7.0 mainnet migration: run migrate_events + migrate on events, migrate on profile, record the apply [Tamp.10] - [ ] #125 — Recovery path when an accepted event manager's key is lost [DoS.9] - [ ] #126 — process_cancel_batch: a refund transfer that cannot complete blocks the whole cancellation [DoS.14] - [ ] #127 — start_cancel: extend the claimable-prize guard to multi-release awards with unpaid milestones [EoP.14] - [ ] #128 — Make the profile calls in apply_to_bounty and claim_milestone best-effort (try_ variants) [DoS.7] - [ ] #129 — Bind child op_ids to the authorizing address [Tamp.14] - [ ] #130 — select_winners: reject duplicate recipients within a multi-release selection [Tamp.16] - [ ] #",
+      "commentCount": 0,
+      "updatedAt": "2026-09-12T08:56:13Z",
+      "summary": "<!-- AGENT type: \"bugfix\" platform: [ios, macos] --> # [Fix] A TON jetton send whose comment is a pool token decodes as a nominator-pool stake [TON / Keysign Verify] ## Problem `TonTransactionDecoder` reads the pool comment off any TON payload, native or jetton. `decode` gates only on `tx.corroborated` and a non-empty comment (`Features/TransactionDecoding/Chains/TonTransactionDecoder.swift:20-25`) and never checks `tx.isNativeCoin` — even though the protocol exposes it (`Features/TransactionDecoding/SignedTransactionContent.swift:83`, implemented for the co-signer at `:162` and the initiator at `:238`) and `THORChainTransactionDecoder.swift:72` already uses it. The comment reaches the decoder on a jetton send: the memo field is offered for TON tokens (`Model/Coin.swift:227-230` — `chain.supportsMemo` is true for TON and its `chainType` is `.Ton`, not `.EVM`, so `supportsMemo` holds for jettons too), and `Blockchain/Ton/Signing/Ton.swift` `buildJettonTransfer` signs it verbatim as the outer message comment (`if let memo = keysignPayload.memo, !memo.isEmpty { $0.comment = memo }`). The amount is then wrong by the ratio of the two decimal scales. `content.amount` is `.committed(toAmo",
       "state": "candidate",
       "payoutConfidence": 0.35,
       "autonomyFit": 1,
@@ -173,30 +245,30 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 94,
+      "fastCashScore": 107,
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
-        "comments": 1,
+        "comments": 0,
         "attemptSignals": 0,
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 11,
+      "economicValueUsd": 100,
       "requiresPreclaimOrIdentity": false
     },
     {
-      "id": "github:5420111117",
+      "id": "github:5432691732",
       "source": "github",
-      "title": "Docs/example proposal: paginated open action-item JSONL export (US$15)",
-      "url": "https://github.com/BasedHardware/omi/issues/13466",
-      "repositoryApiUrl": "https://api.github.com/repos/BasedHardware/omi",
-      "rewardUsd": 15,
-      "score": 44,
+      "title": "[DBIP] Add endpoint-specific pagination metadata for APIs and analytics",
+      "url": "https://github.com/Chain-Love/chain-love/issues/3792",
+      "repositoryApiUrl": "https://api.github.com/repos/Chain-Love/chain-love",
+      "rewardUsd": 41,
+      "score": 48,
       "labels": [],
-      "commentCount": 4,
-      "updatedAt": "2026-09-12T05:25:14Z",
-      "summary": "@josancamon19 — following the [contribution guide's bounty-suggestion process](https://github.com/BasedHardware/omi/blob/main/docs/doc/developer/Contribution.mdx), would you approve **US$15 after acceptance and merge** for a small English example showing how to export paginated open action items to UTF-8 JSONL? The current CLI already supports `omi --json action-item list --open --limit 500 --offset N`. The proposed contribution is documentation plus a standard-library Python example, with no CLI/API behavior change: add the example under `sdks/python-cli/examples/`, link it from the examples index, and explain its use in the CLI agent documentation. I prepared a local prototype that: - fetches successive pages until a short or empty page; - checks the CLI exit status and rejects invalid JSON, non-array pages, or non-object records; - preserves non-ASCII text across the child process and JSONL output; - writes to a temporary file beside the destination and replaces the destination only after all pages succeed. Offset pagination is **not a consistent snapshot** while action items are changing; the guide will explain possible skipped or repeated items. It is a read-only API example, ",
+      "commentCount": 0,
+      "updatedAt": "2026-09-12T10:17:23Z",
+      "summary": "### Proposal type Add column ### Affected scope (files/folders/chains) `references/offers/apis.csv`, `references/offers/analytics.csv`, corresponding listing headers, schema/metadata and column documentation. Initial use cases concern Algorand APIs and analytics offers referenced by Algorand/Filecoin listings. ### Motivation / problem statement A developer choosing a data API needs to know how to retrieve subsequent pages. A cursor-based interface requires retaining an opaque token; a page-based interface requires selecting a page number. Neither follows from REST support or request quotas. At main commit `b7a73d429c07bc338cf169edd7bf1e78506cd712`, neither category has structured pagination metadata. The [APIs wiki](https://github.com/Chain-Love/chain-love/wiki/APIs) defines `availableApis` as namespaces/method groups and `limitations` as rate limits/quotas. These represent different concerns. Two primary-source examples: - [Algorand Indexer OpenAPI](https://github.com/algorand/indexer/blob/main/api/indexer.oas2.json) defines the query parameter `next` as a string obtained from preceding results. - [CoinGecko GET /coins/markets](https://docs.coingecko.com/reference/coins-markets) d",
       "state": "candidate",
       "payoutConfidence": 0.35,
       "autonomyFit": 1,
@@ -205,16 +277,121 @@
       "estimatedHoursBand": 4,
       "complexity": 0,
       "fundedBountySignal": false,
-      "fastCashScore": 91,
+      "fastCashScore": 102,
       "survivalEligible": false,
       "eligibilityReason": "Payout evidence is below the bootstrap confidence threshold.",
       "competition": {
-        "comments": 4,
+        "comments": 0,
         "attemptSignals": 0,
         "risk": "low"
       },
       "realMoneyEligible": true,
-      "economicValueUsd": 15,
+      "economicValueUsd": 41,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5427688533",
+      "source": "github",
+      "title": "[Bounty] [Bounty $7500] Remove legacy sqrt/rsqrt/reciprocal compatibility paths",
+      "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1472",
+      "repositoryApiUrl": "https://api.github.com/repos/zhangjiayang6835-cyber/bounty-plaza",
+      "rewardUsd": 7500,
+      "score": 64,
+      "labels": [
+        "bounty",
+        "real"
+      ],
+      "commentCount": 6,
+      "updatedAt": "2026-09-12T10:31:38Z",
+      "summary": "### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/tenstorrent/tt-metal/issues/56277 ### 漏洞描述 / Description [Bounty $7500] Remove legacy sqrt/rsqrt/reciprocal compatibility paths ## Background The sqrt, rsqrt, and reciprocal implementations have newer, higher-precision paths, but the repository still contains legacy compatibility implementations and configuration plumbing retained from earlier numerical issues in LayerNorm, reductions, and related operations. The proposal is to remove the legacy paths now that the affected integration and normalization code has evolved, while preserving the behavior and precision-selection semantics of the current non-legacy implementations. ## Scope - Remove the legacy compatibility implementations and associated headers. - Remove legacy enum entries, template parameters, and legacy_rsqrt program-configuration fields. - Update all affected kernels, operations, model configurations, tests, examples, and graph/config reconstruction utilities. - Audit callers and configurations that previously selected legacy behavior, including normalization and fused-kernel paths. - Preserve existing non-legacy approximate/precise behavior unless a",
+      "state": "candidate",
+      "payoutConfidence": 0.5,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 2,
+      "fundedBountySignal": false,
+      "fastCashScore": 101,
+      "survivalEligible": false,
+      "eligibilityReason": "Competition is too high for bootstrap mode.",
+      "competition": {
+        "comments": 6,
+        "attemptSignals": 0,
+        "risk": "medium"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 7500,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5408447211",
+      "source": "github",
+      "title": "[Bounty] [Bounty: $1,250] Optimize Subgraph Isomorphism to Strict O(N) Deterministic Spac",
+      "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1336",
+      "repositoryApiUrl": "https://api.github.com/repos/zhangjiayang6835-cyber/bounty-plaza",
+      "rewardUsd": 1250,
+      "score": 42,
+      "labels": [
+        "bounty",
+        "real"
+      ],
+      "commentCount": 61,
+      "updatedAt": "2026-09-12T10:34:42Z",
+      "summary": "### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/Senthemodder/aquarium-of-gullibles/issues/1 ### 漏洞描述 / Description [Bounty: $1,250] Optimize Subgraph Isomorphism to Strict O(N) Deterministic Space-Time Complexity ### Severity: High ### Bounty: ,250 USDC (Escrow Locked) ### Problem Description Our state topology solver requires resolving whether a query graph G_q is isomorphic to a subgraph of G_t. The current Ullmann-based backtracking implementation exhibits exponential worst-case time complexity $O(V! \\cdot V^2)$. We require a refactored implementation in src/solver/isomorphism.ts that achieves **strict $O(N)$ deterministic time and space complexity** on arbitrary undirected cyclic graphs without heuristic approximation. ### Acceptance Criteria - Must compile with zero type errors. - Must execute deterministically in linear time $O(|V| + |E|)$. - All tests in est/verify.js must pass. **Payout Settlement:** Settle upon PR merge and signature verification. ### 积分币奖励 / Coin Reward 1562 coins ### 真实赏金（USD）/ Real Reward $1,250 ### 难度 / Difficulty Medium ### 认领方式 评论 `/claim` 锁定任务 24h ### 兑换说明 > 查看 [REWARD_POLICY.md](REWARD_POLICY.md) 了解兑换规则",
+      "state": "candidate",
+      "payoutConfidence": 0.85,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 98,
+      "survivalEligible": false,
+      "eligibilityReason": "Competition is too high for bootstrap mode.",
+      "competition": {
+        "comments": 61,
+        "attemptSignals": 0,
+        "risk": "high"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 1250,
+      "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5408447125",
+      "source": "github",
+      "title": "[Bounty] [Bounty: $650] JSON UI: Dynamic Container Inventory Text Slicing Overflow in hud",
+      "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1335",
+      "repositoryApiUrl": "https://api.github.com/repos/zhangjiayang6835-cyber/bounty-plaza",
+      "rewardUsd": 650,
+      "score": 42,
+      "labels": [
+        "bounty",
+        "real"
+      ],
+      "commentCount": 45,
+      "updatedAt": "2026-09-12T10:34:57Z",
+      "summary": "### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/Senthemodder/aquarium-of-gullibles/issues/3 ### 漏洞描述 / Description [Bounty: $650] JSON UI: Dynamic Container Inventory Text Slicing Overflow in hud_screen.json ### Bounty: USDC (Escrow Locked) ### Description In ui/hud_screen.json, custom inventory text slicing overflows on item names > 16 characters on mobile viewport profiles. ` [JSON UI Engine][Warning] Binding resolution failed for #inventory_text_slice. Expression '%.16s' failed: invalid binding format specifier. ` ### Requirements - Clean 16-character string truncation utilizing native Bedrock JSON UI string-slicing and text preservation bindings. - Fully responsive across Pocket and Desktop profiles without engine warnings. **Payout Settlement:** Release upon PR merge. ### 积分币奖励 / Coin Reward 812 coins ### 真实赏金（USD）/ Real Reward $650 ### 难度 / Difficulty Medium ### 认领方式 评论 `/claim` 锁定任务 24h ### 兑换说明 > 查看 [REWARD_POLICY.md](REWARD_POLICY.md) 了解兑换规则",
+      "state": "candidate",
+      "payoutConfidence": 0.5,
+      "autonomyFit": 1,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": false,
+      "estimatedHoursBand": 4,
+      "complexity": 0,
+      "fundedBountySignal": false,
+      "fastCashScore": 83,
+      "survivalEligible": false,
+      "eligibilityReason": "Competition is too high for bootstrap mode.",
+      "competition": {
+        "comments": 45,
+        "attemptSignals": 0,
+        "risk": "high"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 650,
       "requiresPreclaimOrIdentity": false
     },
     {
@@ -250,6 +427,41 @@
       "realMoneyEligible": true,
       "economicValueUsd": 60,
       "requiresPreclaimOrIdentity": false
+    },
+    {
+      "id": "github:5428986815",
+      "source": "github",
+      "title": "[Bounty] [Bounty $500] ttnn.quantize/requantize uint8 lower-bound saturation",
+      "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/1509",
+      "repositoryApiUrl": "https://api.github.com/repos/zhangjiayang6835-cyber/bounty-plaza",
+      "rewardUsd": 500,
+      "score": 64,
+      "labels": [
+        "bounty",
+        "real"
+      ],
+      "commentCount": 6,
+      "updatedAt": "2026-09-12T10:31:09Z",
+      "summary": "### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/tenstorrent/tt-metal/issues/56290 ### 漏洞描述 / Description [Bounty $500] ttnn.quantize/requantize uint8 lower-bound saturation ## Description `ttnn.quantize` and `ttnn.requantize` do not saturate uint8 outputs at the lower bound. For uint8 output, values below 0 should produce 0. Instead, negative values can be returned as their magnitude. For example, quantizing `x` and `-x` can produce identical uint8 bytes. The issue reproduces on Wormhole B0 and Blackhole. ## Expected behavior For quantization: output = clamp(round(input / scale + zero_point), 0, 255) For requantization: output = clamp(round((input - input_zero_point) * input_scale / output_scale + output_zero_point), 0, 255) ## Acceptance criteria - Fix uint8 lower-bound saturation for `ttnn.quantize`. - Fix uint8 lower-bound saturation for `ttnn.requantize`. - Preserve correct upper saturation at 255. - Add exact-output regression tests for negative, in-range, and over-range values. - Run coverage on Wormhole B0 and Blackhole. - Preserve existing int8 and in-range uint8 behavior. ## Related work - #48607 — general uint8 quantize/dequantize/requantize support - ",
+      "state": "candidate",
+      "payoutConfidence": 0.85,
+      "autonomyFit": 0.55,
+      "requiresHumanGate": false,
+      "requiresSpecialHardware": true,
+      "estimatedHoursBand": 30,
+      "complexity": 3,
+      "fundedBountySignal": false,
+      "fastCashScore": 47,
+      "survivalEligible": false,
+      "eligibilityReason": "Too slow for bootstrap mode: first real cash currently requires a <=4 hour task.",
+      "competition": {
+        "comments": 6,
+        "attemptSignals": 0,
+        "risk": "medium"
+      },
+      "realMoneyEligible": true,
+      "economicValueUsd": 500,
+      "requiresPreclaimOrIdentity": false
     }
   ],
   "selected": null,
@@ -262,7 +474,7 @@
     "rationale": "No simple real-money job is currently executable with the basic identity and tooling available."
   },
   "retryAfterAt": null,
-  "marketSignature": "[{\"id\":\"github:2208865682\",\"rewardUsd\":60,\"fastCashScore\":82,\"updatedAt\":\"2026-09-12T02:30:46Z\",\"competition\":{\"comments\":15,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4451709275\",\"rewardUsd\":180,\"fastCashScore\":124,\"updatedAt\":\"2026-09-10T08:16:22Z\",\"competition\":{\"comments\":15,\"attemptSignals\":1,\"risk\":\"medium\"}},{\"id\":\"github:5395634427\",\"rewardUsd\":183,\"fastCashScore\":100,\"updatedAt\":\"2026-09-12T05:58:31Z\",\"competition\":{\"comments\":7,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5420111117\",\"rewardUsd\":15,\"fastCashScore\":91,\"updatedAt\":\"2026-09-12T05:25:14Z\",\"competition\":{\"comments\":4,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5431064913\",\"rewardUsd\":11,\"fastCashScore\":94,\"updatedAt\":\"2026-09-12T05:54:33Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5431374346\",\"rewardUsd\":16601,\"fastCashScore\":118,\"updatedAt\":\"2026-09-12T05:21:30Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5431469352\",\"rewardUsd\":2026,\"fastCashScore\":116,\"updatedAt\":\"2026-09-12T05:39:57Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}}]",
+  "marketSignature": "[{\"id\":\"github:2208865682\",\"rewardUsd\":60,\"fastCashScore\":82,\"updatedAt\":\"2026-09-12T02:30:46Z\",\"competition\":{\"comments\":15,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:4451709275\",\"rewardUsd\":180,\"fastCashScore\":124,\"updatedAt\":\"2026-09-10T08:16:22Z\",\"competition\":{\"comments\":15,\"attemptSignals\":1,\"risk\":\"medium\"}},{\"id\":\"github:5408447125\",\"rewardUsd\":650,\"fastCashScore\":83,\"updatedAt\":\"2026-09-12T10:34:57Z\",\"competition\":{\"comments\":45,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:5408447211\",\"rewardUsd\":1250,\"fastCashScore\":98,\"updatedAt\":\"2026-09-12T10:34:42Z\",\"competition\":{\"comments\":61,\"attemptSignals\":0,\"risk\":\"high\"}},{\"id\":\"github:5427687667\",\"rewardUsd\":2026,\"fastCashScore\":110,\"updatedAt\":\"2026-09-12T10:31:52Z\",\"competition\":{\"comments\":5,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5427688533\",\"rewardUsd\":7500,\"fastCashScore\":101,\"updatedAt\":\"2026-09-12T10:31:38Z\",\"competition\":{\"comments\":6,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5428986815\",\"rewardUsd\":500,\"fastCashScore\":47,\"updatedAt\":\"2026-09-12T10:31:09Z\",\"competition\":{\"comments\":6,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5429974353\",\"rewardUsd\":55.42989174,\"fastCashScore\":95,\"updatedAt\":\"2026-09-12T09:52:17Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5429975984\",\"rewardUsd\":44.83153392,\"fastCashScore\":93,\"updatedAt\":\"2026-09-12T09:52:38Z\",\"competition\":{\"comments\":1,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5430012951\",\"rewardUsd\":2026,\"fastCashScore\":109,\"updatedAt\":\"2026-09-12T10:37:22Z\",\"competition\":{\"comments\":6,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5431469352\",\"rewardUsd\":2026,\"fastCashScore\":110,\"updatedAt\":\"2026-09-12T10:37:01Z\",\"competition\":{\"comments\":5,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5431675188\",\"rewardUsd\":200,\"fastCashScore\":121,\"updatedAt\":\"2026-09-12T10:36:37Z\",\"competition\":{\"comments\":8,\"attemptSignals\":0,\"risk\":\"medium\"}},{\"id\":\"github:5432322975\",\"rewardUsd\":100,\"fastCashScore\":107,\"updatedAt\":\"2026-09-12T08:56:13Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5432389604\",\"rewardUsd\":200,\"fastCashScore\":111,\"updatedAt\":\"2026-09-12T09:12:14Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}},{\"id\":\"github:5432691732\",\"rewardUsd\":41,\"fastCashScore\":102,\"updatedAt\":\"2026-09-12T10:17:23Z\",\"competition\":{\"comments\":0,\"attemptSignals\":0,\"risk\":\"low\"}}]",
   "marketChanged": false,
   "needsSelection": false,
   "survival": {
@@ -274,7 +486,7 @@
     "maxHours": 4,
     "minPayoutConfidence": 0.8,
     "competitionRequired": "low",
-    "rejectedFakeRevenueCount": 0,
+    "rejectedFakeRevenueCount": 2,
     "rejectedAlreadyPaidCount": 0,
     "rejectedIdentityGateCount": 0
   },
@@ -286,7 +498,7 @@
       "reasons": [
         "testnet_or_test_token_reward"
       ],
-      "rejectedAt": "2026-09-12T01:19:04.252Z"
+      "rejectedAt": "2026-09-12T10:37:37.027Z"
     },
     {
       "id": "github:5429975984",
@@ -295,7 +507,7 @@
       "reasons": [
         "testnet_or_test_token_reward"
       ],
-      "rejectedAt": "2026-09-12T01:19:04.252Z"
+      "rejectedAt": "2026-09-12T10:37:37.027Z"
     },
     {
       "id": "github:4644823208",
