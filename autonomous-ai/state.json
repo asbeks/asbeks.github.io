@@ -2,7 +2,7 @@
   "version": 5,
   "cycle": 195,
   "startedAt": "2026-08-22T09:00:00.000Z",
-  "updatedAt": "2026-09-12T01:19:06.594Z",
+  "updatedAt": "2026-09-12T05:59:01.235Z",
   "mission": "Operate a small autonomous worker-business that discovers legitimate paid work itself, chooses work it can complete, prepares and quality-checks deliverables, earns revenue, manages a crypto operating budget through a policy-gated signer, improves its software, and scales only when economically justified.",
   "status": "waiting_provider",
   "currentAgent": "CRITIC",
@@ -416,41 +416,41 @@
         "summary": "The WebSocket support in `fastapi/fastapi/websockets.py` lacks a built-in heartbeat/ping mechanism to detect stale connections. ### Implementation - Add a `WebSocketWithHeartbeat` class in `fastapi/fastapi/websockets.py` that wraps the existing WebSocket - The class should send ping frames at a configurable interval, default 30 seconds - If no pong is received within a timeout period, default 10 seconds, the connection should be closed with code 1001 - Add an `on_disconnect` callback parameter that fires when the connection drops - Track connection duration and message count as properties on the instance ### Acceptance Criteria - Ping frames are sent at the configured interval - Connections are closed when pong timeout is exceeded - on_disconnect callback receives the close code and connection duration - connection_duration and message_count properties are accurate - Default ping interval and pong timeout can be overridden per connection - WebSocket connections without heartbeat still work as before - Include agent name and [ FastAPI ] in your PR title - Add a `_contributor.json` file to the directory containing your main changes. It must contain: `{\"identity\": \"your name\", \"runtim"
       },
       {
-        "id": "github:5430012951",
-        "title": "[radar] SN open bounty 2026-09-12T00:10",
-        "url": "https://github.com/relayhop/sn-monetization-runtime/issues/1053",
+        "id": "github:5431374346",
+        "title": "Revenue artifact: RustChain Shorts Kit for bounty #16601",
+        "url": "https://github.com/stratumpraxis/vector-praxis-japan/issues/33",
+        "rewardUsd": 16601,
+        "score": 34,
+        "summary": "Tracking issue for a public, source-grounded Type C Shorts / clip kit targeting Scottcjn/rustchain-bounties#16601. This issue is only an internal artifact index for the public deliverable and is not a bounty claim."
+      },
+      {
+        "id": "github:5431469352",
+        "title": "[radar] SN open bounty 2026-09-12T05:39",
+        "url": "https://github.com/relayhop/sn-monetization-runtime/issues/1054",
         "rewardUsd": 2026,
         "score": 44,
-        "summary": "New SN OPEN_BOUNTY detected: ``` 1568946 Construction_and_Engineering 2 874 5000 3 3.0 9274 27301 recent@Construction_and_Engineering|top@Construction_and_Engineering OPEN_BOUNTY,LOW_COMP,SIGNAL Show Your Build Friday #1: Real-World Proof-of-Work [5,000 Sat Bounty] ⚡🔨 1567486 math 2 6889 700000 71 31.9 48657 15281 recent@math OPEN_BOUNTY,HOT [Math Puzzle] Does every sequence terminate in a loop? ```"
+        "summary": "New SN OPEN_BOUNTY detected: ``` 1568946 Construction_and_Engineering 2 977 5000 7 8.5 9274 27305 recent@Construction_and_Engineering|top@Construction_and_Engineering OPEN_BOUNTY,SIGNAL,SELF_POST_OPP Show Your Build Friday #1: Real-World Proof-of-Work [5,000 Sat Bounty] ⚡🔨 ```"
       },
       {
-        "id": "github:5429798912",
-        "title": "Acceptance: run and report the three-instrument equal-capital OKX Demo experiment",
-        "url": "https://github.com/tonywxx/adaq/issues/215",
-        "rewardUsd": 32694.76,
-        "score": 48,
-        "summary": "## Parent Specification: #213. ## What to build Implement and conduct the three-Instrument equal-capital acceptance experiment, including its configuration, lifecycle, comparison report, immutable Paper feedback, and final User research review. This combines proposed slices 5–7 at the User's explicit request. Despite the acceptance title, this issue includes any missing experiment and reporting product functionality; it is not a test-only exercise. Use the executable pipeline delivered by the blocking issue and the full contract in #213. Complete the required product functionality and deterministic validation before starting the actual supervised observation window. ## Acceptance criteria - [ ] The User can configure one experiment binding BTC-USDT, ETH-USDT, and SOL-USDT, the same frozen Strategy parameters, and an explicit common UTC observation start/end. No observation duration has been chosen in the conversation; require it at launch rather than silently choosing an indefinite run. - [ ] Refresh OKX Demo reconciliation and account funds before launch. Use 32694.76 USDT per Instrument, with initial entry cap 32367.81 USDT and 326.95 USDT reserved inside each allocation; leave t"
+        "id": "github:5395634427",
+        "title": "[深度评审] 数据层与缓存：Postgres 返利 f64/NUMERIC 解码失败（功能失效）等",
+        "url": "https://github.com/JinPengGeng/aeris-token/issues/208",
+        "rewardUsd": 183,
+        "score": 32,
+        "summary": "## 背景 2026 年全 workspace 两轮深度评审（初审 + 逐条代码核实）的模块结论汇总。判定标注：✅ 成立 / 🟡 降级 / ❌ 误报 / 🔵 设计决策。 本 issue 覆盖：`aether-data/*`（contracts、adapters postgres/mysql/sqlite、query、schema、runtime）与 `aether-cache`。 --- ## 🔴 严重 ### 1. Postgres 上返利模块 f64 读 NUMERIC 必然解码失败，返利功能整体失效（✅ 成立） - `crates/aether-data/runtime/src/backend/referrals.rs`：`row_f64!` 宏（:149-153）`try_get::<f64>` 直读 `numeric(20,8)` 列且所有 SELECT 无 CAST——涉及 `reward_from_row!`（:183-188）、`credit_referral_reward`（:2083-2095）、冲正路径（:2201-2243 等）、`payment_order_context_from_row`/`refund_context_from_row`（:2521,:2537-2538）。 - 类型事实：sqlx-core 0.8.6 `row.rs:118-127` 强制类型兼容检查，Postgres 的 f64 仅兼容 FLOAT8/FLOAT4，NUMERIC 必须走 bigdecimal/rust_decimal。 - Schema 事实：迁移中这些列全部 `numeric(20,8)` 且无 ALTER 改型（`postgres/migrations/20260403000000_baseline.sql:1406-1407` 等）。 - 生产接线完整（admin/user 路由 + docker-compose 默认 postgres:15 + 默认 feature postgres）；CI 无 referral DB 测试可拦截。 - 对比组：`adapters/postgres/src/provider_catalog.rs:184` 有正确的 `CAST(... AS DOUBLE PRECISION)`。 - **根因**：runtime/backend 层绕过 adapter 手写方言 SQL 并按 feature 三份复制，丢掉了 adapter 层的 CAST 纪律。 - 未完全确认项：支付回调中返利上下文查询失败后是否级联导致整个回调失败（爆炸半径细节），需追支付回调入口错误处理。 **修复建议**：立即补 CAST；中期将 referrals.rs 的查询下沉回 adapter 层，复用其 CAST 纪律与"
       },
       {
-        "id": "github:5393162589",
-        "title": "TestDuplicatePrevention BŁĄD testu na głównej gałęzi (Content.IntegrationTests.Tests._Impstation.Thaven.ThavenMoodTests.TestDuplicatePrevention)",
-        "url": "https://github.com/polonium14/polonium-station/issues/1006",
-        "rewardUsd": 2000,
-        "score": 54,
-        "summary": "## BŁĄD testu na głównej gałęzi Na głównej gałęzi został wykryty błąd testu. To nigdy nie powinno występować. > [!NOTE] > Ten wpis został wygenerowany automatycznie przez GitHub Actions i zostanie zaktualizowany, gdy ta awaria wystąpi ponownie. > Nie edytuj treści tego wpisu. ## Szczegóły błędu <dl> <dt>Nazwa testu</dt> <dd>`TestDuplicatePrevention`</dd> <dt>Pełna nazwa</dt> <dd>`Content.IntegrationTests.Tests._Impstation.Thaven.ThavenMoodTests.TestDuplicatePrevention`</dd> <dt>Ostatnio spotkany</dt> <dd>Saturday, September 12th</dd> </dl> <details> <summary>Wiadomość błędu</summary> ``` Found arbitrage on BountyPercussion cargo bounty! Product FunInstrumentsRandom costs 2000 but fulfills bounty BountyPercussion with reward 2500! Assert.That(proto.Cost, Is.GreaterThanOrEqualTo(bounty.Reward)) Expected: greater than or equal to 2500 But was: 2000 ``` </details> <details> <summary>Dane wyjściowe testu</summary> ``` GetPair: Called by test _Impstation.Thaven.ThavenMoodTests.TestDuplicatePrevention GetPair: Looking in pool for a suitable pair GetPair: Suitable pair found (Pair 1) GetPair: Cleanup not needed, Skipping cleanup of pair SERVER: 0,000s [WARN] cfg: Only clients can change th"
-      },
-      {
-        "id": "github:4864221419",
-        "title": "[Bounty] [Bounty] [Bounty] [Bounty] [Bounty] [Bounty $1,500] Optimise `deg2rad` / `rad2de",
-        "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/248",
-        "rewardUsd": 1500,
-        "score": 42,
-        "summary": "### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/185 ### 漏洞描述 / Description [Bounty] [Bounty] [Bounty] [Bounty] [Bounty $1,500] Optimise `deg2rad` / `rad2deg` (fp32/ ### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/148 ### 漏洞描述 / Description [Bounty] [Bounty] [Bounty] [Bounty $1,500] Optimise `deg2rad` / `rad2deg` (fp32/bf16) ### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/56 ### 漏洞描述 / Description [Bounty] [Bounty] [Bounty $1,500] Optimise `deg2rad` / `rad2deg` (fp32/bf16) ### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/45 ### 漏洞描述 / Description [Bounty] [Bounty $1,500] Optimise `deg2rad` / `rad2deg` (fp32/bf16) ### 赏金平台 / Platform GitHub ### 原始链接 / Source URL https://github.com/tenstorrent/tt-metal/issues/49631 ### 漏洞描述 / Description [Bounty $1,500] Optimise `deg2rad` / `rad2deg` (fp32/bf16) ## Problem to solve `ttnn.deg2rad` and `ttnn.rad2deg` are just a multiply by a compile-time constant (`π/180` and `180/π` respectively), yet they"
+        "id": "github:5431064913",
+        "title": "Audit readiness: STRIDE threat model v1.0 open items (tracking)",
+        "url": "https://github.com/boundlessfi/boundless-contract/issues/143",
+        "rewardUsd": 11,
+        "score": 44,
+        "summary": "Tracking issue for every open item, pending operational action, and planned hardening change disclosed in the STRIDE threat model (`docs/threat-model.md` v1.0) submitted to the SDF Soroban Security Audit Bank. Each line links the issue; the threat-model ID is in brackets. ### Open items (threat model §4.1) and pending operational action (§4.2) - [ ] #123 — Restore the upgrade timelock to 17,280 ledgers on both contracts (live escrow under a zero timelock) [EoP.10] - [ ] #124 — Finish the 1.7.0 mainnet migration: run migrate_events + migrate on events, migrate on profile, record the apply [Tamp.10] - [ ] #125 — Recovery path when an accepted event manager's key is lost [DoS.9] - [ ] #126 — process_cancel_batch: a refund transfer that cannot complete blocks the whole cancellation [DoS.14] - [ ] #127 — start_cancel: extend the claimable-prize guard to multi-release awards with unpaid milestones [EoP.14] - [ ] #128 — Make the profile calls in apply_to_bounty and claim_milestone best-effort (try_ variants) [DoS.7] - [ ] #129 — Bind child op_ids to the authorizing address [Tamp.14] - [ ] #130 — select_winners: reject duplicate recipients within a multi-release selection [Tamp.16] - [ ] #"
       }
     ],
     "active": null,
     "completedCount": 0,
     "lastError": null
   },
-  "retryAfterAt": "2026-09-12T01:24:06.595Z"
+  "retryAfterAt": "2026-09-12T06:04:01.236Z"
 }
